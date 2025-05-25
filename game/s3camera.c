@@ -1266,7 +1266,7 @@ void CalcCameraAngles(struct Point3d*) {
 }
 
 // FUNCTION: COPTER_D 0x004f955f
-void S3AngleRotMat(int32_t[17]*, int32_t, int32_t, int32_t) {
+void S3AngleRotMat(int32_t[4]*, int32_t, int32_t, int32_t) {
 // LINE 528:
 	asm( 
 "	      004f955f    push ebp"

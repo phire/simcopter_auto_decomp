@@ -2565,7 +2565,7 @@ long CareerWindow::SetCurrentCitySelection(long) {
 }
 
 // FUNCTION: COPTER_D 0x0047ff29
-void CareerWindow::GetCoordinatesForCitySelections(class MPoint[17]*, class MRect[17]*) {
+void CareerWindow::GetCoordinatesForCitySelections(class MPoint[4]*, class MRect[4]*) {
 // LINE 383:
 	asm( 
 "	      0047ff29    push ebp"

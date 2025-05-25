@@ -1045,7 +1045,7 @@ int32_t MTAngleBounds(int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x004ca810
-void MTArbRotMat(int32_t[17]*, int32_t, struct Point3d*) {
+void MTArbRotMat(int32_t[4]*, int32_t, struct Point3d*) {
 // LINE 401:
 	asm( 
 "	      004ca810    push ebp"
@@ -1311,7 +1311,7 @@ void MTArbRotMat(int32_t[17]*, int32_t, struct Point3d*) {
 }
 
 // FUNCTION: COPTER_D 0x004caa19
-void MTmat_row_normal(int32_t[17]*) {
+void MTmat_row_normal(int32_t[4]*) {
 // LINE 463:
 	asm( 
 "	      004caa19    push ebp"
@@ -1572,7 +1572,7 @@ void MTmat_row_normal(int32_t[17]*) {
 }
 
 // FUNCTION: COPTER_D 0x004cac36
-void MTmat_col_normal(int32_t[17]*) {
+void MTmat_col_normal(int32_t[4]*) {
 // LINE 502:
 	asm( 
 "	      004cac36    push ebp"
@@ -1922,7 +1922,7 @@ void MTXProduct(struct Point3d*, struct Point3d*, struct Point3d*) {
 }
 
 // FUNCTION: COPTER_D 0x004caefb
-void MTCreateDOF4x4(int32_t[17]*, struct Point3d*) {
+void MTCreateDOF4x4(int32_t[4]*, struct Point3d*) {
 // LINE 568:
 	asm( 
 "	      004caefb    push ebp"
@@ -2072,7 +2072,7 @@ void MTCreateDOF4x4(int32_t[17]*, struct Point3d*) {
 }
 
 // FUNCTION: COPTER_D 0x004caff7
-void MTCreateDOF4x4Y(int32_t[17]*, struct Point3d*) {
+void MTCreateDOF4x4Y(int32_t[4]*, struct Point3d*) {
 // LINE 628:
 	asm( 
 "	      004caff7    push ebp"
@@ -2222,7 +2222,7 @@ void MTCreateDOF4x4Y(int32_t[17]*, struct Point3d*) {
 }
 
 // FUNCTION: COPTER_D 0x004cb0f3
-void MTCreateReflection4x4(int32_t[17]*, struct Point3d*) {
+void MTCreateReflection4x4(int32_t[4]*, struct Point3d*) {
 // LINE 683:
 	asm( 
 "	      004cb0f3    push ebp"

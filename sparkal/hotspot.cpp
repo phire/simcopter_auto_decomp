@@ -347,7 +347,7 @@ void HotSpot::HotSpot(const class HotSpot&) {
 }
 
 // FUNCTION: COPTER_D 0x004b948a
-void HotSpot::HotSpot(long, long, long, long[17]*) {
+void HotSpot::HotSpot(long, long, long, long[2]*) {
 // LINE 47:
 	asm( 
 "	      004b948a    push ebp"

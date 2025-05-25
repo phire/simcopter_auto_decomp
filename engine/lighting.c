@@ -969,7 +969,7 @@ void VRObjSetShading(int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x004d93d6
-void VRDyObjSetShading(int32_t, int32_t[17][17]*) {
+void VRDyObjSetShading(int32_t, int32_t[4][4]*) {
 // LINE 480:
 	asm( 
 "	      004d93d6    push ebp"

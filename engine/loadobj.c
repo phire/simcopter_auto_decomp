@@ -1124,7 +1124,7 @@ int32_t LoadObjtType(int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x004d2ac6
-int32_t VRGetDyObjAlt(int32_t, int32_t[17][17]*, struct Point3d*, int32_t) {
+int32_t VRGetDyObjAlt(int32_t, int32_t[4][4]*, struct Point3d*, int32_t) {
 // LINE 730:
 	asm( 
 "	      004d2ac6    push ebp"
