@@ -3472,5 +3472,5 @@ private: static void __cdecl ResMap::SwapResEntry(struct ResMap::Entry *) {
 
 
 // Contribution: 3:00024edc-0002512c Module: 199, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x00024edc
+// GLOBAL: COPTER_D 0x005bbedc
 // ResMap::sMaps

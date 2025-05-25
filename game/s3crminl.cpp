@@ -1862,25 +1862,25 @@ void CriminalEvaderCarClass::LoadSaveData(struct _AUTO_LOAD_SAVE*) {
 
 
 // Contribution: 2:00004258-0000427b Module: 161, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00004258
+// GLOBAL: COPTER_D 0x00593258
 // ??_7CriminalEvaderCarClass@@6B@
 
 
 // Contribution: 3:00020ca8-00020d15 Module: 161, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x00020ca8
+// GLOBAL: COPTER_D 0x005b7ca8
 // CriminalEvaderCarClass::baseTimeBetweenCriminalActivities
-// GLOBAL: COPTER_D 0x00020cac
+// GLOBAL: COPTER_D 0x005b7cac
 // CriminalEvaderCarClass::maxTimeBetweenCriminalActivities
-// GLOBAL: COPTER_D 0x00020cb0
+// GLOBAL: COPTER_D 0x005b7cb0
 // CriminalEvaderCarClass::constantTimeToBeOnTheRun
-// GLOBAL: COPTER_D 0x00020cb4
+// GLOBAL: COPTER_D 0x005b7cb4
 // CriminalEvaderCarClass::evasionSpeedMultiplier
-// GLOBAL: COPTER_D 0x00020cb8
+// GLOBAL: COPTER_D 0x005b7cb8
 // CriminalEvaderCarClass::maxSearchForBuildingRadius
-// GLOBAL: COPTER_D 0x00020cbc
+// GLOBAL: COPTER_D 0x005b7cbc
 // CriminalEvaderCarClass::curCriminalCars
 
 
 // Contribution: 3:000949a0-000949b3 Module: 161, 8 byte alignment, uninitialized_data, read, write, 
-// GLOBAL: COPTER_D 0x000949a0
+// GLOBAL: COPTER_D 0x0062b9a0
 // CriminalEvaderCarClass::criminalCars

@@ -1945,34 +1945,34 @@ public: int __thiscall CGameApp::DisplayFileOpenError(unsigned long) {
 
 
 // Contribution: 3:00000484-000004ab Module: 68, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x00000484
+// GLOBAL: COPTER_D 0x00597484
 // SZ_CITY_DATA_FILE_SUFFIX
-// GLOBAL: COPTER_D 0x00000488
+// GLOBAL: COPTER_D 0x00597488
 // SZ_CAREER_DATA_FILE_SUFFIX
-// GLOBAL: COPTER_D 0x0000048c
+// GLOBAL: COPTER_D 0x0059748c
 // SZ_USER_DATA_FILE_SUFFIX
 
 
 // Contribution: 3:000004ac-000004af Module: 68, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x000004ac
+// GLOBAL: COPTER_D 0x005974ac
 // list<DirectoryEntry>::number_of_lists
 
 
 // Contribution: 3:000004b0-000004b3 Module: 68, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x000004b0
+// GLOBAL: COPTER_D 0x005974b0
 // list<DirectoryEntry>::last
 
 
 // Contribution: 3:000004b4-000004b7 Module: 68, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x000004b4
+// GLOBAL: COPTER_D 0x005974b4
 // list<DirectoryEntry>::next_avail
 
 
 // Contribution: 3:000004b8-000004bb Module: 68, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x000004b8
+// GLOBAL: COPTER_D 0x005974b8
 // list<DirectoryEntry>::free_list
 
 
 // Contribution: 3:000004bc-000004bf Module: 68, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x000004bc
+// GLOBAL: COPTER_D 0x005974bc
 // list<DirectoryEntry>::buffer_list

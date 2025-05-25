@@ -26,87 +26,87 @@
 
 
 // Contribution: 3:0000003c-00000043 Module: 51, 4 byte alignment, initialized_data, read, write, 
-// LOCAL: COPTER_D 0x0000003c
+// LOCAL: COPTER_D 0x0059703c
 // $S5
-// LOCAL: COPTER_D 0x00000040
+// LOCAL: COPTER_D 0x00597040
 // $S8
 
 
 // Contribution: 3:00001e50-00001f13 Module: 51, 8 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x00001e50
+// GLOBAL: COPTER_D 0x00598e50
 // stack
-// GLOBAL: COPTER_D 0x00001e54
+// GLOBAL: COPTER_D 0x00598e54
 // VRRenderBuf
-// GLOBAL: COPTER_D 0x00001e58
+// GLOBAL: COPTER_D 0x00598e58
 // Stretch2Fit
-// GLOBAL: COPTER_D 0x00001e5c
+// GLOBAL: COPTER_D 0x00598e5c
 // G_water_anim
-// GLOBAL: COPTER_D 0x00001e60
+// GLOBAL: COPTER_D 0x00598e60
 // VRCurrentWindow
-// GLOBAL: COPTER_D 0x00001e7c
+// GLOBAL: COPTER_D 0x00598e7c
 // G_run_old
-// GLOBAL: COPTER_D 0x00001e80
+// GLOBAL: COPTER_D 0x00598e80
 // G_use_mouse
-// GLOBAL: COPTER_D 0x00001e84
+// GLOBAL: COPTER_D 0x00598e84
 // G_fract_blurr
-// GLOBAL: COPTER_D 0x00001e88
+// GLOBAL: COPTER_D 0x00598e88
 // G_texobjs
-// GLOBAL: COPTER_D 0x00001e8c
+// GLOBAL: COPTER_D 0x00598e8c
 // G_texterr
-// GLOBAL: COPTER_D 0x00001e90
+// GLOBAL: COPTER_D 0x00598e90
 // G_daynight
-// GLOBAL: COPTER_D 0x00001e94
+// GLOBAL: COPTER_D 0x00598e94
 // G_freemem
-// GLOBAL: COPTER_D 0x00001e98
+// GLOBAL: COPTER_D 0x00598e98
 // G_artmode
-// GLOBAL: COPTER_D 0x00001e9c
+// GLOBAL: COPTER_D 0x00598e9c
 // G_testmode
-// GLOBAL: COPTER_D 0x00001ea0
+// GLOBAL: COPTER_D 0x00598ea0
 // G_ClearColor
-// GLOBAL: COPTER_D 0x00001ea4
+// GLOBAL: COPTER_D 0x00598ea4
 // G_numcellsrej
-// GLOBAL: COPTER_D 0x00001ea8
+// GLOBAL: COPTER_D 0x00598ea8
 // G_use_height_backplane
-// GLOBAL: COPTER_D 0x00001eac
+// GLOBAL: COPTER_D 0x00598eac
 // buffer1
-// GLOBAL: COPTER_D 0x00001eb0
+// GLOBAL: COPTER_D 0x00598eb0
 // G_diff_level
-// GLOBAL: COPTER_D 0x00001eb4
+// GLOBAL: COPTER_D 0x00598eb4
 // G_max_emptycel_size
-// GLOBAL: COPTER_D 0x00001eb8
+// GLOBAL: COPTER_D 0x00598eb8
 // gIDOfBuildingAvatarIsIn
-// GLOBAL: COPTER_D 0x00001ebc
+// GLOBAL: COPTER_D 0x00598ebc
 // G_video_mode
-// GLOBAL: COPTER_D 0x00001ec0
+// GLOBAL: COPTER_D 0x00598ec0
 // qwindow
-// GLOBAL: COPTER_D 0x00001ee0
+// GLOBAL: COPTER_D 0x00598ee0
 // swindow
-// GLOBAL: COPTER_D 0x00001efc
+// GLOBAL: COPTER_D 0x00598efc
 // S_pal
-// GLOBAL: COPTER_D 0x00001f00
+// GLOBAL: COPTER_D 0x00598f00
 // gameResolution
-// GLOBAL: COPTER_D 0x00001f04
+// GLOBAL: COPTER_D 0x00598f04
 // gszAppDirectory
-// GLOBAL: COPTER_D 0x00001f08
+// GLOBAL: COPTER_D 0x00598f08
 // bDone
-// GLOBAL: COPTER_D 0x00001f0c
+// GLOBAL: COPTER_D 0x00598f0c
 // bIsActive
-// GLOBAL: COPTER_D 0x00001f10
+// GLOBAL: COPTER_D 0x00598f10
 // bFullScreen
 
 
 // Contribution: 3:0002c7f8-0006caaf Module: 51, 8 byte alignment, uninitialized_data, read, write, 
-// GLOBAL: COPTER_D 0x0002c7f8
+// GLOBAL: COPTER_D 0x005c37f8
 // gShortestPath
-// GLOBAL: COPTER_D 0x0002c800
+// GLOBAL: COPTER_D 0x005c3800
 // gPoliceStations
-// GLOBAL: COPTER_D 0x0002c808
+// GLOBAL: COPTER_D 0x005c3808
 // G_CheatCodes
-// GLOBAL: COPTER_D 0x0002c820
+// GLOBAL: COPTER_D 0x005c3820
 // gHospitals
-// GLOBAL: COPTER_D 0x0002c828
+// GLOBAL: COPTER_D 0x005c3828
 // gRoadGraph
-// GLOBAL: COPTER_D 0x0002caa8
+// GLOBAL: COPTER_D 0x005c3aa8
 // gFireStations
-// GLOBAL: COPTER_D 0x0002cab0
+// GLOBAL: COPTER_D 0x005c3ab0
 // gScratchBuffer

@@ -18379,94 +18379,94 @@ void PopupMenuWindow::ResizeWindowToFitMenuItems() {
 
 
 // Contribution: 2:000029c0-00002a8b Module: 5, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x000029c0
+// GLOBAL: COPTER_D 0x005919c0
 // ??_7BoxWindow@@6B@
 
 
 // Contribution: 2:00002a90-00002b77 Module: 5, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00002a90
+// GLOBAL: COPTER_D 0x00591a90
 // ??_7TextWindow@@6B@
 
 
 // Contribution: 2:00002b78-00002c53 Module: 5, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00002b78
+// GLOBAL: COPTER_D 0x00591b78
 // ??_7ButtonWindow@@6B@
 
 
 // Contribution: 2:00002c58-00002d33 Module: 5, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00002c58
+// GLOBAL: COPTER_D 0x00591c58
 // ??_7CheckBoxWindow@@6B@
 
 
 // Contribution: 2:00002d38-00002e1b Module: 5, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00002d38
+// GLOBAL: COPTER_D 0x00591d38
 // ??_7RadioButtonWindow@@6B@
 
 
 // Contribution: 2:00002e20-00002ee3 Module: 5, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00002e20
+// GLOBAL: COPTER_D 0x00591e20
 // ??_7ButtonGroup@@6B@
 
 
 // Contribution: 2:00002ee8-00002fbf Module: 5, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00002ee8
+// GLOBAL: COPTER_D 0x00591ee8
 // ??_7SliderWindow@@6B@
 
 
 // Contribution: 2:00002fc0-000030c7 Module: 5, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00002fc0
+// GLOBAL: COPTER_D 0x00591fc0
 // ??_7ScrollBarWindow@@6B@
 
 
 // Contribution: 2:000030c8-0000321f Module: 5, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x000030c8
+// GLOBAL: COPTER_D 0x005920c8
 // ??_7ListBoxWindow@@6B@
 
 
 // Contribution: 2:00003220-0000337b Module: 5, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00003220
+// GLOBAL: COPTER_D 0x00592220
 // ??_7PopupMenuWindow@@6B@
 
 
 // Contribution: 3:00003ba0-00003c2e Module: 5, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x00003ba0
+// GLOBAL: COPTER_D 0x0059aba0
 // SZ_DEFAULT_BUTTON_IMAGE_FILE_NAME
-// GLOBAL: COPTER_D 0x00003ba4
+// GLOBAL: COPTER_D 0x0059aba4
 // SZ_DEFAULT_CHECKBOX_IMAGE_FILE_NAME
-// GLOBAL: COPTER_D 0x00003ba8
+// GLOBAL: COPTER_D 0x0059aba8
 // SZ_DEFAULT_RADIO_IMAGE_FILE_NAME
-// GLOBAL: COPTER_D 0x00003bac
+// GLOBAL: COPTER_D 0x0059abac
 // SZ_SLIDER_THUMB_IMAGE_V_FILE_NAME
-// GLOBAL: COPTER_D 0x00003bb0
+// GLOBAL: COPTER_D 0x0059abb0
 // SZ_SLIDER_THUMB_IMAGE_H_FILE_NAME
-// GLOBAL: COPTER_D 0x00003bb4
+// GLOBAL: COPTER_D 0x0059abb4
 // SZ_SLIDER_BACKGROUND_IMAGE_V_FILE_NAME
-// GLOBAL: COPTER_D 0x00003bb8
+// GLOBAL: COPTER_D 0x0059abb8
 // SZ_SLIDER_BACKGROUND_IMAGE_H_FILE_NAME
-// GLOBAL: COPTER_D 0x00003bbc
+// GLOBAL: COPTER_D 0x0059abbc
 // SZ_DEFAULT_SCROLLBAR_SLIDER_IMAGE_FILE_NAME
 
 
 // Contribution: 3:00003c30-00003c33 Module: 5, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00003c30
+// GLOBAL: COPTER_D 0x0059ac30
 // list<RadioButtonWindow *>::number_of_lists
 
 
 // Contribution: 3:00003c34-00003c37 Module: 5, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00003c34
+// GLOBAL: COPTER_D 0x0059ac34
 // list<RadioButtonWindow *>::last
 
 
 // Contribution: 3:00003c38-00003c3b Module: 5, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00003c38
+// GLOBAL: COPTER_D 0x0059ac38
 // list<RadioButtonWindow *>::next_avail
 
 
 // Contribution: 3:00003c3c-00003c3f Module: 5, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00003c3c
+// GLOBAL: COPTER_D 0x0059ac3c
 // list<RadioButtonWindow *>::free_list
 
 
 // Contribution: 3:00003c40-00003c43 Module: 5, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00003c40
+// GLOBAL: COPTER_D 0x0059ac40
 // list<RadioButtonWindow *>::buffer_list

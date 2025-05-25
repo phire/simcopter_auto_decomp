@@ -8064,9 +8064,9 @@ int32_t RoadGraph::SetElevation(unsigned short) {
 
 
 // Contribution: 2:00004430-0000447f Module: 155, 8 byte alignment, initialized_data, read, 
-// LOCAL: COPTER_D 0x00004430
+// LOCAL: COPTER_D 0x00593430
 // IndexToType
-// LOCAL: COPTER_D 0x00004440
+// LOCAL: COPTER_D 0x00593440
 // TypeToIndex2
 
 

@@ -489,35 +489,35 @@ int32_t S3WritePCXLine() {
 
 
 // Contribution: 2:000014f8-00001707 Module: 41, 8 byte alignment, initialized_data, read, 
-// LOCAL: COPTER_D 0x000014f8
+// LOCAL: COPTER_D 0x005904f8
 // TurnTable3
-// LOCAL: COPTER_D 0x00001578
+// LOCAL: COPTER_D 0x00590578
 // TurnTable2
-// LOCAL: COPTER_D 0x000015b8
+// LOCAL: COPTER_D 0x005905b8
 // IndexToType
-// LOCAL: COPTER_D 0x000015c8
+// LOCAL: COPTER_D 0x005905c8
 // TypeToIndex2
-// LOCAL: COPTER_D 0x00001608
+// LOCAL: COPTER_D 0x00590608
 // TILUT
-// LOCAL: COPTER_D 0x00001648
+// LOCAL: COPTER_D 0x00590648
 // OT
-// LOCAL: COPTER_D 0x00001688
+// LOCAL: COPTER_D 0x00590688
 // RRT
-// LOCAL: COPTER_D 0x000016c8
+// LOCAL: COPTER_D 0x005906c8
 // LRT
 
 
 // Contribution: 3:00002430-00002446 Module: 41, 4 byte alignment, initialized_data, read, write, 
-// LOCAL: COPTER_D 0x00002430
+// LOCAL: COPTER_D 0x00599430
 // S_ctr
 
 
 // Contribution: 3:0006cac0-0006d247 Module: 41, 8 byte alignment, uninitialized_data, read, write, 
-// LOCAL: COPTER_D 0x0006cac0
+// LOCAL: COPTER_D 0x00603ac0
 // wpal
-// LOCAL: COPTER_D 0x0006cdc0
+// LOCAL: COPTER_D 0x00603dc0
 // hdc
-// LOCAL: COPTER_D 0x0006cdc8
+// LOCAL: COPTER_D 0x00603dc8
 // pcx
-// LOCAL: COPTER_D 0x0006ce48
+// LOCAL: COPTER_D 0x00603e48
 // ppe

@@ -1776,11 +1776,11 @@ void UnRegisterResource() {
 
 
 // Contribution: 3:00005220-00005230 Module: 146, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x00005220
+// GLOBAL: COPTER_D 0x0059c220
 // bufferBad
-// GLOBAL: COPTER_D 0x00005224
+// GLOBAL: COPTER_D 0x0059c224
 // NextResource
-// GLOBAL: COPTER_D 0x00005228
+// GLOBAL: COPTER_D 0x0059c228
 // ResFileMemPool
-// GLOBAL: COPTER_D 0x0000522c
+// GLOBAL: COPTER_D 0x0059c22c
 // G_currmempool

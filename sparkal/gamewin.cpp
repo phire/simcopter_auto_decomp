@@ -2199,7 +2199,7 @@ long GameWindow::MySparkalWindowProc(void * __ptr32, uint32_t, uint32_t, long) {
 
 
 // Contribution: 2:00001470-000014cb Module: 43, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00001470
+// GLOBAL: COPTER_D 0x00590470
 // ??_7GameWindow@@6B@
 
 

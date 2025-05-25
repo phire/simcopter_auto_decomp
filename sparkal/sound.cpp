@@ -7230,29 +7230,29 @@ void DigitalSound::StopCompletionNotificationEstimationTimer() {
 
 
 // Contribution: 2:00000440-00000447 Module: 64, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00000440
+// GLOBAL: COPTER_D 0x0058f440
 // ??_7SoundSystem@@6B@
 
 
 // Contribution: 2:00000448-00000457 Module: 64, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00000448
+// GLOBAL: COPTER_D 0x0058f448
 // ??_7SoundManager@@6B@
 
 
 // Contribution: 2:00000458-00000483 Module: 64, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00000458
+// GLOBAL: COPTER_D 0x0058f458
 // ??_7Sound@@6B@
 
 
 // Contribution: 2:00000488-00000513 Module: 64, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00000488
+// GLOBAL: COPTER_D 0x0058f488
 // ??_7DigitalSound@@6B@
 
 
 // Contribution: 3:00000e58-0000134d Module: 64, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x00000e58
+// GLOBAL: COPTER_D 0x00597e58
 // SoundSystem::dwMaxWaveFormatExSize
-// GLOBAL: COPTER_D 0x00000e5c
+// GLOBAL: COPTER_D 0x00597e5c
 // Sound::lTotalMemoryUsage
-// GLOBAL: COPTER_D 0x00000e60
+// GLOBAL: COPTER_D 0x00597e60
 // DigitalSound::lpDirectSound

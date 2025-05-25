@@ -2105,23 +2105,23 @@ int32_t S3CameraGetBldAlt() {
 
 
 // Contribution: 3:0001ddb8-0001de10 Module: 175, 8 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x0001ddb8
+// GLOBAL: COPTER_D 0x005b4db8
 // G_camera_mode
-// GLOBAL: COPTER_D 0x0001ddc0
+// GLOBAL: COPTER_D 0x005b4dc0
 // S_camera_targpos2
-// GLOBAL: COPTER_D 0x0001ddd0
+// GLOBAL: COPTER_D 0x005b4dd0
 // S_camera_targpos1
-// GLOBAL: COPTER_D 0x0001dde0
+// GLOBAL: COPTER_D 0x005b4de0
 // S_camera_targpos3
-// GLOBAL: COPTER_D 0x0001ddec
+// GLOBAL: COPTER_D 0x005b4dec
 // InClose
-// GLOBAL: COPTER_D 0x0001ddf0
+// GLOBAL: COPTER_D 0x005b4df0
 // S_ctwk_min_dist
-// GLOBAL: COPTER_D 0x0001ddf4
+// GLOBAL: COPTER_D 0x005b4df4
 // S_ctwk_max_dist
-// GLOBAL: COPTER_D 0x0001ddf8
+// GLOBAL: COPTER_D 0x005b4df8
 // S_ctwk_height
-// GLOBAL: COPTER_D 0x0001ddfc
+// GLOBAL: COPTER_D 0x005b4dfc
 // S_curr_chase
-// GLOBAL: COPTER_D 0x0001de00
+// GLOBAL: COPTER_D 0x005b4e00
 // S_altdiff

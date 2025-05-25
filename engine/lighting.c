@@ -1758,26 +1758,26 @@ void VRFaceSetColor() {
 
 
 // Contribution: 3:00016c10-00016d6b Module: 132, 8 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x00016c10
+// GLOBAL: COPTER_D 0x005adc10
 // G_shadetab
-// GLOBAL: COPTER_D 0x00016d30
+// GLOBAL: COPTER_D 0x005add30
 // G_litevect1
-// GLOBAL: COPTER_D 0x00016d40
+// GLOBAL: COPTER_D 0x005add40
 // G_litevect2
-// GLOBAL: COPTER_D 0x00016d50
+// GLOBAL: COPTER_D 0x005add50
 // G_litevect3
-// LOCAL: COPTER_D 0x00016d5c
+// LOCAL: COPTER_D 0x005add5c
 // S_ambient
-// LOCAL: COPTER_D 0x00016d60
+// LOCAL: COPTER_D 0x005add60
 // S_intensity1
-// LOCAL: COPTER_D 0x00016d64
+// LOCAL: COPTER_D 0x005add64
 // S_intensity2
-// LOCAL: COPTER_D 0x00016d68
+// LOCAL: COPTER_D 0x005add68
 // S_intensity3
 
 
 // Contribution: 3:0006fa70-0006fe77 Module: 132, 8 byte alignment, uninitialized_data, read, write, 
-// LOCAL: COPTER_D 0x0006fa70
+// LOCAL: COPTER_D 0x00606a70
 // S_texres
-// LOCAL: COPTER_D 0x0006fa78
+// LOCAL: COPTER_D 0x00606a78
 // S_ctrs

@@ -3345,12 +3345,12 @@ long LogManager::GetStringIDFromLogEvent(const struct tagLogMissionEvent*) {
 
 
 // Contribution: 2:00003680-00003683 Module: 178, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00003680
+// GLOBAL: COPTER_D 0x00592680
 // ??_7MTimeLocalized@@6B@
 
 
 // Contribution: 3:000000a0-000000a3 Module: 178, 4 byte alignment, initialized_data, read, write, 
-// LOCAL: COPTER_D 0x000000a0
+// LOCAL: COPTER_D 0x005970a0
 // $S58
 
 
@@ -3358,30 +3358,30 @@ long LogManager::GetStringIDFromLogEvent(const struct tagLogMissionEvent*) {
 
 
 // Contribution: 3:0001d884-0001d887 Module: 178, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x0001d884
+// GLOBAL: COPTER_D 0x005b4884
 // list<tagLogBase *>::number_of_lists
 
 
 // Contribution: 3:0001d888-0001d88b Module: 178, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x0001d888
+// GLOBAL: COPTER_D 0x005b4888
 // list<tagLogBase *>::last
 
 
 // Contribution: 3:0001d88c-0001d88f Module: 178, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x0001d88c
+// GLOBAL: COPTER_D 0x005b488c
 // list<tagLogBase *>::next_avail
 
 
 // Contribution: 3:0001d890-0001d893 Module: 178, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x0001d890
+// GLOBAL: COPTER_D 0x005b4890
 // list<tagLogBase *>::free_list
 
 
 // Contribution: 3:0001d894-0001d897 Module: 178, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x0001d894
+// GLOBAL: COPTER_D 0x005b4894
 // list<tagLogBase *>::buffer_list
 
 
 // Contribution: 3:0006fe78-0006fe83 Module: 178, 8 byte alignment, uninitialized_data, read, write, 
-// GLOBAL: COPTER_D 0x0006fe78
+// GLOBAL: COPTER_D 0x00606e78
 // gLogManager

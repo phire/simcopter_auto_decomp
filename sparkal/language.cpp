@@ -3951,5 +3951,5 @@ int32_t EnumFontFamilyProcecure() {
 
 
 // Contribution: 3:00000664-000006a7 Module: 66, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x00000664
+// GLOBAL: COPTER_D 0x00597664
 // gDefaultLanguage

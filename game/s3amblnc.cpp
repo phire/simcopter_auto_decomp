@@ -1011,15 +1011,15 @@ void AmbulanceClass::LoadSaveData(struct _AUTO_LOAD_SAVE*) {
 
 
 // Contribution: 2:00004280-000042a7 Module: 160, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00004280
+// GLOBAL: COPTER_D 0x00593280
 // ??_7AmbulanceClass@@6B@
 
 
 // Contribution: 3:00020d18-00020dc5 Module: 160, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x00020d18
+// GLOBAL: COPTER_D 0x005b7d18
 // curAmbulances
 
 
 // Contribution: 3:000949b8-000949cb Module: 160, 8 byte alignment, uninitialized_data, read, write, 
-// GLOBAL: COPTER_D 0x000949b8
+// GLOBAL: COPTER_D 0x0062b9b8
 // ambulances

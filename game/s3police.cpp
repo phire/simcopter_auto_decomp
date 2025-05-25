@@ -2469,20 +2469,20 @@ void PoliceCarClass::LoadSaveData(struct _AUTO_LOAD_SAVE*) {
 
 
 // Contribution: 2:000042d0-0000430f Module: 158, 8 byte alignment, initialized_data, read, 
-// LOCAL: COPTER_D 0x000042d0
+// LOCAL: COPTER_D 0x005932d0
 // TILUT
 
 
 // Contribution: 2:00004310-00004337 Module: 158, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00004310
+// GLOBAL: COPTER_D 0x00593310
 // ??_7PoliceCarClass@@6B@
 
 
 // Contribution: 3:00020eb0-00021049 Module: 158, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x00020eb0
+// GLOBAL: COPTER_D 0x005b7eb0
 // curPoliceCars
 
 
 // Contribution: 3:000949e8-000949fb Module: 158, 8 byte alignment, uninitialized_data, read, write, 
-// GLOBAL: COPTER_D 0x000949e8
+// GLOBAL: COPTER_D 0x0062b9e8
 // policeCars

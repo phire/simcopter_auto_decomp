@@ -2808,7 +2808,7 @@ void SoundQueue::ReleaseMutex() {
 
 
 // Contribution: 2:000003f0-0000041b Module: 71, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x000003f0
+// GLOBAL: COPTER_D 0x0058f3f0
 // ??_7SoundQueue@@6B@
 
 
@@ -2816,25 +2816,25 @@ void SoundQueue::ReleaseMutex() {
 
 
 // Contribution: 3:00000354-00000357 Module: 71, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00000354
+// GLOBAL: COPTER_D 0x00597354
 // list<SoundQueueItem *>::number_of_lists
 
 
 // Contribution: 3:00000358-0000035b Module: 71, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00000358
+// GLOBAL: COPTER_D 0x00597358
 // list<SoundQueueItem *>::last
 
 
 // Contribution: 3:0000035c-0000035f Module: 71, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x0000035c
+// GLOBAL: COPTER_D 0x0059735c
 // list<SoundQueueItem *>::next_avail
 
 
 // Contribution: 3:00000360-00000363 Module: 71, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00000360
+// GLOBAL: COPTER_D 0x00597360
 // list<SoundQueueItem *>::free_list
 
 
 // Contribution: 3:00000364-00000367 Module: 71, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00000364
+// GLOBAL: COPTER_D 0x00597364
 // list<SoundQueueItem *>::buffer_list

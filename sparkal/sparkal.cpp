@@ -290,5 +290,5 @@ void SparkalDelay() {
 
 
 // Contribution: 3:00001580-00001583 Module: 56, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x00001580
+// GLOBAL: COPTER_D 0x00598580
 // _gSparkalApp

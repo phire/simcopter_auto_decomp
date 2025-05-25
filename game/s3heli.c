@@ -18002,119 +18002,119 @@ void S3HeliUserExit() {
 
 
 // Contribution: 2:00003688-00003897 Module: 176, 8 byte alignment, initialized_data, read, 
-// LOCAL: COPTER_D 0x00003688
+// LOCAL: COPTER_D 0x00592688
 // TurnTable3
-// LOCAL: COPTER_D 0x00003708
+// LOCAL: COPTER_D 0x00592708
 // TurnTable2
-// LOCAL: COPTER_D 0x00003748
+// LOCAL: COPTER_D 0x00592748
 // IndexToType
-// LOCAL: COPTER_D 0x00003758
+// LOCAL: COPTER_D 0x00592758
 // TypeToIndex2
-// LOCAL: COPTER_D 0x00003798
+// LOCAL: COPTER_D 0x00592798
 // TILUT
-// LOCAL: COPTER_D 0x000037d8
+// LOCAL: COPTER_D 0x005927d8
 // OT
-// LOCAL: COPTER_D 0x00003818
+// LOCAL: COPTER_D 0x00592818
 // RRT
-// LOCAL: COPTER_D 0x00003858
+// LOCAL: COPTER_D 0x00592858
 // LRT
 
 
 // Contribution: 3:0001d8c0-0001ddb4 Module: 176, 8 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x0001d8c0
+// GLOBAL: COPTER_D 0x005b48c0
 // S_htwk_landing_yspeed
-// GLOBAL: COPTER_D 0x0001d8c4
+// GLOBAL: COPTER_D 0x005b48c4
 // S_htwk_landing_pitch
-// GLOBAL: COPTER_D 0x0001d8c8
+// GLOBAL: COPTER_D 0x005b48c8
 // S_htwk_landing_slide
-// GLOBAL: COPTER_D 0x0001d8cc
+// GLOBAL: COPTER_D 0x005b48cc
 // S_htwk_landing_speed
-// GLOBAL: COPTER_D 0x0001d8d0
+// GLOBAL: COPTER_D 0x005b48d0
 // S_htwk_max_descent_rate
-// GLOBAL: COPTER_D 0x0001d8d4
+// GLOBAL: COPTER_D 0x005b48d4
 // S_htwk_bucket_fillrate
-// GLOBAL: COPTER_D 0x0001d8d8
+// GLOBAL: COPTER_D 0x005b48d8
 // S_htwk_bucket_dumprate
-// GLOBAL: COPTER_D 0x0001d8dc
+// GLOBAL: COPTER_D 0x005b48dc
 // S_htwk_rope_loadfactor
-// GLOBAL: COPTER_D 0x0001d8e0
+// GLOBAL: COPTER_D 0x005b48e0
 // S_htwk_rope_tension
-// GLOBAL: COPTER_D 0x0001d8e4
+// GLOBAL: COPTER_D 0x005b48e4
 // S_htwk_water_throwfact
-// GLOBAL: COPTER_D 0x0001d8e8
+// GLOBAL: COPTER_D 0x005b48e8
 // S_htwk_watercannon_speed
-// GLOBAL: COPTER_D 0x0001d8ec
+// GLOBAL: COPTER_D 0x005b48ec
 // S_htwk_firedmg_alt_min
-// GLOBAL: COPTER_D 0x0001d8f0
+// GLOBAL: COPTER_D 0x005b48f0
 // S_htwk_firedmg_alt_max
-// GLOBAL: COPTER_D 0x0001d8f4
+// GLOBAL: COPTER_D 0x005b48f4
 // S_htwk_max_helialt
-// GLOBAL: COPTER_D 0x0001d8f8
+// GLOBAL: COPTER_D 0x005b48f8
 // S_htwk_collide_damage_val
-// GLOBAL: COPTER_D 0x0001d8fc
+// GLOBAL: COPTER_D 0x005b48fc
 // S_htwk_depreciation
-// LOCAL: COPTER_D 0x0001d900
+// LOCAL: COPTER_D 0x005b4900
 // ControlNoise
-// LOCAL: COPTER_D 0x0001d904
+// LOCAL: COPTER_D 0x005b4904
 // S_sound_frames
-// LOCAL: COPTER_D 0x0001d908
+// LOCAL: COPTER_D 0x005b4908
 // RopeSeg
-// LOCAL: COPTER_D 0x0001d90c
+// LOCAL: COPTER_D 0x005b490c
 // RopeDim
-// GLOBAL: COPTER_D 0x0001d910
+// GLOBAL: COPTER_D 0x005b4910
 // G_helidir
-// GLOBAL: COPTER_D 0x0001d91c
+// GLOBAL: COPTER_D 0x005b491c
 // G_helibase_found
-// GLOBAL: COPTER_D 0x0001d920
+// GLOBAL: COPTER_D 0x005b4920
 // G_apachebase_found
-// GLOBAL: COPTER_D 0x0001d924
+// GLOBAL: COPTER_D 0x005b4924
 // G_apache_placed
-// GLOBAL: COPTER_D 0x0001d928
+// GLOBAL: COPTER_D 0x005b4928
 // G_uheli_objalt
-// GLOBAL: COPTER_D 0x0001d92c
+// GLOBAL: COPTER_D 0x005b492c
 // G_SpotLiteXRotation
-// GLOBAL: COPTER_D 0x0001d930
+// GLOBAL: COPTER_D 0x005b4930
 // G_SpotLiteYRotation
-// LOCAL: COPTER_D 0x0001d934
+// LOCAL: COPTER_D 0x005b4934
 // S_test_frames
-// LOCAL: COPTER_D 0x0001d938
+// LOCAL: COPTER_D 0x005b4938
 // S_avoiding
-// LOCAL: COPTER_D 0x0001d93c
+// LOCAL: COPTER_D 0x005b493c
 // S_targalt
-// GLOBAL: COPTER_D 0x0001d940
+// GLOBAL: COPTER_D 0x005b4940
 // G_helis
-// GLOBAL: COPTER_D 0x0001d968
+// GLOBAL: COPTER_D 0x005b4968
 // G_uheli
-// GLOBAL: COPTER_D 0x0001d96c
+// GLOBAL: COPTER_D 0x005b496c
 // G_testheli
-// LOCAL: COPTER_D 0x0001d970
+// LOCAL: COPTER_D 0x005b4970
 // S_numhelis
-// GLOBAL: COPTER_D 0x0001d978
+// GLOBAL: COPTER_D 0x005b4978
 // S_helitype_data
-// LOCAL: COPTER_D 0x0001dc90
+// LOCAL: COPTER_D 0x005b4c90
 // S_bracket_loc
-// LOCAL: COPTER_D 0x0001dc9c
+// LOCAL: COPTER_D 0x005b4c9c
 // S_shadalt
-// LOCAL: COPTER_D 0x0001dca0
+// LOCAL: COPTER_D 0x005b4ca0
 // S_spotdist
-// LOCAL: COPTER_D 0x0001dca4
+// LOCAL: COPTER_D 0x005b4ca4
 // HeliMIFFID
 
 
 // Contribution: 3:0006feb0-000702b7 Module: 176, 8 byte alignment, uninitialized_data, read, write, 
-// LOCAL: COPTER_D 0x0006feb0
+// LOCAL: COPTER_D 0x00606eb0
 // lsheli
-// LOCAL: COPTER_D 0x000701e0
+// LOCAL: COPTER_D 0x006071e0
 // S_spotvect
-// LOCAL: COPTER_D 0x000701ec
+// LOCAL: COPTER_D 0x006071ec
 // S_shadbmp
-// LOCAL: COPTER_D 0x000701f0
+// LOCAL: COPTER_D 0x006071f0
 // S_turbyaw
-// LOCAL: COPTER_D 0x00070218
+// LOCAL: COPTER_D 0x00607218
 // S_spotmat
-// LOCAL: COPTER_D 0x00070258
+// LOCAL: COPTER_D 0x00607258
 // S_sound_loc
-// LOCAL: COPTER_D 0x00070268
+// LOCAL: COPTER_D 0x00607268
 // S_turbslide
-// LOCAL: COPTER_D 0x00070290
+// LOCAL: COPTER_D 0x00607290
 // S_turbpitch

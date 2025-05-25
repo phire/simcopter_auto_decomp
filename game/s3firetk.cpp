@@ -1547,15 +1547,15 @@ void FireEngineClass::LoadSaveData(struct _AUTO_LOAD_SAVE*) {
 
 
 // Contribution: 2:000042a8-000042cf Module: 159, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x000042a8
+// GLOBAL: COPTER_D 0x005932a8
 // ??_7FireEngineClass@@6B@
 
 
 // Contribution: 3:00020dc8-00020eac Module: 159, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x00020dc8
+// GLOBAL: COPTER_D 0x005b7dc8
 // curFireTrucks
 
 
 // Contribution: 3:000949d0-000949e3 Module: 159, 8 byte alignment, uninitialized_data, read, write, 
-// GLOBAL: COPTER_D 0x000949d0
+// GLOBAL: COPTER_D 0x0062b9d0
 // fireTrucks

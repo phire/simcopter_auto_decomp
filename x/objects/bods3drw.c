@@ -3273,32 +3273,32 @@ void DrawHorzLine() {
 
 
 // Contribution: 2:000047a0-00004a17 Module: 186, 8 byte alignment, initialized_data, read, 
-// LOCAL: COPTER_D 0x000047a0
+// LOCAL: COPTER_D 0x005937a0
 // TurnTable3
-// LOCAL: COPTER_D 0x00004820
+// LOCAL: COPTER_D 0x00593820
 // TurnTable2
-// LOCAL: COPTER_D 0x00004860
+// LOCAL: COPTER_D 0x00593860
 // IndexToType
-// LOCAL: COPTER_D 0x00004870
+// LOCAL: COPTER_D 0x00593870
 // TypeToIndex2
-// LOCAL: COPTER_D 0x000048b0
+// LOCAL: COPTER_D 0x005938b0
 // TILUT
-// LOCAL: COPTER_D 0x000048f0
+// LOCAL: COPTER_D 0x005938f0
 // OT
-// LOCAL: COPTER_D 0x00004930
+// LOCAL: COPTER_D 0x00593930
 // RRT
-// LOCAL: COPTER_D 0x00004970
+// LOCAL: COPTER_D 0x00593970
 // LRT
 
 
 // Contribution: 3:00027f28-00028474 Module: 186, 8 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x00027f28
+// GLOBAL: COPTER_D 0x005bef28
 // Pbufwidth
-// GLOBAL: COPTER_D 0x00027f2c
+// GLOBAL: COPTER_D 0x005bef2c
 // Pwinwidth
-// GLOBAL: COPTER_D 0x00027f30
+// GLOBAL: COPTER_D 0x005bef30
 // Pwinheight
-// GLOBAL: COPTER_D 0x00027f38
+// GLOBAL: COPTER_D 0x005bef38
 // G_figureHeadShapeRatio
-// GLOBAL: COPTER_D 0x00027f40
+// GLOBAL: COPTER_D 0x005bef40
 // G_figureShadeSpread

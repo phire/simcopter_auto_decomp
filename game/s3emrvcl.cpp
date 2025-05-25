@@ -2868,12 +2868,12 @@ void EmergencyVehicleClass::LoadSaveData(struct _AUTO_LOAD_SAVE*) {
 
 
 // Contribution: 2:00004480-000044bf Module: 154, 8 byte alignment, initialized_data, read, 
-// LOCAL: COPTER_D 0x00004480
+// LOCAL: COPTER_D 0x00593480
 // TILUT
 
 
 // Contribution: 2:000044c0-000044e7 Module: 154, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x000044c0
+// GLOBAL: COPTER_D 0x005934c0
 // ??_7EmergencyVehicleClass@@6B@
 
 

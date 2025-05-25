@@ -1433,11 +1433,11 @@ class ostream& operator<<() {
 
 
 // Contribution: 3:00000028-00000033 Module: 58, 4 byte alignment, initialized_data, read, write, 
-// LOCAL: COPTER_D 0x00000028
+// LOCAL: COPTER_D 0x00597028
 // $S15
-// LOCAL: COPTER_D 0x0000002c
+// LOCAL: COPTER_D 0x0059702c
 // $S18
-// LOCAL: COPTER_D 0x00000030
+// LOCAL: COPTER_D 0x00597030
 // $S21
 
 
@@ -1445,7 +1445,7 @@ class ostream& operator<<() {
 
 
 // Contribution: 3:0002c600-0002c623 Module: 58, 8 byte alignment, uninitialized_data, read, write, 
-// GLOBAL: COPTER_D 0x0002c608
+// GLOBAL: COPTER_D 0x005c3608
 // MTime::RefDate
-// GLOBAL: COPTER_D 0x0002c618
+// GLOBAL: COPTER_D 0x005c3618
 // MTime::MaxDate

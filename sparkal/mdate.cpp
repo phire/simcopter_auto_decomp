@@ -2313,20 +2313,20 @@ class ostream& operator<<() {
 
 
 // Contribution: 2:00003380-000033bf Module: 2, 8 byte alignment, initialized_data, read, 
-// LOCAL: COPTER_D 0x00003380
+// LOCAL: COPTER_D 0x00592380
 // DaysInMonth
-// LOCAL: COPTER_D 0x00003390
+// LOCAL: COPTER_D 0x00592390
 // FirstDayOfEachMonth
 
 
 // Contribution: 3:00003c98-00003ec1 Module: 2, 8 byte alignment, initialized_data, read, write, 
-// LOCAL: COPTER_D 0x00003c98
+// LOCAL: COPTER_D 0x0059ac98
 // MonthNames
-// LOCAL: COPTER_D 0x00003cc8
+// LOCAL: COPTER_D 0x0059acc8
 // UCMonthNames
-// LOCAL: COPTER_D 0x00003cf8
+// LOCAL: COPTER_D 0x0059acf8
 // WeekDayNames
-// LOCAL: COPTER_D 0x00003d18
+// LOCAL: COPTER_D 0x0059ad18
 // UCWeekDayNames
 
 

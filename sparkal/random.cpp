@@ -232,10 +232,10 @@ unsigned long Random::operator()(unsigned long) {
 
 
 // Contribution: 3:00000084-00000087 Module: 22, 4 byte alignment, initialized_data, read, write, 
-// LOCAL: COPTER_D 0x00000084
+// LOCAL: COPTER_D 0x00597084
 // $S3
 
 
 // Contribution: 3:0006db18-0006dbfb Module: 22, 8 byte alignment, uninitialized_data, read, write, 
-// GLOBAL: COPTER_D 0x0006db18
+// GLOBAL: COPTER_D 0x00604b18
 // gRandom

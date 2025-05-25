@@ -3411,21 +3411,21 @@ void MessageDisplayManager::AddNewMessage(class basic_string<char>&) {
 
 
 // Contribution: 2:00001708-000017cb Module: 40, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00001708
+// GLOBAL: COPTER_D 0x00590708
 // ??_7MissionLogWindow@@6B@
 
 
 // Contribution: 2:000017d0-000017df Module: 40, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x000017d0
+// GLOBAL: COPTER_D 0x005907d0
 // ??_7MessageDisplayManager@@6B@
 
 
 // Contribution: 3:00002448-00002494 Module: 40, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x00002448
+// GLOBAL: COPTER_D 0x00599448
 // SZ_MISSION_LOG_IMAGE_FILE_NAME
-// GLOBAL: COPTER_D 0x0000244c
+// GLOBAL: COPTER_D 0x0059944c
 // SZ_MISSION_LOG_WINDOW_BUTTON_IMAGE_FILE_NAME
-// GLOBAL: COPTER_D 0x00002450
+// GLOBAL: COPTER_D 0x00599450
 // SZ_MISSION_LOG_WINDOW_SCROLL_BAR_IMAGE_FILE_NAME
-// GLOBAL: COPTER_D 0x00002454
+// GLOBAL: COPTER_D 0x00599454
 // SZ_MISSION_LOG_WINDOW_BACKGROUND_IMAGE_FILE_NAME

@@ -66,5 +66,5 @@ void VREngineInit() {
 
 
 // Contribution: 3:0002b770-0002b78b Module: 95, 8 byte alignment, initialized_data, read, write, 
-// LOCAL: COPTER_D 0x0002b770
+// LOCAL: COPTER_D 0x005c2770
 // win

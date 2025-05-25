@@ -5621,31 +5621,31 @@ int32_t PlaneClass::MIFFSave(void * __ptr32) {
 
 
 // Contribution: 2:00004220-00004233 Module: 163, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00004220
+// GLOBAL: COPTER_D 0x00593220
 // ??_7PlaneClass@@6B@
 
 
 // Contribution: 3:000000a8-000000ab Module: 163, 4 byte alignment, initialized_data, read, write, 
-// LOCAL: COPTER_D 0x000000a8
+// LOCAL: COPTER_D 0x005970a8
 // $S9
 
 
 // Contribution: 3:00020690-0002080a Module: 163, 8 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x00020690
+// GLOBAL: COPTER_D 0x005b7690
 // PlaneClass::lastScannedLocation
-// GLOBAL: COPTER_D 0x00020698
+// GLOBAL: COPTER_D 0x005b7698
 // PlaneClass::sPlaneModelSet
 
 
 // Contribution: 3:0002080c-0002082c Module: 163, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x0002080c
+// GLOBAL: COPTER_D 0x005b780c
 // ??_C@_0CB@DLKO@C?3?2Copter?2Source?2Game?2S3MOBILE?4H@
 
 
 // Contribution: 3:000946e8-000947b0 Module: 163, 8 byte alignment, uninitialized_data, read, write, 
-// GLOBAL: COPTER_D 0x000946e8
+// GLOBAL: COPTER_D 0x0062b6e8
 // PlaneClass::lsPlane
-// GLOBAL: COPTER_D 0x000947a8
+// GLOBAL: COPTER_D 0x0062b7a8
 // planes
-// LOCAL: COPTER_D 0x000947b0
+// LOCAL: COPTER_D 0x0062b7b0
 // $S6

@@ -4461,7 +4461,7 @@ int32_t FileServices::GetPathForFileString(int32_t, int32_t, class basic_string<
 
 
 // Contribution: 3:00000088-0000008b Module: 21, 4 byte alignment, initialized_data, read, write, 
-// LOCAL: COPTER_D 0x00000088
+// LOCAL: COPTER_D 0x00597088
 // $S33
 
 
@@ -4469,55 +4469,55 @@ int32_t FileServices::GetPathForFileString(int32_t, int32_t, class basic_string<
 
 
 // Contribution: 3:000030c4-000030ca Module: 21, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x000030c4
+// GLOBAL: COPTER_D 0x0059a0c4
 // ??_C@_06GHGC@tweak?2?$AA@
 
 
 // Contribution: 3:000030cc-000030ce Module: 21, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x000030cc
+// GLOBAL: COPTER_D 0x0059a0cc
 // ??_C@_02IHAM@X?2?$AA@
 
 
 // Contribution: 3:000030d0-000030d6 Module: 21, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x000030d0
+// GLOBAL: COPTER_D 0x0059a0d0
 // ??_C@_06LEOC@fonts?2?$AA@
 
 
 // Contribution: 3:000030d8-000030dc Module: 21, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x000030d8
+// GLOBAL: COPTER_D 0x0059a0d8
 // ??_C@_04IAOI@geo?2?$AA@
 
 
 // Contribution: 3:000030e0-000030e4 Module: 21, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x000030e0
+// GLOBAL: COPTER_D 0x0059a0e0
 // ??_C@_04BOOP@bmp?2?$AA@
 
 
 // Contribution: 3:000030e8-000030f6 Module: 21, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x000030e8
+// GLOBAL: COPTER_D 0x0059a0e8
 // ??_C@_0P@CBA@cities?2career?2?$AA@
 
 
 // Contribution: 3:000030f8-000030ff Module: 21, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x000030f8
+// GLOBAL: COPTER_D 0x0059a0f8
 // ??_C@_07JPDD@cities?2?$AA@
 
 
 // Contribution: 3:00003100-0000310c Module: 21, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00003100
+// GLOBAL: COPTER_D 0x0059a100
 // ??_C@_0N@HBG@sound?2radio?2?$AA@
 
 
 // Contribution: 3:00003110-00003116 Module: 21, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00003110
+// GLOBAL: COPTER_D 0x0059a110
 // ??_C@_06CDIJ@sound?2?$AA@
 
 
 // Contribution: 3:00003118-0000311c Module: 21, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00003118
+// GLOBAL: COPTER_D 0x0059a118
 // ??_C@_04IKJO@smk?2?$AA@
 
 
 // Contribution: 3:0006dc00-0006dc73 Module: 21, 8 byte alignment, uninitialized_data, read, write, 
-// GLOBAL: COPTER_D 0x0006dc00
+// GLOBAL: COPTER_D 0x00604c00
 // gFileServices

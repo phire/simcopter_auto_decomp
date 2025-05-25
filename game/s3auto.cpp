@@ -15008,53 +15008,53 @@ void AutomobileClass::ChangeAutoColor() {
 
 
 // Contribution: 2:00003cc0-00003d97 Module: 171, 8 byte alignment, initialized_data, read, 
-// LOCAL: COPTER_D 0x00003cc0
+// LOCAL: COPTER_D 0x00592cc0
 // TurnTable2
-// LOCAL: COPTER_D 0x00003d00
+// LOCAL: COPTER_D 0x00592d00
 // IndexToType
-// LOCAL: COPTER_D 0x00003d10
+// LOCAL: COPTER_D 0x00592d10
 // TILUT
-// LOCAL: COPTER_D 0x00003d50
+// LOCAL: COPTER_D 0x00592d50
 // OT
 
 
 // Contribution: 2:00003d98-00003dbb Module: 171, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00003d98
+// GLOBAL: COPTER_D 0x00592d98
 // ??_7AutomobileClass@@6B@
 
 
 // Contribution: 3:0001e2c4-0001e7b5 Module: 171, 4 byte alignment, initialized_data, read, write, 
-// LOCAL: COPTER_D 0x0001e2c4
+// LOCAL: COPTER_D 0x005b52c4
 // lastSpeederID
-// GLOBAL: COPTER_D 0x0001e2c8
+// GLOBAL: COPTER_D 0x005b52c8
 // curAutos
 
 
 // Contribution: 3:0001e7b8-0001e7c3 Module: 171, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x0001e7b8
+// GLOBAL: COPTER_D 0x005b57b8
 // ??_C@_0M@DOIM@cellPointer?$AA@
 
 
 // Contribution: 3:0001e7c4-0001e7e4 Module: 171, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x0001e7c4
+// GLOBAL: COPTER_D 0x005b57c4
 // ??_C@_0CB@DNKM@C?3?2Copter?2source?2game?2S3MOBILE?4H@
 
 
 // Contribution: 3:0001e7e8-0001e9cf Module: 171, 8 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x0001e7e8
+// GLOBAL: COPTER_D 0x005b57e8
 // connections
 
 
 // Contribution: 3:00071c28-00072097 Module: 171, 8 byte alignment, uninitialized_data, read, write, 
-// LOCAL: COPTER_D 0x00071c28
+// LOCAL: COPTER_D 0x00608c28
 // S_autols
-// GLOBAL: COPTER_D 0x00071f6c
+// GLOBAL: COPTER_D 0x00608f6c
 // AutomobileClass::fireHoseDist
-// GLOBAL: COPTER_D 0x00071f70
+// GLOBAL: COPTER_D 0x00608f70
 // AutomobileClass::ambSirenDist
-// GLOBAL: COPTER_D 0x00071f74
+// GLOBAL: COPTER_D 0x00608f74
 // AutomobileClass::policeSirenDist
-// GLOBAL: COPTER_D 0x00071f78
+// GLOBAL: COPTER_D 0x00608f78
 // AutomobileClass::fireSirenDist
-// GLOBAL: COPTER_D 0x00071f80
+// GLOBAL: COPTER_D 0x00608f80
 // cars

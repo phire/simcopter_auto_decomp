@@ -12604,29 +12604,29 @@ int32_t TrainClass::MIFFSave(void * __ptr32) {
 
 
 // Contribution: 2:00004238-00004253 Module: 162, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00004238
+// GLOBAL: COPTER_D 0x00593238
 // ??_7TrainClass@@6B@
 
 
 // Contribution: 3:000000ac-000000af Module: 162, 4 byte alignment, initialized_data, read, write, 
-// LOCAL: COPTER_D 0x000000ac
+// LOCAL: COPTER_D 0x005970ac
 // $S8
 
 
 // Contribution: 3:00020830-00020bb3 Module: 162, 8 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x00020830
+// GLOBAL: COPTER_D 0x005b7830
 // TrainClass::lastScannedLocation
 
 
 // Contribution: 3:00020bb8-00020ca7 Module: 162, 8 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00020bb8
+// GLOBAL: COPTER_D 0x005b7bb8
 // connections
 
 
 // Contribution: 3:000947b8-00094998 Module: 162, 8 byte alignment, uninitialized_data, read, write, 
-// GLOBAL: COPTER_D 0x000947b8
+// GLOBAL: COPTER_D 0x0062b7b8
 // TrainClass::lsTrain
-// GLOBAL: COPTER_D 0x00094994
+// GLOBAL: COPTER_D 0x0062b994
 // trains
-// LOCAL: COPTER_D 0x00094998
+// LOCAL: COPTER_D 0x0062b998
 // $S5

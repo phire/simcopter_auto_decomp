@@ -1599,32 +1599,32 @@ unsigned long CFlatImage::Unlock() {
 
 
 // Contribution: 2:00002050-0000206b Module: 24, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00002050
+// GLOBAL: COPTER_D 0x00591050
 // ??_7IFlatImage@@6B@
 
 
 // Contribution: 2:00002070-0000208f Module: 24, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00002070
+// GLOBAL: COPTER_D 0x00591070
 // ??_7CFlatImage@@6B@
 
 
 // Contribution: 3:00002da0-00003066 Module: 24, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x00002da0
+// GLOBAL: COPTER_D 0x00599da0
 // IFlatImage::lTotalMemoryUsage
-// GLOBAL: COPTER_D 0x00002da4
+// GLOBAL: COPTER_D 0x00599da4
 // IFlatImage::lTotalLockCount
 
 
 // Contribution: 3:00003068-0000307f Module: 24, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00003068
+// GLOBAL: COPTER_D 0x0059a068
 // ??_C@_0BI@MJPB@theHandle?5?$CG?$CG?5lockedData?$AA@
 
 
 // Contribution: 3:00003080-0000308e Module: 24, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00003080
+// GLOBAL: COPTER_D 0x0059a080
 // ??_C@_0P@EIPH@?$CIint?$CJtheHandle?$AA@
 
 
 // Contribution: 3:00003090-000030a1 Module: 24, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00003090
+// GLOBAL: COPTER_D 0x0059a090
 // ??_C@_0BC@NODK@theHandle?5?$CG?$CG?5size?$AA@

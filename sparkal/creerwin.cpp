@@ -3164,33 +3164,33 @@ void CareerWindow::CitySelectionFrame::FillSourceRects(class MRect*) {
 
 
 // Contribution: 2:00001e30-00001ef3 Module: 31, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00001e30
+// GLOBAL: COPTER_D 0x00590e30
 // ??_7CareerWindow@@6B@
 
 
 // Contribution: 2:00001ef4-00001ef7 Module: 31, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00001ef4
+// GLOBAL: COPTER_D 0x00590ef4
 // ??_7CitySelectionFrame@CareerWindow@@6B@
 
 
 // Contribution: 3:00000064-0000006b Module: 31, 4 byte alignment, initialized_data, read, write, 
-// LOCAL: COPTER_D 0x00000064
+// LOCAL: COPTER_D 0x00597064
 // $S65
-// LOCAL: COPTER_D 0x00000068
+// LOCAL: COPTER_D 0x00597068
 // $S68
 
 
 // Contribution: 3:00002a84-00002ab3 Module: 31, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x00002a84
+// GLOBAL: COPTER_D 0x00599a84
 // SZ_CAREER_WINDOW_IMAGE_FILE_NAME
-// GLOBAL: COPTER_D 0x00002a88
+// GLOBAL: COPTER_D 0x00599a88
 // SZ_CAREER_WINDOW_SELECTION_FILE_NAME
-// GLOBAL: COPTER_D 0x00002a8c
+// GLOBAL: COPTER_D 0x00599a8c
 // SZ_CAREER_WINDOW_BUTTON_FILE_NAME
 
 
 // Contribution: 3:0006d448-0006d44f Module: 31, 4 byte alignment, uninitialized_data, read, write, 
-// LOCAL: COPTER_D 0x0006d448
+// LOCAL: COPTER_D 0x00604448
 // colorTextGamePaletteNormal
-// LOCAL: COPTER_D 0x0006d44c
+// LOCAL: COPTER_D 0x0060444c
 // colorTextGamePaletteHighlighted

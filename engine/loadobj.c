@@ -6402,11 +6402,11 @@ int32_t VRStObjPolyHit() {
 
 
 // Contribution: 3:0006fa5c-0006fa69 Module: 147, 4 byte alignment, uninitialized_data, read, write, 
-// LOCAL: COPTER_D 0x0006fa5c
+// LOCAL: COPTER_D 0x00606a5c
 // ObjDataSize
-// LOCAL: COPTER_D 0x0006fa60
+// LOCAL: COPTER_D 0x00606a60
 // ObjData
-// LOCAL: COPTER_D 0x0006fa64
+// LOCAL: COPTER_D 0x00606a64
 // Tree
-// LOCAL: COPTER_D 0x0006fa68
+// LOCAL: COPTER_D 0x00606a68
 // BSPIndex

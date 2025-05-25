@@ -1637,18 +1637,18 @@ void S3ExplosionDriver() {
 
 
 // Contribution: 3:00020380-00020387 Module: 166, 4 byte alignment, initialized_data, read, write, 
-// LOCAL: COPTER_D 0x00020380
+// LOCAL: COPTER_D 0x005b7380
 // S_num_expls
-// LOCAL: COPTER_D 0x00020384
+// LOCAL: COPTER_D 0x005b7384
 // S_num_smoke
 
 
 // Contribution: 3:00093578-00094547 Module: 166, 8 byte alignment, uninitialized_data, read, write, 
-// LOCAL: COPTER_D 0x00093578
+// LOCAL: COPTER_D 0x0062a578
 // S_explosions
-// LOCAL: COPTER_D 0x00093988
+// LOCAL: COPTER_D 0x0062a988
 // S_spark_vectors
-// LOCAL: COPTER_D 0x00093a30
+// LOCAL: COPTER_D 0x0062aa30
 // S_explseq
-// LOCAL: COPTER_D 0x00093a58
+// LOCAL: COPTER_D 0x0062aa58
 // S_smoke

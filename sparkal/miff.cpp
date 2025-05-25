@@ -2577,5 +2577,5 @@ long MIFF::WriteEnd() {
 
 
 // Contribution: 2:00002950-000029bf Module: 6, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00002950
+// GLOBAL: COPTER_D 0x00591950
 // ??_7MIFF@@6B@

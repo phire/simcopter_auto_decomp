@@ -1375,32 +1375,32 @@ void S3SetDayNight() {
 
 
 // Contribution: 3:0001d898-0001d8bb Module: 177, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x0001d898
+// GLOBAL: COPTER_D 0x005b4898
 // thetaspeed
-// GLOBAL: COPTER_D 0x0001d89c
+// GLOBAL: COPTER_D 0x005b489c
 // phispeed
-// GLOBAL: COPTER_D 0x0001d8a0
+// GLOBAL: COPTER_D 0x005b48a0
 // radius
-// GLOBAL: COPTER_D 0x0001d8a4
+// GLOBAL: COPTER_D 0x005b48a4
 // circley
-// GLOBAL: COPTER_D 0x0001d8a8
+// GLOBAL: COPTER_D 0x005b48a8
 // yposcilate
-// GLOBAL: COPTER_D 0x0001d8ac
+// GLOBAL: COPTER_D 0x005b48ac
 // ynoscilate
-// GLOBAL: COPTER_D 0x0001d8b0
+// GLOBAL: COPTER_D 0x005b48b0
 // S_hover_ht
-// GLOBAL: COPTER_D 0x0001d8b4
+// GLOBAL: COPTER_D 0x005b48b4
 // build_insert
-// GLOBAL: COPTER_D 0x0001d8b8
+// GLOBAL: COPTER_D 0x005b48b8
 // G_zoom_level
 
 
 // Contribution: 3:0006fe88-0006feab Module: 177, 8 byte alignment, uninitialized_data, read, write, 
-// LOCAL: COPTER_D 0x0006fe88
+// LOCAL: COPTER_D 0x00606e88
 // S_rotdelta
-// LOCAL: COPTER_D 0x0006fe8c
+// LOCAL: COPTER_D 0x00606e8c
 // S_posdelta
-// LOCAL: COPTER_D 0x0006fe90
+// LOCAL: COPTER_D 0x00606e90
 // S_last_viewvect
-// LOCAL: COPTER_D 0x0006fea0
+// LOCAL: COPTER_D 0x00606ea0
 // S_last_viewpos

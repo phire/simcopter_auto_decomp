@@ -2512,10 +2512,10 @@ long CSparkalWindow::MySparkalWindowProc(void * __ptr32, uint32_t, uint32_t, lon
 
 
 // Contribution: 2:00001ef8-00001f2b Module: 30, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00001ef8
+// GLOBAL: COPTER_D 0x00590ef8
 // ??_7CSparkalWindow@@6B@
 
 
 // Contribution: 3:00002ab8-00002b8b Module: 30, 8 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x00002ab8
+// GLOBAL: COPTER_D 0x00599ab8
 // gWindowClassName

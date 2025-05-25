@@ -19711,12 +19711,12 @@ public: virtual __thiscall ResFile::~ResFile(void) {
 
 
 // Contribution: 2:00004508-00004517 Module: 200, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00004508
+// GLOBAL: COPTER_D 0x00593508
 // ??_7FlatResFile@@6B@
 
 
 // Contribution: 2:00004518-00004527 Module: 200, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00004518
+// GLOBAL: COPTER_D 0x00593518
 // ??_7ResFile@@6B@
 
 
@@ -19724,22 +19724,22 @@ public: virtual __thiscall ResFile::~ResFile(void) {
 
 
 // Contribution: 2:00004590-000045a3 Module: 200, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00004590
+// GLOBAL: COPTER_D 0x00593590
 // ??_7cAvatar@@6BYObjLang@@@
 
 
 // Contribution: 2:000045a8-000045c3 Module: 200, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x000045a8
+// GLOBAL: COPTER_D 0x005935a8
 // ??_7cAvatar@@6BTreeSim@@@
 
 
 // Contribution: 2:000045c8-000045db Module: 200, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x000045c8
+// GLOBAL: COPTER_D 0x005935c8
 // ??_7cYObject@@6BYObjLang@@@
 
 
 // Contribution: 2:000045e0-000045fb Module: 200, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x000045e0
+// GLOBAL: COPTER_D 0x005935e0
 // ??_7cYObject@@6BTreeSim@@@
 
 
@@ -19756,302 +19756,302 @@ public: virtual __thiscall ResFile::~ResFile(void) {
 
 
 // Contribution: 3:000000b0-000000bb Module: 200, 4 byte alignment, initialized_data, read, write, 
-// LOCAL: COPTER_D 0x000000b0
+// LOCAL: COPTER_D 0x005970b0
 // $S76
-// LOCAL: COPTER_D 0x000000b4
+// LOCAL: COPTER_D 0x005970b4
 // $S82
-// LOCAL: COPTER_D 0x000000b8
+// LOCAL: COPTER_D 0x005970b8
 // $S87
 
 
 // Contribution: 3:00021644-00024974 Module: 200, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x00021644
+// GLOBAL: COPTER_D 0x005b8644
 // gPersonBeamingSlices
-// GLOBAL: COPTER_D 0x00021648
+// GLOBAL: COPTER_D 0x005b8648
 // gPersonBeamingForwardWeight
-// GLOBAL: COPTER_D 0x0002164c
+// GLOBAL: COPTER_D 0x005b864c
 // gPersonBeamingSlicesSlice
-// GLOBAL: COPTER_D 0x00021650
+// GLOBAL: COPTER_D 0x005b8650
 // gFarLimit
-// GLOBAL: COPTER_D 0x00021654
+// GLOBAL: COPTER_D 0x005b8654
 // gFarBoundary
-// GLOBAL: COPTER_D 0x00021658
+// GLOBAL: COPTER_D 0x005b8658
 // gMidBoundary
-// GLOBAL: COPTER_D 0x0002165c
+// GLOBAL: COPTER_D 0x005b865c
 // gNearBoundary
-// GLOBAL: COPTER_D 0x00021660
+// GLOBAL: COPTER_D 0x005b8660
 // gNearLimit
-// GLOBAL: COPTER_D 0x00021664
+// GLOBAL: COPTER_D 0x005b8664
 // CopterDir
-// GLOBAL: COPTER_D 0x00021668
+// GLOBAL: COPTER_D 0x005b8668
 // cYObject::sInited
-// GLOBAL: COPTER_D 0x0002166c
+// GLOBAL: COPTER_D 0x005b866c
 // cYObject::sAllAmbientStarted
-// GLOBAL: COPTER_D 0x00021670
+// GLOBAL: COPTER_D 0x005b8670
 // cYObject::sNumMissionAwake
-// GLOBAL: COPTER_D 0x00021674
+// GLOBAL: COPTER_D 0x005b8674
 // cYObject::sNumAmbientAwake
-// GLOBAL: COPTER_D 0x00021678
+// GLOBAL: COPTER_D 0x005b8678
 // cYObject::sAmbientTopOff
-// GLOBAL: COPTER_D 0x0002167c
+// GLOBAL: COPTER_D 0x005b867c
 // cYObject::sAmbientAbsoluteMax
-// GLOBAL: COPTER_D 0x00021680
+// GLOBAL: COPTER_D 0x005b8680
 // gAvatar
-// GLOBAL: COPTER_D 0x00021684
+// GLOBAL: COPTER_D 0x005b8684
 // cYObject::sList
-// GLOBAL: COPTER_D 0x00021688
+// GLOBAL: COPTER_D 0x005b8688
 // cYObject::sBeamed
-// GLOBAL: COPTER_D 0x0002168c
+// GLOBAL: COPTER_D 0x005b868c
 // cYObject::sDebugNumBeamed
-// GLOBAL: COPTER_D 0x00021690
+// GLOBAL: COPTER_D 0x005b8690
 // cYObject::sSimTicks
-// GLOBAL: COPTER_D 0x00021694
+// GLOBAL: COPTER_D 0x005b8694
 // gPersonBeamSlice
-// GLOBAL: COPTER_D 0x00021698
+// GLOBAL: COPTER_D 0x005b8698
 // gNextTime
-// GLOBAL: COPTER_D 0x0002169c
+// GLOBAL: COPTER_D 0x005b869c
 // gCumTime
-// GLOBAL: COPTER_D 0x000216a0
+// GLOBAL: COPTER_D 0x005b86a0
 // gBodyDebugInfoIndex
-// GLOBAL: COPTER_D 0x000216a4
+// GLOBAL: COPTER_D 0x005b86a4
 // cYObject::sScurkRectRad
-// LOCAL: COPTER_D 0x000216a8
+// LOCAL: COPTER_D 0x005b86a8
 // sAvLastCellX
-// LOCAL: COPTER_D 0x000216ac
+// LOCAL: COPTER_D 0x005b86ac
 // sAvLastCellY
-// LOCAL: COPTER_D 0x000216b0
+// LOCAL: COPTER_D 0x005b86b0
 // gPersonSoundBeamSlice
-// LOCAL: COPTER_D 0x000216b4
+// LOCAL: COPTER_D 0x005b86b4
 // sCheckTotedCount
 
 
 // Contribution: 3:00024978-00024997 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00024978
+// GLOBAL: COPTER_D 0x005bb978
 // ??_C@_0CA@OCDF@couldn?8t?5set?5master?5object?5to?50?$AA@
 
 
 // Contribution: 3:00024998-000249cc Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00024998
+// GLOBAL: COPTER_D 0x005bb998
 // ??_C@_0DF@MDL@trying?5to?5get?5off?5master?5object?5@
 
 
 // Contribution: 3:000249d0-000249f3 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x000249d0
+// GLOBAL: COPTER_D 0x005bb9d0
 // ??_C@_0CE@BCHG@I?5thought?5all?5people?5were?5alloca@
 
 
 // Contribution: 3:000249f4-00024a12 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x000249f4
+// GLOBAL: COPTER_D 0x005bb9f4
 // ??_C@_0BP@EABK@can?8t?5find?5person?5with?5that?5id?$AA@
 
 
 // Contribution: 3:00024a14-00024a32 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00024a14
+// GLOBAL: COPTER_D 0x005bba14
 // ??_C@_0BP@GAKH@C?3?2Copter?2Source?2X?2Y?2YObject?4h?$AA@
 
 
 // Contribution: 3:00024a34-00024a53 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00024a34
+// GLOBAL: COPTER_D 0x005bba34
 // ??_C@_0CA@JOHG@out?9of?9range?5scurkID?5for?5a?5tile?$AA@
 
 
 // Contribution: 3:00024a54-00024a7b Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00024a54
+// GLOBAL: COPTER_D 0x005bba54
 // ??_C@_0CI@FJMN@must?5set?5cell?5location?5before?5wa@
 
 
 // Contribution: 3:00024a7c-00024a9b Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00024a7c
+// GLOBAL: COPTER_D 0x005bba7c
 // ??_C@_0CA@BGFC@how?8d?5you?5wake?5up?5past?5the?5max?$DP?$AA@
 
 
 // Contribution: 3:00024a9c-00024abb Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00024a9c
+// GLOBAL: COPTER_D 0x005bba9c
 // ??_C@_0CA@MKGD@trying?5to?5wake?5up?5already?5awake?$AA@
 
 
 // Contribution: 3:00024abc-00024ad0 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00024abc
+// GLOBAL: COPTER_D 0x005bbabc
 // ??_C@_0BF@KBDF@y?5and?5x?5out?5of?5sync?$DP?$AA@
 
 
 // Contribution: 3:00024ad4-00024ae8 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00024ad4
+// GLOBAL: COPTER_D 0x005bbad4
 // ??_C@_0BF@ECJK@x?5and?5y?5out?5of?5sync?$DP?$AA@
 
 
 // Contribution: 3:00024aec-00024b17 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00024aec
+// GLOBAL: COPTER_D 0x005bbaec
 // ??_C@_0CM@FHJC@why?5positioning?5unlinked?5object?5@
 
 
 // Contribution: 3:00024b18-00024b30 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00024b18
+// GLOBAL: COPTER_D 0x005bbb18
 // ??_C@_0BJ@LCNK@rxn?5tree?5id?5out?5of?5range?$AA@
 
 
 // Contribution: 3:00024b34-00024b72 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00024b34
+// GLOBAL: COPTER_D 0x005bbb34
 // ??_C@_0DP@CAPD@?91?5missionid?5for?5other?5than?5ambi@
 
 
 // Contribution: 3:00024b74-00024b99 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00024b74
+// GLOBAL: COPTER_D 0x005bbb74
 // ??_C@_0CG@LEML@couldn?8t?5get?5private?5anim?5for?5an@
 
 
 // Contribution: 3:00024b9c-00024bb5 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00024b9c
+// GLOBAL: COPTER_D 0x005bbb9c
 // ??_C@_0BK@OHDB@must?5set?5body?5before?5anim?$AA@
 
 
 // Contribution: 3:00024bb8-00024bec Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00024bb8
+// GLOBAL: COPTER_D 0x005bbbb8
 // ??_C@_0DF@BIBF@you?5must?5unlink?5before?5setting?5c@
 
 
 // Contribution: 3:00024bf0-00024c22 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00024bf0
+// GLOBAL: COPTER_D 0x005bbbf0
 // ??_C@_0DD@LLLA@use?5changemission?5only?5when?5pers@
 
 
 // Contribution: 3:00024c24-00024c3b Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00024c24
+// GLOBAL: COPTER_D 0x005bbc24
 // ??_C@_0BI@MBEM@how?5did?5that?5happen?$DP?$DP?$DP?$DP?$AA@
 
 
 // Contribution: 3:00024c3c-00024c59 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00024c3c
+// GLOBAL: COPTER_D 0x005bbc3c
 // ??_C@_0BO@EKBK@just?5one?5more?5paranoid?5assert?$AA@
 
 
 // Contribution: 3:00024c5c-00024c87 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00024c5c
+// GLOBAL: COPTER_D 0x005bbc5c
 // ??_C@_0CM@JKOD@how?5could?5you?5have?5been?5awake?5ye@
 
 
 // Contribution: 3:00024c88-00024ca8 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00024c88
+// GLOBAL: COPTER_D 0x005bbc88
 // ??_C@_0CB@NMCE@trying?5to?5sleep?5already?5sleeping@
 
 
 // Contribution: 3:00024cac-00024cc9 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00024cac
+// GLOBAL: COPTER_D 0x005bbcac
 // ??_C@_0BO@NCHD@can?8t?5simanim?5without?5an?5anim?$AA@
 
 
 // Contribution: 3:00024ccc-00024cfa Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00024ccc
+// GLOBAL: COPTER_D 0x005bbccc
 // ??_C@_0CP@EHMM@couldn?8t?5move?5with?5the?5dyn?5objec@
 
 
 // Contribution: 3:00024cfc-00024d1e Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00024cfc
+// GLOBAL: COPTER_D 0x005bbcfc
 // ??_C@_0CD@GJNN@can?8t?5follow?5master?5with?5no?5mast@
 
 
 // Contribution: 3:00024d20-00024d3a Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00024d20
+// GLOBAL: COPTER_D 0x005bbd20
 // ??_C@_0BL@EOGE@following?5master?5unlinked?$DP?$AA@
 
 
 // Contribution: 3:00024d3c-00024d64 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00024d3c
+// GLOBAL: COPTER_D 0x005bbd3c
 // ??_C@_0CJ@GJOA@stack?5size?5about?5to?5go?5too?5high?5@
 
 
 // Contribution: 3:00024d68-00024d7b Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00024d68
+// GLOBAL: COPTER_D 0x005bbd68
 // ??_C@_0BE@HILD@couldn?8t?5get?5a?5body?$AA@
 
 
 // Contribution: 3:00024d7c-00024da0 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00024d7c
+// GLOBAL: COPTER_D 0x005bbd7c
 // ??_C@_0CF@DHKG@weird?5number?5of?5characters?5shift@
 
 
 // Contribution: 3:00024da4-00024dc6 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00024da4
+// GLOBAL: COPTER_D 0x005bbda4
 // ??_C@_0CD@NHHN@c?3?2copter?2source?2x?2objects?2bList@
 
 
 // Contribution: 3:00024dc8-00024de1 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00024dc8
+// GLOBAL: COPTER_D 0x005bbdc8
 // ??_C@_0BK@HKFL@didn?8t?5make?5obj?5invisible?$AA@
 
 
 // Contribution: 3:00024de4-00024e22 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00024de4
+// GLOBAL: COPTER_D 0x005bbde4
 // ??_C@_0DP@HCDA@couldn?8t?5add?5new?5to?5thing?9?9didn?8@
 
 
 // Contribution: 3:00024e24-00024e40 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00024e24
+// GLOBAL: COPTER_D 0x005bbe24
 // ??_C@_0BN@MPEK@not?5very?5close?5to?5that?5heli?$CB?$AA@
 
 
 // Contribution: 3:00024e44-00024e6d Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00024e44
+// GLOBAL: COPTER_D 0x005bbe44
 // ??_C@_0CK@BLNM@toted?5object?8s?5master?5not?5this?5o@
 
 
 // Contribution: 3:00024e70-00024e8d Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00024e70
+// GLOBAL: COPTER_D 0x005bbe70
 // ??_C@_0BO@GDCN@toted?5obj?5not?5medevac?5victim?$CB?$AA@
 
 
 // Contribution: 3:00024e90-00024eba Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00024e90
+// GLOBAL: COPTER_D 0x005bbe90
 // ??_C@_0CL@LIPB@must?5have?5thing?5to?5put?5aught?5on?5@
 
 
 // Contribution: 3:00024ebc-00024ed8 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00024ebc
+// GLOBAL: COPTER_D 0x005bbebc
 // ??_C@_0BN@OBNK@getting?5distance?5to?5null?5dyn?$AA@
 
 
 // Contribution: 3:0009e250-000a05a4 Module: 200, 8 byte alignment, uninitialized_data, read, write, 
-// GLOBAL: COPTER_D 0x0009e250
+// GLOBAL: COPTER_D 0x00635250
 // cYObject::sLanguage
-// GLOBAL: COPTER_D 0x0009e258
+// GLOBAL: COPTER_D 0x00635258
 // gXTimer
-// GLOBAL: COPTER_D 0x0009e268
+// GLOBAL: COPTER_D 0x00635268
 // cYObject::sLocInfo
-// GLOBAL: COPTER_D 0x0009e2d8
+// GLOBAL: COPTER_D 0x006352d8
 // cYObject::sHitRxnTree
-// GLOBAL: COPTER_D 0x0009e300
+// GLOBAL: COPTER_D 0x00635300
 // cYObject::sNeutralMissionLocs
-// GLOBAL: COPTER_D 0x0009e530
+// GLOBAL: COPTER_D 0x00635530
 // cYObject::sMoveTable
-// GLOBAL: COPTER_D 0x0009e590
+// GLOBAL: COPTER_D 0x00635590
 // cYObject::sErrorFile
-// GLOBAL: COPTER_D 0x0009e6b0
+// GLOBAL: COPTER_D 0x006356b0
 // cYObject::sSoundChannels
-// GLOBAL: COPTER_D 0x0009e6d0
+// GLOBAL: COPTER_D 0x006356d0
 // gBodyDebugInfo
-// GLOBAL: COPTER_D 0x0009f1c0
+// GLOBAL: COPTER_D 0x006361c0
 // cYObject::sStackSize
-// GLOBAL: COPTER_D 0x0009f1c8
+// GLOBAL: COPTER_D 0x006361c8
 // g_sqrtTable
-// GLOBAL: COPTER_D 0x0009fb8c
+// GLOBAL: COPTER_D 0x00636b8c
 // cYObject::sBehavior
-// GLOBAL: COPTER_D 0x0009fb90
+// GLOBAL: COPTER_D 0x00636b90
 // LastCameraY
-// GLOBAL: COPTER_D 0x0009fb94
+// GLOBAL: COPTER_D 0x00636b94
 // LastCameraX
-// GLOBAL: COPTER_D 0x0009fb98
+// GLOBAL: COPTER_D 0x00636b98
 // cYObject::sInitBhav
-// GLOBAL: COPTER_D 0x0009fbb8
+// GLOBAL: COPTER_D 0x00636bb8
 // cYObject::sFile
-// GLOBAL: COPTER_D 0x0009fce0
+// GLOBAL: COPTER_D 0x00636ce0
 // cYObject::sUnitVectorTable
-// GLOBAL: COPTER_D 0x0009fd40
+// GLOBAL: COPTER_D 0x00636d40
 // cYObject::sObjects
-// GLOBAL: COPTER_D 0x0009fed0
+// GLOBAL: COPTER_D 0x00636ed0
 // cYObject::sLocType
-// GLOBAL: COPTER_D 0x000a02d0
+// GLOBAL: COPTER_D 0x006372d0
 // cYObject::sNeutralPersonLocs
-// LOCAL: COPTER_D 0x000a05a0
+// LOCAL: COPTER_D 0x006375a0
 // $S73
-// LOCAL: COPTER_D 0x000a05a4
+// LOCAL: COPTER_D 0x006375a4
 // $S79

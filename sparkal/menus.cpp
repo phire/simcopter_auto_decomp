@@ -4559,32 +4559,32 @@ int32_t UserMenuWindow::GetLineCount() {
 
 
 // Contribution: 2:000022f8-000023df Module: 13, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x000022f8
+// GLOBAL: COPTER_D 0x005912f8
 // ??_7UserMenuWindow@@6B@
 
 
 // Contribution: 2:000023e0-000024c7 Module: 13, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x000023e0
+// GLOBAL: COPTER_D 0x005913e0
 // ??_7CopterMainMenu@@6B@
 
 
 // Contribution: 2:000024c8-000025af Module: 13, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x000024c8
+// GLOBAL: COPTER_D 0x005914c8
 // ??_7CopterPlayMenu@@6B@
 
 
 // Contribution: 3:000032d0-0000333e Module: 13, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x000032d0
+// GLOBAL: COPTER_D 0x0059a2d0
 // SZ_MENU_SELECTION_SOUND
-// GLOBAL: COPTER_D 0x000032d4
+// GLOBAL: COPTER_D 0x0059a2d4
 // SZ_MAIN_PART_1_IMAGE_FILE_NAME
-// GLOBAL: COPTER_D 0x000032d8
+// GLOBAL: COPTER_D 0x0059a2d8
 // SZ_MAIN_PART_2_IMAGE_FILE_NAME
-// GLOBAL: COPTER_D 0x000032dc
+// GLOBAL: COPTER_D 0x0059a2dc
 // SZ_MAIN_LIGHT_IMAGE_FILE_NAME
-// GLOBAL: COPTER_D 0x000032e0
+// GLOBAL: COPTER_D 0x0059a2e0
 // SZ_MAIN_RATCHET_IMAGE_FILE_NAME
-// GLOBAL: COPTER_D 0x000032e4
+// GLOBAL: COPTER_D 0x0059a2e4
 // SZ_PLAY_RATCHET_IMAGE_FILE_NAME
-// GLOBAL: COPTER_D 0x000032e8
+// GLOBAL: COPTER_D 0x0059a2e8
 // SZ_PLAY_BACKGROUND_IMAGE_FILE_NAME

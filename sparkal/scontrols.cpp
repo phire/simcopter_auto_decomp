@@ -852,55 +852,55 @@ void SoundScrollBarWindow::MoveLineNext() {
 
 
 // Contribution: 2:00001870-0000194b Module: 38, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00001870
+// GLOBAL: COPTER_D 0x00590870
 // ??_7SoundButtonWindow@@6B@
 
 
 // Contribution: 2:00001950-00001a33 Module: 38, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00001950
+// GLOBAL: COPTER_D 0x00590950
 // ??_7SoundRadioButtonWindow@@6B@
 
 
 // Contribution: 2:00001a38-00001b13 Module: 38, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00001a38
+// GLOBAL: COPTER_D 0x00590a38
 // ??_7SoundCheckBoxWindow@@6B@
 
 
 // Contribution: 2:00001b18-00001c1f Module: 38, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00001b18
+// GLOBAL: COPTER_D 0x00590b18
 // ??_7SoundScrollBarWindow@@6B@
 
 
 // Contribution: 3:00000054-00000063 Module: 38, 4 byte alignment, initialized_data, read, write, 
-// LOCAL: COPTER_D 0x00000054
+// LOCAL: COPTER_D 0x00597054
 // $S66
-// LOCAL: COPTER_D 0x00000058
+// LOCAL: COPTER_D 0x00597058
 // $S71
-// LOCAL: COPTER_D 0x0000005c
+// LOCAL: COPTER_D 0x0059705c
 // $S76
-// LOCAL: COPTER_D 0x00000060
+// LOCAL: COPTER_D 0x00597060
 // $S81
 
 
 // Contribution: 3:000027b8-000027c7 Module: 38, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x000027b8
+// GLOBAL: COPTER_D 0x005997b8
 // SoundButtonWindow::lButtonSoundReferenceCount
-// GLOBAL: COPTER_D 0x000027bc
+// GLOBAL: COPTER_D 0x005997bc
 // SoundRadioButtonWindow::lRadioSoundReferenceCount
-// GLOBAL: COPTER_D 0x000027c0
+// GLOBAL: COPTER_D 0x005997c0
 // SoundCheckBoxWindow::lCheckBoxSoundReferenceCount
-// GLOBAL: COPTER_D 0x000027c4
+// GLOBAL: COPTER_D 0x005997c4
 // SoundScrollBarWindow::lScrollBarSoundReferenceCount
 
 
 // Contribution: 3:0006d248-0006d444 Module: 38, 8 byte alignment, uninitialized_data, read, write, 
-// GLOBAL: COPTER_D 0x0006d248
+// GLOBAL: COPTER_D 0x00604248
 // SoundScrollBarWindow::scrollBarSound
-// GLOBAL: COPTER_D 0x0006d2c8
+// GLOBAL: COPTER_D 0x006042c8
 // SoundButtonWindow::buttonSound
-// GLOBAL: COPTER_D 0x0006d348
+// GLOBAL: COPTER_D 0x00604348
 // SoundCheckBoxWindow::checkBoxSound
-// GLOBAL: COPTER_D 0x0006d3c8
+// GLOBAL: COPTER_D 0x006043c8
 // SoundRadioButtonWindow::radioButtonSound
-// LOCAL: COPTER_D 0x0006d444
+// LOCAL: COPTER_D 0x00604444
 // $S63

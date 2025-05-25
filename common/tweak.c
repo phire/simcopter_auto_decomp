@@ -722,7 +722,7 @@ void TWKGetToEOLN() {
 
 
 // Contribution: 3:000043a8-000044f6 Module: 93, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x000043a8
+// GLOBAL: COPTER_D 0x0059b3a8
 // g_nNextTWKQueueSlot
-// GLOBAL: COPTER_D 0x000043ac
+// GLOBAL: COPTER_D 0x0059b3ac
 // g_nNextTWKErrorSlot

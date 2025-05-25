@@ -2079,11 +2079,11 @@ int32_t DoRoadTilesConnect() {
 
 
 // Contribution: 2:00004338-0000442f Module: 157, 8 byte alignment, initialized_data, read, 
-// LOCAL: COPTER_D 0x00004338
+// LOCAL: COPTER_D 0x00593338
 // OT
-// LOCAL: COPTER_D 0x00004378
+// LOCAL: COPTER_D 0x00593378
 // RRT
-// LOCAL: COPTER_D 0x000043b8
+// LOCAL: COPTER_D 0x005933b8
 // LRT
 
 
@@ -2091,17 +2091,17 @@ int32_t DoRoadTilesConnect() {
 
 
 // Contribution: 3:00094a00-0009e1cf Module: 157, 8 byte alignment, uninitialized_data, read, write, 
-// GLOBAL: COPTER_D 0x00094a00
+// GLOBAL: COPTER_D 0x0062ba00
 // DiagMatrix
-// GLOBAL: COPTER_D 0x00094b00
+// GLOBAL: COPTER_D 0x0062bb00
 // DiagVector
-// GLOBAL: COPTER_D 0x00094b30
+// GLOBAL: COPTER_D 0x0062bb30
 // DTT
-// GLOBAL: COPTER_D 0x00094d10
+// GLOBAL: COPTER_D 0x0062bd10
 // DVT
-// GLOBAL: COPTER_D 0x00096390
+// GLOBAL: COPTER_D 0x0062d390
 // OTT
-// GLOBAL: COPTER_D 0x00096910
+// GLOBAL: COPTER_D 0x0062d910
 // RMT
-// GLOBAL: COPTER_D 0x0009e110
+// GLOBAL: COPTER_D 0x00635110
 // DiagOffset

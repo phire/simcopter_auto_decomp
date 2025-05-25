@@ -9743,73 +9743,73 @@ void GameModeInventoryData::SetCommandsToDefaults() {
 
 
 // Contribution: 2:000033c0-000033c3 Module: 1, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x000033c0
+// GLOBAL: COPTER_D 0x005923c0
 // ??_7GameModeCoreData@@6B@
 
 
 // Contribution: 2:000033c4-000033c7 Module: 1, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x000033c4
+// GLOBAL: COPTER_D 0x005923c4
 // ??_7GameModeMainMenuData@@6B@
 
 
 // Contribution: 2:000033c8-000033cb Module: 1, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x000033c8
+// GLOBAL: COPTER_D 0x005923c8
 // ??_7GameModePickCareerCityData@@6B@
 
 
 // Contribution: 2:000033cc-000033cf Module: 1, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x000033cc
+// GLOBAL: COPTER_D 0x005923cc
 // ??_7GameModePlayData@@6B@
 
 
 // Contribution: 2:000033d0-000033d3 Module: 1, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x000033d0
+// GLOBAL: COPTER_D 0x005923d0
 // ??_7GameModeHangarData@@6B@
 
 
 // Contribution: 2:000033d4-000033d7 Module: 1, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x000033d4
+// GLOBAL: COPTER_D 0x005923d4
 // ??_7GameModeCatalogData@@6B@
 
 
 // Contribution: 2:000033d8-000033db Module: 1, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x000033d8
+// GLOBAL: COPTER_D 0x005923d8
 // ??_7GameModeMissionLogData@@6B@
 
 
 // Contribution: 2:000033dc-000033df Module: 1, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x000033dc
+// GLOBAL: COPTER_D 0x005923dc
 // ??_7GameModeInventoryData@@6B@
 
 
 // Contribution: 3:00003ec4-00003fad Module: 1, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x00003ec4
+// GLOBAL: COPTER_D 0x0059aec4
 // SZ_VR_APP_PALETTE_FILE_NAME
-// GLOBAL: COPTER_D 0x00003ec8
+// GLOBAL: COPTER_D 0x0059aec8
 // SZ_VR_APP_PALETTE_CHUNK_TYPE
-// GLOBAL: COPTER_D 0x00003ecc
+// GLOBAL: COPTER_D 0x0059aecc
 // SZ_MAIN_MENU_IMAGE_FILE_NAME
-// GLOBAL: COPTER_D 0x00003ed0
+// GLOBAL: COPTER_D 0x0059aed0
 // SZ_CAREER_PALETTE_IMAGE_FILE_NAME
-// GLOBAL: COPTER_D 0x00003ed4
+// GLOBAL: COPTER_D 0x0059aed4
 // SZ_PANEL0_IMAGE_FILE_NAME
-// GLOBAL: COPTER_D 0x00003ed8
+// GLOBAL: COPTER_D 0x0059aed8
 // SZ_PANEL1_IMAGE_FILE_NAME
-// GLOBAL: COPTER_D 0x00003edc
+// GLOBAL: COPTER_D 0x0059aedc
 // SZ_PANEL2_IMAGE_FILE_NAME
-// GLOBAL: COPTER_D 0x00003ee0
+// GLOBAL: COPTER_D 0x0059aee0
 // SZ_PANEL3_IMAGE_FILE_NAME
-// GLOBAL: COPTER_D 0x00003ee4
+// GLOBAL: COPTER_D 0x0059aee4
 // SZ_PANEL4_IMAGE_FILE_NAME
-// GLOBAL: COPTER_D 0x00003ee8
+// GLOBAL: COPTER_D 0x0059aee8
 // SZ_PANEL5_IMAGE_FILE_NAME
-// GLOBAL: COPTER_D 0x00003eec
+// GLOBAL: COPTER_D 0x0059aeec
 // SZ_PANEL6_IMAGE_FILE_NAME
-// GLOBAL: COPTER_D 0x00003ef0
+// GLOBAL: COPTER_D 0x0059aef0
 // SZ_FLAP0_IMAGE_FILE_NAME
-// GLOBAL: COPTER_D 0x00003ef4
+// GLOBAL: COPTER_D 0x0059aef4
 // SZ_FLAP1_IMAGE_FILE_NAME
-// GLOBAL: COPTER_D 0x00003ef8
+// GLOBAL: COPTER_D 0x0059aef8
 // SZ_FLAP2_IMAGE_FILE_NAME
-// GLOBAL: COPTER_D 0x00003efc
+// GLOBAL: COPTER_D 0x0059aefc
 // SZ_FLAP3_IMAGE_FILE_NAME

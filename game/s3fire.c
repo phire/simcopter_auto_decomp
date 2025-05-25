@@ -5631,55 +5631,55 @@ int32_t S3FireMIFFSave() {
 
 
 // Contribution: 2:00003ff0-000041ff Module: 165, 8 byte alignment, initialized_data, read, 
-// LOCAL: COPTER_D 0x00003ff0
+// LOCAL: COPTER_D 0x00592ff0
 // TurnTable3
-// LOCAL: COPTER_D 0x00004070
+// LOCAL: COPTER_D 0x00593070
 // TurnTable2
-// LOCAL: COPTER_D 0x000040b0
+// LOCAL: COPTER_D 0x005930b0
 // IndexToType
-// LOCAL: COPTER_D 0x000040c0
+// LOCAL: COPTER_D 0x005930c0
 // TypeToIndex2
-// LOCAL: COPTER_D 0x00004100
+// LOCAL: COPTER_D 0x00593100
 // TILUT
-// LOCAL: COPTER_D 0x00004140
+// LOCAL: COPTER_D 0x00593140
 // OT
-// LOCAL: COPTER_D 0x00004180
+// LOCAL: COPTER_D 0x00593180
 // RRT
-// LOCAL: COPTER_D 0x000041c0
+// LOCAL: COPTER_D 0x005931c0
 // LRT
 
 
 // Contribution: 3:00020388-000203e6 Module: 165, 8 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x00020388
+// GLOBAL: COPTER_D 0x005b7388
 // S_ftwk_douse_points
-// GLOBAL: COPTER_D 0x0002038c
+// GLOBAL: COPTER_D 0x005b738c
 // S_ftwk_douse_multiplier
-// GLOBAL: COPTER_D 0x00020390
+// GLOBAL: COPTER_D 0x005b7390
 // S_ftwk_time_to_live
-// GLOBAL: COPTER_D 0x00020394
+// GLOBAL: COPTER_D 0x005b7394
 // S_ftwk_spread_interval
-// GLOBAL: COPTER_D 0x00020398
+// GLOBAL: COPTER_D 0x005b7398
 // S_ftwk_spread_probability
-// GLOBAL: COPTER_D 0x0002039c
+// GLOBAL: COPTER_D 0x005b739c
 // S_ftwk_fire_radius
-// LOCAL: COPTER_D 0x000203a0
+// LOCAL: COPTER_D 0x005b73a0
 // S_fire_count
-// GLOBAL: COPTER_D 0x000203a8
+// GLOBAL: COPTER_D 0x005b73a8
 // S_dirs
-// GLOBAL: COPTER_D 0x000203c8
+// GLOBAL: COPTER_D 0x005b73c8
 // S_spread_time
-// LOCAL: COPTER_D 0x000203cc
+// LOCAL: COPTER_D 0x005b73cc
 // S_yval
-// LOCAL: COPTER_D 0x000203d0
+// LOCAL: COPTER_D 0x005b73d0
 // S_yvaldelta
-// LOCAL: COPTER_D 0x000203d4
+// LOCAL: COPTER_D 0x005b73d4
 // FireMIFFID
-// LOCAL: COPTER_D 0x000203d8
+// LOCAL: COPTER_D 0x005b73d8
 // CfdMIFFID
 
 
 // Contribution: 3:00094548-000945ef Module: 165, 8 byte alignment, uninitialized_data, read, write, 
-// LOCAL: COPTER_D 0x00094548
+// LOCAL: COPTER_D 0x0062b548
 // lscfd
-// LOCAL: COPTER_D 0x00094550
+// LOCAL: COPTER_D 0x0062b550
 // lsfire

@@ -4270,33 +4270,33 @@ int32_t ParseCommandLine() {
 
 
 // Contribution: 2:0000041c-0000041f Module: 70, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x0000041c
+// GLOBAL: COPTER_D 0x0058f41c
 // ??_7?$class_debugger@VCDebugWindow@@$1?CDebugWindowhelp_text@@3PBDB$1?CDebugWindowusage_text@@3PBDB@@6B@
 
 
 // Contribution: 2:00000420-00000423 Module: 70, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00000420
+// GLOBAL: COPTER_D 0x0058f420
 // ??_7debug_command@@6B@
 
 
 // Contribution: 3:00000368-0000041d Module: 70, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x00000368
+// GLOBAL: COPTER_D 0x00597368
 // CDebugWindow::m_className
-// GLOBAL: COPTER_D 0x0000036c
+// GLOBAL: COPTER_D 0x0059736c
 // CDebugWindowhelp_text
-// GLOBAL: COPTER_D 0x00000370
+// GLOBAL: COPTER_D 0x00597370
 // CDebugWindowusage_text
-// GLOBAL: COPTER_D 0x00000374
+// GLOBAL: COPTER_D 0x00597374
 // gDebugWindow
 
 
 // Contribution: 3:00000420-00000423 Module: 70, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00000420
+// GLOBAL: COPTER_D 0x00597420
 // deque<basic_string<char>>::buffer_size
 
 
 // Contribution: 3:0002b8d0-0002b917 Module: 70, 8 byte alignment, uninitialized_data, read, write, 
-// GLOBAL: COPTER_D 0x0002b8d0
+// GLOBAL: COPTER_D 0x005c28d0
 // CDebugWindow::m_class
-// LOCAL: COPTER_D 0x0002b8f8
+// LOCAL: COPTER_D 0x005c28f8
 // ?$S19@?1???0CDebugWindow@@QAE@XZ@4EA

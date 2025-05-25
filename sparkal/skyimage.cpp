@@ -921,12 +921,12 @@ unsigned long SkyImage::Compose(class CBackBuffer*, int32_t) {
 
 
 // Contribution: 2:00002090-000020f7 Module: 20, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00002090
+// GLOBAL: COPTER_D 0x00591090
 // ??_7SkyImage@@6B@
 
 
 // Contribution: 3:00003120-0000313c Module: 20, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x00003120
+// GLOBAL: COPTER_D 0x0059a120
 // SZ_SKY_DAY_IMAGE_FILE_NAME
-// GLOBAL: COPTER_D 0x00003124
+// GLOBAL: COPTER_D 0x0059a124
 // SZ_SKY_NIGHT_IMAGE_FILE_NAME

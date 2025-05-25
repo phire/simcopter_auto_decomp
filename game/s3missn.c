@@ -8566,139 +8566,139 @@ long S3MissionGetSoundQuadrant() {
 
 
 // Contribution: 2:00003898-00003aaf Module: 173, 8 byte alignment, initialized_data, read, 
-// LOCAL: COPTER_D 0x00003898
+// LOCAL: COPTER_D 0x00592898
 // TurnTable3
-// LOCAL: COPTER_D 0x00003918
+// LOCAL: COPTER_D 0x00592918
 // TurnTable2
-// LOCAL: COPTER_D 0x00003958
+// LOCAL: COPTER_D 0x00592958
 // IndexToType
-// LOCAL: COPTER_D 0x00003968
+// LOCAL: COPTER_D 0x00592968
 // TypeToIndex2
-// LOCAL: COPTER_D 0x000039a8
+// LOCAL: COPTER_D 0x005929a8
 // TILUT
-// LOCAL: COPTER_D 0x000039e8
+// LOCAL: COPTER_D 0x005929e8
 // OT
-// LOCAL: COPTER_D 0x00003a28
+// LOCAL: COPTER_D 0x00592a28
 // RRT
-// LOCAL: COPTER_D 0x00003a68
+// LOCAL: COPTER_D 0x00592a68
 // LRT
 
 
 // Contribution: 3:0001de18-0001e1fa Module: 173, 8 byte alignment, initialized_data, read, write, 
-// LOCAL: COPTER_D 0x0001de18
+// LOCAL: COPTER_D 0x005b4e18
 // S_riotcheckctr
-// LOCAL: COPTER_D 0x0001de1c
+// LOCAL: COPTER_D 0x005b4e1c
 // S_mission_interval_easy
-// LOCAL: COPTER_D 0x0001de20
+// LOCAL: COPTER_D 0x005b4e20
 // S_max_missions_easy
-// LOCAL: COPTER_D 0x0001de24
+// LOCAL: COPTER_D 0x005b4e24
 // S_mission_interval
-// LOCAL: COPTER_D 0x0001de28
+// LOCAL: COPTER_D 0x005b4e28
 // S_mission_interval_adj
-// LOCAL: COPTER_D 0x0001de2c
+// LOCAL: COPTER_D 0x005b4e2c
 // S_mission_timer
-// LOCAL: COPTER_D 0x0001de30
+// LOCAL: COPTER_D 0x005b4e30
 // S_max_missions
-// LOCAL: COPTER_D 0x0001de34
+// LOCAL: COPTER_D 0x005b4e34
 // SpeederMissionActive
-// GLOBAL: COPTER_D 0x0001de38
+// GLOBAL: COPTER_D 0x005b4e38
 // S_money_mission_riot
-// GLOBAL: COPTER_D 0x0001de3c
+// GLOBAL: COPTER_D 0x005b4e3c
 // S_pts_mission_riot
-// GLOBAL: COPTER_D 0x0001de40
+// GLOBAL: COPTER_D 0x005b4e40
 // S_money_mission_riot_penalty
-// GLOBAL: COPTER_D 0x0001de44
+// GLOBAL: COPTER_D 0x005b4e44
 // S_pts_mission_riot_penalty
-// GLOBAL: COPTER_D 0x0001de48
+// GLOBAL: COPTER_D 0x005b4e48
 // S_mission_riot_time
-// GLOBAL: COPTER_D 0x0001de4c
+// GLOBAL: COPTER_D 0x005b4e4c
 // S_money_mission_rescue
-// GLOBAL: COPTER_D 0x0001de50
+// GLOBAL: COPTER_D 0x005b4e50
 // S_pts_mission_rescue
-// GLOBAL: COPTER_D 0x0001de54
+// GLOBAL: COPTER_D 0x005b4e54
 // S_money_mission_medevac
-// GLOBAL: COPTER_D 0x0001de58
+// GLOBAL: COPTER_D 0x005b4e58
 // S_pts_mission_medevac
-// GLOBAL: COPTER_D 0x0001de5c
+// GLOBAL: COPTER_D 0x005b4e5c
 // S_money_mission_transport
-// GLOBAL: COPTER_D 0x0001de60
+// GLOBAL: COPTER_D 0x005b4e60
 // S_pts_mission_transport
-// GLOBAL: COPTER_D 0x0001de64
+// GLOBAL: COPTER_D 0x005b4e64
 // S_money_mission_fire
-// GLOBAL: COPTER_D 0x0001de68
+// GLOBAL: COPTER_D 0x005b4e68
 // S_pts_mission_fire
-// GLOBAL: COPTER_D 0x0001de6c
+// GLOBAL: COPTER_D 0x005b4e6c
 // S_money_mission_fire_penalty
-// GLOBAL: COPTER_D 0x0001de70
+// GLOBAL: COPTER_D 0x005b4e70
 // S_pts_mission_fire_penalty
-// GLOBAL: COPTER_D 0x0001de74
+// GLOBAL: COPTER_D 0x005b4e74
 // S_money_mission_plane
-// GLOBAL: COPTER_D 0x0001de78
+// GLOBAL: COPTER_D 0x005b4e78
 // S_pts_mission_plane
-// GLOBAL: COPTER_D 0x0001de7c
+// GLOBAL: COPTER_D 0x005b4e7c
 // S_money_mission_train
-// GLOBAL: COPTER_D 0x0001de80
+// GLOBAL: COPTER_D 0x005b4e80
 // S_pts_mission_train
-// GLOBAL: COPTER_D 0x0001de84
+// GLOBAL: COPTER_D 0x005b4e84
 // S_money_mission_criminal
-// GLOBAL: COPTER_D 0x0001de88
+// GLOBAL: COPTER_D 0x005b4e88
 // S_pts_mission_criminal
-// GLOBAL: COPTER_D 0x0001de8c
+// GLOBAL: COPTER_D 0x005b4e8c
 // S_money_mission_speeder
-// GLOBAL: COPTER_D 0x0001de90
+// GLOBAL: COPTER_D 0x005b4e90
 // S_pts_mission_speeder
-// GLOBAL: COPTER_D 0x0001de94
+// GLOBAL: COPTER_D 0x005b4e94
 // S_money_mission_jam
-// GLOBAL: COPTER_D 0x0001de98
+// GLOBAL: COPTER_D 0x005b4e98
 // S_pts_mission_jam
-// GLOBAL: COPTER_D 0x0001de9c
+// GLOBAL: COPTER_D 0x005b4e9c
 // S_mission_jam_time
-// GLOBAL: COPTER_D 0x0001dea0
+// GLOBAL: COPTER_D 0x005b4ea0
 // S_money_mission_vehiclefire
-// GLOBAL: COPTER_D 0x0001dea4
+// GLOBAL: COPTER_D 0x005b4ea4
 // S_pts_mission_vehiclefire
-// GLOBAL: COPTER_D 0x0001dea8
+// GLOBAL: COPTER_D 0x005b4ea8
 // S_money_mission_debris
-// GLOBAL: COPTER_D 0x0001deac
+// GLOBAL: COPTER_D 0x005b4eac
 // S_pts_mission_debris
-// GLOBAL: COPTER_D 0x0001deb0
+// GLOBAL: COPTER_D 0x005b4eb0
 // S_money_mission_ufo
-// GLOBAL: COPTER_D 0x0001deb4
+// GLOBAL: COPTER_D 0x005b4eb4
 // S_pts_mission_ufo
-// GLOBAL: COPTER_D 0x0001deb8
+// GLOBAL: COPTER_D 0x005b4eb8
 // S_log
-// GLOBAL: COPTER_D 0x0001decc
+// GLOBAL: COPTER_D 0x005b4ecc
 // S_pts_flame
-// GLOBAL: COPTER_D 0x0001ded0
+// GLOBAL: COPTER_D 0x005b4ed0
 // S_money_flame
-// GLOBAL: COPTER_D 0x0001ded4
+// GLOBAL: COPTER_D 0x005b4ed4
 // S_pts_destroyed_building
-// GLOBAL: COPTER_D 0x0001ded8
+// GLOBAL: COPTER_D 0x005b4ed8
 // S_money_saved_building
-// GLOBAL: COPTER_D 0x0001dedc
+// GLOBAL: COPTER_D 0x005b4edc
 // S_pts_new_debris
-// GLOBAL: COPTER_D 0x0001dee0
+// GLOBAL: COPTER_D 0x005b4ee0
 // S_money_debris_doused
-// GLOBAL: COPTER_D 0x0001dee4
+// GLOBAL: COPTER_D 0x005b4ee4
 // S_money_person_rescued
-// GLOBAL: COPTER_D 0x0001dee8
+// GLOBAL: COPTER_D 0x005b4ee8
 // S_money_person_transport
-// GLOBAL: COPTER_D 0x0001deec
+// GLOBAL: COPTER_D 0x005b4eec
 // S_money_person_medevaced
-// GLOBAL: COPTER_D 0x0001def0
+// GLOBAL: COPTER_D 0x005b4ef0
 // S_money_person_pickup
-// GLOBAL: COPTER_D 0x0001def4
+// GLOBAL: COPTER_D 0x005b4ef4
 // S_money_vehicle_doused
-// GLOBAL: COPTER_D 0x0001def8
+// GLOBAL: COPTER_D 0x005b4ef8
 // S_money_vehicle_unjammed
-// GLOBAL: COPTER_D 0x0001defc
+// GLOBAL: COPTER_D 0x005b4efc
 // S_pts_vehicle_burned
-// LOCAL: COPTER_D 0x0001df00
+// LOCAL: COPTER_D 0x005b4f00
 // missionMIFFID
-// GLOBAL: COPTER_D 0x0001df08
+// GLOBAL: COPTER_D 0x005b4f08
 // S_msg_general
 
 
 // Contribution: 3:000702b8-00071bc7 Module: 173, 8 byte alignment, uninitialized_data, read, write, 
-// LOCAL: COPTER_D 0x000702b8
+// LOCAL: COPTER_D 0x006072b8
 // S_mstatics

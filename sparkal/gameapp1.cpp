@@ -4072,17 +4072,17 @@ public: virtual int __thiscall CGameApp::HaveAnyJoysticksChangedSinceLastPlay(vo
 
 
 // Contribution: 2:00001f2c-00001f2f Module: 28, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00001f2c
+// GLOBAL: COPTER_D 0x00590f2c
 // ??_7GraphicWindowOwner@@6B@
 
 
 // Contribution: 2:00001f30-00001f33 Module: 28, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00001f30
+// GLOBAL: COPTER_D 0x00590f30
 // ??_7CGameApp@@6BGraphicWindowOwner@@@
 
 
 // Contribution: 2:00001f38-00001fef Module: 28, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00001f38
+// GLOBAL: COPTER_D 0x00590f38
 // ??_7CGameApp@@6BCSparkalApp@@@
 
 
@@ -4090,51 +4090,51 @@ public: virtual int __thiscall CGameApp::HaveAnyJoysticksChangedSinceLastPlay(vo
 
 
 // Contribution: 3:0000006c-00000083 Module: 28, 4 byte alignment, initialized_data, read, write, 
-// LOCAL: COPTER_D 0x0000006c
+// LOCAL: COPTER_D 0x0059706c
 // $S119
-// LOCAL: COPTER_D 0x00000070
+// LOCAL: COPTER_D 0x00597070
 // $S124
-// LOCAL: COPTER_D 0x00000074
+// LOCAL: COPTER_D 0x00597074
 // $S129
-// LOCAL: COPTER_D 0x00000078
+// LOCAL: COPTER_D 0x00597078
 // $S134
-// LOCAL: COPTER_D 0x0000007c
+// LOCAL: COPTER_D 0x0059707c
 // $S139
-// LOCAL: COPTER_D 0x00000080
+// LOCAL: COPTER_D 0x00597080
 // $S144
 
 
 // Contribution: 3:00002bbc-00002d72 Module: 28, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x00002bbc
+// GLOBAL: COPTER_D 0x00599bbc
 // gGameApp
-// GLOBAL: COPTER_D 0x00002bc0
+// GLOBAL: COPTER_D 0x00599bc0
 // gGameCommander
-// GLOBAL: COPTER_D 0x00002bc4
+// GLOBAL: COPTER_D 0x00599bc4
 // gPreferenceManager
-// GLOBAL: COPTER_D 0x00002bc8
+// GLOBAL: COPTER_D 0x00599bc8
 // SZ_SOUND_BUTTON_WINDOW_SOUND_FILE
 
 
 // Contribution: 3:00002d74-00002d77 Module: 28, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00002d74
+// GLOBAL: COPTER_D 0x00599d74
 // list<CopterGameMode>::number_of_lists
 
 
 // Contribution: 3:00002d78-00002d7c Module: 28, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00002d78
+// GLOBAL: COPTER_D 0x00599d78
 // ??_C@_04JEFE@2?40y?$AA@
 
 
 // Contribution: 3:0006d450-0006d817 Module: 28, 8 byte alignment, uninitialized_data, read, write, 
-// GLOBAL: COPTER_D 0x0006d450
+// GLOBAL: COPTER_D 0x00604450
 // gSoundQueue
-// GLOBAL: COPTER_D 0x0006d480
+// GLOBAL: COPTER_D 0x00604480
 // gCopterRadio
-// GLOBAL: COPTER_D 0x0006d530
+// GLOBAL: COPTER_D 0x00604530
 // gMessageDisplayManager
-// GLOBAL: COPTER_D 0x0006d588
+// GLOBAL: COPTER_D 0x00604588
 // gSoundSystem
-// GLOBAL: COPTER_D 0x0006d600
+// GLOBAL: COPTER_D 0x00604600
 // gSoundManager
-// GLOBAL: COPTER_D 0x0006d808
+// GLOBAL: COPTER_D 0x00604808
 // gCopterPalette

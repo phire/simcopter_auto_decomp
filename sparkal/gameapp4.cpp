@@ -794,5 +794,5 @@ void AppInitThreadStartRoutine() {
 
 
 // Contribution: 3:00003c44-00003c95 Module: 3, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x00003c44
+// GLOBAL: COPTER_D 0x0059ac44
 // SZ_HOURGLASS_VIDEO_FILE_NAME

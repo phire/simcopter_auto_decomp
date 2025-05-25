@@ -6893,29 +6893,29 @@ int32_t BoatClass::MIFFSave(void * __ptr32) {
 
 
 // Contribution: 2:00004200-0000421b Module: 164, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00004200
+// GLOBAL: COPTER_D 0x00593200
 // ??_7BoatClass@@6B@
 
 
 // Contribution: 3:000000a4-000000a7 Module: 164, 4 byte alignment, initialized_data, read, write, 
-// LOCAL: COPTER_D 0x000000a4
+// LOCAL: COPTER_D 0x005970a4
 // $S8
 
 
 // Contribution: 3:000203e8-00020664 Module: 164, 8 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x000203e8
+// GLOBAL: COPTER_D 0x005b73e8
 // BoatClass::lastScannedLocation
 
 
 // Contribution: 3:00020668-00020688 Module: 164, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00020668
+// GLOBAL: COPTER_D 0x005b7668
 // ??_C@_0CB@MIJI@C?3?2Copter?2Source?2Game?2S3WMOBIL?4H@
 
 
 // Contribution: 3:000945f0-000946e4 Module: 164, 8 byte alignment, uninitialized_data, read, write, 
-// GLOBAL: COPTER_D 0x000945f0
+// GLOBAL: COPTER_D 0x0062b5f0
 // BoatClass::lsBoat
-// GLOBAL: COPTER_D 0x000946d8
+// GLOBAL: COPTER_D 0x0062b6d8
 // boats
-// LOCAL: COPTER_D 0x000946e4
+// LOCAL: COPTER_D 0x0062b6e4
 // $S5

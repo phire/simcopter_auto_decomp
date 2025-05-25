@@ -9267,36 +9267,36 @@ int32_t S3MissileMIFFSave() {
 
 
 // Contribution: 3:000202c8-0002037c Module: 167, 8 byte alignment, initialized_data, read, write, 
-// LOCAL: COPTER_D 0x000202c8
+// LOCAL: COPTER_D 0x005b72c8
 // S_num_active_missiles
-// LOCAL: COPTER_D 0x000202cc
+// LOCAL: COPTER_D 0x005b72cc
 // S_num_active_bullets
-// LOCAL: COPTER_D 0x000202d0
+// LOCAL: COPTER_D 0x005b72d0
 // S_num_active_teargas
-// LOCAL: COPTER_D 0x000202d4
+// LOCAL: COPTER_D 0x005b72d4
 // S_num_active_debris
-// LOCAL: COPTER_D 0x000202d8
+// LOCAL: COPTER_D 0x005b72d8
 // S_num_active_traj
-// LOCAL: COPTER_D 0x000202dc
+// LOCAL: COPTER_D 0x005b72dc
 // S_num_active_lasers
-// LOCAL: COPTER_D 0x000202e0
+// LOCAL: COPTER_D 0x005b72e0
 // S_debris_fireseq
-// LOCAL: COPTER_D 0x00020300
+// LOCAL: COPTER_D 0x005b7300
 // S_debris_firealt
-// LOCAL: COPTER_D 0x00020320
+// LOCAL: COPTER_D 0x005b7320
 // S_tracer
-// GLOBAL: COPTER_D 0x00020328
+// GLOBAL: COPTER_D 0x005b7328
 // S_debris_types
-// GLOBAL: COPTER_D 0x00020334
+// GLOBAL: COPTER_D 0x005b7334
 // S_num_debris_types
-// LOCAL: COPTER_D 0x00020338
+// LOCAL: COPTER_D 0x005b7338
 // S_msl_fire_delay
-// LOCAL: COPTER_D 0x0002033c
+// LOCAL: COPTER_D 0x005b733c
 // tgMIFFID
-// LOCAL: COPTER_D 0x00020340
+// LOCAL: COPTER_D 0x005b7340
 // dbMIFFID
 
 
 // Contribution: 3:00093530-00093577 Module: 167, 8 byte alignment, uninitialized_data, read, write, 
-// LOCAL: COPTER_D 0x00093530
+// LOCAL: COPTER_D 0x0062a530
 // lsmsl

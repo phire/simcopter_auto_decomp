@@ -789,7 +789,7 @@ int32_t Keyboard::IsToggleKeySet(unsigned char) {
 
 
 // Contribution: 3:00000024-00000027 Module: 62, 4 byte alignment, initialized_data, read, write, 
-// LOCAL: COPTER_D 0x00000024
+// LOCAL: COPTER_D 0x00597024
 // $S5
 
 
@@ -797,5 +797,5 @@ int32_t Keyboard::IsToggleKeySet(unsigned char) {
 
 
 // Contribution: 3:0002c4f0-0002c5ff Module: 62, 8 byte alignment, uninitialized_data, read, write, 
-// GLOBAL: COPTER_D 0x0002c4f0
+// GLOBAL: COPTER_D 0x005c34f0
 // gKeyboard

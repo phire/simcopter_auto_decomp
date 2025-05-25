@@ -3315,5 +3315,5 @@ void Station::Station(unsigned char) {
 
 
 // Contribution: 3:0009e1d0-0009e24c Module: 156, 8 byte alignment, uninitialized_data, read, write, 
-// LOCAL: COPTER_D 0x0009e24c
+// LOCAL: COPTER_D 0x0063524c
 // ?$S35@?1??DispatchNearestAvailableVehicle@Station@@QAEHJJW4EmergencyType@@W4EmergencyLevel@@PAPAVEmergencyVehicleClass@@H@Z@4EA

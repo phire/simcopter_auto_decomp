@@ -9751,73 +9751,73 @@ int32_t ScreenWindow::DrawSelf() {
 
 
 // Contribution: 2:00002648-0000267f Module: 9, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00002648
+// GLOBAL: COPTER_D 0x00591648
 // ??_7GraphicWindowManager@@6B@
 
 
 // Contribution: 2:00002680-00002743 Module: 9, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00002680
+// GLOBAL: COPTER_D 0x00591680
 // ??_7GraphicWindow@@6B@
 
 
 // Contribution: 2:00002748-0000280b Module: 9, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00002748
+// GLOBAL: COPTER_D 0x00591748
 // ??_7ScreenWindow@@6B@
 
 
 // Contribution: 3:00000090-0000009f Module: 9, 4 byte alignment, initialized_data, read, write, 
-// LOCAL: COPTER_D 0x00000090
+// LOCAL: COPTER_D 0x00597090
 // $S49
-// LOCAL: COPTER_D 0x00000094
+// LOCAL: COPTER_D 0x00597094
 // $S54
-// LOCAL: COPTER_D 0x00000098
+// LOCAL: COPTER_D 0x00597098
 // $S59
-// LOCAL: COPTER_D 0x0000009c
+// LOCAL: COPTER_D 0x0059709c
 // $S62
 
 
 // Contribution: 3:00003960-0000396f Module: 9, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x00003960
+// GLOBAL: COPTER_D 0x0059a960
 // GraphicWindow::windowCursorCapture
-// GLOBAL: COPTER_D 0x00003964
+// GLOBAL: COPTER_D 0x0059a964
 // GraphicWindow::windowManager
-// GLOBAL: COPTER_D 0x00003968
+// GLOBAL: COPTER_D 0x0059a968
 // GraphicWindow::screenWindow
 
 
 // Contribution: 3:00003970-00003973 Module: 9, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00003970
+// GLOBAL: COPTER_D 0x0059a970
 // list<GraphicWindow *>::number_of_lists
 
 
 // Contribution: 3:00003974-00003977 Module: 9, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00003974
+// GLOBAL: COPTER_D 0x0059a974
 // list<GraphicWindow *>::last
 
 
 // Contribution: 3:00003978-0000397b Module: 9, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00003978
+// GLOBAL: COPTER_D 0x0059a978
 // list<GraphicWindow *>::next_avail
 
 
 // Contribution: 3:0000397c-0000397f Module: 9, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x0000397c
+// GLOBAL: COPTER_D 0x0059a97c
 // list<GraphicWindow *>::free_list
 
 
 // Contribution: 3:00003980-00003983 Module: 9, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00003980
+// GLOBAL: COPTER_D 0x0059a980
 // list<GraphicWindow *>::buffer_list
 
 
 // Contribution: 3:0006f960-0006f9a7 Module: 9, 8 byte alignment, uninitialized_data, read, write, 
-// GLOBAL: COPTER_D 0x0006f960
+// GLOBAL: COPTER_D 0x00606960
 // GraphicWindow::listFocusWindows
-// GLOBAL: COPTER_D 0x0006f968
+// GLOBAL: COPTER_D 0x00606968
 // GraphicWindow::colorConstants
-// GLOBAL: COPTER_D 0x0006f990
+// GLOBAL: COPTER_D 0x00606990
 // GraphicWindow::listModalWindows
-// LOCAL: COPTER_D 0x0006f998
+// LOCAL: COPTER_D 0x00606998
 // $S46
-// GLOBAL: COPTER_D 0x0006f9a0
+// GLOBAL: COPTER_D 0x006069a0
 // GraphicWindow::listValidWindows

@@ -2604,17 +2604,17 @@ int32_t ReadSCXFile() {
 
 
 // Contribution: 2:000033f8-00003413 Module: 89, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x000033f8
+// GLOBAL: COPTER_D 0x005923f8
 // ??_7cGZXBitstream@@6B@
 
 
 // Contribution: 2:00003418-0000343b Module: 89, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00003418
+// GLOBAL: COPTER_D 0x00592418
 // ??_7cLZAPFileBitStream@@6B@
 
 
 // Contribution: 2:00003440-0000345b Module: 89, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00003440
+// GLOBAL: COPTER_D 0x00592440
 // ??_7?$cGZXParamBitstream@Ut_alloc@@Ut_free@@@@6B@
 
 
@@ -2622,5 +2622,5 @@ int32_t ReadSCXFile() {
 
 
 // Contribution: 3:0006fa58-0006fa5b Module: 89, 4 byte alignment, uninitialized_data, read, write, 
-// LOCAL: COPTER_D 0x0006fa58
+// LOCAL: COPTER_D 0x00606a58
 // scxbuf

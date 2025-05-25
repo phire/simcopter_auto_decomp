@@ -20898,22 +20898,22 @@ long CheckupWindow::DoKeyDown(long, char) {
 
 
 // Contribution: 2:00000a80-00000b53 Module: 45, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00000a80
+// GLOBAL: COPTER_D 0x0058fa80
 // ??_7MessageBoxWindow@@6B@
 
 
 // Contribution: 2:00000b58-00000c1b Module: 45, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00000b58
+// GLOBAL: COPTER_D 0x0058fb58
 // ??_7AnimationWindow@@6B@
 
 
 // Contribution: 2:00000c20-00000ce3 Module: 45, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00000c20
+// GLOBAL: COPTER_D 0x0058fc20
 // ??_7RenderSettingsWindow@@6B@
 
 
 // Contribution: 2:00000ce8-00000dab Module: 45, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00000ce8
+// GLOBAL: COPTER_D 0x0058fce8
 // ??_7SoundSettingsWindow@@6B@
 
 
@@ -20921,102 +20921,102 @@ long CheckupWindow::DoKeyDown(long, char) {
 
 
 // Contribution: 2:00000dd0-00000e93 Module: 45, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00000dd0
+// GLOBAL: COPTER_D 0x0058fdd0
 // ??_7CitySettingsWindow@@6B@
 
 
 // Contribution: 2:00000e98-00000ff7 Module: 45, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00000e98
+// GLOBAL: COPTER_D 0x0058fe98
 // ??_7PopupMenuExtra@@6B@
 
 
 // Contribution: 2:00000ff8-000010eb Module: 45, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00000ff8
+// GLOBAL: COPTER_D 0x0058fff8
 // ??_7TooltipWindow@@6B@
 
 
 // Contribution: 2:000010f0-000011f3 Module: 45, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x000010f0
+// GLOBAL: COPTER_D 0x005900f0
 // ??_7BoneheadTextEditWindow@@6B@
 
 
 // Contribution: 2:000011f8-000012d3 Module: 45, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x000011f8
+// GLOBAL: COPTER_D 0x005901f8
 // ??_7MessageBoxWindowEdit@@6B@
 
 
 // Contribution: 2:000012d8-0000139b Module: 45, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x000012d8
+// GLOBAL: COPTER_D 0x005902d8
 // ??_7ScrollingCreditWindow@@6B@
 
 
 // Contribution: 2:000013a0-00001463 Module: 45, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x000013a0
+// GLOBAL: COPTER_D 0x005903a0
 // ??_7CheckupWindow@@6B@
 
 
 // Contribution: 3:00000044-00000053 Module: 45, 4 byte alignment, initialized_data, read, write, 
-// LOCAL: COPTER_D 0x00000044
+// LOCAL: COPTER_D 0x00597044
 // $S67
-// LOCAL: COPTER_D 0x00000048
+// LOCAL: COPTER_D 0x00597048
 // $S70
-// LOCAL: COPTER_D 0x0000004c
+// LOCAL: COPTER_D 0x0059704c
 // $S73
-// LOCAL: COPTER_D 0x00000050
+// LOCAL: COPTER_D 0x00597050
 // $S76
 
 
 // Contribution: 3:0000213c-00002283 Module: 45, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x0000213c
+// GLOBAL: COPTER_D 0x0059913c
 // SZ_MESSAGE_BOX_IMAGE_FILE_NAME
-// GLOBAL: COPTER_D 0x00002140
+// GLOBAL: COPTER_D 0x00599140
 // SZ_RENDER_WINDOW_IMAGE_FILE_NAME
-// GLOBAL: COPTER_D 0x00002144
+// GLOBAL: COPTER_D 0x00599144
 // SZ_SKY_FILE_NAME_BASE
-// GLOBAL: COPTER_D 0x00002148
+// GLOBAL: COPTER_D 0x00599148
 // SZ_GROUND_FILE_NAME_BASE
-// GLOBAL: COPTER_D 0x0000214c
+// GLOBAL: COPTER_D 0x0059914c
 // SZ_BUILDING_FILE_NAME_BASE
-// GLOBAL: COPTER_D 0x00002150
+// GLOBAL: COPTER_D 0x00599150
 // SZ_LO_RES
-// GLOBAL: COPTER_D 0x00002154
+// GLOBAL: COPTER_D 0x00599154
 // SZ_HI_RES
-// GLOBAL: COPTER_D 0x00002158
+// GLOBAL: COPTER_D 0x00599158
 // SZ_TEXTURE
-// GLOBAL: COPTER_D 0x0000215c
+// GLOBAL: COPTER_D 0x0059915c
 // SZ_NO_TEXTURE
-// GLOBAL: COPTER_D 0x00002160
+// GLOBAL: COPTER_D 0x00599160
 // SZ_SKY_COOL
-// GLOBAL: COPTER_D 0x00002164
+// GLOBAL: COPTER_D 0x00599164
 // SZ_SKY_GRAY
-// GLOBAL: COPTER_D 0x00002168
+// GLOBAL: COPTER_D 0x00599168
 // SZ_RENDER_WINDOW_SCROLL_BAR_IMAGE_FILE_NAME
-// GLOBAL: COPTER_D 0x0000216c
+// GLOBAL: COPTER_D 0x0059916c
 // SZ_SOUND_WINDOW_IMAGE_FILE_NAME
-// GLOBAL: COPTER_D 0x00002170
+// GLOBAL: COPTER_D 0x00599170
 // SZ_SOUND_WINDOW_STATION_IMAGE_FILE_NAME
-// GLOBAL: COPTER_D 0x00002174
+// GLOBAL: COPTER_D 0x00599174
 // SZ_SOUND_WINDOW_STATION_THUMB_FILE_NAME
-// GLOBAL: COPTER_D 0x00002178
+// GLOBAL: COPTER_D 0x00599178
 // SZ_CITY_SETTINGS_WINDOW_IMAGE_FILE_NAME
-// GLOBAL: COPTER_D 0x0000217c
+// GLOBAL: COPTER_D 0x0059917c
 // SZ_CITY_SETTINGS_SLIDER_IMAGE_FILE_NAME
-// GLOBAL: COPTER_D 0x00002180
+// GLOBAL: COPTER_D 0x00599180
 // SZ_POPUP_EXTRA_BACKGROUND_IMAGE_FILE_NAME
-// GLOBAL: COPTER_D 0x00002184
+// GLOBAL: COPTER_D 0x00599184
 // SZ_TOOLTIP_BACKGROUND_IMAGE_FILE_NAME
-// GLOBAL: COPTER_D 0x00002188
+// GLOBAL: COPTER_D 0x00599188
 // SZ_CHECKUP_WINDOW_IMAGE_FILE_NAME
-// GLOBAL: COPTER_D 0x0000218c
+// GLOBAL: COPTER_D 0x0059918c
 // SZ_CHECKUP_SLIDER_IMAGE_FILE_NAME
 
 
 // Contribution: 3:0006cab0-0006cabf Module: 45, 4 byte alignment, uninitialized_data, read, write, 
-// LOCAL: COPTER_D 0x0006cab0
+// LOCAL: COPTER_D 0x00603ab0
 // colorTextGamePaletteNormal
-// LOCAL: COPTER_D 0x0006cab4
+// LOCAL: COPTER_D 0x00603ab4
 // colorTextCheckupHighlighted
-// LOCAL: COPTER_D 0x0006cab8
+// LOCAL: COPTER_D 0x00603ab8
 // colorTextGamePaletteHighlighted
-// LOCAL: COPTER_D 0x0006cabc
+// LOCAL: COPTER_D 0x00603abc
 // colorTextCheckupNormal

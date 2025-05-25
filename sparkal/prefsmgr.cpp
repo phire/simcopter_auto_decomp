@@ -3304,12 +3304,12 @@ void NotificationPreferenceManager::DoNotification(long) {
 
 
 // Contribution: 2:00001db0-00001de3 Module: 32, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00001db0
+// GLOBAL: COPTER_D 0x00590db0
 // ??_7PreferenceManager@@6B@
 
 
 // Contribution: 2:00001de8-00001e2b Module: 32, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00001de8
+// GLOBAL: COPTER_D 0x00590de8
 // ??_7NotificationPreferenceManager@@6B@
 
 
@@ -3317,50 +3317,50 @@ void NotificationPreferenceManager::DoNotification(long) {
 
 
 // Contribution: 3:00002a5c-00002a5f Module: 32, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00002a5c
+// GLOBAL: COPTER_D 0x00599a5c
 // list<PreferenceItem>::number_of_lists
 
 
 // Contribution: 3:00002a60-00002a63 Module: 32, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00002a60
+// GLOBAL: COPTER_D 0x00599a60
 // list<PreferenceItem>::last
 
 
 // Contribution: 3:00002a64-00002a67 Module: 32, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00002a64
+// GLOBAL: COPTER_D 0x00599a64
 // list<PreferenceItem>::next_avail
 
 
 // Contribution: 3:00002a68-00002a6b Module: 32, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00002a68
+// GLOBAL: COPTER_D 0x00599a68
 // list<PreferenceItem>::free_list
 
 
 // Contribution: 3:00002a6c-00002a6f Module: 32, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00002a6c
+// GLOBAL: COPTER_D 0x00599a6c
 // list<PreferenceItem>::buffer_list
 
 
 // Contribution: 3:00002a70-00002a73 Module: 32, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00002a70
+// GLOBAL: COPTER_D 0x00599a70
 // list<NotificationItem>::number_of_lists
 
 
 // Contribution: 3:00002a74-00002a77 Module: 32, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00002a74
+// GLOBAL: COPTER_D 0x00599a74
 // list<NotificationItem>::last
 
 
 // Contribution: 3:00002a78-00002a7b Module: 32, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00002a78
+// GLOBAL: COPTER_D 0x00599a78
 // list<NotificationItem>::next_avail
 
 
 // Contribution: 3:00002a7c-00002a7f Module: 32, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00002a7c
+// GLOBAL: COPTER_D 0x00599a7c
 // list<NotificationItem>::free_list
 
 
 // Contribution: 3:00002a80-00002a83 Module: 32, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00002a80
+// GLOBAL: COPTER_D 0x00599a80
 // list<NotificationItem>::buffer_list

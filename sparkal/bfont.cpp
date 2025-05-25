@@ -4319,7 +4319,7 @@ int32_t BitmappedFont::GetPathForBitmapFile(char *, char *, char *) {
 
 
 // Contribution: 2:000014d0-000014f3 Module: 42, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x000014d0
+// GLOBAL: COPTER_D 0x005904d0
 // ??_7BitmappedFont@@6B@
 
 

@@ -11841,20 +11841,20 @@ short cYObject::InterpValue(short, short, short **) {
 
 
 // Contribution: 3:00025634-00026d84 Module: 196, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x00025634
+// GLOBAL: COPTER_D 0x005bc634
 // radiusReduction
 
 
 // Contribution: 3:00026d88-00026dba Module: 196, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00026d88
+// GLOBAL: COPTER_D 0x005bdd88
 // ??_C@_0DD@OACJ@must?5have?5master?5object?5to?5test?5@
 
 
 // Contribution: 3:00026dbc-00026dd5 Module: 196, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00026dbc
+// GLOBAL: COPTER_D 0x005bddbc
 // ??_C@_0BK@BPAL@local?5number?5out?5of?5range?$AA@
 
 
 // Contribution: 3:000a05a8-000a06a7 Module: 196, 8 byte alignment, uninitialized_data, read, write, 
-// GLOBAL: COPTER_D 0x000a05a8
+// GLOBAL: COPTER_D 0x006375a8
 // cYObject::PrimProcs

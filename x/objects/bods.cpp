@@ -2326,17 +2326,17 @@ void SwizzleAnimLookup() {
 
 
 // Contribution: 2:00004730-00004733 Module: 189, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00004730
+// GLOBAL: COPTER_D 0x00593730
 // ??_7?$cArray@UAnimLookup@@@@6B@
 
 
 // Contribution: 2:00004734-00004737 Module: 189, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00004734
+// GLOBAL: COPTER_D 0x00593734
 // ??_7?$cArray@UPart@cCopterBody@@@@6B@
 
 
 // Contribution: 2:00004738-0000473b Module: 189, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00004738
+// GLOBAL: COPTER_D 0x00593738
 // ??_7_cArray@@6B@
 
 
@@ -2344,41 +2344,41 @@ void SwizzleAnimLookup() {
 
 
 // Contribution: 3:00027628-00027ad3 Module: 189, 8 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x00027628
+// GLOBAL: COPTER_D 0x005be628
 // standardAnimRect
-// GLOBAL: COPTER_D 0x00027630
+// GLOBAL: COPTER_D 0x005be630
 // cCopterBody::fsList
-// GLOBAL: COPTER_D 0x00027634
+// GLOBAL: COPTER_D 0x005be634
 // sTestPersonFrameNum
 
 
 // Contribution: 3:00027ad4-00027aee Module: 189, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00027ad4
+// GLOBAL: COPTER_D 0x005bead4
 // ??_C@_0BL@GEOL@couldn?8t?5get?5or?5make?5array?$AA@
 
 
 // Contribution: 3:00027af0-00027b18 Module: 189, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00027af0
+// GLOBAL: COPTER_D 0x005beaf0
 // ??_C@_0CJ@IDHA@about?5to?5create?5a?5very?5unfortuna@
 
 
 // Contribution: 3:00027b1c-00027b57 Module: 189, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00027b1c
+// GLOBAL: COPTER_D 0x005beb1c
 // ??_C@_0DM@LMC@array?5found?5on?5disk?5even?5though?5@
 
 
 // Contribution: 3:00027b58-00027b8b Module: 189, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00027b58
+// GLOBAL: COPTER_D 0x005beb58
 // ??_C@_0DE@OFFD@didn?8t?5find?5array?5on?5disk?9?9will?5@
 
 
 // Contribution: 3:00027b8c-00027bab Module: 189, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00027b8c
+// GLOBAL: COPTER_D 0x005beb8c
 // ??_C@_0CA@LLAI@bad?5entry?5size?5of?5desired?5array?$AA@
 
 
 // Contribution: 3:000a06c8-000a1991 Module: 189, 8 byte alignment, uninitialized_data, read, write, 
-// GLOBAL: COPTER_D 0x000a06d0
+// GLOBAL: COPTER_D 0x006376d0
 // sTransformedInfo
-// GLOBAL: COPTER_D 0x000a1670
+// GLOBAL: COPTER_D 0x00638670
 // cCopterBody::fsDrawOrderParts

@@ -16159,209 +16159,209 @@ void ControlDisplayWindow::AppendKeysString(class basic_string<char>&, long, lon
 
 
 // Contribution: 2:00000058-0000013b Module: 75, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00000058
+// GLOBAL: COPTER_D 0x0058f058
 // ??_7KeyboardWindow@@6B@
 
 
 // Contribution: 2:00000140-00000227 Module: 75, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00000140
+// GLOBAL: COPTER_D 0x0058f140
 // ??_7JoystickWindow@@6B@
 
 
 // Contribution: 2:00000228-000002fb Module: 75, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00000228
+// GLOBAL: COPTER_D 0x0058f228
 // ??_7UserInputWindow@@6B@
 
 
 // Contribution: 2:00000300-000003c7 Module: 75, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00000300
+// GLOBAL: COPTER_D 0x0058f300
 // ??_7ControlDisplayWindow@@6B@
 
 
 // Contribution: 3:00000018-0000001f Module: 75, 4 byte alignment, initialized_data, read, write, 
-// LOCAL: COPTER_D 0x00000018
+// LOCAL: COPTER_D 0x00597018
 // $S98
-// LOCAL: COPTER_D 0x0000001c
+// LOCAL: COPTER_D 0x0059701c
 // $S101
 
 
 // Contribution: 3:000000f0-000001a9 Module: 75, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x000000f0
+// GLOBAL: COPTER_D 0x005970f0
 // SZ_KEYBOARD_IMAGE_FILE_NAME
-// GLOBAL: COPTER_D 0x000000f4
+// GLOBAL: COPTER_D 0x005970f4
 // SZ_KEYBOARD_LIGHT_IMAGE_FILE_NAME
-// GLOBAL: COPTER_D 0x000000f8
+// GLOBAL: COPTER_D 0x005970f8
 // SZ_KEYBOARD_NON_TEXT_IMAGE_FILE_NAME
-// GLOBAL: COPTER_D 0x000000fc
+// GLOBAL: COPTER_D 0x005970fc
 // SZ_JOYSTICK_IMAGE_FILE_NAME
-// GLOBAL: COPTER_D 0x00000100
+// GLOBAL: COPTER_D 0x00597100
 // SZ_JOYSTICK_BUTTON_IMAGE_FILE_NAME
-// GLOBAL: COPTER_D 0x00000104
+// GLOBAL: COPTER_D 0x00597104
 // SZ_JOYSTICK_SLIDER_IMAGE_FILE_NAME
-// GLOBAL: COPTER_D 0x00000108
+// GLOBAL: COPTER_D 0x00597108
 // SZ_JOYSTICK_HANDLE_IMAGE_FILE_NAME
-// GLOBAL: COPTER_D 0x0000010c
+// GLOBAL: COPTER_D 0x0059710c
 // SZ_JOYSTICK_HANDLE_BASE_IMAGE_FILE_NAME
-// GLOBAL: COPTER_D 0x00000110
+// GLOBAL: COPTER_D 0x00597110
 // SZ_USER_INPUT_WINDOW_IMAGE_FILE_NAME
-// GLOBAL: COPTER_D 0x00000114
+// GLOBAL: COPTER_D 0x00597114
 // SZ_USER_INPUT_WINDOW_BACKGROUND_FILE_NAME
-// GLOBAL: COPTER_D 0x00000118
+// GLOBAL: COPTER_D 0x00597118
 // SZ_CONTROL_DISPLAY_WINDOW_IMAGE_FILE_NAME
 
 
 // Contribution: 3:000001ac-000001b9 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x000001ac
+// GLOBAL: COPTER_D 0x005971ac
 // ??_C@_0O@OAFC@out?5of?5memory?$AA@
 
 
 // Contribution: 3:000001bc-000001bf Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x000001bc
+// GLOBAL: COPTER_D 0x005971bc
 // list<KeyColors>::number_of_lists
 
 
 // Contribution: 3:000001c0-000001c3 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x000001c0
+// GLOBAL: COPTER_D 0x005971c0
 // list<KeyColors>::last
 
 
 // Contribution: 3:000001c4-000001c7 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x000001c4
+// GLOBAL: COPTER_D 0x005971c4
 // list<KeyColors>::next_avail
 
 
 // Contribution: 3:000001c8-000001cb Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x000001c8
+// GLOBAL: COPTER_D 0x005971c8
 // list<KeyColors>::free_list
 
 
 // Contribution: 3:000001cc-000001cf Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x000001cc
+// GLOBAL: COPTER_D 0x005971cc
 // list<HotSpot>::number_of_lists
 
 
 // Contribution: 3:000001d0-000001d3 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x000001d0
+// GLOBAL: COPTER_D 0x005971d0
 // list<HotSpot>::last
 
 
 // Contribution: 3:000001d4-000001d7 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x000001d4
+// GLOBAL: COPTER_D 0x005971d4
 // list<HotSpot>::next_avail
 
 
 // Contribution: 3:000001d8-000001db Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x000001d8
+// GLOBAL: COPTER_D 0x005971d8
 // list<HotSpot>::free_list
 
 
 // Contribution: 3:000001dc-000001df Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x000001dc
+// GLOBAL: COPTER_D 0x005971dc
 // list<HotSpot>::buffer_list
 
 
 // Contribution: 3:000001e0-000001e3 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x000001e0
+// GLOBAL: COPTER_D 0x005971e0
 // list<KeyColors>::buffer_list
 
 
 // Contribution: 3:000001e4-000001fd Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x000001e4
+// GLOBAL: COPTER_D 0x005971e4
 // ??_C@_0BK@CLOL@Length?5exception?5occurred?$AA@
 
 
 // Contribution: 3:00000200-00000203 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00000200
+// GLOBAL: COPTER_D 0x00597200
 // ??_C@_03LNFH@?$CI?$CB?$CJ?$AA@
 
 
 // Contribution: 3:00000204-00000207 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00000204
+// GLOBAL: COPTER_D 0x00597204
 // list<StringIDAssociation>::number_of_lists
 
 
 // Contribution: 3:00000208-0000020b Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00000208
+// GLOBAL: COPTER_D 0x00597208
 // list<StringIDAssociation>::last
 
 
 // Contribution: 3:0000020c-0000020f Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x0000020c
+// GLOBAL: COPTER_D 0x0059720c
 // list<StringIDAssociation>::next_avail
 
 
 // Contribution: 3:00000210-00000213 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00000210
+// GLOBAL: COPTER_D 0x00597210
 // list<StringIDAssociation>::free_list
 
 
 // Contribution: 3:00000214-00000217 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00000214
+// GLOBAL: COPTER_D 0x00597214
 // list<StringIDAssociation>::buffer_list
 
 
 // Contribution: 3:00000218-0000021b Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00000218
+// GLOBAL: COPTER_D 0x00597218
 // list<Shortcut>::number_of_lists
 
 
 // Contribution: 3:0000021c-0000021f Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x0000021c
+// GLOBAL: COPTER_D 0x0059721c
 // list<Shortcut>::last
 
 
 // Contribution: 3:00000220-00000223 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00000220
+// GLOBAL: COPTER_D 0x00597220
 // list<Shortcut>::next_avail
 
 
 // Contribution: 3:00000224-00000227 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00000224
+// GLOBAL: COPTER_D 0x00597224
 // list<Shortcut>::free_list
 
 
 // Contribution: 3:00000228-0000022b Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00000228
+// GLOBAL: COPTER_D 0x00597228
 // list<Shortcut>::buffer_list
 
 
 // Contribution: 3:0000022c-0000024b Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x0000022c
+// GLOBAL: COPTER_D 0x0059722c
 // ??_C@_0CA@KCID@Out?5of?5range?5exception?5occurred?$AA@
 
 
 // Contribution: 3:0000024c-0000024f Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x0000024c
+// GLOBAL: COPTER_D 0x0059724c
 // rb_tree<long,long,ident<long,long>,less<long>>::NIL
 
 
 // Contribution: 3:00000250-00000253 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00000250
+// GLOBAL: COPTER_D 0x00597250
 // rb_tree<long,long,ident<long,long>,less<long>>::number_of_trees
 
 
 // Contribution: 3:00000254-00000257 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00000254
+// GLOBAL: COPTER_D 0x00597254
 // rb_tree<long,long,ident<long,long>,less<long>>::last
 
 
 // Contribution: 3:00000258-0000025b Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00000258
+// GLOBAL: COPTER_D 0x00597258
 // rb_tree<long,long,ident<long,long>,less<long>>::next_avail
 
 
 // Contribution: 3:0000025c-0000025f Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x0000025c
+// GLOBAL: COPTER_D 0x0059725c
 // rb_tree<long,long,ident<long,long>,less<long>>::free_list
 
 
 // Contribution: 3:00000260-00000263 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00000260
+// GLOBAL: COPTER_D 0x00597260
 // rb_tree<long,long,ident<long,long>,less<long>>::buffer_list
 
 
 // Contribution: 3:0002b790-0002b797 Module: 75, 4 byte alignment, uninitialized_data, read, write, 
-// GLOBAL: COPTER_D 0x0002b790
+// GLOBAL: COPTER_D 0x005c2790
 // colorTextGamePaletteNormal
-// GLOBAL: COPTER_D 0x0002b794
+// GLOBAL: COPTER_D 0x005c2794
 // colorTextGamePaletteHighlighted

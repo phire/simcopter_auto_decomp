@@ -2454,9 +2454,9 @@ int32_t MTCheapDist2D() {
 
 
 // Contribution: 3:000044f8-00004523 Module: 92, 8 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x000044f8
+// GLOBAL: COPTER_D 0x0059b4f8
 // X_axis
-// GLOBAL: COPTER_D 0x00004508
+// GLOBAL: COPTER_D 0x0059b508
 // Y_axis
-// GLOBAL: COPTER_D 0x00004518
+// GLOBAL: COPTER_D 0x0059b518
 // Z_axis

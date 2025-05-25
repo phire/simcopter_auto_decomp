@@ -1185,12 +1185,12 @@ short FlatFile::CheckForLeaks() {
 
 
 // Contribution: 2:00004620-0000462f Module: 195, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00004620
+// GLOBAL: COPTER_D 0x00593620
 // ??_7FlatFile@@6B@
 
 
 // Contribution: 3:00026dd8-00026e98 Module: 195, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x00026dd8
+// GLOBAL: COPTER_D 0x005bddd8
 // FlatFile::sList
-// GLOBAL: COPTER_D 0x00026ddc
+// GLOBAL: COPTER_D 0x005bdddc
 // FlatFile::sLastFileID

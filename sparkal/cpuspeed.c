@@ -931,5 +931,5 @@ unsigned long NormFreq() {
 
 
 // Contribution: 3:00001f28-00001f57 Module: 48, 8 byte alignment, initialized_data, read, write, 
-// LOCAL: COPTER_D 0x00001f28
+// LOCAL: COPTER_D 0x00598f28
 // processor_cycles

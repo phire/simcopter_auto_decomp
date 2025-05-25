@@ -5309,10 +5309,10 @@ long GetJoystickCommandTwin() {
 
 
 // Contribution: 2:00001ff8-0000204b Module: 26, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00001ff8
+// GLOBAL: COPTER_D 0x00590ff8
 // ??_7CGameCommander@@6B@
 
 
 // Contribution: 3:00002d84-00002d9c Module: 26, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x00002d84
+// GLOBAL: COPTER_D 0x00599d84
 // SZ_SHORTCUT_PREFS_FILE_NAME

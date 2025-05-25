@@ -1629,5 +1629,5 @@ void RLEDecompressClippedX() {
 
 
 // Contribution: 3:000039d4-00003b9d Module: 7, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x000039d4
+// GLOBAL: COPTER_D 0x0059a9d4
 // CRLECompressedImage::RLEGraphicsPool

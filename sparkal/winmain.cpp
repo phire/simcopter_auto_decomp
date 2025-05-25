@@ -284,9 +284,9 @@ int32_t WinMain() {
 
 
 // Contribution: 3:0002b848-0002b8cf Module: 73, 8 byte alignment, uninitialized_data, read, write, 
-// GLOBAL: COPTER_D 0x0002b848
+// GLOBAL: COPTER_D 0x005c2848
 // gszCommandLine
-// GLOBAL: COPTER_D 0x0002b8c8
+// GLOBAL: COPTER_D 0x005c28c8
 // _ghWindowsInstance
-// GLOBAL: COPTER_D 0x0002b8cc
+// GLOBAL: COPTER_D 0x005c28cc
 // _gTimerFrequency

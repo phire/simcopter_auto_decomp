@@ -14301,22 +14301,22 @@ void S3ObjSetFlatShading() {
 
 
 // Contribution: 3:0001ee78-000202c3 Module: 168, 8 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x0001ee78
+// GLOBAL: COPTER_D 0x005b5e78
 // G_dyobjmempool
-// LOCAL: COPTER_D 0x0001ee80
+// LOCAL: COPTER_D 0x005b5e80
 // S_hires_fire
-// LOCAL: COPTER_D 0x0001ee88
+// LOCAL: COPTER_D 0x005b5e88
 // S_hires_smoke_day
-// LOCAL: COPTER_D 0x0001ee90
+// LOCAL: COPTER_D 0x005b5e90
 // S_hires_smoke_night
-// LOCAL: COPTER_D 0x0001ee98
+// LOCAL: COPTER_D 0x005b5e98
 // S_hires_water
-// LOCAL: COPTER_D 0x0001eea0
+// LOCAL: COPTER_D 0x005b5ea0
 // S_objlzinfo
-// LOCAL: COPTER_D 0x000202a0
+// LOCAL: COPTER_D 0x005b72a0
 // S_color_no
 
 
 // Contribution: 3:00093528-0009352b Module: 168, 4 byte alignment, uninitialized_data, read, write, 
-// LOCAL: COPTER_D 0x00093528
+// LOCAL: COPTER_D 0x0062a528
 // S_hires_color

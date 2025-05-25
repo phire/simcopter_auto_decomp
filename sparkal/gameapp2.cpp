@@ -8569,7 +8569,7 @@ public: void __thiscall CGameApp::ComposeMainMenuVideoFrame(void) {
 
 
 // Contribution: 2:00001468-0000146b Module: 44, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00001468
+// GLOBAL: COPTER_D 0x00590468
 // ??_7PFile@@6B@
 
 
@@ -8577,31 +8577,31 @@ public: void __thiscall CGameApp::ComposeMainMenuVideoFrame(void) {
 
 
 // Contribution: 3:00002284-00002300 Module: 44, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x00002284
+// GLOBAL: COPTER_D 0x00599284
 // SZ_SMACKER_INTRO_FILE_NAME
-// GLOBAL: COPTER_D 0x00002288
+// GLOBAL: COPTER_D 0x00599288
 // SZ_COPTER_MAIN_PREFERENCES_FILE_NAME
-// GLOBAL: COPTER_D 0x0000228c
+// GLOBAL: COPTER_D 0x0059928c
 // SZ_MAIN_MENU_VIDEO_FILE_NAME
-// GLOBAL: COPTER_D 0x00002290
+// GLOBAL: COPTER_D 0x00599290
 // SZ_GRADUATION_NOTIFICATION_SOUND_FILE_NAME
 
 
 // Contribution: 3:00002304-00002307 Module: 44, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00002304
+// GLOBAL: COPTER_D 0x00599304
 // list<CopterGameMode>::last
 
 
 // Contribution: 3:00002308-0000230b Module: 44, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00002308
+// GLOBAL: COPTER_D 0x00599308
 // list<CopterGameMode>::next_avail
 
 
 // Contribution: 3:0000230c-0000230f Module: 44, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x0000230c
+// GLOBAL: COPTER_D 0x0059930c
 // list<CopterGameMode>::free_list
 
 
 // Contribution: 3:00002310-00002313 Module: 44, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00002310
+// GLOBAL: COPTER_D 0x00599310
 // list<CopterGameMode>::buffer_list

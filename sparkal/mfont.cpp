@@ -1303,12 +1303,12 @@ int32_t MFont::GetTextDimensions(char *, long&, long&) {
 
 
 // Contribution: 2:00002640-00002647 Module: 11, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x00002640
+// GLOBAL: COPTER_D 0x00591640
 // ??_7MFont@@6B@
 
 
 // Contribution: 3:0000394c-0000395d Module: 11, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x0000394c
+// GLOBAL: COPTER_D 0x0059a94c
 // SZ_DEFAULT_TEST_STRING
-// GLOBAL: COPTER_D 0x00003950
+// GLOBAL: COPTER_D 0x0059a950
 // SZ_DEFAULT_FACE_NAME

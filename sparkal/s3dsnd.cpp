@@ -5630,12 +5630,12 @@ void S3SoundAddToQueue() {
 
 
 // Contribution: 2:000005c0-000005c7 Module: 52, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x000005c0
+// GLOBAL: COPTER_D 0x0058f5c0
 // ??_7SoundChangeNotificationSink@@6B@
 
 
 // Contribution: 2:000005c8-000005cb Module: 52, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x000005c8
+// GLOBAL: COPTER_D 0x0058f5c8
 // ??_7NotificationSink@@6B@
 
 
@@ -5643,9 +5643,9 @@ void S3SoundAddToQueue() {
 
 
 // Contribution: 3:00000034-0000003b Module: 52, 4 byte alignment, initialized_data, read, write, 
-// LOCAL: COPTER_D 0x00000034
+// LOCAL: COPTER_D 0x00597034
 // $S56
-// LOCAL: COPTER_D 0x00000038
+// LOCAL: COPTER_D 0x00597038
 // $S59
 
 
@@ -5653,9 +5653,9 @@ void S3SoundAddToQueue() {
 
 
 // Contribution: 3:0002c628-0002c7f3 Module: 52, 8 byte alignment, uninitialized_data, read, write, 
-// LOCAL: COPTER_D 0x0002c628
+// LOCAL: COPTER_D 0x005c3628
 // lOriginalSoundVolumes
-// GLOBAL: COPTER_D 0x0002c7ec
+// GLOBAL: COPTER_D 0x005c37ec
 // gSoundChangeNotificationSink
-// GLOBAL: COPTER_D 0x0002c7f0
+// GLOBAL: COPTER_D 0x005c37f0
 // glMasterVolume

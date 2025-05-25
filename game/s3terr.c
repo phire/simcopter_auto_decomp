@@ -7482,52 +7482,52 @@ int32_t S3ObjectPrecisionAlt() {
 
 
 // Contribution: 3:0001ecb8-0001ee74 Module: 169, 8 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x0001ecb8
+// GLOBAL: COPTER_D 0x005b5cb8
 // G_tdim
-// GLOBAL: COPTER_D 0x0001ecbc
+// GLOBAL: COPTER_D 0x005b5cbc
 // G_tmask
-// GLOBAL: COPTER_D 0x0001ecc0
+// GLOBAL: COPTER_D 0x005b5cc0
 // G_tshift
-// GLOBAL: COPTER_D 0x0001ecc4
+// GLOBAL: COPTER_D 0x005b5cc4
 // G_morphno
-// LOCAL: COPTER_D 0x0001ecc8
+// LOCAL: COPTER_D 0x005b5cc8
 // S_texcycle
-// LOCAL: COPTER_D 0x0001ecd0
+// LOCAL: COPTER_D 0x005b5cd0
 // S_texlast
-// LOCAL: COPTER_D 0x0001ecd4
+// LOCAL: COPTER_D 0x005b5cd4
 // S_watercycle1
-// LOCAL: COPTER_D 0x0001ecd8
+// LOCAL: COPTER_D 0x005b5cd8
 // S_watercycle2
-// LOCAL: COPTER_D 0x0001ecdc
+// LOCAL: COPTER_D 0x005b5cdc
 // S_looptime
-// LOCAL: COPTER_D 0x0001ece0
+// LOCAL: COPTER_D 0x005b5ce0
 // S_checktime
-// LOCAL: COPTER_D 0x0001ece4
+// LOCAL: COPTER_D 0x005b5ce4
 // S_cycle
-// LOCAL: COPTER_D 0x0001ece8
+// LOCAL: COPTER_D 0x005b5ce8
 // S_array1
-// LOCAL: COPTER_D 0x0001ed28
+// LOCAL: COPTER_D 0x005b5d28
 // S_array2
 
 
 // Contribution: 3:00093500-00093527 Module: 169, 4 byte alignment, uninitialized_data, read, write, 
-// LOCAL: COPTER_D 0x00093500
+// LOCAL: COPTER_D 0x0062a500
 // S_h1
-// LOCAL: COPTER_D 0x00093504
+// LOCAL: COPTER_D 0x0062a504
 // S_h2
-// LOCAL: COPTER_D 0x00093508
+// LOCAL: COPTER_D 0x0062a508
 // S_h3
-// LOCAL: COPTER_D 0x0009350c
+// LOCAL: COPTER_D 0x0062a50c
 // S_h4
-// LOCAL: COPTER_D 0x00093510
+// LOCAL: COPTER_D 0x0062a510
 // S_h5
-// LOCAL: COPTER_D 0x00093514
+// LOCAL: COPTER_D 0x0062a514
 // S_h6
-// LOCAL: COPTER_D 0x00093518
+// LOCAL: COPTER_D 0x0062a518
 // S_h7
-// LOCAL: COPTER_D 0x0009351c
+// LOCAL: COPTER_D 0x0062a51c
 // S_h8
-// LOCAL: COPTER_D 0x00093520
+// LOCAL: COPTER_D 0x0062a520
 // S_h9
-// LOCAL: COPTER_D 0x00093524
+// LOCAL: COPTER_D 0x0062a524
 // S_recip_celldim

@@ -242,10 +242,10 @@ long EnumDisplayModesCallback() {
 
 
 // Contribution: 3:00002d80-00002d83 Module: 27, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x00002d80
+// GLOBAL: COPTER_D 0x00599d80
 // gNumModes
 
 
 // Contribution: 3:0006d818-0006db17 Module: 27, 8 byte alignment, uninitialized_data, read, write, 
-// GLOBAL: COPTER_D 0x0006d818
+// GLOBAL: COPTER_D 0x00604818
 // gModeList

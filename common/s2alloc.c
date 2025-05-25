@@ -876,20 +876,20 @@ void S2FreeAligned() {
 
 
 // Contribution: 3:00004524-0000454a Module: 91, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: COPTER_D 0x00004524
+// GLOBAL: COPTER_D 0x0059b524
 // G_alloc_curr
-// GLOBAL: COPTER_D 0x00004528
+// GLOBAL: COPTER_D 0x0059b528
 // G_alloc_free
-// GLOBAL: COPTER_D 0x0000452c
+// GLOBAL: COPTER_D 0x0059b52c
 // G_alloc_max
-// GLOBAL: COPTER_D 0x00004530
+// GLOBAL: COPTER_D 0x0059b530
 // G_alloc_used
-// LOCAL: COPTER_D 0x00004534
+// LOCAL: COPTER_D 0x0059b534
 // poolCount
-// LOCAL: COPTER_D 0x00004538
+// LOCAL: COPTER_D 0x0059b538
 // S_alignmem
 
 
 // Contribution: 3:0006f9d8-0006fa57 Module: 91, 8 byte alignment, uninitialized_data, read, write, 
-// LOCAL: COPTER_D 0x0006f9d8
+// LOCAL: COPTER_D 0x006069d8
 // root
