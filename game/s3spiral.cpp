@@ -6,7 +6,7 @@
 
 // Contribution: 1:00141dc0-00141f77 Module: 153, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x00542dc0
-SpiralScan::SpiralScan {
+void SpiralScan::SpiralScan(int32_t) {
 // LINE 9:
 	asm( 
 "	      00542dc0    push ebp"
@@ -52,7 +52,7 @@ SpiralScan::SpiralScan {
 }
 
 // FUNCTION: SIMCOPTER 0x00542e03
-SpiralScan::Next {
+int32_t SpiralScan::Next(struct _GridCoordinates&) {
 // LINE 17:
 	asm( 
 "	      00542e03    push ebp"
@@ -188,7 +188,7 @@ SpiralScan::Next {
 }
 
 // FUNCTION: SIMCOPTER 0x00542f05
-SpiralScan::InCityGridLimits {
+int32_t SpiralScan::InCityGridLimits(struct _GridCoordinates) {
 // LINE 52:
 	asm( 
 "	      00542f05    push ebp"

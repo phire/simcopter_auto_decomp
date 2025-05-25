@@ -6,7 +6,7 @@
 
 // Contribution: 1:000a7360-000a97bd Module: 8, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x004a8360
-InventoryWindow::InventoryWindow {
+void InventoryWindow::InventoryWindow(int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
 // LINE 53:
 	asm( 
 "	      004a8360    push ebp"
@@ -460,7 +460,7 @@ InventoryWindow::InventoryWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004a8a50
-InventoryWindow::~InventoryWindow {
+void InventoryWindow::~InventoryWindow() {
 // LINE 66:
 	asm( 
 "	      004a8a50    push ebp"
@@ -748,7 +748,7 @@ InventoryWindow::~InventoryWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004a8e67
-InventoryWindow::Initialize {
+int32_t InventoryWindow::Initialize() {
 // LINE 76:
 	asm( 
 "	      004a8e67    push ebp"
@@ -1369,7 +1369,7 @@ InventoryWindow::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x004a981d
-InventoryWindow::ReadPalette {
+int32_t InventoryWindow::ReadPalette(struct SparkalColor*) {
 // LINE 112:
 	asm( 
 "	      004a981d    push ebp"
@@ -1482,7 +1482,7 @@ InventoryWindow::ReadPalette {
 }
 
 // FUNCTION: SIMCOPTER 0x004a995f
-InventoryWindow::CreateImage {
+int32_t InventoryWindow::CreateImage(int32_t) {
 // LINE 120:
 	asm( 
 "	      004a995f    push ebp"
@@ -1750,7 +1750,7 @@ InventoryWindow::CreateImage {
 }
 
 // FUNCTION: SIMCOPTER 0x004a9c85
-InventoryWindow::DestroyImage {
+void InventoryWindow::DestroyImage() {
 // LINE 140:
 	asm( 
 "	      004a9c85    push ebp"
@@ -1831,7 +1831,7 @@ InventoryWindow::DestroyImage {
 }
 
 // FUNCTION: SIMCOPTER 0x004a9d40
-InventoryWindow::ComposeSelf {
+int32_t InventoryWindow::ComposeSelf() {
 // LINE 155:
 	asm( 
 "	      004a9d40    push ebp"
@@ -1930,7 +1930,7 @@ InventoryWindow::ComposeSelf {
 }
 
 // FUNCTION: SIMCOPTER 0x004a9e08
-InventoryWindow::DrawTitleText {
+void InventoryWindow::DrawTitleText() {
 // LINE 174:
 	asm( 
 "	      004a9e08    push ebp"
@@ -2226,7 +2226,7 @@ InventoryWindow::DrawTitleText {
 }
 
 // FUNCTION: SIMCOPTER 0x004aa1d1
-InventoryWindow::DrawInventory {
+void InventoryWindow::DrawInventory() {
 // LINE 205:
 	asm( 
 "	      004aa1d1    push ebp"
@@ -2583,7 +2583,7 @@ InventoryWindow::DrawInventory {
 }
 
 // FUNCTION: SIMCOPTER 0x004aa4ee
-InventoryWindow::DoKeyDown {
+long InventoryWindow::DoKeyDown(long, char) {
 // LINE 267:
 	asm( 
 "	      004aa4ee    push ebp"
@@ -2610,7 +2610,7 @@ InventoryWindow::DoKeyDown {
 }
 
 // FUNCTION: SIMCOPTER 0x004aa508
-InventoryWindow::DoCursorDown {
+long InventoryWindow::DoCursorDown(long, long, unsigned long) {
 // LINE 276:
 	asm( 
 "	      004aa508    push ebp"
@@ -2637,7 +2637,7 @@ InventoryWindow::DoCursorDown {
 }
 
 // FUNCTION: SIMCOPTER 0x004aa525
-InventoryWindow::DoCursorUp {
+long InventoryWindow::DoCursorUp(long, long, unsigned long) {
 // LINE 285:
 	asm( 
 "	      004aa525    push ebp"
@@ -2664,7 +2664,7 @@ InventoryWindow::DoCursorUp {
 }
 
 // FUNCTION: SIMCOPTER 0x004aa542
-InventoryWindow::DoCursorMove {
+long InventoryWindow::DoCursorMove(long, long) {
 // LINE 291:
 	asm( 
 "	      004aa542    push ebp"
@@ -2691,7 +2691,7 @@ InventoryWindow::DoCursorMove {
 }
 
 // FUNCTION: SIMCOPTER 0x004aa55f
-InventoryWindow::GetRectFromID {
+int32_t InventoryWindow::GetRectFromID(long, class MRect&) {
 // LINE 302:
 	asm( 
 "	      004aa55f    push ebp"
@@ -2790,7 +2790,7 @@ InventoryWindow::GetRectFromID {
 }
 
 // FUNCTION: SIMCOPTER 0x004aa640
-InventoryWindow::LoadHotSpots {
+void InventoryWindow::LoadHotSpots() {
 // LINE 317:
 	asm( 
 "	      004aa640    push ebp"
@@ -2813,7 +2813,7 @@ InventoryWindow::LoadHotSpots {
 }
 
 // FUNCTION: SIMCOPTER 0x004aa656
-InventoryWindow::GetColumnStartPixel {
+long InventoryWindow::GetColumnStartPixel(long) {
 // LINE 330:
 	asm( 
 "	      004aa656    push ebp"
@@ -2853,7 +2853,7 @@ InventoryWindow::GetColumnStartPixel {
 }
 
 // FUNCTION: SIMCOPTER 0x004aa693
-InventoryWindow::GetRowStartPixel {
+long InventoryWindow::GetRowStartPixel(long) {
 // LINE 344:
 	asm( 
 "	      004aa693    push ebp"
@@ -2893,7 +2893,7 @@ InventoryWindow::GetRowStartPixel {
 }
 
 // FUNCTION: SIMCOPTER 0x004aa6d0
-InventoryWindow::GetEquipmentTextPosition {
+void InventoryWindow::GetEquipmentTextPosition(long, class MPoint&) {
 // LINE 359:
 	asm( 
 "	      004aa6d0    push ebp"
@@ -2941,7 +2941,7 @@ InventoryWindow::GetEquipmentTextPosition {
 }
 
 // FUNCTION: SIMCOPTER 0x004aa722
-InventoryWindow::GetTitleAndAddressRects {
+void InventoryWindow::GetTitleAndAddressRects(class MRect&, class MRect&, class MRect&) {
 // LINE 377:
 	asm( 
 "	      004aa722    push ebp"

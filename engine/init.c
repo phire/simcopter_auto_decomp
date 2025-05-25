@@ -6,7 +6,7 @@
 
 // Contribution: 1:0018d3e0-0018d42c Module: 95, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x0058e3e0
-VREngineInit {
+void VREngineInit() {
 // LINE 42:
 	asm( 
 "	      0058e3e0    push ebp"

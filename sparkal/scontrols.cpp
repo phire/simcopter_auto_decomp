@@ -54,7 +54,7 @@
 // $E78
 
 // FUNCTION: SIMCOPTER 0x00471800
-SoundButtonWindow::SoundButtonWindow {
+void SoundButtonWindow::SoundButtonWindow() {
 // LINE 29:
 	asm( 
 "	      00471800    push ebp"
@@ -96,7 +96,7 @@ SoundButtonWindow::SoundButtonWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x00471847
-SoundButtonWindow::SoundButtonWindow {
+void SoundButtonWindow::SoundButtonWindow(class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t) {
 // LINE 44:
 	asm( 
 "	      00471847    push ebp"
@@ -150,7 +150,7 @@ SoundButtonWindow::SoundButtonWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004718a8
-SoundButtonWindow::~SoundButtonWindow {
+void SoundButtonWindow::~SoundButtonWindow() {
 // LINE 55:
 	asm( 
 "	      004718a8    push ebp"
@@ -191,7 +191,7 @@ SoundButtonWindow::~SoundButtonWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004718ea
-SoundButtonWindow::SetState {
+void SoundButtonWindow::SetState(int32_t) {
 // LINE 65:
 	asm( 
 "	      004718ea    push ebp"
@@ -244,7 +244,7 @@ SoundButtonWindow::SetState {
 }
 
 // FUNCTION: SIMCOPTER 0x00471945
-SoundRadioButtonWindow::SoundRadioButtonWindow {
+void SoundRadioButtonWindow::SoundRadioButtonWindow(class ButtonGroup*, class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t) {
 // LINE 82:
 	asm( 
 "	      00471945    push ebp"
@@ -300,7 +300,7 @@ SoundRadioButtonWindow::SoundRadioButtonWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004719aa
-SoundRadioButtonWindow::~SoundRadioButtonWindow {
+void SoundRadioButtonWindow::~SoundRadioButtonWindow() {
 // LINE 91:
 	asm( 
 "	      004719aa    push ebp"
@@ -340,7 +340,7 @@ SoundRadioButtonWindow::~SoundRadioButtonWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004719e7
-SoundRadioButtonWindow::SetState {
+void SoundRadioButtonWindow::SetState(int32_t) {
 // LINE 101:
 	asm( 
 "	      004719e7    push ebp"
@@ -394,7 +394,7 @@ SoundRadioButtonWindow::SetState {
 }
 
 // FUNCTION: SIMCOPTER 0x00471a45
-SoundCheckBoxWindow::SoundCheckBoxWindow {
+void SoundCheckBoxWindow::SoundCheckBoxWindow() {
 // LINE 112:
 	asm( 
 "	      00471a45    push ebp"
@@ -436,7 +436,7 @@ SoundCheckBoxWindow::SoundCheckBoxWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x00471a8c
-SoundCheckBoxWindow::SoundCheckBoxWindow {
+void SoundCheckBoxWindow::SoundCheckBoxWindow(class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t) {
 // LINE 126:
 	asm( 
 "	      00471a8c    push ebp"
@@ -490,7 +490,7 @@ SoundCheckBoxWindow::SoundCheckBoxWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x00471aed
-SoundCheckBoxWindow::~SoundCheckBoxWindow {
+void SoundCheckBoxWindow::~SoundCheckBoxWindow() {
 // LINE 135:
 	asm( 
 "	      00471aed    push ebp"
@@ -532,7 +532,7 @@ SoundCheckBoxWindow::~SoundCheckBoxWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x00471b34
-SoundCheckBoxWindow::SetState {
+void SoundCheckBoxWindow::SetState(int32_t) {
 // LINE 145:
 	asm( 
 "	      00471b34    push ebp"
@@ -583,7 +583,7 @@ SoundCheckBoxWindow::SetState {
 }
 
 // FUNCTION: SIMCOPTER 0x00471b85
-SoundScrollBarWindow::SoundScrollBarWindow {
+void SoundScrollBarWindow::SoundScrollBarWindow() {
 // LINE 156:
 	asm( 
 "	      00471b85    push ebp"
@@ -625,7 +625,7 @@ SoundScrollBarWindow::SoundScrollBarWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x00471bcc
-SoundScrollBarWindow::SoundScrollBarWindow {
+void SoundScrollBarWindow::SoundScrollBarWindow(class MRect&, int32_t, enum SliderWindow::SliderWindowDirection, class GraphicWindow*, class GraphicWindowOwner*, int32_t, char *) {
 // LINE 170:
 	asm( 
 "	      00471bcc    push ebp"
@@ -681,7 +681,7 @@ SoundScrollBarWindow::SoundScrollBarWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x00471c31
-SoundScrollBarWindow::~SoundScrollBarWindow {
+void SoundScrollBarWindow::~SoundScrollBarWindow() {
 // LINE 179:
 	asm( 
 "	      00471c31    push ebp"
@@ -723,7 +723,7 @@ SoundScrollBarWindow::~SoundScrollBarWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x00471c78
-SoundScrollBarWindow::MoveLinePrevious {
+void SoundScrollBarWindow::MoveLinePrevious() {
 // LINE 190:
 	asm( 
 "	      00471c78    push ebp"
@@ -773,7 +773,7 @@ SoundScrollBarWindow::MoveLinePrevious {
 }
 
 // FUNCTION: SIMCOPTER 0x00471cc9
-SoundScrollBarWindow::MoveLineNext {
+void SoundScrollBarWindow::MoveLineNext() {
 // LINE 204:
 	asm( 
 "	      00471cc9    push ebp"

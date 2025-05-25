@@ -6,7 +6,7 @@
 
 // Contribution: 1:0003c3f0-0003c841 Module: 57, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x0043d3f0
-CharData::CharData {
+void CharData::CharData() {
 // LINE 9:
 	asm( 
 "	      0043d3f0    push ebp"
@@ -35,7 +35,7 @@ CharData::CharData {
 }
 
 // FUNCTION: SIMCOPTER 0x0043d40f
-CharData::CharData {
+void CharData::CharData(unsigned char) {
 // LINE 14:
 	asm( 
 "	      0043d40f    push ebp"
@@ -65,7 +65,7 @@ CharData::CharData {
 }
 
 // FUNCTION: SIMCOPTER 0x0043d432
-CharList::CharList {
+void CharList::CharList() {
 // LINE 24:
 	asm( 
 "	      0043d432    push ebp"
@@ -107,7 +107,7 @@ CharList::CharList {
 }
 
 // FUNCTION: SIMCOPTER 0x0043d476
-CharList::~CharList {
+void CharList::~CharList() {
 // LINE 32:
 	asm( 
 "	      0043d476    push ebp"
@@ -176,7 +176,7 @@ CharList::~CharList {
 }
 
 // FUNCTION: SIMCOPTER 0x0043d4eb
-CharList::AddItem {
+void CharList::AddItem(unsigned char) {
 // LINE 49:
 	asm( 
 "	      0043d4eb    push ebp"
@@ -222,7 +222,7 @@ CharList::AddItem {
 }
 
 // FUNCTION: SIMCOPTER 0x0043d541
-CharList::AddItem {
+void CharList::AddItem(class CharData*) {
 // LINE 59:
 	asm( 
 "	      0043d541    push ebp"
@@ -313,7 +313,7 @@ CharList::AddItem {
 }
 
 // FUNCTION: SIMCOPTER 0x0043d5c9
-CharList::DeleteItem {
+void CharList::DeleteItem(class CharData*) {
 // LINE 79:
 	asm( 
 "	      0043d5c9    push ebp"
@@ -421,7 +421,7 @@ CharList::DeleteItem {
 }
 
 // FUNCTION: SIMCOPTER 0x0043d67f
-CharList::DeleteItem {
+void CharList::DeleteItem(unsigned char) {
 // LINE 100:
 	asm( 
 "	      0043d67f    push ebp"
@@ -468,7 +468,7 @@ CharList::DeleteItem {
 }
 
 // FUNCTION: SIMCOPTER 0x0043d6c1
-CharList::DeleteItem {
+void CharList::DeleteItem(int32_t) {
 // LINE 110:
 	asm( 
 "	      0043d6c1    push ebp"
@@ -515,7 +515,7 @@ CharList::DeleteItem {
 }
 
 // FUNCTION: SIMCOPTER 0x0043d703
-CharList::DeleteAllItems {
+void CharList::DeleteAllItems() {
 // LINE 120:
 	asm( 
 "	      0043d703    push ebp"
@@ -561,7 +561,7 @@ CharList::DeleteAllItems {
 }
 
 // FUNCTION: SIMCOPTER 0x0043d74d
-CharList::FindCharDataByIndex {
+class CharData* CharList::FindCharDataByIndex(int32_t) {
 // LINE 128:
 	asm( 
 "	      0043d74d    push ebp"
@@ -634,7 +634,7 @@ CharList::FindCharDataByIndex {
 }
 
 // FUNCTION: SIMCOPTER 0x0043d7ce
-CharList::FindCharDataByValue {
+class CharData* CharList::FindCharDataByValue(unsigned char) {
 // LINE 149:
 	asm( 
 "	      0043d7ce    push ebp"

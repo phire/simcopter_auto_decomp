@@ -6,7 +6,7 @@
 
 // Contribution: 1:0003cae0-0003d110 Module: 55, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x0043dae0
-Version::Version {
+void Version::Version() {
 // LINE 23:
 	asm( 
 "	      0043dae0    push ebp"
@@ -122,7 +122,7 @@ Version::Version {
 }
 
 // FUNCTION: SIMCOPTER 0x0043dc10
-Version::~Version {
+void Version::~Version() {
 // LINE 57:
 	asm( 
 "	      0043dc10    push ebp"
@@ -165,7 +165,7 @@ Version::~Version {
 }
 
 // FUNCTION: SIMCOPTER 0x0043dc57
-Version::GetApplicationName {
+int32_t Version::GetApplicationName(char *&) {
 // LINE 74:
 	asm( 
 "	      0043dc57    push ebp"
@@ -236,7 +236,7 @@ Version::GetApplicationName {
 }
 
 // FUNCTION: SIMCOPTER 0x0043dce9
-Version::GetApplicationVersion {
+int32_t Version::GetApplicationVersion(char *&) {
 // LINE 109:
 	asm( 
 "	      0043dce9    push ebp"
@@ -307,7 +307,7 @@ Version::GetApplicationVersion {
 }
 
 // FUNCTION: SIMCOPTER 0x0043dd7b
-Version::GetApplicationCopyright {
+int32_t Version::GetApplicationCopyright(char *&) {
 // LINE 133:
 	asm( 
 "	      0043dd7b    push ebp"
@@ -378,7 +378,7 @@ Version::GetApplicationCopyright {
 }
 
 // FUNCTION: SIMCOPTER 0x0043de0d
-Version::GetApplicationDebugVersion {
+int32_t Version::GetApplicationDebugVersion(char *&) {
 // LINE 156:
 	asm( 
 "	      0043de0d    push ebp"
@@ -449,7 +449,7 @@ Version::GetApplicationDebugVersion {
 }
 
 // FUNCTION: SIMCOPTER 0x0043de9f
-Version::GetApplicationVersion {
+long Version::GetApplicationVersion(int32_t) {
 // LINE 187:
 	asm( 
 "	      0043de9f    push ebp"
@@ -567,7 +567,7 @@ Version::GetApplicationVersion {
 }
 
 // FUNCTION: SIMCOPTER 0x0043df83
-Version::GetSystemVersion {
+int32_t Version::GetSystemVersion(char *) {
 // LINE 230:
 	asm( 
 "	      0043df83    push ebp"
@@ -635,7 +635,7 @@ Version::GetSystemVersion {
 }
 
 // FUNCTION: SIMCOPTER 0x0043dff2
-Version::GetSystemType {
+int32_t Version::GetSystemType() {
 // LINE 267:
 	asm( 
 "	      0043dff2    push ebp"
@@ -687,7 +687,7 @@ Version::GetSystemType {
 }
 
 // FUNCTION: SIMCOPTER 0x0043e038
-Version::GetSystemVersion {
+long Version::GetSystemVersion(int32_t) {
 // LINE 302:
 	asm( 
 "	      0043e038    push ebp"
@@ -741,7 +741,7 @@ Version::GetSystemVersion {
 }
 
 // FUNCTION: SIMCOPTER 0x0043e086
-Version::GetCPUVersion {
+long Version::GetCPUVersion() {
 // LINE 334:
 	asm( 
 "	      0043e086    push ebp"
@@ -782,7 +782,7 @@ Version::GetCPUVersion {
 }
 
 // FUNCTION: SIMCOPTER 0x0043e0b8
-Version::GetCPUSpeed {
+long Version::GetCPUSpeed() {
 // LINE 355:
 	asm( 
 "	      0043e0b8    push ebp"

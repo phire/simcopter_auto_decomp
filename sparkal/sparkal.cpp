@@ -6,7 +6,7 @@
 
 // Contribution: 1:0003c850-0003cad2 Module: 56, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x0043d850
-GetMillisecondTime {
+float GetMillisecondTime() {
 // LINE 27:
 	asm( 
 "	      0043d850    push ebp"
@@ -71,7 +71,7 @@ GetMillisecondTime {
 }
 
 // FUNCTION: SIMCOPTER 0x0043d8c6
-GetMillisecondTimeLong {
+long GetMillisecondTimeLong() {
 // LINE 54:
 	asm( 
 "	      0043d8c6    push ebp"
@@ -96,7 +96,7 @@ GetMillisecondTimeLong {
 }
 
 // FUNCTION: SIMCOPTER 0x0043d8dc
-ConvertRange {
+long ConvertRange() {
 // LINE 73:
 	asm( 
 "	      0043d8dc    push ebp"
@@ -151,7 +151,7 @@ ConvertRange {
 }
 
 // FUNCTION: SIMCOPTER 0x0043d91f
-SparkalDelay {
+void SparkalDelay() {
 // LINE 99:
 	asm( 
 "	      0043d91f    push ebp"

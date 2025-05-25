@@ -6,7 +6,7 @@
 
 // Contribution: 1:000d5b40-000d62f3 Module: 141, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x004d6b40
-VRInitGridObj {
+short VRInitGridObj() {
 // LINE 121:
 	asm( 
 "	      004d6b40    push ebp"
@@ -775,7 +775,7 @@ VRInitGridObj {
 }
 
 // FUNCTION: SIMCOPTER 0x004d71d7
-VRFreeGridObj {
+void VRFreeGridObj() {
 // LINE 363:
 	asm( 
 "	      004d71d7    push ebp"
@@ -802,7 +802,7 @@ VRFreeGridObj {
 }
 
 // FUNCTION: SIMCOPTER 0x004d71f0
-InitGridPool {
+void InitGridPool() {
 // LINE 370:
 	asm( 
 "	      004d71f0    push ebp"

@@ -6,7 +6,7 @@
 
 // Contribution: 1:000c8ad0-000c90b4 Module: 93, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x004c9ad0
-TWKEnQueue {
+int32_t TWKEnQueue() {
 // LINE 40:
 	asm( 
 "	      004c9ad0    push ebp"
@@ -104,7 +104,7 @@ TWKEnQueue {
 }
 
 // FUNCTION: SIMCOPTER 0x004c9b9b
-TWKReadFile {
+int32_t TWKReadFile() {
 // LINE 70:
 	asm( 
 "	      004c9b9b    push ebp"
@@ -264,7 +264,7 @@ TWKReadFile {
 }
 
 // FUNCTION: SIMCOPTER 0x004c9d2e
-TWKGameInit {
+void TWKGameInit() {
 // LINE 115:
 	asm( 
 "	      004c9d2e    push ebp"
@@ -298,7 +298,7 @@ TWKGameInit {
 }
 
 // FUNCTION: SIMCOPTER 0x004c9d5d
-TWKUpdate {
+void TWKUpdate() {
 // LINE 135:
 	asm( 
 "	      004c9d5d    push ebp"
@@ -318,7 +318,7 @@ TWKUpdate {
 }
 
 // FUNCTION: SIMCOPTER 0x004c9d68
-TWKReadAllFiles {
+void TWKReadAllFiles() {
 // LINE 154:
 	asm( 
 "	      004c9d68    push ebp"
@@ -422,7 +422,7 @@ TWKReadAllFiles {
 }
 
 // FUNCTION: SIMCOPTER 0x004c9e4f
-TWKReadSection {
+void TWKReadSection() {
 // LINE 203:
 	asm( 
 "	      004c9e4f    push ebp"
@@ -634,7 +634,7 @@ TWKReadSection {
 }
 
 // FUNCTION: SIMCOPTER 0x004ca059
-TWKDOSRead {
+int32_t TWKDOSRead() {
 // LINE 262:
 	asm( 
 "	      004ca059    push ebp"
@@ -659,7 +659,7 @@ TWKDOSRead {
 }
 
 // FUNCTION: SIMCOPTER 0x004ca06e
-TWKGetToEOLN {
+void TWKGetToEOLN() {
 // LINE 361:
 	asm( 
 "	      004ca06e    push ebp"

@@ -6,7 +6,7 @@
 
 // Contribution: 1:000d42c0-000d505d Module: 146, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x004d52c0
-InitResource {
+void InitResource() {
 // LINE 92:
 	asm( 
 "	      004d52c0    push ebp"
@@ -53,7 +53,7 @@ InitResource {
 }
 
 // FUNCTION: SIMCOPTER 0x004d530f
-VRResFreeBarrys {
+void VRResFreeBarrys() {
 // LINE 112:
 	asm( 
 "	      004d530f    push ebp"
@@ -107,7 +107,7 @@ VRResFreeBarrys {
 }
 
 // FUNCTION: SIMCOPTER 0x004d5356
-VRLoadResource {
+struct VRResource* VRLoadResource() {
 // LINE 138:
 	asm( 
 "	      004d5356    push ebp"
@@ -685,7 +685,7 @@ VRLoadResource {
 }
 
 // FUNCTION: SIMCOPTER 0x004d5825
-VRUnLoadAllResources {
+int32_t VRUnLoadAllResources() {
 // LINE 275:
 	asm( 
 "	      004d5825    push ebp"
@@ -739,7 +739,7 @@ VRUnLoadAllResources {
 }
 
 // FUNCTION: SIMCOPTER 0x004d5872
-VRUnLoadResource {
+int32_t VRUnLoadResource() {
 // LINE 301:
 	asm( 
 "	      004d5872    push ebp"
@@ -844,7 +844,7 @@ VRUnLoadResource {
 }
 
 // FUNCTION: SIMCOPTER 0x004d5926
-GetDir_GEOM {
+int32_t GetDir_GEOM() {
 // LINE 358:
 	asm( 
 "	      004d5926    push ebp"
@@ -1133,7 +1133,7 @@ GetDir_GEOM {
 }
 
 // FUNCTION: SIMCOPTER 0x004d5baf
-GetDir_CMAP {
+int32_t GetDir_CMAP() {
 // LINE 635:
 	asm( 
 "	      004d5baf    push ebp"
@@ -1328,7 +1328,7 @@ GetDir_CMAP {
 }
 
 // FUNCTION: SIMCOPTER 0x004d5d48
-GetResourceDir {
+int32_t GetResourceDir() {
 // LINE 752:
 	asm( 
 "	      004d5d48    push ebp"
@@ -1487,7 +1487,7 @@ GetResourceDir {
 }
 
 // FUNCTION: SIMCOPTER 0x004d5e81
-OpenResourceFile {
+int32_t OpenResourceFile() {
 // LINE 868:
 	asm( 
 "	      004d5e81    push ebp"
@@ -1569,7 +1569,7 @@ OpenResourceFile {
 }
 
 // FUNCTION: SIMCOPTER 0x004d5f1e
-ReadResource {
+int32_t ReadResource() {
 // LINE 915:
 	asm( 
 "	      004d5f1e    push ebp"
@@ -1616,7 +1616,7 @@ ReadResource {
 }
 
 // FUNCTION: SIMCOPTER 0x004d5f63
-VRCloseResourceFile {
+void VRCloseResourceFile() {
 // LINE 1079:
 	asm( 
 "	      004d5f63    push ebp"
@@ -1664,7 +1664,7 @@ VRCloseResourceFile {
 }
 
 // FUNCTION: SIMCOPTER 0x004d5fa9
-RegisterResource {
+int32_t RegisterResource() {
 // LINE 1117:
 	asm( 
 "	      004d5fa9    push ebp"
@@ -1716,7 +1716,7 @@ RegisterResource {
 }
 
 // FUNCTION: SIMCOPTER 0x004d5ffd
-UnRegisterResource {
+void UnRegisterResource() {
 // LINE 1142:
 	asm( 
 "	      004d5ffd    push ebp"

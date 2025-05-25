@@ -6,7 +6,7 @@
 
 // Contribution: 1:0007a640-0007ab67 Module: 33, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x0047b640
-wincpuidsupport {
+unsigned short wincpuidsupport() {
 // LINE 63:
 	asm( 
 "	      0047b640    push ebp"
@@ -80,7 +80,7 @@ wincpuidsupport {
 }
 
 // FUNCTION: SIMCOPTER 0x0047b67a
-wincpuid {
+unsigned short wincpuid() {
 // LINE 106:
 	asm( 
 "	      0047b67a    push ebp"
@@ -181,7 +181,7 @@ wincpuid {
 }
 
 // FUNCTION: SIMCOPTER 0x0047b739
-wincpuidext {
+unsigned short wincpuidext() {
 // LINE 162:
 	asm( 
 "	      0047b739    push ebp"
@@ -339,7 +339,7 @@ wincpuidext {
 }
 
 // FUNCTION: SIMCOPTER 0x0047b825
-wincpufeatures {
+unsigned long wincpufeatures() {
 // LINE 253:
 	asm( 
 "	      0047b825    push ebp"
@@ -477,7 +477,7 @@ wincpufeatures {
 }
 
 // FUNCTION: SIMCOPTER 0x0047b8ec
-winrdtsc {
+struct TIME_STAMP winrdtsc() {
 // LINE 320:
 	asm( 
 "	      0047b8ec    push ebp"
@@ -534,7 +534,7 @@ winrdtsc {
 }
 
 // FUNCTION: SIMCOPTER 0x0047b92d
-getdllversion {
+unsigned short getdllversion() {
 // LINE 359:
 	asm( 
 "	      0047b92d    push ebp"
@@ -564,7 +564,7 @@ getdllversion {
 }
 
 // FUNCTION: SIMCOPTER 0x0047b94a
-check_clone {
+unsigned short check_clone() {
 // LINE 381:
 	asm( 
 "	      0047b94a    push ebp"
@@ -652,7 +652,7 @@ check_clone {
 }
 
 // FUNCTION: SIMCOPTER 0x0047b999
-check_8086 {
+unsigned short check_8086() {
 // LINE 422:
 	asm( 
 "	      0047b999    push ebp"
@@ -746,7 +746,7 @@ check_8086 {
 }
 
 // FUNCTION: SIMCOPTER 0x0047b9eb
-check_80286 {
+unsigned short check_80286() {
 // LINE 465:
 	asm( 
 "	      0047b9eb    push ebp"
@@ -836,7 +836,7 @@ check_80286 {
 }
 
 // FUNCTION: SIMCOPTER 0x0047ba3a
-check_80386 {
+unsigned short check_80386() {
 // LINE 511:
 	asm( 
 "	      0047ba3a    push ebp"
@@ -942,7 +942,7 @@ check_80386 {
 }
 
 // FUNCTION: SIMCOPTER 0x0047ba8d
-check_IDProc {
+unsigned short check_IDProc() {
 // LINE 561:
 	asm( 
 "	      0047ba8d    push ebp"

@@ -6,7 +6,7 @@
 
 // Contribution: 1:000e9c40-000eabb1 Module: 179, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x004eac40
-VRAppInit {
+int32_t VRAppInit() {
 // LINE 163:
 	asm( 
 "	      004eac40    push ebp"
@@ -998,7 +998,7 @@ VRAppInit {
 }
 
 // FUNCTION: SIMCOPTER 0x004eb5ca
-VRAppCityInit {
+int32_t VRAppCityInit() {
 // LINE 548:
 	asm( 
 "	      004eb5ca    push ebp"
@@ -1337,7 +1337,7 @@ VRAppCityInit {
 }
 
 // FUNCTION: SIMCOPTER 0x004eb877
-VRAppGameInit {
+int32_t VRAppGameInit() {
 // LINE 705:
 	asm( 
 "	      004eb877    push ebp"
@@ -1434,7 +1434,7 @@ VRAppGameInit {
 }
 
 // FUNCTION: SIMCOPTER 0x004eb909
-VRAppGameSave {
+int32_t VRAppGameSave() {
 // LINE 739:
 	asm( 
 "	      004eb909    push ebp"
@@ -1515,7 +1515,7 @@ VRAppGameSave {
 }
 
 // FUNCTION: SIMCOPTER 0x004eb97e
-VRAppDeInit {
+void VRAppDeInit() {
 // LINE 766:
 	asm( 
 "	      004eb97e    push ebp"
@@ -1553,7 +1553,7 @@ VRAppDeInit {
 }
 
 // FUNCTION: SIMCOPTER 0x004eb9aa
-VRAppNextFrame {
+void VRAppNextFrame() {
 // LINE 784:
 	asm( 
 "	      004eb9aa    push ebp"
@@ -1739,7 +1739,7 @@ VRAppNextFrame {
 }
 
 // FUNCTION: SIMCOPTER 0x004ebae1
-VRAppNewTextures {
+void VRAppNewTextures() {
 // LINE 922:
 	asm( 
 "	      004ebae1    push ebp"
@@ -1759,7 +1759,7 @@ VRAppNewTextures {
 }
 
 // FUNCTION: SIMCOPTER 0x004ebaec
-SetUserVars {
+void SetUserVars() {
 // LINE 939:
 	asm( 
 "	      004ebaec    push ebp"

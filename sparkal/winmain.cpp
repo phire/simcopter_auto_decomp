@@ -6,7 +6,7 @@
 
 // Contribution: 1:0001e870-0001eac1 Module: 73, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x0041f870
-WinMain {
+int32_t WinMain() {
 // LINE 28:
 	asm( 
 "	      0041f870    push ebp"

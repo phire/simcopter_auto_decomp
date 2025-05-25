@@ -6,7 +6,7 @@
 
 // Contribution: 1:00046240-00046788 Module: 50, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x00447240
-PaletteBuffer::PaletteBuffer {
+void PaletteBuffer::PaletteBuffer() {
 // LINE 34:
 	asm( 
 "	      00447240    push ebp"
@@ -105,7 +105,7 @@ PaletteBuffer::PaletteBuffer {
 }
 
 // FUNCTION: SIMCOPTER 0x00447340
-PaletteBuffer::PaletteBuffer {
+void PaletteBuffer::PaletteBuffer(struct SparkalColor*) {
 // LINE 52:
 	asm( 
 "	      00447340    push ebp"
@@ -212,7 +212,7 @@ PaletteBuffer::PaletteBuffer {
 }
 
 // FUNCTION: SIMCOPTER 0x00447456
-PaletteBuffer::~PaletteBuffer {
+void PaletteBuffer::~PaletteBuffer() {
 // LINE 69:
 	asm( 
 "	      00447456    push ebp"
@@ -257,7 +257,7 @@ PaletteBuffer::~PaletteBuffer {
 }
 
 // FUNCTION: SIMCOPTER 0x004474ab
-PaletteBuffer::SetPalette {
+int32_t PaletteBuffer::SetPalette(const struct SparkalColor*) {
 // LINE 78:
 	asm( 
 "	      004474ab    push ebp"
@@ -306,7 +306,7 @@ PaletteBuffer::SetPalette {
 }
 
 // FUNCTION: SIMCOPTER 0x00447501
-PaletteBuffer::SetPalette {
+int32_t PaletteBuffer::SetPalette() {
 // LINE 96:
 	asm( 
 "	      00447501    push ebp"
@@ -417,7 +417,7 @@ PaletteBuffer::SetPalette {
 }
 
 // FUNCTION: SIMCOPTER 0x004475e2
-PaletteBuffer::DrawPalette {
+void PaletteBuffer::DrawPalette() {
 // LINE 125:
 	asm( 
 "	      004475e2    push ebp"
@@ -587,7 +587,7 @@ PaletteBuffer::DrawPalette {
 }
 
 // FUNCTION: SIMCOPTER 0x0044774b
-PaletteBuffer::Compose {
+unsigned long PaletteBuffer::Compose(class IFlatImage*, long, long, long, long, long, long) {
 // LINE 161:
 	asm( 
 "	      0044774b    push ebp"

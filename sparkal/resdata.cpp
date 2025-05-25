@@ -6,7 +6,7 @@
 
 // Contribution: 1:000467b0-00046b55 Module: 49, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x004477b0
-ResourceRCData::ResourceRCData {
+void ResourceRCData::ResourceRCData() {
 // LINE 26:
 	asm( 
 "	      004477b0    push ebp"
@@ -44,7 +44,7 @@ ResourceRCData::ResourceRCData {
 }
 
 // FUNCTION: SIMCOPTER 0x0044780e
-ResourceRCData::ResourceRCData {
+void ResourceRCData::ResourceRCData(int32_t, int32_t) {
 // LINE 38:
 	asm( 
 "	      0044780e    push ebp"
@@ -103,7 +103,7 @@ ResourceRCData::ResourceRCData {
 }
 
 // FUNCTION: SIMCOPTER 0x00447880
-ResourceRCData::ResourceRCData {
+void ResourceRCData::ResourceRCData(class ResourceRCData&) {
 // LINE 54:
 	asm( 
 "	      00447880    push ebp"
@@ -190,7 +190,7 @@ ResourceRCData::ResourceRCData {
 }
 
 // FUNCTION: SIMCOPTER 0x0044791c
-ResourceRCData::~ResourceRCData {
+void ResourceRCData::~ResourceRCData() {
 // LINE 72:
 	asm( 
 "	      0044791c    push ebp"
@@ -220,7 +220,7 @@ ResourceRCData::~ResourceRCData {
 }
 
 // FUNCTION: SIMCOPTER 0x00447943
-ResourceRCData::operator= {
+class ResourceRCData& ResourceRCData::operator=(class ResourceRCData&) {
 // LINE 81:
 	asm( 
 "	      00447943    push ebp"
@@ -319,7 +319,7 @@ ResourceRCData::operator= {
 }
 
 // FUNCTION: SIMCOPTER 0x004479ea
-ResourceRCData::Reset {
+void ResourceRCData::Reset() {
 // LINE 104:
 	asm( 
 "	      004479ea    push ebp"
@@ -398,7 +398,7 @@ ResourceRCData::Reset {
 }
 
 // FUNCTION: SIMCOPTER 0x00447a74
-ResourceRCData::DataSize {
+unsigned long ResourceRCData::DataSize() {
 // LINE 130:
 	asm( 
 "	      00447a74    push ebp"
@@ -442,7 +442,7 @@ ResourceRCData::DataSize {
 }
 
 // FUNCTION: SIMCOPTER 0x00447ab2
-ResourceRCData::ReadResource {
+int32_t ResourceRCData::ReadResource() {
 // LINE 143:
 	asm( 
 "	      00447ab2    push ebp"
@@ -521,7 +521,7 @@ ResourceRCData::ReadResource {
 }
 
 // FUNCTION: SIMCOPTER 0x00447b3a
-ResourceRCData::DataReference {
+char * ResourceRCData::DataReference() {
 // LINE 161:
 	asm( 
 "	      00447b3a    push ebp"

@@ -6,7 +6,7 @@
 
 // Contribution: 1:00109000-00112d42 Module: 170, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x0050a000
-S3CityInit {
+short S3CityInit() {
 // LINE 206:
 	asm( 
 "	      0050a000    push ebp"
@@ -434,7 +434,7 @@ S3CityInit {
 }
 
 // FUNCTION: SIMCOPTER 0x0050a406
-S3CityDeInit {
+void S3CityDeInit() {
 // LINE 334:
 	asm( 
 "	      0050a406    push ebp"
@@ -508,7 +508,7 @@ S3CityDeInit {
 }
 
 // FUNCTION: SIMCOPTER 0x0050a478
-VRSetBackPlane {
+void VRSetBackPlane() {
 // LINE 363:
 	asm( 
 "	      0050a478    push ebp"
@@ -687,7 +687,7 @@ VRSetBackPlane {
 }
 
 // FUNCTION: SIMCOPTER 0x0050a5df
-S3CityInitOmap {
+short S3CityInitOmap() {
 // LINE 447:
 	asm( 
 "	      0050a5df    push ebp"
@@ -9828,7 +9828,7 @@ S3CityInitOmap {
 }
 
 // FUNCTION: SIMCOPTER 0x0050ef4e
-S3CityGrid {
+void S3CityGrid() {
 // LINE 2446:
 	asm( 
 "	      0050ef4e    push ebp"
@@ -10659,7 +10659,7 @@ S3CityGrid {
 }
 
 // FUNCTION: SIMCOPTER 0x0050f67e
-S3CityGetCells {
+void S3CityGetCells() {
 // LINE 2916:
 	asm( 
 "	      0050f67e    push ebp"
@@ -11528,7 +11528,7 @@ S3CityGetCells {
 }
 
 // FUNCTION: SIMCOPTER 0x0050fe32
-city_fovscan_horizedge {
+void city_fovscan_horizedge() {
 // LINE 3210:
 	asm( 
 "	      0050fe32    push ebp"
@@ -12095,7 +12095,7 @@ city_fovscan_horizedge {
 }
 
 // FUNCTION: SIMCOPTER 0x005102d4
-city_fovscan_vertedge {
+void city_fovscan_vertedge() {
 // LINE 3360:
 	asm( 
 "	      005102d4    push ebp"
@@ -12635,7 +12635,7 @@ city_fovscan_vertedge {
 }
 
 // FUNCTION: SIMCOPTER 0x00510776
-city_subscan_horiz {
+void city_subscan_horiz() {
 // LINE 3520:
 	asm( 
 "	      00510776    push ebp"
@@ -13131,7 +13131,7 @@ city_subscan_horiz {
 }
 
 // FUNCTION: SIMCOPTER 0x00510beb
-city_subscan_vert {
+void city_subscan_vert() {
 // LINE 3637:
 	asm( 
 "	      00510beb    push ebp"
@@ -13606,7 +13606,7 @@ city_subscan_vert {
 }
 
 // FUNCTION: SIMCOPTER 0x0051103e
-S3CityDrawGrid {
+void S3CityDrawGrid() {
 // LINE 3754:
 	asm( 
 "	      0051103e    push ebp"
@@ -14145,7 +14145,7 @@ S3CityDrawGrid {
 }
 
 // FUNCTION: SIMCOPTER 0x0051147c
-S3CityDyObjFixup {
+void S3CityDyObjFixup() {
 // LINE 3931:
 	asm( 
 "	      0051147c    push ebp"
@@ -15681,7 +15681,7 @@ S3CityDyObjFixup {
 }
 
 // FUNCTION: SIMCOPTER 0x0051215e
-S3CityCellInFront {
+int32_t S3CityCellInFront() {
 // LINE 4314:
 	asm( 
 "	      0051215e    push ebp"
@@ -15793,7 +15793,7 @@ S3CityCellInFront {
 }
 
 // FUNCTION: SIMCOPTER 0x0051221e
-S3CityCheckGridPos {
+void S3CityCheckGridPos() {
 // LINE 4355:
 	asm( 
 "	      0051221e    push ebp"
@@ -16110,7 +16110,7 @@ S3CityCheckGridPos {
 }
 
 // FUNCTION: SIMCOPTER 0x005124fe
-S3CitySpiralScan {
+void S3CitySpiralScan() {
 // LINE 4453:
 	asm( 
 "	      005124fe    push ebp"
@@ -16333,7 +16333,7 @@ S3CitySpiralScan {
 }
 
 // FUNCTION: SIMCOPTER 0x00512670
-S3CityCellViewReject {
+int32_t S3CityCellViewReject() {
 // LINE 4733:
 	asm( 
 "	      00512670    push ebp"
@@ -16711,7 +16711,7 @@ S3CityCellViewReject {
 }
 
 // FUNCTION: SIMCOPTER 0x00512961
-S3CityDrawOverHeadGrid {
+void S3CityDrawOverHeadGrid() {
 // LINE 4888:
 	asm( 
 "	      00512961    push ebp"
@@ -16829,7 +16829,7 @@ S3CityDrawOverHeadGrid {
 }
 
 // FUNCTION: SIMCOPTER 0x00512a46
-S3CityLowestTerrAlt {
+short S3CityLowestTerrAlt() {
 // LINE 4939:
 	asm( 
 "	      00512a46    push ebp"
@@ -16914,7 +16914,7 @@ S3CityLowestTerrAlt {
 }
 
 // FUNCTION: SIMCOPTER 0x00512af5
-S3CityIsCellFlat {
+int32_t S3CityIsCellFlat() {
 // LINE 4965:
 	asm( 
 "	      00512af5    push ebp"
@@ -17023,7 +17023,7 @@ S3CityIsCellFlat {
 }
 
 // FUNCTION: SIMCOPTER 0x00512c2b
-S3CityGetBase {
+int32_t S3CityGetBase() {
 // LINE 4984:
 	asm( 
 "	      00512c2b    push ebp"
@@ -17249,7 +17249,7 @@ S3CityGetBase {
 }
 
 // FUNCTION: SIMCOPTER 0x00512e3a
-S3CityCreateHeliBase {
+void S3CityCreateHeliBase() {
 // LINE 5051:
 	asm( 
 "	      00512e3a    push ebp"

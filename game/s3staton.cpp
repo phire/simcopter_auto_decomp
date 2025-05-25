@@ -6,7 +6,7 @@
 
 // Contribution: 1:00138c00-0013ad38 Module: 156, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x00539c00
-S3StationInit {
+void S3StationInit() {
 // LINE 27:
 	asm( 
 "	      00539c00    push ebp"
@@ -73,7 +73,7 @@ S3StationInit {
 }
 
 // FUNCTION: SIMCOPTER 0x00539cbb
-S3StationReset {
+void S3StationReset() {
 // LINE 36:
 	asm( 
 "	      00539cbb    push ebp"
@@ -143,7 +143,7 @@ S3StationReset {
 }
 
 // FUNCTION: SIMCOPTER 0x00539d67
-S3GetNearestStation {
+short S3GetNearestStation() {
 // LINE 48:
 	asm( 
 "	      00539d67    push ebp"
@@ -173,7 +173,7 @@ S3GetNearestStation {
 }
 
 // FUNCTION: SIMCOPTER 0x00539d87
-S3GetNextNearest {
+short S3GetNextNearest() {
 // LINE 56:
 	asm( 
 "	      00539d87    push ebp"
@@ -201,7 +201,7 @@ S3GetNextNearest {
 }
 
 // FUNCTION: SIMCOPTER 0x00539da3
-Station::FindNearestRoadToStation {
+int32_t Station::FindNearestRoadToStation(struct _GridCoordinates&) {
 // LINE 65:
 	asm( 
 "	      00539da3    push ebp"
@@ -439,7 +439,7 @@ Station::FindNearestRoadToStation {
 }
 
 // FUNCTION: SIMCOPTER 0x0053a01e
-Station::FindNearestRoadToEmergency {
+int32_t Station::FindNearestRoadToEmergency(struct _GridCoordinates&) {
 // LINE 109:
 	asm( 
 "	      0053a01e    push ebp"
@@ -599,7 +599,7 @@ Station::FindNearestRoadToEmergency {
 }
 
 // FUNCTION: SIMCOPTER 0x0053a1fb
-Station::SortStationsByDistanceFromDestination {
+void Station::SortStationsByDistanceFromDestination(struct _GridCoordinates) {
 // LINE 127:
 	asm( 
 "	      0053a1fb    push ebp"
@@ -779,7 +779,7 @@ Station::SortStationsByDistanceFromDestination {
 }
 
 // FUNCTION: SIMCOPTER 0x0053a358
-Station::SortVehiclesByDistanceFromDestination {
+void Station::SortVehiclesByDistanceFromDestination(struct _GridCoordinates, class EmergencyVehicleClass**, int32_t) {
 // LINE 173:
 	asm( 
 "	      0053a358    push ebp"
@@ -961,7 +961,7 @@ Station::SortVehiclesByDistanceFromDestination {
 }
 
 // FUNCTION: SIMCOPTER 0x0053a4a0
-Station::FindAvailableVehicle {
+class EmergencyVehicleClass* Station::FindAvailableVehicle(enum EmergencyLevel, class EmergencyVehicleClass**, int32_t) {
 // LINE 225:
 	asm( 
 "	      0053a4a0    push ebp"
@@ -1059,7 +1059,7 @@ Station::FindAvailableVehicle {
 }
 
 // FUNCTION: SIMCOPTER 0x0053a566
-Station::StationHeapInsert {
+void Station::StationHeapInsert(const struct _StationHeapStruct*) {
 // LINE 249:
 	asm( 
 "	      0053a566    push ebp"
@@ -1172,7 +1172,7 @@ Station::StationHeapInsert {
 }
 
 // FUNCTION: SIMCOPTER 0x0053a637
-Station::StationHeapRemove {
+void Station::StationHeapRemove(struct _StationHeapStruct*) {
 // LINE 272:
 	asm( 
 "	      0053a637    push ebp"
@@ -1350,7 +1350,7 @@ Station::StationHeapRemove {
 }
 
 // FUNCTION: SIMCOPTER 0x0053a798
-Station::VehicleHeapInsert {
+void Station::VehicleHeapInsert(const struct _VehicleHeapStruct*) {
 // LINE 315:
 	asm( 
 "	      0053a798    push ebp"
@@ -1480,7 +1480,7 @@ Station::VehicleHeapInsert {
 }
 
 // FUNCTION: SIMCOPTER 0x0053a8a0
-Station::VehicleHeapRemove {
+void Station::VehicleHeapRemove(struct _VehicleHeapStruct*) {
 // LINE 338:
 	asm( 
 "	      0053a8a0    push ebp"
@@ -1686,7 +1686,7 @@ Station::VehicleHeapRemove {
 }
 
 // FUNCTION: SIMCOPTER 0x0053aa5f
-Station::GetNearestStation {
+short Station::GetNearestStation(struct _GridCoordinates, struct _GridCoordinates*) {
 // LINE 384:
 	asm( 
 "	      0053aa5f    push ebp"
@@ -1757,7 +1757,7 @@ Station::GetNearestStation {
 }
 
 // FUNCTION: SIMCOPTER 0x0053aacd
-Station::GetNextNearest {
+short Station::GetNextNearest(struct _GridCoordinates*) {
 // LINE 403:
 	asm( 
 "	      0053aacd    push ebp"
@@ -1821,7 +1821,7 @@ Station::GetNextNearest {
 }
 
 // FUNCTION: SIMCOPTER 0x0053ab2f
-Station::DecrementQuantityOfVehicleDispatched {
+void Station::DecrementQuantityOfVehicleDispatched(int32_t) {
 // LINE 421:
 	asm( 
 "	      0053ab2f    push ebp"
@@ -1870,7 +1870,7 @@ Station::DecrementQuantityOfVehicleDispatched {
 }
 
 // FUNCTION: SIMCOPTER 0x0053ab93
-Station::DispatchNearestAvailableVehicle {
+int32_t Station::DispatchNearestAvailableVehicle(long, long, enum EmergencyType, enum EmergencyLevel, class EmergencyVehicleClass**, int32_t) {
 // LINE 432:
 	asm( 
 "	      0053ab93    push ebp"
@@ -2900,7 +2900,7 @@ Station::DispatchNearestAvailableVehicle {
 // $E36
 
 // FUNCTION: SIMCOPTER 0x0053b9b5
-Station::Station {
+void Station::Station(unsigned char) {
 // LINE 591:
 	asm( 
 "	      0053b9b5    push ebp"

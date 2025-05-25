@@ -6,7 +6,7 @@
 
 // Contribution: 1:00122910-001235ed Module: 166, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x00523910
-S3ExplosionReset {
+void S3ExplosionReset() {
 // LINE 54:
 	asm( 
 "	      00523910    push ebp"
@@ -73,7 +73,7 @@ S3ExplosionReset {
 }
 
 // FUNCTION: SIMCOPTER 0x00523996
-S3ExplosionInit {
+void S3ExplosionInit() {
 // LINE 86:
 	asm( 
 "	      00523996    push ebp"
@@ -765,7 +765,7 @@ S3ExplosionInit {
 }
 
 // FUNCTION: SIMCOPTER 0x00523f50
-S3ExplosionStart {
+void S3ExplosionStart() {
 // LINE 233:
 	asm( 
 "	      00523f50    push ebp"
@@ -984,7 +984,7 @@ S3ExplosionStart {
 }
 
 // FUNCTION: SIMCOPTER 0x005240dc
-S3ExplosionSmokeStart {
+void S3ExplosionSmokeStart() {
 // LINE 313:
 	asm( 
 "	      005240dc    push ebp"
@@ -1248,7 +1248,7 @@ S3ExplosionSmokeStart {
 }
 
 // FUNCTION: SIMCOPTER 0x0052429d
-S3ExplosionDriver {
+void S3ExplosionDriver() {
 // LINE 400:
 	asm( 
 "	      0052429d    push ebp"

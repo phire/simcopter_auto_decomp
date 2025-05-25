@@ -6,7 +6,7 @@
 
 // Contribution: 1:00153720-00153f24 Module: 198, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x00554720
-Memory::DetachPlatformHandle {
+void * __ptr32 Memory::DetachPlatformHandle(void * __ptr32) {
 // LINE 103:
 	asm( 
 "	      00554720    push ebp"
@@ -31,7 +31,7 @@ Memory::DetachPlatformHandle {
 }
 
 // FUNCTION: SIMCOPTER 0x00554733
-Memory::GetPlatformHandle {
+void * __ptr32 Memory::GetPlatformHandle(void * __ptr32) {
 // LINE 107:
 	asm( 
 "	      00554733    push ebp"
@@ -56,7 +56,7 @@ Memory::GetPlatformHandle {
 }
 
 // FUNCTION: SIMCOPTER 0x00554746
-Memory::AdoptPlatformHandle {
+void * __ptr32 Memory::AdoptPlatformHandle(void * __ptr32) {
 // LINE 114:
 	asm( 
 "	      00554746    push ebp"
@@ -81,7 +81,7 @@ Memory::AdoptPlatformHandle {
 }
 
 // FUNCTION: SIMCOPTER 0x00554759
-Memory::HAlloc {
+void * __ptr32 Memory::HAlloc(long, long) {
 // LINE 150:
 	asm( 
 "	      00554759    push ebp"
@@ -201,7 +201,7 @@ Memory::HAlloc {
 }
 
 // FUNCTION: SIMCOPTER 0x00554848
-Memory::HUnpurge {
+void Memory::HUnpurge(void * __ptr32, long) {
 // LINE 190:
 	asm( 
 "	      00554848    push ebp"
@@ -236,7 +236,7 @@ Memory::HUnpurge {
 }
 
 // FUNCTION: SIMCOPTER 0x00554870
-Memory::PAlloc {
+unsigned char * Memory::PAlloc(long *, long) {
 // LINE 202:
 	asm( 
 "	      00554870    push ebp"
@@ -286,7 +286,7 @@ Memory::PAlloc {
 }
 
 // FUNCTION: SIMCOPTER 0x005548c3
-Memory::HFree {
+void Memory::HFree(void * __ptr32) {
 // LINE 219:
 	asm( 
 "	      005548c3    push ebp"
@@ -377,7 +377,7 @@ Memory::HFree {
 }
 
 // FUNCTION: SIMCOPTER 0x00554976
-Memory::PFree {
+void Memory::PFree(unsigned char *) {
 // LINE 248:
 	asm( 
 "	      00554976    push ebp"
@@ -434,7 +434,7 @@ Memory::PFree {
 }
 
 // FUNCTION: SIMCOPTER 0x005549e0
-Memory::HLock {
+unsigned char * Memory::HLock(void * __ptr32) {
 // LINE 265:
 	asm( 
 "	      005549e0    push ebp"
@@ -490,7 +490,7 @@ Memory::HLock {
 }
 
 // FUNCTION: SIMCOPTER 0x00554a3d
-Memory::HUnlock {
+void Memory::HUnlock(void * __ptr32) {
 // LINE 295:
 	asm( 
 "	      00554a3d    push ebp"
@@ -540,7 +540,7 @@ Memory::HUnlock {
 }
 
 // FUNCTION: SIMCOPTER 0x00554a94
-Memory::HMoveHi {
+void Memory::HMoveHi(void * __ptr32) {
 // LINE 312:
 	asm( 
 "	      00554a94    push ebp"
@@ -566,7 +566,7 @@ Memory::HMoveHi {
 }
 
 // FUNCTION: SIMCOPTER 0x00554aac
-Memory::HPurge {
+void Memory::HPurge(void * __ptr32) {
 // LINE 327:
 	asm( 
 "	      00554aac    push ebp"
@@ -596,7 +596,7 @@ Memory::HPurge {
 }
 
 // FUNCTION: SIMCOPTER 0x00554ad8
-Memory::HNoPurge {
+void Memory::HNoPurge(void * __ptr32) {
 // LINE 339:
 	asm( 
 "	      00554ad8    push ebp"
@@ -626,7 +626,7 @@ Memory::HNoPurge {
 }
 
 // FUNCTION: SIMCOPTER 0x00554b04
-Memory::Stash {
+unsigned char * Memory::Stash(void * __ptr32) {
 // LINE 350:
 	asm( 
 "	      00554b04    push ebp"
@@ -692,7 +692,7 @@ Memory::Stash {
 }
 
 // FUNCTION: SIMCOPTER 0x00554b76
-Memory::BlockMove {
+void Memory::BlockMove(void * __ptr32, void * __ptr32, unsigned long) {
 // LINE 370:
 	asm( 
 "	      00554b76    push ebp"
@@ -735,7 +735,7 @@ Memory::BlockMove {
 }
 
 // FUNCTION: SIMCOPTER 0x00554bc3
-Memory::BlockCopy {
+void Memory::BlockCopy(void * __ptr32, void * __ptr32, unsigned long) {
 // LINE 380:
 	asm( 
 "	      00554bc3    push ebp"
@@ -778,7 +778,7 @@ Memory::BlockCopy {
 }
 
 // FUNCTION: SIMCOPTER 0x00554c10
-Memory::BlockFill {
+void Memory::BlockFill(void * __ptr32, unsigned char, unsigned long) {
 // LINE 392:
 	asm( 
 "	      00554c10    push ebp"
@@ -834,7 +834,7 @@ Memory::BlockFill {
 }
 
 // FUNCTION: SIMCOPTER 0x00554c73
-Memory::BlockCompare {
+unsigned short Memory::BlockCompare(void * __ptr32, void * __ptr32, unsigned long) {
 // LINE 401:
 	asm( 
 "	      00554c73    push ebp"
@@ -871,7 +871,7 @@ Memory::BlockCompare {
 }
 
 // FUNCTION: SIMCOPTER 0x00554cab
-Memory::PoolAlloc {
+long * Memory::PoolAlloc(long, enum Memory::PoolType) {
 // LINE 408:
 	asm( 
 "	      00554cab    push ebp"
@@ -905,7 +905,7 @@ Memory::PoolAlloc {
 }
 
 // FUNCTION: SIMCOPTER 0x00554cd9
-Memory::PoolFree {
+void Memory::PoolFree(long *) {
 // LINE 416:
 	asm( 
 "	      00554cd9    push ebp"
@@ -935,7 +935,7 @@ Memory::PoolFree {
 }
 
 // FUNCTION: SIMCOPTER 0x00554d05
-Memory::HGetSize {
+unsigned long Memory::HGetSize(void * __ptr32) {
 // LINE 423:
 	asm( 
 "	      00554d05    push ebp"
@@ -985,7 +985,7 @@ Memory::HGetSize {
 }
 
 // FUNCTION: SIMCOPTER 0x00554d5a
-Memory::PGetSize {
+unsigned long Memory::PGetSize(unsigned char *) {
 // LINE 438:
 	asm( 
 "	      00554d5a    push ebp"
@@ -1035,7 +1035,7 @@ Memory::PGetSize {
 }
 
 // FUNCTION: SIMCOPTER 0x00554daf
-Memory::HIsLocked {
+unsigned short Memory::HIsLocked(void * __ptr32) {
 // LINE 453:
 	asm( 
 "	      00554daf    push ebp"
@@ -1073,7 +1073,7 @@ Memory::HIsLocked {
 }
 
 // FUNCTION: SIMCOPTER 0x00554de7
-Memory::HGetState {
+long Memory::HGetState(void * __ptr32) {
 // LINE 462:
 	asm( 
 "	      00554de7    push ebp"
@@ -1139,7 +1139,7 @@ Memory::HGetState {
 }
 
 // FUNCTION: SIMCOPTER 0x00554e62
-Memory::HSetState {
+void Memory::HSetState(void * __ptr32, long) {
 // LINE 480:
 	asm( 
 "	      00554e62    push ebp"
@@ -1177,7 +1177,7 @@ Memory::HSetState {
 }
 
 // FUNCTION: SIMCOPTER 0x00554e99
-Memory::HSetSize {
+long Memory::HSetSize(void * __ptr32, unsigned long) {
 // LINE 494:
 	asm( 
 "	      00554e99    push ebp"
@@ -1239,7 +1239,7 @@ Memory::HSetSize {
 }
 
 // FUNCTION: SIMCOPTER 0x00554f06
-Memory::Error {
+long Memory::Error() {
 // LINE 536:
 	asm( 
 "	      00554f06    push ebp"

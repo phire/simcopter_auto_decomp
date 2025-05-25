@@ -18,7 +18,7 @@
 // $E4
 
 // FUNCTION: SIMCOPTER 0x0052de2d
-TrainClass::TrainClass {
+void TrainClass::TrainClass(long, long) {
 // LINE 180:
 	asm( 
 "	      0052de2d    push ebp"
@@ -241,7 +241,7 @@ TrainClass::TrainClass {
 }
 
 // FUNCTION: SIMCOPTER 0x0052dfcd
-TrainClass::Reset {
+void TrainClass::Reset() {
 // LINE 246:
 	asm( 
 "	      0052dfcd    push ebp"
@@ -374,7 +374,7 @@ TrainClass::Reset {
 }
 
 // FUNCTION: SIMCOPTER 0x0052e0a8
-TrainClass::~TrainClass {
+void TrainClass::~TrainClass() {
 // LINE 291:
 	asm( 
 "	      0052e0a8    push ebp"
@@ -453,7 +453,7 @@ TrainClass::~TrainClass {
 }
 
 // FUNCTION: SIMCOPTER 0x0052e141
-TrainClass::GetTrainPointer {
+class TrainClass* TrainClass::GetTrainPointer(long) {
 // LINE 334:
 	asm( 
 "	      0052e141    push ebp"
@@ -489,7 +489,7 @@ TrainClass::GetTrainPointer {
 }
 
 // FUNCTION: SIMCOPTER 0x0052e16c
-TrainClass::CreateInstance {
+class TrainClass* TrainClass::CreateInstance(int32_t) {
 // LINE 361:
 	asm( 
 "	      0052e16c    push ebp"
@@ -519,7 +519,7 @@ TrainClass::CreateInstance {
 }
 
 // FUNCTION: SIMCOPTER 0x0052e18c
-TrainClass::CreateInstance {
+class TrainClass* TrainClass::CreateInstance(long, long, int32_t) {
 // LINE 444:
 	asm( 
 "	      0052e18c    push ebp"
@@ -601,7 +601,7 @@ TrainClass::CreateInstance {
 }
 
 // FUNCTION: SIMCOPTER 0x0052e22c
-TrainClass::Initialize {
+int32_t TrainClass::Initialize(int32_t) {
 // LINE 546:
 	asm( 
 "	      0052e22c    push ebp"
@@ -637,7 +637,7 @@ TrainClass::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x0052e25e
-TrainClass::ResetAll {
+void TrainClass::ResetAll() {
 // LINE 571:
 	asm( 
 "	      0052e25e    push ebp"
@@ -677,7 +677,7 @@ TrainClass::ResetAll {
 }
 
 // FUNCTION: SIMCOPTER 0x0052e29e
-TrainClass::ItterateAll {
+void TrainClass::ItterateAll() {
 // LINE 620:
 	asm( 
 "	      0052e29e    push ebp"
@@ -717,7 +717,7 @@ TrainClass::ItterateAll {
 }
 
 // FUNCTION: SIMCOPTER 0x0052e2de
-TrainClass::FindTrainToCrash {
+int32_t TrainClass::FindTrainToCrash(long) {
 // LINE 669:
 	asm( 
 "	      0052e2de    push ebp"
@@ -790,7 +790,7 @@ TrainClass::FindTrainToCrash {
 }
 
 // FUNCTION: SIMCOPTER 0x0052e373
-TrainClass::Itterate {
+void TrainClass::Itterate() {
 // LINE 704:
 	asm( 
 "	      0052e373    push ebp"
@@ -992,7 +992,7 @@ TrainClass::Itterate {
 }
 
 // FUNCTION: SIMCOPTER 0x0052e534
-TrainClass::TrainSoundDriver {
+void TrainClass::TrainSoundDriver() {
 // LINE 777:
 	asm( 
 "	      0052e534    push ebp"
@@ -1141,7 +1141,7 @@ TrainClass::TrainSoundDriver {
 }
 
 // FUNCTION: SIMCOPTER 0x0052e671
-TrainClass::ItterateFSM {
+void TrainClass::ItterateFSM() {
 // LINE 841:
 	asm( 
 "	      0052e671    push ebp"
@@ -1473,7 +1473,7 @@ TrainClass::ItterateFSM {
 }
 
 // FUNCTION: SIMCOPTER 0x0052e910
-TrainClass::SetCrashWhenReady {
+void TrainClass::SetCrashWhenReady() {
 // LINE 1042:
 	asm( 
 "	      0052e910    push ebp"
@@ -1569,7 +1569,7 @@ TrainClass::SetCrashWhenReady {
 }
 
 // FUNCTION: SIMCOPTER 0x0052e9a4
-TrainClass::TrainCrashMovement {
+void TrainClass::TrainCrashMovement() {
 // LINE 1083:
 	asm( 
 "	      0052e9a4    push ebp"
@@ -2357,7 +2357,7 @@ TrainClass::TrainCrashMovement {
 }
 
 // FUNCTION: SIMCOPTER 0x0052f14e
-TrainClass::MakeUturn {
+void TrainClass::MakeUturn() {
 // LINE 1320:
 	asm( 
 "	      0052f14e    push ebp"
@@ -2593,7 +2593,7 @@ TrainClass::MakeUturn {
 }
 
 // FUNCTION: SIMCOPTER 0x0052f394
-TrainClass::FinishedUturn {
+int32_t TrainClass::FinishedUturn() {
 // LINE 1388:
 	asm( 
 "	      0052f394    push ebp"
@@ -2671,7 +2671,7 @@ TrainClass::FinishedUturn {
 }
 
 // FUNCTION: SIMCOPTER 0x0052f41b
-TrainClass::AdjustSpeed {
+void TrainClass::AdjustSpeed() {
 // LINE 1421:
 	asm( 
 "	      0052f41b    push ebp"
@@ -2711,7 +2711,7 @@ TrainClass::AdjustSpeed {
 }
 
 // FUNCTION: SIMCOPTER 0x0052f454
-TrainClass::IsPathClear {
+enum TrainClass::StoppedReasons TrainClass::IsPathClear() {
 // LINE 1450:
 	asm( 
 "	      0052f454    push ebp"
@@ -2812,7 +2812,7 @@ TrainClass::IsPathClear {
 }
 
 // FUNCTION: SIMCOPTER 0x0052f52f
-TrainClass::CheckDynamicObjectsAt {
+enum TrainClass::StoppedReasons TrainClass::CheckDynamicObjectsAt(const struct Point2d&, const struct Point3d&) {
 // LINE 1483:
 	asm( 
 "	      0052f52f    push ebp"
@@ -3318,7 +3318,7 @@ TrainClass::CheckDynamicObjectsAt {
 }
 
 // FUNCTION: SIMCOPTER 0x0052f998
-TrainClass::IsTrainOutOfCameraRange {
+int32_t TrainClass::IsTrainOutOfCameraRange() {
 // LINE 1657:
 	asm( 
 "	      0052f998    push ebp"
@@ -3455,7 +3455,7 @@ TrainClass::IsTrainOutOfCameraRange {
 }
 
 // FUNCTION: SIMCOPTER 0x0052fa85
-TrainClass::SetTrainDirection {
+void TrainClass::SetTrainDirection(unsigned short) {
 // LINE 1722:
 	asm( 
 "	      0052fa85    push ebp"
@@ -6137,7 +6137,7 @@ TrainClass::SetTrainDirection {
 }
 
 // FUNCTION: SIMCOPTER 0x00530e02
-TrainClass::SlowDown {
+void TrainClass::SlowDown() {
 // LINE 2656:
 	asm( 
 "	      00530e02    push ebp"
@@ -6165,7 +6165,7 @@ TrainClass::SlowDown {
 }
 
 // FUNCTION: SIMCOPTER 0x00530e22
-TrainClass::Stop {
+void TrainClass::Stop() {
 // LINE 2677:
 	asm( 
 "	      00530e22    push ebp"
@@ -6193,7 +6193,7 @@ TrainClass::Stop {
 }
 
 // FUNCTION: SIMCOPTER 0x00530e42
-TrainClass::MoveForward {
+void TrainClass::MoveForward() {
 // LINE 2698:
 	asm( 
 "	      00530e42    push ebp"
@@ -6385,7 +6385,7 @@ TrainClass::MoveForward {
 }
 
 // FUNCTION: SIMCOPTER 0x0053104d
-TrainClass::HaveIReachedNextLoc {
+int32_t TrainClass::HaveIReachedNextLoc() {
 // LINE 2749:
 	asm( 
 "	      0053104d    push ebp"
@@ -6427,7 +6427,7 @@ TrainClass::HaveIReachedNextLoc {
 }
 
 // FUNCTION: SIMCOPTER 0x00531081
-TrainClass::AmIInANewCell {
+int32_t TrainClass::AmIInANewCell() {
 // LINE 2776:
 	asm( 
 "	      00531081    push ebp"
@@ -6562,7 +6562,7 @@ TrainClass::AmIInANewCell {
 }
 
 // FUNCTION: SIMCOPTER 0x0053122b
-TrainClass::UnlinkFromCell {
+void TrainClass::UnlinkFromCell(const struct Point2d&, struct _DYOBJ_INST*) {
 // LINE 2814:
 	asm( 
 "	      0053122b    push ebp"
@@ -6679,7 +6679,7 @@ TrainClass::UnlinkFromCell {
 }
 
 // FUNCTION: SIMCOPTER 0x0053133d
-TrainClass::LinkToCell {
+void TrainClass::LinkToCell(const struct Point2d&, struct _DYOBJ_INST*) {
 // LINE 2862:
 	asm( 
 "	      0053133d    push ebp"
@@ -6753,7 +6753,7 @@ TrainClass::LinkToCell {
 }
 
 // FUNCTION: SIMCOPTER 0x005313f2
-TrainClass::PickTurnDirection {
+enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Point2d&) {
 // LINE 2895:
 	asm( 
 "	      005313f2    push ebp"
@@ -7726,7 +7726,7 @@ TrainClass::PickTurnDirection {
 }
 
 // FUNCTION: SIMCOPTER 0x00531dff
-TrainClass::DoRailTilesConnect {
+int32_t TrainClass::DoRailTilesConnect(unsigned short, unsigned short, enum DirectionTypes) {
 // LINE 3108:
 	asm( 
 "	      00531dff    push ebp"
@@ -7829,7 +7829,7 @@ TrainClass::DoRailTilesConnect {
 }
 
 // FUNCTION: SIMCOPTER 0x00531f88
-TrainClass::MakeATurn {
+void TrainClass::MakeATurn(enum TrainClass::IntersectionTypes) {
 // LINE 3138:
 	asm( 
 "	      00531f88    push ebp"
@@ -8060,7 +8060,7 @@ TrainClass::MakeATurn {
 }
 
 // FUNCTION: SIMCOPTER 0x00532149
-TrainClass::WhyAmIStopped {
+enum TrainClass::StoppedReasons TrainClass::WhyAmIStopped() {
 // LINE 3248:
 	asm( 
 "	      00532149    push ebp"
@@ -8162,7 +8162,7 @@ TrainClass::WhyAmIStopped {
 }
 
 // FUNCTION: SIMCOPTER 0x0053229e
-TrainClass::SetTrailingCars {
+void TrainClass::SetTrailingCars() {
 // LINE 3282:
 	asm( 
 "	      0053229e    push ebp"
@@ -8401,7 +8401,7 @@ TrainClass::SetTrailingCars {
 }
 
 // FUNCTION: SIMCOPTER 0x00532518
-TrainClass::AdjustTrailingCars {
+void TrainClass::AdjustTrailingCars() {
 // LINE 3329:
 	asm( 
 "	      00532518    push ebp"
@@ -8823,7 +8823,7 @@ TrainClass::AdjustTrailingCars {
 }
 
 // FUNCTION: SIMCOPTER 0x00532903
-TrainClass::AdjustCurrentPosition {
+void TrainClass::AdjustCurrentPosition() {
 // LINE 3415:
 	asm( 
 "	      00532903    push ebp"
@@ -8984,7 +8984,7 @@ TrainClass::AdjustCurrentPosition {
 }
 
 // FUNCTION: SIMCOPTER 0x00532aab
-TrainClass::AdjustNextPosition {
+void TrainClass::AdjustNextPosition() {
 // LINE 3469:
 	asm( 
 "	      00532aab    push ebp"
@@ -9605,7 +9605,7 @@ TrainClass::AdjustNextPosition {
 }
 
 // FUNCTION: SIMCOPTER 0x005330a4
-TrainClass::GoStraight {
+void TrainClass::GoStraight() {
 // LINE 3656:
 	asm( 
 "	      005330a4    push ebp"
@@ -9742,7 +9742,7 @@ TrainClass::GoStraight {
 }
 
 // FUNCTION: SIMCOPTER 0x005331ce
-TrainClass::TurnLeft {
+void TrainClass::TurnLeft() {
 // LINE 3706:
 	asm( 
 "	      005331ce    push ebp"
@@ -9879,7 +9879,7 @@ TrainClass::TurnLeft {
 }
 
 // FUNCTION: SIMCOPTER 0x005332f8
-TrainClass::TurnRight {
+void TrainClass::TurnRight() {
 // LINE 3757:
 	asm( 
 "	      005332f8    push ebp"
@@ -10016,7 +10016,7 @@ TrainClass::TurnRight {
 }
 
 // FUNCTION: SIMCOPTER 0x00533422
-TrainClass::BeamToWithinCameraRange {
+void TrainClass::BeamToWithinCameraRange() {
 // LINE 3812:
 	asm( 
 "	      00533422    push ebp"
@@ -10637,7 +10637,7 @@ TrainClass::BeamToWithinCameraRange {
 }
 
 // FUNCTION: SIMCOPTER 0x005339b0
-TrainClass::UnPlaceTrain {
+void TrainClass::UnPlaceTrain() {
 // LINE 3989:
 	asm( 
 "	      005339b0    push ebp"
@@ -10709,7 +10709,7 @@ TrainClass::UnPlaceTrain {
 }
 
 // FUNCTION: SIMCOPTER 0x00533a3b
-TrainClass::BeamToLocation {
+int32_t TrainClass::BeamToLocation(long, long) {
 // LINE 4018:
 	asm( 
 "	      00533a3b    push ebp"
@@ -11159,7 +11159,7 @@ TrainClass::BeamToLocation {
 }
 
 // FUNCTION: SIMCOPTER 0x00533e76
-TrainClass::InitializeInstance {
+int32_t TrainClass::InitializeInstance(long, long, int32_t) {
 // LINE 4391:
 	asm( 
 "	      00533e76    push ebp"
@@ -11663,7 +11663,7 @@ TrainClass::InitializeInstance {
 }
 
 // FUNCTION: SIMCOPTER 0x005342db
-GetMaximumNumberOfTrains {
+short GetMaximumNumberOfTrains() {
 // LINE 4602:
 	asm( 
 "	      005342db    push ebp"
@@ -11688,7 +11688,7 @@ GetMaximumNumberOfTrains {
 }
 
 // FUNCTION: SIMCOPTER 0x005342ef
-CreateTrainInstance {
+int32_t CreateTrainInstance() {
 // LINE 4625:
 	asm( 
 "	      005342ef    push ebp"
@@ -11721,7 +11721,7 @@ CreateTrainInstance {
 }
 
 // FUNCTION: SIMCOPTER 0x0053431f
-ResetAllTrains {
+void ResetAllTrains() {
 // LINE 4644:
 	asm( 
 "	      0053431f    push ebp"
@@ -11746,7 +11746,7 @@ ResetAllTrains {
 }
 
 // FUNCTION: SIMCOPTER 0x00534334
-ItterateAllTrains {
+void ItterateAllTrains() {
 // LINE 4667:
 	asm( 
 "	      00534334    push ebp"
@@ -11771,7 +11771,7 @@ ItterateAllTrains {
 }
 
 // FUNCTION: SIMCOPTER 0x00534349
-S3TrainCrashWhenReady {
+int32_t S3TrainCrashWhenReady() {
 // LINE 4688:
 	asm( 
 "	      00534349    push ebp"
@@ -11799,7 +11799,7 @@ S3TrainCrashWhenReady {
 }
 
 // FUNCTION: SIMCOPTER 0x00534365
-S3TrainStartRescue {
+int32_t S3TrainStartRescue() {
 // LINE 4709:
 	asm( 
 "	      00534365    push ebp"
@@ -11829,7 +11829,7 @@ S3TrainStartRescue {
 }
 
 // FUNCTION: SIMCOPTER 0x00534385
-TrainClass::FindTrainForRescue {
+int32_t TrainClass::FindTrainForRescue(long, int32_t) {
 // LINE 4735:
 	asm( 
 "	      00534385    push ebp"
@@ -12084,7 +12084,7 @@ TrainClass::FindTrainForRescue {
 }
 
 // FUNCTION: SIMCOPTER 0x0053456c
-S3TrainMIFFLoad {
+int32_t S3TrainMIFFLoad() {
 // LINE 4825:
 	asm( 
 "	      0053456c    push ebp"
@@ -12112,7 +12112,7 @@ S3TrainMIFFLoad {
 }
 
 // FUNCTION: SIMCOPTER 0x00534588
-S3TrainMIFFSave {
+int32_t S3TrainMIFFSave() {
 // LINE 4838:
 	asm( 
 "	      00534588    push ebp"
@@ -12140,7 +12140,7 @@ S3TrainMIFFSave {
 }
 
 // FUNCTION: SIMCOPTER 0x005345a4
-TrainClass::MIFFLoad {
+int32_t TrainClass::MIFFLoad(void * __ptr32) {
 // LINE 4850:
 	asm( 
 "	      005345a4    push ebp"
@@ -12535,7 +12535,7 @@ TrainClass::MIFFLoad {
 }
 
 // FUNCTION: SIMCOPTER 0x00534906
-TrainClass::MIFFSave {
+int32_t TrainClass::MIFFSave(void * __ptr32) {
 // LINE 4925:
 	asm( 
 "	      00534906    push ebp"

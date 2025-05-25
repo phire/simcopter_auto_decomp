@@ -6,7 +6,7 @@
 
 // Contribution: 1:001005e0-00108fb1 Module: 171, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x005015e0
-S3StartSpeederMission {
+int32_t S3StartSpeederMission() {
 // LINE 70:
 	asm( 
 "	      005015e0    push ebp"
@@ -98,7 +98,7 @@ S3StartSpeederMission {
 }
 
 // FUNCTION: SIMCOPTER 0x005016c9
-Distance {
+int32_t Distance() {
 // LINE 104:
 	asm( 
 "	      005016c9    push ebp"
@@ -205,7 +205,7 @@ Distance {
 }
 
 // FUNCTION: SIMCOPTER 0x0050176e
-AutomobileClass::GetClosestCar {
+struct _DYOBJ_INST* AutomobileClass::GetClosestCar(int32_t, int32_t, int32_t) {
 // LINE 135:
 	asm( 
 "	      0050176e    push ebp"
@@ -581,7 +581,7 @@ AutomobileClass::GetClosestCar {
 }
 
 // FUNCTION: SIMCOPTER 0x00501a89
-AutomobileClass::S3AutoMessage {
+int32_t AutomobileClass::S3AutoMessage(short, short) {
 // LINE 245:
 	asm( 
 "	      00501a89    push ebp"
@@ -610,7 +610,7 @@ AutomobileClass::S3AutoMessage {
 }
 
 // FUNCTION: SIMCOPTER 0x00501aad
-AutomobileClass::AutoMessage {
+int32_t AutomobileClass::AutoMessage(short) {
 // LINE 251:
 	asm( 
 "	      00501aad    push ebp"
@@ -660,7 +660,7 @@ AutomobileClass::AutoMessage {
 }
 
 // FUNCTION: SIMCOPTER 0x00501af9
-GetTheCurrentNumberOfAutomobiles {
+int32_t GetTheCurrentNumberOfAutomobiles() {
 // LINE 268:
 	asm( 
 "	      00501af9    push ebp"
@@ -685,7 +685,7 @@ GetTheCurrentNumberOfAutomobiles {
 }
 
 // FUNCTION: SIMCOPTER 0x00501b0e
-SetTheCurrentNumberOfAutomobiles {
+int32_t SetTheCurrentNumberOfAutomobiles() {
 // LINE 274:
 	asm( 
 "	      00501b0e    push ebp"
@@ -725,7 +725,7 @@ SetTheCurrentNumberOfAutomobiles {
 }
 
 // FUNCTION: SIMCOPTER 0x00501b3c
-CreateAutomobileInstance {
+int32_t CreateAutomobileInstance() {
 // LINE 303:
 	asm( 
 "	      00501b3c    push ebp"
@@ -758,7 +758,7 @@ CreateAutomobileInstance {
 }
 
 // FUNCTION: SIMCOPTER 0x00501b6c
-AutomobileClass::AutomobileClass {
+void AutomobileClass::AutomobileClass() {
 // LINE 326:
 	asm( 
 "	      00501b6c    push ebp"
@@ -957,7 +957,7 @@ AutomobileClass::AutomobileClass {
 }
 
 // FUNCTION: SIMCOPTER 0x00501d09
-AutomobileClass::~AutomobileClass {
+void AutomobileClass::~AutomobileClass() {
 // LINE 411:
 	asm( 
 "	      00501d09    push ebp"
@@ -1007,7 +1007,7 @@ AutomobileClass::~AutomobileClass {
 }
 
 // FUNCTION: SIMCOPTER 0x00501d58
-AutomobileClass::GetAutoPointer {
+class AutomobileClass* AutomobileClass::GetAutoPointer(long) {
 // LINE 450:
 	asm( 
 "	      00501d58    push ebp"
@@ -1057,7 +1057,7 @@ AutomobileClass::GetAutoPointer {
 }
 
 // FUNCTION: SIMCOPTER 0x00501db8
-AutomobileClass::CreateInstance {
+class AutomobileClass* AutomobileClass::CreateInstance(int32_t) {
 // LINE 478:
 	asm( 
 "	      00501db8    push ebp"
@@ -1145,7 +1145,7 @@ AutomobileClass::CreateInstance {
 }
 
 // FUNCTION: SIMCOPTER 0x00501e71
-AutomobileClass::ResetAll {
+void AutomobileClass::ResetAll() {
 // LINE 540:
 	asm( 
 "	      00501e71    push ebp"
@@ -1185,7 +1185,7 @@ AutomobileClass::ResetAll {
 }
 
 // FUNCTION: SIMCOPTER 0x00501eb1
-AutomobileClass::ItterateAll {
+void AutomobileClass::ItterateAll() {
 // LINE 571:
 	asm( 
 "	      00501eb1    push ebp"
@@ -1225,7 +1225,7 @@ AutomobileClass::ItterateAll {
 }
 
 // FUNCTION: SIMCOPTER 0x00501ef1
-AutomobileClass::Itterate {
+void AutomobileClass::Itterate() {
 // LINE 599:
 	asm( 
 "	      00501ef1    push ebp"
@@ -1460,7 +1460,7 @@ AutomobileClass::Itterate {
 }
 
 // FUNCTION: SIMCOPTER 0x0050217c
-AutomobileClass::PlacePerson {
+int32_t AutomobileClass::PlacePerson(int32_t, int32_t) {
 // LINE 747:
 	asm( 
 "	      0050217c    push ebp"
@@ -1610,7 +1610,7 @@ AutomobileClass::PlacePerson {
 }
 
 // FUNCTION: SIMCOPTER 0x005022b0
-AutomobileClass::ItterateFSM {
+void AutomobileClass::ItterateFSM() {
 // LINE 782:
 	asm( 
 "	      005022b0    push ebp"
@@ -2377,7 +2377,7 @@ AutomobileClass::ItterateFSM {
 }
 
 // FUNCTION: SIMCOPTER 0x00502a9b
-AutomobileClass::UnlinkFromCell {
+void AutomobileClass::UnlinkFromCell(const struct _GridCoordinates&) {
 // LINE 1052:
 	asm( 
 "	      00502a9b    push ebp"
@@ -2483,7 +2483,7 @@ AutomobileClass::UnlinkFromCell {
 }
 
 // FUNCTION: SIMCOPTER 0x00502b74
-AutomobileClass::LinkToCell {
+void AutomobileClass::LinkToCell(const struct _GridCoordinates&) {
 // LINE 1084:
 	asm( 
 "	      00502b74    push ebp"
@@ -2618,7 +2618,7 @@ AutomobileClass::LinkToCell {
 }
 
 // FUNCTION: SIMCOPTER 0x00502c92
-AutomobileClass::PickTurnDir {
+enum TurnIndex AutomobileClass::PickTurnDir(struct Goal*) {
 // LINE 1123:
 	asm( 
 "	      00502c92    push ebp"
@@ -2852,7 +2852,7 @@ AutomobileClass::PickTurnDir {
 }
 
 // FUNCTION: SIMCOPTER 0x00502f11
-AutomobileClass::BeamToWithinCameraRange {
+void AutomobileClass::BeamToWithinCameraRange() {
 // LINE 1208:
 	asm( 
 "	      00502f11    push ebp"
@@ -3068,7 +3068,7 @@ AutomobileClass::BeamToWithinCameraRange {
 }
 
 // FUNCTION: SIMCOPTER 0x005030aa
-AutomobileClass::BeamToLocation {
+int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates&) {
 // LINE 1282:
 	asm( 
 "	      005030aa    push ebp"
@@ -4155,7 +4155,7 @@ AutomobileClass::BeamToLocation {
 }
 
 // FUNCTION: SIMCOPTER 0x00503e6e
-AutomobileClass::UnPlaceCar {
+void AutomobileClass::UnPlaceCar() {
 // LINE 1659:
 	asm( 
 "	      00503e6e    push ebp"
@@ -4225,7 +4225,7 @@ AutomobileClass::UnPlaceCar {
 }
 
 // FUNCTION: SIMCOPTER 0x00503ede
-AutomobileClass::WaterDouse {
+void AutomobileClass::WaterDouse(struct _DYOBJ_INST*) {
 // LINE 1684:
 	asm( 
 "	      00503ede    push ebp"
@@ -4359,7 +4359,7 @@ AutomobileClass::WaterDouse {
 }
 
 // FUNCTION: SIMCOPTER 0x00503fd0
-AutomobileClass::IveBeenMegaphoned {
+void AutomobileClass::IveBeenMegaphoned(long) {
 // LINE 1734:
 	asm( 
 "	      00503fd0    push ebp"
@@ -4464,7 +4464,7 @@ AutomobileClass::IveBeenMegaphoned {
 }
 
 // FUNCTION: SIMCOPTER 0x0050409a
-AutomobileClass::AdjustSpeed {
+void AutomobileClass::AdjustSpeed() {
 // LINE 1772:
 	asm( 
 "	      0050409a    push ebp"
@@ -4519,7 +4519,7 @@ AutomobileClass::AdjustSpeed {
 }
 
 // FUNCTION: SIMCOPTER 0x00504116
-AutomobileClass::Reset {
+void AutomobileClass::Reset() {
 // LINE 1790:
 	asm( 
 "	      00504116    push ebp"
@@ -4552,7 +4552,7 @@ AutomobileClass::Reset {
 }
 
 // FUNCTION: SIMCOPTER 0x0050413e
-AutomobileClass::AmIABadGuy {
+int32_t AutomobileClass::AmIABadGuy() {
 // LINE 1798:
 	asm( 
 "	      0050413e    push ebp"
@@ -4593,7 +4593,7 @@ AutomobileClass::AmIABadGuy {
 }
 
 // FUNCTION: SIMCOPTER 0x0050417d
-AutomobileClass::PullOverCiviliansInWay {
+void AutomobileClass::PullOverCiviliansInWay() {
 // LINE 1807:
 	asm( 
 "	      0050417d    push ebp"
@@ -4762,7 +4762,7 @@ AutomobileClass::PullOverCiviliansInWay {
 }
 
 // FUNCTION: SIMCOPTER 0x00504337
-AutomobileClass::InitializeInstance {
+int32_t AutomobileClass::InitializeInstance(int32_t) {
 // LINE 1874:
 	asm( 
 "	      00504337    push ebp"
@@ -5005,7 +5005,7 @@ AutomobileClass::InitializeInstance {
 }
 
 // FUNCTION: SIMCOPTER 0x00504554
-AutomobileClass::Initialize {
+int32_t AutomobileClass::Initialize(int32_t) {
 // LINE 1978:
 	asm( 
 "	      00504554    push ebp"
@@ -5035,7 +5035,7 @@ AutomobileClass::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x00504578
-GetMaximumNumberOfAutomobiles {
+short GetMaximumNumberOfAutomobiles() {
 // LINE 2000:
 	asm( 
 "	      00504578    push ebp"
@@ -5060,7 +5060,7 @@ GetMaximumNumberOfAutomobiles {
 }
 
 // FUNCTION: SIMCOPTER 0x0050458c
-ItterateAllAutomobiles {
+void ItterateAllAutomobiles() {
 // LINE 2023:
 	asm( 
 "	      0050458c    push ebp"
@@ -5085,7 +5085,7 @@ ItterateAllAutomobiles {
 }
 
 // FUNCTION: SIMCOPTER 0x005045a1
-ResetAllAutomobiles {
+void ResetAllAutomobiles() {
 // LINE 2045:
 	asm( 
 "	      005045a1    push ebp"
@@ -5110,7 +5110,7 @@ ResetAllAutomobiles {
 }
 
 // FUNCTION: SIMCOPTER 0x005045b6
-AutomobileClass::CanIPullOver {
+int32_t AutomobileClass::CanIPullOver() {
 // LINE 2094:
 	asm( 
 "	      005045b6    push ebp"
@@ -5409,7 +5409,7 @@ AutomobileClass::CanIPullOver {
 }
 
 // FUNCTION: SIMCOPTER 0x005048cd
-AutomobileClass::PullOver {
+void AutomobileClass::PullOver(short) {
 // LINE 2152:
 	asm( 
 "	      005048cd    push ebp"
@@ -5524,7 +5524,7 @@ AutomobileClass::PullOver {
 }
 
 // FUNCTION: SIMCOPTER 0x005049fe
-AutomobileClass::CanIPullOut {
+int32_t AutomobileClass::CanIPullOut() {
 // LINE 2177:
 	asm( 
 "	      005049fe    push ebp"
@@ -5641,7 +5641,7 @@ AutomobileClass::CanIPullOut {
 }
 
 // FUNCTION: SIMCOPTER 0x00504b0a
-AutomobileClass::PullOut {
+void AutomobileClass::PullOut() {
 // LINE 2208:
 	asm( 
 "	      00504b0a    push ebp"
@@ -5685,7 +5685,7 @@ AutomobileClass::PullOut {
 }
 
 // FUNCTION: SIMCOPTER 0x00504b48
-AutomobileClass::TransitionBetweenGoals {
+void AutomobileClass::TransitionBetweenGoals() {
 // LINE 2229:
 	asm( 
 "	      00504b48    push ebp"
@@ -6171,7 +6171,7 @@ AutomobileClass::TransitionBetweenGoals {
 }
 
 // FUNCTION: SIMCOPTER 0x0050503f
-AutomobileClass::DoDiagonalRoadFixup {
+void AutomobileClass::DoDiagonalRoadFixup() {
 // LINE 2352:
 	asm( 
 "	      0050503f    push ebp"
@@ -6359,7 +6359,7 @@ AutomobileClass::DoDiagonalRoadFixup {
 }
 
 // FUNCTION: SIMCOPTER 0x00505234
-AutomobileClass::MoveAuto {
+void AutomobileClass::MoveAuto(int32_t) {
 // LINE 2418:
 	asm( 
 "	      00505234    push ebp"
@@ -6819,7 +6819,7 @@ AutomobileClass::MoveAuto {
 }
 
 // FUNCTION: SIMCOPTER 0x00505706
-AutomobileClass::DoAUTurn {
+void AutomobileClass::DoAUTurn() {
 // LINE 2513:
 	asm( 
 "	      00505706    push ebp"
@@ -6939,7 +6939,7 @@ AutomobileClass::DoAUTurn {
 }
 
 // FUNCTION: SIMCOPTER 0x00505820
-AutomobileClass::CanIDoAUTurn {
+int32_t AutomobileClass::CanIDoAUTurn() {
 // LINE 2551:
 	asm( 
 "	      00505820    push ebp"
@@ -6966,7 +6966,7 @@ AutomobileClass::CanIDoAUTurn {
 }
 
 // FUNCTION: SIMCOPTER 0x0050583b
-AutomobileClass::DoPullOverStuff {
+void AutomobileClass::DoPullOverStuff(int32_t) {
 // LINE 2560:
 	asm( 
 "	      0050583b    push ebp"
@@ -7132,7 +7132,7 @@ AutomobileClass::DoPullOverStuff {
 }
 
 // FUNCTION: SIMCOPTER 0x0050598c
-AutomobileClass::CollisionCheck {
+enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t, struct _DYOBJ_INST**) {
 // LINE 2615:
 	asm( 
 "	      0050598c    push ebp"
@@ -8115,7 +8115,7 @@ AutomobileClass::CollisionCheck {
 }
 
 // FUNCTION: SIMCOPTER 0x005062a7
-AutomobileClass::AreCarsHeadOn {
+int32_t AutomobileClass::AreCarsHeadOn(struct Point3d*) {
 // LINE 2944:
 	asm( 
 "	      005062a7    push ebp"
@@ -8186,7 +8186,7 @@ AutomobileClass::AreCarsHeadOn {
 }
 
 // FUNCTION: SIMCOPTER 0x00506333
-AutomobileClass::IsCarOutOfCameraRange {
+int32_t AutomobileClass::IsCarOutOfCameraRange() {
 // LINE 2982:
 	asm( 
 "	      00506333    push ebp"
@@ -8313,7 +8313,7 @@ AutomobileClass::IsCarOutOfCameraRange {
 }
 
 // FUNCTION: SIMCOPTER 0x00506413
-AutomobileClass::HitDispatch {
+void AutomobileClass::HitDispatch(long, struct _DYOBJ_INST*, long, long) {
 // LINE 3027:
 	asm( 
 "	      00506413    push ebp"
@@ -8498,7 +8498,7 @@ AutomobileClass::HitDispatch {
 }
 
 // FUNCTION: SIMCOPTER 0x0050654c
-AutoHitDispatch {
+void AutoHitDispatch() {
 // LINE 3085:
 	asm( 
 "	      0050654c    push ebp"
@@ -8534,7 +8534,7 @@ AutoHitDispatch {
 }
 
 // FUNCTION: SIMCOPTER 0x0050657f
-AutoMissionStartFire {
+int32_t AutoMissionStartFire() {
 // LINE 3097:
 	asm( 
 "	      0050657f    push ebp"
@@ -8564,7 +8564,7 @@ AutoMissionStartFire {
 }
 
 // FUNCTION: SIMCOPTER 0x0050659f
-AutoMissionStartJam {
+int32_t AutoMissionStartJam() {
 // LINE 3110:
 	asm( 
 "	      0050659f    push ebp"
@@ -8594,7 +8594,7 @@ AutoMissionStartJam {
 }
 
 // FUNCTION: SIMCOPTER 0x005065bf
-AutomobileClass::MissionStartFire {
+int32_t AutomobileClass::MissionStartFire(long, struct Point2d*) {
 // LINE 3124:
 	asm( 
 "	      005065bf    push ebp"
@@ -8686,7 +8686,7 @@ AutomobileClass::MissionStartFire {
 }
 
 // FUNCTION: SIMCOPTER 0x00506665
-AutomobileClass::MissionStartJam {
+int32_t AutomobileClass::MissionStartJam(long, struct Point2d*) {
 // LINE 3157:
 	asm( 
 "	      00506665    push ebp"
@@ -8778,7 +8778,7 @@ AutomobileClass::MissionStartJam {
 }
 
 // FUNCTION: SIMCOPTER 0x0050670b
-AutomobileClass::StartFire {
+void AutomobileClass::StartFire(long) {
 // LINE 3190:
 	asm( 
 "	      0050670b    push ebp"
@@ -8939,7 +8939,7 @@ AutomobileClass::StartFire {
 }
 
 // FUNCTION: SIMCOPTER 0x00506859
-AutomobileClass::StartJam {
+void AutomobileClass::StartJam(long) {
 // LINE 3244:
 	asm( 
 "	      00506859    push ebp"
@@ -9075,7 +9075,7 @@ AutomobileClass::StartJam {
 }
 
 // FUNCTION: SIMCOPTER 0x00506971
-AutomobileClass::RunFireState {
+void AutomobileClass::RunFireState() {
 // LINE 3291:
 	asm( 
 "	      00506971    push ebp"
@@ -9354,7 +9354,7 @@ AutomobileClass::RunFireState {
 }
 
 // FUNCTION: SIMCOPTER 0x00506bcf
-AutomobileClass::RunJamState {
+void AutomobileClass::RunJamState() {
 // LINE 3372:
 	asm( 
 "	      00506bcf    push ebp"
@@ -9435,7 +9435,7 @@ AutomobileClass::RunJamState {
 }
 
 // FUNCTION: SIMCOPTER 0x00506c61
-AutoMissionCancel {
+void AutoMissionCancel() {
 // LINE 3408:
 	asm( 
 "	      00506c61    push ebp"
@@ -9463,7 +9463,7 @@ AutoMissionCancel {
 }
 
 // FUNCTION: SIMCOPTER 0x00506c7d
-AutomobileClass::IveBeenSpotlighted {
+void AutomobileClass::IveBeenSpotlighted(struct _DYOBJ_INST*) {
 // LINE 3422:
 	asm( 
 "	      00506c7d    push ebp"
@@ -9513,7 +9513,7 @@ AutomobileClass::IveBeenSpotlighted {
 }
 
 // FUNCTION: SIMCOPTER 0x00506ccd
-AutomobileClass::MissionCancel {
+void AutomobileClass::MissionCancel(long) {
 // LINE 3460:
 	asm( 
 "	      00506ccd    push ebp"
@@ -9579,7 +9579,7 @@ AutomobileClass::MissionCancel {
 }
 
 // FUNCTION: SIMCOPTER 0x00506d4e
-AutoSetAllHeadlights {
+void AutoSetAllHeadlights() {
 // LINE 3493:
 	asm( 
 "	      00506d4e    push ebp"
@@ -9607,7 +9607,7 @@ AutoSetAllHeadlights {
 }
 
 // FUNCTION: SIMCOPTER 0x00506d6a
-AutomobileClass::SetAllHeadlights {
+void AutomobileClass::SetAllHeadlights(int32_t) {
 // LINE 3507:
 	asm( 
 "	      00506d6a    push ebp"
@@ -9672,7 +9672,7 @@ AutomobileClass::SetAllHeadlights {
 }
 
 // FUNCTION: SIMCOPTER 0x00506dd4
-AutomobileClass::TurnOnHeadlight {
+void AutomobileClass::TurnOnHeadlight() {
 // LINE 3538:
 	asm( 
 "	      00506dd4    push ebp"
@@ -9762,7 +9762,7 @@ AutomobileClass::TurnOnHeadlight {
 }
 
 // FUNCTION: SIMCOPTER 0x00506e6f
-AutomobileClass::TurnOffHeadlight {
+void AutomobileClass::TurnOffHeadlight() {
 // LINE 3561:
 	asm( 
 "	      00506e6f    push ebp"
@@ -9854,7 +9854,7 @@ AutomobileClass::TurnOffHeadlight {
 }
 
 // FUNCTION: SIMCOPTER 0x00506f0e
-AutomobileClass::IsThisAnEmergencyVehicle {
+int32_t AutomobileClass::IsThisAnEmergencyVehicle() {
 // LINE 3585:
 	asm( 
 "	      00506f0e    push ebp"
@@ -9904,7 +9904,7 @@ AutomobileClass::IsThisAnEmergencyVehicle {
 }
 
 // FUNCTION: SIMCOPTER 0x00506f6f
-AutomobileClass::SetHiwayDirection {
+void AutomobileClass::SetHiwayDirection(unsigned short) {
 // LINE 3614:
 	asm( 
 "	      00506f6f    push ebp"
@@ -10379,7 +10379,7 @@ AutomobileClass::SetHiwayDirection {
 }
 
 // FUNCTION: SIMCOPTER 0x00507488
-AutomobileClass::DoHiwayTilesConnect {
+int32_t AutomobileClass::DoHiwayTilesConnect(unsigned short, unsigned short, enum DirectionTypes) {
 // LINE 3727:
 	asm( 
 "	      00507488    push ebp"
@@ -10633,7 +10633,7 @@ AutomobileClass::DoHiwayTilesConnect {
 }
 
 // FUNCTION: SIMCOPTER 0x00507782
-AutomobileClass::AdjustCurrentHiwayPosition {
+void AutomobileClass::AdjustCurrentHiwayPosition() {
 // LINE 3812:
 	asm( 
 "	      00507782    push ebp"
@@ -10794,7 +10794,7 @@ AutomobileClass::AdjustCurrentHiwayPosition {
 }
 
 // FUNCTION: SIMCOPTER 0x0050790c
-AutomobileClass::AdjustNextHiwayPosition {
+void AutomobileClass::AdjustNextHiwayPosition() {
 // LINE 3868:
 	asm( 
 "	      0050790c    push ebp"
@@ -11519,7 +11519,7 @@ AutomobileClass::AdjustNextHiwayPosition {
 }
 
 // FUNCTION: SIMCOPTER 0x00508180
-AutomobileClass::PickHiwayDir {
+enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _GridCoordinates&) {
 // LINE 4035:
 	asm( 
 "	      00508180    push ebp"
@@ -12414,7 +12414,7 @@ AutomobileClass::PickHiwayDir {
 }
 
 // FUNCTION: SIMCOPTER 0x00508ad4
-AutomobileClass::MakeAHiwayTurn {
+void AutomobileClass::MakeAHiwayTurn(enum AutomobileClass::IntersectionTypes) {
 // LINE 4236:
 	asm( 
 "	      00508ad4    push ebp"
@@ -12658,7 +12658,7 @@ AutomobileClass::MakeAHiwayTurn {
 }
 
 // FUNCTION: SIMCOPTER 0x00508cc3
-AutomobileClass::GoStraight {
+void AutomobileClass::GoStraight() {
 // LINE 4344:
 	asm( 
 "	      00508cc3    push ebp"
@@ -12750,7 +12750,7 @@ AutomobileClass::GoStraight {
 }
 
 // FUNCTION: SIMCOPTER 0x00508d9e
-AutomobileClass::TurnLeft {
+void AutomobileClass::TurnLeft() {
 // LINE 4390:
 	asm( 
 "	      00508d9e    push ebp"
@@ -12842,7 +12842,7 @@ AutomobileClass::TurnLeft {
 }
 
 // FUNCTION: SIMCOPTER 0x00508e79
-AutomobileClass::TurnRight {
+void AutomobileClass::TurnRight() {
 // LINE 4437:
 	asm( 
 "	      00508e79    push ebp"
@@ -12934,7 +12934,7 @@ AutomobileClass::TurnRight {
 }
 
 // FUNCTION: SIMCOPTER 0x00508f54
-AutomobileClass::MoveForwardOnHiway {
+void AutomobileClass::MoveForwardOnHiway() {
 // LINE 4487:
 	asm( 
 "	      00508f54    push ebp"
@@ -13025,7 +13025,7 @@ AutomobileClass::MoveForwardOnHiway {
 }
 
 // FUNCTION: SIMCOPTER 0x00509007
-S3AutoMIFFLoad {
+int32_t S3AutoMIFFLoad() {
 // LINE 4517:
 	asm( 
 "	      00509007    push ebp"
@@ -13053,7 +13053,7 @@ S3AutoMIFFLoad {
 }
 
 // FUNCTION: SIMCOPTER 0x00509023
-S3AutoMIFFSave {
+int32_t S3AutoMIFFSave() {
 // LINE 4530:
 	asm( 
 "	      00509023    push ebp"
@@ -13081,7 +13081,7 @@ S3AutoMIFFSave {
 }
 
 // FUNCTION: SIMCOPTER 0x0050903f
-AutomobileClass::MIFFLoad {
+int32_t AutomobileClass::MIFFLoad(void * __ptr32) {
 // LINE 4542:
 	asm( 
 "	      0050903f    push ebp"
@@ -13173,7 +13173,7 @@ AutomobileClass::MIFFLoad {
 }
 
 // FUNCTION: SIMCOPTER 0x005090fb
-AutomobileClass::MIFFSave {
+int32_t AutomobileClass::MIFFSave(void * __ptr32) {
 // LINE 4577:
 	asm( 
 "	      005090fb    push ebp"
@@ -13242,7 +13242,7 @@ AutomobileClass::MIFFSave {
 }
 
 // FUNCTION: SIMCOPTER 0x0050917e
-AutomobileClass::SetSaveData {
+void AutomobileClass::SetSaveData(struct _AUTO_LOAD_SAVE*) {
 // LINE 4604:
 	asm( 
 "	      0050917e    push ebp"
@@ -13566,7 +13566,7 @@ AutomobileClass::SetSaveData {
 }
 
 // FUNCTION: SIMCOPTER 0x00509489
-AutomobileClass::LoadSaveData {
+void AutomobileClass::LoadSaveData(struct _AUTO_LOAD_SAVE*) {
 // LINE 4666:
 	asm( 
 "	      00509489    push ebp"
@@ -13985,7 +13985,7 @@ AutomobileClass::LoadSaveData {
 }
 
 // FUNCTION: SIMCOPTER 0x005098b0
-AutomobileClass::HonkHorn {
+void AutomobileClass::HonkHorn() {
 // LINE 4738:
 	asm( 
 "	      005098b0    push ebp"
@@ -14072,7 +14072,7 @@ AutomobileClass::HonkHorn {
 }
 
 // FUNCTION: SIMCOPTER 0x0050994b
-S3AutoSoundDistReset {
+void S3AutoSoundDistReset() {
 // LINE 4772:
 	asm( 
 "	      0050994b    push ebp"
@@ -14109,7 +14109,7 @@ S3AutoSoundDistReset {
 }
 
 // FUNCTION: SIMCOPTER 0x00509983
-S3AutoSoundDriver {
+void S3AutoSoundDriver() {
 // LINE 4788:
 	asm( 
 "	      00509983    push ebp"
@@ -14551,7 +14551,7 @@ S3AutoSoundDriver {
 }
 
 // FUNCTION: SIMCOPTER 0x00509cf7
-AutomobileClass::ChangeAutoColor {
+void AutomobileClass::ChangeAutoColor() {
 // LINE 4925:
 	asm( 
 "	      00509cf7    push ebp"

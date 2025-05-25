@@ -6,7 +6,7 @@
 
 // Contribution: 1:00135e00-00137427 Module: 158, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x00536e00
-CreatePoliceCarInstance {
+int32_t CreatePoliceCarInstance() {
 // LINE 89:
 	asm( 
 "	      00536e00    push ebp"
@@ -39,7 +39,7 @@ CreatePoliceCarInstance {
 }
 
 // FUNCTION: SIMCOPTER 0x00536e30
-PoliceCarClass::PoliceCarClass {
+void PoliceCarClass::PoliceCarClass() {
 // LINE 95:
 	asm( 
 "	      00536e30    push ebp"
@@ -77,7 +77,7 @@ PoliceCarClass::PoliceCarClass {
 }
 
 // FUNCTION: SIMCOPTER 0x00536e71
-PoliceCarClass::~PoliceCarClass {
+void PoliceCarClass::~PoliceCarClass() {
 // LINE 102:
 	asm( 
 "	      00536e71    push ebp"
@@ -101,7 +101,7 @@ PoliceCarClass::~PoliceCarClass {
 }
 
 // FUNCTION: SIMCOPTER 0x00536e98
-PoliceCarClass::CreateInstance {
+class PoliceCarClass* PoliceCarClass::CreateInstance(int32_t) {
 // LINE 118:
 	asm( 
 "	      00536e98    push ebp"
@@ -316,7 +316,7 @@ PoliceCarClass::CreateInstance {
 }
 
 // FUNCTION: SIMCOPTER 0x00537081
-PoliceCarClass::Dispatch {
+unsigned char PoliceCarClass::Dispatch(enum EmergencyType, enum EmergencyLevel, long, long) {
 // LINE 215:
 	asm( 
 "	      00537081    push ebp"
@@ -352,7 +352,7 @@ PoliceCarClass::Dispatch {
 }
 
 // FUNCTION: SIMCOPTER 0x005370b3
-PoliceCarClass::ItterateFSM {
+void PoliceCarClass::ItterateFSM() {
 // LINE 240:
 	asm( 
 "	      005370b3    push ebp"
@@ -1413,7 +1413,7 @@ PoliceCarClass::ItterateFSM {
 }
 
 // FUNCTION: SIMCOPTER 0x00537a2c
-PoliceCarClass::PickTurnDir {
+enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal*) {
 // LINE 540:
 	asm( 
 "	      00537a2c    push ebp"
@@ -1810,7 +1810,7 @@ PoliceCarClass::PickTurnDir {
 }
 
 // FUNCTION: SIMCOPTER 0x00537e2f
-PoliceCarClass::ChangeEmergencyLocationToSpotlightLocation {
+int32_t PoliceCarClass::ChangeEmergencyLocationToSpotlightLocation() {
 // LINE 642:
 	asm( 
 "	      00537e2f    push ebp"
@@ -1928,7 +1928,7 @@ PoliceCarClass::ChangeEmergencyLocationToSpotlightLocation {
 }
 
 // FUNCTION: SIMCOPTER 0x00537f6c
-PoliceCarClass::AtScene {
+int32_t PoliceCarClass::AtScene() {
 // LINE 668:
 	asm( 
 "	      00537f6c    push ebp"
@@ -1985,7 +1985,7 @@ PoliceCarClass::AtScene {
 }
 
 // FUNCTION: SIMCOPTER 0x00537fd9
-PoliceCarClass::ScanForBadGuys {
+struct _DYOBJ_INST* PoliceCarClass::ScanForBadGuys(struct _GridCoordinates&) {
 // LINE 686:
 	asm( 
 "	      00537fd9    push ebp"
@@ -2126,7 +2126,7 @@ PoliceCarClass::ScanForBadGuys {
 }
 
 // FUNCTION: SIMCOPTER 0x0053811f
-PoliceCarClass::SetSaveData {
+void PoliceCarClass::SetSaveData(struct _AUTO_LOAD_SAVE*) {
 // LINE 728:
 	asm( 
 "	      0053811f    push ebp"
@@ -2247,7 +2247,7 @@ PoliceCarClass::SetSaveData {
 }
 
 // FUNCTION: SIMCOPTER 0x0053822e
-PoliceCarClass::LoadSaveData {
+void PoliceCarClass::LoadSaveData(struct _AUTO_LOAD_SAVE*) {
 // LINE 760:
 	asm( 
 "	      0053822e    push ebp"

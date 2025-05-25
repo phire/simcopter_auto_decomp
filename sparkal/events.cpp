@@ -6,7 +6,7 @@
 
 // Contribution: 1:00030b60-00030c4c Module: 63, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x00431b60
-IsEventSet {
+int32_t IsEventSet() {
 // LINE 22:
 	asm( 
 "	      00431b60    push ebp"
@@ -36,7 +36,7 @@ IsEventSet {
 }
 
 // FUNCTION: SIMCOPTER 0x00431b89
-IsEventRangeSet {
+int32_t IsEventRangeSet() {
 // LINE 32:
 	asm( 
 "	      00431b89    push ebp"
@@ -90,7 +90,7 @@ IsEventRangeSet {
 }
 
 // FUNCTION: SIMCOPTER 0x00431bd6
-GetJoystickValue {
+long GetJoystickValue() {
 // LINE 46:
 	asm( 
 "	      00431bd6    push ebp"
@@ -118,7 +118,7 @@ GetJoystickValue {
 }
 
 // FUNCTION: SIMCOPTER 0x00431bfb
-GetJoystickValueEither {
+long GetJoystickValueEither() {
 // LINE 55:
 	asm( 
 "	      00431bfb    push ebp"

@@ -12,7 +12,7 @@
 // $E1
 
 // FUNCTION: SIMCOPTER 0x00490fd3
-__long_random {
+unsigned long __long_random() {
 // LINE 26:
 	asm( 
 "	      00490fd3    push ebp"
@@ -40,7 +40,7 @@ __long_random {
 }
 
 // FUNCTION: SIMCOPTER 0x00490ff1
-Random::seed {
+void Random::seed(unsigned long) {
 // LINE 34:
 	asm( 
 "	      00490ff1    push ebp"
@@ -162,7 +162,7 @@ Random::seed {
 }
 
 // FUNCTION: SIMCOPTER 0x004910ea
-Random::operator() {
+unsigned long Random::operator()(unsigned long) {
 // LINE 58:
 	asm( 
 "	      004910ea    push ebp"

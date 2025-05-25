@@ -6,7 +6,7 @@
 
 // Contribution: 1:000d1180-000d42ba Module: 147, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x004d2180
-LoadGroup {
+struct VRResource* LoadGroup() {
 // LINE 145:
 	asm( 
 "	      004d2180    push ebp"
@@ -252,7 +252,7 @@ LoadGroup {
 }
 
 // FUNCTION: SIMCOPTER 0x004d2379
-VRAssignMemPoolToRes {
+void VRAssignMemPoolToRes() {
 // LINE 225:
 	asm( 
 "	      004d2379    push ebp"
@@ -303,7 +303,7 @@ VRAssignMemPoolToRes {
 }
 
 // FUNCTION: SIMCOPTER 0x004d23c7
-VRGetResObjectCnt {
+int32_t VRGetResObjectCnt() {
 // LINE 244:
 	asm( 
 "	      004d23c7    push ebp"
@@ -335,7 +335,7 @@ VRGetResObjectCnt {
 }
 
 // FUNCTION: SIMCOPTER 0x004d23e6
-VRGetResObject {
+int32_t VRGetResObject() {
 // LINE 261:
 	asm( 
 "	      004d23e6    push ebp"
@@ -368,7 +368,7 @@ VRGetResObject {
 }
 
 // FUNCTION: SIMCOPTER 0x004d2409
-LoadObjtType {
+int32_t LoadObjtType() {
 // LINE 280:
 	asm( 
 "	      004d2409    push ebp"
@@ -1124,7 +1124,7 @@ LoadObjtType {
 }
 
 // FUNCTION: SIMCOPTER 0x004d2ac6
-VRGetDyObjAlt {
+int32_t VRGetDyObjAlt() {
 // LINE 730:
 	asm( 
 "	      004d2ac6    push ebp"
@@ -1189,7 +1189,7 @@ VRGetDyObjAlt {
 }
 
 // FUNCTION: SIMCOPTER 0x004d2b28
-VRGetObjAlt {
+int32_t VRGetObjAlt() {
 // LINE 775:
 	asm( 
 "	      004d2b28    push ebp"
@@ -2013,7 +2013,7 @@ VRGetObjAlt {
 }
 
 // FUNCTION: SIMCOPTER 0x004d31e7
-VRGetObjAlt2 {
+int32_t VRGetObjAlt2() {
 // LINE 1087:
 	asm( 
 "	      004d31e7    push ebp"
@@ -2914,7 +2914,7 @@ VRGetObjAlt2 {
 }
 
 // FUNCTION: SIMCOPTER 0x004d392f
-VRGetObjZdist {
+int32_t VRGetObjZdist() {
 // LINE 1423:
 	asm( 
 "	      004d392f    push ebp"
@@ -3173,7 +3173,7 @@ VRGetObjZdist {
 }
 
 // FUNCTION: SIMCOPTER 0x004d3b43
-VRGetObjXdist {
+int32_t VRGetObjXdist() {
 // LINE 1525:
 	asm( 
 "	      004d3b43    push ebp"
@@ -3432,7 +3432,7 @@ VRGetObjXdist {
 }
 
 // FUNCTION: SIMCOPTER 0x004d3d55
-VRObjResize2dFace {
+void VRObjResize2dFace() {
 // LINE 1629:
 	asm( 
 "	      004d3d55    push ebp"
@@ -3561,7 +3561,7 @@ VRObjResize2dFace {
 }
 
 // FUNCTION: SIMCOPTER 0x004d3e24
-VR3dObjLocate {
+void VR3dObjLocate() {
 // LINE 1684:
 	asm( 
 "	      004d3e24    push ebp"
@@ -3641,7 +3641,7 @@ VR3dObjLocate {
 }
 
 // FUNCTION: SIMCOPTER 0x004d3e9d
-VRObjGetHeight {
+int32_t VRObjGetHeight() {
 // LINE 1712:
 	asm( 
 "	      004d3e9d    push ebp"
@@ -3707,7 +3707,7 @@ VRObjGetHeight {
 }
 
 // FUNCTION: SIMCOPTER 0x004d3f08
-VR2dObjLocate {
+void VR2dObjLocate() {
 // LINE 1739:
 	asm( 
 "	      004d3f08    push ebp"
@@ -3861,7 +3861,7 @@ VR2dObjLocate {
 }
 
 // FUNCTION: SIMCOPTER 0x004d3fea
-ReadTree {
+struct _BSPtree* ReadTree() {
 // LINE 1799:
 	asm( 
 "	      004d3fea    push ebp"
@@ -3974,7 +3974,7 @@ ReadTree {
 }
 
 // FUNCTION: SIMCOPTER 0x004d40e1
-NormalizeObj {
+void NormalizeObj() {
 // LINE 1844:
 	asm( 
 "	      004d40e1    push ebp"
@@ -4078,7 +4078,7 @@ NormalizeObj {
 }
 
 // FUNCTION: SIMCOPTER 0x004d4192
-VRAssignTextureResToGroup {
+int32_t VRAssignTextureResToGroup() {
 // LINE 1870:
 	asm( 
 "	      004d4192    push ebp"
@@ -4290,7 +4290,7 @@ VRAssignTextureResToGroup {
 }
 
 // FUNCTION: SIMCOPTER 0x004d4337
-VRBCApplyTiledMap {
+void VRBCApplyTiledMap() {
 // LINE 1933:
 	asm( 
 "	      004d4337    push ebp"
@@ -4382,7 +4382,7 @@ VRBCApplyTiledMap {
 }
 
 // FUNCTION: SIMCOPTER 0x004d43c3
-VRCreateMemPool {
+struct VRMemPool* VRCreateMemPool() {
 // LINE 1970:
 	asm( 
 "	      004d43c3    push ebp"
@@ -4506,7 +4506,7 @@ VRCreateMemPool {
 }
 
 // FUNCTION: SIMCOPTER 0x004d44bb
-VRFreeMemPool {
+void VRFreeMemPool() {
 // LINE 2009:
 	asm( 
 "	      004d44bb    push ebp"
@@ -4540,7 +4540,7 @@ VRFreeMemPool {
 }
 
 // FUNCTION: SIMCOPTER 0x004d44de
-FaceCalcNormal {
+void FaceCalcNormal() {
 // LINE 2027:
 	asm( 
 "	      004d44de    push ebp"
@@ -4745,7 +4745,7 @@ FaceCalcNormal {
 }
 
 // FUNCTION: SIMCOPTER 0x004d46bc
-ObjCalcVnormsAndShade {
+void ObjCalcVnormsAndShade() {
 // LINE 2092:
 	asm( 
 "	      004d46bc    push ebp"
@@ -5061,7 +5061,7 @@ ObjCalcVnormsAndShade {
 }
 
 // FUNCTION: SIMCOPTER 0x004d494c
-VRObjAssignLowRes {
+void VRObjAssignLowRes() {
 // LINE 2203:
 	asm( 
 "	      004d494c    push ebp"
@@ -5097,7 +5097,7 @@ VRObjAssignLowRes {
 }
 
 // FUNCTION: SIMCOPTER 0x004d496e
-VRObjCreateRope {
+int32_t VRObjCreateRope() {
 // LINE 2224:
 	asm( 
 "	      004d496e    push ebp"
@@ -5405,7 +5405,7 @@ VRObjCreateRope {
 }
 
 // FUNCTION: SIMCOPTER 0x004d4b80
-VRObjCreatePoint {
+int32_t VRObjCreatePoint() {
 // LINE 2329:
 	asm( 
 "	      004d4b80    push ebp"
@@ -5695,7 +5695,7 @@ VRObjCreatePoint {
 }
 
 // FUNCTION: SIMCOPTER 0x004d4d73
-VRGetObjDupMemReq {
+int32_t VRGetObjDupMemReq() {
 // LINE 2431:
 	asm( 
 "	      004d4d73    push ebp"
@@ -5751,7 +5751,7 @@ VRGetObjDupMemReq {
 }
 
 // FUNCTION: SIMCOPTER 0x004d4dbf
-VRCreateObjDuplicate {
+int32_t VRCreateObjDuplicate() {
 // LINE 2451:
 	asm( 
 "	      004d4dbf    push ebp"
@@ -5964,7 +5964,7 @@ VRCreateObjDuplicate {
 }
 
 // FUNCTION: SIMCOPTER 0x004d4f25
-VRStObjPolyHit {
+int32_t VRStObjPolyHit() {
 // LINE 2528:
 	asm( 
 "	      004d4f25    push ebp"

@@ -6,7 +6,7 @@
 
 // Contribution: 1:0015fbf0-001614f4 Module: 189, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x00560bf0
-cCopterBody::GetPrivateAnim {
+public: class cCopterAnim * __thiscall cCopterBody::GetPrivateAnim(unsigned long) {
 // LINE 1937:
 	asm( 
 "	      00560bf0    push ebp"
@@ -203,7 +203,7 @@ cCopterBody::GetPrivateAnim {
 }
 
 // FUNCTION: SIMCOPTER 0x00560e78
-cCopterBody::ActivateAllPartPointers {
+public: void __thiscall cCopterBody::ActivateAllPartPointers(unsigned short) {
 // LINE 2061:
 	asm( 
 "	      00560e78    push ebp"
@@ -361,7 +361,7 @@ cCopterBody::ActivateAllPartPointers {
 }
 
 // FUNCTION: SIMCOPTER 0x00561005
-cCopterBody::GetCopterBody {
+public: static class cCopterBody * __cdecl cCopterBody::GetCopterBody(unsigned char *const) {
 // LINE 2084:
 	asm( 
 "	      00561005    push ebp"
@@ -475,7 +475,7 @@ cCopterBody::GetCopterBody {
 }
 
 // FUNCTION: SIMCOPTER 0x00561190
-cCopterBody::GetPartByName {
+public: struct cCopterBody::Part * __thiscall cCopterBody::GetPartByName(unsigned long) {
 // LINE 2091:
 	asm( 
 "	      00561190    push ebp"
@@ -571,7 +571,7 @@ cCopterBody::GetPartByName {
 }
 
 // FUNCTION: SIMCOPTER 0x00561281
-cCopterBody::DrawSwitch {
+public: void __thiscall cCopterBody::DrawSwitch(float, float, struct cCopterBody::Part *, short, short, float, short) {
 // LINE 2102:
 	asm( 
 "	      00561281    push ebp"
@@ -965,7 +965,7 @@ cCopterBody::DrawSwitch {
 }
 
 // FUNCTION: SIMCOPTER 0x00561611
-cCopterBody::Draw {
+public: void __thiscall cCopterBody::Draw(float, float, class cCopterAnim *, short, short, short, float, short, short) {
 // LINE 2180:
 	asm( 
 "	      00561611    push ebp"
@@ -1518,7 +1518,7 @@ cCopterBody::Draw {
 }
 
 // FUNCTION: SIMCOPTER 0x00561b74
-cCopterBody::InstallArrayPointers {
+public: virtual void __thiscall cCopterBody::InstallArrayPointers(unsigned short) {
 // LINE 2285:
 	asm( 
 "	      00561b74    push ebp"
@@ -1868,7 +1868,7 @@ cCopterBody::InstallArrayPointers {
 }
 
 // FUNCTION: SIMCOPTER 0x005620af
-cCopterBody::DestroyAll {
+public: static void __cdecl cCopterBody::DestroyAll(void) {
 // LINE 2300:
 	asm( 
 "	      005620af    push ebp"
@@ -2141,7 +2141,7 @@ cCopterBody::DestroyAll {
 }
 
 // FUNCTION: SIMCOPTER 0x005623cd
-cCopterBodyCompareDrawOrder {
+int32_t cCopterBodyCompareDrawOrder() {
 // LINE 2324:
 	asm( 
 "	      005623cd    push ebp"
@@ -2186,7 +2186,7 @@ cCopterBodyCompareDrawOrder {
 }
 
 // FUNCTION: SIMCOPTER 0x0056240b
-SwizzleCopterBodyPart {
+void SwizzleCopterBodyPart() {
 // LINE 2332:
 	asm( 
 "	      0056240b    push ebp"
@@ -2268,7 +2268,7 @@ SwizzleCopterBodyPart {
 }
 
 // FUNCTION: SIMCOPTER 0x0056249b
-SwizzleAnimLookup {
+void SwizzleAnimLookup() {
 // LINE 2346:
 	asm( 
 "	      0056249b    push ebp"

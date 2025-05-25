@@ -6,7 +6,7 @@
 
 // Contribution: 1:0011d770-0012290d Module: 167, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x0051e770
-S3MissileReset {
+void S3MissileReset() {
 // LINE 112:
 	asm( 
 "	      0051e770    push ebp"
@@ -165,7 +165,7 @@ S3MissileReset {
 }
 
 // FUNCTION: SIMCOPTER 0x0051e8e0
-S3MissileInit {
+void S3MissileInit() {
 // LINE 193:
 	asm( 
 "	      0051e8e0    push ebp"
@@ -890,7 +890,7 @@ S3MissileInit {
 }
 
 // FUNCTION: SIMCOPTER 0x0051eee5
-S3MissileStart {
+struct _MISSILE_DATA* S3MissileStart() {
 // LINE 403:
 	asm( 
 "	      0051eee5    push ebp"
@@ -2677,7 +2677,7 @@ S3MissileStart {
 }
 
 // FUNCTION: SIMCOPTER 0x0051fe8a
-S3MissileDriver {
+void S3MissileDriver() {
 // LINE 913:
 	asm( 
 "	      0051fe8a    push ebp"
@@ -6340,7 +6340,7 @@ S3MissileDriver {
 }
 
 // FUNCTION: SIMCOPTER 0x00522096
-S3MissileCollisionCheck {
+int32_t S3MissileCollisionCheck() {
 // LINE 1791:
 	asm( 
 "	      00522096    push ebp"
@@ -7864,7 +7864,7 @@ S3MissileCollisionCheck {
 }
 
 // FUNCTION: SIMCOPTER 0x00522dbc
-S3MissileGroundHit {
+int32_t S3MissileGroundHit() {
 // LINE 2253:
 	asm( 
 "	      00522dbc    push ebp"
@@ -7995,7 +7995,7 @@ S3MissileGroundHit {
 }
 
 // FUNCTION: SIMCOPTER 0x00522eb3
-S3MissileSphereHit {
+int32_t S3MissileSphereHit() {
 // LINE 2509:
 	asm( 
 "	      00522eb3    push ebp"
@@ -8284,7 +8284,7 @@ S3MissileSphereHit {
 }
 
 // FUNCTION: SIMCOPTER 0x005231c2
-S3DrawPoint {
+void S3DrawPoint() {
 // LINE 2608:
 	asm( 
 "	      005231c2    push ebp"
@@ -8396,7 +8396,7 @@ S3DrawPoint {
 }
 
 // FUNCTION: SIMCOPTER 0x00523270
-S3DebrisGetByMission {
+struct _MISSILE_DATA* S3DebrisGetByMission() {
 // LINE 2663:
 	asm( 
 "	      00523270    push ebp"
@@ -8451,7 +8451,7 @@ S3DebrisGetByMission {
 }
 
 // FUNCTION: SIMCOPTER 0x005232d1
-S3MissileDebrisDouse {
+void S3MissileDebrisDouse() {
 // LINE 2686:
 	asm( 
 "	      005232d1    push ebp"
@@ -8618,7 +8618,7 @@ S3MissileDebrisDouse {
 }
 
 // FUNCTION: SIMCOPTER 0x005233ff
-S3MissileDebrisFire {
+void S3MissileDebrisFire() {
 // LINE 2748:
 	asm( 
 "	      005233ff    push ebp"
@@ -8680,7 +8680,7 @@ S3MissileDebrisFire {
 }
 
 // FUNCTION: SIMCOPTER 0x0052345a
-S3MissileMIFFLoad {
+int32_t S3MissileMIFFLoad() {
 // LINE 2776:
 	asm( 
 "	      0052345a    push ebp"
@@ -9124,7 +9124,7 @@ S3MissileMIFFLoad {
 }
 
 // FUNCTION: SIMCOPTER 0x005237ee
-S3MissileMIFFSave {
+int32_t S3MissileMIFFSave() {
 // LINE 2877:
 	asm( 
 "	      005237ee    push ebp"

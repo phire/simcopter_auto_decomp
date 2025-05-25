@@ -15,7 +15,7 @@
 // $E68
 
 // FUNCTION: SIMCOPTER 0x004500ce
-MessageBoxWindow::MessageBoxWindow {
+void MessageBoxWindow::MessageBoxWindow(class MPoint&, unsigned long, unsigned long, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, int32_t, char *, char *, char *) {
 // LINE 47:
 	asm( 
 "	      004500ce    push ebp"
@@ -348,7 +348,7 @@ MessageBoxWindow::MessageBoxWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x00450573
-MessageBoxWindow::MessageBoxWindow {
+void MessageBoxWindow::MessageBoxWindow(class MPoint&, unsigned long, class basic_string<char>&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, int32_t, char *, char *, char *) {
 // LINE 70:
 	asm( 
 "	      00450573    push ebp"
@@ -769,7 +769,7 @@ MessageBoxWindow::MessageBoxWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x00450b5d
-MessageBoxWindow::Initialize {
+int32_t MessageBoxWindow::Initialize() {
 // LINE 82:
 	asm( 
 "	      00450b5d    push ebp"
@@ -1548,7 +1548,7 @@ MessageBoxWindow::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x0045165b
-MessageBoxWindow::DoKeyDown {
+long MessageBoxWindow::DoKeyDown(long, char) {
 // LINE 165:
 	asm( 
 "	      0045165b    push ebp"
@@ -1647,7 +1647,7 @@ MessageBoxWindow::DoKeyDown {
 }
 
 // FUNCTION: SIMCOPTER 0x0045171a
-MessageBoxWindow::DoMessage {
+int32_t MessageBoxWindow::DoMessage(class GraphicWindow*, long, long, void * __ptr32) {
 // LINE 186:
 	asm( 
 "	      0045171a    push ebp"
@@ -1712,7 +1712,7 @@ MessageBoxWindow::DoMessage {
 }
 
 // FUNCTION: SIMCOPTER 0x00451785
-MessageBoxWindow::ConvertTypeToStringID {
+int32_t MessageBoxWindow::ConvertTypeToStringID(long) {
 // LINE 207:
 	asm( 
 "	      00451785    push ebp"
@@ -1799,7 +1799,7 @@ MessageBoxWindow::ConvertTypeToStringID {
 }
 
 // FUNCTION: SIMCOPTER 0x00451817
-MessageBoxWindow::DrawTextOntoBox {
+void MessageBoxWindow::DrawTextOntoBox() {
 // LINE 232:
 	asm( 
 "	      00451817    push ebp"
@@ -2226,7 +2226,7 @@ MessageBoxWindow::DrawTextOntoBox {
 }
 
 // FUNCTION: SIMCOPTER 0x00451ea4
-MessageBoxWindow::SetTextColor {
+void MessageBoxWindow::SetTextColor(const struct SparkalColor&) {
 // LINE 254:
 	asm( 
 "	      00451ea4    push ebp"
@@ -2265,7 +2265,7 @@ MessageBoxWindow::SetTextColor {
 }
 
 // FUNCTION: SIMCOPTER 0x00451ed9
-MessageBoxWindow::SetButtonTextColor {
+void MessageBoxWindow::SetButtonTextColor(const struct SparkalColor*, const struct SparkalColor*) {
 // LINE 263:
 	asm( 
 "	      00451ed9    push ebp"
@@ -2312,7 +2312,7 @@ MessageBoxWindow::SetButtonTextColor {
 }
 
 // FUNCTION: SIMCOPTER 0x00451f21
-AnimationWindow::AnimationWindow {
+void AnimationWindow::AnimationWindow() {
 // LINE 282:
 	asm( 
 "	      00451f21    push ebp"
@@ -2400,7 +2400,7 @@ AnimationWindow::AnimationWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x00451fde
-AnimationWindow::AnimationWindow {
+void AnimationWindow::AnimationWindow(char *, class MRect&, long, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, long, enum AnimationWindow::AnimationLoopType) {
 // LINE 311:
 	asm( 
 "	      00451fde    push ebp"
@@ -2534,7 +2534,7 @@ AnimationWindow::AnimationWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x0045210c
-AnimationWindow::ComposeSelf {
+int32_t AnimationWindow::ComposeSelf() {
 // LINE 341:
 	asm( 
 "	      0045210c    push ebp"
@@ -2694,7 +2694,7 @@ AnimationWindow::ComposeSelf {
 }
 
 // FUNCTION: SIMCOPTER 0x00452252
-AnimationWindow::GotoNextFrame {
+void AnimationWindow::GotoNextFrame() {
 // LINE 384:
 	asm( 
 "	      00452252    push ebp"
@@ -2812,7 +2812,7 @@ AnimationWindow::GotoNextFrame {
 }
 
 // FUNCTION: SIMCOPTER 0x0045239c
-AnimationWindow::DoesWindowNeedUpdating {
+int32_t AnimationWindow::DoesWindowNeedUpdating() {
 // LINE 411:
 	asm( 
 "	      0045239c    push ebp"
@@ -2848,7 +2848,7 @@ AnimationWindow::DoesWindowNeedUpdating {
 }
 
 // FUNCTION: SIMCOPTER 0x004523db
-AnimationWindow::Start {
+void AnimationWindow::Start() {
 // LINE 423:
 	asm( 
 "	      004523db    push ebp"
@@ -2894,7 +2894,7 @@ AnimationWindow::Start {
 }
 
 // FUNCTION: SIMCOPTER 0x0045242c
-AnimationWindow::ResetFramePosition {
+void AnimationWindow::ResetFramePosition() {
 // LINE 433:
 	asm( 
 "	      0045242c    push ebp"
@@ -2950,7 +2950,7 @@ AnimationWindow::ResetFramePosition {
 }
 
 // FUNCTION: SIMCOPTER 0x004524ad
-RenderSettingsWindow::RenderSettingsWindow {
+void RenderSettingsWindow::RenderSettingsWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
 // LINE 503:
 	asm( 
 "	      004524ad    push ebp"
@@ -3039,7 +3039,7 @@ RenderSettingsWindow::RenderSettingsWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x00452603
-RenderSettingsWindow::~RenderSettingsWindow {
+void RenderSettingsWindow::~RenderSettingsWindow() {
 // LINE 511:
 	asm( 
 "	      00452603    push ebp"
@@ -3072,7 +3072,7 @@ RenderSettingsWindow::~RenderSettingsWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x00452637
-RenderSettingsWindow::Initialize {
+int32_t RenderSettingsWindow::Initialize() {
 // LINE 520:
 	asm( 
 "	      00452637    push ebp"
@@ -4829,7 +4829,7 @@ RenderSettingsWindow::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x00454163
-RenderSettingsWindow::CreateImage {
+int32_t RenderSettingsWindow::CreateImage(int32_t) {
 // LINE 659:
 	asm( 
 "	      00454163    push ebp"
@@ -4888,7 +4888,7 @@ RenderSettingsWindow::CreateImage {
 }
 
 // FUNCTION: SIMCOPTER 0x004541bc
-RenderSettingsWindow::DestroyImage {
+void RenderSettingsWindow::DestroyImage() {
 // LINE 674:
 	asm( 
 "	      004541bc    push ebp"
@@ -4974,7 +4974,7 @@ RenderSettingsWindow::DestroyImage {
 }
 
 // FUNCTION: SIMCOPTER 0x00454288
-RenderSettingsWindow::DrawSelf {
+int32_t RenderSettingsWindow::DrawSelf() {
 // LINE 693:
 	asm( 
 "	      00454288    push ebp"
@@ -5172,7 +5172,7 @@ RenderSettingsWindow::DrawSelf {
 }
 
 // FUNCTION: SIMCOPTER 0x00454527
-RenderSettingsWindow::DoKeyDown {
+long RenderSettingsWindow::DoKeyDown(long, char) {
 // LINE 715:
 	asm( 
 "	      00454527    push ebp"
@@ -5226,7 +5226,7 @@ RenderSettingsWindow::DoKeyDown {
 }
 
 // FUNCTION: SIMCOPTER 0x0045457d
-RenderSettingsWindow::SetCurrentSettings {
+int32_t RenderSettingsWindow::SetCurrentSettings(long, long, long, long, long) {
 // LINE 737:
 	asm( 
 "	      0045457d    push ebp"
@@ -5293,7 +5293,7 @@ RenderSettingsWindow::SetCurrentSettings {
 }
 
 // FUNCTION: SIMCOPTER 0x004545dd
-RenderSettingsWindow::GetCurrentSettings {
+void RenderSettingsWindow::GetCurrentSettings(long&, long&, long&, long&, long&) {
 // LINE 762:
 	asm( 
 "	      004545dd    push ebp"
@@ -5351,7 +5351,7 @@ RenderSettingsWindow::GetCurrentSettings {
 }
 
 // FUNCTION: SIMCOPTER 0x00454632
-RenderSettingsWindow::SetControlsBasedOnCurrentSettings {
+void RenderSettingsWindow::SetControlsBasedOnCurrentSettings() {
 // LINE 776:
 	asm( 
 "	      00454632    push ebp"
@@ -5526,7 +5526,7 @@ RenderSettingsWindow::SetControlsBasedOnCurrentSettings {
 }
 
 // FUNCTION: SIMCOPTER 0x004547ca
-RenderSettingsWindow::DrawPreviewBasedOnCurrentSettings {
+void RenderSettingsWindow::DrawPreviewBasedOnCurrentSettings() {
 // LINE 814:
 	asm( 
 "	      004547ca    push ebp"
@@ -6079,7 +6079,7 @@ RenderSettingsWindow::DrawPreviewBasedOnCurrentSettings {
 }
 
 // FUNCTION: SIMCOPTER 0x004550cf
-RenderSettingsWindow::GetPreviewFileNames {
+void RenderSettingsWindow::GetPreviewFileNames(class basic_string<char>&, class basic_string<char>&, class basic_string<char>&) {
 // LINE 857:
 	asm( 
 "	      004550cf    push ebp"
@@ -6792,7 +6792,7 @@ RenderSettingsWindow::GetPreviewFileNames {
 }
 
 // FUNCTION: SIMCOPTER 0x00455a06
-RenderSettingsWindow::DoMessage {
+int32_t RenderSettingsWindow::DoMessage(class GraphicWindow*, long, long, void * __ptr32) {
 // LINE 889:
 	asm( 
 "	      00455a06    push ebp"
@@ -7022,7 +7022,7 @@ RenderSettingsWindow::DoMessage {
 }
 
 // FUNCTION: SIMCOPTER 0x00455bfb
-SoundSettingsWindow::SoundSettingsWindow {
+void SoundSettingsWindow::SoundSettingsWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
 // LINE 990:
 	asm( 
 "	      00455bfb    push ebp"
@@ -7074,7 +7074,7 @@ SoundSettingsWindow::SoundSettingsWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x00455c7f
-SoundSettingsWindow::Initialize {
+int32_t SoundSettingsWindow::Initialize() {
 // LINE 999:
 	asm( 
 "	      00455c7f    push ebp"
@@ -8305,7 +8305,7 @@ SoundSettingsWindow::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x00456f10
-SoundSettingsWindow::DoKeyDown {
+long SoundSettingsWindow::DoKeyDown(long, char) {
 // LINE 1123:
 	asm( 
 "	      00456f10    push ebp"
@@ -8359,7 +8359,7 @@ SoundSettingsWindow::DoKeyDown {
 }
 
 // FUNCTION: SIMCOPTER 0x00456f66
-SoundSettingsWindow::SetCurrentVolumeSettings {
+int32_t SoundSettingsWindow::SetCurrentVolumeSettings(struct SoundPreferences&) {
 // LINE 1136:
 	asm( 
 "	      00456f66    push ebp"
@@ -8398,7 +8398,7 @@ SoundSettingsWindow::SetCurrentVolumeSettings {
 }
 
 // FUNCTION: SIMCOPTER 0x00456f9d
-SoundSettingsWindow::SetCurrentRadioSettings {
+int32_t SoundSettingsWindow::SetCurrentRadioSettings(struct RadioPreferences&, long) {
 // LINE 1149:
 	asm( 
 "	      00456f9d    push ebp"
@@ -8528,7 +8528,7 @@ SoundSettingsWindow::SetCurrentRadioSettings {
 }
 
 // FUNCTION: SIMCOPTER 0x004570a4
-SoundSettingsWindow::GetCurrentVolumeSettings {
+void SoundSettingsWindow::GetCurrentVolumeSettings(struct SoundPreferences&) {
 // LINE 1186:
 	asm( 
 "	      004570a4    push ebp"
@@ -8569,7 +8569,7 @@ SoundSettingsWindow::GetCurrentVolumeSettings {
 }
 
 // FUNCTION: SIMCOPTER 0x004570df
-SoundSettingsWindow::GetCurrentRadioSettings {
+void SoundSettingsWindow::GetCurrentRadioSettings(struct RadioPreferences&) {
 // LINE 1199:
 	asm( 
 "	      004570df    push ebp"
@@ -8677,7 +8677,7 @@ SoundSettingsWindow::GetCurrentRadioSettings {
 }
 
 // FUNCTION: SIMCOPTER 0x004571ed
-SoundSettingsWindow::DoMessage {
+int32_t SoundSettingsWindow::DoMessage(class GraphicWindow*, long, long, void * __ptr32) {
 // LINE 1219:
 	asm( 
 "	      004571ed    push ebp"
@@ -8773,7 +8773,7 @@ SoundSettingsWindow::DoMessage {
 }
 
 // FUNCTION: SIMCOPTER 0x004572a2
-SoundSettingsWindow::ConvertSoundValueToSliderValue {
+long SoundSettingsWindow::ConvertSoundValueToSliderValue(long) {
 // LINE 1243:
 	asm( 
 "	      004572a2    push ebp"
@@ -8811,7 +8811,7 @@ SoundSettingsWindow::ConvertSoundValueToSliderValue {
 }
 
 // FUNCTION: SIMCOPTER 0x004572ea
-SoundSettingsWindow::ConvertSliderValueToSoundValue {
+long SoundSettingsWindow::ConvertSliderValueToSoundValue(long) {
 // LINE 1272:
 	asm( 
 "	      004572ea    push ebp"
@@ -8848,7 +8848,7 @@ SoundSettingsWindow::ConvertSliderValueToSoundValue {
 }
 
 // FUNCTION: SIMCOPTER 0x00457331
-CitySettingsWindow::CitySettingsWindow {
+void CitySettingsWindow::CitySettingsWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
 // LINE 1321:
 	asm( 
 "	      00457331    push ebp"
@@ -8905,7 +8905,7 @@ CitySettingsWindow::CitySettingsWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004573a9
-CitySettingsWindow::Initialize {
+int32_t CitySettingsWindow::Initialize() {
 // LINE 1332:
 	asm( 
 "	      004573a9    push ebp"
@@ -10871,7 +10871,7 @@ CitySettingsWindow::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x004591f5
-CitySettingsWindow::SetCurrentCitySettings {
+void CitySettingsWindow::SetCurrentCitySettings(struct tagCitySettings*) {
 // LINE 1469:
 	asm( 
 "	      004591f5    push ebp"
@@ -10966,7 +10966,7 @@ CitySettingsWindow::SetCurrentCitySettings {
 }
 
 // FUNCTION: SIMCOPTER 0x004592ab
-CitySettingsWindow::GetCurrentCitySettings {
+void CitySettingsWindow::GetCurrentCitySettings(struct tagCitySettings*) {
 // LINE 1485:
 	asm( 
 "	      004592ab    push ebp"
@@ -11053,7 +11053,7 @@ CitySettingsWindow::GetCurrentCitySettings {
 }
 
 // FUNCTION: SIMCOPTER 0x00459359
-CitySettingsWindow::DoMessage {
+int32_t CitySettingsWindow::DoMessage(class GraphicWindow*, long, long, void * __ptr32) {
 // LINE 1503:
 	asm( 
 "	      00459359    push ebp"
@@ -11149,7 +11149,7 @@ CitySettingsWindow::DoMessage {
 }
 
 // FUNCTION: SIMCOPTER 0x0045940e
-CitySettingsWindow::DoKeyDown {
+long CitySettingsWindow::DoKeyDown(long, char) {
 // LINE 1522:
 	asm( 
 "	      0045940e    push ebp"
@@ -11203,7 +11203,7 @@ CitySettingsWindow::DoKeyDown {
 }
 
 // FUNCTION: SIMCOPTER 0x00459464
-PopupMenuExtra::PopupMenuExtra {
+void PopupMenuExtra::PopupMenuExtra(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, char *) {
 // LINE 1550:
 	asm( 
 "	      00459464    push ebp"
@@ -11491,7 +11491,7 @@ PopupMenuExtra::PopupMenuExtra {
 }
 
 // FUNCTION: SIMCOPTER 0x00459859
-PopupMenuExtra::~PopupMenuExtra {
+void PopupMenuExtra::~PopupMenuExtra() {
 // LINE 1562:
 	asm( 
 "	      00459859    push ebp"
@@ -11667,7 +11667,7 @@ PopupMenuExtra::~PopupMenuExtra {
 }
 
 // FUNCTION: SIMCOPTER 0x00459ad1
-PopupMenuExtra::Initialize {
+int32_t PopupMenuExtra::Initialize() {
 // LINE 1570:
 	asm( 
 "	      00459ad1    push ebp"
@@ -11702,7 +11702,7 @@ PopupMenuExtra::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x00459afd
-PopupMenuExtra::DrawSelf {
+int32_t PopupMenuExtra::DrawSelf() {
 // LINE 1580:
 	asm( 
 "	      00459afd    push ebp"
@@ -12594,7 +12594,7 @@ PopupMenuExtra::DrawSelf {
 }
 
 // FUNCTION: SIMCOPTER 0x0045a5f8
-PopupMenuExtra::CreateImage {
+int32_t PopupMenuExtra::CreateImage() {
 // LINE 1690:
 	asm( 
 "	      0045a5f8    push ebp"
@@ -12826,7 +12826,7 @@ PopupMenuExtra::CreateImage {
 }
 
 // FUNCTION: SIMCOPTER 0x0045a8bd
-PopupMenuExtra::DestroyImage {
+void PopupMenuExtra::DestroyImage() {
 // LINE 1707:
 	asm( 
 "	      0045a8bd    push ebp"
@@ -12883,7 +12883,7 @@ PopupMenuExtra::DestroyImage {
 }
 
 // FUNCTION: SIMCOPTER 0x0045a932
-PopupMenuExtra::CalculateAllMetrics {
+void PopupMenuExtra::CalculateAllMetrics() {
 // LINE 1719:
 	asm( 
 "	      0045a932    push ebp"
@@ -12946,7 +12946,7 @@ PopupMenuExtra::CalculateAllMetrics {
 }
 
 // FUNCTION: SIMCOPTER 0x0045a9b0
-PopupMenuExtra::ResizeWindowToFitMenuItems {
+void PopupMenuExtra::ResizeWindowToFitMenuItems() {
 // LINE 1737:
 	asm( 
 "	      0045a9b0    push ebp"
@@ -13087,7 +13087,7 @@ PopupMenuExtra::ResizeWindowToFitMenuItems {
 }
 
 // FUNCTION: SIMCOPTER 0x0045aab4
-TooltipWindow::TooltipWindow {
+void TooltipWindow::TooltipWindow(class MRect&, int32_t, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, char *) {
 // LINE 1798:
 	asm( 
 "	      0045aab4    push ebp"
@@ -13374,7 +13374,7 @@ TooltipWindow::TooltipWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x0045ae9b
-TooltipWindow::TooltipWindow {
+void TooltipWindow::TooltipWindow(class MRect&, int32_t, class basic_string<char>&, class GraphicWindow*, class GraphicWindowOwner*, int32_t, char *) {
 // LINE 1815:
 	asm( 
 "	      0045ae9b    push ebp"
@@ -13656,7 +13656,7 @@ TooltipWindow::TooltipWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x0045b26a
-TooltipWindow::~TooltipWindow {
+void TooltipWindow::~TooltipWindow() {
 // LINE 1827:
 	asm( 
 "	      0045b26a    push ebp"
@@ -13744,7 +13744,7 @@ TooltipWindow::~TooltipWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x0045b379
-TooltipWindow::Initialize {
+int32_t TooltipWindow::Initialize() {
 // LINE 1835:
 	asm( 
 "	      0045b379    push ebp"
@@ -13779,7 +13779,7 @@ TooltipWindow::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x0045b3a5
-TooltipWindow::SetWindowTitle {
+void TooltipWindow::SetWindowTitle(int32_t) {
 // LINE 1845:
 	asm( 
 "	      0045b3a5    push ebp"
@@ -13816,7 +13816,7 @@ TooltipWindow::SetWindowTitle {
 }
 
 // FUNCTION: SIMCOPTER 0x0045b3d7
-TooltipWindow::SetWindowTitle {
+void TooltipWindow::SetWindowTitle(class basic_string<char>&) {
 // LINE 1855:
 	asm( 
 "	      0045b3d7    push ebp"
@@ -13855,7 +13855,7 @@ TooltipWindow::SetWindowTitle {
 }
 
 // FUNCTION: SIMCOPTER 0x0045b40a
-TooltipWindow::DrawSelf {
+int32_t TooltipWindow::DrawSelf() {
 // LINE 1865:
 	asm( 
 "	      0045b40a    push ebp"
@@ -14144,7 +14144,7 @@ TooltipWindow::DrawSelf {
 }
 
 // FUNCTION: SIMCOPTER 0x0045b6ca
-TooltipWindow::CreateImage {
+int32_t TooltipWindow::CreateImage() {
 // LINE 1896:
 	asm( 
 "	      0045b6ca    push ebp"
@@ -14369,7 +14369,7 @@ TooltipWindow::CreateImage {
 }
 
 // FUNCTION: SIMCOPTER 0x0045b981
-TooltipWindow::DestroyImage {
+void TooltipWindow::DestroyImage() {
 // LINE 1913:
 	asm( 
 "	      0045b981    push ebp"
@@ -14426,7 +14426,7 @@ TooltipWindow::DestroyImage {
 }
 
 // FUNCTION: SIMCOPTER 0x0045b9f6
-TooltipWindow::SetTextAndShow {
+void TooltipWindow::SetTextAndShow(class MPoint&, class basic_string<char>&) {
 // LINE 1926:
 	asm( 
 "	      0045b9f6    push ebp"
@@ -14477,7 +14477,7 @@ TooltipWindow::SetTextAndShow {
 }
 
 // FUNCTION: SIMCOPTER 0x0045ba44
-TooltipWindow::SetTextAndShow {
+void TooltipWindow::SetTextAndShow(class MPoint&, int32_t) {
 // LINE 1936:
 	asm( 
 "	      0045ba44    push ebp"
@@ -14528,7 +14528,7 @@ TooltipWindow::SetTextAndShow {
 }
 
 // FUNCTION: SIMCOPTER 0x0045ba95
-BoneheadTextEditWindow::BoneheadTextEditWindow {
+void BoneheadTextEditWindow::BoneheadTextEditWindow() {
 // LINE 1963:
 	asm( 
 "	      0045ba95    push ebp"
@@ -14583,7 +14583,7 @@ BoneheadTextEditWindow::BoneheadTextEditWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x0045bb50
-BoneheadTextEditWindow::BoneheadTextEditWindow {
+void BoneheadTextEditWindow::BoneheadTextEditWindow(class MRect&, int32_t, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, char *) {
 // LINE 1977:
 	asm( 
 "	      0045bb50    push ebp"
@@ -14827,7 +14827,7 @@ BoneheadTextEditWindow::BoneheadTextEditWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x0045be96
-BoneheadTextEditWindow::BoneheadTextEditWindow {
+void BoneheadTextEditWindow::BoneheadTextEditWindow(class MRect&, int32_t, const class basic_string<char>&, class GraphicWindow*, class GraphicWindowOwner*, int32_t, char *) {
 // LINE 1997:
 	asm( 
 "	      0045be96    push ebp"
@@ -15177,7 +15177,7 @@ BoneheadTextEditWindow::BoneheadTextEditWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x0045c357
-BoneheadTextEditWindow::~BoneheadTextEditWindow {
+void BoneheadTextEditWindow::~BoneheadTextEditWindow() {
 // LINE 2009:
 	asm( 
 "	      0045c357    push ebp"
@@ -15214,7 +15214,7 @@ BoneheadTextEditWindow::~BoneheadTextEditWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x0045c39e
-BoneheadTextEditWindow::Initialize {
+int32_t BoneheadTextEditWindow::Initialize() {
 // LINE 2017:
 	asm( 
 "	      0045c39e    push ebp"
@@ -15297,7 +15297,7 @@ BoneheadTextEditWindow::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x0045c476
-BoneheadTextEditWindow::CreateImage {
+int32_t BoneheadTextEditWindow::CreateImage() {
 // LINE 2029:
 	asm( 
 "	      0045c476    push ebp"
@@ -15440,7 +15440,7 @@ BoneheadTextEditWindow::CreateImage {
 }
 
 // FUNCTION: SIMCOPTER 0x0045c689
-BoneheadTextEditWindow::DestroyImage {
+void BoneheadTextEditWindow::DestroyImage() {
 // LINE 2042:
 	asm( 
 "	      0045c689    push ebp"
@@ -15492,7 +15492,7 @@ BoneheadTextEditWindow::DestroyImage {
 }
 
 // FUNCTION: SIMCOPTER 0x0045c6f6
-BoneheadTextEditWindow::DrawSelf {
+int32_t BoneheadTextEditWindow::DrawSelf() {
 // LINE 2053:
 	asm( 
 "	      0045c6f6    push ebp"
@@ -15740,7 +15740,7 @@ BoneheadTextEditWindow::DrawSelf {
 }
 
 // FUNCTION: SIMCOPTER 0x0045c98b
-BoneheadTextEditWindow::DoCharacter {
+long BoneheadTextEditWindow::DoCharacter(long) {
 // LINE 2095:
 	asm( 
 "	      0045c98b    push ebp"
@@ -16026,7 +16026,7 @@ BoneheadTextEditWindow::DoCharacter {
 }
 
 // FUNCTION: SIMCOPTER 0x0045ccfd
-BoneheadTextEditWindow::DoKeyDown {
+long BoneheadTextEditWindow::DoKeyDown(long, char) {
 // LINE 2117:
 	asm( 
 "	      0045ccfd    push ebp"
@@ -16089,7 +16089,7 @@ BoneheadTextEditWindow::DoKeyDown {
 }
 
 // FUNCTION: SIMCOPTER 0x0045cd68
-BoneheadTextEditWindow::DoCursorDown {
+long BoneheadTextEditWindow::DoCursorDown(long, long, unsigned long) {
 // LINE 2131:
 	asm( 
 "	      0045cd68    push ebp"
@@ -16119,7 +16119,7 @@ BoneheadTextEditWindow::DoCursorDown {
 }
 
 // FUNCTION: SIMCOPTER 0x0045cd8c
-BoneheadTextEditWindow::DoesWindowNeedUpdating {
+int32_t BoneheadTextEditWindow::DoesWindowNeedUpdating() {
 // LINE 2140:
 	asm( 
 "	      0045cd8c    push ebp"
@@ -16226,7 +16226,7 @@ BoneheadTextEditWindow::DoesWindowNeedUpdating {
 }
 
 // FUNCTION: SIMCOPTER 0x0045cf0b
-BoneheadTextEditWindow::SetCaretPeriod {
+int32_t BoneheadTextEditWindow::SetCaretPeriod(unsigned long) {
 // LINE 2149:
 	asm( 
 "	      0045cf0b    push ebp"
@@ -16259,7 +16259,7 @@ BoneheadTextEditWindow::SetCaretPeriod {
 }
 
 // FUNCTION: SIMCOPTER 0x0045cf34
-BoneheadTextEditWindow::SetCharacterCountLimit {
+void BoneheadTextEditWindow::SetCharacterCountLimit(unsigned long) {
 // LINE 2159:
 	asm( 
 "	      0045cf34    push ebp"
@@ -16288,7 +16288,7 @@ BoneheadTextEditWindow::SetCharacterCountLimit {
 }
 
 // FUNCTION: SIMCOPTER 0x0045cf58
-BoneheadTextEditWindow::ProcessBackspace {
+int32_t BoneheadTextEditWindow::ProcessBackspace() {
 // LINE 2169:
 	asm( 
 "	      0045cf58    push ebp"
@@ -16650,7 +16650,7 @@ BoneheadTextEditWindow::ProcessBackspace {
 }
 
 // FUNCTION: SIMCOPTER 0x0045d3ee
-BoneheadTextEditWindow::ProcessReturn {
+int32_t BoneheadTextEditWindow::ProcessReturn() {
 // LINE 2186:
 	asm( 
 "	      0045d3ee    push ebp"
@@ -16681,7 +16681,7 @@ BoneheadTextEditWindow::ProcessReturn {
 }
 
 // FUNCTION: SIMCOPTER 0x0045d414
-BoneheadTextEditWindow::GetEditText {
+void BoneheadTextEditWindow::GetEditText(class basic_string<char>&) {
 // LINE 2195:
 	asm( 
 "	      0045d414    push ebp"
@@ -17034,7 +17034,7 @@ BoneheadTextEditWindow::GetEditText {
 }
 
 // FUNCTION: SIMCOPTER 0x0045d8c1
-BoneheadTextEditWindow::GetEditText {
+void BoneheadTextEditWindow::GetEditText(char *, unsigned long) {
 // LINE 2204:
 	asm( 
 "	      0045d8c1    push ebp"
@@ -17104,7 +17104,7 @@ BoneheadTextEditWindow::GetEditText {
 }
 
 // FUNCTION: SIMCOPTER 0x0045d955
-MessageBoxWindowEdit::MessageBoxWindowEdit {
+void MessageBoxWindowEdit::MessageBoxWindowEdit(class MPoint&, unsigned long, unsigned long, const class basic_string<char>&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, int32_t, char *, char *, char *, char *) {
 // LINE 2244:
 	asm( 
 "	      0045d955    push ebp"
@@ -17202,7 +17202,7 @@ MessageBoxWindowEdit::MessageBoxWindowEdit {
 }
 
 // FUNCTION: SIMCOPTER 0x0045da55
-MessageBoxWindowEdit::MessageBoxWindowEdit {
+void MessageBoxWindowEdit::MessageBoxWindowEdit(class MPoint&, unsigned long, class basic_string<char>&, const class basic_string<char>&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, int32_t, char *, char *, char *, char *) {
 // LINE 2273:
 	asm( 
 "	      0045da55    push ebp"
@@ -17300,7 +17300,7 @@ MessageBoxWindowEdit::MessageBoxWindowEdit {
 }
 
 // FUNCTION: SIMCOPTER 0x0045db55
-MessageBoxWindowEdit::Initialize {
+int32_t MessageBoxWindowEdit::Initialize() {
 // LINE 2284:
 	asm( 
 "	      0045db55    push ebp"
@@ -17351,7 +17351,7 @@ MessageBoxWindowEdit::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x0045dbae
-ScrollingCreditWindow::ScrollingCreditWindow {
+void ScrollingCreditWindow::ScrollingCreditWindow(int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
 // LINE 2318:
 	asm( 
 "	      0045dbae    push ebp"
@@ -17458,7 +17458,7 @@ ScrollingCreditWindow::ScrollingCreditWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x0045dd47
-ScrollingCreditWindow::~ScrollingCreditWindow {
+void ScrollingCreditWindow::~ScrollingCreditWindow() {
 // LINE 2326:
 	asm( 
 "	      0045dd47    push ebp"
@@ -17555,7 +17555,7 @@ ScrollingCreditWindow::~ScrollingCreditWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x0045de71
-ScrollingCreditWindow::Initialize {
+int32_t ScrollingCreditWindow::Initialize() {
 // LINE 2334:
 	asm( 
 "	      0045de71    push ebp"
@@ -17624,7 +17624,7 @@ ScrollingCreditWindow::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x0045df2f
-ScrollingCreditWindow::DrawSelf {
+int32_t ScrollingCreditWindow::DrawSelf() {
 // LINE 2343:
 	asm( 
 "	      0045df2f    push ebp"
@@ -17651,7 +17651,7 @@ ScrollingCreditWindow::DrawSelf {
 }
 
 // FUNCTION: SIMCOPTER 0x0045df47
-ScrollingCreditWindow::RestartCreditDisplay {
+void ScrollingCreditWindow::RestartCreditDisplay() {
 // LINE 2350:
 	asm( 
 "	      0045df47    push ebp"
@@ -17674,7 +17674,7 @@ ScrollingCreditWindow::RestartCreditDisplay {
 }
 
 // FUNCTION: SIMCOPTER 0x0045df5d
-ScrollingCreditWindow::DoesWindowNeedUpdating {
+int32_t ScrollingCreditWindow::DoesWindowNeedUpdating() {
 // LINE 2357:
 	asm( 
 "	      0045df5d    push ebp"
@@ -17781,7 +17781,7 @@ ScrollingCreditWindow::DoesWindowNeedUpdating {
 }
 
 // FUNCTION: SIMCOPTER 0x0045e0dc
-ScrollingCreditWindow::LoadCreditStringArray {
+int32_t ScrollingCreditWindow::LoadCreditStringArray() {
 // LINE 2364:
 	asm( 
 "	      0045e0dc    push ebp"
@@ -17808,7 +17808,7 @@ ScrollingCreditWindow::LoadCreditStringArray {
 }
 
 // FUNCTION: SIMCOPTER 0x0045e0f4
-ScrollingCreditWindow::Scroll {
+int32_t ScrollingCreditWindow::Scroll() {
 // LINE 2372:
 	asm( 
 "	      0045e0f4    push ebp"
@@ -17835,7 +17835,7 @@ ScrollingCreditWindow::Scroll {
 }
 
 // FUNCTION: SIMCOPTER 0x0045e10c
-ScrollingCreditWindow::DoMessage {
+int32_t ScrollingCreditWindow::DoMessage(class GraphicWindow*, long, long, void * __ptr32) {
 // LINE 2380:
 	asm( 
 "	      0045e10c    push ebp"
@@ -17874,7 +17874,7 @@ ScrollingCreditWindow::DoMessage {
 // $E74
 
 // FUNCTION: SIMCOPTER 0x0045e1a4
-CheckupWindow::CheckupWindow {
+void CheckupWindow::CheckupWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
 // LINE 2418:
 	asm( 
 "	      0045e1a4    push ebp"
@@ -17946,7 +17946,7 @@ CheckupWindow::CheckupWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x0045e24b
-CheckupWindow::Initialize {
+int32_t CheckupWindow::Initialize() {
 // LINE 2431:
 	asm( 
 "	      0045e24b    push ebp"
@@ -19739,7 +19739,7 @@ CheckupWindow::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x0045fe23
-CheckupWindow::SetCurrentSettings {
+void CheckupWindow::SetCurrentSettings(long *) {
 // LINE 2550:
 	asm( 
 "	      0045fe23    push ebp"
@@ -19794,7 +19794,7 @@ CheckupWindow::SetCurrentSettings {
 }
 
 // FUNCTION: SIMCOPTER 0x0045fe78
-CheckupWindow::GetCurrentSettings {
+void CheckupWindow::GetCurrentSettings(long *) {
 // LINE 2562:
 	asm( 
 "	      0045fe78    push ebp"
@@ -19841,7 +19841,7 @@ CheckupWindow::GetCurrentSettings {
 }
 
 // FUNCTION: SIMCOPTER 0x0045fec2
-CheckupWindow::SetAllControlValuesToDefaults {
+void CheckupWindow::SetAllControlValuesToDefaults() {
 // LINE 2573:
 	asm( 
 "	      0045fec2    push ebp"
@@ -19982,7 +19982,7 @@ CheckupWindow::SetAllControlValuesToDefaults {
 }
 
 // FUNCTION: SIMCOPTER 0x0045ffb9
-CheckupWindow::ShouldWeDisplayCheckupWindow {
+int32_t CheckupWindow::ShouldWeDisplayCheckupWindow() {
 // LINE 2604:
 	asm( 
 "	      0045ffb9    push ebp"
@@ -20035,7 +20035,7 @@ CheckupWindow::ShouldWeDisplayCheckupWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x00460033
-CheckupWindow::CanUserAffordCurrentSliderValues {
+int32_t CheckupWindow::CanUserAffordCurrentSliderValues() {
 // LINE 2620:
 	asm( 
 "	      00460033    push ebp"
@@ -20077,7 +20077,7 @@ CheckupWindow::CanUserAffordCurrentSliderValues {
 }
 
 // FUNCTION: SIMCOPTER 0x00460077
-CheckupWindow::SetTextControlsBasedOnCurrentSliderValues {
+void CheckupWindow::SetTextControlsBasedOnCurrentSliderValues() {
 // LINE 2632:
 	asm( 
 "	      00460077    push ebp"
@@ -20653,7 +20653,7 @@ CheckupWindow::SetTextControlsBasedOnCurrentSliderValues {
 }
 
 // FUNCTION: SIMCOPTER 0x00460848
-CheckupWindow::DoMessage {
+int32_t CheckupWindow::DoMessage(class GraphicWindow*, long, long, void * __ptr32) {
 // LINE 2679:
 	asm( 
 "	      00460848    push ebp"
@@ -20767,7 +20767,7 @@ CheckupWindow::DoMessage {
 }
 
 // FUNCTION: SIMCOPTER 0x00460924
-CheckupWindow::DoKeyDown {
+long CheckupWindow::DoKeyDown(long, char) {
 // LINE 2708:
 	asm( 
 "	      00460924    push ebp"

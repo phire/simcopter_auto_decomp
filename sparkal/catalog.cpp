@@ -6,7 +6,7 @@
 
 // Contribution: 1:00073960-0007a5d0 Module: 34, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x00474960
-CatalogWindow::CatalogWindow {
+void CatalogWindow::CatalogWindow(int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
 // LINE 65:
 	asm( 
 "	      00474960    push ebp"
@@ -1238,7 +1238,7 @@ CatalogWindow::CatalogWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x00475f4d
-CatalogWindow::~CatalogWindow {
+void CatalogWindow::~CatalogWindow() {
 // LINE 122:
 	asm( 
 "	      00475f4d    push ebp"
@@ -1578,7 +1578,7 @@ CatalogWindow::~CatalogWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x00476517
-CatalogWindow::Initialize {
+int32_t CatalogWindow::Initialize() {
 // LINE 132:
 	asm( 
 "	      00476517    push ebp"
@@ -2093,7 +2093,7 @@ CatalogWindow::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x00476c64
-CatalogWindow::SwitchGraphicsForTab {
+void CatalogWindow::SwitchGraphicsForTab(long) {
 // LINE 167:
 	asm( 
 "	      00476c64    push ebp"
@@ -5059,7 +5059,7 @@ CatalogWindow::SwitchGraphicsForTab {
 }
 
 // FUNCTION: SIMCOPTER 0x00479dbb
-CatalogWindow::DrawCurrentEquipmentSelection {
+void CatalogWindow::DrawCurrentEquipmentSelection() {
 // LINE 394:
 	asm( 
 "	      00479dbb    push ebp"
@@ -5294,7 +5294,7 @@ CatalogWindow::DrawCurrentEquipmentSelection {
 }
 
 // FUNCTION: SIMCOPTER 0x0047a09f
-CatalogWindow::SetNewEquipmentSelection {
+void CatalogWindow::SetNewEquipmentSelection(long) {
 // LINE 442:
 	asm( 
 "	      0047a09f    push ebp"
@@ -5525,7 +5525,7 @@ CatalogWindow::SetNewEquipmentSelection {
 }
 
 // FUNCTION: SIMCOPTER 0x0047a30e
-CatalogWindow::DoesTabHaveAnyStains {
+int32_t CatalogWindow::DoesTabHaveAnyStains(long) {
 // LINE 474:
 	asm( 
 "	      0047a30e    push ebp"
@@ -5577,7 +5577,7 @@ CatalogWindow::DoesTabHaveAnyStains {
 }
 
 // FUNCTION: SIMCOPTER 0x0047a366
-CatalogWindow::DoesTabHaveAnyPaperClips {
+int32_t CatalogWindow::DoesTabHaveAnyPaperClips(long) {
 // LINE 488:
 	asm( 
 "	      0047a366    push ebp"
@@ -5629,7 +5629,7 @@ CatalogWindow::DoesTabHaveAnyPaperClips {
 }
 
 // FUNCTION: SIMCOPTER 0x0047a3be
-CatalogWindow::GetCurrentGraphicsFileNames {
+void CatalogWindow::GetCurrentGraphicsFileNames(class basic_string<char>&, class basic_string<char>&) {
 // LINE 504:
 	asm( 
 "	      0047a3be    push ebp"
@@ -6020,7 +6020,7 @@ CatalogWindow::GetCurrentGraphicsFileNames {
 }
 
 // FUNCTION: SIMCOPTER 0x0047a9b3
-CatalogWindow::ReadPalette {
+int32_t CatalogWindow::ReadPalette(struct SparkalColor*) {
 // LINE 521:
 	asm( 
 "	      0047a9b3    push ebp"
@@ -6133,7 +6133,7 @@ CatalogWindow::ReadPalette {
 }
 
 // FUNCTION: SIMCOPTER 0x0047aaf5
-CatalogWindow::CreateImage {
+int32_t CatalogWindow::CreateImage(int32_t) {
 // LINE 529:
 	asm( 
 "	      0047aaf5    push ebp"
@@ -6191,7 +6191,7 @@ CatalogWindow::CreateImage {
 }
 
 // FUNCTION: SIMCOPTER 0x0047ab4e
-CatalogWindow::ComposeSelf {
+int32_t CatalogWindow::ComposeSelf() {
 // LINE 543:
 	asm( 
 "	      0047ab4e    push ebp"
@@ -6234,7 +6234,7 @@ CatalogWindow::ComposeSelf {
 }
 
 // FUNCTION: SIMCOPTER 0x0047ab89
-CatalogWindow::DoesCursorHitEquipmentSelection {
+int32_t CatalogWindow::DoesCursorHitEquipmentSelection(long, long, long&) {
 // LINE 557:
 	asm( 
 "	      0047ab89    push ebp"
@@ -6359,7 +6359,7 @@ CatalogWindow::DoesCursorHitEquipmentSelection {
 }
 
 // FUNCTION: SIMCOPTER 0x0047ad0d
-CatalogWindow::DoesCursorHitTab {
+int32_t CatalogWindow::DoesCursorHitTab(long, long, long&) {
 // LINE 580:
 	asm( 
 "	      0047ad0d    push ebp"
@@ -6448,7 +6448,7 @@ CatalogWindow::DoesCursorHitTab {
 }
 
 // FUNCTION: SIMCOPTER 0x0047adce
-CatalogWindow::DoKeyDown {
+long CatalogWindow::DoKeyDown(long, char) {
 // LINE 596:
 	asm( 
 "	      0047adce    push ebp"
@@ -6490,7 +6490,7 @@ CatalogWindow::DoKeyDown {
 }
 
 // FUNCTION: SIMCOPTER 0x0047ae0e
-CatalogWindow::DoCursorDown {
+long CatalogWindow::DoCursorDown(long, long, unsigned long) {
 // LINE 615:
 	asm( 
 "	      0047ae0e    push ebp"
@@ -6573,7 +6573,7 @@ CatalogWindow::DoCursorDown {
 }
 
 // FUNCTION: SIMCOPTER 0x0047ae9c
-CatalogWindow::DoCursorUp {
+long CatalogWindow::DoCursorUp(long, long, unsigned long) {
 // LINE 635:
 	asm( 
 "	      0047ae9c    push ebp"
@@ -6600,7 +6600,7 @@ CatalogWindow::DoCursorUp {
 }
 
 // FUNCTION: SIMCOPTER 0x0047aeb9
-CatalogWindow::DoCursorMove {
+long CatalogWindow::DoCursorMove(long, long) {
 // LINE 643:
 	asm( 
 "	      0047aeb9    push ebp"
@@ -6627,7 +6627,7 @@ CatalogWindow::DoCursorMove {
 }
 
 // FUNCTION: SIMCOPTER 0x0047aed6
-CatalogWindow::SetButtonStates {
+void CatalogWindow::SetButtonStates() {
 // LINE 654:
 	asm( 
 "	      0047aed6    push ebp"
@@ -6833,7 +6833,7 @@ CatalogWindow::SetButtonStates {
 }
 
 // FUNCTION: SIMCOPTER 0x0047b0d8
-CatalogWindow::DoMessage {
+int32_t CatalogWindow::DoMessage(class GraphicWindow*, long, long, void * __ptr32) {
 // LINE 700:
 	asm( 
 "	      0047b0d8    push ebp"
@@ -7004,7 +7004,7 @@ CatalogWindow::DoMessage {
 }
 
 // FUNCTION: SIMCOPTER 0x0047b233
-CatalogWindow::GetHelicopterFromTab {
+long CatalogWindow::GetHelicopterFromTab(long) {
 // LINE 734:
 	asm( 
 "	      0047b233    push ebp"
@@ -7046,7 +7046,7 @@ CatalogWindow::GetHelicopterFromTab {
 }
 
 // FUNCTION: SIMCOPTER 0x0047b28a
-CatalogWindow::GetEquipmentFromSelectionIndex {
+long CatalogWindow::GetEquipmentFromSelectionIndex(long) {
 // LINE 745:
 	asm( 
 "	      0047b28a    push ebp"
@@ -7085,7 +7085,7 @@ CatalogWindow::GetEquipmentFromSelectionIndex {
 }
 
 // FUNCTION: SIMCOPTER 0x0047b2cc
-CatalogWindow::CanUserBuy {
+int32_t CatalogWindow::CanUserBuy() {
 // LINE 762:
 	asm( 
 "	      0047b2cc    push ebp"
@@ -7156,7 +7156,7 @@ CatalogWindow::CanUserBuy {
 }
 
 // FUNCTION: SIMCOPTER 0x0047b353
-CatalogWindow::CanUserSell {
+int32_t CatalogWindow::CanUserSell() {
 // LINE 783:
 	asm( 
 "	      0047b353    push ebp"
@@ -7223,7 +7223,7 @@ CatalogWindow::CanUserSell {
 }
 
 // FUNCTION: SIMCOPTER 0x0047b3d1
-CatalogWindow::DoCatalogWindowBuy {
+int32_t CatalogWindow::DoCatalogWindowBuy() {
 // LINE 800:
 	asm( 
 "	      0047b3d1    push ebp"
@@ -7365,7 +7365,7 @@ CatalogWindow::DoCatalogWindowBuy {
 }
 
 // FUNCTION: SIMCOPTER 0x0047b4d0
-CatalogWindow::DoCatalogWindowSell {
+int32_t CatalogWindow::DoCatalogWindowSell() {
 // LINE 833:
 	asm( 
 "	      0047b4d0    push ebp"

@@ -6,7 +6,7 @@
 
 // Contribution: 1:00060180-00065c19 Module: 44, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x00461180
-S3SwitchToProperSkyType {
+void S3SwitchToProperSkyType() {
 // LINE 90:
 	asm( 
 "	      00461180    push ebp"
@@ -41,7 +41,7 @@ S3SwitchToProperSkyType {
 }
 
 // FUNCTION: SIMCOPTER 0x004611bf
-IsActualTimeDaytime {
+int32_t IsActualTimeDaytime() {
 // LINE 98:
 	asm( 
 "	      004611bf    push ebp"
@@ -88,7 +88,7 @@ IsActualTimeDaytime {
 }
 
 // FUNCTION: SIMCOPTER 0x00461208
-CGameApp::GetPreferences {
+public: virtual void __thiscall CGameApp::GetPreferences(void) {
 // LINE 111:
 	asm( 
 "	      00461208    push ebp"
@@ -253,7 +253,7 @@ CGameApp::GetPreferences {
 }
 
 // FUNCTION: SIMCOPTER 0x004613cb
-CGameApp::GetSoundPreferences {
+public: virtual void __thiscall CGameApp::GetSoundPreferences(void) {
 // LINE 143:
 	asm( 
 "	      004613cb    push ebp"
@@ -356,7 +356,7 @@ CGameApp::GetSoundPreferences {
 }
 
 // FUNCTION: SIMCOPTER 0x00461494
-CGameApp::SetSoundPreferences {
+public: virtual void __thiscall CGameApp::SetSoundPreferences(struct SoundPreferences &) {
 // LINE 172:
 	asm( 
 "	      00461494    push ebp"
@@ -401,7 +401,7 @@ CGameApp::SetSoundPreferences {
 }
 
 // FUNCTION: SIMCOPTER 0x004614de
-CGameApp::SavePreferences {
+public: virtual void __thiscall CGameApp::SavePreferences(void) {
 // LINE 187:
 	asm( 
 "	      004614de    push ebp"
@@ -551,7 +551,7 @@ CGameApp::SavePreferences {
 }
 
 // FUNCTION: SIMCOPTER 0x00461629
-CGameApp::TickGame {
+public: virtual unsigned long __thiscall CGameApp::TickGame(void) {
 // LINE 218:
 	asm( 
 "	      00461629    push ebp"
@@ -759,7 +759,7 @@ CGameApp::TickGame {
 }
 
 // FUNCTION: SIMCOPTER 0x004618a3
-CGameApp::ComposeFrame {
+public: virtual void __thiscall CGameApp::ComposeFrame(void) {
 // LINE 269:
 	asm( 
 "	      004618a3    push ebp"
@@ -1270,7 +1270,7 @@ CGameApp::ComposeFrame {
 }
 
 // FUNCTION: SIMCOPTER 0x00461eb9
-CGameApp::ComposePlayFrame {
+public: virtual void __thiscall CGameApp::ComposePlayFrame(void) {
 // LINE 400:
 	asm( 
 "	      00461eb9    push ebp"
@@ -1766,7 +1766,7 @@ CGameApp::ComposePlayFrame {
 }
 
 // FUNCTION: SIMCOPTER 0x004624de
-CGameApp::DoRecurringTasks {
+public: virtual void __thiscall CGameApp::DoRecurringTasks(long) {
 // LINE 484:
 	asm( 
 "	      004624de    push ebp"
@@ -1836,7 +1836,7 @@ CGameApp::DoRecurringTasks {
 }
 
 // FUNCTION: SIMCOPTER 0x00462582
-CGameApp::EnterMode {
+public: virtual int __thiscall CGameApp::EnterMode(int) {
 // LINE 502:
 	asm( 
 "	      00462582    push ebp"
@@ -3061,7 +3061,7 @@ CGameApp::EnterMode {
 }
 
 // FUNCTION: SIMCOPTER 0x00463608
-CGameApp::ExitMode {
+public: virtual int __thiscall CGameApp::ExitMode(int) {
 // LINE 660:
 	asm( 
 "	      00463608    push ebp"
@@ -3621,7 +3621,7 @@ CGameApp::ExitMode {
 }
 
 // FUNCTION: SIMCOPTER 0x00463bf9
-CGameApp::DestroyAllModes {
+public: virtual void __thiscall CGameApp::DestroyAllModes(void) {
 // LINE 748:
 	asm( 
 "	      00463bf9    push ebp"
@@ -3816,7 +3816,7 @@ CGameApp::DestroyAllModes {
 }
 
 // FUNCTION: SIMCOPTER 0x00463dcb
-CGameApp::ProcessCommand {
+public: virtual void __thiscall CGameApp::ProcessCommand(int) {
 // LINE 790:
 	asm( 
 "	      00463dcb    push ebp"
@@ -4508,7 +4508,7 @@ CGameApp::ProcessCommand {
 }
 
 // FUNCTION: SIMCOPTER 0x0046444d
-CGameApp::DoKeyDown {
+public: virtual void __thiscall CGameApp::DoKeyDown(long, char) {
 // LINE 964:
 	asm( 
 "	      0046444d    push ebp"
@@ -4944,7 +4944,7 @@ CGameApp::DoKeyDown {
 }
 
 // FUNCTION: SIMCOPTER 0x0046487f
-CGameApp::DoKeyUp {
+public: virtual void __thiscall CGameApp::DoKeyUp(long, char) {
 // LINE 1049:
 	asm( 
 "	      0046487f    push ebp"
@@ -5144,7 +5144,7 @@ CGameApp::DoKeyUp {
 }
 
 // FUNCTION: SIMCOPTER 0x00464aa5
-CGameApp::DoCharacter {
+public: virtual void __thiscall CGameApp::DoCharacter(long) {
 // LINE 1071:
 	asm( 
 "	      00464aa5    push ebp"
@@ -5177,7 +5177,7 @@ CGameApp::DoCharacter {
 }
 
 // FUNCTION: SIMCOPTER 0x00464ad0
-CGameApp::DoCursorDown {
+public: virtual void __thiscall CGameApp::DoCursorDown(int, int, int) {
 // LINE 1079:
 	asm( 
 "	      00464ad0    push ebp"
@@ -5214,7 +5214,7 @@ CGameApp::DoCursorDown {
 }
 
 // FUNCTION: SIMCOPTER 0x00464b03
-CGameApp::DoCursorUp {
+public: virtual void __thiscall CGameApp::DoCursorUp(int, int, int) {
 // LINE 1088:
 	asm( 
 "	      00464b03    push ebp"
@@ -5251,7 +5251,7 @@ CGameApp::DoCursorUp {
 }
 
 // FUNCTION: SIMCOPTER 0x00464b36
-CGameApp::DoCursorMove {
+public: virtual void __thiscall CGameApp::DoCursorMove(int, int) {
 // LINE 1097:
 	asm( 
 "	      00464b36    push ebp"
@@ -5286,7 +5286,7 @@ CGameApp::DoCursorMove {
 }
 
 // FUNCTION: SIMCOPTER 0x00464b65
-CGameApp::ClearCommands {
+public: virtual void __thiscall CGameApp::ClearCommands(void) {
 // LINE 1107:
 	asm( 
 "	      00464b65    push ebp"
@@ -5438,7 +5438,7 @@ CGameApp::ClearCommands {
 }
 
 // FUNCTION: SIMCOPTER 0x00464d1a
-CGameApp::ProcessSystemCloseRequest {
+public: void __thiscall CGameApp::ProcessSystemCloseRequest(void) {
 // LINE 1128:
 	asm( 
 "	      00464d1a    push ebp"
@@ -5515,7 +5515,7 @@ CGameApp::ProcessSystemCloseRequest {
 }
 
 // FUNCTION: SIMCOPTER 0x00464db3
-CGameApp::CheckForWarpToCareerLevel {
+public: virtual int __thiscall CGameApp::CheckForWarpToCareerLevel(void) {
 // LINE 1144:
 	asm( 
 "	      00464db3    push ebp"
@@ -5567,7 +5567,7 @@ CGameApp::CheckForWarpToCareerLevel {
 }
 
 // FUNCTION: SIMCOPTER 0x00464e02
-CGameApp::WarpToCareerLevel {
+public: virtual int __thiscall CGameApp::WarpToCareerLevel(int) {
 // LINE 1163:
 	asm( 
 "	      00464e02    push ebp"
@@ -5658,7 +5658,7 @@ CGameApp::WarpToCareerLevel {
 }
 
 // FUNCTION: SIMCOPTER 0x00464eb2
-CGameApp::GraduateUserToNextCareerLevel {
+public: virtual int __thiscall CGameApp::GraduateUserToNextCareerLevel(void) {
 // LINE 1181:
 	asm( 
 "	      00464eb2    push ebp"
@@ -5786,7 +5786,7 @@ CGameApp::GraduateUserToNextCareerLevel {
 }
 
 // FUNCTION: SIMCOPTER 0x0046501e
-CGameApp::GraduateUserFromAllCareerLevels {
+public: virtual int __thiscall CGameApp::GraduateUserFromAllCareerLevels(void) {
 // LINE 1206:
 	asm( 
 "	      0046501e    push ebp"
@@ -5837,7 +5837,7 @@ CGameApp::GraduateUserFromAllCareerLevels {
 }
 
 // FUNCTION: SIMCOPTER 0x00465081
-CGameApp::NotifyUserOfGraduation {
+public: virtual void __thiscall CGameApp::NotifyUserOfGraduation(void) {
 // LINE 1216:
 	asm( 
 "	      00465081    push ebp"
@@ -6121,7 +6121,7 @@ CGameApp::NotifyUserOfGraduation {
 }
 
 // FUNCTION: SIMCOPTER 0x004654a4
-CGameApp::DoMessage {
+public: virtual int __thiscall CGameApp::DoMessage(class GraphicWindow *, long, long, void *) {
 // LINE 1241:
 	asm( 
 "	      004654a4    push ebp"
@@ -7228,7 +7228,7 @@ CGameApp::DoMessage {
 }
 
 // FUNCTION: SIMCOPTER 0x00465edb
-CGameApp::DoMainMenuMessage {
+public: virtual int __thiscall CGameApp::DoMainMenuMessage(class GraphicWindow *, long, long, void *) {
 // LINE 1461:
 	asm( 
 "	      00465edb    push ebp"
@@ -7653,7 +7653,7 @@ CGameApp::DoMainMenuMessage {
 }
 
 // FUNCTION: SIMCOPTER 0x004662fa
-CGameApp::DoPlayMenuMessage {
+public: virtual int __thiscall CGameApp::DoPlayMenuMessage(class GraphicWindow *, long, long, void *) {
 // LINE 1573:
 	asm( 
 "	      004662fa    push ebp"
@@ -7994,7 +7994,7 @@ CGameApp::DoPlayMenuMessage {
 }
 
 // FUNCTION: SIMCOPTER 0x004665ad
-CGameApp::StartVideoForCitySelection {
+public: int __thiscall CGameApp::StartVideoForCitySelection(long) {
 // LINE 1658:
 	asm( 
 "	      004665ad    push ebp"
@@ -8209,7 +8209,7 @@ CGameApp::StartVideoForCitySelection {
 }
 
 // FUNCTION: SIMCOPTER 0x004668ad
-CGameApp::ComposeCareerCityVideoFrame {
+public: void __thiscall CGameApp::ComposeCareerCityVideoFrame(void) {
 // LINE 1692:
 	asm( 
 "	      004668ad    push ebp"
@@ -8291,7 +8291,7 @@ CGameApp::ComposeCareerCityVideoFrame {
 }
 
 // FUNCTION: SIMCOPTER 0x00466968
-CGameApp::StartVideoForMainMenu {
+public: int __thiscall CGameApp::StartVideoForMainMenu(void) {
 // LINE 1714:
 	asm( 
 "	      00466968    push ebp"
@@ -8426,7 +8426,7 @@ CGameApp::StartVideoForMainMenu {
 }
 
 // FUNCTION: SIMCOPTER 0x00466b32
-CGameApp::EndVideoForMainMenu {
+public: void __thiscall CGameApp::EndVideoForMainMenu(void) {
 // LINE 1737:
 	asm( 
 "	      00466b32    push ebp"
@@ -8482,7 +8482,7 @@ CGameApp::EndVideoForMainMenu {
 }
 
 // FUNCTION: SIMCOPTER 0x00466b94
-CGameApp::ComposeMainMenuVideoFrame {
+public: void __thiscall CGameApp::ComposeMainMenuVideoFrame(void) {
 // LINE 1749:
 	asm( 
 "	      00466b94    push ebp"

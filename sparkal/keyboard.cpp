@@ -18,7 +18,7 @@
 // $E2
 
 // FUNCTION: SIMCOPTER 0x00431cc0
-IsModifierSet {
+int32_t IsModifierSet() {
 // LINE 16:
 	asm( 
 "	      00431cc0    push ebp"
@@ -48,7 +48,7 @@ IsModifierSet {
 }
 
 // FUNCTION: SIMCOPTER 0x00431ce4
-Keyboard::Keyboard {
+void Keyboard::Keyboard() {
 // LINE 31:
 	asm( 
 "	      00431ce4    push ebp"
@@ -79,7 +79,7 @@ Keyboard::Keyboard {
 }
 
 // FUNCTION: SIMCOPTER 0x00431d0d
-Keyboard::IsKeyDown {
+int32_t Keyboard::IsKeyDown(unsigned char) {
 // LINE 40:
 	asm( 
 "	      00431d0d    push ebp"
@@ -109,7 +109,7 @@ Keyboard::IsKeyDown {
 }
 
 // FUNCTION: SIMCOPTER 0x00431d32
-Keyboard::IsKeyDown {
+int32_t Keyboard::IsKeyDown(unsigned char, unsigned char) {
 // LINE 49:
 	asm( 
 "	      00431d32    push ebp"
@@ -163,7 +163,7 @@ Keyboard::IsKeyDown {
 }
 
 // FUNCTION: SIMCOPTER 0x00431d8d
-Keyboard::ProcessKeyDown {
+void Keyboard::ProcessKeyDown(unsigned char) {
 // LINE 66:
 	asm( 
 "	      00431d8d    push ebp"
@@ -209,7 +209,7 @@ Keyboard::ProcessKeyDown {
 }
 
 // FUNCTION: SIMCOPTER 0x00431dd3
-Keyboard::ProcessKeyUp {
+void Keyboard::ProcessKeyUp(unsigned char) {
 // LINE 82:
 	asm( 
 "	      00431dd3    push ebp"
@@ -255,7 +255,7 @@ Keyboard::ProcessKeyUp {
 }
 
 // FUNCTION: SIMCOPTER 0x00431e19
-Keyboard::ClearSettings {
+void Keyboard::ClearSettings() {
 // LINE 95:
 	asm( 
 "	      00431e19    push ebp"
@@ -298,7 +298,7 @@ Keyboard::ClearSettings {
 }
 
 // FUNCTION: SIMCOPTER 0x00431e63
-Keyboard::CharIsModifier {
+int32_t Keyboard::CharIsModifier(unsigned char) {
 // LINE 109:
 	asm( 
 "	      00431e63    push ebp"
@@ -345,7 +345,7 @@ Keyboard::CharIsModifier {
 }
 
 // FUNCTION: SIMCOPTER 0x00431eb1
-Keyboard::GetCurrentModifierState {
+char Keyboard::GetCurrentModifierState() {
 // LINE 124:
 	asm( 
 "	      00431eb1    push ebp"
@@ -418,7 +418,7 @@ Keyboard::GetCurrentModifierState {
 }
 
 // FUNCTION: SIMCOPTER 0x00431f1f
-Keyboard::ConvertKeyToCharacter {
+char Keyboard::ConvertKeyToCharacter(unsigned char, unsigned char) {
 // LINE 165:
 	asm( 
 "	      00431f1f    push ebp"
@@ -747,7 +747,7 @@ Keyboard::ConvertKeyToCharacter {
 }
 
 // FUNCTION: SIMCOPTER 0x00432226
-Keyboard::IsToggleKeySet {
+int32_t Keyboard::IsToggleKeySet(unsigned char) {
 // LINE 241:
 	asm( 
 "	      00432226    push ebp"

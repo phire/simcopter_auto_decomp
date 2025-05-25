@@ -6,7 +6,7 @@
 
 // Contribution: 1:00046b60-00047268 Module: 48, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x00447b60
-DllMain {
+int32_t DllMain() {
 // LINE 63:
 	asm( 
 "	      00447b60    push ebp"
@@ -31,7 +31,7 @@ DllMain {
 }
 
 // FUNCTION: SIMCOPTER 0x00447b77
-cpuspeed {
+struct FREQ_INFO cpuspeed() {
 // LINE 88:
 	asm( 
 "	      00447b77    push ebp"
@@ -627,7 +627,7 @@ cpuspeed {
 }
 
 // FUNCTION: SIMCOPTER 0x00447fce
-NormFreq {
+unsigned long NormFreq() {
 // LINE 428:
 	asm( 
 "	      00447fce    push ebp"

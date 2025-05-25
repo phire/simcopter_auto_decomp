@@ -6,7 +6,7 @@
 
 // Contribution: 1:0018d370-0018d3dd Module: 86, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x0058e370
-S2TileSize {
+long S2TileSize() {
 // LINE 42:
 	asm( 
 "	      0058e370    push ebp"

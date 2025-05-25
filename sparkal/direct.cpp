@@ -6,7 +6,7 @@
 
 // Contribution: 1:00080b20-00085dca Module: 29, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x00481b20
-DirectoryEntry::DirectoryEntry {
+void DirectoryEntry::DirectoryEntry() {
 // LINE 34:
 	asm( 
 "	      00481b20    push ebp"
@@ -61,7 +61,7 @@ DirectoryEntry::DirectoryEntry {
 }
 
 // FUNCTION: SIMCOPTER 0x00481bae
-DirectoryEntry::DirectoryEntry {
+void DirectoryEntry::DirectoryEntry(class Directory*, class basic_string<char>&, long) {
 // LINE 45:
 	asm( 
 "	      00481bae    push ebp"
@@ -206,7 +206,7 @@ DirectoryEntry::DirectoryEntry {
 }
 
 // FUNCTION: SIMCOPTER 0x00481d8a
-DirectoryEntry::GetEntryExtension {
+int32_t DirectoryEntry::GetEntryExtension(class basic_string<char>&) {
 // LINE 56:
 	asm( 
 "	      00481d8a    push ebp"
@@ -646,7 +646,7 @@ DirectoryEntry::GetEntryExtension {
 }
 
 // FUNCTION: SIMCOPTER 0x0048237c
-DirectoryEntry::GetEntryMinusExtension {
+int32_t DirectoryEntry::GetEntryMinusExtension(class basic_string<char>&) {
 // LINE 80:
 	asm( 
 "	      0048237c    push ebp"
@@ -995,7 +995,7 @@ DirectoryEntry::GetEntryMinusExtension {
 }
 
 // FUNCTION: SIMCOPTER 0x00482833
-DirectoryEntry::GetFullPath {
+void DirectoryEntry::GetFullPath(class basic_string<char>&) {
 // LINE 100:
 	asm( 
 "	      00482833    push ebp"
@@ -1383,7 +1383,7 @@ DirectoryEntry::GetFullPath {
 }
 
 // FUNCTION: SIMCOPTER 0x00482d48
-DirectoryEntry::IsMediaRemovable {
+int32_t DirectoryEntry::IsMediaRemovable() {
 // LINE 111:
 	asm( 
 "	      00482d48    push ebp"
@@ -1410,7 +1410,7 @@ DirectoryEntry::IsMediaRemovable {
 }
 
 // FUNCTION: SIMCOPTER 0x00482d60
-DirectoryEntry::GetSize {
+unsigned long DirectoryEntry::GetSize() {
 // LINE 118:
 	asm( 
 "	      00482d60    push ebp"
@@ -1437,7 +1437,7 @@ DirectoryEntry::GetSize {
 }
 
 // FUNCTION: SIMCOPTER 0x00482d78
-DirectoryEntry::GetCreationDate {
+int32_t DirectoryEntry::GetCreationDate() {
 // LINE 136:
 	asm( 
 "	      00482d78    push ebp"
@@ -1464,7 +1464,7 @@ DirectoryEntry::GetCreationDate {
 }
 
 // FUNCTION: SIMCOPTER 0x00482d90
-DirectoryEntry::GetlastModificationDate {
+int32_t DirectoryEntry::GetlastModificationDate() {
 // LINE 143:
 	asm( 
 "	      00482d90    push ebp"
@@ -1491,7 +1491,7 @@ DirectoryEntry::GetlastModificationDate {
 }
 
 // FUNCTION: SIMCOPTER 0x00482da8
-DirectoryEntry::GetSerialNumber {
+int32_t DirectoryEntry::GetSerialNumber() {
 // LINE 150:
 	asm( 
 "	      00482da8    push ebp"
@@ -1518,7 +1518,7 @@ DirectoryEntry::GetSerialNumber {
 }
 
 // FUNCTION: SIMCOPTER 0x00482dc0
-DirectoryEntry::CreatePhysicalEntry {
+int32_t DirectoryEntry::CreatePhysicalEntry() {
 // LINE 157:
 	asm( 
 "	      00482dc0    push ebp"
@@ -1889,7 +1889,7 @@ DirectoryEntry::CreatePhysicalEntry {
 }
 
 // FUNCTION: SIMCOPTER 0x004832a3
-Directory::Directory {
+public: __thiscall Directory::Directory(class basic_string<char> &, int, int, int) {
 // LINE 198:
 	asm( 
 "	      004832a3    push ebp"
@@ -2260,7 +2260,7 @@ Directory::Directory {
 }
 
 // FUNCTION: SIMCOPTER 0x004837af
-Directory::IsDirectoryRoot {
+public: int __thiscall Directory::IsDirectoryRoot(void) {
 // LINE 208:
 	asm( 
 "	      004837af    push ebp"
@@ -2287,7 +2287,7 @@ Directory::IsDirectoryRoot {
 }
 
 // FUNCTION: SIMCOPTER 0x004837c7
-Directory::ReadDirectoryEntries {
+public: int __thiscall Directory::ReadDirectoryEntries(void) {
 // LINE 220:
 	asm( 
 "	      004837c7    push ebp"
@@ -3396,7 +3396,7 @@ Directory::ReadDirectoryEntries {
 }
 
 // FUNCTION: SIMCOPTER 0x0048494d
-Directory::ReadDirectorySpecificEntriesIntoStringList {
+public: int __thiscall Directory::ReadDirectorySpecificEntriesIntoStringList(class list<class basic_string<char>> &, long) {
 // LINE 347:
 	asm( 
 "	      0048494d    push ebp"
@@ -4260,7 +4260,7 @@ Directory::ReadDirectorySpecificEntriesIntoStringList {
 }
 
 // FUNCTION: SIMCOPTER 0x00485735
-Directory::DoesAnyEntryExistThatMatchesPattern {
+public: static int __cdecl Directory::DoesAnyEntryExistThatMatchesPattern(class basic_string<char> const &) {
 // LINE 431:
 	asm( 
 "	      00485735    push ebp"
@@ -4429,7 +4429,7 @@ Directory::DoesAnyEntryExistThatMatchesPattern {
 }
 
 // FUNCTION: SIMCOPTER 0x004859c2
-Directory::DoesDirectoryListContainEntry {
+protected: int __thiscall Directory::DoesDirectoryListContainEntry(class basic_string<char> const &) {
 // LINE 447:
 	asm( 
 "	      004859c2    push ebp"
@@ -4563,7 +4563,7 @@ Directory::DoesDirectoryListContainEntry {
 }
 
 // FUNCTION: SIMCOPTER 0x00485b36
-Directory::ChangeDirectory {
+public: int __thiscall Directory::ChangeDirectory(class basic_string<char> &, int) {
 // LINE 470:
 	asm( 
 "	      00485b36    push ebp"
@@ -4733,7 +4733,7 @@ Directory::ChangeDirectory {
 }
 
 // FUNCTION: SIMCOPTER 0x00485d34
-Directory::CreateNewEntry {
+public: int __thiscall Directory::CreateNewEntry(class basic_string<char> &, long) {
 // LINE 486:
 	asm( 
 "	      00485d34    push ebp"
@@ -4822,7 +4822,7 @@ Directory::CreateNewEntry {
 }
 
 // FUNCTION: SIMCOPTER 0x00485e22
-Directory::GetNthEntry {
+public: class DirectoryEntry * __thiscall Directory::GetNthEntry(int) {
 // LINE 496:
 	asm( 
 "	      00485e22    push ebp"
@@ -4899,7 +4899,7 @@ Directory::GetNthEntry {
 }
 
 // FUNCTION: SIMCOPTER 0x00485ebe
-Directory::SetNewDirectoryEntryFilter {
+public: void __thiscall Directory::SetNewDirectoryEntryFilter(class basic_string<char> &, int) {
 // LINE 511:
 	asm( 
 "	      00485ebe    push ebp"
@@ -5235,7 +5235,7 @@ Directory::SetNewDirectoryEntryFilter {
 }
 
 // FUNCTION: SIMCOPTER 0x0048631c
-Directory::MakeSurePathEndsWithSeparator {
+protected: void __thiscall Directory::MakeSurePathEndsWithSeparator(void) {
 // LINE 523:
 	asm( 
 "	      0048631c    push ebp"
@@ -5597,7 +5597,7 @@ Directory::MakeSurePathEndsWithSeparator {
 }
 
 // FUNCTION: SIMCOPTER 0x004867d2
-Directory::SplitDirectoryPath {
+public: static void __cdecl Directory::SplitDirectoryPath(class basic_string<char> const &, class basic_string<char> &, class basic_string<char> &) {
 // LINE 544:
 	asm( 
 "	      004867d2    push ebp"

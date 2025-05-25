@@ -6,7 +6,7 @@
 
 // Contribution: 1:0015c950-0015d654 Module: 192, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x0055d950
-SwizzlePrivAnimPartInfo {
+void SwizzlePrivAnimPartInfo() {
 // LINE 109:
 	asm( 
 "	      0055d950    push ebp"
@@ -44,7 +44,7 @@ SwizzlePrivAnimPartInfo {
 }
 
 // FUNCTION: SIMCOPTER 0x0055d98c
-DXZY_2_TinyXZY {
+struct TinyXZY DXZY_2_TinyXZY() {
 // LINE 128:
 	asm( 
 "	      0055d98c    push ebp"
@@ -94,7 +94,7 @@ DXZY_2_TinyXZY {
 }
 
 // FUNCTION: SIMCOPTER 0x0055d9cf
-TinyXZY_2_DXZY {
+struct DXZY TinyXZY_2_DXZY() {
 // LINE 137:
 	asm( 
 "	      0055d9cf    push ebp"
@@ -154,7 +154,7 @@ TinyXZY_2_DXZY {
 }
 
 // FUNCTION: SIMCOPTER 0x0055da2e
-Byte_2_Float {
+float Byte_2_Float() {
 // LINE 151:
 	asm( 
 "	      0055da2e    push ebp"
@@ -182,7 +182,7 @@ Byte_2_Float {
 }
 
 // FUNCTION: SIMCOPTER 0x0055da4b
-Float_2_Byte {
+char Float_2_Byte() {
 // LINE 156:
 	asm( 
 "	      0055da4b    push ebp"
@@ -227,7 +227,7 @@ Float_2_Byte {
 }
 
 // FUNCTION: SIMCOPTER 0x0055daa7
-SwizzlePoint {
+void SwizzlePoint() {
 // LINE 165:
 	asm( 
 "	      0055daa7    push ebp"
@@ -280,7 +280,7 @@ SwizzlePoint {
 }
 
 // FUNCTION: SIMCOPTER 0x0055db01
-InitBodiesAndAnimations {
+void InitBodiesAndAnimations() {
 // LINE 175:
 	asm( 
 "	      0055db01    push ebp"
@@ -753,7 +753,7 @@ InitBodiesAndAnimations {
 }
 
 // FUNCTION: SIMCOPTER 0x0055e29e
-DeleteBodiesAndAnimations {
+void DeleteBodiesAndAnimations() {
 // LINE 229:
 	asm( 
 "	      0055e29e    push ebp"

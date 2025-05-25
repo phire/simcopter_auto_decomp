@@ -6,7 +6,7 @@
 
 // Contribution: 1:00161500-0016160a Module: 188, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x00562500
-cYObject::Error {
+void cYObject::Error(short) {
 // LINE 13:
 	asm( 
 "	      00562500    push ebp"

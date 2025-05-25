@@ -6,7 +6,7 @@
 
 // Contribution: 1:000294f0-0002c41c Module: 66, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x0042a4f0
-LanguageManager::Initialize {
+int32_t LanguageManager::Initialize() {
 // LINE 43:
 	asm( 
 "	      0042a4f0    push ebp"
@@ -31,7 +31,7 @@ LanguageManager::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x0042a505
-LanguageManager::Uninitialize {
+int32_t LanguageManager::Uninitialize() {
 // LINE 52:
 	asm( 
 "	      0042a505    push ebp"
@@ -63,7 +63,7 @@ LanguageManager::Uninitialize {
 }
 
 // FUNCTION: SIMCOPTER 0x0042a528
-LanguageManager::SetDefaultLanguage {
+int32_t LanguageManager::SetDefaultLanguage(int32_t) {
 // LINE 64:
 	asm( 
 "	      0042a528    push ebp"
@@ -393,7 +393,7 @@ LanguageManager::SetDefaultLanguage {
 }
 
 // FUNCTION: SIMCOPTER 0x0042a92c
-LanguageManager::ConvertIDToName {
+int32_t LanguageManager::ConvertIDToName(int32_t, char *) {
 // LINE 95:
 	asm( 
 "	      0042a92c    push ebp"
@@ -721,7 +721,7 @@ LanguageManager::ConvertIDToName {
 }
 
 // FUNCTION: SIMCOPTER 0x0042ad95
-LanguageManager::ConvertNameToID {
+int32_t LanguageManager::ConvertNameToID(char *, int32_t *) {
 // LINE 128:
 	asm( 
 "	      0042ad95    push ebp"
@@ -1025,7 +1025,7 @@ LanguageManager::ConvertNameToID {
 }
 
 // FUNCTION: SIMCOPTER 0x0042b15f
-LanguageManager::GetFullStringID {
+int32_t LanguageManager::GetFullStringID(int32_t, int32_t) {
 // LINE 155:
 	asm( 
 "	      0042b15f    push ebp"
@@ -1077,7 +1077,7 @@ LanguageManager::GetFullStringID {
 }
 
 // FUNCTION: SIMCOPTER 0x0042b1af
-LanguageManager::CanWeSwitchToGivenLanguage {
+int32_t LanguageManager::CanWeSwitchToGivenLanguage(int32_t) {
 // LINE 173:
 	asm( 
 "	      0042b1af    push ebp"
@@ -1461,7 +1461,7 @@ LanguageManager::CanWeSwitchToGivenLanguage {
 }
 
 // FUNCTION: SIMCOPTER 0x0042b7ae
-LanguageManager::GetNextLanguage {
+int32_t LanguageManager::GetNextLanguage(int32_t) {
 // LINE 192:
 	asm( 
 "	      0042b7ae    push ebp"
@@ -1529,7 +1529,7 @@ LanguageManager::GetNextLanguage {
 }
 
 // FUNCTION: SIMCOPTER 0x0042b819
-LanguageManager::GetLanguageIDAlias {
+int32_t LanguageManager::GetLanguageIDAlias(int32_t) {
 // LINE 229:
 	asm( 
 "	      0042b819    push ebp"
@@ -1668,7 +1668,7 @@ LanguageManager::GetLanguageIDAlias {
 }
 
 // FUNCTION: SIMCOPTER 0x0042b91a
-LanguageManager::DoesLanguageUseLatinCharacters {
+int32_t LanguageManager::DoesLanguageUseLatinCharacters(int32_t) {
 // LINE 275:
 	asm( 
 "	      0042b91a    push ebp"
@@ -1743,7 +1743,7 @@ LanguageManager::DoesLanguageUseLatinCharacters {
 }
 
 // FUNCTION: SIMCOPTER 0x0042ba26
-LanguageManager::GetLanguageDirectoryName {
+int32_t LanguageManager::GetLanguageDirectoryName(class basic_string<char>&, int32_t) {
 // LINE 313:
 	asm( 
 "	      0042ba26    push ebp"
@@ -1773,7 +1773,7 @@ LanguageManager::GetLanguageDirectoryName {
 }
 
 // FUNCTION: SIMCOPTER 0x0042ba46
-LanguageManager::GetLanguageEnglishName {
+int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>&, int32_t) {
 // LINE 325:
 	asm( 
 "	      0042ba46    push ebp"
@@ -2227,7 +2227,7 @@ LanguageManager::GetLanguageEnglishName {
 }
 
 // FUNCTION: SIMCOPTER 0x0042c0de
-LanguageManager::GetLanguageLocalName {
+int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>&, int32_t) {
 // LINE 347:
 	asm( 
 "	      0042c0de    push ebp"
@@ -2681,7 +2681,7 @@ LanguageManager::GetLanguageLocalName {
 }
 
 // FUNCTION: SIMCOPTER 0x0042c776
-LanguageManager::GetLanguageRuntimeLibraryName {
+int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>&, int32_t) {
 // LINE 369:
 	asm( 
 "	      0042c776    push ebp"
@@ -3135,7 +3135,7 @@ LanguageManager::GetLanguageRuntimeLibraryName {
 }
 
 // FUNCTION: SIMCOPTER 0x0042ce0e
-LanguageManager::GetTypefaceForLanguage {
+int32_t LanguageManager::GetTypefaceForLanguage(int32_t, int32_t, char *) {
 // LINE 392:
 	asm( 
 "	      0042ce0e    push ebp"
@@ -3218,7 +3218,7 @@ LanguageManager::GetTypefaceForLanguage {
 }
 
 // FUNCTION: SIMCOPTER 0x0042ce9f
-LanguageManager::GetFontFilePathForLanguage {
+int32_t LanguageManager::GetFontFilePathForLanguage(int32_t, int32_t, char *) {
 // LINE 426:
 	asm( 
 "	      0042ce9f    push ebp"
@@ -3263,7 +3263,7 @@ LanguageManager::GetFontFilePathForLanguage {
 }
 
 // FUNCTION: SIMCOPTER 0x0042ceda
-LanguageManager::LoadLanguageSystemFonts {
+int32_t LanguageManager::LoadLanguageSystemFonts(int32_t) {
 // LINE 448:
 	asm( 
 "	      0042ceda    push ebp"
@@ -3363,7 +3363,7 @@ LanguageManager::LoadLanguageSystemFonts {
 }
 
 // FUNCTION: SIMCOPTER 0x0042cf8e
-LanguageManager::UnloadLanguageSystemFonts {
+int32_t LanguageManager::UnloadLanguageSystemFonts(int32_t) {
 // LINE 488:
 	asm( 
 "	      0042cf8e    push ebp"
@@ -3450,7 +3450,7 @@ LanguageManager::UnloadLanguageSystemFonts {
 }
 
 // FUNCTION: SIMCOPTER 0x0042d023
-LanguageManager::IsTypefaceLoaded {
+int32_t LanguageManager::IsTypefaceLoaded(char *) {
 // LINE 524:
 	asm( 
 "	      0042d023    push ebp"
@@ -3518,7 +3518,7 @@ LanguageManager::IsTypefaceLoaded {
 }
 
 // FUNCTION: SIMCOPTER 0x0042d083
-LanguageManager::GetCurrentSystemLocale {
+int32_t LanguageManager::GetCurrentSystemLocale() {
 // LINE 549:
 	asm( 
 "	      0042d083    push ebp"
@@ -3843,7 +3843,7 @@ LanguageManager::GetCurrentSystemLocale {
 }
 
 // FUNCTION: SIMCOPTER 0x0042d387
-LanguageManager::GetLanguageRoadDrivingSide {
+int32_t LanguageManager::GetLanguageRoadDrivingSide(int32_t) {
 // LINE 603:
 	asm( 
 "	      0042d387    push ebp"
@@ -3890,7 +3890,7 @@ LanguageManager::GetLanguageRoadDrivingSide {
 }
 
 // FUNCTION: SIMCOPTER 0x0042d3c9
-EnumFontFamilyProcecure {
+int32_t EnumFontFamilyProcecure() {
 // LINE 626:
 	asm( 
 "	      0042d3c9    push ebp"

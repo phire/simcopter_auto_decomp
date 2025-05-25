@@ -6,7 +6,7 @@
 
 // Contribution: 1:00151b10-0015371d Module: 199, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x00552b10
-FlatResFile::LoadResMap {
+void FlatResFile::LoadResMap(void * __ptr32*, short *, long *) {
 // LINE 97:
 	asm( 
 "	      00552b10    push ebp"
@@ -324,7 +324,7 @@ FlatResFile::LoadResMap {
 }
 
 // FUNCTION: SIMCOPTER 0x00552e51
-FlatResFile::Open {
+long FlatResFile::Open(char *) {
 // LINE 157:
 	asm( 
 "	      00552e51    push ebp"
@@ -390,7 +390,7 @@ FlatResFile::Open {
 }
 
 // FUNCTION: SIMCOPTER 0x00552ec5
-FlatResFile::Open {
+long FlatResFile::Open(unsigned char *) {
 // LINE 178:
 	asm( 
 "	      00552ec5    push ebp"
@@ -456,7 +456,7 @@ FlatResFile::Open {
 }
 
 // FUNCTION: SIMCOPTER 0x00552f39
-ResFile::OpenFromOtherFile {
+long ResFile::OpenFromOtherFile(class ResFile*) {
 // LINE 197:
 	asm( 
 "	      00552f39    push ebp"
@@ -490,7 +490,7 @@ ResFile::OpenFromOtherFile {
 }
 
 // FUNCTION: SIMCOPTER 0x00552f5f
-FlatResFile::Close {
+long FlatResFile::Close() {
 // LINE 206:
 	asm( 
 "	      00552f5f    push ebp"
@@ -545,7 +545,7 @@ FlatResFile::Close {
 }
 
 // FUNCTION: SIMCOPTER 0x00552fca
-FlatResFile::CheckForLeaks {
+short FlatResFile::CheckForLeaks() {
 // LINE 259:
 	asm( 
 "	      00552fca    push ebp"
@@ -584,7 +584,7 @@ FlatResFile::CheckForLeaks {
 }
 
 // FUNCTION: SIMCOPTER 0x00552ffc
-FlatResFile::GetError {
+long FlatResFile::GetError() {
 // LINE 269:
 	asm( 
 "	      00552ffc    push ebp"
@@ -612,7 +612,7 @@ FlatResFile::GetError {
 }
 
 // FUNCTION: SIMCOPTER 0x0055301b
-FlatResFile::~FlatResFile {
+void FlatResFile::~FlatResFile() {
 // LINE 277:
 	asm( 
 "	      0055301b    push ebp"
@@ -663,7 +663,7 @@ FlatResFile::~FlatResFile {
 }
 
 // FUNCTION: SIMCOPTER 0x0055309e
-FlatResFile::CountTypes {
+short FlatResFile::CountTypes() {
 // LINE 286:
 	asm( 
 "	      0055309e    push ebp"
@@ -709,7 +709,7 @@ FlatResFile::CountTypes {
 }
 
 // FUNCTION: SIMCOPTER 0x0055310d
-FlatResFile::GetIndType {
+unsigned long FlatResFile::GetIndType(short) {
 // LINE 311:
 	asm( 
 "	      0055310d    push ebp"
@@ -768,7 +768,7 @@ FlatResFile::GetIndType {
 }
 
 // FUNCTION: SIMCOPTER 0x0055319a
-FlatResFile::Count {
+short FlatResFile::Count(unsigned long) {
 // LINE 325:
 	asm( 
 "	      0055319a    push ebp"
@@ -815,7 +815,7 @@ FlatResFile::Count {
 }
 
 // FUNCTION: SIMCOPTER 0x0055320b
-FlatResFile::GetByID {
+void * __ptr32 FlatResFile::GetByID(unsigned long, short, void (*)(void * __ptr32, long)) {
 // LINE 336:
 	asm( 
 "	      0055320b    push ebp"
@@ -934,7 +934,7 @@ FlatResFile::GetByID {
 }
 
 // FUNCTION: SIMCOPTER 0x0055331d
-FlatResFile::GetByName {
+void * __ptr32 FlatResFile::GetByName(unsigned long, unsigned char *, void (*)(void * __ptr32, long)) {
 // LINE 363:
 	asm( 
 "	      0055331d    push ebp"
@@ -1065,7 +1065,7 @@ FlatResFile::GetByName {
 }
 
 // FUNCTION: SIMCOPTER 0x00553452
-FlatResFile::GetByIndex {
+void * __ptr32 FlatResFile::GetByIndex(unsigned long, short, void (*)(void * __ptr32, long)) {
 // LINE 392:
 	asm( 
 "	      00553452    push ebp"
@@ -1184,7 +1184,7 @@ FlatResFile::GetByIndex {
 }
 
 // FUNCTION: SIMCOPTER 0x00553564
-FlatResFile::GetName {
+void FlatResFile::GetName(void * __ptr32, unsigned char *) {
 // LINE 419:
 	asm( 
 "	      00553564    push ebp"
@@ -1254,7 +1254,7 @@ FlatResFile::GetName {
 }
 
 // FUNCTION: SIMCOPTER 0x0055360d
-FlatResFile::GetID {
+void FlatResFile::GetID(void * __ptr32, short *) {
 // LINE 436:
 	asm( 
 "	      0055360d    push ebp"
@@ -1321,7 +1321,7 @@ FlatResFile::GetID {
 }
 
 // FUNCTION: SIMCOPTER 0x005536ae
-FlatResFile::GetResType {
+unsigned long FlatResFile::GetResType(void * __ptr32) {
 // LINE 449:
 	asm( 
 "	      005536ae    push ebp"
@@ -1409,7 +1409,7 @@ FlatResFile::GetResType {
 }
 
 // FUNCTION: SIMCOPTER 0x00553794
-FlatResFile::Release {
+void FlatResFile::Release(void * __ptr32) {
 // LINE 468:
 	asm( 
 "	      00553794    push ebp"
@@ -1478,7 +1478,7 @@ FlatResFile::Release {
 }
 
 // FUNCTION: SIMCOPTER 0x0055383a
-FlatResFile::Detach {
+void FlatResFile::Detach(void * __ptr32) {
 // LINE 496:
 	asm( 
 "	      0055383a    push ebp"
@@ -1538,7 +1538,7 @@ FlatResFile::Detach {
 }
 
 // FUNCTION: SIMCOPTER 0x005538d1
-FlatResFile::Load {
+void FlatResFile::Load(void * __ptr32) {
 // LINE 522:
 	asm( 
 "	      005538d1    push ebp"
@@ -1642,7 +1642,7 @@ FlatResFile::Load {
 }
 
 // FUNCTION: SIMCOPTER 0x005539be
-FlatResFile::GetString {
+void FlatResFile::GetString(unsigned char *, short, short) {
 // LINE 595:
 	asm( 
 "	      005539be    push ebp"
@@ -1729,7 +1729,7 @@ FlatResFile::GetString {
 }
 
 // FUNCTION: SIMCOPTER 0x00553a84
-ResMap::ResMap {
+private: __thiscall ResMap::ResMap(short, short, void *, unsigned char *, long) {
 // LINE 671:
 	asm( 
 "	      00553a84    push ebp"
@@ -1882,7 +1882,7 @@ ResMap::ResMap {
 }
 
 // FUNCTION: SIMCOPTER 0x00553ba0
-ResMap::~ResMap {
+private: __thiscall ResMap::~ResMap(void) {
 // LINE 728:
 	asm( 
 "	      00553ba0    push ebp"
@@ -1994,7 +1994,7 @@ ResMap::~ResMap {
 }
 
 // FUNCTION: SIMCOPTER 0x00553c5b
-ResMap::Get {
+public: static long __cdecl ResMap::Get(class FlatResFile *) {
 // LINE 753:
 	asm( 
 "	      00553c5b    push ebp"
@@ -2156,7 +2156,7 @@ ResMap::Get {
 }
 
 // FUNCTION: SIMCOPTER 0x00553dcc
-ResMap::Release {
+public: void __thiscall ResMap::Release(void) {
 // LINE 785:
 	asm( 
 "	      00553dcc    push ebp"
@@ -2244,7 +2244,7 @@ ResMap::Release {
 }
 
 // FUNCTION: SIMCOPTER 0x00553e96
-ResMap::CheckForLeaks {
+public: static short __cdecl ResMap::CheckForLeaks(void) {
 // LINE 802:
 	asm( 
 "	      00553e96    push ebp"
@@ -2290,7 +2290,7 @@ ResMap::CheckForLeaks {
 }
 
 // FUNCTION: SIMCOPTER 0x00553edb
-ResMap::LoadEntry {
+public: void __thiscall ResMap::LoadEntry(struct ResMap::Entry *, class FlatResFile *, unsigned short) {
 // LINE 814:
 	asm( 
 "	      00553edb    push ebp"
@@ -2593,7 +2593,7 @@ ResMap::LoadEntry {
 }
 
 // FUNCTION: SIMCOPTER 0x005541a4
-ResMap::GetIndType {
+public: unsigned long __thiscall ResMap::GetIndType(short) {
 // LINE 882:
 	asm( 
 "	      005541a4    push ebp"
@@ -2648,7 +2648,7 @@ ResMap::GetIndType {
 }
 
 // FUNCTION: SIMCOPTER 0x005541fe
-ResMap::Count {
+public: short __thiscall ResMap::Count(unsigned long) {
 // LINE 895:
 	asm( 
 "	      005541fe    push ebp"
@@ -2723,7 +2723,7 @@ ResMap::Count {
 }
 
 // FUNCTION: SIMCOPTER 0x00554272
-ResMap::FindType {
+public: unsigned long __thiscall ResMap::FindType(struct ResMap::Entry *) {
 // LINE 911:
 	asm( 
 "	      00554272    push ebp"
@@ -2818,7 +2818,7 @@ ResMap::FindType {
 }
 
 // FUNCTION: SIMCOPTER 0x0055430b
-ResMap::FindEntry {
+public: struct ResMap::Entry * __thiscall ResMap::FindEntry(void *) {
 // LINE 934:
 	asm( 
 "	      0055430b    push ebp"
@@ -2889,7 +2889,7 @@ ResMap::FindEntry {
 }
 
 // FUNCTION: SIMCOPTER 0x0055437a
-ResMap::FindEntry {
+public: struct ResMap::Entry * __thiscall ResMap::FindEntry(unsigned long, short) {
 // LINE 947:
 	asm( 
 "	      0055437a    push ebp"
@@ -3009,7 +3009,7 @@ ResMap::FindEntry {
 }
 
 // FUNCTION: SIMCOPTER 0x0055443d
-ResMap::FindEntry {
+public: struct ResMap::Entry * __thiscall ResMap::FindEntry(unsigned long, unsigned char *) {
 // LINE 975:
 	asm( 
 "	      0055443d    push ebp"
@@ -3151,7 +3151,7 @@ ResMap::FindEntry {
 }
 
 // FUNCTION: SIMCOPTER 0x00554536
-ResMap::FindIndEntry {
+public: struct ResMap::Entry * __thiscall ResMap::FindIndEntry(unsigned long, short) {
 // LINE 1007:
 	asm( 
 "	      00554536    push ebp"
@@ -3260,7 +3260,7 @@ ResMap::FindIndEntry {
 }
 
 // FUNCTION: SIMCOPTER 0x005545f1
-ResMap::GetName {
+public: void __thiscall ResMap::GetName(struct ResMap::Entry *, unsigned char *const) {
 // LINE 1032:
 	asm( 
 "	      005545f1    push ebp"
@@ -3323,7 +3323,7 @@ ResMap::GetName {
 }
 
 // FUNCTION: SIMCOPTER 0x00554651
-ResMap::SwapTypeHead {
+private: static void __cdecl ResMap::SwapTypeHead(struct ResMap::TypeHead *) {
 // LINE 1048:
 	asm( 
 "	      00554651    push ebp"
@@ -3367,7 +3367,7 @@ ResMap::SwapTypeHead {
 }
 
 // FUNCTION: SIMCOPTER 0x0055468b
-ResMap::SwapResEntry {
+private: static void __cdecl ResMap::SwapResEntry(struct ResMap::Entry *) {
 // LINE 1069:
 	asm( 
 "	      0055468b    push ebp"

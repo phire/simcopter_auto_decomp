@@ -18,7 +18,7 @@
 // $E5
 
 // FUNCTION: SIMCOPTER 0x0052b14d
-PlaneClass::PlaneClass {
+void PlaneClass::PlaneClass(long, long) {
 // LINE 174:
 	asm( 
 "	      0052b14d    push ebp"
@@ -129,7 +129,7 @@ PlaneClass::PlaneClass {
 }
 
 // FUNCTION: SIMCOPTER 0x0052b216
-PlaneClass::~PlaneClass {
+void PlaneClass::~PlaneClass() {
 // LINE 224:
 	asm( 
 "	      0052b216    push ebp"
@@ -183,7 +183,7 @@ PlaneClass::~PlaneClass {
 }
 
 // FUNCTION: SIMCOPTER 0x0052b273
-PlaneClass::GetPlanePointer {
+class PlaneClass* PlaneClass::GetPlanePointer(long) {
 // LINE 265:
 	asm( 
 "	      0052b273    push ebp"
@@ -219,7 +219,7 @@ PlaneClass::GetPlanePointer {
 }
 
 // FUNCTION: SIMCOPTER 0x0052b29e
-PlaneClass::CreateInstance {
+class PlaneClass* PlaneClass::CreateInstance(int32_t) {
 // LINE 289:
 	asm( 
 "	      0052b29e    push ebp"
@@ -249,7 +249,7 @@ PlaneClass::CreateInstance {
 }
 
 // FUNCTION: SIMCOPTER 0x0052b2be
-PlaneClass::CreateInstance {
+class PlaneClass* PlaneClass::CreateInstance(long, long, int32_t) {
 // LINE 350:
 	asm( 
 "	      0052b2be    push ebp"
@@ -331,7 +331,7 @@ PlaneClass::CreateInstance {
 }
 
 // FUNCTION: SIMCOPTER 0x0052b35e
-PlaneClass::Initialize {
+int32_t PlaneClass::Initialize(int32_t) {
 // LINE 452:
 	asm( 
 "	      0052b35e    push ebp"
@@ -367,7 +367,7 @@ PlaneClass::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x0052b390
-PlaneClass::ResetAll {
+void PlaneClass::ResetAll() {
 // LINE 477:
 	asm( 
 "	      0052b390    push ebp"
@@ -407,7 +407,7 @@ PlaneClass::ResetAll {
 }
 
 // FUNCTION: SIMCOPTER 0x0052b3d0
-PlaneClass::ItterateAll {
+void PlaneClass::ItterateAll() {
 // LINE 527:
 	asm( 
 "	      0052b3d0    push ebp"
@@ -447,7 +447,7 @@ PlaneClass::ItterateAll {
 }
 
 // FUNCTION: SIMCOPTER 0x0052b410
-PlaneClass::FindPlaneToCrash {
+int32_t PlaneClass::FindPlaneToCrash(long) {
 // LINE 577:
 	asm( 
 "	      0052b410    push ebp"
@@ -529,7 +529,7 @@ PlaneClass::FindPlaneToCrash {
 }
 
 // FUNCTION: SIMCOPTER 0x0052b4d5
-PlaneClass::Itterate {
+void PlaneClass::Itterate() {
 // LINE 611:
 	asm( 
 "	      0052b4d5    push ebp"
@@ -695,7 +695,7 @@ PlaneClass::Itterate {
 }
 
 // FUNCTION: SIMCOPTER 0x0052b64a
-PlaneClass::Reset {
+void PlaneClass::Reset() {
 // LINE 688:
 	asm( 
 "	      0052b64a    push ebp"
@@ -778,7 +778,7 @@ PlaneClass::Reset {
 }
 
 // FUNCTION: SIMCOPTER 0x0052b6d0
-PlaneClass::PlaneSoundDriver {
+void PlaneClass::PlaneSoundDriver() {
 // LINE 745:
 	asm( 
 "	      0052b6d0    push ebp"
@@ -1132,7 +1132,7 @@ PlaneClass::PlaneSoundDriver {
 }
 
 // FUNCTION: SIMCOPTER 0x0052b9a3
-PlaneClass::ItterateFSM {
+void PlaneClass::ItterateFSM() {
 // LINE 871:
 	asm( 
 "	      0052b9a3    push ebp"
@@ -1300,7 +1300,7 @@ PlaneClass::ItterateFSM {
 }
 
 // FUNCTION: SIMCOPTER 0x0052baf5
-PlaneClass::AdjustSpeed {
+void PlaneClass::AdjustSpeed() {
 // LINE 951:
 	asm( 
 "	      0052baf5    push ebp"
@@ -1340,7 +1340,7 @@ PlaneClass::AdjustSpeed {
 }
 
 // FUNCTION: SIMCOPTER 0x0052bb2e
-PlaneClass::IsPathClear {
+enum PlaneClass::StoppedReasons PlaneClass::IsPathClear() {
 // LINE 980:
 	asm( 
 "	      0052bb2e    push ebp"
@@ -1367,7 +1367,7 @@ PlaneClass::IsPathClear {
 }
 
 // FUNCTION: SIMCOPTER 0x0052bb46
-PlaneClass::CheckDynamicObjectsAt {
+enum PlaneClass::StoppedReasons PlaneClass::CheckDynamicObjectsAt(const struct Point2d&, const struct Point3d&) {
 // LINE 1020:
 	asm( 
 "	      0052bb46    push ebp"
@@ -1394,7 +1394,7 @@ PlaneClass::CheckDynamicObjectsAt {
 }
 
 // FUNCTION: SIMCOPTER 0x0052bb60
-PlaneClass::SetCrashWhenReady {
+void PlaneClass::SetCrashWhenReady() {
 // LINE 1178:
 	asm( 
 "	      0052bb60    push ebp"
@@ -1668,7 +1668,7 @@ PlaneClass::SetCrashWhenReady {
 }
 
 // FUNCTION: SIMCOPTER 0x0052bdad
-PlaneClass::IsPlaneOutOfCameraRange {
+int32_t PlaneClass::IsPlaneOutOfCameraRange() {
 // LINE 1277:
 	asm( 
 "	      0052bdad    push ebp"
@@ -1805,7 +1805,7 @@ PlaneClass::IsPlaneOutOfCameraRange {
 }
 
 // FUNCTION: SIMCOPTER 0x0052be9a
-PlaneClass::SlowDown {
+void PlaneClass::SlowDown() {
 // LINE 1341:
 	asm( 
 "	      0052be9a    push ebp"
@@ -1833,7 +1833,7 @@ PlaneClass::SlowDown {
 }
 
 // FUNCTION: SIMCOPTER 0x0052beba
-PlaneClass::Stop {
+void PlaneClass::Stop() {
 // LINE 1362:
 	asm( 
 "	      0052beba    push ebp"
@@ -1861,7 +1861,7 @@ PlaneClass::Stop {
 }
 
 // FUNCTION: SIMCOPTER 0x0052beda
-PlaneClass::MoveForward {
+void PlaneClass::MoveForward() {
 // LINE 1383:
 	asm( 
 "	      0052beda    push ebp"
@@ -2184,7 +2184,7 @@ PlaneClass::MoveForward {
 }
 
 // FUNCTION: SIMCOPTER 0x0052c1a3
-PlaneClass::PlaneCollisionCheck {
+int32_t PlaneClass::PlaneCollisionCheck(int32_t, struct _CELL_INFO*) {
 // LINE 1475:
 	asm( 
 "	      0052c1a3    push ebp"
@@ -3078,7 +3078,7 @@ PlaneClass::PlaneCollisionCheck {
 }
 
 // FUNCTION: SIMCOPTER 0x0052ca29
-PlaneClass::HaveIReachedNextLoc {
+int32_t PlaneClass::HaveIReachedNextLoc() {
 // LINE 1764:
 	asm( 
 "	      0052ca29    push ebp"
@@ -3120,7 +3120,7 @@ PlaneClass::HaveIReachedNextLoc {
 }
 
 // FUNCTION: SIMCOPTER 0x0052ca5d
-PlaneClass::AmIInANewCell {
+int32_t PlaneClass::AmIInANewCell() {
 // LINE 1791:
 	asm( 
 "	      0052ca5d    push ebp"
@@ -3183,7 +3183,7 @@ PlaneClass::AmIInANewCell {
 }
 
 // FUNCTION: SIMCOPTER 0x0052cacb
-PlaneClass::UnlinkFromCell {
+void PlaneClass::UnlinkFromCell(const struct Point2d&) {
 // LINE 1827:
 	asm( 
 "	      0052cacb    push ebp"
@@ -3301,7 +3301,7 @@ PlaneClass::UnlinkFromCell {
 }
 
 // FUNCTION: SIMCOPTER 0x0052cbe1
-PlaneClass::LinkToCell {
+void PlaneClass::LinkToCell(const struct Point2d&) {
 // LINE 1875:
 	asm( 
 "	      0052cbe1    push ebp"
@@ -3377,7 +3377,7 @@ PlaneClass::LinkToCell {
 }
 
 // FUNCTION: SIMCOPTER 0x0052cc9d
-PlaneClass::AdjustCurrentPosition {
+void PlaneClass::AdjustCurrentPosition() {
 // LINE 1904:
 	asm( 
 "	      0052cc9d    push ebp"
@@ -3489,7 +3489,7 @@ PlaneClass::AdjustCurrentPosition {
 }
 
 // FUNCTION: SIMCOPTER 0x0052cda1
-PlaneClass::AdjustNextPosition {
+void PlaneClass::AdjustNextPosition() {
 // LINE 1943:
 	asm( 
 "	      0052cda1    push ebp"
@@ -3629,7 +3629,7 @@ PlaneClass::AdjustNextPosition {
 }
 
 // FUNCTION: SIMCOPTER 0x0052cee5
-PlaneClass::AdjustNextAltitude {
+void PlaneClass::AdjustNextAltitude() {
 // LINE 1986:
 	asm( 
 "	      0052cee5    push ebp"
@@ -3817,7 +3817,7 @@ PlaneClass::AdjustNextAltitude {
 }
 
 // FUNCTION: SIMCOPTER 0x0052d08b
-PlaneClass::BeamToWithinCameraRange {
+void PlaneClass::BeamToWithinCameraRange() {
 // LINE 2054:
 	asm( 
 "	      0052d08b    push ebp"
@@ -4287,7 +4287,7 @@ PlaneClass::BeamToWithinCameraRange {
 }
 
 // FUNCTION: SIMCOPTER 0x0052d411
-PlaneClass::UnPlacePlane {
+void PlaneClass::UnPlacePlane() {
 // LINE 2233:
 	asm( 
 "	      0052d411    push ebp"
@@ -4332,7 +4332,7 @@ PlaneClass::UnPlacePlane {
 }
 
 // FUNCTION: SIMCOPTER 0x0052d456
-PlaneClass::InitializeInstance {
+int32_t PlaneClass::InitializeInstance(long, long, int32_t) {
 // LINE 2267:
 	asm( 
 "	      0052d456    push ebp"
@@ -4578,7 +4578,7 @@ PlaneClass::InitializeInstance {
 }
 
 // FUNCTION: SIMCOPTER 0x0052d618
-PlaneClass::HandleUFOStuff {
+void PlaneClass::HandleUFOStuff() {
 // LINE 2473:
 	asm( 
 "	      0052d618    push ebp"
@@ -4672,7 +4672,7 @@ PlaneClass::HandleUFOStuff {
 }
 
 // FUNCTION: SIMCOPTER 0x0052d6bd
-CreatePlaneInstance {
+void CreatePlaneInstance() {
 // LINE 2553:
 	asm( 
 "	      0052d6bd    push ebp"
@@ -4700,7 +4700,7 @@ CreatePlaneInstance {
 }
 
 // FUNCTION: SIMCOPTER 0x0052d6d9
-S3PlaneCrashWhenReady {
+int32_t S3PlaneCrashWhenReady() {
 // LINE 2573:
 	asm( 
 "	      0052d6d9    push ebp"
@@ -4728,7 +4728,7 @@ S3PlaneCrashWhenReady {
 }
 
 // FUNCTION: SIMCOPTER 0x0052d6f5
-ResetAllPlanes {
+void ResetAllPlanes() {
 // LINE 2596:
 	asm( 
 "	      0052d6f5    push ebp"
@@ -4753,7 +4753,7 @@ ResetAllPlanes {
 }
 
 // FUNCTION: SIMCOPTER 0x0052d70a
-ItterateAllPlanes {
+void ItterateAllPlanes() {
 // LINE 2619:
 	asm( 
 "	      0052d70a    push ebp"
@@ -4778,7 +4778,7 @@ ItterateAllPlanes {
 }
 
 // FUNCTION: SIMCOPTER 0x0052d71f
-PlaneClass::HitDispatch {
+void PlaneClass::HitDispatch(long, struct _DYOBJ_INST*, struct _DYOBJ_INST*, long, long) {
 // LINE 2632:
 	asm( 
 "	      0052d71f    push ebp"
@@ -5041,7 +5041,7 @@ PlaneClass::HitDispatch {
 }
 
 // FUNCTION: SIMCOPTER 0x0052d975
-PlaneHitDispatch {
+void PlaneHitDispatch() {
 // LINE 2707:
 	asm( 
 "	      0052d975    push ebp"
@@ -5077,7 +5077,7 @@ PlaneHitDispatch {
 }
 
 // FUNCTION: SIMCOPTER 0x0052d9a1
-PlaneClass::TurnOnShields {
+void PlaneClass::TurnOnShields() {
 // LINE 2722:
 	asm( 
 "	      0052d9a1    push ebp"
@@ -5167,7 +5167,7 @@ PlaneClass::TurnOnShields {
 }
 
 // FUNCTION: SIMCOPTER 0x0052da3c
-PlaneClass::TurnOffShields {
+void PlaneClass::TurnOffShields() {
 // LINE 2744:
 	asm( 
 "	      0052da3c    push ebp"
@@ -5259,7 +5259,7 @@ PlaneClass::TurnOffShields {
 }
 
 // FUNCTION: SIMCOPTER 0x0052dadb
-S3PlaneMIFFLoad {
+int32_t S3PlaneMIFFLoad() {
 // LINE 2772:
 	asm( 
 "	      0052dadb    push ebp"
@@ -5287,7 +5287,7 @@ S3PlaneMIFFLoad {
 }
 
 // FUNCTION: SIMCOPTER 0x0052daf7
-S3PlaneMIFFSave {
+int32_t S3PlaneMIFFSave() {
 // LINE 2785:
 	asm( 
 "	      0052daf7    push ebp"
@@ -5315,7 +5315,7 @@ S3PlaneMIFFSave {
 }
 
 // FUNCTION: SIMCOPTER 0x0052db13
-PlaneClass::MIFFLoad {
+int32_t PlaneClass::MIFFLoad(void * __ptr32) {
 // LINE 2797:
 	asm( 
 "	      0052db13    push ebp"
@@ -5552,7 +5552,7 @@ PlaneClass::MIFFLoad {
 }
 
 // FUNCTION: SIMCOPTER 0x0052dcf2
-PlaneClass::MIFFSave {
+int32_t PlaneClass::MIFFSave(void * __ptr32) {
 // LINE 2856:
 	asm( 
 "	      0052dcf2    push ebp"

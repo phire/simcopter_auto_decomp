@@ -6,7 +6,7 @@
 
 // Contribution: 1:0008a110-0008a2a6 Module: 27, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x0048b110
-GetAllDisplayModes {
+int32_t GetAllDisplayModes() {
 // LINE 31:
 	asm( 
 "	      0048b110    push ebp"
@@ -43,7 +43,7 @@ GetAllDisplayModes {
 }
 
 // FUNCTION: SIMCOPTER 0x0048b140
-IsModeAvailable {
+int32_t IsModeAvailable() {
 // LINE 56:
 	asm( 
 "	      0048b140    push ebp"
@@ -105,7 +105,7 @@ IsModeAvailable {
 }
 
 // FUNCTION: SIMCOPTER 0x0048b1c4
-GetCurrentScreenMode {
+void GetCurrentScreenMode() {
 // LINE 78:
 	asm( 
 "	      0048b1c4    push ebp"
@@ -177,7 +177,7 @@ GetCurrentScreenMode {
 }
 
 // FUNCTION: SIMCOPTER 0x0048b234
-EnumDisplayModesCallback {
+long EnumDisplayModesCallback() {
 // LINE 103:
 	asm( 
 "	      0048b234    push ebp"

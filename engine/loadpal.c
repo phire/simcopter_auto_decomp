@@ -6,7 +6,7 @@
 
 // Contribution: 1:000d10d0-000d1175 Module: 148, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x004d20d0
-LoadPalette {
+struct VRResource* LoadPalette() {
 // LINE 53:
 	asm( 
 "	      004d20d0    push ebp"
@@ -86,7 +86,7 @@ LoadPalette {
 }
 
 // FUNCTION: SIMCOPTER 0x004d2157
-VRGetPalFromResource {
+char * VRGetPalFromResource() {
 // LINE 110:
 	asm( 
 "	      004d2157    push ebp"

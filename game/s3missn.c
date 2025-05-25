@@ -6,7 +6,7 @@
 
 // Contribution: 1:000f9090-000fd784 Module: 173, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x004fa090
-S3MissionReset {
+void S3MissionReset() {
 // LINE 134:
 	asm( 
 "	      004fa090    push ebp"
@@ -112,7 +112,7 @@ S3MissionReset {
 }
 
 // FUNCTION: SIMCOPTER 0x004fa175
-ConvertCitySettingsToSteppedPercentages {
+void ConvertCitySettingsToSteppedPercentages() {
 // LINE 177:
 	asm( 
 "	      004fa175    push ebp"
@@ -342,7 +342,7 @@ ConvertCitySettingsToSteppedPercentages {
 }
 
 // FUNCTION: SIMCOPTER 0x004fa33b
-S3MissionGenerator {
+void S3MissionGenerator() {
 // LINE 237:
 	asm( 
 "	      004fa33b    push ebp"
@@ -818,7 +818,7 @@ S3MissionGenerator {
 }
 
 // FUNCTION: SIMCOPTER 0x004fa71d
-S3MissionDriver {
+void S3MissionDriver() {
 // LINE 421:
 	asm( 
 "	      004fa71d    push ebp"
@@ -1382,7 +1382,7 @@ S3MissionDriver {
 }
 
 // FUNCTION: SIMCOPTER 0x004fac6d
-S3MissionStart {
+long S3MissionStart() {
 // LINE 654:
 	asm( 
 "	      004fac6d    push ebp"
@@ -3052,7 +3052,7 @@ S3MissionStart {
 }
 
 // FUNCTION: SIMCOPTER 0x004fbb76
-S3MissionGetMapLoc {
+struct Point2d* S3MissionGetMapLoc() {
 // LINE 1073:
 	asm( 
 "	      004fbb76    push ebp"
@@ -3108,7 +3108,7 @@ S3MissionGetMapLoc {
 }
 
 // FUNCTION: SIMCOPTER 0x004fbbca
-S3MissionGetDestMapLoc {
+struct Point2d* S3MissionGetDestMapLoc() {
 // LINE 1100:
 	asm( 
 "	      004fbbca    push ebp"
@@ -3175,7 +3175,7 @@ S3MissionGetDestMapLoc {
 }
 
 // FUNCTION: SIMCOPTER 0x004fbc32
-S3MissionGetPickupLoc {
+struct Point2d* S3MissionGetPickupLoc() {
 // LINE 1131:
 	asm( 
 "	      004fbc32    push ebp"
@@ -3242,7 +3242,7 @@ S3MissionGetPickupLoc {
 }
 
 // FUNCTION: SIMCOPTER 0x004fbc9a
-S3MissionGetCurrMapLoc {
+struct Point2d* S3MissionGetCurrMapLoc() {
 // LINE 1161:
 	asm( 
 "	      004fbc9a    push ebp"
@@ -3278,7 +3278,7 @@ S3MissionGetCurrMapLoc {
 }
 
 // FUNCTION: SIMCOPTER 0x004fbcc6
-S3MissionGetCurrDestMapLoc {
+struct Point2d* S3MissionGetCurrDestMapLoc() {
 // LINE 1178:
 	asm( 
 "	      004fbcc6    push ebp"
@@ -3325,7 +3325,7 @@ S3MissionGetCurrDestMapLoc {
 }
 
 // FUNCTION: SIMCOPTER 0x004fbd08
-S3MissionGetCurrPickupLoc {
+struct Point2d* S3MissionGetCurrPickupLoc() {
 // LINE 1198:
 	asm( 
 "	      004fbd08    push ebp"
@@ -3372,7 +3372,7 @@ S3MissionGetCurrPickupLoc {
 }
 
 // FUNCTION: SIMCOPTER 0x004fbd4a
-S3MissionUpdate {
+void S3MissionUpdate() {
 // LINE 1216:
 	asm( 
 "	      004fbd4a    push ebp"
@@ -4030,7 +4030,7 @@ S3MissionUpdate {
 }
 
 // FUNCTION: SIMCOPTER 0x004fc218
-S3MissionEnd {
+void S3MissionEnd() {
 // LINE 1396:
 	asm( 
 "	      004fc218    push ebp"
@@ -4132,7 +4132,7 @@ S3MissionEnd {
 }
 
 // FUNCTION: SIMCOPTER 0x004fc2db
-S3MissionGetByID {
+struct MISSION_DATA* S3MissionGetByID() {
 // LINE 1435:
 	asm( 
 "	      004fc2db    push ebp"
@@ -4181,7 +4181,7 @@ S3MissionGetByID {
 }
 
 // FUNCTION: SIMCOPTER 0x004fc323
-S3MissionGetByType {
+long S3MissionGetByType() {
 // LINE 1446:
 	asm( 
 "	      004fc323    push ebp"
@@ -4245,7 +4245,7 @@ S3MissionGetByType {
 }
 
 // FUNCTION: SIMCOPTER 0x004fc39d
-S3MissionGetCurr {
+struct MISSION_DATA* S3MissionGetCurr() {
 // LINE 1467:
 	asm( 
 "	      004fc39d    push ebp"
@@ -4270,7 +4270,7 @@ S3MissionGetCurr {
 }
 
 // FUNCTION: SIMCOPTER 0x004fc3b2
-S3MissionGenerate {
+void S3MissionGenerate() {
 // LINE 1479:
 	asm( 
 "	      004fc3b2    push ebp"
@@ -4818,7 +4818,7 @@ S3MissionGenerate {
 }
 
 // FUNCTION: SIMCOPTER 0x004fc89b
-S3MissionSetCurrNext {
+void S3MissionSetCurrNext() {
 // LINE 1599:
 	asm( 
 "	      004fc89b    push ebp"
@@ -4949,7 +4949,7 @@ S3MissionSetCurrNext {
 }
 
 // FUNCTION: SIMCOPTER 0x004fc9ac
-S3MissionSetCurrPrev {
+void S3MissionSetCurrPrev() {
 // LINE 1634:
 	asm( 
 "	      004fc9ac    push ebp"
@@ -5080,7 +5080,7 @@ S3MissionSetCurrPrev {
 }
 
 // FUNCTION: SIMCOPTER 0x004fcabd
-S3MissionIsType {
+int32_t S3MissionIsType() {
 // LINE 1672:
 	asm( 
 "	      004fcabd    push ebp"
@@ -5158,7 +5158,7 @@ S3MissionIsType {
 }
 
 // FUNCTION: SIMCOPTER 0x004fcb3a
-S3MissionDebugString {
+void S3MissionDebugString() {
 // LINE 1802:
 	asm( 
 "	      004fcb3a    push ebp"
@@ -5256,7 +5256,7 @@ S3MissionDebugString {
 }
 
 // FUNCTION: SIMCOPTER 0x004fcbea
-S3MissionCancel {
+void S3MissionCancel() {
 // LINE 1843:
 	asm( 
 "	      004fcbea    push ebp"
@@ -5385,7 +5385,7 @@ S3MissionCancel {
 }
 
 // FUNCTION: SIMCOPTER 0x004fccd0
-S3MissionStartDirect {
+long S3MissionStartDirect() {
 // LINE 1893:
 	asm( 
 "	      004fccd0    push ebp"
@@ -5824,7 +5824,7 @@ S3MissionStartDirect {
 }
 
 // FUNCTION: SIMCOPTER 0x004fd0e6
-S3MissionScoreUpdate {
+void S3MissionScoreUpdate() {
 // LINE 2012:
 	asm( 
 "	      004fd0e6    push ebp"
@@ -6654,7 +6654,7 @@ S3MissionScoreUpdate {
 }
 
 // FUNCTION: SIMCOPTER 0x004fd755
-S3MissionScoreEnd {
+void S3MissionScoreEnd() {
 // LINE 2225:
 	asm( 
 "	      004fd755    push ebp"
@@ -7217,7 +7217,7 @@ S3MissionScoreEnd {
 }
 
 // FUNCTION: SIMCOPTER 0x004fdc22
-S3MissionTweakInit {
+void S3MissionTweakInit() {
 // LINE 2414:
 	asm( 
 "	      004fdc22    push ebp"
@@ -7237,7 +7237,7 @@ S3MissionTweakInit {
 }
 
 // FUNCTION: SIMCOPTER 0x004fdc2d
-S3MissionGetIDByKey {
+long S3MissionGetIDByKey() {
 // LINE 2436:
 	asm( 
 "	      004fdc2d    push ebp"
@@ -7318,7 +7318,7 @@ S3MissionGetIDByKey {
 }
 
 // FUNCTION: SIMCOPTER 0x004fdcbb
-S3MissionGetDataByIndex {
+struct MISSION_DATA* S3MissionGetDataByIndex() {
 // LINE 2466:
 	asm( 
 "	      004fdcbb    push ebp"
@@ -7360,7 +7360,7 @@ S3MissionGetDataByIndex {
 }
 
 // FUNCTION: SIMCOPTER 0x004fdcfb
-S3MissionMIFFLoad {
+int32_t S3MissionMIFFLoad() {
 // LINE 2487:
 	asm( 
 "	      004fdcfb    push ebp"
@@ -7453,7 +7453,7 @@ S3MissionMIFFLoad {
 }
 
 // FUNCTION: SIMCOPTER 0x004fddad
-S3MissionMIFFSave {
+int32_t S3MissionMIFFSave() {
 // LINE 2517:
 	asm( 
 "	      004fddad    push ebp"
@@ -7501,7 +7501,7 @@ S3MissionMIFFSave {
 }
 
 // FUNCTION: SIMCOPTER 0x004fddf5
-S3MissionDispatch {
+void S3MissionDispatch() {
 // LINE 2552:
 	asm( 
 "	      004fddf5    push ebp"
@@ -8402,7 +8402,7 @@ S3MissionDispatch {
 }
 
 // FUNCTION: SIMCOPTER 0x004fe5fe
-S3MissionGetSoundQuadrant {
+long S3MissionGetSoundQuadrant() {
 // LINE 2785:
 	asm( 
 "	      004fe5fe    push ebp"

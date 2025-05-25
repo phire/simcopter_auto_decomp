@@ -6,7 +6,7 @@
 
 // Contribution: 1:000314e0-00032110 Module: 60, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x004324e0
-CGameApp::CanWeSwitchToWindowedMode {
+public: virtual int __thiscall CGameApp::CanWeSwitchToWindowedMode(void) {
 // LINE 28:
 	asm( 
 "	      004324e0    push ebp"
@@ -44,7 +44,7 @@ CGameApp::CanWeSwitchToWindowedMode {
 }
 
 // FUNCTION: SIMCOPTER 0x00432538
-CGameApp::CanWeSwitchToFullScreenMode {
+public: virtual int __thiscall CGameApp::CanWeSwitchToFullScreenMode(void) {
 // LINE 39:
 	asm( 
 "	      00432538    push ebp"
@@ -71,7 +71,7 @@ CGameApp::CanWeSwitchToFullScreenMode {
 }
 
 // FUNCTION: SIMCOPTER 0x00432553
-CGameApp::SwitchToWindowedMode {
+public: virtual int __thiscall CGameApp::SwitchToWindowedMode(void) {
 // LINE 57:
 	asm( 
 "	      00432553    push ebp"
@@ -278,7 +278,7 @@ CGameApp::SwitchToWindowedMode {
 }
 
 // FUNCTION: SIMCOPTER 0x004326cb
-CGameApp::SwitchToFullScreenMode {
+public: virtual int __thiscall CGameApp::SwitchToFullScreenMode(void) {
 // LINE 112:
 	asm( 
 "	      004326cb    push ebp"
@@ -485,7 +485,7 @@ CGameApp::SwitchToFullScreenMode {
 }
 
 // FUNCTION: SIMCOPTER 0x00432843
-CGameApp::ConvertMonitorToWindowedMode {
+public: virtual int __thiscall CGameApp::ConvertMonitorToWindowedMode(void) {
 // LINE 164:
 	asm( 
 "	      00432843    push ebp"
@@ -521,7 +521,7 @@ CGameApp::ConvertMonitorToWindowedMode {
 }
 
 // FUNCTION: SIMCOPTER 0x00432871
-CGameApp::ConvertMonitorToFullScreenMode {
+public: virtual int __thiscall CGameApp::ConvertMonitorToFullScreenMode(void) {
 // LINE 179:
 	asm( 
 "	      00432871    push ebp"
@@ -566,7 +566,7 @@ CGameApp::ConvertMonitorToFullScreenMode {
 }
 
 // FUNCTION: SIMCOPTER 0x004328bd
-CGameApp::ToggleScreenMode {
+public: virtual int __thiscall CGameApp::ToggleScreenMode(void) {
 // LINE 198:
 	asm( 
 "	      004328bd    push ebp"
@@ -614,7 +614,7 @@ CGameApp::ToggleScreenMode {
 }
 
 // FUNCTION: SIMCOPTER 0x00432900
-CGameApp::CreateDisplaySurfaces {
+public: virtual int __thiscall CGameApp::CreateDisplaySurfaces(void) {
 // LINE 210:
 	asm( 
 "	      00432900    push ebp"
@@ -808,7 +808,7 @@ CGameApp::CreateDisplaySurfaces {
 }
 
 // FUNCTION: SIMCOPTER 0x00432aee
-CGameApp::DestroyDisplaySurfaces {
+public: virtual int __thiscall CGameApp::DestroyDisplaySurfaces(void) {
 // LINE 246:
 	asm( 
 "	      00432aee    push ebp"
@@ -916,7 +916,7 @@ CGameApp::DestroyDisplaySurfaces {
 }
 
 // FUNCTION: SIMCOPTER 0x00432bcc
-CGameApp::CreateModeSurfaces {
+public: virtual int __thiscall CGameApp::CreateModeSurfaces(void) {
 // LINE 278:
 	asm( 
 "	      00432bcc    push ebp"
@@ -1039,7 +1039,7 @@ CGameApp::CreateModeSurfaces {
 }
 
 // FUNCTION: SIMCOPTER 0x00432ce2
-CGameApp::DestroyModeSurfaces {
+public: virtual int __thiscall CGameApp::DestroyModeSurfaces(void) {
 // LINE 319:
 	asm( 
 "	      00432ce2    push ebp"
@@ -1180,7 +1180,7 @@ CGameApp::DestroyModeSurfaces {
 }
 
 // FUNCTION: SIMCOPTER 0x00432e37
-CGameApp::PaletteInitialize {
+public: void __thiscall CGameApp::PaletteInitialize(void) {
 // LINE 359:
 	asm( 
 "	      00432e37    push ebp"
@@ -1426,7 +1426,7 @@ CGameApp::PaletteInitialize {
 }
 
 // FUNCTION: SIMCOPTER 0x004330ea
-CGameApp::PaletteUninitialize {
+public: void __thiscall CGameApp::PaletteUninitialize(void) {
 // LINE 396:
 	asm( 
 "	      004330ea    push ebp"

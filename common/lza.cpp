@@ -6,7 +6,7 @@
 
 // Contribution: 1:000ce090-000cfa4b Module: 88, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x004cf090
-LZACompress {
+short LZACompress() {
 // LINE 646:
 	asm( 
 "	      004cf090    push ebp"
@@ -318,7 +318,7 @@ LZACompress {
 }
 
 // FUNCTION: SIMCOPTER 0x004cf2ed
-Encode {
+short Encode() {
 // LINE 525:
 	asm( 
 "	      004cf2ed    push ebp"
@@ -699,7 +699,7 @@ Encode {
 }
 
 // FUNCTION: SIMCOPTER 0x004cf607
-InitTree {
+void InitTree() {
 // LINE 195:
 	asm( 
 "	      004cf607    push ebp"
@@ -745,7 +745,7 @@ InitTree {
 }
 
 // FUNCTION: SIMCOPTER 0x004cf67e
-InsertNode {
+void InsertNode() {
 // LINE 217:
 	asm( 
 "	      004cf67e    push ebp"
@@ -1039,7 +1039,7 @@ InsertNode {
 }
 
 // FUNCTION: SIMCOPTER 0x004cf96a
-DeleteNode {
+void DeleteNode() {
 // LINE 266:
 	asm( 
 "	      004cf96a    push ebp"
@@ -1223,7 +1223,7 @@ DeleteNode {
 }
 
 // FUNCTION: SIMCOPTER 0x004cfb73
-StartModel {
+void StartModel() {
 // LINE 300:
 	asm( 
 "	      004cfb73    push ebp"
@@ -1334,7 +1334,7 @@ StartModel {
 }
 
 // FUNCTION: SIMCOPTER 0x004cfc72
-EncodeChar {
+short EncodeChar() {
 // LINE 356:
 	asm( 
 "	      004cfc72    push ebp"
@@ -1512,7 +1512,7 @@ EncodeChar {
 }
 
 // FUNCTION: SIMCOPTER 0x004cfde2
-UpdateModel {
+void UpdateModel() {
 // LINE 320:
 	asm( 
 "	      004cfde2    push ebp"
@@ -1663,7 +1663,7 @@ UpdateModel {
 }
 
 // FUNCTION: SIMCOPTER 0x004cff3b
-Output {
+short Output() {
 // LINE 346:
 	asm( 
 "	      004cff3b    push ebp"
@@ -1731,7 +1731,7 @@ Output {
 }
 
 // FUNCTION: SIMCOPTER 0x004cffb8
-PutBit {
+short PutBit() {
 // LINE 124:
 	asm( 
 "	      004cffb8    push ebp"
@@ -1814,7 +1814,7 @@ PutBit {
 }
 
 // FUNCTION: SIMCOPTER 0x004d0041
-EncodePosition {
+short EncodePosition() {
 // LINE 386:
 	asm( 
 "	      004d0041    push ebp"
@@ -1976,7 +1976,7 @@ EncodePosition {
 }
 
 // FUNCTION: SIMCOPTER 0x004d0194
-EncodeEnd {
+short EncodeEnd() {
 // LINE 412:
 	asm( 
 "	      004d0194    push ebp"
@@ -2049,7 +2049,7 @@ EncodeEnd {
 }
 
 // FUNCTION: SIMCOPTER 0x004d0216
-FlushBitBuffer {
+short FlushBitBuffer() {
 // LINE 145:
 	asm( 
 "	      004d0216    push ebp"
@@ -2107,7 +2107,7 @@ FlushBitBuffer {
 }
 
 // FUNCTION: SIMCOPTER 0x004d0271
-LZAExpand {
+short LZAExpand() {
 // LINE 731:
 	asm( 
 "	      004d0271    push ebp"
@@ -2306,7 +2306,7 @@ LZAExpand {
 }
 
 // FUNCTION: SIMCOPTER 0x004d03e6
-Decode {
+short Decode() {
 // LINE 592:
 	asm( 
 "	      004d03e6    push ebp"
@@ -2546,7 +2546,7 @@ Decode {
 }
 
 // FUNCTION: SIMCOPTER 0x004d05b8
-StartDecode {
+void StartDecode() {
 // LINE 455:
 	asm( 
 "	      004d05b8    push ebp"
@@ -2589,7 +2589,7 @@ StartDecode {
 }
 
 // FUNCTION: SIMCOPTER 0x004d0604
-GetBit {
+long GetBit() {
 // LINE 162:
 	asm( 
 "	      004d0604    push ebp"
@@ -2678,7 +2678,7 @@ GetBit {
 }
 
 // FUNCTION: SIMCOPTER 0x004d06a5
-DecodeChar {
+long DecodeChar() {
 // LINE 463:
 	asm( 
 "	      004d06a5    push ebp"
@@ -2858,7 +2858,7 @@ DecodeChar {
 }
 
 // FUNCTION: SIMCOPTER 0x004d081c
-BinarySearchSym {
+long BinarySearchSym() {
 // LINE 426:
 	asm( 
 "	      004d081c    push ebp"
@@ -2925,7 +2925,7 @@ BinarySearchSym {
 }
 
 // FUNCTION: SIMCOPTER 0x004d0888
-DecodePosition {
+long DecodePosition() {
 // LINE 494:
 	asm( 
 "	      004d0888    push ebp"
@@ -3089,7 +3089,7 @@ DecodePosition {
 }
 
 // FUNCTION: SIMCOPTER 0x004d09df
-BinarySearchPos {
+long BinarySearchPos() {
 // LINE 442:
 	asm( 
 "	      004d09df    push ebp"

@@ -6,7 +6,7 @@
 
 // Contribution: 1:00141f80-00142684 Module: 152, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x00542f80
-Magnitude {
+int32_t Magnitude() {
 // LINE 29:
 	asm( 
 "	      00542f80    push ebp"
@@ -68,7 +68,7 @@ Magnitude {
 }
 
 // FUNCTION: SIMCOPTER 0x00542ff4
-Distance {
+int32_t Distance() {
 // LINE 51:
 	asm( 
 "	      00542ff4    push ebp"
@@ -143,7 +143,7 @@ Distance {
 }
 
 // FUNCTION: SIMCOPTER 0x0054308e
-Normalize {
+int32_t Normalize() {
 // LINE 71:
 	asm( 
 "	      0054308e    push ebp"
@@ -261,7 +261,7 @@ Normalize {
 }
 
 // FUNCTION: SIMCOPTER 0x00543183
-CreatePlane {
+void CreatePlane() {
 // LINE 102:
 	asm( 
 "	      00543183    push ebp"
@@ -335,7 +335,7 @@ CreatePlane {
 }
 
 // FUNCTION: SIMCOPTER 0x005431fe
-SideOfPlane {
+int32_t SideOfPlane() {
 // LINE 128:
 	asm( 
 "	      005431fe    push ebp"
@@ -420,7 +420,7 @@ SideOfPlane {
 }
 
 // FUNCTION: SIMCOPTER 0x00543292
-CreateVelocity {
+void CreateVelocity() {
 // LINE 157:
 	asm( 
 "	      00543292    push ebp"
@@ -498,7 +498,7 @@ CreateVelocity {
 }
 
 // FUNCTION: SIMCOPTER 0x0054330c
-SameSigns {
+int32_t SameSigns() {
 // LINE 183:
 	asm( 
 "	      0054330c    push ebp"
@@ -526,7 +526,7 @@ SameSigns {
 }
 
 // FUNCTION: SIMCOPTER 0x00543328
-VectorBounds {
+int32_t VectorBounds() {
 // LINE 201:
 	asm( 
 "	      00543328    push ebp"
@@ -614,7 +614,7 @@ VectorBounds {
 }
 
 // FUNCTION: SIMCOPTER 0x005433be
-Apply_Force {
+void Apply_Force() {
 // LINE 227:
 	asm( 
 "	      005433be    push ebp"
@@ -704,7 +704,7 @@ Apply_Force {
 }
 
 // FUNCTION: SIMCOPTER 0x00543455
-Apply_Friction {
+void Apply_Friction() {
 // LINE 261:
 	asm( 
 "	      00543455    push ebp"
@@ -831,7 +831,7 @@ Apply_Friction {
 }
 
 // FUNCTION: SIMCOPTER 0x00543535
-Apply_Force1D {
+int32_t Apply_Force1D() {
 // LINE 299:
 	asm( 
 "	      00543535    push ebp"
@@ -896,7 +896,7 @@ Apply_Force1D {
 }
 
 // FUNCTION: SIMCOPTER 0x005435a4
-Apply_Friction1D {
+int32_t Apply_Friction1D() {
 // LINE 332:
 	asm( 
 "	      005435a4    push ebp"
@@ -978,7 +978,7 @@ Apply_Friction1D {
 }
 
 // FUNCTION: SIMCOPTER 0x00543629
-AngleBounds {
+int32_t AngleBounds() {
 // LINE 358:
 	asm( 
 "	      00543629    push ebp"

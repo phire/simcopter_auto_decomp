@@ -18,7 +18,7 @@
 // $E57
 
 // FUNCTION: SIMCOPTER 0x00441ea2
-SoundChangeNotificationSink::Initialize {
+int32_t SoundChangeNotificationSink::Initialize() {
 // LINE 56:
 	asm( 
 "	      00441ea2    push ebp"
@@ -61,7 +61,7 @@ SoundChangeNotificationSink::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x00441ee5
-SoundChangeNotificationSink::DoNotificationChange {
+void SoundChangeNotificationSink::DoNotificationChange(long, class PreferenceManager*) {
 // LINE 78:
 	asm( 
 "	      00441ee5    push ebp"
@@ -160,7 +160,7 @@ SoundChangeNotificationSink::DoNotificationChange {
 }
 
 // FUNCTION: SIMCOPTER 0x00441fb5
-S3DSInit {
+int32_t S3DSInit() {
 // LINE 124:
 	asm( 
 "	      00441fb5    push ebp"
@@ -206,7 +206,7 @@ S3DSInit {
 }
 
 // FUNCTION: SIMCOPTER 0x00442002
-S3LoadSounds {
+int32_t S3LoadSounds() {
 // LINE 146:
 	asm( 
 "	      00442002    push ebp"
@@ -4826,7 +4826,7 @@ S3LoadSounds {
 }
 
 // FUNCTION: SIMCOPTER 0x00446a6b
-S3DSSetFile {
+void S3DSSetFile() {
 // LINE 466:
 	asm( 
 "	      00446a6b    push ebp"
@@ -4981,7 +4981,7 @@ S3DSSetFile {
 }
 
 // FUNCTION: SIMCOPTER 0x00446cc2
-S3DSPlay {
+int32_t S3DSPlay() {
 // LINE 491:
 	asm( 
 "	      00446cc2    push ebp"
@@ -5152,7 +5152,7 @@ S3DSPlay {
 }
 
 // FUNCTION: SIMCOPTER 0x00446e04
-S3DSStopPlay {
+void S3DSStopPlay() {
 // LINE 547:
 	asm( 
 "	      00446e04    push ebp"
@@ -5180,7 +5180,7 @@ S3DSStopPlay {
 }
 
 // FUNCTION: SIMCOPTER 0x00446e22
-S3DSStopAllSounds {
+void S3DSStopAllSounds() {
 // LINE 564:
 	asm( 
 "	      00446e22    push ebp"
@@ -5206,7 +5206,7 @@ S3DSStopAllSounds {
 }
 
 // FUNCTION: SIMCOPTER 0x00446e3c
-S3SoundAdjFreq {
+void S3SoundAdjFreq() {
 // LINE 584:
 	asm( 
 "	      00446e3c    push ebp"
@@ -5253,7 +5253,7 @@ S3SoundAdjFreq {
 }
 
 // FUNCTION: SIMCOPTER 0x00446e82
-S3SoundAdjVol {
+void S3SoundAdjVol() {
 // LINE 607:
 	asm( 
 "	      00446e82    push ebp"
@@ -5318,7 +5318,7 @@ S3SoundAdjVol {
 }
 
 // FUNCTION: SIMCOPTER 0x00446f02
-S3SoundIsPlaying {
+int32_t S3SoundIsPlaying() {
 // LINE 633:
 	asm( 
 "	      00446f02    push ebp"
@@ -5359,7 +5359,7 @@ S3SoundIsPlaying {
 }
 
 // FUNCTION: SIMCOPTER 0x00446f43
-S3SoundSetPosition {
+void S3SoundSetPosition() {
 // LINE 674:
 	asm( 
 "	      00446f43    push ebp"
@@ -5546,7 +5546,7 @@ S3SoundSetPosition {
 }
 
 // FUNCTION: SIMCOPTER 0x004470fa
-S3SoundAddToQueue {
+void S3SoundAddToQueue() {
 // LINE 736:
 	asm( 
 "	      004470fa    push ebp"

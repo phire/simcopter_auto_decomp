@@ -6,7 +6,7 @@
 
 // Contribution: 1:00098ef0-0009943b Module: 16, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x00499ef0
-NResFile::GetLoader {
+class StdResLoader* NResFile::GetLoader(unsigned long, void (*)(void * __ptr32, long)) {
 // LINE 11:
 	asm( 
 "	      00499ef0    push ebp"
@@ -251,7 +251,7 @@ NResFile::GetLoader {
 }
 
 // FUNCTION: SIMCOPTER 0x0049a1f5
-NResFile::~NResFile {
+void NResFile::~NResFile() {
 // LINE 30:
 	asm( 
 "	      0049a1f5    push ebp"

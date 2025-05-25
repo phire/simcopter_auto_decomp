@@ -6,7 +6,7 @@
 
 // Contribution: 1:00021280-000246c8 Module: 70, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x00422280
-CDebugWindow::HandleDebugCommand {
+void CDebugWindow::HandleDebugCommand(char *) {
 // LINE 23:
 	asm( 
 "	      00422280    push ebp"
@@ -483,7 +483,7 @@ CDebugWindow::HandleDebugCommand {
 }
 
 // FUNCTION: SIMCOPTER 0x004228ee
-CDebugWindow::CDebugWindow {
+void CDebugWindow::CDebugWindow() {
 // LINE 58:
 	asm( 
 "	      004228ee    push ebp"
@@ -808,7 +808,7 @@ CDebugWindow::CDebugWindow {
 // $E20
 
 // FUNCTION: SIMCOPTER 0x00422f4b
-CDebugWindow::~CDebugWindow {
+void CDebugWindow::~CDebugWindow() {
 // LINE 67:
 	asm( 
 "	      00422f4b    push ebp"
@@ -1016,7 +1016,7 @@ CDebugWindow::~CDebugWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004231e6
-CDebugWindow::Create {
+int32_t CDebugWindow::Create(char *) {
 // LINE 75:
 	asm( 
 "	      004231e6    push ebp"
@@ -1205,7 +1205,7 @@ CDebugWindow::Create {
 }
 
 // FUNCTION: SIMCOPTER 0x00423367
-CDebugWindow::ShowWindow {
+void CDebugWindow::ShowWindow() {
 // LINE 134:
 	asm( 
 "	      00423367    push ebp"
@@ -1236,7 +1236,7 @@ CDebugWindow::ShowWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x0042338c
-CDebugWindow::HideWindow {
+void CDebugWindow::HideWindow() {
 // LINE 140:
 	asm( 
 "	      0042338c    push ebp"
@@ -1267,7 +1267,7 @@ CDebugWindow::HideWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004233b1
-CDebugWindow::Save {
+int32_t CDebugWindow::Save(char *) {
 // LINE 146:
 	asm( 
 "	      004233b1    push ebp"
@@ -1551,7 +1551,7 @@ CDebugWindow::Save {
 }
 
 // FUNCTION: SIMCOPTER 0x004236c6
-CDebugWindow::OnSize {
+void CDebugWindow::OnSize(unsigned long, unsigned short, unsigned short) {
 // LINE 178:
 	asm( 
 "	      004236c6    push ebp"
@@ -1622,7 +1622,7 @@ CDebugWindow::OnSize {
 }
 
 // FUNCTION: SIMCOPTER 0x00423739
-CDebugWindow::OnPaint {
+void CDebugWindow::OnPaint() {
 // LINE 191:
 	asm( 
 "	      00423739    push ebp"
@@ -1940,7 +1940,7 @@ CDebugWindow::OnPaint {
 }
 
 // FUNCTION: SIMCOPTER 0x00423ba5
-CDebugWindow::OnScroll {
+void CDebugWindow::OnScroll(int32_t, int32_t) {
 // LINE 221:
 	asm( 
 "	      00423ba5    push ebp"
@@ -2075,7 +2075,7 @@ CDebugWindow::OnScroll {
 }
 
 // FUNCTION: SIMCOPTER 0x00423c9d
-CDebugWindow::OutputString {
+void CDebugWindow::OutputString(char *) {
 // LINE 249:
 	asm( 
 "	      00423c9d    push ebp"
@@ -2454,7 +2454,7 @@ CDebugWindow::OutputString {
 }
 
 // FUNCTION: SIMCOPTER 0x004241ff
-CDebugWindow::RecalcScrollRange {
+void CDebugWindow::RecalcScrollRange() {
 // LINE 261:
 	asm( 
 "	      004241ff    push ebp"
@@ -2606,7 +2606,7 @@ CDebugWindow::RecalcScrollRange {
 }
 
 // FUNCTION: SIMCOPTER 0x0042430d
-CDebugWindow::OnEditChange {
+void CDebugWindow::OnEditChange() {
 // LINE 294:
 	asm( 
 "	      0042430d    push ebp"
@@ -2988,7 +2988,7 @@ CDebugWindow::OnEditChange {
 }
 
 // FUNCTION: SIMCOPTER 0x004248d4
-CDebugWindow::InstanceWindowProcedure {
+long CDebugWindow::InstanceWindowProcedure(uint32_t, uint32_t, long) {
 // LINE 337:
 	asm( 
 "	      004248d4    push ebp"
@@ -3124,7 +3124,7 @@ CDebugWindow::InstanceWindowProcedure {
 }
 
 // FUNCTION: SIMCOPTER 0x004249ef
-CDebugWindow::WindowProcedure {
+long CDebugWindow::WindowProcedure(void * __ptr32, uint32_t, uint32_t, long) {
 // LINE 362:
 	asm( 
 "	      004249ef    push ebp"
@@ -3187,7 +3187,7 @@ CDebugWindow::WindowProcedure {
 }
 
 // FUNCTION: SIMCOPTER 0x00424a51
-CreateDebugWindow {
+void CreateDebugWindow() {
 // LINE 383:
 	asm( 
 "	      00424a51    push ebp"
@@ -3234,7 +3234,7 @@ CreateDebugWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x00424ab4
-DestroyDebugWindow {
+void DestroyDebugWindow() {
 // LINE 392:
 	asm( 
 "	      00424ab4    push ebp"
@@ -3282,7 +3282,7 @@ DestroyDebugWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x00424b14
-DebugOutput {
+void DebugOutput() {
 // LINE 401:
 	asm( 
 "	      00424b14    push ebp"
@@ -3332,7 +3332,7 @@ DebugOutput {
 }
 
 // FUNCTION: SIMCOPTER 0x00424b6c
-RegisterDebugCommand {
+void RegisterDebugCommand() {
 // LINE 411:
 	asm( 
 "	      00424b6c    push ebp"
@@ -3623,7 +3623,7 @@ RegisterDebugCommand {
 }
 
 // FUNCTION: SIMCOPTER 0x00424f30
-UnregisterDebugCommand {
+void UnregisterDebugCommand() {
 // LINE 417:
 	asm( 
 "	      00424f30    push ebp"
@@ -3707,7 +3707,7 @@ UnregisterDebugCommand {
 }
 
 // FUNCTION: SIMCOPTER 0x00425015
-SaveDebugWindow {
+void SaveDebugWindow() {
 // LINE 423:
 	asm( 
 "	      00425015    push ebp"
@@ -3740,7 +3740,7 @@ SaveDebugWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x00425041
-ParseCommandLine {
+int32_t ParseCommandLine() {
 // LINE 430:
 	asm( 
 "	      00425041    push ebp"

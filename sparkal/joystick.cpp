@@ -12,7 +12,7 @@
 // $E1
 
 // FUNCTION: SIMCOPTER 0x0049a4af
-JoystickManager::JoystickManager {
+void JoystickManager::JoystickManager() {
 // LINE 24:
 	asm( 
 "	      0049a4af    push ebp"
@@ -80,7 +80,7 @@ JoystickManager::JoystickManager {
 }
 
 // FUNCTION: SIMCOPTER 0x0049a527
-JoystickManager::Initialize {
+int32_t JoystickManager::Initialize() {
 // LINE 50:
 	asm( 
 "	      0049a527    push ebp"
@@ -220,7 +220,7 @@ JoystickManager::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x0049a629
-JoystickManager::IsJoystickPresent {
+int32_t JoystickManager::IsJoystickPresent(char *) {
 // LINE 90:
 	asm( 
 "	      0049a629    push ebp"
@@ -282,7 +282,7 @@ JoystickManager::IsJoystickPresent {
 }
 
 // FUNCTION: SIMCOPTER 0x0049a696
-JoystickManager::GetJoystickName {
+int32_t JoystickManager::GetJoystickName(uint32_t, char *) {
 // LINE 106:
 	asm( 
 "	      0049a696    push ebp"
@@ -348,7 +348,7 @@ JoystickManager::GetJoystickName {
 }
 
 // FUNCTION: SIMCOPTER 0x0049a701
-JoystickManager::GetJoystickIndex {
+int32_t JoystickManager::GetJoystickIndex(char *, int32_t *) {
 // LINE 124:
 	asm( 
 "	      0049a701    push ebp"
@@ -416,7 +416,7 @@ JoystickManager::GetJoystickIndex {
 }
 
 // FUNCTION: SIMCOPTER 0x0049a779
-JoystickManager::Normalize {
+int32_t JoystickManager::Normalize(int32_t) {
 // LINE 151:
 	asm( 
 "	      0049a779    push ebp"
@@ -459,7 +459,7 @@ JoystickManager::Normalize {
 }
 
 // FUNCTION: SIMCOPTER 0x0049a7bb
-JoystickManager::GetPositionQualitative {
+int32_t JoystickManager::GetPositionQualitative(int32_t, int32_t, int32_t) {
 // LINE 186:
 	asm( 
 "	      0049a7bb    push ebp"
@@ -533,7 +533,7 @@ JoystickManager::GetPositionQualitative {
 }
 
 // FUNCTION: SIMCOPTER 0x0049a836
-JoystickManager::GetPositionQuantitative {
+int32_t JoystickManager::GetPositionQuantitative(int32_t, int32_t, int32_t) {
 // LINE 217:
 	asm( 
 "	      0049a836    push ebp"
@@ -774,7 +774,7 @@ JoystickManager::GetPositionQuantitative {
 }
 
 // FUNCTION: SIMCOPTER 0x0049a9dd
-JoystickManager::GetButtonState {
+int32_t JoystickManager::GetButtonState(int32_t, int32_t, int32_t) {
 // LINE 297:
 	asm( 
 "	      0049a9dd    push ebp"
@@ -878,7 +878,7 @@ JoystickManager::GetButtonState {
 }
 
 // FUNCTION: SIMCOPTER 0x0049aa99
-JoystickManager::GetCompleteState {
+int32_t JoystickManager::GetCompleteState(int32_t) {
 // LINE 336:
 	asm( 
 "	      0049aa99    push ebp"
@@ -961,7 +961,7 @@ JoystickManager::GetCompleteState {
 }
 
 // FUNCTION: SIMCOPTER 0x0049ab3a
-JoystickManager::GetPointOfView {
+int32_t JoystickManager::GetPointOfView(int32_t, int32_t) {
 // LINE 375:
 	asm( 
 "	      0049ab3a    push ebp"
@@ -1061,7 +1061,7 @@ JoystickManager::GetPointOfView {
 }
 
 // FUNCTION: SIMCOPTER 0x0049abe2
-JoystickManager::Calibrate {
+int32_t JoystickManager::Calibrate(int32_t) {
 // LINE 415:
 	asm( 
 "	      0049abe2    push ebp"
@@ -1105,7 +1105,7 @@ JoystickManager::Calibrate {
 }
 
 // FUNCTION: SIMCOPTER 0x0049ac20
-JoystickManager::GetWindowsThreshold {
+int32_t JoystickManager::GetWindowsThreshold(int32_t, long *) {
 // LINE 448:
 	asm( 
 "	      0049ac20    push ebp"
@@ -1164,7 +1164,7 @@ JoystickManager::GetWindowsThreshold {
 }
 
 // FUNCTION: SIMCOPTER 0x0049ac7c
-JoystickManager::SetWindowsThreshold {
+int32_t JoystickManager::SetWindowsThreshold(int32_t, long) {
 // LINE 472:
 	asm( 
 "	      0049ac7c    push ebp"
@@ -1223,7 +1223,7 @@ JoystickManager::SetWindowsThreshold {
 }
 
 // FUNCTION: SIMCOPTER 0x0049acd8
-JoystickManager::SetNormalizedMinMax {
+void JoystickManager::SetNormalizedMinMax(long, long) {
 // LINE 497:
 	asm( 
 "	      0049acd8    push ebp"

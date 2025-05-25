@@ -6,7 +6,7 @@
 
 // Contribution: 1:00137470-00138bf2 Module: 157, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x00538470
-S3RoadDataInit {
+void S3RoadDataInit() {
 // LINE 43:
 	asm( 
 "	      00538470    push ebp"
@@ -1253,7 +1253,7 @@ S3RoadDataInit {
 }
 
 // FUNCTION: SIMCOPTER 0x00539260
-IsThisAnIntersection {
+int32_t IsThisAnIntersection() {
 // LINE 419:
 	asm( 
 "	      00539260    push ebp"
@@ -1586,7 +1586,7 @@ IsThisAnIntersection {
 }
 
 // FUNCTION: SIMCOPTER 0x0053964a
-DoRoadTilesConnect {
+int32_t DoRoadTilesConnect() {
 // LINE 492:
 	asm( 
 "	      0053964a    push ebp"

@@ -6,7 +6,7 @@
 
 // Contribution: 1:0006a870-0006ac9e Module: 41, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x0046b870
-S3PrintScreen {
+void S3PrintScreen() {
 // LINE 52:
 	asm( 
 "	      0046b870    push ebp"
@@ -57,7 +57,7 @@ S3PrintScreen {
 }
 
 // FUNCTION: SIMCOPTER 0x0046b8db
-S3BufferPrint {
+void S3BufferPrint() {
 // LINE 68:
 	asm( 
 "	      0046b8db    push ebp"
@@ -302,7 +302,7 @@ S3BufferPrint {
 }
 
 // FUNCTION: SIMCOPTER 0x0046bac3
-S3WritePCXLine {
+int32_t S3WritePCXLine() {
 // LINE 136:
 	asm( 
 "	      0046bac3    push ebp"

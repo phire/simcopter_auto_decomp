@@ -6,7 +6,7 @@
 
 // Contribution: 1:00047270-0004ec1a Module: 47, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x00448270
-RadioCompassWindow::RadioCompassWindow {
+void RadioCompassWindow::RadioCompassWindow(class MRect&, long, class GraphicWindow*, class Radio*, class GraphicWindowOwner*, int32_t) {
 // LINE 75:
 	asm( 
 "	      00448270    push ebp"
@@ -136,7 +136,7 @@ RadioCompassWindow::RadioCompassWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x0044843f
-RadioCompassWindow::~RadioCompassWindow {
+void RadioCompassWindow::~RadioCompassWindow() {
 // LINE 82:
 	asm( 
 "	      0044843f    push ebp"
@@ -220,7 +220,7 @@ RadioCompassWindow::~RadioCompassWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x0044853b
-RadioCompassWindow::Initialize {
+int32_t RadioCompassWindow::Initialize() {
 // LINE 90:
 	asm( 
 "	      0044853b    push ebp"
@@ -307,7 +307,7 @@ RadioCompassWindow::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x004485d3
-RadioCompassWindow::InitializeCachedSettings {
+void RadioCompassWindow::InitializeCachedSettings() {
 // LINE 113:
 	asm( 
 "	      004485d3    push ebp"
@@ -345,7 +345,7 @@ RadioCompassWindow::InitializeCachedSettings {
 }
 
 // FUNCTION: SIMCOPTER 0x0044860d
-RadioCompassWindow::DestroyImage {
+void RadioCompassWindow::DestroyImage() {
 // LINE 124:
 	asm( 
 "	      0044860d    push ebp"
@@ -402,7 +402,7 @@ RadioCompassWindow::DestroyImage {
 }
 
 // FUNCTION: SIMCOPTER 0x00448682
-RadioCompassWindow::CreateImage {
+int32_t RadioCompassWindow::CreateImage(int32_t) {
 // LINE 140:
 	asm( 
 "	      00448682    push ebp"
@@ -620,7 +620,7 @@ RadioCompassWindow::CreateImage {
 }
 
 // FUNCTION: SIMCOPTER 0x00448928
-RadioCompassWindow::ComposeSelf {
+int32_t RadioCompassWindow::ComposeSelf() {
 // LINE 166:
 	asm( 
 "	      00448928    push ebp"
@@ -762,7 +762,7 @@ RadioCompassWindow::ComposeSelf {
 }
 
 // FUNCTION: SIMCOPTER 0x00448a45
-RadioCompassWindow::DoCursorDown {
+long RadioCompassWindow::DoCursorDown(long, long, unsigned long) {
 // LINE 201:
 	asm( 
 "	      00448a45    push ebp"
@@ -997,7 +997,7 @@ RadioCompassWindow::DoCursorDown {
 }
 
 // FUNCTION: SIMCOPTER 0x00448cb7
-RadioCompassWindow::SetNewRadioStation {
+void RadioCompassWindow::SetNewRadioStation(int32_t) {
 // LINE 238:
 	asm( 
 "	      00448cb7    push ebp"
@@ -1235,7 +1235,7 @@ RadioCompassWindow::SetNewRadioStation {
 }
 
 // FUNCTION: SIMCOPTER 0x00448eac
-RadioCompassWindow::SetNewRadioStationVolume {
+void RadioCompassWindow::SetNewRadioStationVolume(long) {
 // LINE 282:
 	asm( 
 "	      00448eac    push ebp"
@@ -1429,7 +1429,7 @@ RadioCompassWindow::SetNewRadioStationVolume {
 }
 
 // FUNCTION: SIMCOPTER 0x00449066
-RadioCompassWindow::CheckForRadioChange {
+void RadioCompassWindow::CheckForRadioChange() {
 // LINE 313:
 	asm( 
 "	      00449066    push ebp"
@@ -1496,7 +1496,7 @@ RadioCompassWindow::CheckForRadioChange {
 }
 
 // FUNCTION: SIMCOPTER 0x004490d7
-DialWindow::DialWindow {
+void DialWindow::DialWindow(class MRect&, long, struct CommandSystem*, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
 // LINE 366:
 	asm( 
 "	      004490d7    push ebp"
@@ -2129,7 +2129,7 @@ DialWindow::DialWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x00449a54
-DialWindow::~DialWindow {
+void DialWindow::~DialWindow() {
 // LINE 407:
 	asm( 
 "	      00449a54    push ebp"
@@ -2161,7 +2161,7 @@ DialWindow::~DialWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x00449a83
-DialWindow::Initialize {
+int32_t DialWindow::Initialize() {
 // LINE 416:
 	asm( 
 "	      00449a83    push ebp"
@@ -2197,7 +2197,7 @@ DialWindow::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x00449aae
-DialWindow::InitializeCachedSettings {
+void DialWindow::InitializeCachedSettings() {
 // LINE 430:
 	asm( 
 "	      00449aae    push ebp"
@@ -2442,7 +2442,7 @@ DialWindow::InitializeCachedSettings {
 }
 
 // FUNCTION: SIMCOPTER 0x00449dca
-DialWindow::DestroyImage {
+void DialWindow::DestroyImage() {
 // LINE 461:
 	asm( 
 "	      00449dca    push ebp"
@@ -2741,7 +2741,7 @@ DialWindow::DestroyImage {
 }
 
 // FUNCTION: SIMCOPTER 0x0044a0f6
-DialWindow::TurnOffSpotlightCommand {
+void DialWindow::TurnOffSpotlightCommand(int32_t) {
 // LINE 509:
 	asm( 
 "	      0044a0f6    push ebp"
@@ -2843,7 +2843,7 @@ DialWindow::TurnOffSpotlightCommand {
 }
 
 // FUNCTION: SIMCOPTER 0x0044a1d9
-DialWindow::TurnOnSpotlightCommand {
+void DialWindow::TurnOnSpotlightCommand(int32_t) {
 // LINE 525:
 	asm( 
 "	      0044a1d9    push ebp"
@@ -2945,7 +2945,7 @@ DialWindow::TurnOnSpotlightCommand {
 }
 
 // FUNCTION: SIMCOPTER 0x0044a2bc
-DialWindow::CreateImage {
+int32_t DialWindow::CreateImage(int32_t) {
 // LINE 542:
 	asm( 
 "	      0044a2bc    push ebp"
@@ -3318,7 +3318,7 @@ DialWindow::CreateImage {
 }
 
 // FUNCTION: SIMCOPTER 0x0044a784
-DialWindow::DrawCurrentDamage {
+void DialWindow::DrawCurrentDamage() {
 // LINE 610:
 	asm( 
 "	      0044a784    push ebp"
@@ -3427,7 +3427,7 @@ DialWindow::DrawCurrentDamage {
 }
 
 // FUNCTION: SIMCOPTER 0x0044a863
-DialWindow::DoCursorDown {
+long DialWindow::DoCursorDown(long, long, unsigned long) {
 // LINE 637:
 	asm( 
 "	      0044a863    push ebp"
@@ -3538,7 +3538,7 @@ DialWindow::DoCursorDown {
 }
 
 // FUNCTION: SIMCOPTER 0x0044a97a
-DialWindow::DoCursorUp {
+long DialWindow::DoCursorUp(long, long, unsigned long) {
 // LINE 657:
 	asm( 
 "	      0044a97a    push ebp"
@@ -3604,7 +3604,7 @@ DialWindow::DoCursorUp {
 }
 
 // FUNCTION: SIMCOPTER 0x0044a9ff
-DialWindow::DoCursorMove {
+long DialWindow::DoCursorMove(long, long) {
 // LINE 672:
 	asm( 
 "	      0044a9ff    push ebp"
@@ -3721,7 +3721,7 @@ DialWindow::DoCursorMove {
 }
 
 // FUNCTION: SIMCOPTER 0x0044ab1f
-DialWindow::ComposeSelf {
+int32_t DialWindow::ComposeSelf() {
 // LINE 697:
 	asm( 
 "	      0044ab1f    push ebp"
@@ -4676,7 +4676,7 @@ DialWindow::ComposeSelf {
 }
 
 // FUNCTION: SIMCOPTER 0x0044b9e0
-DialWindow::DoesWindowNeedUpdating {
+int32_t DialWindow::DoesWindowNeedUpdating() {
 // LINE 794:
 	asm( 
 "	      0044b9e0    push ebp"
@@ -4722,7 +4722,7 @@ DialWindow::DoesWindowNeedUpdating {
 }
 
 // FUNCTION: SIMCOPTER 0x0044ba5b
-DialWindow::SetNewDialPositions {
+void DialWindow::SetNewDialPositions() {
 // LINE 807:
 	asm( 
 "	      0044ba5b    push ebp"
@@ -5076,7 +5076,7 @@ DialWindow::SetNewDialPositions {
 }
 
 // FUNCTION: SIMCOPTER 0x0044be4a
-PassengerWindow::PassengerWindow {
+void PassengerWindow::PassengerWindow(class MRect&, long, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
 // LINE 910:
 	asm( 
 "	      0044be4a    push ebp"
@@ -5219,7 +5219,7 @@ PassengerWindow::PassengerWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x0044c032
-PassengerWindow::~PassengerWindow {
+void PassengerWindow::~PassengerWindow() {
 // LINE 919:
 	asm( 
 "	      0044c032    push ebp"
@@ -5304,7 +5304,7 @@ PassengerWindow::~PassengerWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x0044c133
-PassengerWindow::Initialize {
+int32_t PassengerWindow::Initialize() {
 // LINE 928:
 	asm( 
 "	      0044c133    push ebp"
@@ -5340,7 +5340,7 @@ PassengerWindow::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x0044c15e
-PassengerWindow::InitializeCachedSettings {
+void PassengerWindow::InitializeCachedSettings() {
 // LINE 940:
 	asm( 
 "	      0044c15e    push ebp"
@@ -5376,7 +5376,7 @@ PassengerWindow::InitializeCachedSettings {
 }
 
 // FUNCTION: SIMCOPTER 0x0044c194
-PassengerWindow::CreateImage {
+int32_t PassengerWindow::CreateImage(int32_t) {
 // LINE 950:
 	asm( 
 "	      0044c194    push ebp"
@@ -5632,7 +5632,7 @@ PassengerWindow::CreateImage {
 }
 
 // FUNCTION: SIMCOPTER 0x0044c48e
-PassengerWindow::DestroyImage {
+void PassengerWindow::DestroyImage() {
 // LINE 973:
 	asm( 
 "	      0044c48e    push ebp"
@@ -5714,7 +5714,7 @@ PassengerWindow::DestroyImage {
 }
 
 // FUNCTION: SIMCOPTER 0x0044c549
-PassengerWindow::ComposeSelf {
+int32_t PassengerWindow::ComposeSelf() {
 // LINE 990:
 	asm( 
 "	      0044c549    push ebp"
@@ -6132,7 +6132,7 @@ PassengerWindow::ComposeSelf {
 }
 
 // FUNCTION: SIMCOPTER 0x0044c967
-PassengerWindow::DrawPassengers {
+void PassengerWindow::DrawPassengers() {
 // LINE 1063:
 	asm( 
 "	      0044c967    push ebp"
@@ -6451,7 +6451,7 @@ PassengerWindow::DrawPassengers {
 }
 
 // FUNCTION: SIMCOPTER 0x0044cc1f
-PassengerWindow::GetRectOfPassengerGraphic {
+void PassengerWindow::GetRectOfPassengerGraphic(int32_t, int32_t, class MRect&) {
 // LINE 1128:
 	asm( 
 "	      0044cc1f    push ebp"
@@ -6507,7 +6507,7 @@ PassengerWindow::GetRectOfPassengerGraphic {
 }
 
 // FUNCTION: SIMCOPTER 0x0044cc73
-PassengerWindow::DoesWindowNeedUpdating {
+int32_t PassengerWindow::DoesWindowNeedUpdating() {
 // LINE 1140:
 	asm( 
 "	      0044cc73    push ebp"
@@ -6553,7 +6553,7 @@ PassengerWindow::DoesWindowNeedUpdating {
 }
 
 // FUNCTION: SIMCOPTER 0x0044ccdf
-PassengerWindow::MoveToUpPosition {
+void PassengerWindow::MoveToUpPosition() {
 // LINE 1154:
 	asm( 
 "	      0044ccdf    push ebp"
@@ -6636,7 +6636,7 @@ PassengerWindow::MoveToUpPosition {
 }
 
 // FUNCTION: SIMCOPTER 0x0044cdd1
-PassengerWindow::MoveToDownPosition {
+void PassengerWindow::MoveToDownPosition() {
 // LINE 1167:
 	asm( 
 "	      0044cdd1    push ebp"
@@ -6719,7 +6719,7 @@ PassengerWindow::MoveToDownPosition {
 }
 
 // FUNCTION: SIMCOPTER 0x0044cec3
-PassengerWindow::TogglePosition {
+void PassengerWindow::TogglePosition() {
 // LINE 1180:
 	asm( 
 "	      0044cec3    push ebp"
@@ -6766,7 +6766,7 @@ PassengerWindow::TogglePosition {
 }
 
 // FUNCTION: SIMCOPTER 0x0044cf07
-PassengerWindow::DoCursorDown {
+long PassengerWindow::DoCursorDown(long, long, unsigned long) {
 // LINE 1192:
 	asm( 
 "	      0044cf07    push ebp"
@@ -6923,7 +6923,7 @@ PassengerWindow::DoCursorDown {
 }
 
 // FUNCTION: SIMCOPTER 0x0044d0c3
-PassengerWindow::DoCursorUp {
+long PassengerWindow::DoCursorUp(long, long, unsigned long) {
 // LINE 1221:
 	asm( 
 "	      0044d0c3    push ebp"
@@ -7002,7 +7002,7 @@ PassengerWindow::DoCursorUp {
 }
 
 // FUNCTION: SIMCOPTER 0x0044d166
-PassengerWindow::DoCursorMove {
+long PassengerWindow::DoCursorMove(long, long) {
 // LINE 1238:
 	asm( 
 "	      0044d166    push ebp"
@@ -7041,7 +7041,7 @@ PassengerWindow::DoCursorMove {
 }
 
 // FUNCTION: SIMCOPTER 0x0044d19b
-PassengerWindow::DoesPositionHitPassenger {
+int32_t PassengerWindow::DoesPositionHitPassenger(long, long, long&) {
 // LINE 1249:
 	asm( 
 "	      0044d19b    push ebp"
@@ -7183,7 +7183,7 @@ PassengerWindow::DoesPositionHitPassenger {
 }
 
 // FUNCTION: SIMCOPTER 0x0044d2c4
-MapWindow::MapWindow {
+void MapWindow::MapWindow(class MRect&, long, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
 // LINE 1307:
 	asm( 
 "	      0044d2c4    push ebp"
@@ -7353,7 +7353,7 @@ MapWindow::MapWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x0044d54a
-MapWindow::~MapWindow {
+void MapWindow::~MapWindow() {
 // LINE 1325:
 	asm( 
 "	      0044d54a    push ebp"
@@ -7388,7 +7388,7 @@ MapWindow::~MapWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x0044d587
-MapWindow::Initialize {
+int32_t MapWindow::Initialize() {
 // LINE 1335:
 	asm( 
 "	      0044d587    push ebp"
@@ -7424,7 +7424,7 @@ MapWindow::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x0044d5b2
-MapWindow::InitializeCachedSettings {
+void MapWindow::InitializeCachedSettings() {
 // LINE 1346:
 	asm( 
 "	      0044d5b2    push ebp"
@@ -7462,7 +7462,7 @@ MapWindow::InitializeCachedSettings {
 }
 
 // FUNCTION: SIMCOPTER 0x0044d5e9
-MapWindow::CreateImage {
+int32_t MapWindow::CreateImage(int32_t) {
 // LINE 1357:
 	asm( 
 "	      0044d5e9    push ebp"
@@ -7572,7 +7572,7 @@ MapWindow::CreateImage {
 }
 
 // FUNCTION: SIMCOPTER 0x0044d719
-MapWindow::DestroyImage {
+void MapWindow::DestroyImage() {
 // LINE 1381:
 	asm( 
 "	      0044d719    push ebp"
@@ -7654,7 +7654,7 @@ MapWindow::DestroyImage {
 }
 
 // FUNCTION: SIMCOPTER 0x0044d7cb
-MapWindow::ComposeSelf {
+int32_t MapWindow::ComposeSelf() {
 // LINE 1400:
 	asm( 
 "	      0044d7cb    push ebp"
@@ -7846,7 +7846,7 @@ MapWindow::ComposeSelf {
 }
 
 // FUNCTION: SIMCOPTER 0x0044d94c
-MapWindow::DrawButton {
+void MapWindow::DrawButton(int32_t, int32_t) {
 // LINE 1440:
 	asm( 
 "	      0044d94c    push ebp"
@@ -8074,7 +8074,7 @@ MapWindow::DrawButton {
 }
 
 // FUNCTION: SIMCOPTER 0x0044dc27
-MapWindow::DoCursorDown {
+long MapWindow::DoCursorDown(long, long, unsigned long) {
 // LINE 1486:
 	asm( 
 "	      0044dc27    push ebp"
@@ -8342,7 +8342,7 @@ MapWindow::DoCursorDown {
 }
 
 // FUNCTION: SIMCOPTER 0x0044df29
-MapWindow::DoCursorUp {
+long MapWindow::DoCursorUp(long, long, unsigned long) {
 // LINE 1527:
 	asm( 
 "	      0044df29    push ebp"
@@ -8546,7 +8546,7 @@ MapWindow::DoCursorUp {
 }
 
 // FUNCTION: SIMCOPTER 0x0044e1b7
-MapWindow::DoMessage {
+int32_t MapWindow::DoMessage(class GraphicWindow*, long, long, void * __ptr32) {
 // LINE 1557:
 	asm( 
 "	      0044e1b7    push ebp"
@@ -8600,7 +8600,7 @@ MapWindow::DoMessage {
 }
 
 // FUNCTION: SIMCOPTER 0x0044e211
-MapWindow::CreateAutoMessageSelectionPopupWindow {
+void MapWindow::CreateAutoMessageSelectionPopupWindow(int32_t, int32_t, class MPoint&) {
 // LINE 1572:
 	asm( 
 "	      0044e211    push ebp"
@@ -8729,7 +8729,7 @@ MapWindow::CreateAutoMessageSelectionPopupWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x0044e32d
-MapWindow::GetStringIDForVehicleName {
+int32_t MapWindow::GetStringIDForVehicleName(int32_t) {
 // LINE 1592:
 	asm( 
 "	      0044e32d    push ebp"
@@ -8850,7 +8850,7 @@ MapWindow::GetStringIDForVehicleName {
 }
 
 // FUNCTION: SIMCOPTER 0x0044e44a
-EquipmentPanelWindow::EquipmentPanelWindow {
+void EquipmentPanelWindow::EquipmentPanelWindow(char *, class MRect&, long, struct CommandSystem*, class GraphicWindow*, class GraphicWindowOwner*) {
 // LINE 1667:
 	asm( 
 "	      0044e44a    push ebp"
@@ -9037,7 +9037,7 @@ EquipmentPanelWindow::EquipmentPanelWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x0044e6f1
-EquipmentPanelWindow::~EquipmentPanelWindow {
+void EquipmentPanelWindow::~EquipmentPanelWindow() {
 // LINE 1690:
 	asm( 
 "	      0044e6f1    push ebp"
@@ -9069,7 +9069,7 @@ EquipmentPanelWindow::~EquipmentPanelWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x0044e720
-EquipmentPanelWindow::Initialize {
+int32_t EquipmentPanelWindow::Initialize() {
 // LINE 1699:
 	asm( 
 "	      0044e720    push ebp"
@@ -9105,7 +9105,7 @@ EquipmentPanelWindow::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x0044e74b
-EquipmentPanelWindow::InitializeCachedSettings {
+void EquipmentPanelWindow::InitializeCachedSettings() {
 // LINE 1707:
 	asm( 
 "	      0044e74b    push ebp"
@@ -9138,7 +9138,7 @@ EquipmentPanelWindow::InitializeCachedSettings {
 }
 
 // FUNCTION: SIMCOPTER 0x0044e77b
-EquipmentPanelWindow::CreateImage {
+int32_t EquipmentPanelWindow::CreateImage(int32_t) {
 // LINE 1717:
 	asm( 
 "	      0044e77b    push ebp"
@@ -9302,7 +9302,7 @@ EquipmentPanelWindow::CreateImage {
 }
 
 // FUNCTION: SIMCOPTER 0x0044e94b
-EquipmentPanelWindow::DestroyImage {
+void EquipmentPanelWindow::DestroyImage() {
 // LINE 1745:
 	asm( 
 "	      0044e94b    push ebp"
@@ -9413,7 +9413,7 @@ EquipmentPanelWindow::DestroyImage {
 }
 
 // FUNCTION: SIMCOPTER 0x0044ea5d
-EquipmentPanelWindow::DrawSelf {
+int32_t EquipmentPanelWindow::DrawSelf() {
 // LINE 1765:
 	asm( 
 "	      0044ea5d    push ebp"
@@ -9463,7 +9463,7 @@ EquipmentPanelWindow::DrawSelf {
 }
 
 // FUNCTION: SIMCOPTER 0x0044eaa7
-EquipmentPanelWindow::DoesWindowNeedUpdating {
+int32_t EquipmentPanelWindow::DoesWindowNeedUpdating() {
 // LINE 1777:
 	asm( 
 "	      0044eaa7    push ebp"
@@ -9547,7 +9547,7 @@ EquipmentPanelWindow::DoesWindowNeedUpdating {
 }
 
 // FUNCTION: SIMCOPTER 0x0044eb6a
-EquipmentPanelWindow::DrawButton {
+void EquipmentPanelWindow::DrawButton(int32_t, int32_t) {
 // LINE 1796:
 	asm( 
 "	      0044eb6a    push ebp"
@@ -9890,7 +9890,7 @@ EquipmentPanelWindow::DrawButton {
 }
 
 // FUNCTION: SIMCOPTER 0x0044ef07
-EquipmentPanelWindow::DrawBucketWaterGuage {
+void EquipmentPanelWindow::DrawBucketWaterGuage() {
 // LINE 1868:
 	asm( 
 "	      0044ef07    push ebp"
@@ -10034,7 +10034,7 @@ EquipmentPanelWindow::DrawBucketWaterGuage {
 }
 
 // FUNCTION: SIMCOPTER 0x0044f040
-EquipmentPanelWindow::DrawTeargasUsage {
+void EquipmentPanelWindow::DrawTeargasUsage() {
 // LINE 1893:
 	asm( 
 "	      0044f040    push ebp"
@@ -10205,7 +10205,7 @@ EquipmentPanelWindow::DrawTeargasUsage {
 }
 
 // FUNCTION: SIMCOPTER 0x0044f1bd
-EquipmentPanelWindow::DoMessage {
+int32_t EquipmentPanelWindow::DoMessage(class GraphicWindow*, long, long, void * __ptr32) {
 // LINE 1922:
 	asm( 
 "	      0044f1bd    push ebp"
@@ -10247,7 +10247,7 @@ EquipmentPanelWindow::DoMessage {
 }
 
 // FUNCTION: SIMCOPTER 0x0044f1ff
-EquipmentPanelWindow::DoCursorDown {
+long EquipmentPanelWindow::DoCursorDown(long, long, unsigned long) {
 // LINE 1932:
 	asm( 
 "	      0044f1ff    push ebp"
@@ -10613,7 +10613,7 @@ EquipmentPanelWindow::DoCursorDown {
 }
 
 // FUNCTION: SIMCOPTER 0x0044f64e
-EquipmentPanelWindow::DoCursorUp {
+long EquipmentPanelWindow::DoCursorUp(long, long, unsigned long) {
 // LINE 1980:
 	asm( 
 "	      0044f64e    push ebp"
@@ -10736,7 +10736,7 @@ EquipmentPanelWindow::DoCursorUp {
 }
 
 // FUNCTION: SIMCOPTER 0x0044f77f
-EquipmentPanelWindow::DoCurrentControlStart {
+void EquipmentPanelWindow::DoCurrentControlStart() {
 // LINE 2005:
 	asm( 
 "	      0044f77f    push ebp"
@@ -10930,7 +10930,7 @@ EquipmentPanelWindow::DoCurrentControlStart {
 }
 
 // FUNCTION: SIMCOPTER 0x0044f95a
-EquipmentPanelWindow::DoCurrentControlEnd {
+void EquipmentPanelWindow::DoCurrentControlEnd() {
 // LINE 2037:
 	asm( 
 "	      0044f95a    push ebp"
@@ -11103,7 +11103,7 @@ EquipmentPanelWindow::DoCurrentControlEnd {
 }
 
 // FUNCTION: SIMCOPTER 0x0044fb06
-EquipmentPanelWindow::CreateMegaphoneSelectionPopupWindow {
+void EquipmentPanelWindow::CreateMegaphoneSelectionPopupWindow() {
 // LINE 2062:
 	asm( 
 "	      0044fb06    push ebp"

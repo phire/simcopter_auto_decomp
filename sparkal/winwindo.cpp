@@ -6,7 +6,7 @@
 
 // Contribution: 1:0007f690-00080ad0 Module: 30, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x00480690
-CSparkalWindow::CSparkalWindow {
+void CSparkalWindow::CSparkalWindow() {
 // LINE 52:
 	asm( 
 "	      00480690    push ebp"
@@ -92,7 +92,7 @@ CSparkalWindow::CSparkalWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x00480738
-CSparkalWindow::CSparkalWindow {
+void CSparkalWindow::CSparkalWindow(unsigned long, unsigned long, unsigned long, const struct SparkalColor*, char *) {
 // LINE 76:
 	asm( 
 "	      00480738    push ebp"
@@ -782,7 +782,7 @@ CSparkalWindow::CSparkalWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x00480d01
-CSparkalWindow::~CSparkalWindow {
+void CSparkalWindow::~CSparkalWindow() {
 // LINE 248:
 	asm( 
 "	      00480d01    push ebp"
@@ -885,7 +885,7 @@ CSparkalWindow::~CSparkalWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x00480dca
-CSparkalWindow::GetClientSize {
+unsigned long CSparkalWindow::GetClientSize(long *, long *) {
 // LINE 276:
 	asm( 
 "	      00480dca    push ebp"
@@ -976,7 +976,7 @@ CSparkalWindow::GetClientSize {
 }
 
 // FUNCTION: SIMCOPTER 0x00480e74
-CSparkalWindow::SetCursor {
+unsigned long CSparkalWindow::SetCursor(unsigned long) {
 // LINE 308:
 	asm( 
 "	      00480e74    push ebp"
@@ -1085,7 +1085,7 @@ CSparkalWindow::SetCursor {
 }
 
 // FUNCTION: SIMCOPTER 0x00480f32
-CSparkalWindow::SetCursorFromIndex {
+unsigned long CSparkalWindow::SetCursorFromIndex(int32_t) {
 // LINE 337:
 	asm( 
 "	      00480f32    push ebp"
@@ -1137,7 +1137,7 @@ CSparkalWindow::SetCursorFromIndex {
 }
 
 // FUNCTION: SIMCOPTER 0x00480f80
-CSparkalWindow::LoadGameCursors {
+unsigned long CSparkalWindow::LoadGameCursors() {
 // LINE 352:
 	asm( 
 "	      00480f80    push ebp"
@@ -1164,7 +1164,7 @@ CSparkalWindow::LoadGameCursors {
 }
 
 // FUNCTION: SIMCOPTER 0x00480f9b
-CSparkalWindow::FreeGameCursors {
+void CSparkalWindow::FreeGameCursors() {
 // LINE 360:
 	asm( 
 "	      00480f9b    push ebp"
@@ -1187,7 +1187,7 @@ CSparkalWindow::FreeGameCursors {
 }
 
 // FUNCTION: SIMCOPTER 0x00480fb1
-CSparkalWindow::DrawBufferText {
+unsigned long CSparkalWindow::DrawBufferText(const const char*, unsigned long, long, long, long *, long *, long *, long *) {
 // LINE 372:
 	asm( 
 "	      00480fb1    push ebp"
@@ -1475,7 +1475,7 @@ CSparkalWindow::DrawBufferText {
 }
 
 // FUNCTION: SIMCOPTER 0x004811bb
-CSparkalWindow::ScreenScroll {
+unsigned long CSparkalWindow::ScreenScroll(long, long, long, long, long, long) {
 // LINE 462:
 	asm( 
 "	      004811bb    push ebp"
@@ -1562,7 +1562,7 @@ CSparkalWindow::ScreenScroll {
 }
 
 // FUNCTION: SIMCOPTER 0x00481265
-CSparkalWindow::UpdatePalette {
+void CSparkalWindow::UpdatePalette(long, long, struct SparkalColor*) {
 // LINE 482:
 	asm( 
 "	      00481265    push ebp"
@@ -1650,7 +1650,7 @@ CSparkalWindow::UpdatePalette {
 }
 
 // FUNCTION: SIMCOPTER 0x0048132b
-CheckIdentityPalette {
+int32_t CheckIdentityPalette() {
 // LINE 505:
 	asm( 
 "	      0048132b    push ebp"
@@ -1911,7 +1911,7 @@ CheckIdentityPalette {
 }
 
 // FUNCTION: SIMCOPTER 0x004815dd
-SparkalWindowProc {
+long SparkalWindowProc() {
 // LINE 584:
 	asm( 
 "	      004815dd    push ebp"
@@ -1976,7 +1976,7 @@ SparkalWindowProc {
 }
 
 // FUNCTION: SIMCOPTER 0x00481647
-CSparkalWindow::MySparkalWindowProc {
+long CSparkalWindow::MySparkalWindowProc(void * __ptr32, uint32_t, uint32_t, long) {
 // LINE 602:
 	asm( 
 "	      00481647    push ebp"

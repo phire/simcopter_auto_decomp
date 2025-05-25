@@ -6,7 +6,7 @@
 
 // Contribution: 1:0001e500-0001e869 Module: 74, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x0041f500
-DDEnable {
+long DDEnable() {
 // LINE 30:
 	asm( 
 "	      0041f500    push ebp"
@@ -95,7 +95,7 @@ DDEnable {
 }
 
 // FUNCTION: SIMCOPTER 0x0041f5a5
-DDDisable {
+void DDDisable() {
 // LINE 59:
 	asm( 
 "	      0041f5a5    push ebp"
@@ -140,7 +140,7 @@ DDDisable {
 }
 
 // FUNCTION: SIMCOPTER 0x0041f5f1
-DDColorMatch {
+unsigned long DDColorMatch() {
 // LINE 84:
 	asm( 
 "	      0041f5f1    push ebp"
@@ -289,7 +289,7 @@ DDColorMatch {
 }
 
 // FUNCTION: SIMCOPTER 0x0041f6e4
-ReadPalFile {
+struct IDirectDrawPalette* ReadPalFile() {
 // LINE 126:
 	asm( 
 "	      0041f6e4    push ebp"

@@ -6,7 +6,7 @@
 
 // Contribution: 1:00099d30-00099eff Module: 14, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x0049ad30
-ICommander::ICommander {
+void ICommander::ICommander() {
 // LINE 14:
 	asm( 
 "	      0049ad30    push ebp"
@@ -37,7 +37,7 @@ ICommander::ICommander {
 }
 
 // FUNCTION: SIMCOPTER 0x0049ad5c
-ICommander::~ICommander {
+void ICommander::~ICommander() {
 // LINE 19:
 	asm( 
 "	      0049ad5c    push ebp"
@@ -62,7 +62,7 @@ ICommander::~ICommander {
 }
 
 // FUNCTION: SIMCOPTER 0x0049ad7b
-ICommander::SetWindow {
+class CSparkalWindow* ICommander::SetWindow(class CSparkalWindow*) {
 // LINE 28:
 	asm( 
 "	      0049ad7b    push ebp"
@@ -116,7 +116,7 @@ ICommander::SetWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x0049adc3
-CDefaultCommander::CDefaultCommander {
+void CDefaultCommander::CDefaultCommander() {
 // LINE 44:
 	asm( 
 "	      0049adc3    push ebp"
@@ -144,7 +144,7 @@ CDefaultCommander::CDefaultCommander {
 }
 
 // FUNCTION: SIMCOPTER 0x0049aded
-CDefaultCommander::~CDefaultCommander {
+void CDefaultCommander::~CDefaultCommander() {
 // LINE 48:
 	asm( 
 "	      0049aded    push ebp"
@@ -171,7 +171,7 @@ CDefaultCommander::~CDefaultCommander {
 }
 
 // FUNCTION: SIMCOPTER 0x0049ae14
-CDefaultCommander::Idle {
+unsigned long CDefaultCommander::Idle() {
 // LINE 55:
 	asm( 
 "	      0049ae14    push ebp"
@@ -198,7 +198,7 @@ CDefaultCommander::Idle {
 }
 
 // FUNCTION: SIMCOPTER 0x0049ae2c
-CDefaultCommander::OnCharacter {
+unsigned long CDefaultCommander::OnCharacter(char, int32_t) {
 // LINE 60:
 	asm( 
 "	      0049ae2c    push ebp"
@@ -225,7 +225,7 @@ CDefaultCommander::OnCharacter {
 }
 
 // FUNCTION: SIMCOPTER 0x0049ae46
-CDefaultCommander::OnMouseDown {
+unsigned long CDefaultCommander::OnMouseDown(int32_t, int32_t) {
 // LINE 65:
 	asm( 
 "	      0049ae46    push ebp"
@@ -252,7 +252,7 @@ CDefaultCommander::OnMouseDown {
 }
 
 // FUNCTION: SIMCOPTER 0x0049ae60
-CDefaultCommander::OnMouseUp {
+unsigned long CDefaultCommander::OnMouseUp(int32_t, int32_t) {
 // LINE 70:
 	asm( 
 "	      0049ae60    push ebp"
@@ -279,7 +279,7 @@ CDefaultCommander::OnMouseUp {
 }
 
 // FUNCTION: SIMCOPTER 0x0049ae7a
-CDefaultCommander::OnMouseMove {
+unsigned long CDefaultCommander::OnMouseMove(int32_t, int32_t) {
 // LINE 75:
 	asm( 
 "	      0049ae7a    push ebp"
@@ -306,7 +306,7 @@ CDefaultCommander::OnMouseMove {
 }
 
 // FUNCTION: SIMCOPTER 0x0049ae94
-CDefaultCommander::OnWindowActivate {
+unsigned long CDefaultCommander::OnWindowActivate() {
 // LINE 80:
 	asm( 
 "	      0049ae94    push ebp"
@@ -352,7 +352,7 @@ CDefaultCommander::OnWindowActivate {
 }
 
 // FUNCTION: SIMCOPTER 0x0049aee8
-CDefaultCommander::OnWindowDeactivate {
+unsigned long CDefaultCommander::OnWindowDeactivate() {
 // LINE 86:
 	asm( 
 "	      0049aee8    push ebp"

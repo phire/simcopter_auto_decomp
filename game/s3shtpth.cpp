@@ -6,7 +6,7 @@
 
 // Contribution: 1:00142690-00142f6c Module: 151, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x00543690
-ShortestPath::FindDistanceFromDestination {
+int32_t ShortestPath::FindDistanceFromDestination(struct _GridCoordinates, struct _GridCoordinates) {
 // LINE 13:
 	asm( 
 "	      00543690    push ebp"
@@ -86,7 +86,7 @@ ShortestPath::FindDistanceFromDestination {
 }
 
 // FUNCTION: SIMCOPTER 0x00543704
-ShortestPath::BreadthFirstSearch {
+int32_t ShortestPath::BreadthFirstSearch(struct _RGIndex, struct _RGIndex) {
 // LINE 36:
 	asm( 
 "	      00543704    push ebp"
@@ -450,7 +450,7 @@ ShortestPath::BreadthFirstSearch {
 }
 
 // FUNCTION: SIMCOPTER 0x005439bb
-ShortestPath::DepthFirstSearch {
+int32_t ShortestPath::DepthFirstSearch(struct _RGIndex, struct _RGIndex) {
 // LINE 138:
 	asm( 
 "	      005439bb    push ebp"
@@ -878,7 +878,7 @@ ShortestPath::DepthFirstSearch {
 }
 
 // FUNCTION: SIMCOPTER 0x00543cdd
-ShortestPath::PriorityHeapInsert {
+void ShortestPath::PriorityHeapInsert(const struct _FringeHeapNode*) {
 // LINE 252:
 	asm( 
 "	      00543cdd    push ebp"
@@ -1003,7 +1003,7 @@ ShortestPath::PriorityHeapInsert {
 }
 
 // FUNCTION: SIMCOPTER 0x00543dcb
-ShortestPath::PriorityHeapRemove {
+void ShortestPath::PriorityHeapRemove(struct _FringeHeapNode*) {
 // LINE 275:
 	asm( 
 "	      00543dcb    push ebp"

@@ -6,7 +6,7 @@
 
 // Contribution: 1:00094b40-000953a2 Module: 19, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x00495b40
-CGameApp::GetFullRenderingWindowSize {
+public: void __thiscall CGameApp::GetFullRenderingWindowSize(int *, int *) {
 // LINE 67:
 	asm( 
 "	      00495b40    push ebp"
@@ -92,7 +92,7 @@ CGameApp::GetFullRenderingWindowSize {
 }
 
 // FUNCTION: SIMCOPTER 0x00495be3
-CGameApp::S3PreRender {
+public: int __thiscall CGameApp::S3PreRender(void) {
 // LINE 92:
 	asm( 
 "	      00495be3    push ebp"
@@ -450,7 +450,7 @@ CGameApp::S3PreRender {
 }
 
 // FUNCTION: SIMCOPTER 0x00495ef7
-CGameApp::S3PostRender {
+public: void __thiscall CGameApp::S3PostRender(void) {
 // LINE 197:
 	asm( 
 "	      00495ef7    push ebp"
@@ -556,7 +556,7 @@ CGameApp::S3PostRender {
 }
 
 // FUNCTION: SIMCOPTER 0x00495fc4
-CGameApp::DrawCrosshairs {
+public: void __thiscall CGameApp::DrawCrosshairs(class CBackBuffer *) {
 // LINE 223:
 	asm( 
 "	      00495fc4    push ebp"
@@ -698,7 +698,7 @@ CGameApp::DrawCrosshairs {
 }
 
 // FUNCTION: SIMCOPTER 0x004960c5
-CGameApp::S3ShowInfo {
+public: void __thiscall CGameApp::S3ShowInfo(void) {
 // LINE 265:
 	asm( 
 "	      004960c5    push ebp"

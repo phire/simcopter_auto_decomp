@@ -6,7 +6,7 @@
 
 // Contribution: 1:00070f70-00073776 Module: 36, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x00471f70
-HangarWindow::HangarWindow {
+void HangarWindow::HangarWindow(int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
 // LINE 53:
 	asm( 
 "	      00471f70    push ebp"
@@ -299,7 +299,7 @@ HangarWindow::HangarWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004723af
-HangarWindow::~HangarWindow {
+void HangarWindow::~HangarWindow() {
 // LINE 65:
 	asm( 
 "	      004723af    push ebp"
@@ -473,7 +473,7 @@ HangarWindow::~HangarWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x00472611
-HangarWindow::Initialize {
+int32_t HangarWindow::Initialize() {
 // LINE 73:
 	asm( 
 "	      00472611    push ebp"
@@ -1162,7 +1162,7 @@ HangarWindow::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x00472f61
-HangarWindow::ReadPalette {
+int32_t HangarWindow::ReadPalette(struct SparkalColor*) {
 // LINE 121:
 	asm( 
 "	      00472f61    push ebp"
@@ -1275,7 +1275,7 @@ HangarWindow::ReadPalette {
 }
 
 // FUNCTION: SIMCOPTER 0x004730a3
-HangarWindow::CreateImage {
+int32_t HangarWindow::CreateImage(int32_t) {
 // LINE 129:
 	asm( 
 "	      004730a3    push ebp"
@@ -1410,7 +1410,7 @@ HangarWindow::CreateImage {
 }
 
 // FUNCTION: SIMCOPTER 0x00473229
-HangarWindow::DestroyImage {
+void HangarWindow::DestroyImage() {
 // LINE 143:
 	asm( 
 "	      00473229    push ebp"
@@ -1462,7 +1462,7 @@ HangarWindow::DestroyImage {
 }
 
 // FUNCTION: SIMCOPTER 0x00473296
-HangarWindow::ComposeSelf {
+int32_t HangarWindow::ComposeSelf() {
 // LINE 153:
 	asm( 
 "	      00473296    push ebp"
@@ -1672,7 +1672,7 @@ HangarWindow::ComposeSelf {
 }
 
 // FUNCTION: SIMCOPTER 0x004734ed
-HangarWindow::DoMessage {
+int32_t HangarWindow::DoMessage(class GraphicWindow*, long, long, void * __ptr32) {
 // LINE 183:
 	asm( 
 "	      004734ed    push ebp"
@@ -1806,7 +1806,7 @@ HangarWindow::DoMessage {
 }
 
 // FUNCTION: SIMCOPTER 0x004735e1
-HangarWindow::DoKeyDown {
+long HangarWindow::DoKeyDown(long, char) {
 // LINE 210:
 	asm( 
 "	      004735e1    push ebp"
@@ -1866,7 +1866,7 @@ HangarWindow::DoKeyDown {
 }
 
 // FUNCTION: SIMCOPTER 0x0047363c
-HangarWindow::DoCursorDown {
+long HangarWindow::DoCursorDown(long, long, unsigned long) {
 // LINE 232:
 	asm( 
 "	      0047363c    push ebp"
@@ -1927,7 +1927,7 @@ HangarWindow::DoCursorDown {
 }
 
 // FUNCTION: SIMCOPTER 0x004736a8
-HangarWindow::DoCursorUp {
+long HangarWindow::DoCursorUp(long, long, unsigned long) {
 // LINE 249:
 	asm( 
 "	      004736a8    push ebp"
@@ -1954,7 +1954,7 @@ HangarWindow::DoCursorUp {
 }
 
 // FUNCTION: SIMCOPTER 0x004736c5
-HangarWindow::DoCursorMove {
+long HangarWindow::DoCursorMove(long, long) {
 // LINE 259:
 	asm( 
 "	      004736c5    push ebp"
@@ -2079,7 +2079,7 @@ HangarWindow::DoCursorMove {
 }
 
 // FUNCTION: SIMCOPTER 0x00473826
-HangarWindow::GetImagePath {
+void HangarWindow::GetImagePath() {
 // LINE 279:
 	asm( 
 "	      00473826    push ebp"
@@ -2334,7 +2334,7 @@ HangarWindow::GetImagePath {
 }
 
 // FUNCTION: SIMCOPTER 0x00473b5c
-HangarWindow::GetHotspotFromPosition {
+int32_t HangarWindow::GetHotspotFromPosition(long&, class MPoint&) {
 // LINE 292:
 	asm( 
 "	      00473b5c    push ebp"
@@ -2454,7 +2454,7 @@ HangarWindow::GetHotspotFromPosition {
 }
 
 // FUNCTION: SIMCOPTER 0x00473c6c
-HangarWindow::ScrollHangarView {
+void HangarWindow::ScrollHangarView(long) {
 // LINE 313:
 	asm( 
 "	      00473c6c    push ebp"
@@ -2586,7 +2586,7 @@ HangarWindow::ScrollHangarView {
 }
 
 // FUNCTION: SIMCOPTER 0x00473de1
-HangarWindow::IsHangarRectVisibleInWindow {
+int32_t HangarWindow::IsHangarRectVisibleInWindow(class MRect&) {
 // LINE 364:
 	asm( 
 "	      00473de1    push ebp"
@@ -2690,7 +2690,7 @@ HangarWindow::IsHangarRectVisibleInWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x00473ec5
-HangarWindow::ClipRectToWindow {
+void HangarWindow::ClipRectToWindow(class MRect&) {
 // LINE 383:
 	asm( 
 "	      00473ec5    push ebp"
@@ -2773,7 +2773,7 @@ HangarWindow::ClipRectToWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x00473f53
-HangarWindow::DisplayHelp {
+void HangarWindow::DisplayHelp(int32_t, class MPoint&) {
 // LINE 438:
 	asm( 
 "	      00473f53    push ebp"
@@ -3276,7 +3276,7 @@ HangarWindow::DisplayHelp {
 }
 
 // FUNCTION: SIMCOPTER 0x00474577
-HangarWindow::HideHelp {
+void HangarWindow::HideHelp() {
 // LINE 485:
 	asm( 
 "	      00474577    push ebp"
@@ -3308,7 +3308,7 @@ HangarWindow::HideHelp {
 }
 
 // FUNCTION: SIMCOPTER 0x004745a5
-HangarWindow::GetSoundFileNameFromHelpID {
+int32_t HangarWindow::GetSoundFileNameFromHelpID(long, class basic_string<char>&) {
 // LINE 494:
 	asm( 
 "	      004745a5    push ebp"
@@ -3446,7 +3446,7 @@ HangarWindow::GetSoundFileNameFromHelpID {
 }
 
 // FUNCTION: SIMCOPTER 0x0047474e
-HangarWindow::LoadHotSpots {
+void HangarWindow::LoadHotSpots() {
 // LINE 504:
 	asm( 
 "	      0047474e    push ebp"

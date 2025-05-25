@@ -6,7 +6,7 @@
 
 // Contribution: 1:00140530-00141d79 Module: 154, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x00541530
-EmergencyVehicleClass::S3UpdateCar {
+int32_t EmergencyVehicleClass::S3UpdateCar(int32_t, int32_t) {
 // LINE 70:
 	asm( 
 "	      00541530    push ebp"
@@ -35,7 +35,7 @@ EmergencyVehicleClass::S3UpdateCar {
 }
 
 // FUNCTION: SIMCOPTER 0x00541553
-EmergencyVehicleClass::UpdateCar {
+int32_t EmergencyVehicleClass::UpdateCar(int32_t) {
 // LINE 76:
 	asm( 
 "	      00541553    push ebp"
@@ -84,7 +84,7 @@ EmergencyVehicleClass::UpdateCar {
 }
 
 // FUNCTION: SIMCOPTER 0x0054159d
-EmergencyVehicleClass::S3GetCar {
+struct _DYOBJ_INST* EmergencyVehicleClass::S3GetCar(int32_t) {
 // LINE 89:
 	asm( 
 "	      0054159d    push ebp"
@@ -123,7 +123,7 @@ EmergencyVehicleClass::S3GetCar {
 }
 
 // FUNCTION: SIMCOPTER 0x005415d5
-EmergencyVehicleClass::EmergencyVehicleClass {
+void EmergencyVehicleClass::EmergencyVehicleClass() {
 // LINE 102:
 	asm( 
 "	      005415d5    push ebp"
@@ -167,7 +167,7 @@ EmergencyVehicleClass::EmergencyVehicleClass {
 }
 
 // FUNCTION: SIMCOPTER 0x0054163a
-EmergencyVehicleClass::~EmergencyVehicleClass {
+void EmergencyVehicleClass::~EmergencyVehicleClass() {
 // LINE 108:
 	asm( 
 "	      0054163a    push ebp"
@@ -191,7 +191,7 @@ EmergencyVehicleClass::~EmergencyVehicleClass {
 }
 
 // FUNCTION: SIMCOPTER 0x00541661
-EmergencyVehicleClass::InitializePlacedVehicleForDispatch {
+void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal, struct Goal, struct Goal, struct Goal, struct _GridCoordinates, struct Goal, enum EmergencyType, enum EmergencyLevel) {
 // LINE 246:
 	asm( 
 "	      00541661    push ebp"
@@ -571,7 +571,7 @@ EmergencyVehicleClass::InitializePlacedVehicleForDispatch {
 }
 
 // FUNCTION: SIMCOPTER 0x005419ba
-EmergencyVehicleClass::InitializeStationVehicleForDispatch {
+void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t, struct Goal, struct Goal, struct _GridCoordinates, struct Goal, struct Goal, struct _GridCoordinates, int32_t, struct Goal, enum EmergencyType, enum EmergencyLevel) {
 // LINE 360:
 	asm( 
 "	      005419ba    push ebp"
@@ -1222,7 +1222,7 @@ EmergencyVehicleClass::InitializeStationVehicleForDispatch {
 }
 
 // FUNCTION: SIMCOPTER 0x00541ff4
-EmergencyVehicleClass::GoBackToStation {
+void EmergencyVehicleClass::GoBackToStation() {
 // LINE 524:
 	asm( 
 "	      00541ff4    push ebp"
@@ -1393,7 +1393,7 @@ EmergencyVehicleClass::GoBackToStation {
 }
 
 // FUNCTION: SIMCOPTER 0x005421bc
-EmergencyVehicleClass::CancelEmergencyDispatch {
+void EmergencyVehicleClass::CancelEmergencyDispatch() {
 // LINE 560:
 	asm( 
 "	      005421bc    push ebp"
@@ -1421,7 +1421,7 @@ EmergencyVehicleClass::CancelEmergencyDispatch {
 }
 
 // FUNCTION: SIMCOPTER 0x005421df
-EmergencyVehicleClass::AreThereMoreSeats {
+int32_t EmergencyVehicleClass::AreThereMoreSeats(struct _DYOBJ_INST*) {
 // LINE 567:
 	asm( 
 "	      005421df    push ebp"
@@ -1449,7 +1449,7 @@ EmergencyVehicleClass::AreThereMoreSeats {
 }
 
 // FUNCTION: SIMCOPTER 0x00542203
-EmergencyVehicleClass::FillSeat {
+void EmergencyVehicleClass::FillSeat(struct _DYOBJ_INST*) {
 // LINE 573:
 	asm( 
 "	      00542203    push ebp"
@@ -1478,7 +1478,7 @@ EmergencyVehicleClass::FillSeat {
 }
 
 // FUNCTION: SIMCOPTER 0x0054222e
-EmergencyVehicleClass::AdjustSpeed {
+void EmergencyVehicleClass::AdjustSpeed() {
 // LINE 620:
 	asm( 
 "	      0054222e    push ebp"
@@ -1571,7 +1571,7 @@ EmergencyVehicleClass::AdjustSpeed {
 }
 
 // FUNCTION: SIMCOPTER 0x005422ee
-EmergencyVehicleClass::PositionIcon {
+void EmergencyVehicleClass::PositionIcon() {
 // LINE 661:
 	asm( 
 "	      005422ee    push ebp"
@@ -1641,7 +1641,7 @@ EmergencyVehicleClass::PositionIcon {
 }
 
 // FUNCTION: SIMCOPTER 0x00542373
-EmergencyVehicleClass::PickTurnDir {
+enum TurnIndex EmergencyVehicleClass::PickTurnDir(struct Goal*) {
 // LINE 674:
 	asm( 
 "	      00542373    push ebp"
@@ -1710,7 +1710,7 @@ EmergencyVehicleClass::PickTurnDir {
 }
 
 // FUNCTION: SIMCOPTER 0x0054241d
-EmergencyVehicleClass::ArriveOnScene {
+void EmergencyVehicleClass::ArriveOnScene() {
 // LINE 920:
 	asm( 
 "	      0054241d    push ebp"
@@ -1752,7 +1752,7 @@ EmergencyVehicleClass::ArriveOnScene {
 }
 
 // FUNCTION: SIMCOPTER 0x00542461
-EmergencyVehicleClass::UnLinkIconFromCell {
+void EmergencyVehicleClass::UnLinkIconFromCell(const struct _GridCoordinates) {
 // LINE 943:
 	asm( 
 "	      00542461    push ebp"
@@ -1868,7 +1868,7 @@ EmergencyVehicleClass::UnLinkIconFromCell {
 }
 
 // FUNCTION: SIMCOPTER 0x00542570
-EmergencyVehicleClass::LinkIconToCell {
+void EmergencyVehicleClass::LinkIconToCell(const struct _GridCoordinates) {
 // LINE 984:
 	asm( 
 "	      00542570    push ebp"
@@ -1952,7 +1952,7 @@ EmergencyVehicleClass::LinkIconToCell {
 }
 
 // FUNCTION: SIMCOPTER 0x00542631
-EmergencyVehicleClass::Reset {
+void EmergencyVehicleClass::Reset() {
 // LINE 1315:
 	asm( 
 "	      00542631    push ebp"
@@ -2020,7 +2020,7 @@ EmergencyVehicleClass::Reset {
 }
 
 // FUNCTION: SIMCOPTER 0x005426ab
-DispatchEmergencyVehicle {
+void DispatchEmergencyVehicle() {
 // LINE 1351:
 	asm( 
 "	      005426ab    push ebp"
@@ -2188,7 +2188,7 @@ DispatchEmergencyVehicle {
 }
 
 // FUNCTION: SIMCOPTER 0x005427f5
-EmergencyVehicleClass::BuildPath {
+void EmergencyVehicleClass::BuildPath(struct _RGIndex, struct _RGIndex) {
 // LINE 1403:
 	asm( 
 "	      005427f5    push ebp"
@@ -2344,7 +2344,7 @@ EmergencyVehicleClass::BuildPath {
 }
 
 // FUNCTION: SIMCOPTER 0x0054293b
-EmergencyVehicleClass::TurnOnStrobe {
+void EmergencyVehicleClass::TurnOnStrobe() {
 // LINE 1455:
 	asm( 
 "	      0054293b    push ebp"
@@ -2434,7 +2434,7 @@ EmergencyVehicleClass::TurnOnStrobe {
 }
 
 // FUNCTION: SIMCOPTER 0x005429d6
-EmergencyVehicleClass::TurnOffStrobe {
+void EmergencyVehicleClass::TurnOffStrobe() {
 // LINE 1478:
 	asm( 
 "	      005429d6    push ebp"
@@ -2526,7 +2526,7 @@ EmergencyVehicleClass::TurnOffStrobe {
 }
 
 // FUNCTION: SIMCOPTER 0x00542a75
-EmergencyVehicleClass::SetSaveData {
+void EmergencyVehicleClass::SetSaveData(struct _AUTO_LOAD_SAVE*) {
 // LINE 1507:
 	asm( 
 "	      00542a75    push ebp"
@@ -2650,7 +2650,7 @@ EmergencyVehicleClass::SetSaveData {
 }
 
 // FUNCTION: SIMCOPTER 0x00542b90
-EmergencyVehicleClass::LoadSaveData {
+void EmergencyVehicleClass::LoadSaveData(struct _AUTO_LOAD_SAVE*) {
 // LINE 1546:
 	asm( 
 "	      00542b90    push ebp"

@@ -6,7 +6,7 @@
 
 // Contribution: 1:00161610-00162e95 Module: 187, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x00562610
-GetAxis {
+void GetAxis() {
 // LINE 46:
 	asm( 
 "	      00562610    push ebp"
@@ -71,7 +71,7 @@ GetAxis {
 }
 
 // FUNCTION: SIMCOPTER 0x0056269d
-GetAxes {
+void GetAxes() {
 // LINE 51:
 	asm( 
 "	      0056269d    push ebp"
@@ -130,7 +130,7 @@ GetAxes {
 }
 
 // FUNCTION: SIMCOPTER 0x005626f5
-PutInPerspective {
+unsigned short PutInPerspective() {
 // LINE 57:
 	asm( 
 "	      005626f5    push ebp"
@@ -193,7 +193,7 @@ PutInPerspective {
 }
 
 // FUNCTION: SIMCOPTER 0x00562766
-PutInPerspective {
+unsigned short PutInPerspective() {
 // LINE 67:
 	asm( 
 "	      00562766    push ebp"
@@ -270,7 +270,7 @@ PutInPerspective {
 }
 
 // FUNCTION: SIMCOPTER 0x00562802
-XY2Cartesian {
+void XY2Cartesian() {
 // LINE 76:
 	asm( 
 "	      00562802    push ebp"
@@ -379,7 +379,7 @@ XY2Cartesian {
 }
 
 // FUNCTION: SIMCOPTER 0x005628eb
-XYIncrementCartesian {
+void XYIncrementCartesian() {
 // LINE 93:
 	asm( 
 "	      005628eb    push ebp"
@@ -442,7 +442,7 @@ XYIncrementCartesian {
 }
 
 // FUNCTION: SIMCOPTER 0x00562950
-TransformToAxes {
+void TransformToAxes() {
 // LINE 102:
 	asm( 
 "	      00562950    push ebp"
@@ -562,7 +562,7 @@ TransformToAxes {
 }
 
 // FUNCTION: SIMCOPTER 0x00562a31
-AxisTransformToScreen {
+void AxisTransformToScreen() {
 // LINE 118:
 	asm( 
 "	      00562a31    push ebp"
@@ -653,7 +653,7 @@ AxisTransformToScreen {
 }
 
 // FUNCTION: SIMCOPTER 0x00562ac5
-XYTransformToScreen {
+void XYTransformToScreen() {
 // LINE 132:
 	asm( 
 "	      00562ac5    push ebp"
@@ -756,7 +756,7 @@ XYTransformToScreen {
 }
 
 // FUNCTION: SIMCOPTER 0x00562b82
-IncrementXY {
+void IncrementXY() {
 // LINE 151:
 	asm( 
 "	      00562b82    push ebp"
@@ -811,7 +811,7 @@ IncrementXY {
 }
 
 // FUNCTION: SIMCOPTER 0x00562bdb
-Keep0to2pi {
+void Keep0to2pi() {
 // LINE 159:
 	asm( 
 "	      00562bdb    push ebp"
@@ -868,7 +868,7 @@ Keep0to2pi {
 }
 
 // FUNCTION: SIMCOPTER 0x00562c41
-Keep0to2pi {
+void Keep0to2pi() {
 // LINE 167:
 	asm( 
 "	      00562c41    push ebp"
@@ -912,7 +912,7 @@ Keep0to2pi {
 }
 
 // FUNCTION: SIMCOPTER 0x00562c7b
-Keep0to2pi {
+float Keep0to2pi() {
 // LINE 174:
 	asm( 
 "	      00562c7b    push ebp"
@@ -944,7 +944,7 @@ Keep0to2pi {
 }
 
 // FUNCTION: SIMCOPTER 0x00562c9a
-IncrementFloat {
+void IncrementFloat() {
 // LINE 180:
 	asm( 
 "	      00562c9a    push ebp"
@@ -996,7 +996,7 @@ IncrementFloat {
 }
 
 // FUNCTION: SIMCOPTER 0x00562ce1
-my_acos {
+float my_acos() {
 // LINE 188:
 	asm( 
 "	      00562ce1    push ebp"
@@ -1115,7 +1115,7 @@ my_acos {
 }
 
 // FUNCTION: SIMCOPTER 0x00562df2
-NormalizeTo1 {
+void NormalizeTo1() {
 // LINE 207:
 	asm( 
 "	      00562df2    push ebp"
@@ -1136,7 +1136,7 @@ NormalizeTo1 {
 }
 
 // FUNCTION: SIMCOPTER 0x00562e02
-GetLength {
+double GetLength() {
 // LINE 212:
 	asm( 
 "	      00562e02    push ebp"
@@ -1186,7 +1186,7 @@ GetLength {
 }
 
 // FUNCTION: SIMCOPTER 0x00562e50
-DrawDirectionDisk {
+void DrawDirectionDisk() {
 // LINE 224:
 	asm( 
 "	      00562e50    push ebp"
@@ -1246,7 +1246,7 @@ DrawDirectionDisk {
 }
 
 // FUNCTION: SIMCOPTER 0x00562eab
-DrawDirectionDisk {
+void DrawDirectionDisk() {
 // LINE 231:
 	asm( 
 "	      00562eab    push ebp"
@@ -1519,7 +1519,7 @@ DrawDirectionDisk {
 }
 
 // FUNCTION: SIMCOPTER 0x005630d0
-DrawDirectionDisk {
+void DrawDirectionDisk() {
 // LINE 268:
 	asm( 
 "	      005630d0    push ebp"
@@ -1562,7 +1562,7 @@ DrawDirectionDisk {
 }
 
 // FUNCTION: SIMCOPTER 0x00563116
-DrawDirectionDisk {
+void DrawDirectionDisk() {
 // LINE 273:
 	asm( 
 "	      00563116    push ebp"
@@ -1653,7 +1653,7 @@ DrawDirectionDisk {
 }
 
 // FUNCTION: SIMCOPTER 0x005631d0
-DrawDirectionDisk {
+void DrawDirectionDisk() {
 // LINE 282:
 	asm( 
 "	      005631d0    push ebp"
@@ -1674,7 +1674,7 @@ DrawDirectionDisk {
 }
 
 // FUNCTION: SIMCOPTER 0x005631e0
-Score {
+void Score() {
 // LINE 357:
 	asm( 
 "	      005631e0    push ebp"
@@ -1695,7 +1695,7 @@ Score {
 }
 
 // FUNCTION: SIMCOPTER 0x005631f0
-DrawGrid {
+unsigned short DrawGrid() {
 // LINE 374:
 	asm( 
 "	      005631f0    push ebp"
@@ -1720,7 +1720,7 @@ DrawGrid {
 }
 
 // FUNCTION: SIMCOPTER 0x00563204
-GetChildIncrement {
+void GetChildIncrement() {
 // LINE 508:
 	asm( 
 "	      00563204    push ebp"
@@ -1979,7 +1979,7 @@ GetChildIncrement {
 }
 
 // FUNCTION: SIMCOPTER 0x00563420
-IncrementAngles {
+void IncrementAngles() {
 // LINE 568:
 	asm( 
 "	      00563420    push ebp"
@@ -2085,7 +2085,7 @@ IncrementAngles {
 }
 
 // FUNCTION: SIMCOPTER 0x005634fc
-IncrementPhiPsi {
+void IncrementPhiPsi() {
 // LINE 583:
 	asm( 
 "	      005634fc    push ebp"
@@ -2309,7 +2309,7 @@ IncrementPhiPsi {
 }
 
 // FUNCTION: SIMCOPTER 0x005636d5
-FillLatLngTrq {
+void FillLatLngTrq() {
 // LINE 623:
 	asm( 
 "	      005636d5    push ebp"
@@ -2377,7 +2377,7 @@ FillLatLngTrq {
 }
 
 // FUNCTION: SIMCOPTER 0x0056374c
-FillPhiPsiTau {
+void FillPhiPsiTau() {
 // LINE 631:
 	asm( 
 "	      0056374c    push ebp"
@@ -2448,7 +2448,7 @@ FillPhiPsiTau {
 }
 
 // FUNCTION: SIMCOPTER 0x005637d3
-SnapToIncs {
+void SnapToIncs() {
 // LINE 639:
 	asm( 
 "	      005637d3    push ebp"
@@ -2521,7 +2521,7 @@ SnapToIncs {
 }
 
 // FUNCTION: SIMCOPTER 0x00563859
-PolarDouble2Incs {
+void PolarDouble2Incs() {
 // LINE 649:
 	asm( 
 "	      00563859    push ebp"
@@ -2699,7 +2699,7 @@ PolarDouble2Incs {
 }
 
 // FUNCTION: SIMCOPTER 0x005639d2
-PolarIncs2Double {
+void PolarIncs2Double() {
 // LINE 673:
 	asm( 
 "	      005639d2    push ebp"
@@ -2757,7 +2757,7 @@ PolarIncs2Double {
 }
 
 // FUNCTION: SIMCOPTER 0x00563a42
-Polar2Cartesian {
+void Polar2Cartesian() {
 // LINE 685:
 	asm( 
 "	      00563a42    push ebp"
@@ -2848,7 +2848,7 @@ Polar2Cartesian {
 }
 
 // FUNCTION: SIMCOPTER 0x00563aec
-Polar2Cartesian {
+void Polar2Cartesian() {
 // LINE 696:
 	asm( 
 "	      00563aec    push ebp"
@@ -2890,7 +2890,7 @@ Polar2Cartesian {
 }
 
 // FUNCTION: SIMCOPTER 0x00563b27
-PolarTransformToScreen {
+void PolarTransformToScreen() {
 // LINE 702:
 	asm( 
 "	      00563b27    push ebp"
@@ -3030,7 +3030,7 @@ PolarTransformToScreen {
 }
 
 // FUNCTION: SIMCOPTER 0x00563c20
-Cartesian2Polar {
+void Cartesian2Polar() {
 // LINE 740:
 	asm( 
 "	      00563c20    push ebp"
@@ -3145,7 +3145,7 @@ Cartesian2Polar {
 }
 
 // FUNCTION: SIMCOPTER 0x00563cf6
-Cartesian2Polar {
+void Cartesian2Polar() {
 // LINE 763:
 	asm( 
 "	      00563cf6    push ebp"
@@ -3189,7 +3189,7 @@ Cartesian2Polar {
 }
 
 // FUNCTION: SIMCOPTER 0x00563d33
-IncrementTorque {
+void IncrementTorque() {
 // LINE 939:
 	asm( 
 "	      00563d33    push ebp"
@@ -3284,7 +3284,7 @@ IncrementTorque {
 }
 
 // FUNCTION: SIMCOPTER 0x00563dd3
-IncrementXYTorque {
+void IncrementXYTorque() {
 // LINE 955:
 	asm( 
 "	      00563dd3    push ebp"
@@ -3368,7 +3368,7 @@ IncrementXYTorque {
 }
 
 // FUNCTION: SIMCOPTER 0x00563e67
-IsPixelFilled {
+unsigned short IsPixelFilled() {
 // LINE 1815:
 	asm( 
 "	      00563e67    push ebp"

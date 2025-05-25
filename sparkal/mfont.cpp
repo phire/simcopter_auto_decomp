@@ -6,7 +6,7 @@
 
 // Contribution: 1:0009e780-0009f398 Module: 11, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x0049f780
-MFont::MFont {
+void MFont::MFont() {
 // LINE 28:
 	asm( 
 "	      0049f780    push ebp"
@@ -102,7 +102,7 @@ MFont::MFont {
 }
 
 // FUNCTION: SIMCOPTER 0x0049f89b
-MFont::MFont {
+void MFont::MFont(const class MFont&) {
 // LINE 40:
 	asm( 
 "	      0049f89b    push ebp"
@@ -161,7 +161,7 @@ MFont::MFont {
 }
 
 // FUNCTION: SIMCOPTER 0x0049f937
-MFont::MFont {
+void MFont::MFont(char *, unsigned long, unsigned long, unsigned long, int32_t) {
 // LINE 54:
 	asm( 
 "	      0049f937    push ebp"
@@ -411,7 +411,7 @@ MFont::MFont {
 }
 
 // FUNCTION: SIMCOPTER 0x0049fc4e
-MFont::~MFont {
+void MFont::~MFont() {
 // LINE 72:
 	asm( 
 "	      0049fc4e    push ebp"
@@ -493,7 +493,7 @@ MFont::~MFont {
 }
 
 // FUNCTION: SIMCOPTER 0x0049fd33
-MFont::operator= {
+class MFont& MFont::operator=(const class MFont&) {
 // LINE 81:
 	asm( 
 "	      0049fd33    push ebp"
@@ -702,7 +702,7 @@ MFont::operator= {
 }
 
 // FUNCTION: SIMCOPTER 0x0049ff74
-MFont::CreateFontA {
+int32_t MFont::CreateFontA() {
 // LINE 125:
 	asm( 
 "	      0049ff74    push ebp"
@@ -910,7 +910,7 @@ MFont::CreateFontA {
 }
 
 // FUNCTION: SIMCOPTER 0x004a015d
-MFont::SetFontCharacteristics {
+void MFont::SetFontCharacteristics(long, long, long) {
 // LINE 163:
 	asm( 
 "	      004a015d    push ebp"
@@ -1001,7 +1001,7 @@ MFont::SetFontCharacteristics {
 }
 
 // FUNCTION: SIMCOPTER 0x004a01e9
-MFont::DestroyFont {
+void MFont::DestroyFont() {
 // LINE 190:
 	asm( 
 "	      004a01e9    push ebp"
@@ -1042,7 +1042,7 @@ MFont::DestroyFont {
 }
 
 // FUNCTION: SIMCOPTER 0x004a0223
-MFont::IsFontAvailable {
+int32_t MFont::IsFontAvailable(char *, unsigned long, unsigned long, unsigned long) {
 // LINE 208:
 	asm( 
 "	      004a0223    push ebp"
@@ -1067,7 +1067,7 @@ MFont::IsFontAvailable {
 }
 
 // FUNCTION: SIMCOPTER 0x004a0235
-MFont::LoadFont {
+int32_t MFont::LoadFont(char *) {
 // LINE 222:
 	asm( 
 "	      004a0235    push ebp"
@@ -1113,7 +1113,7 @@ MFont::LoadFont {
 }
 
 // FUNCTION: SIMCOPTER 0x004a0273
-MFont::UnloadFont {
+int32_t MFont::UnloadFont(char *) {
 // LINE 239:
 	asm( 
 "	      004a0273    push ebp"
@@ -1159,7 +1159,7 @@ MFont::UnloadFont {
 }
 
 // FUNCTION: SIMCOPTER 0x004a02b1
-MFont::GetTextDimensions {
+int32_t MFont::GetTextDimensions(char *, long&, long&) {
 // LINE 259:
 	asm( 
 "	      004a02b1    push ebp"

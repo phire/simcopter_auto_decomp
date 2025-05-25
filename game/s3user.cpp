@@ -18,7 +18,7 @@
 // $E46
 
 // FUNCTION: SIMCOPTER 0x00428f4a
-GetCurrentUserPersonalInfo {
+struct tagUserPersonalInfo* GetCurrentUserPersonalInfo() {
 // LINE 83:
 	asm( 
 "	      00428f4a    push ebp"
@@ -53,7 +53,7 @@ GetCurrentUserPersonalInfo {
 }
 
 // FUNCTION: SIMCOPTER 0x00428f78
-SetCurrentUserPersonalInfo {
+void SetCurrentUserPersonalInfo() {
 // LINE 92:
 	asm( 
 "	      00428f78    push ebp"
@@ -93,7 +93,7 @@ SetCurrentUserPersonalInfo {
 }
 
 // FUNCTION: SIMCOPTER 0x00428fb5
-GetUserMoney {
+long GetUserMoney() {
 // LINE 101:
 	asm( 
 "	      00428fb5    push ebp"
@@ -119,7 +119,7 @@ GetUserMoney {
 }
 
 // FUNCTION: SIMCOPTER 0x00428fcd
-SetUserMoney {
+void SetUserMoney() {
 // LINE 108:
 	asm( 
 "	      00428fcd    push ebp"
@@ -149,7 +149,7 @@ SetUserMoney {
 }
 
 // FUNCTION: SIMCOPTER 0x00428ff1
-ChangeUserMoney {
+void ChangeUserMoney() {
 // LINE 115:
 	asm( 
 "	      00428ff1    push ebp"
@@ -179,7 +179,7 @@ ChangeUserMoney {
 }
 
 // FUNCTION: SIMCOPTER 0x00429015
-GetUserPoints {
+long GetUserPoints() {
 // LINE 124:
 	asm( 
 "	      00429015    push ebp"
@@ -205,7 +205,7 @@ GetUserPoints {
 }
 
 // FUNCTION: SIMCOPTER 0x0042902d
-SetUserPoints {
+void SetUserPoints() {
 // LINE 131:
 	asm( 
 "	      0042902d    push ebp"
@@ -235,7 +235,7 @@ SetUserPoints {
 }
 
 // FUNCTION: SIMCOPTER 0x00429051
-ChangeUserPoints {
+void ChangeUserPoints() {
 // LINE 138:
 	asm( 
 "	      00429051    push ebp"
@@ -265,7 +265,7 @@ ChangeUserPoints {
 }
 
 // FUNCTION: SIMCOPTER 0x00429075
-GetCurrentCitySettings {
+struct tagCitySettings* GetCurrentCitySettings() {
 // LINE 146:
 	asm( 
 "	      00429075    push ebp"
@@ -302,7 +302,7 @@ GetCurrentCitySettings {
 }
 
 // FUNCTION: SIMCOPTER 0x004290ab
-SetCurrentCitySettings {
+void SetCurrentCitySettings() {
 // LINE 156:
 	asm( 
 "	      004290ab    push ebp"
@@ -336,7 +336,7 @@ SetCurrentCitySettings {
 }
 
 // FUNCTION: SIMCOPTER 0x004290d3
-GetCurrentCityPath {
+char * GetCurrentCityPath() {
 // LINE 166:
 	asm( 
 "	      004290d3    push ebp"
@@ -361,7 +361,7 @@ GetCurrentCityPath {
 }
 
 // FUNCTION: SIMCOPTER 0x004290e8
-SetCurrentCityPath {
+void SetCurrentCityPath() {
 // LINE 177:
 	asm( 
 "	      004290e8    push ebp"
@@ -390,7 +390,7 @@ SetCurrentCityPath {
 }
 
 // FUNCTION: SIMCOPTER 0x00429109
-SetUserHasSavedCurrentCity {
+void SetUserHasSavedCurrentCity() {
 // LINE 185:
 	asm( 
 "	      00429109    push ebp"
@@ -428,7 +428,7 @@ SetUserHasSavedCurrentCity {
 }
 
 // FUNCTION: SIMCOPTER 0x0042913f
-GetUserHasSavedCurrentCity {
+int32_t GetUserHasSavedCurrentCity() {
 // LINE 196:
 	asm( 
 "	      0042913f    push ebp"
@@ -467,7 +467,7 @@ GetUserHasSavedCurrentCity {
 }
 
 // FUNCTION: SIMCOPTER 0x00429170
-MakeCityFileName {
+void MakeCityFileName() {
 // LINE 214:
 	asm( 
 "	      00429170    push ebp"
@@ -541,7 +541,7 @@ MakeCityFileName {
 }
 
 // FUNCTION: SIMCOPTER 0x004291ee
-InitializeAllUserInfo {
+void InitializeAllUserInfo() {
 // LINE 230:
 	asm( 
 "	      004291ee    push ebp"
@@ -662,7 +662,7 @@ InitializeAllUserInfo {
 }
 
 // FUNCTION: SIMCOPTER 0x004292ec
-CareerCityTweakInit {
+void CareerCityTweakInit() {
 // LINE 267:
 	asm( 
 "	      004292ec    push ebp"
@@ -773,7 +773,7 @@ CareerCityTweakInit {
 }
 
 // FUNCTION: SIMCOPTER 0x0042939b
-SetUpNewCareerCity {
+void SetUpNewCareerCity() {
 // LINE 300:
 	asm( 
 "	      0042939b    push ebp"
@@ -944,7 +944,7 @@ SetUpNewCareerCity {
 }
 
 // FUNCTION: SIMCOPTER 0x00429582
-SetUpNewUserCity {
+void SetUpNewUserCity() {
 // LINE 345:
 	asm( 
 "	      00429582    push ebp"
@@ -1117,7 +1117,7 @@ SetUpNewUserCity {
 }
 
 // FUNCTION: SIMCOPTER 0x00429760
-MoveToNextCareerCity {
+void MoveToNextCareerCity() {
 // LINE 391:
 	asm( 
 "	      00429760    push ebp"
@@ -1245,7 +1245,7 @@ MoveToNextCareerCity {
 }
 
 // FUNCTION: SIMCOPTER 0x004298d7
-InitializeAllCareerCitiesInfo {
+void InitializeAllCareerCitiesInfo() {
 // LINE 418:
 	asm( 
 "	      004298d7    push ebp"

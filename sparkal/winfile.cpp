@@ -6,7 +6,7 @@
 
 // Contribution: 1:0008eed0-0008ff8c Module: 23, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x0048fed0
-FixResourceFilterString {
+void FixResourceFilterString() {
 // LINE 33:
 	asm( 
 "	      0048fed0    push ebp"
@@ -429,7 +429,7 @@ FixResourceFilterString {
 }
 
 // FUNCTION: SIMCOPTER 0x00490439
-GetLoadFilePath {
+unsigned long GetLoadFilePath() {
 // LINE 62:
 	asm( 
 "	      00490439    push ebp"
@@ -791,7 +791,7 @@ GetLoadFilePath {
 }
 
 // FUNCTION: SIMCOPTER 0x0049092a
-GetLoadFilePath {
+unsigned long GetLoadFilePath() {
 // LINE 83:
 	asm( 
 "	      0049092a    push ebp"
@@ -916,7 +916,7 @@ GetLoadFilePath {
 }
 
 // FUNCTION: SIMCOPTER 0x004909e3
-GetSaveFilePath {
+unsigned long GetSaveFilePath() {
 // LINE 120:
 	asm( 
 "	      004909e3    push ebp"
@@ -1278,7 +1278,7 @@ GetSaveFilePath {
 }
 
 // FUNCTION: SIMCOPTER 0x00490ed4
-GetSaveFilePath {
+unsigned long GetSaveFilePath() {
 // LINE 140:
 	asm( 
 "	      00490ed4    push ebp"

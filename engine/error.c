@@ -6,7 +6,7 @@
 
 // Contribution: 1:000d7450-000d7464 Module: 136, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x004d8450
-VRGetError {
+int32_t VRGetError() {
 // LINE 28:
 	asm( 
 "	      004d8450    push ebp"

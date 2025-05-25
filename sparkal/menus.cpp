@@ -6,7 +6,7 @@
 
 // Contribution: 1:00099f80-0009d28b Module: 13, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x0049af80
-UserMenuWindow::UserMenuWindow {
+void UserMenuWindow::UserMenuWindow() {
 // LINE 38:
 	asm( 
 "	      0049af80    push ebp"
@@ -183,7 +183,7 @@ UserMenuWindow::UserMenuWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x0049b1fb
-UserMenuWindow::UserMenuWindow {
+void UserMenuWindow::UserMenuWindow(struct UserMenuWindowDescription&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
 // LINE 55:
 	asm( 
 "	      0049b1fb    push ebp"
@@ -529,7 +529,7 @@ UserMenuWindow::UserMenuWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x0049b678
-UserMenuWindow::~UserMenuWindow {
+void UserMenuWindow::~UserMenuWindow() {
 // LINE 65:
 	asm( 
 "	      0049b678    push ebp"
@@ -680,7 +680,7 @@ UserMenuWindow::~UserMenuWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x0049b858
-UserMenuWindow::Initialize {
+int32_t UserMenuWindow::Initialize() {
 // LINE 81:
 	asm( 
 "	      0049b858    push ebp"
@@ -1379,7 +1379,7 @@ UserMenuWindow::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x0049c3ad
-UserMenuWindow::DrawSelf {
+int32_t UserMenuWindow::DrawSelf() {
 // LINE 158:
 	asm( 
 "	      0049c3ad    push ebp"
@@ -1444,7 +1444,7 @@ UserMenuWindow::DrawSelf {
 }
 
 // FUNCTION: SIMCOPTER 0x0049c43c
-UserMenuWindow::SetSelectionIndex {
+int32_t UserMenuWindow::SetSelectionIndex(int32_t) {
 // LINE 181:
 	asm( 
 "	      0049c43c    push ebp"
@@ -1566,7 +1566,7 @@ UserMenuWindow::SetSelectionIndex {
 }
 
 // FUNCTION: SIMCOPTER 0x0049c55b
-UserMenuWindow::SetSelectionValue {
+int32_t UserMenuWindow::SetSelectionValue(int32_t) {
 // LINE 197:
 	asm( 
 "	      0049c55b    push ebp"
@@ -1606,7 +1606,7 @@ UserMenuWindow::SetSelectionValue {
 }
 
 // FUNCTION: SIMCOPTER 0x0049c595
-UserMenuWindow::DrawSelectionIndicators {
+void UserMenuWindow::DrawSelectionIndicators() {
 // LINE 210:
 	asm( 
 "	      0049c595    push ebp"
@@ -1629,7 +1629,7 @@ UserMenuWindow::DrawSelectionIndicators {
 }
 
 // FUNCTION: SIMCOPTER 0x0049c5ab
-UserMenuWindow::DoCursorHitTest {
+int32_t UserMenuWindow::DoCursorHitTest(int32_t&, long, long) {
 // LINE 231:
 	asm( 
 "	      0049c5ab    push ebp"
@@ -1729,7 +1729,7 @@ UserMenuWindow::DoCursorHitTest {
 }
 
 // FUNCTION: SIMCOPTER 0x0049c6ad
-UserMenuWindow::GetPositionOfNthItem {
+int32_t UserMenuWindow::GetPositionOfNthItem(int32_t, class MPoint&) {
 // LINE 248:
 	asm( 
 "	      0049c6ad    push ebp"
@@ -1773,7 +1773,7 @@ UserMenuWindow::GetPositionOfNthItem {
 }
 
 // FUNCTION: SIMCOPTER 0x0049c6f4
-UserMenuWindow::DoCharacter {
+long UserMenuWindow::DoCharacter(long) {
 // LINE 263:
 	asm( 
 "	      0049c6f4    push ebp"
@@ -2001,7 +2001,7 @@ UserMenuWindow::DoCharacter {
 }
 
 // FUNCTION: SIMCOPTER 0x0049c9a7
-UserMenuWindow::DoKeyDown {
+long UserMenuWindow::DoKeyDown(long, char) {
 // LINE 281:
 	asm( 
 "	      0049c9a7    push ebp"
@@ -2224,7 +2224,7 @@ UserMenuWindow::DoKeyDown {
 }
 
 // FUNCTION: SIMCOPTER 0x0049cb8d
-UserMenuWindow::DoCursorDown {
+long UserMenuWindow::DoCursorDown(long, long, unsigned long) {
 // LINE 327:
 	asm( 
 "	      0049cb8d    push ebp"
@@ -2304,7 +2304,7 @@ UserMenuWindow::DoCursorDown {
 }
 
 // FUNCTION: SIMCOPTER 0x0049cc1a
-UserMenuWindow::DoCursorMove {
+long UserMenuWindow::DoCursorMove(long, long) {
 // LINE 346:
 	asm( 
 "	      0049cc1a    push ebp"
@@ -2355,7 +2355,7 @@ UserMenuWindow::DoCursorMove {
 }
 
 // FUNCTION: SIMCOPTER 0x0049cc6b
-UserMenuWindow::ExecuteSelection {
+int32_t UserMenuWindow::ExecuteSelection(int32_t) {
 // LINE 359:
 	asm( 
 "	      0049cc6b    push ebp"
@@ -2406,7 +2406,7 @@ UserMenuWindow::ExecuteSelection {
 }
 
 // FUNCTION: SIMCOPTER 0x0049ccbb
-CopterMainMenu::CopterMainMenu {
+void CopterMainMenu::CopterMainMenu(struct UserMenuWindowDescription&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
 // LINE 393:
 	asm( 
 "	      0049ccbb    push ebp"
@@ -2448,7 +2448,7 @@ CopterMainMenu::CopterMainMenu {
 }
 
 // FUNCTION: SIMCOPTER 0x0049cd15
-CopterMainMenu::~CopterMainMenu {
+void CopterMainMenu::~CopterMainMenu() {
 // LINE 400:
 	asm( 
 "	      0049cd15    push ebp"
@@ -2498,7 +2498,7 @@ CopterMainMenu::~CopterMainMenu {
 }
 
 // FUNCTION: SIMCOPTER 0x0049cd72
-CopterMainMenu::Initialize {
+int32_t CopterMainMenu::Initialize() {
 // LINE 411:
 	asm( 
 "	      0049cd72    push ebp"
@@ -2604,7 +2604,7 @@ CopterMainMenu::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x0049ce9b
-CopterMainMenu::CreateImage {
+int32_t CopterMainMenu::CreateImage(int32_t) {
 // LINE 425:
 	asm( 
 "	      0049ce9b    push ebp"
@@ -3008,7 +3008,7 @@ CopterMainMenu::CreateImage {
 }
 
 // FUNCTION: SIMCOPTER 0x0049d3fd
-CopterMainMenu::DestroyImage {
+void CopterMainMenu::DestroyImage() {
 // LINE 446:
 	asm( 
 "	      0049d3fd    push ebp"
@@ -3094,7 +3094,7 @@ CopterMainMenu::DestroyImage {
 }
 
 // FUNCTION: SIMCOPTER 0x0049d4c9
-CopterMainMenu::DrawSelf {
+int32_t CopterMainMenu::DrawSelf() {
 // LINE 461:
 	asm( 
 "	      0049d4c9    push ebp"
@@ -3131,7 +3131,7 @@ CopterMainMenu::DrawSelf {
 }
 
 // FUNCTION: SIMCOPTER 0x0049d4f4
-CopterMainMenu::DrawRatchetAndLights {
+void CopterMainMenu::DrawRatchetAndLights() {
 // LINE 472:
 	asm( 
 "	      0049d4f4    push ebp"
@@ -3310,7 +3310,7 @@ CopterMainMenu::DrawRatchetAndLights {
 }
 
 // FUNCTION: SIMCOPTER 0x0049d742
-CopterMainMenu::GetCoordinatesForLights {
+void CopterMainMenu::GetCoordinatesForLights(class MPoint*, class MRect*) {
 // LINE 501:
 	asm( 
 "	      0049d742    push ebp"
@@ -3499,7 +3499,7 @@ CopterMainMenu::GetCoordinatesForLights {
 }
 
 // FUNCTION: SIMCOPTER 0x0049d8ab
-CopterMainMenu::GetCoordinatesForRatchets {
+void CopterMainMenu::GetCoordinatesForRatchets(class MPoint*, class MRect*) {
 // LINE 545:
 	asm( 
 "	      0049d8ab    push ebp"
@@ -3688,7 +3688,7 @@ CopterMainMenu::GetCoordinatesForRatchets {
 }
 
 // FUNCTION: SIMCOPTER 0x0049da14
-CopterPlayMenu::CopterPlayMenu {
+void CopterPlayMenu::CopterPlayMenu(struct UserMenuWindowDescription&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
 // LINE 604:
 	asm( 
 "	      0049da14    push ebp"
@@ -3730,7 +3730,7 @@ CopterPlayMenu::CopterPlayMenu {
 }
 
 // FUNCTION: SIMCOPTER 0x0049da6e
-CopterPlayMenu::~CopterPlayMenu {
+void CopterPlayMenu::~CopterPlayMenu() {
 // LINE 612:
 	asm( 
 "	      0049da6e    push ebp"
@@ -3762,7 +3762,7 @@ CopterPlayMenu::~CopterPlayMenu {
 }
 
 // FUNCTION: SIMCOPTER 0x0049da9d
-CopterPlayMenu::Initialize {
+int32_t CopterPlayMenu::Initialize() {
 // LINE 621:
 	asm( 
 "	      0049da9d    push ebp"
@@ -3798,7 +3798,7 @@ CopterPlayMenu::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x0049dac8
-CopterPlayMenu::CreateImage {
+int32_t CopterPlayMenu::CreateImage(int32_t) {
 // LINE 630:
 	asm( 
 "	      0049dac8    push ebp"
@@ -4214,7 +4214,7 @@ CopterPlayMenu::CreateImage {
 }
 
 // FUNCTION: SIMCOPTER 0x0049e04f
-CopterPlayMenu::DestroyImage {
+void CopterPlayMenu::DestroyImage() {
 // LINE 652:
 	asm( 
 "	      0049e04f    push ebp"
@@ -4300,7 +4300,7 @@ CopterPlayMenu::DestroyImage {
 }
 
 // FUNCTION: SIMCOPTER 0x0049e11b
-CopterPlayMenu::DrawSelf {
+int32_t CopterPlayMenu::DrawSelf() {
 // LINE 667:
 	asm( 
 "	      0049e11b    push ebp"
@@ -4337,7 +4337,7 @@ CopterPlayMenu::DrawSelf {
 }
 
 // FUNCTION: SIMCOPTER 0x0049e146
-CopterPlayMenu::DrawRatchet {
+void CopterPlayMenu::DrawRatchet() {
 // LINE 677:
 	asm( 
 "	      0049e146    push ebp"
@@ -4435,7 +4435,7 @@ CopterPlayMenu::DrawRatchet {
 }
 
 // FUNCTION: SIMCOPTER 0x0049e226
-CopterPlayMenu::GetCoordinatesForRatchet {
+void CopterPlayMenu::GetCoordinatesForRatchet(class MPoint&) {
 // LINE 693:
 	asm( 
 "	      0049e226    push ebp"
@@ -4508,7 +4508,7 @@ CopterPlayMenu::GetCoordinatesForRatchet {
 
 // Contribution: 1:0009d320-0009d359 Module: 13, 16 byte alignment, code, (comdat), execute, read, 
 // FUNCTION: SIMCOPTER 0x0049e320
-UserMenuWindow::GetLineCount {
+int32_t UserMenuWindow::GetLineCount() {
 // LINE 218:
 	asm( 
 "	      0049e320    push ebp"

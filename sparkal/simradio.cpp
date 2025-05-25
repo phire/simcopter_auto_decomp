@@ -6,7 +6,7 @@
 
 // Contribution: 1:00032120-000389b8 Module: 59, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x00433120
-RadioStation::RadioStation {
+void RadioStation::RadioStation() {
 // LINE 62:
 	asm( 
 "	      00433120    push ebp"
@@ -362,7 +362,7 @@ RadioStation::RadioStation {
 }
 
 // FUNCTION: SIMCOPTER 0x00433605
-RadioStation::RadioStation {
+void RadioStation::RadioStation(const class RadioStation&) {
 // LINE 80:
 	asm( 
 "	      00433605    push ebp"
@@ -857,7 +857,7 @@ RadioStation::RadioStation {
 }
 
 // FUNCTION: SIMCOPTER 0x00433c3e
-RadioStation::operator= {
+class RadioStation& RadioStation::operator=(const class RadioStation&) {
 // LINE 106:
 	asm( 
 "	      00433c3e    push ebp"
@@ -1334,7 +1334,7 @@ RadioStation::operator= {
 }
 
 // FUNCTION: SIMCOPTER 0x004341c6
-RadioStation::~RadioStation {
+void RadioStation::~RadioStation() {
 // LINE 136:
 	asm( 
 "	      004341c6    push ebp"
@@ -1609,7 +1609,7 @@ RadioStation::~RadioStation {
 }
 
 // FUNCTION: SIMCOPTER 0x00434581
-RadioStation::Initialize {
+int32_t RadioStation::Initialize() {
 // LINE 146:
 	asm( 
 "	      00434581    push ebp"
@@ -1636,7 +1636,7 @@ RadioStation::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x0043459c
-RadioStation::SetPlayStatus {
+void RadioStation::SetPlayStatus(int32_t) {
 // LINE 155:
 	asm( 
 "	      0043459c    push ebp"
@@ -1665,7 +1665,7 @@ RadioStation::SetPlayStatus {
 }
 
 // FUNCTION: SIMCOPTER 0x004345bd
-RadioStation::StationSet {
+void RadioStation::StationSet() {
 // LINE 165:
 	asm( 
 "	      004345bd    push ebp"
@@ -1702,7 +1702,7 @@ RadioStation::StationSet {
 }
 
 // FUNCTION: SIMCOPTER 0x004345e9
-RadioStation::IsPlaying {
+int32_t RadioStation::IsPlaying() {
 // LINE 175:
 	asm( 
 "	      004345e9    push ebp"
@@ -1730,7 +1730,7 @@ RadioStation::IsPlaying {
 }
 
 // FUNCTION: SIMCOPTER 0x00434605
-RadioStation::DoState {
+int32_t RadioStation::DoState() {
 // LINE 184:
 	asm( 
 "	      00434605    push ebp"
@@ -2156,7 +2156,7 @@ RadioStation::DoState {
 }
 
 // FUNCTION: SIMCOPTER 0x00434a46
-RadioStation::StartPlayingNextSelectionOfGivenType {
+int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycleType) {
 // LINE 271:
 	asm( 
 "	      00434a46    push ebp"
@@ -2835,7 +2835,7 @@ RadioStation::StartPlayingNextSelectionOfGivenType {
 }
 
 // FUNCTION: SIMCOPTER 0x004353e2
-RadioStation::LoadAllPlaylists {
+void RadioStation::LoadAllPlaylists() {
 // LINE 317:
 	asm( 
 "	      004353e2    push ebp"
@@ -3240,7 +3240,7 @@ RadioStation::LoadAllPlaylists {
 }
 
 // FUNCTION: SIMCOPTER 0x004359e2
-RadioStation::ShufflePlaylist {
+void RadioStation::ShufflePlaylist() {
 // LINE 349:
 	asm( 
 "	      004359e2    push ebp"
@@ -4149,7 +4149,7 @@ RadioStation::ShufflePlaylist {
 }
 
 // FUNCTION: SIMCOPTER 0x0043678e
-RadioStation::RandomizeStringList {
+void RadioStation::RandomizeStringList(class list<basic_string<char>>&) {
 // LINE 411:
 	asm( 
 "	      0043678e    push ebp"
@@ -4480,7 +4480,7 @@ RadioStation::RandomizeStringList {
 }
 
 // FUNCTION: SIMCOPTER 0x00436bcd
-RadioStation::ShuffleCycle {
+void RadioStation::ShuffleCycle() {
 // LINE 445:
 	asm( 
 "	      00436bcd    push ebp"
@@ -4634,7 +4634,7 @@ RadioStation::ShuffleCycle {
 }
 
 // FUNCTION: SIMCOPTER 0x00436d80
-RadioStation::GetStationCallSign {
+void RadioStation::GetStationCallSign(class basic_string<char>&) {
 // LINE 469:
 	asm( 
 "	      00436d80    push ebp"
@@ -4785,7 +4785,7 @@ RadioStation::GetStationCallSign {
 }
 
 // FUNCTION: SIMCOPTER 0x00436f5f
-RadioStation::GetRadioStationType {
+enum RadioStationType RadioStation::GetRadioStationType() {
 // LINE 478:
 	asm( 
 "	      00436f5f    push ebp"
@@ -4813,7 +4813,7 @@ RadioStation::GetRadioStationType {
 }
 
 // FUNCTION: SIMCOPTER 0x00436f7b
-RadioStation::IsCycleTypePresent {
+int32_t RadioStation::IsCycleTypePresent(enum RadioStationCycleType) {
 // LINE 487:
 	asm( 
 "	      00436f7b    push ebp"
@@ -4927,7 +4927,7 @@ RadioStation::IsCycleTypePresent {
 }
 
 // FUNCTION: SIMCOPTER 0x00437054
-RadioStation::MoveToNextPlaylistItem {
+void RadioStation::MoveToNextPlaylistItem(enum RadioStationCycleType) {
 // LINE 514:
 	asm( 
 "	      00437054    push ebp"
@@ -5177,7 +5177,7 @@ RadioStation::MoveToNextPlaylistItem {
 }
 
 // FUNCTION: SIMCOPTER 0x00437337
-RadioStation::ReadCallSignFromDisk {
+int32_t RadioStation::ReadCallSignFromDisk() {
 // LINE 542:
 	asm( 
 "	      00437337    push ebp"
@@ -5461,7 +5461,7 @@ RadioStation::ReadCallSignFromDisk {
 }
 
 // FUNCTION: SIMCOPTER 0x004376dc
-RadioStation::DetectRadioStationType {
+int32_t RadioStation::DetectRadioStationType() {
 // LINE 562:
 	asm( 
 "	      004376dc    push ebp"
@@ -5761,7 +5761,7 @@ RadioStation::DetectRadioStationType {
 }
 
 // FUNCTION: SIMCOPTER 0x00437b10
-Radio::Radio {
+public: __thiscall Radio::Radio(void) {
 // LINE 603:
 	asm( 
 "	      00437b10    push ebp"
@@ -5815,7 +5815,7 @@ Radio::Radio {
 }
 
 // FUNCTION: SIMCOPTER 0x00437bba
-Radio::~Radio {
+public: virtual __thiscall Radio::~Radio(void) {
 // LINE 610:
 	asm( 
 "	      00437bba    push ebp"
@@ -5879,7 +5879,7 @@ Radio::~Radio {
 }
 
 // FUNCTION: SIMCOPTER 0x00437c57
-Radio::Initialize {
+public: virtual int __thiscall Radio::Initialize(void) {
 // LINE 619:
 	asm( 
 "	      00437c57    push ebp"
@@ -5920,7 +5920,7 @@ Radio::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x00437c88
-Radio::DeInitialize {
+public: virtual int __thiscall Radio::DeInitialize(void) {
 // LINE 630:
 	asm( 
 "	      00437c88    push ebp"
@@ -5962,7 +5962,7 @@ Radio::DeInitialize {
 }
 
 // FUNCTION: SIMCOPTER 0x00437cbd
-Radio::SetPreferences {
+public: virtual void __thiscall Radio::SetPreferences(struct RadioPreferences &) {
 // LINE 641:
 	asm( 
 "	      00437cbd    push ebp"
@@ -6054,7 +6054,7 @@ Radio::SetPreferences {
 }
 
 // FUNCTION: SIMCOPTER 0x00437d4c
-Radio::GetPreferences {
+public: virtual void __thiscall Radio::GetPreferences(struct RadioPreferences &) {
 // LINE 660:
 	asm( 
 "	      00437d4c    push ebp"
@@ -6126,7 +6126,7 @@ Radio::GetPreferences {
 }
 
 // FUNCTION: SIMCOPTER 0x00437db7
-Radio::GetPreferences {
+public: virtual int __thiscall Radio::GetPreferences(void) {
 // LINE 675:
 	asm( 
 "	      00437db7    push ebp"
@@ -6218,7 +6218,7 @@ Radio::GetPreferences {
 }
 
 // FUNCTION: SIMCOPTER 0x00437e67
-Radio::SavePreferences {
+public: virtual int __thiscall Radio::SavePreferences(void) {
 // LINE 703:
 	asm( 
 "	      00437e67    push ebp"
@@ -6302,7 +6302,7 @@ Radio::SavePreferences {
 }
 
 // FUNCTION: SIMCOPTER 0x00437ee7
-Radio::SetOn {
+public: virtual int __thiscall Radio::SetOn(int) {
 // LINE 727:
 	asm( 
 "	      00437ee7    push ebp"
@@ -6436,7 +6436,7 @@ Radio::SetOn {
 }
 
 // FUNCTION: SIMCOPTER 0x00438005
-Radio::SetMute {
+public: virtual void __thiscall Radio::SetMute(int) {
 // LINE 758:
 	asm( 
 "	      00438005    push ebp"
@@ -6519,7 +6519,7 @@ Radio::SetMute {
 }
 
 // FUNCTION: SIMCOPTER 0x004380a0
-Radio::SetOption {
+public: virtual void __thiscall Radio::SetOption(int, enum RadioOption) {
 // LINE 780:
 	asm( 
 "	      004380a0    push ebp"
@@ -6577,7 +6577,7 @@ Radio::SetOption {
 }
 
 // FUNCTION: SIMCOPTER 0x004380fb
-Radio::GetOption {
+public: virtual int __thiscall Radio::GetOption(enum RadioOption) {
 // LINE 793:
 	asm( 
 "	      004380fb    push ebp"
@@ -6639,7 +6639,7 @@ Radio::GetOption {
 }
 
 // FUNCTION: SIMCOPTER 0x0043815e
-Radio::SetVolume {
+public: virtual int __thiscall Radio::SetVolume(long) {
 // LINE 811:
 	asm( 
 "	      0043815e    push ebp"
@@ -6707,7 +6707,7 @@ Radio::SetVolume {
 }
 
 // FUNCTION: SIMCOPTER 0x004381cc
-Radio::SetStation {
+public: virtual int __thiscall Radio::SetStation(int) {
 // LINE 826:
 	asm( 
 "	      004381cc    push ebp"
@@ -6830,7 +6830,7 @@ Radio::SetStation {
 }
 
 // FUNCTION: SIMCOPTER 0x004382ca
-Radio::SetStation {
+public: virtual int __thiscall Radio::SetStation(enum RadioStationType) {
 // LINE 846:
 	asm( 
 "	      004382ca    push ebp"
@@ -6912,7 +6912,7 @@ Radio::SetStation {
 }
 
 // FUNCTION: SIMCOPTER 0x00438379
-Radio::IsStationTypeAvailable {
+public: virtual int __thiscall Radio::IsStationTypeAvailable(enum RadioStationType) {
 // LINE 860:
 	asm( 
 "	      00438379    push ebp"
@@ -6989,7 +6989,7 @@ Radio::IsStationTypeAvailable {
 }
 
 // FUNCTION: SIMCOPTER 0x0043841e
-Radio::GetStationCount {
+public: virtual int __thiscall Radio::GetStationCount(void) {
 // LINE 875:
 	asm( 
 "	      0043841e    push ebp"
@@ -7025,7 +7025,7 @@ Radio::GetStationCount {
 }
 
 // FUNCTION: SIMCOPTER 0x00438457
-Radio::DoState {
+public: virtual int __thiscall Radio::DoState(void) {
 // LINE 884:
 	asm( 
 "	      00438457    push ebp"
@@ -7079,7 +7079,7 @@ Radio::DoState {
 }
 
 // FUNCTION: SIMCOPTER 0x004384b6
-Radio::StationDirectoryNameIsValid {
+protected: virtual int __thiscall Radio::StationDirectoryNameIsValid(class basic_string<char> &) {
 // LINE 895:
 	asm( 
 "	      004384b6    push ebp"
@@ -7226,7 +7226,7 @@ Radio::StationDirectoryNameIsValid {
 }
 
 // FUNCTION: SIMCOPTER 0x0043867d
-Radio::SetupStations {
+protected: virtual int __thiscall Radio::SetupStations(void) {
 // LINE 914:
 	asm( 
 "	      0043867d    push ebp"
@@ -8329,7 +8329,7 @@ Radio::SetupStations {
 }
 
 // FUNCTION: SIMCOPTER 0x00439663
-Radio::DoesAtLeastOneSoundEntryExistForTheGivenDirectory {
+protected: virtual int __thiscall Radio::DoesAtLeastOneSoundEntryExistForTheGivenDirectory(class basic_string<char> const &) {
 // LINE 1013:
 	asm( 
 "	      00439663    push ebp"

@@ -6,7 +6,7 @@
 
 // Contribution: 1:00031260-000314d4 Module: 61, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x00432260
-CSparkalWindow::SetCommander {
+class ICommander* CSparkalWindow::SetCommander(class ICommander*) {
 // LINE 18:
 	asm( 
 "	      00432260    push ebp"
@@ -85,7 +85,7 @@ CSparkalWindow::SetCommander {
 }
 
 // FUNCTION: SIMCOPTER 0x004322d7
-CSparkalWindow::SetBackBuffer {
+class ScreenBuffer* CSparkalWindow::SetBackBuffer(class ScreenBuffer*) {
 // LINE 41:
 	asm( 
 "	      004322d7    push ebp"
@@ -124,7 +124,7 @@ CSparkalWindow::SetBackBuffer {
 }
 
 // FUNCTION: SIMCOPTER 0x00432304
-CSparkalWindow::Draw {
+unsigned long CSparkalWindow::Draw() {
 // LINE 53:
 	asm( 
 "	      00432304    push ebp"
@@ -154,7 +154,7 @@ CSparkalWindow::Draw {
 }
 
 // FUNCTION: SIMCOPTER 0x00432325
-CSparkalWindow::SwapBuffer {
+unsigned long CSparkalWindow::SwapBuffer() {
 // LINE 63:
 	asm( 
 "	      00432325    push ebp"
@@ -220,7 +220,7 @@ CSparkalWindow::SwapBuffer {
 }
 
 // FUNCTION: SIMCOPTER 0x0043238c
-CSparkalWindow::SwapBuffer {
+unsigned long CSparkalWindow::SwapBuffer(long, long, long, long) {
 // LINE 80:
 	asm( 
 "	      0043238c    push ebp"

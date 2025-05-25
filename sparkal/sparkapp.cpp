@@ -6,7 +6,7 @@
 
 // Contribution: 1:00025fc0-00026507 Module: 69, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x00426fc0
-CSparkalApp::CSparkalApp {
+void CSparkalApp::CSparkalApp() {
 // LINE 14:
 	asm( 
 "	      00426fc0    push ebp"
@@ -113,7 +113,7 @@ CSparkalApp::CSparkalApp {
 }
 
 // FUNCTION: SIMCOPTER 0x004270e1
-CSparkalApp::~CSparkalApp {
+void CSparkalApp::~CSparkalApp() {
 // LINE 45:
 	asm( 
 "	      004270e1    push ebp"
@@ -178,7 +178,7 @@ CSparkalApp::~CSparkalApp {
 }
 
 // FUNCTION: SIMCOPTER 0x004271a3
-CSparkalApp::DecideRuntimePlatform {
+int32_t CSparkalApp::DecideRuntimePlatform() {
 // LINE 61:
 	asm( 
 "	      004271a3    push ebp"
@@ -282,7 +282,7 @@ CSparkalApp::DecideRuntimePlatform {
 }
 
 // FUNCTION: SIMCOPTER 0x00427257
-CSparkalApp::NewWindow {
+class CSparkalWindow* CSparkalApp::NewWindow(unsigned long, unsigned long, unsigned long, const struct SparkalColor*, char *) {
 // LINE 96:
 	asm( 
 "	      00427257    push ebp"
@@ -337,7 +337,7 @@ CSparkalApp::NewWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004272be
-CSparkalApp::NewImage {
+class IFlatImage* CSparkalApp::NewImage(char *) {
 // LINE 116:
 	asm( 
 "	      004272be    push ebp"
@@ -420,7 +420,7 @@ CSparkalApp::NewImage {
 }
 
 // FUNCTION: SIMCOPTER 0x00427368
-CSparkalApp::NewImage {
+class IFlatImage* CSparkalApp::NewImage(long, long, const const struct SparkalColor*) {
 // LINE 141:
 	asm( 
 "	      00427368    push ebp"
@@ -571,7 +571,7 @@ CSparkalApp::NewImage {
 }
 
 // FUNCTION: SIMCOPTER 0x004274c0
-CSparkalApp::PrepareGame {
+unsigned long CSparkalApp::PrepareGame() {
 // LINE 174:
 	asm( 
 "	      004274c0    push ebp"
@@ -598,7 +598,7 @@ CSparkalApp::PrepareGame {
 }
 
 // FUNCTION: SIMCOPTER 0x004274d8
-CSparkalApp::TickGame {
+unsigned long CSparkalApp::TickGame() {
 // LINE 179:
 	asm( 
 "	      004274d8    push ebp"
@@ -625,7 +625,7 @@ CSparkalApp::TickGame {
 }
 
 // FUNCTION: SIMCOPTER 0x004274f0
-CSparkalApp::FinishGame {
+unsigned long CSparkalApp::FinishGame() {
 // LINE 184:
 	asm( 
 "	      004274f0    push ebp"

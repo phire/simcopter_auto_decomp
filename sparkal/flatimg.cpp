@@ -6,7 +6,7 @@
 
 // Contribution: 1:0008e120-0008ee82 Module: 24, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x0048f120
-IFlatImage::IFlatImage {
+void IFlatImage::IFlatImage() {
 // LINE 26:
 	asm( 
 "	      0048f120    push ebp"
@@ -42,7 +42,7 @@ IFlatImage::IFlatImage {
 }
 
 // FUNCTION: SIMCOPTER 0x0048f174
-IFlatImage::StretchCompose {
+unsigned long IFlatImage::StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long) {
 // LINE 38:
 	asm( 
 "	      0048f174    push ebp"
@@ -295,7 +295,7 @@ IFlatImage::StretchCompose {
 }
 
 // FUNCTION: SIMCOPTER 0x0048f32e
-IFlatImage::StretchCompose {
+unsigned long IFlatImage::StretchCompose(class IFlatImage*, struct SparkalRect, struct SparkalRect) {
 // LINE 110:
 	asm( 
 "	      0048f32e    push ebp"
@@ -387,7 +387,7 @@ IFlatImage::StretchCompose {
 }
 
 // FUNCTION: SIMCOPTER 0x0048f3b1
-IFlatImage::Compose {
+unsigned long IFlatImage::Compose(class IFlatImage*, long, long, long, long, long, long) {
 // LINE 133:
 	asm( 
 "	      0048f3b1    push ebp"
@@ -628,7 +628,7 @@ IFlatImage::Compose {
 }
 
 // FUNCTION: SIMCOPTER 0x0048f56b
-IFlatImage::FillRect {
+unsigned long IFlatImage::FillRect(long, struct SparkalRect*) {
 // LINE 197:
 	asm( 
 "	      0048f56b    push ebp"
@@ -812,7 +812,7 @@ IFlatImage::FillRect {
 }
 
 // FUNCTION: SIMCOPTER 0x0048f69e
-CFlatImage::CFlatImage {
+void CFlatImage::CFlatImage(long, long, unsigned char) {
 // LINE 253:
 	asm( 
 "	      0048f69e    push ebp"
@@ -983,7 +983,7 @@ CFlatImage::CFlatImage {
 }
 
 // FUNCTION: SIMCOPTER 0x0048f86d
-CFlatImage::CFlatImage {
+void CFlatImage::CFlatImage(class IFlatImage*, long, long, long, long) {
 // LINE 278:
 	asm( 
 "	      0048f86d    push ebp"
@@ -1335,7 +1335,7 @@ CFlatImage::CFlatImage {
 }
 
 // FUNCTION: SIMCOPTER 0x0048fc23
-CFlatImage::~CFlatImage {
+void CFlatImage::~CFlatImage() {
 // LINE 336:
 	asm( 
 "	      0048fc23    push ebp"
@@ -1399,7 +1399,7 @@ CFlatImage::~CFlatImage {
 }
 
 // FUNCTION: SIMCOPTER 0x0048fcc6
-CFlatImage::Lock {
+unsigned long CFlatImage::Lock() {
 // LINE 348:
 	asm( 
 "	      0048fcc6    push ebp"
@@ -1486,7 +1486,7 @@ CFlatImage::Lock {
 }
 
 // FUNCTION: SIMCOPTER 0x0048fd88
-CFlatImage::Unlock {
+unsigned long CFlatImage::Unlock() {
 // LINE 363:
 	asm( 
 "	      0048fd88    push ebp"

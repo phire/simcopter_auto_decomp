@@ -6,7 +6,7 @@
 
 // Contribution: 1:0008dbb0-0008e11e Module: 25, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x0048ebb0
-WaveOpenFile {
+int32_t WaveOpenFile() {
 // LINE 48:
 	asm( 
 "	      0048ebb0    push ebp"
@@ -257,7 +257,7 @@ WaveOpenFile {
 }
 
 // FUNCTION: SIMCOPTER 0x0048edb9
-WaveStartDataRead {
+int32_t WaveStartDataRead() {
 // LINE 157:
 	asm( 
 "	      0048edb9    push ebp"
@@ -322,7 +322,7 @@ WaveStartDataRead {
 }
 
 // FUNCTION: SIMCOPTER 0x0048ee25
-WaveReadFile {
+int32_t WaveReadFile() {
 // LINE 191:
 	asm( 
 "	      0048ee25    push ebp"
@@ -500,7 +500,7 @@ WaveReadFile {
 }
 
 // FUNCTION: SIMCOPTER 0x0048ef6f
-WaveCloseReadFile {
+int32_t WaveCloseReadFile() {
 // LINE 251:
 	asm( 
 "	      0048ef6f    push ebp"
@@ -544,7 +544,7 @@ WaveCloseReadFile {
 }
 
 // FUNCTION: SIMCOPTER 0x0048efa4
-WaveLoadFile {
+int32_t WaveLoadFile() {
 // LINE 278:
 	asm( 
 "	      0048efa4    push ebp"

@@ -6,7 +6,7 @@
 
 // Contribution: 1:0015b270-0015bac4 Module: 195, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x0055c270
-FlatFile::FlatFile {
+void FlatFile::FlatFile() {
 // LINE 13:
 	asm( 
 "	      0055c270    push ebp"
@@ -52,7 +52,7 @@ FlatFile::FlatFile {
 }
 
 // FUNCTION: SIMCOPTER 0x0055c2bb
-FlatFile::~FlatFile {
+void FlatFile::~FlatFile() {
 // LINE 26:
 	asm( 
 "	      0055c2bb    push ebp"
@@ -90,7 +90,7 @@ FlatFile::~FlatFile {
 }
 
 // FUNCTION: SIMCOPTER 0x0055c2fa
-FlatFile::FindByName {
+class FlatFile* FlatFile::FindByName(unsigned char *) {
 // LINE 42:
 	asm( 
 "	      0055c2fa    push ebp"
@@ -150,7 +150,7 @@ FlatFile::FindByName {
 }
 
 // FUNCTION: SIMCOPTER 0x0055c36a
-FlatFile::Open {
+long FlatFile::Open(char *) {
 // LINE 52:
 	asm( 
 "	      0055c36a    push ebp"
@@ -199,7 +199,7 @@ FlatFile::Open {
 }
 
 // FUNCTION: SIMCOPTER 0x0055c3c7
-FlatFile::Open {
+long FlatFile::Open(unsigned char *) {
 // LINE 60:
 	asm( 
 "	      0055c3c7    push ebp"
@@ -381,7 +381,7 @@ FlatFile::Open {
 }
 
 // FUNCTION: SIMCOPTER 0x0055c586
-FlatFile::OpenFromOtherFile {
+void FlatFile::OpenFromOtherFile(class FlatFile*) {
 // LINE 110:
 	asm( 
 "	      0055c586    push ebp"
@@ -420,7 +420,7 @@ FlatFile::OpenFromOtherFile {
 }
 
 // FUNCTION: SIMCOPTER 0x0055c5cb
-FlatFile::Close {
+long FlatFile::Close() {
 // LINE 117:
 	asm( 
 "	      0055c5cb    push ebp"
@@ -519,7 +519,7 @@ FlatFile::Close {
 }
 
 // FUNCTION: SIMCOPTER 0x0055c69c
-FlatFile::ReadBlock {
+long FlatFile::ReadBlock(void * __ptr32, long *) {
 // LINE 158:
 	asm( 
 "	      0055c69c    push ebp"
@@ -581,7 +581,7 @@ FlatFile::ReadBlock {
 }
 
 // FUNCTION: SIMCOPTER 0x0055c711
-FlatFile::SetPos {
+long FlatFile::SetPos(long) {
 // LINE 179:
 	asm( 
 "	      0055c711    push ebp"
@@ -634,7 +634,7 @@ FlatFile::SetPos {
 }
 
 // FUNCTION: SIMCOPTER 0x0055c777
-FlatFile::Advance {
+long FlatFile::Advance(long) {
 // LINE 191:
 	asm( 
 "	      0055c777    push ebp"
@@ -687,7 +687,7 @@ FlatFile::Advance {
 }
 
 // FUNCTION: SIMCOPTER 0x0055c7dd
-FlatFile::ValidFile {
+unsigned short FlatFile::ValidFile() {
 // LINE 220:
 	asm( 
 "	      0055c7dd    push ebp"
@@ -723,7 +723,7 @@ FlatFile::ValidFile {
 }
 
 // FUNCTION: SIMCOPTER 0x0055c814
-FlatFile::SameFile {
+unsigned short FlatFile::SameFile(class FlatFile*) {
 // LINE 234:
 	asm( 
 "	      0055c814    push ebp"
@@ -774,7 +774,7 @@ FlatFile::SameFile {
 }
 
 // FUNCTION: SIMCOPTER 0x0055c87a
-FlatFile::Read4 {
+long FlatFile::Read4(long *) {
 // LINE 243:
 	asm( 
 "	      0055c87a    push ebp"
@@ -824,7 +824,7 @@ FlatFile::Read4 {
 }
 
 // FUNCTION: SIMCOPTER 0x0055c8c5
-FlatFile::Read2 {
+long FlatFile::Read2(short *) {
 // LINE 251:
 	asm( 
 "	      0055c8c5    push ebp"
@@ -874,7 +874,7 @@ FlatFile::Read2 {
 }
 
 // FUNCTION: SIMCOPTER 0x0055c910
-FlatFile::Read1 {
+long FlatFile::Read1(char *) {
 // LINE 259:
 	asm( 
 "	      0055c910    push ebp"
@@ -915,7 +915,7 @@ FlatFile::Read1 {
 }
 
 // FUNCTION: SIMCOPTER 0x0055c945
-FlatFile::Link {
+void FlatFile::Link() {
 // LINE 265:
 	asm( 
 "	      0055c945    push ebp"
@@ -949,7 +949,7 @@ FlatFile::Link {
 }
 
 // FUNCTION: SIMCOPTER 0x0055c96e
-FlatFile::Unlink {
+void FlatFile::Unlink() {
 // LINE 270:
 	asm( 
 "	      0055c96e    push ebp"
@@ -1021,7 +1021,7 @@ FlatFile::Unlink {
 }
 
 // FUNCTION: SIMCOPTER 0x0055c9e3
-FlatFile::Exclusive {
+unsigned short FlatFile::Exclusive() {
 // LINE 284:
 	asm( 
 "	      0055c9e3    push ebp"
@@ -1086,7 +1086,7 @@ FlatFile::Exclusive {
 }
 
 // FUNCTION: SIMCOPTER 0x0055ca48
-FlatFile::GetFileName {
+long FlatFile::GetFileName(unsigned char *) {
 // LINE 295:
 	asm( 
 "	      0055ca48    push ebp"
@@ -1128,7 +1128,7 @@ FlatFile::GetFileName {
 }
 
 // FUNCTION: SIMCOPTER 0x0055ca7f
-FlatFile::CheckForLeaks {
+short FlatFile::CheckForLeaks() {
 // LINE 301:
 	asm( 
 "	      0055ca7f    push ebp"

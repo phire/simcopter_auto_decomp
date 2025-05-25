@@ -6,7 +6,7 @@
 
 // Contribution: 1:0003d160-0003d24d Module: 54, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x0043e160
-NotificationItem::NotificationItem {
+void NotificationItem::NotificationItem() {
 // LINE 9:
 	asm( 
 "	      0043e160    push ebp"
@@ -34,7 +34,7 @@ NotificationItem::NotificationItem {
 }
 
 // FUNCTION: SIMCOPTER 0x0043e18c
-NotificationItem::NotificationItem {
+void NotificationItem::NotificationItem(const class NotificationItem&) {
 // LINE 12:
 	asm( 
 "	      0043e18c    push ebp"
@@ -65,7 +65,7 @@ NotificationItem::NotificationItem {
 }
 
 // FUNCTION: SIMCOPTER 0x0043e1b3
-NotificationItem::NotificationItem {
+void NotificationItem::NotificationItem(long, class NotificationSink*) {
 // LINE 19:
 	asm( 
 "	      0043e1b3    push ebp"
@@ -95,7 +95,7 @@ NotificationItem::NotificationItem {
 }
 
 // FUNCTION: SIMCOPTER 0x0043e1df
-NotificationItem::operator= {
+class NotificationItem& NotificationItem::operator=(const class NotificationItem&) {
 // LINE 22:
 	asm( 
 "	      0043e1df    push ebp"
@@ -136,7 +136,7 @@ NotificationItem::operator= {
 }
 
 // FUNCTION: SIMCOPTER 0x0043e210
-operator== {
+int32_t operator==() {
 // LINE 29:
 	asm( 
 "	      0043e210    push ebp"

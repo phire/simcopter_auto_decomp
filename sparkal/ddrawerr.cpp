@@ -6,7 +6,7 @@
 
 // Contribution: 1:0002c420-0002cf5b Module: 65, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x0042d420
-DirectDrawError::DisplayError {
+void DirectDrawError::DisplayError(char *) {
 // LINE 10:
 	asm( 
 "	      0042d420    push ebp"
@@ -46,7 +46,7 @@ DirectDrawError::DisplayError {
 }
 
 // FUNCTION: SIMCOPTER 0x0042d468
-DirectDrawError::MakeErrorString {
+void DirectDrawError::MakeErrorString(char *, char *) {
 // LINE 27:
 	asm( 
 "	      0042d468    push ebp"
@@ -837,7 +837,7 @@ DirectDrawError::MakeErrorString {
 }
 
 // FUNCTION: SIMCOPTER 0x0042dc69
-DirectSoundError::DisplayError {
+void DirectSoundError::DisplayError(char *) {
 // LINE 190:
 	asm( 
 "	      0042dc69    push ebp"
@@ -877,7 +877,7 @@ DirectSoundError::DisplayError {
 }
 
 // FUNCTION: SIMCOPTER 0x0042dcb1
-DirectSoundError::MakeErrorString {
+void DirectSoundError::MakeErrorString(char *, char *) {
 // LINE 208:
 	asm( 
 "	      0042dcb1    push ebp"

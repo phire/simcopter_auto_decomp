@@ -6,7 +6,7 @@
 
 // Contribution: 1:001664e0-001683d3 Module: 180, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x005674e0
-OpenFile {
+unsigned short OpenFile() {
 // LINE 16:
 	asm( 
 "	      005674e0    push ebp"
@@ -72,7 +72,7 @@ OpenFile {
 }
 
 // FUNCTION: SIMCOPTER 0x00567552
-_cArray::FromDiskCreate {
+void _cArray::FromDiskCreate(void * __ptr32, class ResFile*, long, void (*)(void * __ptr32, long)) {
 // LINE 29:
 	asm( 
 "	      00567552    push ebp"
@@ -417,7 +417,7 @@ _cArray::FromDiskCreate {
 }
 
 // FUNCTION: SIMCOPTER 0x00567900
-_cArray::BeginCreate {
+void _cArray::BeginCreate(long, long, long, unsigned char *, class ResFile*, unsigned long) {
 // LINE 116:
 	asm( 
 "	      00567900    push ebp"
@@ -545,7 +545,7 @@ _cArray::BeginCreate {
 }
 
 // FUNCTION: SIMCOPTER 0x005679eb
-_cArray::~_cArray {
+void _cArray::~_cArray() {
 // LINE 158:
 	asm( 
 "	      005679eb    push ebp"
@@ -666,7 +666,7 @@ _cArray::~_cArray {
 }
 
 // FUNCTION: SIMCOPTER 0x00567b1b
-_cArray::MakeTable {
+void _cArray::MakeTable() {
 // LINE 194:
 	asm( 
 "	      00567b1b    push ebp"
@@ -729,7 +729,7 @@ _cArray::MakeTable {
 }
 
 // FUNCTION: SIMCOPTER 0x00567ba7
-_cArray::DeleteTable {
+void _cArray::DeleteTable() {
 // LINE 205:
 	asm( 
 "	      00567ba7    push ebp"
@@ -767,7 +767,7 @@ _cArray::DeleteTable {
 }
 
 // FUNCTION: SIMCOPTER 0x00567be1
-_cArray::WriteToDisk {
+void _cArray::WriteToDisk() {
 // LINE 214:
 	asm( 
 "	      00567be1    push ebp"
@@ -790,7 +790,7 @@ _cArray::WriteToDisk {
 }
 
 // FUNCTION: SIMCOPTER 0x00567bf7
-_cArray::CheckIntoTable {
+void _cArray::CheckIntoTable() {
 // LINE 248:
 	asm( 
 "	      00567bf7    push ebp"
@@ -903,7 +903,7 @@ _cArray::CheckIntoTable {
 }
 
 // FUNCTION: SIMCOPTER 0x00567d12
-_cArray::FillHeader {
+void _cArray::FillHeader() {
 // LINE 303:
 	asm( 
 "	      00567d12    push ebp"
@@ -1024,7 +1024,7 @@ _cArray::FillHeader {
 }
 
 // FUNCTION: SIMCOPTER 0x00567e33
-_cArray::SetSizeAndHeaders {
+void _cArray::SetSizeAndHeaders(long, long) {
 // LINE 319:
 	asm( 
 "	      00567e33    push ebp"
@@ -1066,7 +1066,7 @@ _cArray::SetSizeAndHeaders {
 }
 
 // FUNCTION: SIMCOPTER 0x00567e6b
-_cArray::ClearBytes {
+void _cArray::ClearBytes(char) {
 // LINE 326:
 	asm( 
 "	      00567e6b    push ebp"
@@ -1231,7 +1231,7 @@ _cArray::ClearBytes {
 }
 
 // FUNCTION: SIMCOPTER 0x00567fe6
-_cArray::InsertRow {
+short _cArray::InsertRow(short) {
 // LINE 358:
 	asm( 
 "	      00567fe6    push ebp"
@@ -1381,7 +1381,7 @@ _cArray::InsertRow {
 }
 
 // FUNCTION: SIMCOPTER 0x00568128
-_cArray::InsertColumn {
+short _cArray::InsertColumn(short) {
 // LINE 386:
 	asm( 
 "	      00568128    push ebp"
@@ -1546,7 +1546,7 @@ _cArray::InsertColumn {
 }
 
 // FUNCTION: SIMCOPTER 0x00568294
-_cArray::DeleteRow {
+short _cArray::DeleteRow(short) {
 // LINE 410:
 	asm( 
 "	      00568294    push ebp"
@@ -1717,7 +1717,7 @@ _cArray::DeleteRow {
 }
 
 // FUNCTION: SIMCOPTER 0x00568439
-_cArray::DeleteColumn {
+short _cArray::DeleteColumn(short) {
 // LINE 433:
 	asm( 
 "	      00568439    push ebp"
@@ -1967,7 +1967,7 @@ _cArray::DeleteColumn {
 }
 
 // FUNCTION: SIMCOPTER 0x005686af
-_cArray::Resize {
+unsigned short _cArray::Resize(long, long, char) {
 // LINE 465:
 	asm( 
 "	      005686af    push ebp"
@@ -2164,7 +2164,7 @@ _cArray::Resize {
 }
 
 // FUNCTION: SIMCOPTER 0x00568879
-_cArray::SetSize {
+unsigned short _cArray::SetSize(long, long) {
 // LINE 493:
 	asm( 
 "	      00568879    push ebp"
@@ -2303,7 +2303,7 @@ _cArray::SetSize {
 }
 
 // FUNCTION: SIMCOPTER 0x005689cc
-_cArray::SetXPointers {
+void _cArray::SetXPointers() {
 // LINE 515:
 	asm( 
 "	      005689cc    push ebp"
@@ -2382,7 +2382,7 @@ _cArray::SetXPointers {
 }
 
 // FUNCTION: SIMCOPTER 0x00568a68
-_cArray::CopyFrom {
+void _cArray::CopyFrom(unsigned char *) {
 // LINE 537:
 	asm( 
 "	      00568a68    push ebp"
@@ -2415,7 +2415,7 @@ _cArray::CopyFrom {
 }
 
 // FUNCTION: SIMCOPTER 0x00568a95
-_cArray::CopyFrom {
+void _cArray::CopyFrom(unsigned long) {
 // LINE 542:
 	asm( 
 "	      00568a95    push ebp"
@@ -2454,7 +2454,7 @@ _cArray::CopyFrom {
 }
 
 // FUNCTION: SIMCOPTER 0x00568aca
-_cArray::CopyFrom {
+void _cArray::CopyFrom(class _cArray*) {
 // LINE 548:
 	asm( 
 "	      00568aca    push ebp"
@@ -2564,7 +2564,7 @@ _cArray::CopyFrom {
 }
 
 // FUNCTION: SIMCOPTER 0x00568be8
-_cArray::CopyTo {
+void _cArray::CopyTo(class _cArray*) {
 // LINE 568:
 	asm( 
 "	      00568be8    push ebp"
@@ -2674,7 +2674,7 @@ _cArray::CopyTo {
 }
 
 // FUNCTION: SIMCOPTER 0x00568d06
-_cArray::CopyTo {
+void _cArray::CopyTo(unsigned long) {
 // LINE 580:
 	asm( 
 "	      00568d06    push ebp"
@@ -2713,7 +2713,7 @@ _cArray::CopyTo {
 }
 
 // FUNCTION: SIMCOPTER 0x00568d3b
-_cArray::CopyTo {
+void _cArray::CopyTo(unsigned char *) {
 // LINE 586:
 	asm( 
 "	      00568d3b    push ebp"
@@ -2746,7 +2746,7 @@ _cArray::CopyTo {
 }
 
 // FUNCTION: SIMCOPTER 0x00568d68
-_cArray::GetName {
+void _cArray::GetName(unsigned char *) {
 // LINE 591:
 	asm( 
 "	      00568d68    push ebp"
@@ -2780,7 +2780,7 @@ _cArray::GetName {
 }
 
 // FUNCTION: SIMCOPTER 0x00568d95
-_cArray::GetName {
+unsigned long _cArray::GetName() {
 // LINE 596:
 	asm( 
 "	      00568d95    push ebp"
@@ -2808,7 +2808,7 @@ _cArray::GetName {
 }
 
 // FUNCTION: SIMCOPTER 0x00568db1
-_cArray::GetArray {
+class _cArray* _cArray::GetArray(unsigned long, short) {
 // LINE 610:
 	asm( 
 "	      00568db1    push ebp"
@@ -2947,7 +2947,7 @@ _cArray::GetArray {
 }
 
 // FUNCTION: SIMCOPTER 0x00568f25
-_cArray::GetArrayByType {
+class _cArray* _cArray::GetArrayByType(unsigned long, short) {
 // LINE 629:
 	asm( 
 "	      00568f25    push ebp"
@@ -3028,7 +3028,7 @@ _cArray::GetArrayByType {
 }
 
 // FUNCTION: SIMCOPTER 0x00568fa8
-_cArray::GetNumArraysByType {
+short _cArray::GetNumArraysByType(unsigned long) {
 // LINE 646:
 	asm( 
 "	      00568fa8    push ebp"
@@ -3093,7 +3093,7 @@ _cArray::GetNumArraysByType {
 }
 
 // FUNCTION: SIMCOPTER 0x00569010
-_cArray::GetArrayIndexInType {
+short _cArray::GetArrayIndexInType(class _cArray*) {
 // LINE 658:
 	asm( 
 "	      00569010    push ebp"
@@ -3174,7 +3174,7 @@ _cArray::GetArrayIndexInType {
 }
 
 // FUNCTION: SIMCOPTER 0x00569095
-_cArray::LoadAllArrays {
+void _cArray::LoadAllArrays(class ResFile*, unsigned long, short, void (*)(void * __ptr32, long)) {
 // LINE 705:
 	asm( 
 "	      00569095    push ebp"
@@ -3426,7 +3426,7 @@ _cArray::LoadAllArrays {
 }
 
 // FUNCTION: SIMCOPTER 0x0056931d
-_cArray::GetLoadedIndex {
+short _cArray::GetLoadedIndex(class ResFile*, unsigned long) {
 // LINE 776:
 	asm( 
 "	      0056931d    push ebp"

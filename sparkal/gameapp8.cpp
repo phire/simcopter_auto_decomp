@@ -6,7 +6,7 @@
 
 // Contribution: 1:00026550-00027c67 Module: 68, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x00427550
-CGameApp::GetLoadFileType {
+public: unsigned long __thiscall CGameApp::GetLoadFileType(char *, long &) {
 // LINE 61:
 	asm( 
 "	      00427550    push ebp"
@@ -96,7 +96,7 @@ CGameApp::GetLoadFileType {
 }
 
 // FUNCTION: SIMCOPTER 0x004275e3
-CGameApp::SetUpLoadGame {
+public: unsigned long __thiscall CGameApp::SetUpLoadGame(char *, long) {
 // LINE 85:
 	asm( 
 "	      004275e3    push ebp"
@@ -193,7 +193,7 @@ CGameApp::SetUpLoadGame {
 }
 
 // FUNCTION: SIMCOPTER 0x00427691
-CGameApp::LoadUserOrCareerGame {
+public: unsigned long __thiscall CGameApp::LoadUserOrCareerGame(char *) {
 // LINE 109:
 	asm( 
 "	      00427691    push ebp"
@@ -660,7 +660,7 @@ CGameApp::LoadUserOrCareerGame {
 }
 
 // FUNCTION: SIMCOPTER 0x00427bf4
-CGameApp::SaveUserOrCareerGame {
+public: unsigned long __thiscall CGameApp::SaveUserOrCareerGame(char *, char *) {
 // LINE 222:
 	asm( 
 "	      00427bf4    push ebp"
@@ -997,7 +997,7 @@ CGameApp::SaveUserOrCareerGame {
 }
 
 // FUNCTION: SIMCOPTER 0x00427f98
-CGameApp::DoSaveGameAs {
+public: unsigned long __thiscall CGameApp::DoSaveGameAs(void) {
 // LINE 305:
 	asm( 
 "	      00427f98    push ebp"
@@ -1757,7 +1757,7 @@ CGameApp::DoSaveGameAs {
 }
 
 // FUNCTION: SIMCOPTER 0x00428a74
-CGameApp::ValidateCopterSaveGameFile {
+public: long __thiscall CGameApp::ValidateCopterSaveGameFile(char *) {
 // LINE 421:
 	asm( 
 "	      00428a74    push ebp"
@@ -1907,7 +1907,7 @@ CGameApp::ValidateCopterSaveGameFile {
 }
 
 // FUNCTION: SIMCOPTER 0x00428c38
-CGameApp::DisplayFileOpenError {
+public: int __thiscall CGameApp::DisplayFileOpenError(unsigned long) {
 // LINE 462:
 	asm( 
 "	      00428c38    push ebp"

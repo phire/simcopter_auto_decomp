@@ -6,7 +6,7 @@
 
 // Contribution: 1:000d7cc0-000d89a4 Module: 132, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x004d8cc0
-VRCreateTexColors {
+int32_t VRCreateTexColors() {
 // LINE 115:
 	asm( 
 "	      004d8cc0    push ebp"
@@ -217,7 +217,7 @@ VRCreateTexColors {
 }
 
 // FUNCTION: SIMCOPTER 0x004d8e58
-CreateTiledTexColors {
+int32_t CreateTiledTexColors() {
 // LINE 190:
 	asm( 
 "	      004d8e58    push ebp"
@@ -420,7 +420,7 @@ CreateTiledTexColors {
 }
 
 // FUNCTION: SIMCOPTER 0x004d8fd7
-VRFaceSetTexColor {
+void VRFaceSetTexColor() {
 // LINE 271:
 	asm( 
 "	      004d8fd7    push ebp"
@@ -520,7 +520,7 @@ VRFaceSetTexColor {
 }
 
 // FUNCTION: SIMCOPTER 0x004d9093
-VRGetTexColor {
+int32_t VRGetTexColor() {
 // LINE 313:
 	asm( 
 "	      004d9093    push ebp"
@@ -590,7 +590,7 @@ VRGetTexColor {
 }
 
 // FUNCTION: SIMCOPTER 0x004d90fa
-VRGetColorShade {
+struct COLOR_SHADE* VRGetColorShade() {
 // LINE 347:
 	asm( 
 "	      004d90fa    push ebp"
@@ -653,7 +653,7 @@ VRGetColorShade {
 }
 
 // FUNCTION: SIMCOPTER 0x004d9160
-VRSetIntensities {
+void VRSetIntensities() {
 // LINE 370:
 	asm( 
 "	      004d9160    push ebp"
@@ -693,7 +693,7 @@ VRSetIntensities {
 }
 
 // FUNCTION: SIMCOPTER 0x004d918b
-VRObjSetShading {
+void VRObjSetShading() {
 // LINE 389:
 	asm( 
 "	      004d918b    push ebp"
@@ -969,7 +969,7 @@ VRObjSetShading {
 }
 
 // FUNCTION: SIMCOPTER 0x004d93d6
-VRDyObjSetShading {
+void VRDyObjSetShading() {
 // LINE 480:
 	asm( 
 "	      004d93d6    push ebp"
@@ -1192,7 +1192,7 @@ VRDyObjSetShading {
 }
 
 // FUNCTION: SIMCOPTER 0x004d958c
-VRTexTileSqFace {
+void VRTexTileSqFace() {
 // LINE 562:
 	asm( 
 "	      004d958c    push ebp"
@@ -1390,7 +1390,7 @@ VRTexTileSqFace {
 }
 
 // FUNCTION: SIMCOPTER 0x004d9712
-VRObjSetGouraudShade {
+void VRObjSetGouraudShade() {
 // LINE 610:
 	asm( 
 "	      004d9712    push ebp"
@@ -1640,7 +1640,7 @@ VRObjSetGouraudShade {
 }
 
 // FUNCTION: SIMCOPTER 0x004d9907
-VRObjSetTranslucent {
+void VRObjSetTranslucent() {
 // LINE 698:
 	asm( 
 "	      004d9907    push ebp"
@@ -1718,7 +1718,7 @@ VRObjSetTranslucent {
 }
 
 // FUNCTION: SIMCOPTER 0x004d997f
-VRFaceSetColor {
+void VRFaceSetColor() {
 // LINE 727:
 	asm( 
 "	      004d997f    push ebp"

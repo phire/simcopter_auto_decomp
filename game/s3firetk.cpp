@@ -6,7 +6,7 @@
 
 // Contribution: 1:00135100-00135db2 Module: 159, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x00536100
-CreateFireTruckInstance {
+int32_t CreateFireTruckInstance() {
 // LINE 76:
 	asm( 
 "	      00536100    push ebp"
@@ -39,7 +39,7 @@ CreateFireTruckInstance {
 }
 
 // FUNCTION: SIMCOPTER 0x00536130
-FireEngineClass::FireEngineClass {
+void FireEngineClass::FireEngineClass() {
 // LINE 82:
 	asm( 
 "	      00536130    push ebp"
@@ -72,7 +72,7 @@ FireEngineClass::FireEngineClass {
 }
 
 // FUNCTION: SIMCOPTER 0x00536164
-FireEngineClass::~FireEngineClass {
+void FireEngineClass::~FireEngineClass() {
 // LINE 88:
 	asm( 
 "	      00536164    push ebp"
@@ -96,7 +96,7 @@ FireEngineClass::~FireEngineClass {
 }
 
 // FUNCTION: SIMCOPTER 0x0053618b
-FireEngineClass::CreateInstance {
+class FireEngineClass* FireEngineClass::CreateInstance(int32_t) {
 // LINE 110:
 	asm( 
 "	      0053618b    push ebp"
@@ -316,7 +316,7 @@ FireEngineClass::CreateInstance {
 }
 
 // FUNCTION: SIMCOPTER 0x00536381
-FireEngineClass::Dispatch {
+int32_t FireEngineClass::Dispatch(enum EmergencyType, enum EmergencyLevel, long, long) {
 // LINE 209:
 	asm( 
 "	      00536381    push ebp"
@@ -352,7 +352,7 @@ FireEngineClass::Dispatch {
 }
 
 // FUNCTION: SIMCOPTER 0x005363b3
-FireEngineClass::IsThisAFireStation {
+int32_t FireEngineClass::IsThisAFireStation(unsigned short) {
 // LINE 217:
 	asm( 
 "	      005363b3    push ebp"
@@ -383,7 +383,7 @@ FireEngineClass::IsThisAFireStation {
 }
 
 // FUNCTION: SIMCOPTER 0x005363e2
-FireEngineClass::IsThisAFireStation {
+int32_t FireEngineClass::IsThisAFireStation(long, long) {
 // LINE 224:
 	asm( 
 "	      005363e2    push ebp"
@@ -443,7 +443,7 @@ FireEngineClass::IsThisAFireStation {
 }
 
 // FUNCTION: SIMCOPTER 0x0053648e
-FireEngineClass::ItterateFSM {
+void FireEngineClass::ItterateFSM() {
 // LINE 249:
 	asm( 
 "	      0053648e    push ebp"
@@ -791,7 +791,7 @@ FireEngineClass::ItterateFSM {
 }
 
 // FUNCTION: SIMCOPTER 0x00536778
-FireEngineClass::AtScene {
+int32_t FireEngineClass::AtScene() {
 // LINE 353:
 	asm( 
 "	      00536778    push ebp"
@@ -957,7 +957,7 @@ FireEngineClass::AtScene {
 }
 
 // FUNCTION: SIMCOPTER 0x005368cd
-FireEngineClass::ScanForFire {
+int32_t FireEngineClass::ScanForFire(struct _GridCoordinates) {
 // LINE 420:
 	asm( 
 "	      005368cd    push ebp"
@@ -1215,7 +1215,7 @@ FireEngineClass::ScanForFire {
 }
 
 // FUNCTION: SIMCOPTER 0x00536ae2
-FireEngineClass::PointStreamAtFire {
+void FireEngineClass::PointStreamAtFire() {
 // LINE 517:
 	asm( 
 "	      00536ae2    push ebp"
@@ -1354,7 +1354,7 @@ FireEngineClass::PointStreamAtFire {
 }
 
 // FUNCTION: SIMCOPTER 0x00536c3d
-FireEngineClass::SetSaveData {
+void FireEngineClass::SetSaveData(struct _AUTO_LOAD_SAVE*) {
 // LINE 553:
 	asm( 
 "	      00536c3d    push ebp"
@@ -1418,7 +1418,7 @@ FireEngineClass::SetSaveData {
 }
 
 // FUNCTION: SIMCOPTER 0x00536cb8
-FireEngineClass::LoadSaveData {
+void FireEngineClass::LoadSaveData(struct _AUTO_LOAD_SAVE*) {
 // LINE 572:
 	asm( 
 "	      00536cb8    push ebp"

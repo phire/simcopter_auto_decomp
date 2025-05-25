@@ -18,7 +18,7 @@
 // $E55
 
 // FUNCTION: SIMCOPTER 0x004ebc2b
-S3AddLogEntry {
+void S3AddLogEntry() {
 // LINE 36:
 	asm( 
 "	      004ebc2b    push ebp"
@@ -49,7 +49,7 @@ S3AddLogEntry {
 }
 
 // FUNCTION: SIMCOPTER 0x004ebc4f
-LogManager::LogManager {
+void LogManager::LogManager() {
 // LINE 46:
 	asm( 
 "	      004ebc4f    push ebp"
@@ -244,7 +244,7 @@ LogManager::LogManager {
 }
 
 // FUNCTION: SIMCOPTER 0x004ebeed
-LogManager::~LogManager {
+void LogManager::~LogManager() {
 // LINE 53:
 	asm( 
 "	      004ebeed    push ebp"
@@ -404,7 +404,7 @@ LogManager::~LogManager {
 }
 
 // FUNCTION: SIMCOPTER 0x004ec0ed
-LogManager::ReadLogFromFile {
+int32_t LogManager::ReadLogFromFile(char *) {
 // LINE 66:
 	asm( 
 "	      004ec0ed    push ebp"
@@ -460,7 +460,7 @@ LogManager::ReadLogFromFile {
 }
 
 // FUNCTION: SIMCOPTER 0x004ec165
-LogManager::WriteLogToFile {
+int32_t LogManager::WriteLogToFile(char *) {
 // LINE 81:
 	asm( 
 "	      004ec165    push ebp"
@@ -516,7 +516,7 @@ LogManager::WriteLogToFile {
 }
 
 // FUNCTION: SIMCOPTER 0x004ec1dd
-LogManager::ReadFromMIFF {
+int32_t LogManager::ReadFromMIFF(class MIFF*) {
 // LINE 99:
 	asm( 
 "	      004ec1dd    push ebp"
@@ -620,7 +620,7 @@ LogManager::ReadFromMIFF {
 }
 
 // FUNCTION: SIMCOPTER 0x004ec284
-LogManager::WriteToMIFF {
+int32_t LogManager::WriteToMIFF(class MIFF*) {
 // LINE 122:
 	asm( 
 "	      004ec284    push ebp"
@@ -882,7 +882,7 @@ LogManager::WriteToMIFF {
 }
 
 // FUNCTION: SIMCOPTER 0x004ec5f0
-LogManager::GetSizeOfLogRecord {
+long LogManager::GetSizeOfLogRecord(struct tagLogBase*) {
 // LINE 157:
 	asm( 
 "	      004ec5f0    push ebp"
@@ -945,7 +945,7 @@ LogManager::GetSizeOfLogRecord {
 }
 
 // FUNCTION: SIMCOPTER 0x004ec65b
-LogManager::ReadCurrentRecordFromMIFF {
+int32_t LogManager::ReadCurrentRecordFromMIFF(class MIFF*) {
 // LINE 176:
 	asm( 
 "	      004ec65b    push ebp"
@@ -1041,7 +1041,7 @@ LogManager::ReadCurrentRecordFromMIFF {
 }
 
 // FUNCTION: SIMCOPTER 0x004ec70d
-LogManager::ValidateLogEntry {
+int32_t LogManager::ValidateLogEntry(struct tagLogBase*) {
 // LINE 207:
 	asm( 
 "	      004ec70d    push ebp"
@@ -1076,7 +1076,7 @@ LogManager::ValidateLogEntry {
 }
 
 // FUNCTION: SIMCOPTER 0x004ec749
-LogManager::AddLogEntry {
+int32_t LogManager::AddLogEntry(struct tagLogBase*, int32_t, int32_t) {
 // LINE 219:
 	asm( 
 "	      004ec749    push ebp"
@@ -1551,7 +1551,7 @@ LogManager::AddLogEntry {
 }
 
 // FUNCTION: SIMCOPTER 0x004eccd1
-LogManager::SortLogEntriesByDate {
+int32_t LogManager::SortLogEntriesByDate() {
 // LINE 265:
 	asm( 
 "	      004eccd1    push ebp"
@@ -1945,7 +1945,7 @@ LogManager::SortLogEntriesByDate {
 }
 
 // FUNCTION: SIMCOPTER 0x004ed1fd
-LogManager::SortLogEntriesByType {
+int32_t LogManager::SortLogEntriesByType() {
 // LINE 291:
 	asm( 
 "	      004ed1fd    push ebp"
@@ -2339,7 +2339,7 @@ LogManager::SortLogEntriesByType {
 }
 
 // FUNCTION: SIMCOPTER 0x004ed729
-LogManager::PurgeAllEntries {
+int32_t LogManager::PurgeAllEntries() {
 // LINE 321:
 	asm( 
 "	      004ed729    push ebp"
@@ -2538,7 +2538,7 @@ LogManager::PurgeAllEntries {
 }
 
 // FUNCTION: SIMCOPTER 0x004ed947
-LogManager::PurgeNEntries {
+int32_t LogManager::PurgeNEntries(long) {
 // LINE 343:
 	asm( 
 "	      004ed947    push ebp"
@@ -2732,7 +2732,7 @@ LogManager::PurgeNEntries {
 }
 
 // FUNCTION: SIMCOPTER 0x004edb4e
-LogManager::MakeStringFromLogData {
+void LogManager::MakeStringFromLogData(struct tagLogBase*, class basic_string<char>&, int32_t) {
 // LINE 365:
 	asm( 
 "	      004edb4e    push ebp"
@@ -3298,7 +3298,7 @@ LogManager::MakeStringFromLogData {
 }
 
 // FUNCTION: SIMCOPTER 0x004ee264
-LogManager::GetStringIDFromLogEvent {
+long LogManager::GetStringIDFromLogEvent(const struct tagLogMissionEvent*) {
 // LINE 413:
 	asm( 
 "	      004ee264    push ebp"

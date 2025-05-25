@@ -6,7 +6,7 @@
 
 // Contribution: 1:001235f0-00126462 Module: 165, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x005245f0
-S3FireReset {
+void S3FireReset() {
 // LINE 100:
 	asm( 
 "	      005245f0    push ebp"
@@ -72,7 +72,7 @@ S3FireReset {
 }
 
 // FUNCTION: SIMCOPTER 0x0052467d
-S3FireInit {
+void S3FireInit() {
 // LINE 135:
 	asm( 
 "	      0052467d    push ebp"
@@ -272,7 +272,7 @@ S3FireInit {
 }
 
 // FUNCTION: SIMCOPTER 0x00524829
-S3FireStart {
+int32_t S3FireStart() {
 // LINE 203:
 	asm( 
 "	      00524829    push ebp"
@@ -635,7 +635,7 @@ S3FireStart {
 }
 
 // FUNCTION: SIMCOPTER 0x00524adf
-S3FireDriver {
+void S3FireDriver() {
 // LINE 312:
 	asm( 
 "	      00524adf    push ebp"
@@ -1372,7 +1372,7 @@ S3FireDriver {
 }
 
 // FUNCTION: SIMCOPTER 0x005250be
-S3FireSpread {
+void S3FireSpread() {
 // LINE 574:
 	asm( 
 "	      005250be    push ebp"
@@ -1507,7 +1507,7 @@ S3FireSpread {
 }
 
 // FUNCTION: SIMCOPTER 0x005251d6
-S3FireGetCellData {
+struct _CELL_FIRE_DATA* S3FireGetCellData() {
 // LINE 618:
 	asm( 
 "	      005251d6    push ebp"
@@ -1557,7 +1557,7 @@ S3FireGetCellData {
 }
 
 // FUNCTION: SIMCOPTER 0x0052522c
-S3FireDouse {
+void S3FireDouse() {
 // LINE 640:
 	asm( 
 "	      0052522c    push ebp"
@@ -2069,7 +2069,7 @@ S3FireDouse {
 }
 
 // FUNCTION: SIMCOPTER 0x00525624
-S3FireStartCell {
+int32_t S3FireStartCell() {
 // LINE 831:
 	asm( 
 "	      00525624    push ebp"
@@ -3269,7 +3269,7 @@ S3FireStartCell {
 }
 
 // FUNCTION: SIMCOPTER 0x00526128
-S3FireGetByMission {
+struct _FIRE_DATA* S3FireGetByMission() {
 // LINE 943:
 	asm( 
 "	      00526128    push ebp"
@@ -3324,7 +3324,7 @@ S3FireGetByMission {
 }
 
 // FUNCTION: SIMCOPTER 0x00526192
-S3FireGetAltitude {
+int32_t S3FireGetAltitude() {
 // LINE 965:
 	asm( 
 "	      00526192    push ebp"
@@ -3461,7 +3461,7 @@ S3FireGetAltitude {
 }
 
 // FUNCTION: SIMCOPTER 0x00526292
-S3FireTruckDouse {
+int32_t S3FireTruckDouse() {
 // LINE 1029:
 	asm( 
 "	      00526292    push ebp"
@@ -3640,7 +3640,7 @@ S3FireTruckDouse {
 }
 
 // FUNCTION: SIMCOPTER 0x005263ec
-S3FireTruckDouseDyObj {
+int32_t S3FireTruckDouseDyObj() {
 // LINE 1110:
 	asm( 
 "	      005263ec    push ebp"
@@ -3820,7 +3820,7 @@ S3FireTruckDouseDyObj {
 }
 
 // FUNCTION: SIMCOPTER 0x0052654a
-S3FireTweakInit {
+void S3FireTweakInit() {
 // LINE 1175:
 	asm( 
 "	      0052654a    push ebp"
@@ -3874,7 +3874,7 @@ S3FireTweakInit {
 }
 
 // FUNCTION: SIMCOPTER 0x00526595
-S3FireCanCellBurn {
+int32_t S3FireCanCellBurn() {
 // LINE 1197:
 	asm( 
 "	      00526595    push ebp"
@@ -3951,7 +3951,7 @@ S3FireCanCellBurn {
 }
 
 // FUNCTION: SIMCOPTER 0x00526661
-S3FireDestroyCell {
+void S3FireDestroyCell() {
 // LINE 1231:
 	asm( 
 "	      00526661    push ebp"
@@ -4528,7 +4528,7 @@ S3FireDestroyCell {
 }
 
 // FUNCTION: SIMCOPTER 0x00526b81
-S3FireGetCount {
+long S3FireGetCount() {
 // LINE 1380:
 	asm( 
 "	      00526b81    push ebp"
@@ -4553,7 +4553,7 @@ S3FireGetCount {
 }
 
 // FUNCTION: SIMCOPTER 0x00526b96
-S3FireAddToNearest {
+long S3FireAddToNearest() {
 // LINE 1396:
 	asm( 
 "	      00526b96    push ebp"
@@ -4838,7 +4838,7 @@ S3FireAddToNearest {
 }
 
 // FUNCTION: SIMCOPTER 0x00526d7e
-S3FireDyObjCollisionCheck {
+void S3FireDyObjCollisionCheck() {
 // LINE 1504:
 	asm( 
 "	      00526d7e    push ebp"
@@ -5100,7 +5100,7 @@ S3FireDyObjCollisionCheck {
 }
 
 // FUNCTION: SIMCOPTER 0x00526fb5
-S3FireMIFFLoad {
+int32_t S3FireMIFFLoad() {
 // LINE 1618:
 	asm( 
 "	      00526fb5    push ebp"
@@ -5502,7 +5502,7 @@ S3FireMIFFLoad {
 }
 
 // FUNCTION: SIMCOPTER 0x0052735a
-S3FireMIFFSave {
+int32_t S3FireMIFFSave() {
 // LINE 1727:
 	asm( 
 "	      0052735a    push ebp"

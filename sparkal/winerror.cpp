@@ -6,7 +6,7 @@
 
 // Contribution: 1:0004ef40-0004f04f Module: 46, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x0044ff40
-GUIReportError {
+void GUIReportError() {
 // LINE 21:
 	asm( 
 "	      0044ff40    push ebp"

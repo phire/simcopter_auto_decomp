@@ -6,7 +6,7 @@
 
 // Contribution: 1:000f8bc0-000f9082 Module: 174, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x004f9bc0
-HeliPassengerHasChanged {
+int32_t HeliPassengerHasChanged() {
 // LINE 29:
 	asm( 
 "	      004f9bc0    push ebp"
@@ -32,7 +32,7 @@ HeliPassengerHasChanged {
 }
 
 // FUNCTION: SIMCOPTER 0x004f9bd5
-HeliPassengerSetChanged {
+void HeliPassengerSetChanged() {
 // LINE 37:
 	asm( 
 "	      004f9bd5    push ebp"
@@ -57,7 +57,7 @@ HeliPassengerSetChanged {
 }
 
 // FUNCTION: SIMCOPTER 0x004f9be9
-HeliPassengerClearChanged {
+void HeliPassengerClearChanged() {
 // LINE 45:
 	asm( 
 "	      004f9be9    push ebp"
@@ -82,7 +82,7 @@ HeliPassengerClearChanged {
 }
 
 // FUNCTION: SIMCOPTER 0x004f9bfd
-HeliPassengerInit {
+void HeliPassengerInit() {
 // LINE 54:
 	asm( 
 "	      004f9bfd    push ebp"
@@ -208,7 +208,7 @@ HeliPassengerInit {
 }
 
 // FUNCTION: SIMCOPTER 0x004f9cfa
-HeliPassengerCanAdd {
+int32_t HeliPassengerCanAdd() {
 // LINE 94:
 	asm( 
 "	      004f9cfa    push ebp"
@@ -236,7 +236,7 @@ HeliPassengerCanAdd {
 }
 
 // FUNCTION: SIMCOPTER 0x004f9d16
-HeliPassengerAdd {
+int32_t HeliPassengerAdd() {
 // LINE 108:
 	asm( 
 "	      004f9d16    push ebp"
@@ -368,7 +368,7 @@ HeliPassengerAdd {
 }
 
 // FUNCTION: SIMCOPTER 0x004f9e04
-HeliPassengerGetIndexInHeli {
+int32_t HeliPassengerGetIndexInHeli() {
 // LINE 144:
 	asm( 
 "	      004f9e04    push ebp"
@@ -421,7 +421,7 @@ HeliPassengerGetIndexInHeli {
 }
 
 // FUNCTION: SIMCOPTER 0x004f9e5b
-HeliPassengerSetExpression {
+int32_t HeliPassengerSetExpression() {
 // LINE 159:
 	asm( 
 "	      004f9e5b    push ebp"
@@ -476,7 +476,7 @@ HeliPassengerSetExpression {
 }
 
 // FUNCTION: SIMCOPTER 0x004f9eaa
-HeliPassengerRemove {
+int32_t HeliPassengerRemove() {
 // LINE 173:
 	asm( 
 "	      004f9eaa    push ebp"
@@ -586,7 +586,7 @@ HeliPassengerRemove {
 }
 
 // FUNCTION: SIMCOPTER 0x004f9f6e
-HeliPassengerCountFreeSeats {
+long HeliPassengerCountFreeSeats() {
 // LINE 203:
 	asm( 
 "	      004f9f6e    push ebp"
@@ -614,7 +614,7 @@ HeliPassengerCountFreeSeats {
 }
 
 // FUNCTION: SIMCOPTER 0x004f9f8a
-HeliPassengerFitToSeats {
+void HeliPassengerFitToSeats() {
 // LINE 215:
 	asm( 
 "	      004f9f8a    push ebp"
@@ -699,7 +699,7 @@ HeliPassengerFitToSeats {
 }
 
 // FUNCTION: SIMCOPTER 0x004fa033
-FindFreeSeatForPassenger {
+int32_t FindFreeSeatForPassenger() {
 // LINE 242:
 	asm( 
 "	      004fa033    push ebp"

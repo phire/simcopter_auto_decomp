@@ -6,7 +6,7 @@
 
 // Contribution: 1:000bc670-000c27dd Module: 1, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x004bd670
-CopterGameMode::CopterGameMode {
+void CopterGameMode::CopterGameMode() {
 // LINE 50:
 	asm( 
 "	      004bd670    push ebp"
@@ -35,7 +35,7 @@ CopterGameMode::CopterGameMode {
 }
 
 // FUNCTION: SIMCOPTER 0x004bd692
-CopterGameMode::CopterGameMode {
+void CopterGameMode::CopterGameMode(int32_t) {
 // LINE 56:
 	asm( 
 "	      004bd692    push ebp"
@@ -62,7 +62,7 @@ CopterGameMode::CopterGameMode {
 }
 
 // FUNCTION: SIMCOPTER 0x004bd6b5
-CopterGameMode::CopterGameMode {
+void CopterGameMode::CopterGameMode(const class CopterGameMode&) {
 // LINE 59:
 	asm( 
 "	      004bd6b5    push ebp"
@@ -93,7 +93,7 @@ CopterGameMode::CopterGameMode {
 }
 
 // FUNCTION: SIMCOPTER 0x004bd6dc
-CopterGameMode::operator= {
+class CopterGameMode& CopterGameMode::operator=(const class CopterGameMode&) {
 // LINE 64:
 	asm( 
 "	      004bd6dc    push ebp"
@@ -127,7 +127,7 @@ CopterGameMode::operator= {
 }
 
 // FUNCTION: SIMCOPTER 0x004bd701
-operator== {
+int32_t operator==() {
 // LINE 69:
 	asm( 
 "	      004bd701    push ebp"
@@ -159,7 +159,7 @@ operator== {
 }
 
 // FUNCTION: SIMCOPTER 0x004bd72d
-GameModeCoreData::GameModeCoreData {
+void GameModeCoreData::GameModeCoreData() {
 // LINE 132:
 	asm( 
 "	      004bd72d    push ebp"
@@ -193,7 +193,7 @@ GameModeCoreData::GameModeCoreData {
 }
 
 // FUNCTION: SIMCOPTER 0x004bd777
-GameModeCoreData::~GameModeCoreData {
+void GameModeCoreData::~GameModeCoreData() {
 // LINE 139:
 	asm( 
 "	      004bd777    push ebp"
@@ -241,7 +241,7 @@ GameModeCoreData::~GameModeCoreData {
 }
 
 // FUNCTION: SIMCOPTER 0x004bd7c8
-GameModeMainMenuData::GameModeMainMenuData {
+void GameModeMainMenuData::GameModeMainMenuData() {
 // LINE 156:
 	asm( 
 "	      004bd7c8    push ebp"
@@ -289,7 +289,7 @@ GameModeMainMenuData::GameModeMainMenuData {
 }
 
 // FUNCTION: SIMCOPTER 0x004bd81a
-GameModeMainMenuData::CreatePalette {
+void GameModeMainMenuData::CreatePalette() {
 // LINE 169:
 	asm( 
 "	      004bd81a    push ebp"
@@ -364,7 +364,7 @@ GameModeMainMenuData::CreatePalette {
 }
 
 // FUNCTION: SIMCOPTER 0x004bd8f7
-GameModeMainMenuData::UsePalette {
+void GameModeMainMenuData::UsePalette() {
 // LINE 184:
 	asm( 
 "	      004bd8f7    push ebp"
@@ -415,7 +415,7 @@ GameModeMainMenuData::UsePalette {
 }
 
 // FUNCTION: SIMCOPTER 0x004bd94a
-GameModeMainMenuData::CreateAllSurfaces {
+int32_t GameModeMainMenuData::CreateAllSurfaces() {
 // LINE 196:
 	asm( 
 "	      004bd94a    push ebp"
@@ -664,7 +664,7 @@ GameModeMainMenuData::CreateAllSurfaces {
 }
 
 // FUNCTION: SIMCOPTER 0x004bdc6f
-GameModeMainMenuData::DestroyAllSurfaces {
+int32_t GameModeMainMenuData::DestroyAllSurfaces() {
 // LINE 229:
 	asm( 
 "	      004bdc6f    push ebp"
@@ -718,7 +718,7 @@ GameModeMainMenuData::DestroyAllSurfaces {
 }
 
 // FUNCTION: SIMCOPTER 0x004bdccb
-GameModePickCareerCityData::GameModePickCareerCityData {
+void GameModePickCareerCityData::GameModePickCareerCityData() {
 // LINE 250:
 	asm( 
 "	      004bdccb    push ebp"
@@ -778,7 +778,7 @@ GameModePickCareerCityData::GameModePickCareerCityData {
 }
 
 // FUNCTION: SIMCOPTER 0x004bdd3b
-GameModePickCareerCityData::Initialize {
+void GameModePickCareerCityData::Initialize() {
 // LINE 264:
 	asm( 
 "	      004bdd3b    push ebp"
@@ -806,7 +806,7 @@ GameModePickCareerCityData::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x004bdd5b
-GameModePickCareerCityData::CreatePalette {
+void GameModePickCareerCityData::CreatePalette() {
 // LINE 273:
 	asm( 
 "	      004bdd5b    push ebp"
@@ -881,7 +881,7 @@ GameModePickCareerCityData::CreatePalette {
 }
 
 // FUNCTION: SIMCOPTER 0x004bde38
-GameModePickCareerCityData::UsePalette {
+void GameModePickCareerCityData::UsePalette() {
 // LINE 288:
 	asm( 
 "	      004bde38    push ebp"
@@ -932,7 +932,7 @@ GameModePickCareerCityData::UsePalette {
 }
 
 // FUNCTION: SIMCOPTER 0x004bde8b
-GameModePickCareerCityData::CreateAllSurfaces {
+int32_t GameModePickCareerCityData::CreateAllSurfaces() {
 // LINE 300:
 	asm( 
 "	      004bde8b    push ebp"
@@ -1053,7 +1053,7 @@ GameModePickCareerCityData::CreateAllSurfaces {
 }
 
 // FUNCTION: SIMCOPTER 0x004bdfa9
-GameModePickCareerCityData::DestroyAllSurfaces {
+int32_t GameModePickCareerCityData::DestroyAllSurfaces() {
 // LINE 324:
 	asm( 
 "	      004bdfa9    push ebp"
@@ -1107,7 +1107,7 @@ GameModePickCareerCityData::DestroyAllSurfaces {
 }
 
 // FUNCTION: SIMCOPTER 0x004be005
-GameModePlayData::GameModePlayData {
+void GameModePlayData::GameModePlayData() {
 // LINE 342:
 	asm( 
 "	      004be005    push ebp"
@@ -1273,7 +1273,7 @@ GameModePlayData::GameModePlayData {
 }
 
 // FUNCTION: SIMCOPTER 0x004be148
-GameModePlayData::Initialize {
+void GameModePlayData::Initialize() {
 // LINE 389:
 	asm( 
 "	      004be148    push ebp"
@@ -1306,7 +1306,7 @@ GameModePlayData::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x004be16e
-GameModePlayData::CreatePalette {
+void GameModePlayData::CreatePalette() {
 // LINE 399:
 	asm( 
 "	      004be16e    push ebp"
@@ -1442,7 +1442,7 @@ GameModePlayData::CreatePalette {
 }
 
 // FUNCTION: SIMCOPTER 0x004be305
-GameModePlayData::UsePalette {
+void GameModePlayData::UsePalette() {
 // LINE 438:
 	asm( 
 "	      004be305    push ebp"
@@ -1493,7 +1493,7 @@ GameModePlayData::UsePalette {
 }
 
 // FUNCTION: SIMCOPTER 0x004be358
-GameModePlayData::Sleep {
+void GameModePlayData::Sleep() {
 // LINE 450:
 	asm( 
 "	      004be358    push ebp"
@@ -1790,7 +1790,7 @@ GameModePlayData::Sleep {
 }
 
 // FUNCTION: SIMCOPTER 0x004be5d0
-GameModePlayData::Awake {
+void GameModePlayData::Awake() {
 // LINE 491:
 	asm( 
 "	      004be5d0    push ebp"
@@ -2127,7 +2127,7 @@ GameModePlayData::Awake {
 }
 
 // FUNCTION: SIMCOPTER 0x004be898
-GameModePlayData::CreateAllSurfaces {
+int32_t GameModePlayData::CreateAllSurfaces() {
 // LINE 542:
 	asm( 
 "	      004be898    push ebp"
@@ -2169,7 +2169,7 @@ GameModePlayData::CreateAllSurfaces {
 }
 
 // FUNCTION: SIMCOPTER 0x004be8cb
-GameModePlayData::CreatePanels {
+int32_t GameModePlayData::CreatePanels() {
 // LINE 554:
 	asm( 
 "	      004be8cb    push ebp"
@@ -2744,7 +2744,7 @@ GameModePlayData::CreatePanels {
 }
 
 // FUNCTION: SIMCOPTER 0x004bf018
-GameModePlayData::MakeSureHeliHasProperFlaps {
+void GameModePlayData::MakeSureHeliHasProperFlaps() {
 // LINE 636:
 	asm( 
 "	      004bf018    push ebp"
@@ -3247,7 +3247,7 @@ GameModePlayData::MakeSureHeliHasProperFlaps {
 }
 
 // FUNCTION: SIMCOPTER 0x004bf4fc
-GameModePlayData::CreateIndependentSurfaces {
+int32_t GameModePlayData::CreateIndependentSurfaces() {
 // LINE 719:
 	asm( 
 "	      004bf4fc    push ebp"
@@ -3335,7 +3335,7 @@ GameModePlayData::CreateIndependentSurfaces {
 }
 
 // FUNCTION: SIMCOPTER 0x004bf5ca
-GameModePlayData::DestroyIndependentSurfaces {
+void GameModePlayData::DestroyIndependentSurfaces() {
 // LINE 735:
 	asm( 
 "	      004bf5ca    push ebp"
@@ -3417,7 +3417,7 @@ GameModePlayData::DestroyIndependentSurfaces {
 }
 
 // FUNCTION: SIMCOPTER 0x004bf681
-GameModePlayData::DestroyAllSurfaces {
+void GameModePlayData::DestroyAllSurfaces() {
 // LINE 752:
 	asm( 
 "	      004bf681    push ebp"
@@ -3450,7 +3450,7 @@ GameModePlayData::DestroyAllSurfaces {
 }
 
 // FUNCTION: SIMCOPTER 0x004bf6a7
-GameModePlayData::DestroyPanels {
+int32_t GameModePlayData::DestroyPanels() {
 // LINE 762:
 	asm( 
 "	      004bf6a7    push ebp"
@@ -3717,7 +3717,7 @@ GameModePlayData::DestroyPanels {
 }
 
 // FUNCTION: SIMCOPTER 0x004bf8a2
-GameModePlayData::ShowPanels {
+void GameModePlayData::ShowPanels() {
 // LINE 832:
 	asm( 
 "	      004bf8a2    push ebp"
@@ -3945,7 +3945,7 @@ GameModePlayData::ShowPanels {
 }
 
 // FUNCTION: SIMCOPTER 0x004bfaab
-GameModePlayData::HidePanels {
+void GameModePlayData::HidePanels() {
 // LINE 887:
 	asm( 
 "	      004bfaab    push ebp"
@@ -4164,7 +4164,7 @@ GameModePlayData::HidePanels {
 }
 
 // FUNCTION: SIMCOPTER 0x004bfc9a
-GameModePlayData::ShowEquipment {
+void GameModePlayData::ShowEquipment() {
 // LINE 929:
 	asm( 
 "	      004bfc9a    push ebp"
@@ -4267,7 +4267,7 @@ GameModePlayData::ShowEquipment {
 }
 
 // FUNCTION: SIMCOPTER 0x004bfd75
-GameModePlayData::HideEquipment {
+void GameModePlayData::HideEquipment() {
 // LINE 951:
 	asm( 
 "	      004bfd75    push ebp"
@@ -4361,7 +4361,7 @@ GameModePlayData::HideEquipment {
 }
 
 // FUNCTION: SIMCOPTER 0x004bfe36
-GameModePlayData::TogglePanelDisplay {
+void GameModePlayData::TogglePanelDisplay() {
 // LINE 971:
 	asm( 
 "	      004bfe36    push ebp"
@@ -4414,7 +4414,7 @@ GameModePlayData::TogglePanelDisplay {
 }
 
 // FUNCTION: SIMCOPTER 0x004bfe82
-GameModePlayData::ToggleEquipmentDisplay {
+void GameModePlayData::ToggleEquipmentDisplay() {
 // LINE 990:
 	asm( 
 "	      004bfe82    push ebp"
@@ -4457,7 +4457,7 @@ GameModePlayData::ToggleEquipmentDisplay {
 }
 
 // FUNCTION: SIMCOPTER 0x004bfeba
-GameModePlayData::Shutdown {
+void GameModePlayData::Shutdown() {
 // LINE 1002:
 	asm( 
 "	      004bfeba    push ebp"
@@ -4485,7 +4485,7 @@ GameModePlayData::Shutdown {
 }
 
 // FUNCTION: SIMCOPTER 0x004bfed8
-GameModePlayData::TestForUserInHelicopter {
+long GameModePlayData::TestForUserInHelicopter() {
 // LINE 1011:
 	asm( 
 "	      004bfed8    push ebp"
@@ -4564,7 +4564,7 @@ GameModePlayData::TestForUserInHelicopter {
 }
 
 // FUNCTION: SIMCOPTER 0x004bff6b
-GameModePlayData::ProcessUserJustJumpedIntoHelicopter {
+long GameModePlayData::ProcessUserJustJumpedIntoHelicopter() {
 // LINE 1043:
 	asm( 
 "	      004bff6b    push ebp"
@@ -4607,7 +4607,7 @@ GameModePlayData::ProcessUserJustJumpedIntoHelicopter {
 }
 
 // FUNCTION: SIMCOPTER 0x004bffa3
-GameModePlayData::ProcessUserJustJumpedOutOfHelicopter {
+long GameModePlayData::ProcessUserJustJumpedOutOfHelicopter() {
 // LINE 1058:
 	asm( 
 "	      004bffa3    push ebp"
@@ -4649,7 +4649,7 @@ GameModePlayData::ProcessUserJustJumpedOutOfHelicopter {
 }
 
 // FUNCTION: SIMCOPTER 0x004bffda
-GameModePlayData::SetUpRenderWindowSizes {
+void GameModePlayData::SetUpRenderWindowSizes() {
 // LINE 1083:
 	asm( 
 "	      004bffda    push ebp"
@@ -4865,7 +4865,7 @@ GameModePlayData::SetUpRenderWindowSizes {
 }
 
 // FUNCTION: SIMCOPTER 0x004c0176
-GameModePlayData::ReadUserConfigurableCommands {
+void GameModePlayData::ReadUserConfigurableCommands() {
 // LINE 1132:
 	asm( 
 "	      004c0176    push ebp"
@@ -4909,7 +4909,7 @@ GameModePlayData::ReadUserConfigurableCommands {
 }
 
 // FUNCTION: SIMCOPTER 0x004c01b8
-GameModePlayData::RemoveUserConfigurableCommands {
+void GameModePlayData::RemoveUserConfigurableCommands() {
 // LINE 1143:
 	asm( 
 "	      004c01b8    push ebp"
@@ -5037,7 +5037,7 @@ GameModePlayData::RemoveUserConfigurableCommands {
 }
 
 // FUNCTION: SIMCOPTER 0x004c02ff
-GameModePlayData::SetUserConfigurableCommandsToDefaults {
+void GameModePlayData::SetUserConfigurableCommandsToDefaults() {
 // LINE 1160:
 	asm( 
 "	      004c02ff    push ebp"
@@ -5068,7 +5068,7 @@ GameModePlayData::SetUserConfigurableCommandsToDefaults {
 }
 
 // FUNCTION: SIMCOPTER 0x004c0326
-GameModePlayData::SetNonUserConfigurableCommandsToDefaults {
+void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 // LINE 1175:
 	asm( 
 "	      004c0326    push ebp"
@@ -6295,7 +6295,7 @@ GameModePlayData::SetNonUserConfigurableCommandsToDefaults {
 }
 
 // FUNCTION: SIMCOPTER 0x004c12a8
-GameModeHangarData::GameModeHangarData {
+void GameModeHangarData::GameModeHangarData() {
 // LINE 1426:
 	asm( 
 "	      004c12a8    push ebp"
@@ -6356,7 +6356,7 @@ GameModeHangarData::GameModeHangarData {
 }
 
 // FUNCTION: SIMCOPTER 0x004c1317
-GameModeHangarData::CreateAllSurfaces {
+int32_t GameModeHangarData::CreateAllSurfaces() {
 // LINE 1442:
 	asm( 
 "	      004c1317    push ebp"
@@ -6429,7 +6429,7 @@ GameModeHangarData::CreateAllSurfaces {
 }
 
 // FUNCTION: SIMCOPTER 0x004c13b9
-GameModeHangarData::DestroyAllSurfaces {
+void GameModeHangarData::DestroyAllSurfaces() {
 // LINE 1452:
 	asm( 
 "	      004c13b9    push ebp"
@@ -6472,7 +6472,7 @@ GameModeHangarData::DestroyAllSurfaces {
 }
 
 // FUNCTION: SIMCOPTER 0x004c13f7
-GameModeHangarData::Sleep {
+void GameModeHangarData::Sleep() {
 // LINE 1463:
 	asm( 
 "	      004c13f7    push ebp"
@@ -6518,7 +6518,7 @@ GameModeHangarData::Sleep {
 }
 
 // FUNCTION: SIMCOPTER 0x004c143c
-GameModeHangarData::Awake {
+void GameModeHangarData::Awake() {
 // LINE 1472:
 	asm( 
 "	      004c143c    push ebp"
@@ -6587,7 +6587,7 @@ GameModeHangarData::Awake {
 }
 
 // FUNCTION: SIMCOPTER 0x004c14af
-GameModeHangarData::CreatePalette {
+void GameModeHangarData::CreatePalette() {
 // LINE 1487:
 	asm( 
 "	      004c14af    push ebp"
@@ -6650,7 +6650,7 @@ GameModeHangarData::CreatePalette {
 }
 
 // FUNCTION: SIMCOPTER 0x004c1542
-GameModeHangarData::UsePalette {
+void GameModeHangarData::UsePalette() {
 // LINE 1498:
 	asm( 
 "	      004c1542    push ebp"
@@ -6701,7 +6701,7 @@ GameModeHangarData::UsePalette {
 }
 
 // FUNCTION: SIMCOPTER 0x004c1595
-GameModeHangarData::Shutdown {
+void GameModeHangarData::Shutdown() {
 // LINE 1509:
 	asm( 
 "	      004c1595    push ebp"
@@ -6729,7 +6729,7 @@ GameModeHangarData::Shutdown {
 }
 
 // FUNCTION: SIMCOPTER 0x004c15b3
-GameModeHangarData::SetCommandsToDefaults {
+void GameModeHangarData::SetCommandsToDefaults() {
 // LINE 1518:
 	asm( 
 "	      004c15b3    push ebp"
@@ -7173,7 +7173,7 @@ GameModeHangarData::SetCommandsToDefaults {
 }
 
 // FUNCTION: SIMCOPTER 0x004c1b46
-GameModeCatalogData::GameModeCatalogData {
+void GameModeCatalogData::GameModeCatalogData() {
 // LINE 1585:
 	asm( 
 "	      004c1b46    push ebp"
@@ -7214,7 +7214,7 @@ GameModeCatalogData::GameModeCatalogData {
 }
 
 // FUNCTION: SIMCOPTER 0x004c1b8d
-GameModeCatalogData::CreateAllSurfaces {
+int32_t GameModeCatalogData::CreateAllSurfaces() {
 // LINE 1596:
 	asm( 
 "	      004c1b8d    push ebp"
@@ -7287,7 +7287,7 @@ GameModeCatalogData::CreateAllSurfaces {
 }
 
 // FUNCTION: SIMCOPTER 0x004c1c2f
-GameModeCatalogData::DestroyAllSurfaces {
+void GameModeCatalogData::DestroyAllSurfaces() {
 // LINE 1606:
 	asm( 
 "	      004c1c2f    push ebp"
@@ -7330,7 +7330,7 @@ GameModeCatalogData::DestroyAllSurfaces {
 }
 
 // FUNCTION: SIMCOPTER 0x004c1c6d
-GameModeCatalogData::Sleep {
+void GameModeCatalogData::Sleep() {
 // LINE 1617:
 	asm( 
 "	      004c1c6d    push ebp"
@@ -7376,7 +7376,7 @@ GameModeCatalogData::Sleep {
 }
 
 // FUNCTION: SIMCOPTER 0x004c1cb2
-GameModeCatalogData::Awake {
+void GameModeCatalogData::Awake() {
 // LINE 1626:
 	asm( 
 "	      004c1cb2    push ebp"
@@ -7445,7 +7445,7 @@ GameModeCatalogData::Awake {
 }
 
 // FUNCTION: SIMCOPTER 0x004c1d25
-GameModeCatalogData::CreatePalette {
+void GameModeCatalogData::CreatePalette() {
 // LINE 1641:
 	asm( 
 "	      004c1d25    push ebp"
@@ -7508,7 +7508,7 @@ GameModeCatalogData::CreatePalette {
 }
 
 // FUNCTION: SIMCOPTER 0x004c1db8
-GameModeCatalogData::UsePalette {
+void GameModeCatalogData::UsePalette() {
 // LINE 1652:
 	asm( 
 "	      004c1db8    push ebp"
@@ -7559,7 +7559,7 @@ GameModeCatalogData::UsePalette {
 }
 
 // FUNCTION: SIMCOPTER 0x004c1e0b
-GameModeCatalogData::Shutdown {
+void GameModeCatalogData::Shutdown() {
 // LINE 1663:
 	asm( 
 "	      004c1e0b    push ebp"
@@ -7587,7 +7587,7 @@ GameModeCatalogData::Shutdown {
 }
 
 // FUNCTION: SIMCOPTER 0x004c1e29
-GameModeCatalogData::SetCommandsToDefaults {
+void GameModeCatalogData::SetCommandsToDefaults() {
 // LINE 1672:
 	asm( 
 "	      004c1e29    push ebp"
@@ -8013,7 +8013,7 @@ GameModeCatalogData::SetCommandsToDefaults {
 }
 
 // FUNCTION: SIMCOPTER 0x004c24ce
-GameModeMissionLogData::GameModeMissionLogData {
+void GameModeMissionLogData::GameModeMissionLogData() {
 // LINE 1710:
 	asm( 
 "	      004c24ce    push ebp"
@@ -8054,7 +8054,7 @@ GameModeMissionLogData::GameModeMissionLogData {
 }
 
 // FUNCTION: SIMCOPTER 0x004c2515
-GameModeMissionLogData::CreateAllSurfaces {
+int32_t GameModeMissionLogData::CreateAllSurfaces() {
 // LINE 1721:
 	asm( 
 "	      004c2515    push ebp"
@@ -8127,7 +8127,7 @@ GameModeMissionLogData::CreateAllSurfaces {
 }
 
 // FUNCTION: SIMCOPTER 0x004c25b7
-GameModeMissionLogData::DestroyAllSurfaces {
+void GameModeMissionLogData::DestroyAllSurfaces() {
 // LINE 1731:
 	asm( 
 "	      004c25b7    push ebp"
@@ -8170,7 +8170,7 @@ GameModeMissionLogData::DestroyAllSurfaces {
 }
 
 // FUNCTION: SIMCOPTER 0x004c25f5
-GameModeMissionLogData::Sleep {
+void GameModeMissionLogData::Sleep() {
 // LINE 1742:
 	asm( 
 "	      004c25f5    push ebp"
@@ -8216,7 +8216,7 @@ GameModeMissionLogData::Sleep {
 }
 
 // FUNCTION: SIMCOPTER 0x004c263a
-GameModeMissionLogData::Awake {
+void GameModeMissionLogData::Awake() {
 // LINE 1751:
 	asm( 
 "	      004c263a    push ebp"
@@ -8285,7 +8285,7 @@ GameModeMissionLogData::Awake {
 }
 
 // FUNCTION: SIMCOPTER 0x004c26ad
-GameModeMissionLogData::CreatePalette {
+void GameModeMissionLogData::CreatePalette() {
 // LINE 1766:
 	asm( 
 "	      004c26ad    push ebp"
@@ -8348,7 +8348,7 @@ GameModeMissionLogData::CreatePalette {
 }
 
 // FUNCTION: SIMCOPTER 0x004c2740
-GameModeMissionLogData::UsePalette {
+void GameModeMissionLogData::UsePalette() {
 // LINE 1777:
 	asm( 
 "	      004c2740    push ebp"
@@ -8399,7 +8399,7 @@ GameModeMissionLogData::UsePalette {
 }
 
 // FUNCTION: SIMCOPTER 0x004c2793
-GameModeMissionLogData::Shutdown {
+void GameModeMissionLogData::Shutdown() {
 // LINE 1788:
 	asm( 
 "	      004c2793    push ebp"
@@ -8427,7 +8427,7 @@ GameModeMissionLogData::Shutdown {
 }
 
 // FUNCTION: SIMCOPTER 0x004c27b1
-GameModeMissionLogData::SetCommandsToDefaults {
+void GameModeMissionLogData::SetCommandsToDefaults() {
 // LINE 1797:
 	asm( 
 "	      004c27b1    push ebp"
@@ -8853,7 +8853,7 @@ GameModeMissionLogData::SetCommandsToDefaults {
 }
 
 // FUNCTION: SIMCOPTER 0x004c2e56
-GameModeInventoryData::GameModeInventoryData {
+void GameModeInventoryData::GameModeInventoryData() {
 // LINE 1832:
 	asm( 
 "	      004c2e56    push ebp"
@@ -8894,7 +8894,7 @@ GameModeInventoryData::GameModeInventoryData {
 }
 
 // FUNCTION: SIMCOPTER 0x004c2e9d
-GameModeInventoryData::CreateAllSurfaces {
+int32_t GameModeInventoryData::CreateAllSurfaces() {
 // LINE 1843:
 	asm( 
 "	      004c2e9d    push ebp"
@@ -8967,7 +8967,7 @@ GameModeInventoryData::CreateAllSurfaces {
 }
 
 // FUNCTION: SIMCOPTER 0x004c2f3f
-GameModeInventoryData::DestroyAllSurfaces {
+void GameModeInventoryData::DestroyAllSurfaces() {
 // LINE 1853:
 	asm( 
 "	      004c2f3f    push ebp"
@@ -9010,7 +9010,7 @@ GameModeInventoryData::DestroyAllSurfaces {
 }
 
 // FUNCTION: SIMCOPTER 0x004c2f7d
-GameModeInventoryData::Sleep {
+void GameModeInventoryData::Sleep() {
 // LINE 1864:
 	asm( 
 "	      004c2f7d    push ebp"
@@ -9056,7 +9056,7 @@ GameModeInventoryData::Sleep {
 }
 
 // FUNCTION: SIMCOPTER 0x004c2fc2
-GameModeInventoryData::Awake {
+void GameModeInventoryData::Awake() {
 // LINE 1873:
 	asm( 
 "	      004c2fc2    push ebp"
@@ -9125,7 +9125,7 @@ GameModeInventoryData::Awake {
 }
 
 // FUNCTION: SIMCOPTER 0x004c3035
-GameModeInventoryData::CreatePalette {
+void GameModeInventoryData::CreatePalette() {
 // LINE 1888:
 	asm( 
 "	      004c3035    push ebp"
@@ -9188,7 +9188,7 @@ GameModeInventoryData::CreatePalette {
 }
 
 // FUNCTION: SIMCOPTER 0x004c30c8
-GameModeInventoryData::UsePalette {
+void GameModeInventoryData::UsePalette() {
 // LINE 1899:
 	asm( 
 "	      004c30c8    push ebp"
@@ -9239,7 +9239,7 @@ GameModeInventoryData::UsePalette {
 }
 
 // FUNCTION: SIMCOPTER 0x004c311b
-GameModeInventoryData::Shutdown {
+void GameModeInventoryData::Shutdown() {
 // LINE 1910:
 	asm( 
 "	      004c311b    push ebp"
@@ -9267,7 +9267,7 @@ GameModeInventoryData::Shutdown {
 }
 
 // FUNCTION: SIMCOPTER 0x004c3139
-GameModeInventoryData::SetCommandsToDefaults {
+void GameModeInventoryData::SetCommandsToDefaults() {
 // LINE 1918:
 	asm( 
 "	      004c3139    push ebp"

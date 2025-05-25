@@ -6,7 +6,7 @@
 
 // Contribution: 1:00162ea0-00164a36 Module: 186, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x00563ea0
-Check_Pointer {
+int32_t Check_Pointer() {
 // LINE 93:
 	asm( 
 "	      00563ea0    push ebp"
@@ -31,7 +31,7 @@ Check_Pointer {
 }
 
 // FUNCTION: SIMCOPTER 0x00563eb5
-MyPixel {
+void MyPixel() {
 // LINE 144:
 	asm( 
 "	      00563eb5    push ebp"
@@ -171,7 +171,7 @@ MyPixel {
 }
 
 // FUNCTION: SIMCOPTER 0x00563fd1
-DrawSphere {
+void DrawSphere() {
 // LINE 176:
 	asm( 
 "	      00563fd1    push ebp"
@@ -857,7 +857,7 @@ DrawSphere {
 }
 
 // FUNCTION: SIMCOPTER 0x00564770
-DrawFaceTwo {
+void DrawFaceTwo() {
 // LINE 404:
 	asm( 
 "	      00564770    push ebp"
@@ -1151,7 +1151,7 @@ DrawFaceTwo {
 }
 
 // FUNCTION: SIMCOPTER 0x005649c1
-ComputeViewToFigureOffset {
+long ComputeViewToFigureOffset() {
 // LINE 489:
 	asm( 
 "	      005649c1    push ebp"
@@ -1176,7 +1176,7 @@ ComputeViewToFigureOffset {
 }
 
 // FUNCTION: SIMCOPTER 0x005649d3
-DrawLineOnFace {
+void DrawLineOnFace() {
 // LINE 523:
 	asm( 
 "	      005649d3    push ebp"
@@ -1442,7 +1442,7 @@ DrawLineOnFace {
 }
 
 // FUNCTION: SIMCOPTER 0x00564bb8
-FindFaceQuadrant {
+void FindFaceQuadrant() {
 // LINE 583:
 	asm( 
 "	      00564bb8    push ebp"
@@ -1501,7 +1501,7 @@ FindFaceQuadrant {
 }
 
 // FUNCTION: SIMCOPTER 0x00564c10
-FindFaceQuadrant2 {
+void FindFaceQuadrant2() {
 // LINE 599:
 	asm( 
 "	      00564c10    push ebp"
@@ -1646,7 +1646,7 @@ FindFaceQuadrant2 {
 }
 
 // FUNCTION: SIMCOPTER 0x00564d8d
-DrawTaperedLine {
+void DrawTaperedLine() {
 // LINE 637:
 	asm( 
 "	      00564d8d    push ebp"
@@ -2251,7 +2251,7 @@ DrawTaperedLine {
 }
 
 // FUNCTION: SIMCOPTER 0x00565225
-DrawLine {
+void DrawLine() {
 // LINE 824:
 	asm( 
 "	      00565225    push ebp"
@@ -2775,7 +2775,7 @@ DrawLine {
 }
 
 // FUNCTION: SIMCOPTER 0x00565641
-DrawHorzLinePat {
+void DrawHorzLinePat() {
 // LINE 972:
 	asm( 
 "	      00565641    push ebp"
@@ -3061,7 +3061,7 @@ DrawHorzLinePat {
 }
 
 // FUNCTION: SIMCOPTER 0x00565898
-DrawHorzLine {
+void DrawHorzLine() {
 // LINE 1056:
 	asm( 
 "	      00565898    push ebp"

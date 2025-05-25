@@ -6,7 +6,7 @@
 
 // Contribution: 1:00164ca0-00165846 Module: 184, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x00565ca0
-EmptyPStr {
+void EmptyPStr() {
 // LINE 54:
 	asm( 
 "	      00565ca0    push ebp"
@@ -32,7 +32,7 @@ EmptyPStr {
 }
 
 // FUNCTION: SIMCOPTER 0x00565cb6
-Str2Num {
+unsigned short Str2Num() {
 // LINE 59:
 	asm( 
 "	      00565cb6    push ebp"
@@ -261,7 +261,7 @@ Str2Num {
 }
 
 // FUNCTION: SIMCOPTER 0x00565e80
-Num2Str {
+void Num2Str() {
 // LINE 99:
 	asm( 
 "	      00565e80    push ebp"
@@ -458,7 +458,7 @@ Num2Str {
 }
 
 // FUNCTION: SIMCOPTER 0x00565fbd
-HexStr2Num {
+unsigned short HexStr2Num() {
 // LINE 154:
 	asm( 
 "	      00565fbd    push ebp"
@@ -603,7 +603,7 @@ HexStr2Num {
 }
 
 // FUNCTION: SIMCOPTER 0x005660be
-Num2HexStr {
+void Num2HexStr() {
 // LINE 176:
 	asm( 
 "	      005660be    push ebp"
@@ -757,7 +757,7 @@ Num2HexStr {
 }
 
 // FUNCTION: SIMCOPTER 0x005661b4
-Long2PStr {
+void Long2PStr() {
 // LINE 214:
 	asm( 
 "	      005661b4    push ebp"
@@ -809,7 +809,7 @@ Long2PStr {
 }
 
 // FUNCTION: SIMCOPTER 0x005661f4
-PStr2Long {
+unsigned long PStr2Long() {
 // LINE 223:
 	asm( 
 "	      005661f4    push ebp"
@@ -879,7 +879,7 @@ PStr2Long {
 }
 
 // FUNCTION: SIMCOPTER 0x00566266
-CToPString {
+void CToPString() {
 // LINE 257:
 	asm( 
 "	      00566266    push ebp"
@@ -931,7 +931,7 @@ CToPString {
 }
 
 // FUNCTION: SIMCOPTER 0x005662c1
-Round {
+short Round() {
 // LINE 268:
 	asm( 
 "	      005662c1    push ebp"
@@ -999,7 +999,7 @@ Round {
 }
 
 // FUNCTION: SIMCOPTER 0x0056633e
-CToPStr {
+void CToPStr() {
 // LINE 365:
 	asm( 
 "	      0056633e    push ebp"
@@ -1051,7 +1051,7 @@ CToPStr {
 }
 
 // FUNCTION: SIMCOPTER 0x0056639c
-ConcatPStr {
+void ConcatPStr() {
 // LINE 442:
 	asm( 
 "	      0056639c    push ebp"
@@ -1134,7 +1134,7 @@ ConcatPStr {
 }
 
 // FUNCTION: SIMCOPTER 0x00566425
-ConcatCPStr {
+void ConcatCPStr() {
 // LINE 454:
 	asm( 
 "	      00566425    push ebp"
@@ -1184,7 +1184,7 @@ ConcatCPStr {
 }
 
 // FUNCTION: SIMCOPTER 0x00566479
-ConcatNum {
+void ConcatNum() {
 // LINE 464:
 	asm( 
 "	      00566479    push ebp"
@@ -1226,7 +1226,7 @@ ConcatNum {
 }
 
 // FUNCTION: SIMCOPTER 0x005664b9
-HexToString {
+void HexToString() {
 // LINE 499:
 	asm( 
 "	      005664b9    push ebp"
@@ -1362,7 +1362,7 @@ HexToString {
 }
 
 // FUNCTION: SIMCOPTER 0x005665b7
-PStrCompare {
+int32_t PStrCompare() {
 // LINE 906:
 	asm( 
 "	      005665b7    push ebp"
@@ -1519,7 +1519,7 @@ PStrCompare {
 }
 
 // FUNCTION: SIMCOPTER 0x00566705
-ExtractFileName {
+void ExtractFileName() {
 // LINE 928:
 	asm( 
 "	      00566705    push ebp"
@@ -1590,7 +1590,7 @@ ExtractFileName {
 }
 
 // FUNCTION: SIMCOPTER 0x0056677d
-MyTextBox {
+void MyTextBox() {
 // LINE 990:
 	asm( 
 "	      0056677d    push ebp"
@@ -1665,7 +1665,7 @@ MyTextBox {
 }
 
 // FUNCTION: SIMCOPTER 0x005667fe
-center {
+struct Point center() {
 // LINE 1253:
 	asm( 
 "	      005667fe    push ebp"

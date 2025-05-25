@@ -6,7 +6,7 @@
 
 // Contribution: 1:000ee1c0-000f7aeb Module: 176, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x004ef1c0
-S3HeliInitInstance {
+void S3HeliInitInstance() {
 // LINE 485:
 	asm( 
 "	      004ef1c0    push ebp"
@@ -1567,7 +1567,7 @@ S3HeliInitInstance {
 }
 
 // FUNCTION: SIMCOPTER 0x004effa0
-S3HeliGenInit {
+void S3HeliGenInit() {
 // LINE 820:
 	asm( 
 "	      004effa0    push ebp"
@@ -2417,7 +2417,7 @@ S3HeliGenInit {
 }
 
 // FUNCTION: SIMCOPTER 0x004f07ba
-S3HeliNextFrame {
+void S3HeliNextFrame() {
 // LINE 1010:
 	asm( 
 "	      004f07ba    push ebp"
@@ -4034,7 +4034,7 @@ S3HeliNextFrame {
 }
 
 // FUNCTION: SIMCOPTER 0x004f176d
-S3HeliCollideTest {
+int32_t S3HeliCollideTest() {
 // LINE 1441:
 	asm( 
 "	      004f176d    push ebp"
@@ -4348,7 +4348,7 @@ S3HeliCollideTest {
 }
 
 // FUNCTION: SIMCOPTER 0x004f1a20
-S3HeliHeadToLocXZ {
+int32_t S3HeliHeadToLocXZ() {
 // LINE 1514:
 	asm( 
 "	      004f1a20    push ebp"
@@ -4647,7 +4647,7 @@ S3HeliHeadToLocXZ {
 }
 
 // FUNCTION: SIMCOPTER 0x004f1c83
-S3HeliSetShadow {
+void S3HeliSetShadow() {
 // LINE 1617:
 	asm( 
 "	      004f1c83    push ebp"
@@ -4870,7 +4870,7 @@ S3HeliSetShadow {
 }
 
 // FUNCTION: SIMCOPTER 0x004f1e8a
-S3HeliControlInputs {
+int32_t S3HeliControlInputs() {
 // LINE 1687:
 	asm( 
 "	      004f1e8a    push ebp"
@@ -5970,7 +5970,7 @@ S3HeliControlInputs {
 }
 
 // FUNCTION: SIMCOPTER 0x004f2916
-S3HeliYawPitchRollSlide {
+void S3HeliYawPitchRollSlide() {
 // LINE 1929:
 	asm( 
 "	      004f2916    push ebp"
@@ -6605,7 +6605,7 @@ S3HeliYawPitchRollSlide {
 }
 
 // FUNCTION: SIMCOPTER 0x004f2ec9
-S3HeliMoveXZ {
+void S3HeliMoveXZ() {
 // LINE 2088:
 	asm( 
 "	      004f2ec9    push ebp"
@@ -7024,7 +7024,7 @@ S3HeliMoveXZ {
 }
 
 // FUNCTION: SIMCOPTER 0x004f32fe
-S3HeliMoveY {
+void S3HeliMoveY() {
 // LINE 2180:
 	asm( 
 "	      004f32fe    push ebp"
@@ -7816,7 +7816,7 @@ S3HeliMoveY {
 }
 
 // FUNCTION: SIMCOPTER 0x004f3b82
-S3HeliMainRotor {
+void S3HeliMainRotor() {
 // LINE 2395:
 	asm( 
 "	      004f3b82    push ebp"
@@ -8411,7 +8411,7 @@ S3HeliMainRotor {
 }
 
 // FUNCTION: SIMCOPTER 0x004f40c7
-S3HeliRopeAndBucket {
+void S3HeliRopeAndBucket() {
 // LINE 2536:
 	asm( 
 "	      004f40c7    push ebp"
@@ -9104,7 +9104,7 @@ S3HeliRopeAndBucket {
 }
 
 // FUNCTION: SIMCOPTER 0x004f4766
-S3HeliDropWater {
+void S3HeliDropWater() {
 // LINE 2701:
 	asm( 
 "	      004f4766    push ebp"
@@ -9293,7 +9293,7 @@ S3HeliDropWater {
 }
 
 // FUNCTION: SIMCOPTER 0x004f48ec
-S3HeliSimDust {
+void S3HeliSimDust() {
 // LINE 2754:
 	asm( 
 "	      004f48ec    push ebp"
@@ -9480,7 +9480,7 @@ S3HeliSimDust {
 }
 
 // FUNCTION: SIMCOPTER 0x004f4a69
-NormalizeMapPoints {
+void NormalizeMapPoints() {
 // LINE 2812:
 	asm( 
 "	      004f4a69    push ebp"
@@ -9544,7 +9544,7 @@ NormalizeMapPoints {
 }
 
 // FUNCTION: SIMCOPTER 0x004f4ad4
-NormalizeXZVector {
+void NormalizeXZVector() {
 // LINE 2834:
 	asm( 
 "	      004f4ad4    push ebp"
@@ -9726,7 +9726,7 @@ NormalizeXZVector {
 }
 
 // FUNCTION: SIMCOPTER 0x004f4c0e
-S3HeliRopeNextFrame {
+void S3HeliRopeNextFrame() {
 // LINE 2895:
 	asm( 
 "	      004f4c0e    push ebp"
@@ -10402,7 +10402,7 @@ S3HeliRopeNextFrame {
 }
 
 // FUNCTION: SIMCOPTER 0x004f512e
-S3DrawWater {
+void S3DrawWater() {
 // LINE 3089:
 	asm( 
 "	      004f512e    push ebp"
@@ -10422,7 +10422,7 @@ S3DrawWater {
 }
 
 // FUNCTION: SIMCOPTER 0x004f5139
-GetCopterTerAlt {
+int32_t GetCopterTerAlt() {
 // LINE 3324:
 	asm( 
 "	      004f5139    push ebp"
@@ -10465,7 +10465,7 @@ GetCopterTerAlt {
 }
 
 // FUNCTION: SIMCOPTER 0x004f517d
-GetCopterBldAlt {
+int32_t GetCopterBldAlt() {
 // LINE 3336:
 	asm( 
 "	      004f517d    push ebp"
@@ -10671,7 +10671,7 @@ GetCopterBldAlt {
 }
 
 // FUNCTION: SIMCOPTER 0x004f5316
-S3HeliTestCopter {
+void S3HeliTestCopter() {
 // LINE 3396:
 	asm( 
 "	      004f5316    push ebp"
@@ -11068,7 +11068,7 @@ S3HeliTestCopter {
 }
 
 // FUNCTION: SIMCOPTER 0x004f56b9
-S3HeliLand {
+int32_t S3HeliLand() {
 // LINE 3535:
 	asm( 
 "	      004f56b9    push ebp"
@@ -11226,7 +11226,7 @@ S3HeliLand {
 }
 
 // FUNCTION: SIMCOPTER 0x004f5800
-S3HeliTakeOff {
+int32_t S3HeliTakeOff() {
 // LINE 3598:
 	asm( 
 "	      004f5800    push ebp"
@@ -11310,7 +11310,7 @@ S3HeliTakeOff {
 }
 
 // FUNCTION: SIMCOPTER 0x004f5898
-S3HeliHeadsUp {
+void S3HeliHeadsUp() {
 // LINE 3637:
 	asm( 
 "	      004f5898    push ebp"
@@ -11330,7 +11330,7 @@ S3HeliHeadsUp {
 }
 
 // FUNCTION: SIMCOPTER 0x004f58a3
-S3HeliGetDeflection {
+int32_t S3HeliGetDeflection() {
 // LINE 3655:
 	asm( 
 "	      004f58a3    push ebp"
@@ -11522,7 +11522,7 @@ S3HeliGetDeflection {
 }
 
 // FUNCTION: SIMCOPTER 0x004f5a0c
-S3HeliHighestBuildAlt {
+int32_t S3HeliHighestBuildAlt() {
 // LINE 3727:
 	asm( 
 "	      004f5a0c    push ebp"
@@ -11601,7 +11601,7 @@ S3HeliHighestBuildAlt {
 }
 
 // FUNCTION: SIMCOPTER 0x004f5a80
-S3HeliSwitchType {
+void S3HeliSwitchType() {
 // LINE 3758:
 	asm( 
 "	      004f5a80    push ebp"
@@ -11625,7 +11625,7 @@ S3HeliSwitchType {
 }
 
 // FUNCTION: SIMCOPTER 0x004f5a90
-S3HeliGetDataByDyObj {
+struct _HELI_DATA* S3HeliGetDataByDyObj() {
 // LINE 3772:
 	asm( 
 "	      004f5a90    push ebp"
@@ -11683,7 +11683,7 @@ S3HeliGetDataByDyObj {
 }
 
 // FUNCTION: SIMCOPTER 0x004f5afc
-S3HeliNextFrameDriver {
+void S3HeliNextFrameDriver() {
 // LINE 3797:
 	asm( 
 "	      004f5afc    push ebp"
@@ -11745,7 +11745,7 @@ S3HeliNextFrameDriver {
 }
 
 // FUNCTION: SIMCOPTER 0x004f5b6a
-S3HeliSoundDriver {
+void S3HeliSoundDriver() {
 // LINE 3830:
 	asm( 
 "	      004f5b6a    push ebp"
@@ -12112,7 +12112,7 @@ S3HeliSoundDriver {
 }
 
 // FUNCTION: SIMCOPTER 0x004f5e67
-S3HeliSetSpotlite {
+void S3HeliSetSpotlite() {
 // LINE 3970:
 	asm( 
 "	      004f5e67    push ebp"
@@ -12633,7 +12633,7 @@ S3HeliSetSpotlite {
 }
 
 // FUNCTION: SIMCOPTER 0x004f6321
-S3HeliGetSpotLoc {
+void S3HeliGetSpotLoc() {
 // LINE 4129:
 	asm( 
 "	      004f6321    push ebp"
@@ -12665,7 +12665,7 @@ S3HeliGetSpotLoc {
 }
 
 // FUNCTION: SIMCOPTER 0x004f6341
-S3HeliSpotDistance {
+int32_t S3HeliSpotDistance() {
 // LINE 4145:
 	asm( 
 "	      004f6341    push ebp"
@@ -12852,7 +12852,7 @@ S3HeliSpotDistance {
 }
 
 // FUNCTION: SIMCOPTER 0x004f6477
-S3HeliRotateSpotLite {
+void S3HeliRotateSpotLite() {
 // LINE 4221:
 	asm( 
 "	      004f6477    push ebp"
@@ -12951,7 +12951,7 @@ S3HeliRotateSpotLite {
 }
 
 // FUNCTION: SIMCOPTER 0x004f6555
-S3HeliTurbulence {
+void S3HeliTurbulence() {
 // LINE 4284:
 	asm( 
 "	      004f6555    push ebp"
@@ -13369,7 +13369,7 @@ S3HeliTurbulence {
 }
 
 // FUNCTION: SIMCOPTER 0x004f6912
-S3HeliSmokeTrail {
+void S3HeliSmokeTrail() {
 // LINE 4409:
 	asm( 
 "	      004f6912    push ebp"
@@ -13860,7 +13860,7 @@ S3HeliSmokeTrail {
 }
 
 // FUNCTION: SIMCOPTER 0x004f6d6e
-S3HeliReset {
+void S3HeliReset() {
 // LINE 4543:
 	asm( 
 "	      004f6d6e    push ebp"
@@ -13887,7 +13887,7 @@ S3HeliReset {
 }
 
 // FUNCTION: SIMCOPTER 0x004f6d87
-S3HeliTweakInit {
+void S3HeliTweakInit() {
 // LINE 4556:
 	asm( 
 "	      004f6d87    push ebp"
@@ -14884,7 +14884,7 @@ S3HeliTweakInit {
 }
 
 // FUNCTION: SIMCOPTER 0x004f73bd
-S3HeliGetRepairRate {
+int32_t S3HeliGetRepairRate() {
 // LINE 4762:
 	asm( 
 "	      004f73bd    push ebp"
@@ -14921,7 +14921,7 @@ S3HeliGetRepairRate {
 }
 
 // FUNCTION: SIMCOPTER 0x004f73ed
-S3HeliGetFuelRate {
+int32_t S3HeliGetFuelRate() {
 // LINE 4770:
 	asm( 
 "	      004f73ed    push ebp"
@@ -14958,7 +14958,7 @@ S3HeliGetFuelRate {
 }
 
 // FUNCTION: SIMCOPTER 0x004f741d
-S3GetFullRepairCost {
+long S3GetFullRepairCost() {
 // LINE 4779:
 	asm( 
 "	      004f741d    push ebp"
@@ -15014,7 +15014,7 @@ S3GetFullRepairCost {
 }
 
 // FUNCTION: SIMCOPTER 0x004f7473
-S3HeliPurchaseRepairs {
+void S3HeliPurchaseRepairs() {
 // LINE 4799:
 	asm( 
 "	      004f7473    push ebp"
@@ -15084,7 +15084,7 @@ S3HeliPurchaseRepairs {
 }
 
 // FUNCTION: SIMCOPTER 0x004f74eb
-S3GetFullRefuelCost {
+long S3GetFullRefuelCost() {
 // LINE 4819:
 	asm( 
 "	      004f74eb    push ebp"
@@ -15139,7 +15139,7 @@ S3GetFullRefuelCost {
 }
 
 // FUNCTION: SIMCOPTER 0x004f753e
-S3HeliPurchaseFuel {
+void S3HeliPurchaseFuel() {
 // LINE 4838:
 	asm( 
 "	      004f753e    push ebp"
@@ -15209,7 +15209,7 @@ S3HeliPurchaseFuel {
 }
 
 // FUNCTION: SIMCOPTER 0x004f75b5
-S3HeliGetMaximumDamage {
+int32_t S3HeliGetMaximumDamage() {
 // LINE 4857:
 	asm( 
 "	      004f75b5    push ebp"
@@ -15246,7 +15246,7 @@ S3HeliGetMaximumDamage {
 }
 
 // FUNCTION: SIMCOPTER 0x004f75e5
-S3HeliGetCurrentDamage {
+int32_t S3HeliGetCurrentDamage() {
 // LINE 4866:
 	asm( 
 "	      004f75e5    push ebp"
@@ -15272,7 +15272,7 @@ S3HeliGetCurrentDamage {
 }
 
 // FUNCTION: SIMCOPTER 0x004f75fe
-S3HeliGetMaximumFuel {
+int32_t S3HeliGetMaximumFuel() {
 // LINE 4874:
 	asm( 
 "	      004f75fe    push ebp"
@@ -15309,7 +15309,7 @@ S3HeliGetMaximumFuel {
 }
 
 // FUNCTION: SIMCOPTER 0x004f762e
-S3HeliCommand {
+void S3HeliCommand() {
 // LINE 4887:
 	asm( 
 "	      004f762e    push ebp"
@@ -15509,7 +15509,7 @@ S3HeliCommand {
 }
 
 // FUNCTION: SIMCOPTER 0x004f781b
-S3PlayMegaphoneMessage {
+void S3PlayMegaphoneMessage() {
 // LINE 4936:
 	asm( 
 "	      004f781b    push ebp"
@@ -15606,7 +15606,7 @@ S3PlayMegaphoneMessage {
 }
 
 // FUNCTION: SIMCOPTER 0x004f78fa
-S3HeliCrashed {
+int32_t S3HeliCrashed() {
 // LINE 4958:
 	asm( 
 "	      004f78fa    push ebp"
@@ -16180,7 +16180,7 @@ S3HeliCrashed {
 }
 
 // FUNCTION: SIMCOPTER 0x004f7de6
-S3HeliDyObjCollisionCheck {
+int32_t S3HeliDyObjCollisionCheck() {
 // LINE 5128:
 	asm( 
 "	      004f7de6    push ebp"
@@ -16376,7 +16376,7 @@ S3HeliDyObjCollisionCheck {
 }
 
 // FUNCTION: SIMCOPTER 0x004f7f7d
-S3HeliHitSpiral {
+void S3HeliHitSpiral() {
 // LINE 5212:
 	asm( 
 "	      004f7f7d    push ebp"
@@ -16708,7 +16708,7 @@ S3HeliHitSpiral {
 }
 
 // FUNCTION: SIMCOPTER 0x004f81bb
-S3HeliGetFreePad {
+struct Point2d* S3HeliGetFreePad() {
 // LINE 5349:
 	asm( 
 "	      004f81bb    push ebp"
@@ -16815,7 +16815,7 @@ S3HeliGetFreePad {
 }
 
 // FUNCTION: SIMCOPTER 0x004f8270
-S3HeliGetDataForType {
+struct _HELI_DATA* S3HeliGetDataForType() {
 // LINE 5402:
 	asm( 
 "	      004f8270    push ebp"
@@ -16876,7 +16876,7 @@ S3HeliGetDataForType {
 }
 
 // FUNCTION: SIMCOPTER 0x004f82df
-S3HeliGetNewValue {
+long S3HeliGetNewValue() {
 // LINE 5419:
 	asm( 
 "	      004f82df    push ebp"
@@ -16922,7 +16922,7 @@ S3HeliGetNewValue {
 }
 
 // FUNCTION: SIMCOPTER 0x004f831e
-S3HeliGetCurrentValue {
+long S3HeliGetCurrentValue() {
 // LINE 5438:
 	asm( 
 "	      004f831e    push ebp"
@@ -17001,7 +17001,7 @@ S3HeliGetCurrentValue {
 }
 
 // FUNCTION: SIMCOPTER 0x004f83a8
-S3HeliGetEquipmentNewValue {
+long S3HeliGetEquipmentNewValue() {
 // LINE 5466:
 	asm( 
 "	      004f83a8    push ebp"
@@ -17092,7 +17092,7 @@ S3HeliGetEquipmentNewValue {
 }
 
 // FUNCTION: SIMCOPTER 0x004f843e
-S3HeliPurchaseTeargasCanisters {
+void S3HeliPurchaseTeargasCanisters() {
 // LINE 5502:
 	asm( 
 "	      004f843e    push ebp"
@@ -17124,7 +17124,7 @@ S3HeliPurchaseTeargasCanisters {
 }
 
 // FUNCTION: SIMCOPTER 0x004f8465
-S3HeliGetEquipmentCurrentValue {
+long S3HeliGetEquipmentCurrentValue() {
 // LINE 5515:
 	asm( 
 "	      004f8465    push ebp"
@@ -17158,7 +17158,7 @@ S3HeliGetEquipmentCurrentValue {
 }
 
 // FUNCTION: SIMCOPTER 0x004f8492
-S3HeliMakeHelicopter {
+void S3HeliMakeHelicopter() {
 // LINE 5528:
 	asm( 
 "	      004f8492    push ebp"
@@ -17248,7 +17248,7 @@ S3HeliMakeHelicopter {
 }
 
 // FUNCTION: SIMCOPTER 0x004f852a
-S3HeliRemoveHelicopter {
+void S3HeliRemoveHelicopter() {
 // LINE 5556:
 	asm( 
 "	      004f852a    push ebp"
@@ -17349,7 +17349,7 @@ S3HeliRemoveHelicopter {
 }
 
 // FUNCTION: SIMCOPTER 0x004f85e8
-S3HeliUnlink {
+void S3HeliUnlink() {
 // LINE 5591:
 	asm( 
 "	      004f85e8    push ebp"
@@ -17421,7 +17421,7 @@ S3HeliUnlink {
 }
 
 // FUNCTION: SIMCOPTER 0x004f8653
-S3HeliHitDispatch {
+void S3HeliHitDispatch() {
 // LINE 5616:
 	asm( 
 "	      004f8653    push ebp"
@@ -17671,7 +17671,7 @@ S3HeliHitDispatch {
 }
 
 // FUNCTION: SIMCOPTER 0x004f8847
-S3HeliMIFFLoad {
+int32_t S3HeliMIFFLoad() {
 // LINE 5694:
 	asm( 
 "	      004f8847    push ebp"
@@ -17798,7 +17798,7 @@ S3HeliMIFFLoad {
 }
 
 // FUNCTION: SIMCOPTER 0x004f894f
-S3HeliMIFFSave {
+int32_t S3HeliMIFFSave() {
 // LINE 5733:
 	asm( 
 "	      004f894f    push ebp"
@@ -17865,7 +17865,7 @@ S3HeliMIFFSave {
 }
 
 // FUNCTION: SIMCOPTER 0x004f89c8
-S3HeliUserExit {
+void S3HeliUserExit() {
 // LINE 5759:
 	asm( 
 "	      004f89c8    push ebp"

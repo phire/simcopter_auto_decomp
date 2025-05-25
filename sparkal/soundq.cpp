@@ -6,7 +6,7 @@
 
 // Contribution: 1:0001f5f0-00021277 Module: 71, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x004205f0
-SoundQueueItem::SoundQueueItem {
+void SoundQueueItem::SoundQueueItem() {
 // LINE 17:
 	asm( 
 "	      004205f0    push ebp"
@@ -56,7 +56,7 @@ SoundQueueItem::SoundQueueItem {
 }
 
 // FUNCTION: SIMCOPTER 0x00420675
-SoundQueueItem::SoundQueueItem {
+void SoundQueueItem::SoundQueueItem(class Sound*, long, int32_t) {
 // LINE 29:
 	asm( 
 "	      00420675    push ebp"
@@ -129,7 +129,7 @@ SoundQueueItem::SoundQueueItem {
 }
 
 // FUNCTION: SIMCOPTER 0x00420720
-SoundQueueItem::SoundQueueItem {
+void SoundQueueItem::SoundQueueItem(class Sound*, long, long, int32_t) {
 // LINE 41:
 	asm( 
 "	      00420720    push ebp"
@@ -203,7 +203,7 @@ SoundQueueItem::SoundQueueItem {
 }
 
 // FUNCTION: SIMCOPTER 0x004207ca
-SoundQueueItem::SoundQueueItem {
+void SoundQueueItem::SoundQueueItem(class Sound*, const class basic_string<char>&, long, int32_t) {
 // LINE 53:
 	asm( 
 "	      004207ca    push ebp"
@@ -404,7 +404,7 @@ SoundQueueItem::SoundQueueItem {
 }
 
 // FUNCTION: SIMCOPTER 0x00420a3c
-SoundQueueItem::SoundQueueItem {
+void SoundQueueItem::SoundQueueItem(class Sound*, char *, long, int32_t) {
 // LINE 67:
 	asm( 
 "	      00420a3c    push ebp"
@@ -642,7 +642,7 @@ SoundQueueItem::SoundQueueItem {
 }
 
 // FUNCTION: SIMCOPTER 0x00420d37
-DigitalSoundQueueItem::DigitalSoundQueueItem {
+void DigitalSoundQueueItem::DigitalSoundQueueItem(const class basic_string<char>&, long) {
 // LINE 89:
 	asm( 
 "	      00420d37    push ebp"
@@ -703,7 +703,7 @@ DigitalSoundQueueItem::DigitalSoundQueueItem {
 }
 
 // FUNCTION: SIMCOPTER 0x00420daf
-DigitalSoundQueueItem::DigitalSoundQueueItem {
+void DigitalSoundQueueItem::DigitalSoundQueueItem(char *, long) {
 // LINE 102:
 	asm( 
 "	      00420daf    push ebp"
@@ -873,7 +873,7 @@ DigitalSoundQueueItem::DigitalSoundQueueItem {
 }
 
 // FUNCTION: SIMCOPTER 0x00420fba
-DigitalSoundQueueItem::DigitalSoundQueueItem {
+void DigitalSoundQueueItem::DigitalSoundQueueItem(long, long) {
 // LINE 116:
 	asm( 
 "	      00420fba    push ebp"
@@ -933,7 +933,7 @@ DigitalSoundQueueItem::DigitalSoundQueueItem {
 }
 
 // FUNCTION: SIMCOPTER 0x00421030
-SoundQueue::SoundQueue {
+void SoundQueue::SoundQueue() {
 // LINE 144:
 	asm( 
 "	      00421030    push ebp"
@@ -1120,7 +1120,7 @@ SoundQueue::SoundQueue {
 }
 
 // FUNCTION: SIMCOPTER 0x004212b9
-SoundQueue::~SoundQueue {
+void SoundQueue::~SoundQueue() {
 // LINE 155:
 	asm( 
 "	      004212b9    push ebp"
@@ -1256,7 +1256,7 @@ SoundQueue::~SoundQueue {
 }
 
 // FUNCTION: SIMCOPTER 0x00421484
-SoundQueue::Initialize {
+int32_t SoundQueue::Initialize() {
 // LINE 164:
 	asm( 
 "	      00421484    push ebp"
@@ -1306,7 +1306,7 @@ SoundQueue::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x004214c9
-SoundQueue::DeInitialize {
+void SoundQueue::DeInitialize(int32_t) {
 // LINE 179:
 	asm( 
 "	      004214c9    push ebp"
@@ -1361,7 +1361,7 @@ SoundQueue::DeInitialize {
 }
 
 // FUNCTION: SIMCOPTER 0x0042151a
-SoundQueue::ClearQueue {
+void SoundQueue::ClearQueue(int32_t) {
 // LINE 196:
 	asm( 
 "	      0042151a    push ebp"
@@ -1622,7 +1622,7 @@ SoundQueue::ClearQueue {
 }
 
 // FUNCTION: SIMCOPTER 0x004217d6
-SoundQueue::operator+= {
+class SoundQueue& SoundQueue::operator+=(class Sound*) {
 // LINE 224:
 	asm( 
 "	      004217d6    push ebp"
@@ -1692,7 +1692,7 @@ SoundQueue::operator+= {
 }
 
 // FUNCTION: SIMCOPTER 0x0042185b
-SoundQueue::operator+= {
+class SoundQueue& SoundQueue::operator+=(struct SoundQueueItem*) {
 // LINE 239:
 	asm( 
 "	      0042185b    push ebp"
@@ -1956,7 +1956,7 @@ SoundQueue::operator+= {
 }
 
 // FUNCTION: SIMCOPTER 0x00421b84
-SoundQueue::StartPauseCallback {
+int32_t SoundQueue::StartPauseCallback(long) {
 // LINE 260:
 	asm( 
 "	      00421b84    push ebp"
@@ -1997,7 +1997,7 @@ SoundQueue::StartPauseCallback {
 }
 
 // FUNCTION: SIMCOPTER 0x00421bbf
-SoundQueue::EndPauseCallback {
+void SoundQueue::EndPauseCallback() {
 // LINE 276:
 	asm( 
 "	      00421bbf    push ebp"
@@ -2038,7 +2038,7 @@ SoundQueue::EndPauseCallback {
 }
 
 // FUNCTION: SIMCOPTER 0x00421bf9
-SoundQueue::PlayNextSoundInQueue {
+void SoundQueue::PlayNextSoundInQueue() {
 // LINE 299:
 	asm( 
 "	      00421bf9    push ebp"
@@ -2188,7 +2188,7 @@ SoundQueue::PlayNextSoundInQueue {
 }
 
 // FUNCTION: SIMCOPTER 0x00421d19
-SoundQueue::RemoveNextSoundInQueue {
+void SoundQueue::RemoveNextSoundInQueue() {
 // LINE 333:
 	asm( 
 "	      00421d19    push ebp"
@@ -2366,7 +2366,7 @@ SoundQueue::RemoveNextSoundInQueue {
 }
 
 // FUNCTION: SIMCOPTER 0x00421f05
-SoundQueue::WindowsStaticSoundQueueCompletionCallback {
+void SoundQueue::WindowsStaticSoundQueueCompletionCallback(uint32_t, uint32_t, unsigned long, unsigned long, unsigned long) {
 // LINE 355:
 	asm( 
 "	      00421f05    push ebp"
@@ -2394,7 +2394,7 @@ SoundQueue::WindowsStaticSoundQueueCompletionCallback {
 }
 
 // FUNCTION: SIMCOPTER 0x00421f23
-SoundQueue::WindowsStaticSoundQueueWaitTimeCallback {
+void SoundQueue::WindowsStaticSoundQueueWaitTimeCallback(uint32_t, uint32_t, unsigned long, unsigned long, unsigned long) {
 // LINE 367:
 	asm( 
 "	      00421f23    push ebp"
@@ -2422,7 +2422,7 @@ SoundQueue::WindowsStaticSoundQueueWaitTimeCallback {
 }
 
 // FUNCTION: SIMCOPTER 0x00421f41
-SoundQueue::StaticSoundQueueCompletionCallback {
+void SoundQueue::StaticSoundQueueCompletionCallback(long) {
 // LINE 376:
 	asm( 
 "	      00421f41    push ebp"
@@ -2450,7 +2450,7 @@ SoundQueue::StaticSoundQueueCompletionCallback {
 }
 
 // FUNCTION: SIMCOPTER 0x00421f5c
-SoundQueue::SoundQueueCompletionCallback {
+void SoundQueue::SoundQueueCompletionCallback() {
 // LINE 384:
 	asm( 
 "	      00421f5c    push ebp"
@@ -2537,7 +2537,7 @@ SoundQueue::SoundQueueCompletionCallback {
 }
 
 // FUNCTION: SIMCOPTER 0x00421ffe
-SoundQueue::StaticSoundQueueWaitTimeCallback {
+void SoundQueue::StaticSoundQueueWaitTimeCallback(long) {
 // LINE 406:
 	asm( 
 "	      00421ffe    push ebp"
@@ -2565,7 +2565,7 @@ SoundQueue::StaticSoundQueueWaitTimeCallback {
 }
 
 // FUNCTION: SIMCOPTER 0x00422019
-SoundQueue::SoundQueueWaitTimeCallback {
+void SoundQueue::SoundQueueWaitTimeCallback() {
 // LINE 414:
 	asm( 
 "	      00422019    push ebp"
@@ -2607,7 +2607,7 @@ SoundQueue::SoundQueueWaitTimeCallback {
 }
 
 // FUNCTION: SIMCOPTER 0x00422056
-SoundQueue::GetMutex {
+int32_t SoundQueue::GetMutex(unsigned long) {
 // LINE 428:
 	asm( 
 "	      00422056    push ebp"
@@ -2778,7 +2778,7 @@ SoundQueue::GetMutex {
 }
 
 // FUNCTION: SIMCOPTER 0x00422258
-SoundQueue::ReleaseMutex {
+void SoundQueue::ReleaseMutex() {
 // LINE 455:
 	asm( 
 "	      00422258    push ebp"

@@ -48,7 +48,7 @@
 // $E60
 
 // FUNCTION: SIMCOPTER 0x004a174c
-GraphicWindowColorConstants::GraphicWindowColorConstants {
+void GraphicWindowColorConstants::GraphicWindowColorConstants() {
 // LINE 33:
 	asm( 
 "	      004a174c    push ebp"
@@ -117,7 +117,7 @@ GraphicWindowColorConstants::GraphicWindowColorConstants {
 }
 
 // FUNCTION: SIMCOPTER 0x004a17be
-GraphicWindowOwner::DoMessage {
+int32_t GraphicWindowOwner::DoMessage(class GraphicWindow*, long, long, void * __ptr32) {
 // LINE 61:
 	asm( 
 "	      004a17be    push ebp"
@@ -144,7 +144,7 @@ GraphicWindowOwner::DoMessage {
 }
 
 // FUNCTION: SIMCOPTER 0x004a17d8
-GraphicWindowManager::GraphicWindowManager {
+void GraphicWindowManager::GraphicWindowManager(class GraphicWindow*) {
 // LINE 77:
 	asm( 
 "	      004a17d8    push ebp"
@@ -332,7 +332,7 @@ GraphicWindowManager::GraphicWindowManager {
 }
 
 // FUNCTION: SIMCOPTER 0x004a1a60
-GraphicWindowManager::~GraphicWindowManager {
+void GraphicWindowManager::~GraphicWindowManager() {
 // LINE 85:
 	asm( 
 "	      004a1a60    push ebp"
@@ -462,7 +462,7 @@ GraphicWindowManager::~GraphicWindowManager {
 }
 
 // FUNCTION: SIMCOPTER 0x004a1c21
-GraphicWindowManager::SetNewBaseWindow {
+void GraphicWindowManager::SetNewBaseWindow(class GraphicWindow*) {
 // LINE 97:
 	asm( 
 "	      004a1c21    push ebp"
@@ -491,7 +491,7 @@ GraphicWindowManager::SetNewBaseWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004a1c42
-GraphicWindowManager::DeleteWindow {
+int32_t GraphicWindowManager::DeleteWindow(class GraphicWindow*) {
 // LINE 113:
 	asm( 
 "	      004a1c42    push ebp"
@@ -738,7 +738,7 @@ GraphicWindowManager::DeleteWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004a1f4e
-GraphicWindowManager::DeleteWindowAndRemoveItsTraces {
+int32_t GraphicWindowManager::DeleteWindowAndRemoveItsTraces(class GraphicWindow*) {
 // LINE 138:
 	asm( 
 "	      004a1f4e    push ebp"
@@ -831,7 +831,7 @@ GraphicWindowManager::DeleteWindowAndRemoveItsTraces {
 }
 
 // FUNCTION: SIMCOPTER 0x004a1ff2
-GraphicWindowManager::DeleteAllWindowsInDeletionList {
+int32_t GraphicWindowManager::DeleteAllWindowsInDeletionList() {
 // LINE 162:
 	asm( 
 "	      004a1ff2    push ebp"
@@ -1010,7 +1010,7 @@ GraphicWindowManager::DeleteAllWindowsInDeletionList {
 }
 
 // FUNCTION: SIMCOPTER 0x004a21d6
-GraphicWindowManager::IsWindowOrParentInDeletionList {
+int32_t GraphicWindowManager::IsWindowOrParentInDeletionList(class GraphicWindow*) {
 // LINE 191:
 	asm( 
 "	      004a21d6    push ebp"
@@ -1120,7 +1120,7 @@ GraphicWindowManager::IsWindowOrParentInDeletionList {
 }
 
 // FUNCTION: SIMCOPTER 0x004a22c1
-GraphicWindowManager::DoKeyDown {
+long GraphicWindowManager::DoKeyDown(long, char) {
 // LINE 217:
 	asm( 
 "	      004a22c1    push ebp"
@@ -1254,7 +1254,7 @@ GraphicWindowManager::DoKeyDown {
 }
 
 // FUNCTION: SIMCOPTER 0x004a23da
-GraphicWindowManager::DoKeyUp {
+long GraphicWindowManager::DoKeyUp(long, char) {
 // LINE 249:
 	asm( 
 "	      004a23da    push ebp"
@@ -1388,7 +1388,7 @@ GraphicWindowManager::DoKeyUp {
 }
 
 // FUNCTION: SIMCOPTER 0x004a24f3
-GraphicWindowManager::DoCharacter {
+long GraphicWindowManager::DoCharacter(long) {
 // LINE 276:
 	asm( 
 "	      004a24f3    push ebp"
@@ -1520,7 +1520,7 @@ GraphicWindowManager::DoCharacter {
 }
 
 // FUNCTION: SIMCOPTER 0x004a2608
-GraphicWindowManager::DoCursorDown {
+long GraphicWindowManager::DoCursorDown(long, long, unsigned long) {
 // LINE 303:
 	asm( 
 "	      004a2608    push ebp"
@@ -1590,7 +1590,7 @@ GraphicWindowManager::DoCursorDown {
 }
 
 // FUNCTION: SIMCOPTER 0x004a268c
-GraphicWindowManager::DoCursorUp {
+long GraphicWindowManager::DoCursorUp(long, long, unsigned long) {
 // LINE 329:
 	asm( 
 "	      004a268c    push ebp"
@@ -1660,7 +1660,7 @@ GraphicWindowManager::DoCursorUp {
 }
 
 // FUNCTION: SIMCOPTER 0x004a2710
-GraphicWindowManager::DoCursorMove {
+long GraphicWindowManager::DoCursorMove(long, long) {
 // LINE 343:
 	asm( 
 "	      004a2710    push ebp"
@@ -1727,7 +1727,7 @@ GraphicWindowManager::DoCursorMove {
 }
 
 // FUNCTION: SIMCOPTER 0x004a278e
-GraphicWindowManager::SendCursorMessageToChildWindow {
+int32_t GraphicWindowManager::SendCursorMessageToChildWindow(class GraphicWindow*, int32_t, long, long, unsigned long) {
 // LINE 359:
 	asm( 
 "	      004a278e    push ebp"
@@ -1958,7 +1958,7 @@ GraphicWindowManager::SendCursorMessageToChildWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004a29cd
-GraphicWindowManager::ComposeAllWindows {
+int32_t GraphicWindowManager::ComposeAllWindows() {
 // LINE 396:
 	asm( 
 "	      004a29cd    push ebp"
@@ -2016,7 +2016,7 @@ GraphicWindowManager::ComposeAllWindows {
 }
 
 // FUNCTION: SIMCOPTER 0x004a2a1b
-GraphicWindowManager::IsWindowValid {
+int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow*) {
 // LINE 414:
 	asm( 
 "	      004a2a1b    push ebp"
@@ -2046,7 +2046,7 @@ GraphicWindowManager::IsWindowValid {
 }
 
 // FUNCTION: SIMCOPTER 0x004a2a3f
-GraphicWindow::GraphicWindow {
+public: __thiscall GraphicWindow::GraphicWindow(void) {
 // LINE 444:
 	asm( 
 "	      004a2a3f    push ebp"
@@ -2422,7 +2422,7 @@ GraphicWindow::GraphicWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004a2f5c
-GraphicWindow::GraphicWindow {
+public: __thiscall GraphicWindow::GraphicWindow(class GraphicWindow const &) {
 // LINE 464:
 	asm( 
 "	      004a2f5c    push ebp"
@@ -2744,7 +2744,7 @@ GraphicWindow::GraphicWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004a33ee
-GraphicWindow::GraphicWindow {
+public: __thiscall GraphicWindow::GraphicWindow(class MRect &, long, class GraphicWindow *, class GraphicWindowOwner *, int) {
 // LINE 480:
 	asm( 
 "	      004a33ee    push ebp"
@@ -3150,7 +3150,7 @@ GraphicWindow::GraphicWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004a393d
-GraphicWindow::GraphicWindow {
+public: __thiscall GraphicWindow::GraphicWindow(char const *, class MRect &, long, class GraphicWindow *, class GraphicWindowOwner *, int, int) {
 // LINE 513:
 	asm( 
 "	      004a393d    push ebp"
@@ -3641,7 +3641,7 @@ GraphicWindow::GraphicWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004a4045
-GraphicWindow::~GraphicWindow {
+protected: virtual __thiscall GraphicWindow::~GraphicWindow(void) {
 // LINE 537:
 	asm( 
 "	      004a4045    push ebp"
@@ -3961,7 +3961,7 @@ GraphicWindow::~GraphicWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004a44d4
-GraphicWindow::Initialize {
+public: virtual int __thiscall GraphicWindow::Initialize(void) {
 // LINE 560:
 	asm( 
 "	      004a44d4    push ebp"
@@ -3988,7 +3988,7 @@ GraphicWindow::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x004a44ef
-GraphicWindow::operator= {
+public: class GraphicWindow & __thiscall GraphicWindow::operator=(class GraphicWindow const &) {
 // LINE 604:
 	asm( 
 "	      004a44ef    push ebp"
@@ -4476,7 +4476,7 @@ GraphicWindow::operator= {
 }
 
 // FUNCTION: SIMCOPTER 0x004a4aa0
-GraphicWindow::CreateImage {
+public: virtual int __thiscall GraphicWindow::CreateImage(int) {
 // LINE 641:
 	asm( 
 "	      004a4aa0    push ebp"
@@ -4670,7 +4670,7 @@ GraphicWindow::CreateImage {
 }
 
 // FUNCTION: SIMCOPTER 0x004a4cab
-GraphicWindow::DestroyImage {
+public: virtual void __thiscall GraphicWindow::DestroyImage(void) {
 // LINE 663:
 	asm( 
 "	      004a4cab    push ebp"
@@ -4725,7 +4725,7 @@ GraphicWindow::DestroyImage {
 }
 
 // FUNCTION: SIMCOPTER 0x004a4d1c
-GraphicWindow::SetTransparentColor {
+public: virtual void __thiscall GraphicWindow::SetTransparentColor(int) {
 // LINE 676:
 	asm( 
 "	      004a4d1c    push ebp"
@@ -4788,7 +4788,7 @@ GraphicWindow::SetTransparentColor {
 }
 
 // FUNCTION: SIMCOPTER 0x004a4d7e
-GraphicWindow::MoveWindow {
+public: virtual void __thiscall GraphicWindow::MoveWindow(int, int) {
 // LINE 690:
 	asm( 
 "	      004a4d7e    push ebp"
@@ -4851,7 +4851,7 @@ GraphicWindow::MoveWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004a4df1
-GraphicWindow::SetWidthAndHeight {
+public: virtual void __thiscall GraphicWindow::SetWidthAndHeight(int, int) {
 // LINE 701:
 	asm( 
 "	      004a4df1    push ebp"
@@ -4916,7 +4916,7 @@ GraphicWindow::SetWidthAndHeight {
 }
 
 // FUNCTION: SIMCOPTER 0x004a4e55
-GraphicWindow::CenterWindow {
+public: virtual void __thiscall GraphicWindow::CenterWindow(class GraphicWindow *) {
 // LINE 714:
 	asm( 
 "	      004a4e55    push ebp"
@@ -4964,7 +4964,7 @@ GraphicWindow::CenterWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004a4ea8
-GraphicWindow::CenterWindow {
+public: virtual void __thiscall GraphicWindow::CenterWindow(int, int) {
 // LINE 729:
 	asm( 
 "	      004a4ea8    push ebp"
@@ -5063,7 +5063,7 @@ GraphicWindow::CenterWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004a4f5c
-GraphicWindow::FitRectToWindow {
+public: int __thiscall GraphicWindow::FitRectToWindow(class MRect &) {
 // LINE 755:
 	asm( 
 "	      004a4f5c    push ebp"
@@ -5246,7 +5246,7 @@ GraphicWindow::FitRectToWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004a50e0
-GraphicWindow::SetChanged {
+public: virtual void __thiscall GraphicWindow::SetChanged(int, int) {
 // LINE 786:
 	asm( 
 "	      004a50e0    push ebp"
@@ -5351,7 +5351,7 @@ GraphicWindow::SetChanged {
 }
 
 // FUNCTION: SIMCOPTER 0x004a51d0
-GraphicWindow::SetWindowTitle {
+public: virtual void __thiscall GraphicWindow::SetWindowTitle(class basic_string<char> &) {
 // LINE 808:
 	asm( 
 "	      004a51d0    push ebp"
@@ -5511,7 +5511,7 @@ GraphicWindow::SetWindowTitle {
 }
 
 // FUNCTION: SIMCOPTER 0x004a53be
-GraphicWindow::AddChild {
+public: virtual int __thiscall GraphicWindow::AddChild(class GraphicWindow *) {
 // LINE 817:
 	asm( 
 "	      004a53be    push ebp"
@@ -5736,7 +5736,7 @@ GraphicWindow::AddChild {
 }
 
 // FUNCTION: SIMCOPTER 0x004a569a
-GraphicWindow::DeleteChild {
+public: virtual int __thiscall GraphicWindow::DeleteChild(class GraphicWindow *) {
 // LINE 830:
 	asm( 
 "	      004a569a    push ebp"
@@ -5907,7 +5907,7 @@ GraphicWindow::DeleteChild {
 }
 
 // FUNCTION: SIMCOPTER 0x004a5837
-GraphicWindow::DeleteChild {
+public: virtual class GraphicWindow * __thiscall GraphicWindow::DeleteChild(long) {
 // LINE 861:
 	asm( 
 "	      004a5837    push ebp"
@@ -6103,7 +6103,7 @@ GraphicWindow::DeleteChild {
 }
 
 // FUNCTION: SIMCOPTER 0x004a5a11
-GraphicWindow::RemoveChild {
+public: virtual int __thiscall GraphicWindow::RemoveChild(class GraphicWindow *) {
 // LINE 892:
 	asm( 
 "	      004a5a11    push ebp"
@@ -6239,7 +6239,7 @@ GraphicWindow::RemoveChild {
 }
 
 // FUNCTION: SIMCOPTER 0x004a5b58
-GraphicWindow::DeleteAllChildren {
+public: virtual void __thiscall GraphicWindow::DeleteAllChildren(void) {
 // LINE 913:
 	asm( 
 "	      004a5b58    push ebp"
@@ -6389,7 +6389,7 @@ GraphicWindow::DeleteAllChildren {
 }
 
 // FUNCTION: SIMCOPTER 0x004a5cd8
-GraphicWindow::RemoveAllChildren {
+public: virtual void __thiscall GraphicWindow::RemoveAllChildren(void) {
 // LINE 935:
 	asm( 
 "	      004a5cd8    push ebp"
@@ -6482,7 +6482,7 @@ GraphicWindow::RemoveAllChildren {
 }
 
 // FUNCTION: SIMCOPTER 0x004a5dd1
-GraphicWindow::FindChild {
+public: virtual class GraphicWindow * __thiscall GraphicWindow::FindChild(long) {
 // LINE 950:
 	asm( 
 "	      004a5dd1    push ebp"
@@ -6575,7 +6575,7 @@ GraphicWindow::FindChild {
 }
 
 // FUNCTION: SIMCOPTER 0x004a5ea7
-GraphicWindow::FindWindowA {
+public: static class GraphicWindow * __cdecl GraphicWindow::FindWindowA(long) {
 // LINE 968:
 	asm( 
 "	      004a5ea7    push ebp"
@@ -6665,7 +6665,7 @@ GraphicWindow::FindWindowA {
 }
 
 // FUNCTION: SIMCOPTER 0x004a5f76
-GraphicWindow::FindWindowA {
+public: static int __cdecl GraphicWindow::FindWindowA(class GraphicWindow *) {
 // LINE 983:
 	asm( 
 "	      004a5f76    push ebp"
@@ -6752,7 +6752,7 @@ GraphicWindow::FindWindowA {
 }
 
 // FUNCTION: SIMCOPTER 0x004a603c
-GraphicWindow::DeleteSelf {
+public: virtual int __thiscall GraphicWindow::DeleteSelf(void) {
 // LINE 999:
 	asm( 
 "	      004a603c    push ebp"
@@ -6788,7 +6788,7 @@ GraphicWindow::DeleteSelf {
 }
 
 // FUNCTION: SIMCOPTER 0x004a606b
-GraphicWindow::RemoveSelf {
+public: virtual void __thiscall GraphicWindow::RemoveSelf(void) {
 // LINE 1010:
 	asm( 
 "	      004a606b    push ebp"
@@ -6828,7 +6828,7 @@ GraphicWindow::RemoveSelf {
 }
 
 // FUNCTION: SIMCOPTER 0x004a60a3
-GraphicWindow::ComposeSelf {
+public: virtual int __thiscall GraphicWindow::ComposeSelf(void) {
 // LINE 1027:
 	asm( 
 "	      004a60a3    push ebp"
@@ -6934,7 +6934,7 @@ GraphicWindow::ComposeSelf {
 }
 
 // FUNCTION: SIMCOPTER 0x004a6168
-GraphicWindow::DrawSelf {
+protected: virtual int __thiscall GraphicWindow::DrawSelf(void) {
 // LINE 1059:
 	asm( 
 "	      004a6168    push ebp"
@@ -6961,7 +6961,7 @@ GraphicWindow::DrawSelf {
 }
 
 // FUNCTION: SIMCOPTER 0x004a6180
-GraphicWindow::DrawChildren {
+protected: virtual void __thiscall GraphicWindow::DrawChildren(void) {
 // LINE 1075:
 	asm( 
 "	      004a6180    push ebp"
@@ -7058,7 +7058,7 @@ GraphicWindow::DrawChildren {
 }
 
 // FUNCTION: SIMCOPTER 0x004a6256
-GraphicWindow::InvalidateAllOverlaps {
+public: virtual void __thiscall GraphicWindow::InvalidateAllOverlaps(class list<class GraphicWindow *>::iterator) {
 // LINE 1115:
 	asm( 
 "	      004a6256    push ebp"
@@ -7191,7 +7191,7 @@ GraphicWindow::InvalidateAllOverlaps {
 }
 
 // FUNCTION: SIMCOPTER 0x004a6399
-GraphicWindow::InvalidateAllChildren {
+public: virtual void __thiscall GraphicWindow::InvalidateAllChildren(int) {
 // LINE 1136:
 	asm( 
 "	      004a6399    push ebp"
@@ -7280,7 +7280,7 @@ GraphicWindow::InvalidateAllChildren {
 }
 
 // FUNCTION: SIMCOPTER 0x004a646b
-GraphicWindow::DoesWindowNeedUpdating {
+protected: virtual int __thiscall GraphicWindow::DoesWindowNeedUpdating(void) {
 // LINE 1161:
 	asm( 
 "	      004a646b    push ebp"
@@ -7389,7 +7389,7 @@ GraphicWindow::DoesWindowNeedUpdating {
 }
 
 // FUNCTION: SIMCOPTER 0x004a6568
-GraphicWindow::DoCharacter {
+public: virtual long __thiscall GraphicWindow::DoCharacter(long) {
 // LINE 1186:
 	asm( 
 "	      004a6568    push ebp"
@@ -7416,7 +7416,7 @@ GraphicWindow::DoCharacter {
 }
 
 // FUNCTION: SIMCOPTER 0x004a6582
-GraphicWindow::DoKeyDown {
+public: virtual long __thiscall GraphicWindow::DoKeyDown(long, char) {
 // LINE 1199:
 	asm( 
 "	      004a6582    push ebp"
@@ -7443,7 +7443,7 @@ GraphicWindow::DoKeyDown {
 }
 
 // FUNCTION: SIMCOPTER 0x004a659c
-GraphicWindow::DoKeyUp {
+public: virtual long __thiscall GraphicWindow::DoKeyUp(long, char) {
 // LINE 1213:
 	asm( 
 "	      004a659c    push ebp"
@@ -7470,7 +7470,7 @@ GraphicWindow::DoKeyUp {
 }
 
 // FUNCTION: SIMCOPTER 0x004a65b6
-GraphicWindow::DoCursorDown {
+public: virtual long __thiscall GraphicWindow::DoCursorDown(long, long, unsigned long) {
 // LINE 1230:
 	asm( 
 "	      004a65b6    push ebp"
@@ -7497,7 +7497,7 @@ GraphicWindow::DoCursorDown {
 }
 
 // FUNCTION: SIMCOPTER 0x004a65d0
-GraphicWindow::DoCursorUp {
+public: virtual long __thiscall GraphicWindow::DoCursorUp(long, long, unsigned long) {
 // LINE 1243:
 	asm( 
 "	      004a65d0    push ebp"
@@ -7524,7 +7524,7 @@ GraphicWindow::DoCursorUp {
 }
 
 // FUNCTION: SIMCOPTER 0x004a65ed
-GraphicWindow::DoCursorMove {
+public: virtual long __thiscall GraphicWindow::DoCursorMove(long, long) {
 // LINE 1256:
 	asm( 
 "	      004a65ed    push ebp"
@@ -7551,7 +7551,7 @@ GraphicWindow::DoCursorMove {
 }
 
 // FUNCTION: SIMCOPTER 0x004a6607
-GraphicWindow::CaptureCursorStart {
+public: virtual int __thiscall GraphicWindow::CaptureCursorStart(class GraphicWindow *) {
 // LINE 1269:
 	asm( 
 "	      004a6607    push ebp"
@@ -7593,7 +7593,7 @@ GraphicWindow::CaptureCursorStart {
 }
 
 // FUNCTION: SIMCOPTER 0x004a6640
-GraphicWindow::CaptureCursorEnd {
+public: virtual int __thiscall GraphicWindow::CaptureCursorEnd(class GraphicWindow *) {
 // LINE 1281:
 	asm( 
 "	      004a6640    push ebp"
@@ -7635,7 +7635,7 @@ GraphicWindow::CaptureCursorEnd {
 }
 
 // FUNCTION: SIMCOPTER 0x004a667d
-GraphicWindow::WindowToScreenCoordinates {
+public: virtual void __thiscall GraphicWindow::WindowToScreenCoordinates(long &, long &) {
 // LINE 1298:
 	asm( 
 "	      004a667d    push ebp"
@@ -7693,7 +7693,7 @@ GraphicWindow::WindowToScreenCoordinates {
 }
 
 // FUNCTION: SIMCOPTER 0x004a66cc
-GraphicWindow::ScreenToWindowCoordinates {
+public: virtual void __thiscall GraphicWindow::ScreenToWindowCoordinates(long &, long &) {
 // LINE 1319:
 	asm( 
 "	      004a66cc    push ebp"
@@ -7751,7 +7751,7 @@ GraphicWindow::ScreenToWindowCoordinates {
 }
 
 // FUNCTION: SIMCOPTER 0x004a6720
-GraphicWindow::GetImage {
+protected: virtual class CBackBuffer * __thiscall GraphicWindow::GetImage(void) {
 // LINE 1340:
 	asm( 
 "	      004a6720    push ebp"
@@ -7779,7 +7779,7 @@ GraphicWindow::GetImage {
 }
 
 // FUNCTION: SIMCOPTER 0x004a673c
-GraphicWindow::GetImagePath {
+protected: virtual void __thiscall GraphicWindow::GetImagePath(void) {
 // LINE 1353:
 	asm( 
 "	      004a673c    push ebp"
@@ -8054,7 +8054,7 @@ GraphicWindow::GetImagePath {
 }
 
 // FUNCTION: SIMCOPTER 0x004a6bcd
-GraphicWindow::SetImageToDrawOnto {
+public: virtual int __thiscall GraphicWindow::SetImageToDrawOnto(void) {
 // LINE 1366:
 	asm( 
 "	      004a6bcd    push ebp"
@@ -8197,7 +8197,7 @@ GraphicWindow::SetImageToDrawOnto {
 }
 
 // FUNCTION: SIMCOPTER 0x004a6cf0
-GraphicWindow::SetAllImagesToDrawOnto {
+public: virtual void __thiscall GraphicWindow::SetAllImagesToDrawOnto(void) {
 // LINE 1402:
 	asm( 
 "	      004a6cf0    push ebp"
@@ -8290,7 +8290,7 @@ GraphicWindow::SetAllImagesToDrawOnto {
 }
 
 // FUNCTION: SIMCOPTER 0x004a6dc5
-GraphicWindow::CreateAllImages {
+public: virtual void __thiscall GraphicWindow::CreateAllImages(void) {
 // LINE 1421:
 	asm( 
 "	      004a6dc5    push ebp"
@@ -8391,7 +8391,7 @@ GraphicWindow::CreateAllImages {
 }
 
 // FUNCTION: SIMCOPTER 0x004a6ea7
-GraphicWindow::DestroyAllImages {
+public: virtual void __thiscall GraphicWindow::DestroyAllImages(void) {
 // LINE 1441:
 	asm( 
 "	      004a6ea7    push ebp"
@@ -8484,7 +8484,7 @@ GraphicWindow::DestroyAllImages {
 }
 
 // FUNCTION: SIMCOPTER 0x004a6f7c
-GraphicWindow::DrawBorder {
+public: virtual void __thiscall GraphicWindow::DrawBorder(struct SparkalColor *) {
 // LINE 1455:
 	asm( 
 "	      004a6f7c    push ebp"
@@ -8613,7 +8613,7 @@ GraphicWindow::DrawBorder {
 }
 
 // FUNCTION: SIMCOPTER 0x004a7075
-GraphicWindow::MakeModal {
+public: static int __cdecl GraphicWindow::MakeModal(class GraphicWindow *) {
 // LINE 1484:
 	asm( 
 "	      004a7075    push ebp"
@@ -8827,7 +8827,7 @@ GraphicWindow::MakeModal {
 }
 
 // FUNCTION: SIMCOPTER 0x004a7340
-GraphicWindow::RemoveModal {
+public: static int __cdecl GraphicWindow::RemoveModal(class GraphicWindow *) {
 // LINE 1499:
 	asm( 
 "	      004a7340    push ebp"
@@ -8947,7 +8947,7 @@ GraphicWindow::RemoveModal {
 }
 
 // FUNCTION: SIMCOPTER 0x004a7470
-GraphicWindow::MakeFocus {
+public: static int __cdecl GraphicWindow::MakeFocus(class GraphicWindow *) {
 // LINE 1530:
 	asm( 
 "	      004a7470    push ebp"
@@ -9161,7 +9161,7 @@ GraphicWindow::MakeFocus {
 }
 
 // FUNCTION: SIMCOPTER 0x004a773b
-GraphicWindow::RemoveFocus {
+public: static int __cdecl GraphicWindow::RemoveFocus(class GraphicWindow *) {
 // LINE 1544:
 	asm( 
 "	      004a773b    push ebp"
@@ -9281,7 +9281,7 @@ GraphicWindow::RemoveFocus {
 }
 
 // FUNCTION: SIMCOPTER 0x004a786b
-GraphicWindow::CanWeRespondToMessage {
+public: virtual int __thiscall GraphicWindow::CanWeRespondToMessage(void) {
 // LINE 1567:
 	asm( 
 "	      004a786b    push ebp"
@@ -9369,7 +9369,7 @@ GraphicWindow::CanWeRespondToMessage {
 }
 
 // FUNCTION: SIMCOPTER 0x004a790f
-ScreenWindow::ScreenWindow {
+void ScreenWindow::ScreenWindow() {
 // LINE 1600:
 	asm( 
 "	      004a790f    push ebp"
@@ -9404,7 +9404,7 @@ ScreenWindow::ScreenWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004a794d
-ScreenWindow::ScreenWindow {
+void ScreenWindow::ScreenWindow(const class ScreenWindow&) {
 // LINE 1611:
 	asm( 
 "	      004a794d    push ebp"
@@ -9441,7 +9441,7 @@ ScreenWindow::ScreenWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004a7989
-ScreenWindow::ScreenWindow {
+void ScreenWindow::ScreenWindow(class MRect&, int32_t, class CBackBuffer*, class GraphicWindowOwner*, int32_t) {
 // LINE 1624:
 	asm( 
 "	      004a7989    push ebp"
@@ -9500,7 +9500,7 @@ ScreenWindow::ScreenWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004a79ed
-ScreenWindow::~ScreenWindow {
+void ScreenWindow::~ScreenWindow() {
 // LINE 1636:
 	asm( 
 "	      004a79ed    push ebp"
@@ -9532,7 +9532,7 @@ ScreenWindow::~ScreenWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004a7a1e
-ScreenWindow::operator= {
+class ScreenWindow& ScreenWindow::operator=(const class ScreenWindow&) {
 // LINE 1645:
 	asm( 
 "	      004a7a1e    push ebp"
@@ -9573,7 +9573,7 @@ ScreenWindow::operator= {
 }
 
 // FUNCTION: SIMCOPTER 0x004a7a51
-ScreenWindow::ComposeSelf {
+int32_t ScreenWindow::ComposeSelf() {
 // LINE 1662:
 	asm( 
 "	      004a7a51    push ebp"
@@ -9680,7 +9680,7 @@ ScreenWindow::ComposeSelf {
 }
 
 // FUNCTION: SIMCOPTER 0x004a7b38
-ScreenWindow::DrawSelf {
+int32_t ScreenWindow::DrawSelf() {
 // LINE 1694:
 	asm( 
 "	      004a7b38    push ebp"

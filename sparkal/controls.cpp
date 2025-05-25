@@ -6,7 +6,7 @@
 
 // Contribution: 1:000aba90-000b7247 Module: 5, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x004aca90
-BoxWindow::BoxWindow {
+void BoxWindow::BoxWindow() {
 // LINE 26:
 	asm( 
 "	      004aca90    push ebp"
@@ -55,7 +55,7 @@ BoxWindow::BoxWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004acb00
-BoxWindow::BoxWindow {
+void BoxWindow::BoxWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
 // LINE 41:
 	asm( 
 "	      004acb00    push ebp"
@@ -114,7 +114,7 @@ BoxWindow::BoxWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004acb86
-BoxWindow::DrawSelf {
+int32_t BoxWindow::DrawSelf() {
 // LINE 51:
 	asm( 
 "	      004acb86    push ebp"
@@ -176,7 +176,7 @@ BoxWindow::DrawSelf {
 }
 
 // FUNCTION: SIMCOPTER 0x004acbea
-BoxWindow::SetColors {
+void BoxWindow::SetColors(struct SparkalColor&, int32_t) {
 // LINE 63:
 	asm( 
 "	      004acbea    push ebp"
@@ -212,7 +212,7 @@ BoxWindow::SetColors {
 }
 
 // FUNCTION: SIMCOPTER 0x004acc19
-BoxWindow::SetOutlineAndFillDrawing {
+void BoxWindow::SetOutlineAndFillDrawing(int32_t, int32_t) {
 // LINE 72:
 	asm( 
 "	      004acc19    push ebp"
@@ -247,7 +247,7 @@ BoxWindow::SetOutlineAndFillDrawing {
 }
 
 // FUNCTION: SIMCOPTER 0x004acc43
-TextWindow::TextWindow {
+void TextWindow::TextWindow() {
 // LINE 95:
 	asm( 
 "	      004acc43    push ebp"
@@ -322,7 +322,7 @@ TextWindow::TextWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004acce6
-TextWindow::TextWindow {
+void TextWindow::TextWindow(class MRect&, int32_t, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
 // LINE 113:
 	asm( 
 "	      004acce6    push ebp"
@@ -409,7 +409,7 @@ TextWindow::TextWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004acda2
-TextWindow::TextWindow {
+void TextWindow::TextWindow(class MRect&, int32_t, const class basic_string<char>&, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
 // LINE 131:
 	asm( 
 "	      004acda2    push ebp"
@@ -621,7 +621,7 @@ TextWindow::TextWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004ad01e
-TextWindow::LoadStrings {
+void TextWindow::LoadStrings() {
 // LINE 149:
 	asm( 
 "	      004ad01e    push ebp"
@@ -1048,7 +1048,7 @@ TextWindow::LoadStrings {
 }
 
 // FUNCTION: SIMCOPTER 0x004ad775
-TextWindow::SetWindowTitle {
+void TextWindow::SetWindowTitle(int32_t) {
 // LINE 159:
 	asm( 
 "	      004ad775    push ebp"
@@ -1093,7 +1093,7 @@ TextWindow::SetWindowTitle {
 }
 
 // FUNCTION: SIMCOPTER 0x004ad7b6
-TextWindow::SetWindowTitle {
+void TextWindow::SetWindowTitle(const class basic_string<char>&) {
 // LINE 168:
 	asm( 
 "	      004ad7b6    push ebp"
@@ -1253,7 +1253,7 @@ TextWindow::SetWindowTitle {
 }
 
 // FUNCTION: SIMCOPTER 0x004ad9a4
-TextWindow::DrawSelf {
+int32_t TextWindow::DrawSelf() {
 // LINE 178:
 	asm( 
 "	      004ad9a4    push ebp"
@@ -1449,7 +1449,7 @@ TextWindow::DrawSelf {
 }
 
 // FUNCTION: SIMCOPTER 0x004adb83
-TextWindow::SetBackgroundDrawing {
+void TextWindow::SetBackgroundDrawing(int32_t) {
 // LINE 198:
 	asm( 
 "	      004adb83    push ebp"
@@ -1478,7 +1478,7 @@ TextWindow::SetBackgroundDrawing {
 }
 
 // FUNCTION: SIMCOPTER 0x004adba4
-TextWindow::SetFontCharacteristics {
+void TextWindow::SetFontCharacteristics(long, long, long) {
 // LINE 206:
 	asm( 
 "	      004adba4    push ebp"
@@ -1522,7 +1522,7 @@ TextWindow::SetFontCharacteristics {
 }
 
 // FUNCTION: SIMCOPTER 0x004adbe5
-TextWindow::SetTextDrawStyle {
+void TextWindow::SetTextDrawStyle(unsigned long) {
 // LINE 215:
 	asm( 
 "	      004adbe5    push ebp"
@@ -1560,7 +1560,7 @@ TextWindow::SetTextDrawStyle {
 }
 
 // FUNCTION: SIMCOPTER 0x004adc18
-TextWindow::FitWindowToText {
+void TextWindow::FitWindowToText() {
 // LINE 223:
 	asm( 
 "	      004adc18    push ebp"
@@ -1686,7 +1686,7 @@ TextWindow::FitWindowToText {
 }
 
 // FUNCTION: SIMCOPTER 0x004add6f
-TextWindow::SetTextColor {
+void TextWindow::SetTextColor(const struct SparkalColor&) {
 // LINE 236:
 	asm( 
 "	      004add6f    push ebp"
@@ -1725,7 +1725,7 @@ TextWindow::SetTextColor {
 }
 
 // FUNCTION: SIMCOPTER 0x004adda1
-TextWindow::ResizeWindowForExactLineHeights {
+int32_t TextWindow::ResizeWindowForExactLineHeights() {
 // LINE 249:
 	asm( 
 "	      004adda1    push ebp"
@@ -1822,7 +1822,7 @@ TextWindow::ResizeWindowForExactLineHeights {
 }
 
 // FUNCTION: SIMCOPTER 0x004ade3d
-ButtonWindow::ButtonWindow {
+void ButtonWindow::ButtonWindow() {
 // LINE 292:
 	asm( 
 "	      004ade3d    push ebp"
@@ -1977,7 +1977,7 @@ ButtonWindow::ButtonWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004ae05d
-ButtonWindow::ButtonWindow {
+void ButtonWindow::ButtonWindow(class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t) {
 // LINE 306:
 	asm( 
 "	      004ae05d    push ebp"
@@ -2216,7 +2216,7 @@ ButtonWindow::ButtonWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004ae385
-ButtonWindow::Initialize {
+int32_t ButtonWindow::Initialize() {
 // LINE 318:
 	asm( 
 "	      004ae385    push ebp"
@@ -2253,7 +2253,7 @@ ButtonWindow::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x004ae3b3
-ButtonWindow::SetTextColor {
+void ButtonWindow::SetTextColor(const struct SparkalColor*, const struct SparkalColor*) {
 // LINE 328:
 	asm( 
 "	      004ae3b3    push ebp"
@@ -2300,7 +2300,7 @@ ButtonWindow::SetTextColor {
 }
 
 // FUNCTION: SIMCOPTER 0x004ae3fb
-ButtonWindow::GetImageCount {
+int32_t ButtonWindow::GetImageCount() {
 // LINE 339:
 	asm( 
 "	      004ae3fb    push ebp"
@@ -2327,7 +2327,7 @@ ButtonWindow::GetImageCount {
 }
 
 // FUNCTION: SIMCOPTER 0x004ae416
-ButtonWindow::CreateImage {
+int32_t ButtonWindow::CreateImage(int32_t) {
 // LINE 348:
 	asm( 
 "	      004ae416    push ebp"
@@ -2852,7 +2852,7 @@ ButtonWindow::CreateImage {
 }
 
 // FUNCTION: SIMCOPTER 0x004aeace
-ButtonWindow::SetState {
+void ButtonWindow::SetState(int32_t) {
 // LINE 408:
 	asm( 
 "	      004aeace    push ebp"
@@ -2897,7 +2897,7 @@ ButtonWindow::SetState {
 }
 
 // FUNCTION: SIMCOPTER 0x004aeb0d
-ButtonWindow::Enable {
+void ButtonWindow::Enable() {
 // LINE 419:
 	asm( 
 "	      004aeb0d    push ebp"
@@ -2934,7 +2934,7 @@ ButtonWindow::Enable {
 }
 
 // FUNCTION: SIMCOPTER 0x004aeb3c
-ButtonWindow::Disable {
+void ButtonWindow::Disable() {
 // LINE 427:
 	asm( 
 "	      004aeb3c    push ebp"
@@ -2971,7 +2971,7 @@ ButtonWindow::Disable {
 }
 
 // FUNCTION: SIMCOPTER 0x004aeb6b
-ButtonWindow::ComposeSelf {
+int32_t ButtonWindow::ComposeSelf() {
 // LINE 436:
 	asm( 
 "	      004aeb6b    push ebp"
@@ -3090,7 +3090,7 @@ ButtonWindow::ComposeSelf {
 }
 
 // FUNCTION: SIMCOPTER 0x004aec47
-ButtonWindow::DoCursorDown {
+long ButtonWindow::DoCursorDown(long, long, unsigned long) {
 // LINE 465:
 	asm( 
 "	      004aec47    push ebp"
@@ -3145,7 +3145,7 @@ ButtonWindow::DoCursorDown {
 }
 
 // FUNCTION: SIMCOPTER 0x004aec9a
-ButtonWindow::DoCursorUp {
+long ButtonWindow::DoCursorUp(long, long, unsigned long) {
 // LINE 480:
 	asm( 
 "	      004aec9a    push ebp"
@@ -3232,7 +3232,7 @@ ButtonWindow::DoCursorUp {
 }
 
 // FUNCTION: SIMCOPTER 0x004aed4d
-ButtonWindow::DoCursorMove {
+long ButtonWindow::DoCursorMove(long, long) {
 // LINE 495:
 	asm( 
 "	      004aed4d    push ebp"
@@ -3312,7 +3312,7 @@ ButtonWindow::DoCursorMove {
 }
 
 // FUNCTION: SIMCOPTER 0x004aede3
-ButtonWindow::CanWeRespondToMessage {
+int32_t ButtonWindow::CanWeRespondToMessage() {
 // LINE 511:
 	asm( 
 "	      004aede3    push ebp"
@@ -3362,7 +3362,7 @@ ButtonWindow::CanWeRespondToMessage {
 }
 
 // FUNCTION: SIMCOPTER 0x004aee29
-CheckBoxWindow::CheckBoxWindow {
+void CheckBoxWindow::CheckBoxWindow() {
 // LINE 539:
 	asm( 
 "	      004aee29    push ebp"
@@ -3557,7 +3557,7 @@ CheckBoxWindow::CheckBoxWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004af0ab
-CheckBoxWindow::CheckBoxWindow {
+void CheckBoxWindow::CheckBoxWindow(class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t) {
 // LINE 552:
 	asm( 
 "	      004af0ab    push ebp"
@@ -3938,7 +3938,7 @@ CheckBoxWindow::CheckBoxWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004af5a6
-CheckBoxWindow::GetImageCount {
+int32_t CheckBoxWindow::GetImageCount() {
 // LINE 563:
 	asm( 
 "	      004af5a6    push ebp"
@@ -3965,7 +3965,7 @@ CheckBoxWindow::GetImageCount {
 }
 
 // FUNCTION: SIMCOPTER 0x004af5c1
-CheckBoxWindow::ComposeSelf {
+int32_t CheckBoxWindow::ComposeSelf() {
 // LINE 571:
 	asm( 
 "	      004af5c1    push ebp"
@@ -4091,7 +4091,7 @@ CheckBoxWindow::ComposeSelf {
 }
 
 // FUNCTION: SIMCOPTER 0x004af6ab
-CheckBoxWindow::SetState {
+void CheckBoxWindow::SetState(int32_t) {
 // LINE 601:
 	asm( 
 "	      004af6ab    push ebp"
@@ -4180,7 +4180,7 @@ CheckBoxWindow::SetState {
 }
 
 // FUNCTION: SIMCOPTER 0x004af74d
-CheckBoxWindow::DoCursorDown {
+long CheckBoxWindow::DoCursorDown(long, long, unsigned long) {
 // LINE 621:
 	asm( 
 "	      004af74d    push ebp"
@@ -4247,7 +4247,7 @@ CheckBoxWindow::DoCursorDown {
 }
 
 // FUNCTION: SIMCOPTER 0x004af7bd
-CheckBoxWindow::DoCursorUp {
+long CheckBoxWindow::DoCursorUp(long, long, unsigned long) {
 // LINE 638:
 	asm( 
 "	      004af7bd    push ebp"
@@ -4274,7 +4274,7 @@ CheckBoxWindow::DoCursorUp {
 }
 
 // FUNCTION: SIMCOPTER 0x004af7da
-CheckBoxWindow::DoCursorMove {
+long CheckBoxWindow::DoCursorMove(long, long) {
 // LINE 647:
 	asm( 
 "	      004af7da    push ebp"
@@ -4301,7 +4301,7 @@ CheckBoxWindow::DoCursorMove {
 }
 
 // FUNCTION: SIMCOPTER 0x004af7f7
-RadioButtonWindow::RadioButtonWindow {
+void RadioButtonWindow::RadioButtonWindow(class ButtonGroup*, class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t) {
 // LINE 676:
 	asm( 
 "	      004af7f7    push ebp"
@@ -4685,7 +4685,7 @@ RadioButtonWindow::RadioButtonWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004afcfe
-RadioButtonWindow::~RadioButtonWindow {
+void RadioButtonWindow::~RadioButtonWindow() {
 // LINE 687:
 	asm( 
 "	      004afcfe    push ebp"
@@ -4713,7 +4713,7 @@ RadioButtonWindow::~RadioButtonWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004afd2a
-RadioButtonWindow::Initialize {
+int32_t RadioButtonWindow::Initialize() {
 // LINE 710:
 	asm( 
 "	      004afd2a    push ebp"
@@ -4755,7 +4755,7 @@ RadioButtonWindow::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x004afd6a
-RadioButtonWindow::ComposeSelf {
+int32_t RadioButtonWindow::ComposeSelf() {
 // LINE 720:
 	asm( 
 "	      004afd6a    push ebp"
@@ -4881,7 +4881,7 @@ RadioButtonWindow::ComposeSelf {
 }
 
 // FUNCTION: SIMCOPTER 0x004afe54
-RadioButtonWindow::GetImageCount {
+int32_t RadioButtonWindow::GetImageCount() {
 // LINE 751:
 	asm( 
 "	      004afe54    push ebp"
@@ -4908,7 +4908,7 @@ RadioButtonWindow::GetImageCount {
 }
 
 // FUNCTION: SIMCOPTER 0x004afe6f
-RadioButtonWindow::AddToGroup {
+void RadioButtonWindow::AddToGroup(class ButtonGroup*) {
 // LINE 759:
 	asm( 
 "	      004afe6f    push ebp"
@@ -4944,7 +4944,7 @@ RadioButtonWindow::AddToGroup {
 }
 
 // FUNCTION: SIMCOPTER 0x004afe9f
-RadioButtonWindow::RemoveFromGroup {
+int32_t RadioButtonWindow::RemoveFromGroup() {
 // LINE 768:
 	asm( 
 "	      004afe9f    push ebp"
@@ -4990,7 +4990,7 @@ RadioButtonWindow::RemoveFromGroup {
 }
 
 // FUNCTION: SIMCOPTER 0x004afee3
-RadioButtonWindow::SetState {
+void RadioButtonWindow::SetState(int32_t) {
 // LINE 781:
 	asm( 
 "	      004afee3    push ebp"
@@ -5110,7 +5110,7 @@ RadioButtonWindow::SetState {
 }
 
 // FUNCTION: SIMCOPTER 0x004affd4
-RadioButtonWindow::DoCursorDown {
+long RadioButtonWindow::DoCursorDown(long, long, unsigned long) {
 // LINE 805:
 	asm( 
 "	      004affd4    push ebp"
@@ -5180,7 +5180,7 @@ RadioButtonWindow::DoCursorDown {
 }
 
 // FUNCTION: SIMCOPTER 0x004b0049
-RadioButtonWindow::DoCursorUp {
+long RadioButtonWindow::DoCursorUp(long, long, unsigned long) {
 // LINE 830:
 	asm( 
 "	      004b0049    push ebp"
@@ -5207,7 +5207,7 @@ RadioButtonWindow::DoCursorUp {
 }
 
 // FUNCTION: SIMCOPTER 0x004b0066
-RadioButtonWindow::DoCursorMove {
+long RadioButtonWindow::DoCursorMove(long, long) {
 // LINE 837:
 	asm( 
 "	      004b0066    push ebp"
@@ -5234,7 +5234,7 @@ RadioButtonWindow::DoCursorMove {
 }
 
 // FUNCTION: SIMCOPTER 0x004b0083
-ButtonGroup::ButtonGroup {
+public: __thiscall ButtonGroup::ButtonGroup(void) {
 // LINE 855:
 	asm( 
 "	      004b0083    push ebp"
@@ -5418,7 +5418,7 @@ ButtonGroup::ButtonGroup {
 }
 
 // FUNCTION: SIMCOPTER 0x004b030d
-ButtonGroup::ButtonGroup {
+public: __thiscall ButtonGroup::ButtonGroup(long, class GraphicWindow *, class GraphicWindow *, int) {
 // LINE 868:
 	asm( 
 "	      004b030d    push ebp"
@@ -5624,7 +5624,7 @@ ButtonGroup::ButtonGroup {
 }
 
 // FUNCTION: SIMCOPTER 0x004b05e2
-ButtonGroup::AddButton {
+public: void __thiscall ButtonGroup::AddButton(class RadioButtonWindow *) {
 // LINE 878:
 	asm( 
 "	      004b05e2    push ebp"
@@ -5838,7 +5838,7 @@ ButtonGroup::AddButton {
 }
 
 // FUNCTION: SIMCOPTER 0x004b08b4
-ButtonGroup::RemoveButton {
+public: void __thiscall ButtonGroup::RemoveButton(class RadioButtonWindow *) {
 // LINE 892:
 	asm( 
 "	      004b08b4    push ebp"
@@ -5969,7 +5969,7 @@ ButtonGroup::RemoveButton {
 }
 
 // FUNCTION: SIMCOPTER 0x004b09ed
-ButtonGroup::SetSelection {
+public: void __thiscall ButtonGroup::SetSelection(class RadioButtonWindow *) {
 // LINE 919:
 	asm( 
 "	      004b09ed    push ebp"
@@ -6125,7 +6125,7 @@ ButtonGroup::SetSelection {
 }
 
 // FUNCTION: SIMCOPTER 0x004b0b5b
-ButtonGroup::SetSelection {
+public: void __thiscall ButtonGroup::SetSelection(long) {
 // LINE 949:
 	asm( 
 "	      004b0b5b    push ebp"
@@ -6284,7 +6284,7 @@ ButtonGroup::SetSelection {
 }
 
 // FUNCTION: SIMCOPTER 0x004b0cd4
-ButtonGroup::SetSelectionIndex {
+public: void __thiscall ButtonGroup::SetSelectionIndex(int) {
 // LINE 980:
 	asm( 
 "	      004b0cd4    push ebp"
@@ -6448,7 +6448,7 @@ ButtonGroup::SetSelectionIndex {
 }
 
 // FUNCTION: SIMCOPTER 0x004b0e4d
-ButtonGroup::GetSelection {
+public: int __thiscall ButtonGroup::GetSelection(class RadioButtonWindow *&) {
 // LINE 1011:
 	asm( 
 "	      004b0e4d    push ebp"
@@ -6553,7 +6553,7 @@ ButtonGroup::GetSelection {
 }
 
 // FUNCTION: SIMCOPTER 0x004b0f41
-ButtonGroup::GetSelection {
+public: int __thiscall ButtonGroup::GetSelection(long &) {
 // LINE 1032:
 	asm( 
 "	      004b0f41    push ebp"
@@ -6594,7 +6594,7 @@ ButtonGroup::GetSelection {
 }
 
 // FUNCTION: SIMCOPTER 0x004b0f79
-ButtonGroup::GetSelectionIndex {
+public: int __thiscall ButtonGroup::GetSelectionIndex(void) {
 // LINE 1049:
 	asm( 
 "	      004b0f79    push ebp"
@@ -6699,7 +6699,7 @@ ButtonGroup::GetSelectionIndex {
 }
 
 // FUNCTION: SIMCOPTER 0x004b1067
-ButtonGroup::IsButtonInGroup {
+protected: int __thiscall ButtonGroup::IsButtonInGroup(class RadioButtonWindow *) {
 // LINE 1068:
 	asm( 
 "	      004b1067    push ebp"
@@ -6789,7 +6789,7 @@ ButtonGroup::IsButtonInGroup {
 }
 
 // FUNCTION: SIMCOPTER 0x004b1134
-SliderWindow::SliderWindow {
+void SliderWindow::SliderWindow() {
 // LINE 1109:
 	asm( 
 "	      004b1134    push ebp"
@@ -6865,7 +6865,7 @@ SliderWindow::SliderWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004b1256
-SliderWindow::SliderWindow {
+void SliderWindow::SliderWindow(class MRect&, int32_t, enum SliderWindow::SliderWindowDirection, class GraphicWindow*, class GraphicWindowOwner*, int32_t, char *, char *, long) {
 // LINE 1133:
 	asm( 
 "	      004b1256    push ebp"
@@ -7419,7 +7419,7 @@ SliderWindow::SliderWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004b19e0
-SliderWindow::~SliderWindow {
+void SliderWindow::~SliderWindow() {
 // LINE 1158:
 	asm( 
 "	      004b19e0    push ebp"
@@ -7503,7 +7503,7 @@ SliderWindow::~SliderWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004b1adc
-SliderWindow::Initialize {
+int32_t SliderWindow::Initialize() {
 // LINE 1166:
 	asm( 
 "	      004b1adc    push ebp"
@@ -7580,7 +7580,7 @@ SliderWindow::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x004b1b65
-SliderWindow::CreateImage {
+int32_t SliderWindow::CreateImage(int32_t) {
 // LINE 1183:
 	asm( 
 "	      004b1b65    push ebp"
@@ -7833,7 +7833,7 @@ SliderWindow::CreateImage {
 }
 
 // FUNCTION: SIMCOPTER 0x004b1e64
-SliderWindow::DestroyImage {
+void SliderWindow::DestroyImage() {
 // LINE 1206:
 	asm( 
 "	      004b1e64    push ebp"
@@ -7890,7 +7890,7 @@ SliderWindow::DestroyImage {
 }
 
 // FUNCTION: SIMCOPTER 0x004b1ed9
-SliderWindow::MoveWindow {
+void SliderWindow::MoveWindow(int32_t, int32_t) {
 // LINE 1219:
 	asm( 
 "	      004b1ed9    push ebp"
@@ -7929,7 +7929,7 @@ SliderWindow::MoveWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004b1f0f
-SliderWindow::SetWidthAndHeight {
+void SliderWindow::SetWidthAndHeight(int32_t, int32_t) {
 // LINE 1228:
 	asm( 
 "	      004b1f0f    push ebp"
@@ -7968,7 +7968,7 @@ SliderWindow::SetWidthAndHeight {
 }
 
 // FUNCTION: SIMCOPTER 0x004b1f45
-SliderWindow::ComposeSelf {
+int32_t SliderWindow::ComposeSelf() {
 // LINE 1239:
 	asm( 
 "	      004b1f45    push ebp"
@@ -8289,7 +8289,7 @@ SliderWindow::ComposeSelf {
 }
 
 // FUNCTION: SIMCOPTER 0x004b2202
-SliderWindow::DoCursorDown {
+long SliderWindow::DoCursorDown(long, long, unsigned long) {
 // LINE 1292:
 	asm( 
 "	      004b2202    push ebp"
@@ -8354,7 +8354,7 @@ SliderWindow::DoCursorDown {
 }
 
 // FUNCTION: SIMCOPTER 0x004b226b
-SliderWindow::DoCursorUp {
+long SliderWindow::DoCursorUp(long, long, unsigned long) {
 // LINE 1307:
 	asm( 
 "	      004b226b    push ebp"
@@ -8423,7 +8423,7 @@ SliderWindow::DoCursorUp {
 }
 
 // FUNCTION: SIMCOPTER 0x004b22ef
-SliderWindow::DoCursorMove {
+long SliderWindow::DoCursorMove(long, long) {
 // LINE 1323:
 	asm( 
 "	      004b22ef    push ebp"
@@ -8483,7 +8483,7 @@ SliderWindow::DoCursorMove {
 }
 
 // FUNCTION: SIMCOPTER 0x004b2361
-SliderWindow::ConvertCursorPositionToValue {
+int32_t SliderWindow::ConvertCursorPositionToValue(long&, long, long) {
 // LINE 1346:
 	asm( 
 "	      004b2361    push ebp"
@@ -8636,7 +8636,7 @@ SliderWindow::ConvertCursorPositionToValue {
 }
 
 // FUNCTION: SIMCOPTER 0x004b24a0
-SliderWindow::CalculateAllMetrics {
+void SliderWindow::CalculateAllMetrics() {
 // LINE 1379:
 	asm( 
 "	      004b24a0    push ebp"
@@ -8724,7 +8724,7 @@ SliderWindow::CalculateAllMetrics {
 }
 
 // FUNCTION: SIMCOPTER 0x004b2560
-SliderWindow::CalculateThumbPosition {
+void SliderWindow::CalculateThumbPosition() {
 // LINE 1400:
 	asm( 
 "	      004b2560    push ebp"
@@ -8914,7 +8914,7 @@ SliderWindow::CalculateThumbPosition {
 }
 
 // FUNCTION: SIMCOPTER 0x004b271b
-SliderWindow::GetValue {
+long SliderWindow::GetValue() {
 // LINE 1438:
 	asm( 
 "	      004b271b    push ebp"
@@ -8942,7 +8942,7 @@ SliderWindow::GetValue {
 }
 
 // FUNCTION: SIMCOPTER 0x004b273a
-SliderWindow::SetValue {
+void SliderWindow::SetValue(long) {
 // LINE 1447:
 	asm( 
 "	      004b273a    push ebp"
@@ -9073,7 +9073,7 @@ SliderWindow::SetValue {
 }
 
 // FUNCTION: SIMCOPTER 0x004b2834
-SliderWindow::SetMinimumValue {
+void SliderWindow::SetMinimumValue(long) {
 // LINE 1472:
 	asm( 
 "	      004b2834    push ebp"
@@ -9118,7 +9118,7 @@ SliderWindow::SetMinimumValue {
 }
 
 // FUNCTION: SIMCOPTER 0x004b2872
-SliderWindow::SetMaximumValue {
+void SliderWindow::SetMaximumValue(long) {
 // LINE 1481:
 	asm( 
 "	      004b2872    push ebp"
@@ -9163,7 +9163,7 @@ SliderWindow::SetMaximumValue {
 }
 
 // FUNCTION: SIMCOPTER 0x004b28b0
-SliderWindow::GetThumbWidth {
+long SliderWindow::GetThumbWidth() {
 // LINE 1495:
 	asm( 
 "	      004b28b0    push ebp"
@@ -9193,7 +9193,7 @@ SliderWindow::GetThumbWidth {
 }
 
 // FUNCTION: SIMCOPTER 0x004b28d4
-SliderWindow::GetThumbHeight {
+long SliderWindow::GetThumbHeight() {
 // LINE 1506:
 	asm( 
 "	      004b28d4    push ebp"
@@ -9223,7 +9223,7 @@ SliderWindow::GetThumbHeight {
 }
 
 // FUNCTION: SIMCOPTER 0x004b28f8
-ScrollBarWindow::ScrollBarWindow {
+void ScrollBarWindow::ScrollBarWindow() {
 // LINE 1546:
 	asm( 
 "	      004b28f8    push ebp"
@@ -9459,7 +9459,7 @@ ScrollBarWindow::ScrollBarWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004b2c25
-ScrollBarWindow::ScrollBarWindow {
+void ScrollBarWindow::ScrollBarWindow(class MRect&, int32_t, enum SliderWindow::SliderWindowDirection, class GraphicWindow*, class GraphicWindowOwner*, int32_t, char *) {
 // LINE 1565:
 	asm( 
 "	      004b2c25    push ebp"
@@ -9759,7 +9759,7 @@ ScrollBarWindow::ScrollBarWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004b300d
-ScrollBarWindow::Initialize {
+int32_t ScrollBarWindow::Initialize() {
 // LINE 1581:
 	asm( 
 "	      004b300d    push ebp"
@@ -9855,7 +9855,7 @@ ScrollBarWindow::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x004b30ae
-ScrollBarWindow::ComposeSelf {
+int32_t ScrollBarWindow::ComposeSelf() {
 // LINE 1603:
 	asm( 
 "	      004b30ae    push ebp"
@@ -10406,7 +10406,7 @@ ScrollBarWindow::ComposeSelf {
 }
 
 // FUNCTION: SIMCOPTER 0x004b35dd
-ScrollBarWindow::DoCursorDown {
+long ScrollBarWindow::DoCursorDown(long, long, unsigned long) {
 // LINE 1716:
 	asm( 
 "	      004b35dd    push ebp"
@@ -10632,7 +10632,7 @@ ScrollBarWindow::DoCursorDown {
 }
 
 // FUNCTION: SIMCOPTER 0x004b3850
-ScrollBarWindow::DoCursorUp {
+long ScrollBarWindow::DoCursorUp(long, long, unsigned long) {
 // LINE 1757:
 	asm( 
 "	      004b3850    push ebp"
@@ -10707,7 +10707,7 @@ ScrollBarWindow::DoCursorUp {
 }
 
 // FUNCTION: SIMCOPTER 0x004b38e4
-ScrollBarWindow::DoCursorMove {
+long ScrollBarWindow::DoCursorMove(long, long) {
 // LINE 1775:
 	asm( 
 "	      004b38e4    push ebp"
@@ -10813,7 +10813,7 @@ ScrollBarWindow::DoCursorMove {
 }
 
 // FUNCTION: SIMCOPTER 0x004b39d0
-ScrollBarWindow::MoveLinePrevious {
+void ScrollBarWindow::MoveLinePrevious() {
 // LINE 1800:
 	asm( 
 "	      004b39d0    push ebp"
@@ -10882,7 +10882,7 @@ ScrollBarWindow::MoveLinePrevious {
 }
 
 // FUNCTION: SIMCOPTER 0x004b3a46
-ScrollBarWindow::MoveLineNext {
+void ScrollBarWindow::MoveLineNext() {
 // LINE 1818:
 	asm( 
 "	      004b3a46    push ebp"
@@ -10952,7 +10952,7 @@ ScrollBarWindow::MoveLineNext {
 }
 
 // FUNCTION: SIMCOPTER 0x004b3abe
-ScrollBarWindow::MovePagePrevious {
+void ScrollBarWindow::MovePagePrevious() {
 // LINE 1835:
 	asm( 
 "	      004b3abe    push ebp"
@@ -11021,7 +11021,7 @@ ScrollBarWindow::MovePagePrevious {
 }
 
 // FUNCTION: SIMCOPTER 0x004b3b34
-ScrollBarWindow::MovePageNext {
+void ScrollBarWindow::MovePageNext() {
 // LINE 1852:
 	asm( 
 "	      004b3b34    push ebp"
@@ -11091,7 +11091,7 @@ ScrollBarWindow::MovePageNext {
 }
 
 // FUNCTION: SIMCOPTER 0x004b3bac
-ScrollBarWindow::SetLineAndPageCount {
+void ScrollBarWindow::SetLineAndPageCount(long, long) {
 // LINE 1872:
 	asm( 
 "	      004b3bac    push ebp"
@@ -11178,7 +11178,7 @@ ScrollBarWindow::SetLineAndPageCount {
 }
 
 // FUNCTION: SIMCOPTER 0x004b3c48
-ScrollBarWindow::GetCurrentLine {
+long ScrollBarWindow::GetCurrentLine() {
 // LINE 1892:
 	asm( 
 "	      004b3c48    push ebp"
@@ -11233,7 +11233,7 @@ ScrollBarWindow::GetCurrentLine {
 }
 
 // FUNCTION: SIMCOPTER 0x004b3ca4
-ScrollBarWindow::GetValueOfGivenLine {
+long ScrollBarWindow::GetValueOfGivenLine(long) {
 // LINE 1905:
 	asm( 
 "	      004b3ca4    push ebp"
@@ -11288,7 +11288,7 @@ ScrollBarWindow::GetValueOfGivenLine {
 }
 
 // FUNCTION: SIMCOPTER 0x004b3d00
-ScrollBarWindow::GetCurrentPage {
+long ScrollBarWindow::GetCurrentPage() {
 // LINE 1919:
 	asm( 
 "	      004b3d00    push ebp"
@@ -11343,7 +11343,7 @@ ScrollBarWindow::GetCurrentPage {
 }
 
 // FUNCTION: SIMCOPTER 0x004b3d5c
-ScrollBarWindow::GetValueOfGivenPage {
+long ScrollBarWindow::GetValueOfGivenPage(long) {
 // LINE 1932:
 	asm( 
 "	      004b3d5c    push ebp"
@@ -11398,7 +11398,7 @@ ScrollBarWindow::GetValueOfGivenPage {
 }
 
 // FUNCTION: SIMCOPTER 0x004b3db8
-ScrollBarWindow::DoCursorPositionHitTest {
+int32_t ScrollBarWindow::DoCursorPositionHitTest(enum ScrollBarWindow::ScrollHitTestResult&, long, long) {
 // LINE 1964:
 	asm( 
 "	      004b3db8    push ebp"
@@ -11610,7 +11610,7 @@ ScrollBarWindow::DoCursorPositionHitTest {
 }
 
 // FUNCTION: SIMCOPTER 0x004b3f73
-ScrollBarWindow::CalculateAllMetrics {
+void ScrollBarWindow::CalculateAllMetrics() {
 // LINE 2007:
 	asm( 
 "	      004b3f73    push ebp"
@@ -11708,7 +11708,7 @@ ScrollBarWindow::CalculateAllMetrics {
 }
 
 // FUNCTION: SIMCOPTER 0x004b404b
-ScrollBarWindow::GetThumbWidth {
+long ScrollBarWindow::GetThumbWidth() {
 // LINE 2027:
 	asm( 
 "	      004b404b    push ebp"
@@ -11741,7 +11741,7 @@ ScrollBarWindow::GetThumbWidth {
 }
 
 // FUNCTION: SIMCOPTER 0x004b4077
-ScrollBarWindow::GetThumbHeight {
+long ScrollBarWindow::GetThumbHeight() {
 // LINE 2035:
 	asm( 
 "	      004b4077    push ebp"
@@ -11771,7 +11771,7 @@ ScrollBarWindow::GetThumbHeight {
 }
 
 // FUNCTION: SIMCOPTER 0x004b409b
-ScrollBarWindow::GetPrevNextButtonWidth {
+long ScrollBarWindow::GetPrevNextButtonWidth() {
 // LINE 2044:
 	asm( 
 "	      004b409b    push ebp"
@@ -11801,7 +11801,7 @@ ScrollBarWindow::GetPrevNextButtonWidth {
 }
 
 // FUNCTION: SIMCOPTER 0x004b40bf
-ScrollBarWindow::GetPrevNextButtonHeight {
+long ScrollBarWindow::GetPrevNextButtonHeight() {
 // LINE 2053:
 	asm( 
 "	      004b40bf    push ebp"
@@ -11831,7 +11831,7 @@ ScrollBarWindow::GetPrevNextButtonHeight {
 }
 
 // FUNCTION: SIMCOPTER 0x004b40e3
-ListBoxWindow::ListBoxWindow {
+void ListBoxWindow::ListBoxWindow() {
 // LINE 2076:
 	asm( 
 "	      004b40e3    push ebp"
@@ -12110,7 +12110,7 @@ ListBoxWindow::ListBoxWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004b4462
-ListBoxWindow::ListBoxWindow {
+void ListBoxWindow::ListBoxWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
 // LINE 2105:
 	asm( 
 "	      004b4462    push ebp"
@@ -12399,7 +12399,7 @@ ListBoxWindow::ListBoxWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004b47f7
-ListBoxWindow::Initialize {
+int32_t ListBoxWindow::Initialize() {
 // LINE 2132:
 	asm( 
 "	      004b47f7    push ebp"
@@ -12435,7 +12435,7 @@ ListBoxWindow::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x004b4822
-ListBoxWindow::DoMessage {
+int32_t ListBoxWindow::DoMessage(class GraphicWindow*, long, long, void * __ptr32) {
 // LINE 2141:
 	asm( 
 "	      004b4822    push ebp"
@@ -12482,7 +12482,7 @@ ListBoxWindow::DoMessage {
 }
 
 // FUNCTION: SIMCOPTER 0x004b4867
-ListBoxWindow::CalculateAllMetrics {
+void ListBoxWindow::CalculateAllMetrics() {
 // LINE 2157:
 	asm( 
 "	      004b4867    push ebp"
@@ -12541,7 +12541,7 @@ ListBoxWindow::CalculateAllMetrics {
 }
 
 // FUNCTION: SIMCOPTER 0x004b48d2
-ListBoxWindow::SetFontCharacteristics {
+void ListBoxWindow::SetFontCharacteristics(long, long, long) {
 // LINE 2172:
 	asm( 
 "	      004b48d2    push ebp"
@@ -12592,7 +12592,7 @@ ListBoxWindow::SetFontCharacteristics {
 }
 
 // FUNCTION: SIMCOPTER 0x004b4921
-ListBoxWindow::ResizeWindowForExactLineHeights {
+int32_t ListBoxWindow::ResizeWindowForExactLineHeights() {
 // LINE 2188:
 	asm( 
 "	      004b4921    push ebp"
@@ -12681,7 +12681,7 @@ ListBoxWindow::ResizeWindowForExactLineHeights {
 }
 
 // FUNCTION: SIMCOPTER 0x004b49b6
-ListBoxWindow::SetBackgroundDrawing {
+void ListBoxWindow::SetBackgroundDrawing(int32_t) {
 // LINE 2210:
 	asm( 
 "	      004b49b6    push ebp"
@@ -12733,7 +12733,7 @@ ListBoxWindow::SetBackgroundDrawing {
 }
 
 // FUNCTION: SIMCOPTER 0x004b4a11
-ListBoxWindow::SetBackgroundPaletteIndex {
+void ListBoxWindow::SetBackgroundPaletteIndex(int32_t, int32_t) {
 // LINE 2227:
 	asm( 
 "	      004b4a11    push ebp"
@@ -12778,7 +12778,7 @@ ListBoxWindow::SetBackgroundPaletteIndex {
 }
 
 // FUNCTION: SIMCOPTER 0x004b4a55
-ListBoxWindow::SetTextColor {
+void ListBoxWindow::SetTextColor(const struct SparkalColor*, const struct SparkalColor*) {
 // LINE 2241:
 	asm( 
 "	      004b4a55    push ebp"
@@ -12825,7 +12825,7 @@ ListBoxWindow::SetTextColor {
 }
 
 // FUNCTION: SIMCOPTER 0x004b4a9a
-ListBoxWindow::DrawSelf {
+int32_t ListBoxWindow::DrawSelf() {
 // LINE 2253:
 	asm( 
 "	      004b4a9a    push ebp"
@@ -13438,7 +13438,7 @@ ListBoxWindow::DrawSelf {
 }
 
 // FUNCTION: SIMCOPTER 0x004b520e
-ListBoxWindow::RemoveString {
+int32_t ListBoxWindow::RemoveString(class basic_string<char>&) {
 // LINE 2338:
 	asm( 
 "	      004b520e    push ebp"
@@ -13492,7 +13492,7 @@ ListBoxWindow::RemoveString {
 }
 
 // FUNCTION: SIMCOPTER 0x004b5262
-ListBoxWindow::RemoveString {
+int32_t ListBoxWindow::RemoveString(long) {
 // LINE 2354:
 	asm( 
 "	      004b5262    push ebp"
@@ -13618,7 +13618,7 @@ ListBoxWindow::RemoveString {
 }
 
 // FUNCTION: SIMCOPTER 0x004b5347
-ListBoxWindow::RemoveAllStrings {
+void ListBoxWindow::RemoveAllStrings() {
 // LINE 2385:
 	asm( 
 "	      004b5347    push ebp"
@@ -13769,7 +13769,7 @@ ListBoxWindow::RemoveAllStrings {
 }
 
 // FUNCTION: SIMCOPTER 0x004b550e
-ListBoxWindow::InsertString {
+int32_t ListBoxWindow::InsertString(class basic_string<char>&, long) {
 // LINE 2396:
 	asm( 
 "	      004b550e    push ebp"
@@ -13893,7 +13893,7 @@ ListBoxWindow::InsertString {
 }
 
 // FUNCTION: SIMCOPTER 0x004b55ee
-ListBoxWindow::InsertString {
+int32_t ListBoxWindow::InsertString(long, long) {
 // LINE 2430:
 	asm( 
 "	      004b55ee    push ebp"
@@ -14283,7 +14283,7 @@ ListBoxWindow::InsertString {
 }
 
 // FUNCTION: SIMCOPTER 0x004b5c06
-ListBoxWindow::ModifyString {
+int32_t ListBoxWindow::ModifyString(long, class basic_string<char>&) {
 // LINE 2445:
 	asm( 
 "	      004b5c06    push ebp"
@@ -14466,7 +14466,7 @@ ListBoxWindow::ModifyString {
 }
 
 // FUNCTION: SIMCOPTER 0x004b5e21
-ListBoxWindow::GetStringAddressFromIndex {
+int32_t ListBoxWindow::GetStringAddressFromIndex(long, class basic_string<char>*&) {
 // LINE 2464:
 	asm( 
 "	      004b5e21    push ebp"
@@ -14567,7 +14567,7 @@ ListBoxWindow::GetStringAddressFromIndex {
 }
 
 // FUNCTION: SIMCOPTER 0x004b5edc
-ListBoxWindow::GetStringFromIndex {
+int32_t ListBoxWindow::GetStringFromIndex(long, class basic_string<char>&) {
 // LINE 2495:
 	asm( 
 "	      004b5edc    push ebp"
@@ -14736,7 +14736,7 @@ ListBoxWindow::GetStringFromIndex {
 }
 
 // FUNCTION: SIMCOPTER 0x004b60de
-ListBoxWindow::GetIndexFromString {
+int32_t ListBoxWindow::GetIndexFromString(long&, class basic_string<char>&) {
 // LINE 2510:
 	asm( 
 "	      004b60de    push ebp"
@@ -14884,7 +14884,7 @@ ListBoxWindow::GetIndexFromString {
 }
 
 // FUNCTION: SIMCOPTER 0x004b6266
-ListBoxWindow::RemoveStringAtIndex {
+int32_t ListBoxWindow::RemoveStringAtIndex(long) {
 // LINE 2535:
 	asm( 
 "	      004b6266    push ebp"
@@ -15175,7 +15175,7 @@ ListBoxWindow::RemoveStringAtIndex {
 }
 
 // FUNCTION: SIMCOPTER 0x004b6585
-ListBoxWindow::InsertStringAtIndex {
+int32_t ListBoxWindow::InsertStringAtIndex(long, class basic_string<char>&) {
 // LINE 2580:
 	asm( 
 "	      004b6585    push ebp"
@@ -15560,7 +15560,7 @@ ListBoxWindow::InsertStringAtIndex {
 }
 
 // FUNCTION: SIMCOPTER 0x004b6aaf
-ListBoxWindow::DoCharacter {
+long ListBoxWindow::DoCharacter(long) {
 // LINE 2617:
 	asm( 
 "	      004b6aaf    push ebp"
@@ -15587,7 +15587,7 @@ ListBoxWindow::DoCharacter {
 }
 
 // FUNCTION: SIMCOPTER 0x004b6ac9
-ListBoxWindow::DoKeyDown {
+long ListBoxWindow::DoKeyDown(long, char) {
 // LINE 2629:
 	asm( 
 "	      004b6ac9    push ebp"
@@ -15696,7 +15696,7 @@ ListBoxWindow::DoKeyDown {
 }
 
 // FUNCTION: SIMCOPTER 0x004b6b8e
-ListBoxWindow::DoCursorDown {
+long ListBoxWindow::DoCursorDown(long, long, unsigned long) {
 // LINE 2656:
 	asm( 
 "	      004b6b8e    push ebp"
@@ -15767,7 +15767,7 @@ ListBoxWindow::DoCursorDown {
 }
 
 // FUNCTION: SIMCOPTER 0x004b6c11
-ListBoxWindow::SetSelection {
+int32_t ListBoxWindow::SetSelection(long) {
 // LINE 2681:
 	asm( 
 "	      004b6c11    push ebp"
@@ -15919,7 +15919,7 @@ ListBoxWindow::SetSelection {
 }
 
 // FUNCTION: SIMCOPTER 0x004b6d4e
-ListBoxWindow::GetSelection {
+long ListBoxWindow::GetSelection() {
 // LINE 2713:
 	asm( 
 "	      004b6d4e    push ebp"
@@ -15947,7 +15947,7 @@ ListBoxWindow::GetSelection {
 }
 
 // FUNCTION: SIMCOPTER 0x004b6d6d
-ListBoxWindow::IsIndexInView {
+int32_t ListBoxWindow::IsIndexInView(long) {
 // LINE 2721:
 	asm( 
 "	      004b6d6d    push ebp"
@@ -15986,7 +15986,7 @@ ListBoxWindow::IsIndexInView {
 }
 
 // FUNCTION: SIMCOPTER 0x004b6dbe
-ListBoxWindow::PutIndexInView {
+void ListBoxWindow::PutIndexInView(long) {
 // LINE 2729:
 	asm( 
 "	      004b6dbe    push ebp"
@@ -16065,7 +16065,7 @@ ListBoxWindow::PutIndexInView {
 }
 
 // FUNCTION: SIMCOPTER 0x004b6e56
-ListBoxWindow::SetIndexOfTopLine {
+void ListBoxWindow::SetIndexOfTopLine(long) {
 // LINE 2750:
 	asm( 
 "	      004b6e56    push ebp"
@@ -16179,7 +16179,7 @@ ListBoxWindow::SetIndexOfTopLine {
 }
 
 // FUNCTION: SIMCOPTER 0x004b6f47
-ListBoxWindow::ScrollToStart {
+int32_t ListBoxWindow::ScrollToStart() {
 // LINE 2771:
 	asm( 
 "	      004b6f47    push ebp"
@@ -16223,7 +16223,7 @@ ListBoxWindow::ScrollToStart {
 }
 
 // FUNCTION: SIMCOPTER 0x004b6f85
-ListBoxWindow::ScrollToEnd {
+int32_t ListBoxWindow::ScrollToEnd() {
 // LINE 2785:
 	asm( 
 "	      004b6f85    push ebp"
@@ -16293,7 +16293,7 @@ ListBoxWindow::ScrollToEnd {
 }
 
 // FUNCTION: SIMCOPTER 0x004b6ffd
-ListBoxWindow::MoveLineUp {
+int32_t ListBoxWindow::MoveLineUp() {
 // LINE 2809:
 	asm( 
 "	      004b6ffd    push ebp"
@@ -16360,7 +16360,7 @@ ListBoxWindow::MoveLineUp {
 }
 
 // FUNCTION: SIMCOPTER 0x004b706a
-ListBoxWindow::MoveLineDown {
+int32_t ListBoxWindow::MoveLineDown() {
 // LINE 2834:
 	asm( 
 "	      004b706a    push ebp"
@@ -16429,7 +16429,7 @@ ListBoxWindow::MoveLineDown {
 }
 
 // FUNCTION: SIMCOPTER 0x004b70da
-ListBoxWindow::ScrollPageUp {
+int32_t ListBoxWindow::ScrollPageUp() {
 // LINE 2858:
 	asm( 
 "	      004b70da    push ebp"
@@ -16502,7 +16502,7 @@ ListBoxWindow::ScrollPageUp {
 }
 
 // FUNCTION: SIMCOPTER 0x004b714e
-ListBoxWindow::ScrollPageDown {
+int32_t ListBoxWindow::ScrollPageDown() {
 // LINE 2878:
 	asm( 
 "	      004b714e    push ebp"
@@ -16589,7 +16589,7 @@ ListBoxWindow::ScrollPageDown {
 }
 
 // FUNCTION: SIMCOPTER 0x004b71f4
-ListBoxWindow::ScrollToFirstLetter {
+int32_t ListBoxWindow::ScrollToFirstLetter(char) {
 // LINE 2901:
 	asm( 
 "	      004b71f4    push ebp"
@@ -16776,7 +16776,7 @@ ListBoxWindow::ScrollToFirstLetter {
 }
 
 // FUNCTION: SIMCOPTER 0x004b73e9
-ListBoxWindow::SetShouldSort {
+void ListBoxWindow::SetShouldSort() {
 // LINE 2922:
 	asm( 
 "	      004b73e9    push ebp"
@@ -16817,7 +16817,7 @@ ListBoxWindow::SetShouldSort {
 }
 
 // FUNCTION: SIMCOPTER 0x004b742a
-ListBoxWindow::Sort {
+void ListBoxWindow::Sort() {
 // LINE 2938:
 	asm( 
 "	      004b742a    push ebp"
@@ -17115,7 +17115,7 @@ ListBoxWindow::Sort {
 }
 
 // FUNCTION: SIMCOPTER 0x004b78e5
-ListBoxWindow::GetLineCount {
+long ListBoxWindow::GetLineCount() {
 // LINE 2957:
 	asm( 
 "	      004b78e5    push ebp"
@@ -17144,7 +17144,7 @@ ListBoxWindow::GetLineCount {
 }
 
 // FUNCTION: SIMCOPTER 0x004b7906
-ListBoxWindow::GetIndexOfTopLine {
+long ListBoxWindow::GetIndexOfTopLine() {
 // LINE 2965:
 	asm( 
 "	      004b7906    push ebp"
@@ -17172,7 +17172,7 @@ ListBoxWindow::GetIndexOfTopLine {
 }
 
 // FUNCTION: SIMCOPTER 0x004b7925
-ListBoxWindow::AddScrollBar {
+int32_t ListBoxWindow::AddScrollBar(int32_t, int32_t, char *) {
 // LINE 2974:
 	asm( 
 "	      004b7925    push ebp"
@@ -17294,7 +17294,7 @@ ListBoxWindow::AddScrollBar {
 }
 
 // FUNCTION: SIMCOPTER 0x004b7a29
-ListBoxWindow::RemoveScrollBar {
+void ListBoxWindow::RemoveScrollBar(int32_t, int32_t) {
 // LINE 2999:
 	asm( 
 "	      004b7a29    push ebp"
@@ -17357,7 +17357,7 @@ ListBoxWindow::RemoveScrollBar {
 }
 
 // FUNCTION: SIMCOPTER 0x004b7a99
-ListBoxWindow::SetScrollBarValue {
+void ListBoxWindow::SetScrollBarValue() {
 // LINE 3015:
 	asm( 
 "	      004b7a99    push ebp"
@@ -17451,7 +17451,7 @@ ListBoxWindow::SetScrollBarValue {
 }
 
 // FUNCTION: SIMCOPTER 0x004b7b61
-ListBoxWindow::SetScrollBarSizes {
+void ListBoxWindow::SetScrollBarSizes() {
 // LINE 3031:
 	asm( 
 "	      004b7b61    push ebp"
@@ -17536,7 +17536,7 @@ ListBoxWindow::SetScrollBarSizes {
 }
 
 // FUNCTION: SIMCOPTER 0x004b7c25
-PopupMenuWindow::PopupMenuWindow {
+void PopupMenuWindow::PopupMenuWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
 // LINE 3059:
 	asm( 
 "	      004b7c25    push ebp"
@@ -17574,7 +17574,7 @@ PopupMenuWindow::PopupMenuWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004b7c65
-PopupMenuWindow::Initialize {
+int32_t PopupMenuWindow::Initialize() {
 // LINE 3066:
 	asm( 
 "	      004b7c65    push ebp"
@@ -17637,7 +17637,7 @@ PopupMenuWindow::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x004b7cc1
-PopupMenuWindow::DoKeyDown {
+long PopupMenuWindow::DoKeyDown(long, char) {
 // LINE 3080:
 	asm( 
 "	      004b7cc1    push ebp"
@@ -17748,7 +17748,7 @@ PopupMenuWindow::DoKeyDown {
 }
 
 // FUNCTION: SIMCOPTER 0x004b7d92
-PopupMenuWindow::DoCursorDown {
+long PopupMenuWindow::DoCursorDown(long, long, unsigned long) {
 // LINE 3104:
 	asm( 
 "	      004b7d92    push ebp"
@@ -17848,7 +17848,7 @@ PopupMenuWindow::DoCursorDown {
 }
 
 // FUNCTION: SIMCOPTER 0x004b7e63
-PopupMenuWindow::DoCursorUp {
+long PopupMenuWindow::DoCursorUp(long, long, unsigned long) {
 // LINE 3120:
 	asm( 
 "	      004b7e63    push ebp"
@@ -17916,7 +17916,7 @@ PopupMenuWindow::DoCursorUp {
 }
 
 // FUNCTION: SIMCOPTER 0x004b7edf
-PopupMenuWindow::DoCursorMove {
+long PopupMenuWindow::DoCursorMove(long, long) {
 // LINE 3138:
 	asm( 
 "	      004b7edf    push ebp"
@@ -17955,7 +17955,7 @@ PopupMenuWindow::DoCursorMove {
 }
 
 // FUNCTION: SIMCOPTER 0x004b7f18
-PopupMenuWindow::RemoveStringAtIndex {
+int32_t PopupMenuWindow::RemoveStringAtIndex(long) {
 // LINE 3147:
 	asm( 
 "	      004b7f18    push ebp"
@@ -18002,7 +18002,7 @@ PopupMenuWindow::RemoveStringAtIndex {
 }
 
 // FUNCTION: SIMCOPTER 0x004b7f59
-PopupMenuWindow::InsertStringAtIndex {
+int32_t PopupMenuWindow::InsertStringAtIndex(long, class basic_string<char>&) {
 // LINE 3160:
 	asm( 
 "	      004b7f59    push ebp"
@@ -18051,7 +18051,7 @@ PopupMenuWindow::InsertStringAtIndex {
 }
 
 // FUNCTION: SIMCOPTER 0x004b7f9e
-PopupMenuWindow::ResizeWindowToFitMenuItems {
+void PopupMenuWindow::ResizeWindowToFitMenuItems() {
 // LINE 3173:
 	asm( 
 "	      004b7f9e    push ebp"

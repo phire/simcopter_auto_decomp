@@ -6,7 +6,7 @@
 
 // Contribution: 1:000953b0-00096b4b Module: 18, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x004963b0
-SparkalPalette::SparkalPalette {
+void SparkalPalette::SparkalPalette(struct SparkalColor*, int32_t, unsigned long) {
 // LINE 29:
 	asm( 
 "	      004963b0    push ebp"
@@ -41,7 +41,7 @@ SparkalPalette::SparkalPalette {
 }
 
 // FUNCTION: SIMCOPTER 0x004963ef
-SparkalPalette::SparkalPalette {
+void SparkalPalette::SparkalPalette() {
 // LINE 40:
 	asm( 
 "	      004963ef    push ebp"
@@ -73,7 +73,7 @@ SparkalPalette::SparkalPalette {
 }
 
 // FUNCTION: SIMCOPTER 0x0049642f
-SparkalPalette::~SparkalPalette {
+void SparkalPalette::~SparkalPalette() {
 // LINE 47:
 	asm( 
 "	      0049642f    push ebp"
@@ -119,7 +119,7 @@ SparkalPalette::~SparkalPalette {
 }
 
 // FUNCTION: SIMCOPTER 0x00496483
-SparkalPalette::GetNearestIndex {
+void SparkalPalette::GetNearestIndex(struct SparkalColor&, int32_t&) {
 // LINE 64:
 	asm( 
 "	      00496483    push ebp"
@@ -258,7 +258,7 @@ SparkalPalette::GetNearestIndex {
 }
 
 // FUNCTION: SIMCOPTER 0x004965b0
-SparkalPalette::FadeToWhite {
+void SparkalPalette::FadeToWhite(long) {
 // LINE 93:
 	asm( 
 "	      004965b0    push ebp"
@@ -600,7 +600,7 @@ SparkalPalette::FadeToWhite {
 }
 
 // FUNCTION: SIMCOPTER 0x00496a14
-SparkalPalette::FadeToBlack {
+void SparkalPalette::FadeToBlack(long) {
 // LINE 180:
 	asm( 
 "	      00496a14    push ebp"
@@ -933,7 +933,7 @@ SparkalPalette::FadeToBlack {
 }
 
 // FUNCTION: SIMCOPTER 0x00496e54
-SparkalPalette::FadeToRGB {
+void SparkalPalette::FadeToRGB(struct SparkalColor&, long) {
 // LINE 269:
 	asm( 
 "	      00496e54    push ebp"
@@ -1302,7 +1302,7 @@ SparkalPalette::FadeToRGB {
 }
 
 // FUNCTION: SIMCOPTER 0x004972e7
-SparkalPalette::FadeToPalette {
+void SparkalPalette::FadeToPalette(struct SparkalColor, long, long) {
 // LINE 360:
 	asm( 
 "	      004972e7    push ebp"
@@ -1339,7 +1339,7 @@ SparkalPalette::FadeToPalette {
 }
 
 // FUNCTION: SIMCOPTER 0x0049731a
-SparkalPalette::FadeToPalette {
+void SparkalPalette::FadeToPalette(struct SparkalColor, struct SparkalColor*, long, long) {
 // LINE 377:
 	asm( 
 "	      0049731a    push ebp"
@@ -1858,7 +1858,7 @@ SparkalPalette::FadeToPalette {
 }
 
 // FUNCTION: SIMCOPTER 0x00497844
-SparkalPalette::SetSystemPaletteEntriesToRGB {
+void SparkalPalette::SetSystemPaletteEntriesToRGB(struct SparkalColor&) {
 // LINE 462:
 	asm( 
 "	      00497844    push ebp"
@@ -1941,7 +1941,7 @@ SparkalPalette::SetSystemPaletteEntriesToRGB {
 }
 
 // FUNCTION: SIMCOPTER 0x004978e9
-SparkalPalette::ImplementNewPalette {
+void SparkalPalette::ImplementNewPalette(struct SparkalColor*) {
 // LINE 493:
 	asm( 
 "	      004978e9    push ebp"
@@ -2038,7 +2038,7 @@ SparkalPalette::ImplementNewPalette {
 }
 
 // FUNCTION: SIMCOPTER 0x004979cf
-CopterSparkalPalette::CopterSparkalPalette {
+void CopterSparkalPalette::CopterSparkalPalette() {
 // LINE 534:
 	asm( 
 "	      004979cf    push ebp"
@@ -2066,7 +2066,7 @@ CopterSparkalPalette::CopterSparkalPalette {
 }
 
 // FUNCTION: SIMCOPTER 0x004979f9
-CopterSparkalPalette::CopterSparkalPalette {
+void CopterSparkalPalette::CopterSparkalPalette(struct SparkalColor*, int32_t) {
 // LINE 543:
 	asm( 
 "	      004979f9    push ebp"
@@ -2099,7 +2099,7 @@ CopterSparkalPalette::CopterSparkalPalette {
 }
 
 // FUNCTION: SIMCOPTER 0x00497a32
-ClearWindowsSystemPalette {
+void ClearWindowsSystemPalette() {
 // LINE 560:
 	asm( 
 "	      00497a32    push ebp"

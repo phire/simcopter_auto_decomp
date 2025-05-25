@@ -6,7 +6,7 @@
 
 // Contribution: 1:0015c500-0015c948 Module: 193, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x0055d500
-SetRRandSeed {
+void SetRRandSeed() {
 // LINE 33:
 	asm( 
 "	      0055d500    push ebp"
@@ -26,7 +26,7 @@ SetRRandSeed {
 }
 
 // FUNCTION: SIMCOPTER 0x0055d518
-GetSRandSeed {
+unsigned long GetSRandSeed() {
 // LINE 45:
 	asm( 
 "	      0055d518    push ebp"
@@ -45,7 +45,7 @@ GetSRandSeed {
 }
 
 // FUNCTION: SIMCOPTER 0x0055d52d
-SetSRandSeed {
+void SetSRandSeed() {
 // LINE 48:
 	asm( 
 "	      0055d52d    push ebp"
@@ -65,7 +65,7 @@ SetSRandSeed {
 }
 
 // FUNCTION: SIMCOPTER 0x0055d545
-RRand {
+unsigned short RRand() {
 // LINE 55:
 	asm( 
 "	      0055d545    push ebp"
@@ -240,7 +240,7 @@ RRand {
 }
 
 // FUNCTION: SIMCOPTER 0x0055d6a3
-GetNextRandomNumber {
+unsigned short GetNextRandomNumber() {
 // LINE 104:
 	asm( 
 "	      0055d6a3    push ebp"
@@ -305,7 +305,7 @@ GetNextRandomNumber {
 }
 
 // FUNCTION: SIMCOPTER 0x0055d717
-SRand {
+unsigned short SRand() {
 // LINE 118:
 	asm( 
 "	      0055d717    push ebp"
@@ -333,7 +333,7 @@ SRand {
 }
 
 // FUNCTION: SIMCOPTER 0x0055d74a
-SRand2 {
+unsigned short SRand2() {
 // LINE 119:
 	asm( 
 "	      0055d74a    push ebp"
@@ -354,7 +354,7 @@ SRand2 {
 }
 
 // FUNCTION: SIMCOPTER 0x0055d765
-SRand4 {
+unsigned short SRand4() {
 // LINE 120:
 	asm( 
 "	      0055d765    push ebp"
@@ -375,7 +375,7 @@ SRand4 {
 }
 
 // FUNCTION: SIMCOPTER 0x0055d780
-SRand8 {
+unsigned short SRand8() {
 // LINE 121:
 	asm( 
 "	      0055d780    push ebp"
@@ -396,7 +396,7 @@ SRand8 {
 }
 
 // FUNCTION: SIMCOPTER 0x0055d79b
-SRand16 {
+unsigned short SRand16() {
 // LINE 122:
 	asm( 
 "	      0055d79b    push ebp"
@@ -417,7 +417,7 @@ SRand16 {
 }
 
 // FUNCTION: SIMCOPTER 0x0055d7b6
-SRand32 {
+unsigned short SRand32() {
 // LINE 123:
 	asm( 
 "	      0055d7b6    push ebp"
@@ -438,7 +438,7 @@ SRand32 {
 }
 
 // FUNCTION: SIMCOPTER 0x0055d7d1
-SRand64 {
+unsigned short SRand64() {
 // LINE 124:
 	asm( 
 "	      0055d7d1    push ebp"
@@ -459,7 +459,7 @@ SRand64 {
 }
 
 // FUNCTION: SIMCOPTER 0x0055d7ec
-SRand128 {
+unsigned short SRand128() {
 // LINE 125:
 	asm( 
 "	      0055d7ec    push ebp"
@@ -480,7 +480,7 @@ SRand128 {
 }
 
 // FUNCTION: SIMCOPTER 0x0055d807
-SRand256 {
+unsigned short SRand256() {
 // LINE 126:
 	asm( 
 "	      0055d807    push ebp"
@@ -501,7 +501,7 @@ SRand256 {
 }
 
 // FUNCTION: SIMCOPTER 0x0055d824
-SGIRand {
+unsigned short SGIRand() {
 // LINE 132:
 	asm( 
 "	      0055d824    push ebp"
@@ -561,7 +561,7 @@ SGIRand {
 }
 
 // FUNCTION: SIMCOPTER 0x0055d882
-SGRand {
+unsigned short SGRand() {
 // LINE 147:
 	asm( 
 "	      0055d882    push ebp"
@@ -621,7 +621,7 @@ SGRand {
 }
 
 // FUNCTION: SIMCOPTER 0x0055d8e0
-SGSRand {
+short SGSRand() {
 // LINE 162:
 	asm( 
 "	      0055d8e0    push ebp"

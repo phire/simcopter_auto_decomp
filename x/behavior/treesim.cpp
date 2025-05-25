@@ -6,7 +6,7 @@
 
 // Contribution: 1:0015bb10-0015c4b2 Module: 194, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x0055cb10
-TreeSim::TreeSim {
+void TreeSim::TreeSim(short, short, class Behavior*, short *) {
 // LINE 11:
 	asm( 
 "	      0055cb10    push ebp"
@@ -77,7 +77,7 @@ TreeSim::TreeSim {
 }
 
 // FUNCTION: SIMCOPTER 0x0055cba5
-TreeSim::TreeSim {
+void TreeSim::TreeSim(short, short *) {
 // LINE 25:
 	asm( 
 "	      0055cba5    push ebp"
@@ -139,7 +139,7 @@ TreeSim::TreeSim {
 }
 
 // FUNCTION: SIMCOPTER 0x0055cc2a
-TreeSim::~TreeSim {
+void TreeSim::~TreeSim() {
 // LINE 35:
 	asm( 
 "	      0055cc2a    push ebp"
@@ -172,7 +172,7 @@ TreeSim::~TreeSim {
 }
 
 // FUNCTION: SIMCOPTER 0x0055cc58
-TreeSim::Reset {
+void TreeSim::Reset(class Behavior*, short) {
 // LINE 43:
 	asm( 
 "	      0055cc58    push ebp"
@@ -254,7 +254,7 @@ TreeSim::Reset {
 }
 
 // FUNCTION: SIMCOPTER 0x0055ccef
-TreeSim::GetHighLevelAction {
+struct TreeSim::StackElem* TreeSim::GetHighLevelAction() {
 // LINE 62:
 	asm( 
 "	      0055ccef    push ebp"
@@ -383,7 +383,7 @@ TreeSim::GetHighLevelAction {
 }
 
 // FUNCTION: SIMCOPTER 0x0055ce37
-TreeSim::Gosub {
+unsigned short TreeSim::Gosub(class Behavior*, short *, short) {
 // LINE 83:
 	asm( 
 "	      0055ce37    push ebp"
@@ -519,7 +519,7 @@ TreeSim::Gosub {
 }
 
 // FUNCTION: SIMCOPTER 0x0055cf37
-TreeSim::Simulate {
+unsigned short TreeSim::Simulate(long, unsigned short) {
 // LINE 114:
 	asm( 
 "	      0055cf37    push ebp"
@@ -810,7 +810,7 @@ TreeSim::Simulate {
 }
 
 // FUNCTION: SIMCOPTER 0x0055d1c3
-TreeSim::NodeComplete {
+char TreeSim::NodeComplete(unsigned short) {
 // LINE 198:
 	asm( 
 "	      0055d1c3    push ebp"
@@ -972,7 +972,7 @@ TreeSim::NodeComplete {
 }
 
 // FUNCTION: SIMCOPTER 0x0055d2fd
-TreeSim::GetCurrentNode {
+void TreeSim::GetCurrentNode(short *, short *) {
 // LINE 239:
 	asm( 
 "	      0055d2fd    push ebp"
@@ -1047,7 +1047,7 @@ TreeSim::GetCurrentNode {
 }
 
 // FUNCTION: SIMCOPTER 0x0055d3a5
-ExtSim::TryElement {
+enum TreeSim::ReturnCode ExtSim::TryElement(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 255:
 	asm( 
 "	      0055d3a5    push ebp"
@@ -1083,7 +1083,7 @@ ExtSim::TryElement {
 }
 
 // FUNCTION: SIMCOPTER 0x0055d3d5
-ExtSim::Error {
+void ExtSim::Error(short) {
 // LINE 262:
 	asm( 
 "	      0055d3d5    push ebp"
@@ -1117,7 +1117,7 @@ ExtSim::Error {
 }
 
 // FUNCTION: SIMCOPTER 0x0055d402
-ExtSim::Simulate {
+unsigned short ExtSim::Simulate(long, unsigned short) {
 // LINE 271:
 	asm( 
 "	      0055d402    push ebp"

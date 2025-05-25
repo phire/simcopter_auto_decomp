@@ -6,7 +6,7 @@
 
 // Contribution: 1:001348a0-0013509d Module: 160, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x005358a0
-CreateAmbulanceInstance {
+int32_t CreateAmbulanceInstance() {
 // LINE 76:
 	asm( 
 "	      005358a0    push ebp"
@@ -39,7 +39,7 @@ CreateAmbulanceInstance {
 }
 
 // FUNCTION: SIMCOPTER 0x005358d0
-AmbulanceClass::AmbulanceClass {
+void AmbulanceClass::AmbulanceClass() {
 // LINE 83:
 	asm( 
 "	      005358d0    push ebp"
@@ -72,7 +72,7 @@ AmbulanceClass::AmbulanceClass {
 }
 
 // FUNCTION: SIMCOPTER 0x00535904
-AmbulanceClass::~AmbulanceClass {
+void AmbulanceClass::~AmbulanceClass() {
 // LINE 89:
 	asm( 
 "	      00535904    push ebp"
@@ -96,7 +96,7 @@ AmbulanceClass::~AmbulanceClass {
 }
 
 // FUNCTION: SIMCOPTER 0x0053592b
-AmbulanceClass::CreateInstance {
+class AmbulanceClass* AmbulanceClass::CreateInstance(int32_t) {
 // LINE 106:
 	asm( 
 "	      0053592b    push ebp"
@@ -311,7 +311,7 @@ AmbulanceClass::CreateInstance {
 }
 
 // FUNCTION: SIMCOPTER 0x00535b14
-AmbulanceClass::Dispatch {
+unsigned char AmbulanceClass::Dispatch(enum EmergencyType, enum EmergencyLevel, long, long) {
 // LINE 243:
 	asm( 
 "	      00535b14    push ebp"
@@ -347,7 +347,7 @@ AmbulanceClass::Dispatch {
 }
 
 // FUNCTION: SIMCOPTER 0x00535b46
-AmbulanceClass::IsThisAHospital {
+int32_t AmbulanceClass::IsThisAHospital(unsigned short) {
 // LINE 257:
 	asm( 
 "	      00535b46    push ebp"
@@ -378,7 +378,7 @@ AmbulanceClass::IsThisAHospital {
 }
 
 // FUNCTION: SIMCOPTER 0x00535b75
-AmbulanceClass::IsThisAHospital {
+int32_t AmbulanceClass::IsThisAHospital(long, long) {
 // LINE 264:
 	asm( 
 "	      00535b75    push ebp"
@@ -438,7 +438,7 @@ AmbulanceClass::IsThisAHospital {
 }
 
 // FUNCTION: SIMCOPTER 0x00535c21
-AmbulanceClass::ItterateFSM {
+void AmbulanceClass::ItterateFSM() {
 // LINE 288:
 	asm( 
 "	      00535c21    push ebp"
@@ -870,7 +870,7 @@ AmbulanceClass::ItterateFSM {
 }
 
 // FUNCTION: SIMCOPTER 0x00535fda
-AmbulanceClass::AtScene {
+int32_t AmbulanceClass::AtScene() {
 // LINE 409:
 	asm( 
 "	      00535fda    push ebp"
@@ -898,7 +898,7 @@ AmbulanceClass::AtScene {
 }
 
 // FUNCTION: SIMCOPTER 0x00535ff9
-AmbulanceClass::SetSaveData {
+void AmbulanceClass::SetSaveData(struct _AUTO_LOAD_SAVE*) {
 // LINE 422:
 	asm( 
 "	      00535ff9    push ebp"
@@ -928,7 +928,7 @@ AmbulanceClass::SetSaveData {
 }
 
 // FUNCTION: SIMCOPTER 0x0053601d
-AmbulanceClass::LoadSaveData {
+void AmbulanceClass::LoadSaveData(struct _AUTO_LOAD_SAVE*) {
 // LINE 436:
 	asm( 
 "	      0053601d    push ebp"

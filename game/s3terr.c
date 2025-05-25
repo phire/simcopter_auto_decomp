@@ -6,7 +6,7 @@
 
 // Contribution: 1:00112d50-00117f8b Module: 169, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x00513d50
-GetAltitude {
+short GetAltitude() {
 // LINE 93:
 	asm( 
 "	      00513d50    push ebp"
@@ -100,7 +100,7 @@ GetAltitude {
 }
 
 // FUNCTION: SIMCOPTER 0x00513e15
-S3TerrainInit {
+void S3TerrainInit() {
 // LINE 121:
 	asm( 
 "	      00513e15    push ebp"
@@ -159,7 +159,7 @@ S3TerrainInit {
 }
 
 // FUNCTION: SIMCOPTER 0x00513e81
-S3TerrainInitMap {
+short S3TerrainInitMap() {
 // LINE 155:
 	asm( 
 "	      00513e81    push ebp"
@@ -4627,7 +4627,7 @@ S3TerrainInitMap {
 }
 
 // FUNCTION: SIMCOPTER 0x0051723c
-do_map_square {
+void do_map_square() {
 // LINE 1012:
 	asm( 
 "	      0051723c    push ebp"
@@ -5593,7 +5593,7 @@ do_map_square {
 }
 
 // FUNCTION: SIMCOPTER 0x00517dc6
-noise {
+unsigned short noise() {
 // LINE 1109:
 	asm( 
 "	      00517dc6    push ebp"
@@ -5667,7 +5667,7 @@ noise {
 }
 
 // FUNCTION: SIMCOPTER 0x00517e5d
-S3TerrSetGridObj {
+void S3TerrSetGridObj() {
 // LINE 1134:
 	asm( 
 "	      00517e5d    push ebp"
@@ -5783,7 +5783,7 @@ S3TerrSetGridObj {
 }
 
 // FUNCTION: SIMCOPTER 0x00517f70
-S3TerrainMorph {
+void S3TerrainMorph() {
 // LINE 1190:
 	asm( 
 "	      00517f70    push ebp"
@@ -6268,7 +6268,7 @@ S3TerrainMorph {
 }
 
 // FUNCTION: SIMCOPTER 0x00518499
-S3TerrMorphWater {
+int32_t S3TerrMorphWater() {
 // LINE 1431:
 	asm( 
 "	      00518499    push ebp"
@@ -6467,7 +6467,7 @@ S3TerrMorphWater {
 }
 
 // FUNCTION: SIMCOPTER 0x0051865b
-AdjustTerrainMap {
+void AdjustTerrainMap() {
 // LINE 1540:
 	asm( 
 "	      0051865b    push ebp"
@@ -6863,7 +6863,7 @@ AdjustTerrainMap {
 }
 
 // FUNCTION: SIMCOPTER 0x00518a8c
-S3TerrPrecisionAlt {
+int32_t S3TerrPrecisionAlt() {
 // LINE 1605:
 	asm( 
 "	      00518a8c    push ebp"
@@ -7298,7 +7298,7 @@ S3TerrPrecisionAlt {
 }
 
 // FUNCTION: SIMCOPTER 0x00518e64
-S3TerrGetShadeIndex {
+unsigned char S3TerrGetShadeIndex() {
 // LINE 1738:
 	asm( 
 "	      00518e64    push ebp"
@@ -7323,7 +7323,7 @@ S3TerrGetShadeIndex {
 }
 
 // FUNCTION: SIMCOPTER 0x00518e76
-S3ObjectPrecisionAlt {
+int32_t S3ObjectPrecisionAlt() {
 // LINE 1822:
 	asm( 
 "	      00518e76    push ebp"

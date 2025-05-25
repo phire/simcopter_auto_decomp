@@ -6,7 +6,7 @@
 
 // Contribution: 1:00153f30-00153fea Module: 197, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x00554f30
-doAssert {
+void doAssert() {
 // LINE 36:
 	asm( 
 "	      00554f30    push ebp"

@@ -6,7 +6,7 @@
 
 // Contribution: 1:000fd790-001005d5 Module: 172, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x004fe790
-S3MapInit {
+void S3MapInit() {
 // LINE 184:
 	asm( 
 "	      004fe790    push ebp"
@@ -293,7 +293,7 @@ S3MapInit {
 }
 
 // FUNCTION: SIMCOPTER 0x004fea08
-S3MapDestroy {
+void S3MapDestroy() {
 // LINE 278:
 	asm( 
 "	      004fea08    push ebp"
@@ -313,7 +313,7 @@ S3MapDestroy {
 }
 
 // FUNCTION: SIMCOPTER 0x004fea13
-S3MapRender {
+void S3MapRender() {
 // LINE 294:
 	asm( 
 "	      004fea13    push ebp"
@@ -3189,7 +3189,7 @@ S3MapRender {
 }
 
 // FUNCTION: SIMCOPTER 0x005001cb
-S3MapDrawPosLines {
+void S3MapDrawPosLines() {
 // LINE 965:
 	asm( 
 "	      005001cb    push ebp"
@@ -3597,7 +3597,7 @@ S3MapDrawPosLines {
 }
 
 // FUNCTION: SIMCOPTER 0x005004cf
-S3MapDrawLine {
+void S3MapDrawLine() {
 // LINE 1072:
 	asm( 
 "	      005004cf    push ebp"
@@ -3870,7 +3870,7 @@ S3MapDrawLine {
 }
 
 // FUNCTION: SIMCOPTER 0x005006b9
-S3MapBlit {
+void S3MapBlit() {
 // LINE 1160:
 	asm( 
 "	      005006b9    push ebp"
@@ -3954,7 +3954,7 @@ S3MapBlit {
 }
 
 // FUNCTION: SIMCOPTER 0x0050074d
-S3MapBlitPosition {
+void S3MapBlitPosition() {
 // LINE 1188:
 	asm( 
 "	      0050074d    push ebp"
@@ -4035,7 +4035,7 @@ S3MapBlitPosition {
 }
 
 // FUNCTION: SIMCOPTER 0x005007dc
-S3MapSet3dRender {
+void S3MapSet3dRender() {
 // LINE 1218:
 	asm( 
 "	      005007dc    push ebp"
@@ -4126,7 +4126,7 @@ S3MapSet3dRender {
 }
 
 // FUNCTION: SIMCOPTER 0x00500880
-S3MapRestore3dRender {
+void S3MapRestore3dRender() {
 // LINE 1256:
 	asm( 
 "	      00500880    push ebp"
@@ -4190,7 +4190,7 @@ S3MapRestore3dRender {
 }
 
 // FUNCTION: SIMCOPTER 0x005008ea
-S3MapCursorDown {
+int32_t S3MapCursorDown() {
 // LINE 1283:
 	asm( 
 "	      005008ea    push ebp"
@@ -4274,7 +4274,7 @@ S3MapCursorDown {
 }
 
 // FUNCTION: SIMCOPTER 0x0050098b
-S3MapCursorUp {
+int32_t S3MapCursorUp() {
 // LINE 1313:
 	asm( 
 "	      0050098b    push ebp"
@@ -4299,7 +4299,7 @@ S3MapCursorUp {
 }
 
 // FUNCTION: SIMCOPTER 0x005009a0
-S3MapCommandZoomIn {
+void S3MapCommandZoomIn() {
 // LINE 1322:
 	asm( 
 "	      005009a0    push ebp"
@@ -4328,7 +4328,7 @@ S3MapCommandZoomIn {
 }
 
 // FUNCTION: SIMCOPTER 0x005009be
-S3MapCommandZoomOut {
+void S3MapCommandZoomOut() {
 // LINE 1332:
 	asm( 
 "	      005009be    push ebp"
@@ -4357,7 +4357,7 @@ S3MapCommandZoomOut {
 }
 
 // FUNCTION: SIMCOPTER 0x005009dc
-S3MapCommandPreviousMission {
+void S3MapCommandPreviousMission() {
 // LINE 1341:
 	asm( 
 "	      005009dc    push ebp"
@@ -4381,7 +4381,7 @@ S3MapCommandPreviousMission {
 }
 
 // FUNCTION: SIMCOPTER 0x005009ec
-S3MapCommandNextMission {
+void S3MapCommandNextMission() {
 // LINE 1350:
 	asm( 
 "	      005009ec    push ebp"
@@ -4405,7 +4405,7 @@ S3MapCommandNextMission {
 }
 
 // FUNCTION: SIMCOPTER 0x005009fc
-S3MapCommandCurrentMissionVehicleFilter {
+void S3MapCommandCurrentMissionVehicleFilter() {
 // LINE 1359:
 	asm( 
 "	      005009fc    push ebp"
@@ -4425,7 +4425,7 @@ S3MapCommandCurrentMissionVehicleFilter {
 }
 
 // FUNCTION: SIMCOPTER 0x00500a07
-S3MapCommandOtherMissionVehicleFilter {
+void S3MapCommandOtherMissionVehicleFilter() {
 // LINE 1368:
 	asm( 
 "	      00500a07    push ebp"
@@ -4445,7 +4445,7 @@ S3MapCommandOtherMissionVehicleFilter {
 }
 
 // FUNCTION: SIMCOPTER 0x00500a12
-S3MapBlitIcon {
+void S3MapBlitIcon() {
 // LINE 1385:
 	asm( 
 "	      00500a12    push ebp"
@@ -4603,7 +4603,7 @@ S3MapBlitIcon {
 }
 
 // FUNCTION: SIMCOPTER 0x00500b65
-S3MapGetMissionIcons {
+void S3MapGetMissionIcons() {
 // LINE 1431:
 	asm( 
 "	      00500b65    push ebp"
@@ -4859,7 +4859,7 @@ S3MapGetMissionIcons {
 }
 
 // FUNCTION: SIMCOPTER 0x00500de3
-S3MapDrawMissionIcons {
+void S3MapDrawMissionIcons() {
 // LINE 1503:
 	asm( 
 "	      00500de3    push ebp"
@@ -5017,7 +5017,7 @@ S3MapDrawMissionIcons {
 }
 
 // FUNCTION: SIMCOPTER 0x00500f34
-S3MapAddCarInfo {
+void S3MapAddCarInfo() {
 // LINE 1562:
 	asm( 
 "	      00500f34    push ebp"
@@ -5111,7 +5111,7 @@ S3MapAddCarInfo {
 }
 
 // FUNCTION: SIMCOPTER 0x00500fc3
-S3MapRemoveCarInfo {
+void S3MapRemoveCarInfo() {
 // LINE 1597:
 	asm( 
 "	      00500fc3    push ebp"
@@ -5162,7 +5162,7 @@ S3MapRemoveCarInfo {
 }
 
 // FUNCTION: SIMCOPTER 0x00501018
-S3MapDrawCarIcons {
+void S3MapDrawCarIcons() {
 // LINE 1624:
 	asm( 
 "	      00501018    push ebp"
@@ -5406,7 +5406,7 @@ S3MapDrawCarIcons {
 }
 
 // FUNCTION: SIMCOPTER 0x00501220
-S3MapBlitDIcon {
+void S3MapBlitDIcon() {
 // LINE 1697:
 	asm( 
 "	      00501220    push ebp"
@@ -5526,7 +5526,7 @@ S3MapBlitDIcon {
 }
 
 // FUNCTION: SIMCOPTER 0x005012f5
-S3MapDrawDispatchLine {
+void S3MapDrawDispatchLine() {
 // LINE 1742:
 	asm( 
 "	      005012f5    push ebp"
@@ -5779,7 +5779,7 @@ S3MapDrawDispatchLine {
 }
 
 // FUNCTION: SIMCOPTER 0x005014c6
-S3MapGetDxDy {
+void S3MapGetDxDy() {
 // LINE 1826:
 	asm( 
 "	      005014c6    push ebp"

@@ -6,7 +6,7 @@
 
 // Contribution: 1:000b8040-000ba946 Module: 4, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x004b9040
-HotSpot::HotSpot {
+void HotSpot::HotSpot() {
 // LINE 25:
 	asm( 
 "	      004b9040    push ebp"
@@ -41,7 +41,7 @@ HotSpot::HotSpot {
 }
 
 // FUNCTION: SIMCOPTER 0x004b908f
-HotSpot::HotSpot {
+void HotSpot::HotSpot(const class HotSpot&) {
 // LINE 34:
 	asm( 
 "	      004b908f    push ebp"
@@ -347,7 +347,7 @@ HotSpot::HotSpot {
 }
 
 // FUNCTION: SIMCOPTER 0x004b948a
-HotSpot::HotSpot {
+void HotSpot::HotSpot(long, long, long, long[17]*) {
 // LINE 47:
 	asm( 
 "	      004b948a    push ebp"
@@ -684,7 +684,7 @@ HotSpot::HotSpot {
 }
 
 // FUNCTION: SIMCOPTER 0x004b9973
-HotSpot::HotSpot {
+void HotSpot::HotSpot(struct HotSpotResourceRecord*) {
 // LINE 62:
 	asm( 
 "	      004b9973    push ebp"
@@ -1035,7 +1035,7 @@ HotSpot::HotSpot {
 }
 
 // FUNCTION: SIMCOPTER 0x004b9e75
-HotSpot::HotSpot {
+void HotSpot::HotSpot(long, struct SparkalRect&) {
 // LINE 88:
 	asm( 
 "	      004b9e75    push ebp"
@@ -1599,7 +1599,7 @@ HotSpot::HotSpot {
 }
 
 // FUNCTION: SIMCOPTER 0x004ba78f
-HotSpot::operator= {
+class HotSpot& HotSpot::operator=(const class HotSpot&) {
 // LINE 101:
 	asm( 
 "	      004ba78f    push ebp"
@@ -1912,7 +1912,7 @@ HotSpot::operator= {
 }
 
 // FUNCTION: SIMCOPTER 0x004bab7b
-operator== {
+int32_t operator==() {
 // LINE 116:
 	asm( 
 "	      004bab7b    push ebp"
@@ -2051,7 +2051,7 @@ operator== {
 }
 
 // FUNCTION: SIMCOPTER 0x004bad05
-HotSpot::IsPointInHotspot {
+int32_t HotSpot::IsPointInHotspot(long, long) {
 // LINE 132:
 	asm( 
 "	      004bad05    push ebp"
@@ -2153,7 +2153,7 @@ HotSpot::IsPointInHotspot {
 }
 
 // FUNCTION: SIMCOPTER 0x004badf8
-HotSpot::PointInCircle {
+int32_t HotSpot::PointInCircle(long, long) {
 // LINE 154:
 	asm( 
 "	      004badf8    push ebp"
@@ -2263,7 +2263,7 @@ HotSpot::PointInCircle {
 }
 
 // FUNCTION: SIMCOPTER 0x004baf2a
-HotSpot::PointInPolygon {
+int32_t HotSpot::PointInPolygon(long, long) {
 // LINE 180:
 	asm( 
 "	      004baf2a    push ebp"
@@ -2407,7 +2407,7 @@ HotSpot::PointInPolygon {
 }
 
 // FUNCTION: SIMCOPTER 0x004bb0d2
-HotSpot::GetBoundingRect {
+void HotSpot::GetBoundingRect(class MRect&) {
 // LINE 207:
 	asm( 
 "	      004bb0d2    push ebp"
@@ -2798,7 +2798,7 @@ HotSpot::GetBoundingRect {
 }
 
 // FUNCTION: SIMCOPTER 0x004bb49b
-LoadListFromResource {
+int32_t LoadListFromResource() {
 // LINE 269:
 	asm( 
 "	      004bb49b    push ebp"

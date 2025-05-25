@@ -6,7 +6,7 @@
 
 // Contribution: 1:00117f90-0011d769 Module: 168, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x00518f90
-S3ObjInit {
+void S3ObjInit() {
 // LINE 379:
 	asm( 
 "	      00518f90    push ebp"
@@ -731,7 +731,7 @@ S3ObjInit {
 }
 
 // FUNCTION: SIMCOPTER 0x0051957b
-S3ObjLinkLowRes {
+void S3ObjLinkLowRes() {
 // LINE 690:
 	asm( 
 "	      0051957b    push ebp"
@@ -1275,7 +1275,7 @@ S3ObjLinkLowRes {
 }
 
 // FUNCTION: SIMCOPTER 0x00519aa4
-S3DrawBlinkingLight {
+void S3DrawBlinkingLight() {
 // LINE 852:
 	asm( 
 "	      00519aa4    push ebp"
@@ -1541,7 +1541,7 @@ S3DrawBlinkingLight {
 }
 
 // FUNCTION: SIMCOPTER 0x00519c86
-S3DrawWaterPoint {
+void S3DrawWaterPoint() {
 // LINE 951:
 	asm( 
 "	      00519c86    push ebp"
@@ -12467,7 +12467,7 @@ S3DrawWaterPoint {
 }
 
 // FUNCTION: SIMCOPTER 0x0051da5b
-S3ObjGetLandingZone {
+struct _LZ_INFO* S3ObjGetLandingZone() {
 // LINE 3683:
 	asm( 
 "	      0051da5b    push ebp"
@@ -12506,7 +12506,7 @@ S3ObjGetLandingZone {
 }
 
 // FUNCTION: SIMCOPTER 0x0051da96
-S3ObjHitDispatch {
+void S3ObjHitDispatch() {
 // LINE 3703:
 	asm( 
 "	      0051da96    push ebp"
@@ -14194,7 +14194,7 @@ S3ObjHitDispatch {
 }
 
 // FUNCTION: SIMCOPTER 0x0051e69a
-S3ObjSetFlatShading {
+void S3ObjSetFlatShading() {
 // LINE 4145:
 	asm( 
 "	      0051e69a    push ebp"

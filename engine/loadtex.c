@@ -6,7 +6,7 @@
 
 // Contribution: 1:000d5060-000d560b Module: 145, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x004d6060
-LoadImages {
+struct VRResource* LoadImages() {
 // LINE 70:
 	asm( 
 "	      004d6060    push ebp"
@@ -260,7 +260,7 @@ LoadImages {
 }
 
 // FUNCTION: SIMCOPTER 0x004d6246
-VRInt2BmpHdr {
+struct VRBmpHdr* VRInt2BmpHdr() {
 // LINE 223:
 	asm( 
 "	      004d6246    push ebp"
@@ -324,7 +324,7 @@ VRInt2BmpHdr {
 }
 
 // FUNCTION: SIMCOPTER 0x004d62a5
-VRGetResTextureCnt {
+int32_t VRGetResTextureCnt() {
 // LINE 254:
 	asm( 
 "	      004d62a5    push ebp"
@@ -356,7 +356,7 @@ VRGetResTextureCnt {
 }
 
 // FUNCTION: SIMCOPTER 0x004d62c4
-VRSetBmpToTiled {
+int32_t VRSetBmpToTiled() {
 // LINE 282:
 	asm( 
 "	      004d62c4    push ebp"
@@ -576,7 +576,7 @@ VRSetBmpToTiled {
 }
 
 // FUNCTION: SIMCOPTER 0x004d6460
-VRLoadAlignedBmp {
+int32_t VRLoadAlignedBmp() {
 // LINE 384:
 	asm( 
 "	      004d6460    push ebp"

@@ -18,7 +18,7 @@
 // $E30
 
 // FUNCTION: SIMCOPTER 0x0049172b
-GetPathForFile {
+int32_t GetPathForFile() {
 // LINE 25:
 	asm( 
 "	      0049172b    push ebp"
@@ -52,7 +52,7 @@ GetPathForFile {
 }
 
 // FUNCTION: SIMCOPTER 0x00491755
-FileServices::Initialize {
+int32_t FileServices::Initialize() {
 // LINE 38:
 	asm( 
 "	      00491755    push ebp"
@@ -499,7 +499,7 @@ FileServices::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x00491d1c
-FileServices::FindRemotePath {
+int32_t FileServices::FindRemotePath() {
 // LINE 88:
 	asm( 
 "	      00491d1c    push ebp"
@@ -1024,7 +1024,7 @@ FileServices::FindRemotePath {
 }
 
 // FUNCTION: SIMCOPTER 0x004923c6
-FileServices::ValidateRemotePath {
+int32_t FileServices::ValidateRemotePath() {
 // LINE 138:
 	asm( 
 "	      004923c6    push ebp"
@@ -1389,7 +1389,7 @@ FileServices::ValidateRemotePath {
 }
 
 // FUNCTION: SIMCOPTER 0x0049299a
-FileServices::RefreshLocalPathCache {
+void FileServices::RefreshLocalPathCache(class basic_string<char>&) {
 // LINE 164:
 	asm( 
 "	      0049299a    push ebp"
@@ -1736,7 +1736,7 @@ FileServices::RefreshLocalPathCache {
 }
 
 // FUNCTION: SIMCOPTER 0x00492e36
-FileServices::CopyFileFromRemoteToLocal {
+int32_t FileServices::CopyFileFromRemoteToLocal(char *) {
 // LINE 195:
 	asm( 
 "	      00492e36    push ebp"
@@ -1763,7 +1763,7 @@ FileServices::CopyFileFromRemoteToLocal {
 }
 
 // FUNCTION: SIMCOPTER 0x00492e50
-FileServices::GetPathForFile {
+int32_t FileServices::GetPathForFile(int32_t, int32_t, char *, char *) {
 // LINE 215:
 	asm( 
 "	      00492e50    push ebp"
@@ -4172,7 +4172,7 @@ FileServices::GetPathForFile {
 }
 
 // FUNCTION: SIMCOPTER 0x00494f82
-FileServices::GetPathForFileString {
+int32_t FileServices::GetPathForFileString(int32_t, int32_t, class basic_string<char>&, class basic_string<char>&) {
 // LINE 391:
 	asm( 
 "	      00494f82    push ebp"

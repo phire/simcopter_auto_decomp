@@ -30,7 +30,7 @@
 // $E78
 
 // FUNCTION: SIMCOPTER 0x00544262
-RemoveAvatarFromBuilding {
+void RemoveAvatarFromBuilding() {
 // LINE 133:
 	asm( 
 "	      00544262    push ebp"
@@ -72,7 +72,7 @@ RemoveAvatarFromBuilding {
 // $E84
 
 // FUNCTION: SIMCOPTER 0x0054433f
-JacquesGetDebugData {
+void JacquesGetDebugData() {
 // LINE 149:
 	asm( 
 "	      0054433f    push ebp"
@@ -234,7 +234,7 @@ JacquesGetDebugData {
 }
 
 // FUNCTION: SIMCOPTER 0x0054454e
-GetOutOfHeli {
+unsigned short GetOutOfHeli() {
 // LINE 166:
 	asm( 
 "	      0054454e    push ebp"
@@ -262,7 +262,7 @@ GetOutOfHeli {
 }
 
 // FUNCTION: SIMCOPTER 0x0054456a
-cYObject::GetOutOfHeli {
+unsigned short cYObject::GetOutOfHeli(long) {
 // LINE 171:
 	asm( 
 "	      0054456a    push ebp"
@@ -419,7 +419,7 @@ cYObject::GetOutOfHeli {
 }
 
 // FUNCTION: SIMCOPTER 0x00544760
-AdjustPersonBeamingSlices {
+void AdjustPersonBeamingSlices() {
 // LINE 191:
 	asm( 
 "	      00544760    push ebp"
@@ -541,7 +541,7 @@ AdjustPersonBeamingSlices {
 }
 
 // FUNCTION: SIMCOPTER 0x00544874
-cYObject::GetObjectA {
+class cYObject* cYObject::GetObjectA(struct _DYOBJ_INST*) {
 // LINE 223:
 	asm( 
 "	      00544874    push ebp"
@@ -761,7 +761,7 @@ cYObject::GetObjectA {
 }
 
 // FUNCTION: SIMCOPTER 0x00544b3b
-cYObject::SearchForDynObj {
+struct _DYOBJ_INST* cYObject::SearchForDynObj(short, short, struct _DYOBJ_INST*) {
 // LINE 248:
 	asm( 
 "	      00544b3b    push ebp"
@@ -826,7 +826,7 @@ cYObject::SearchForDynObj {
 }
 
 // FUNCTION: SIMCOPTER 0x00544bde
-cYObject::SearchForPersonSpot {
+unsigned short cYObject::SearchForPersonSpot(struct _DYOBJ_INST*, struct Point3d*) {
 // LINE 258:
 	asm( 
 "	      00544bde    push ebp"
@@ -1194,7 +1194,7 @@ cYObject::SearchForPersonSpot {
 }
 
 // FUNCTION: SIMCOPTER 0x00544f78
-cYObject::SearchForPersonSpot {
+unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO*, struct Point3d*, enum cYObject::SearchType) {
 // LINE 303:
 	asm( 
 "	      00544f78    push ebp"
@@ -1293,7 +1293,7 @@ cYObject::SearchForPersonSpot {
 }
 
 // FUNCTION: SIMCOPTER 0x00545049
-cYObject::SearchForPersonSpot {
+unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO*, int32_t *, int32_t *, enum cYObject::SearchType) {
 // LINE 318:
 	asm( 
 "	      00545049    push ebp"
@@ -2318,7 +2318,7 @@ cYObject::SearchForPersonSpot {
 }
 
 // FUNCTION: SIMCOPTER 0x00545cc3
-duh {
+void duh() {
 // LINE 403:
 	asm( 
 "	      00545cc3    push ebp"
@@ -2336,7 +2336,7 @@ duh {
 }
 
 // FUNCTION: SIMCOPTER 0x00545cd3
-S3PersonInit {
+void S3PersonInit() {
 // LINE 405:
 	asm( 
 "	      00545cd3    push ebp"
@@ -2409,7 +2409,7 @@ S3PersonInit {
 }
 
 // FUNCTION: SIMCOPTER 0x00545d74
-S3PersonDelete {
+void S3PersonDelete() {
 // LINE 423:
 	asm( 
 "	      00545d74    push ebp"
@@ -2438,7 +2438,7 @@ S3PersonDelete {
 }
 
 // FUNCTION: SIMCOPTER 0x00545d8e
-S3PersonNextFrame {
+void S3PersonNextFrame() {
 // LINE 433:
 	asm( 
 "	      00545d8e    push ebp"
@@ -2463,7 +2463,7 @@ S3PersonNextFrame {
 }
 
 // FUNCTION: SIMCOPTER 0x00545da3
-S3PersonUserNextFrame {
+void S3PersonUserNextFrame() {
 // LINE 440:
 	asm( 
 "	      00545da3    push ebp"
@@ -2489,7 +2489,7 @@ S3PersonUserNextFrame {
 }
 
 // FUNCTION: SIMCOPTER 0x00545dbe
-S3PersonReset {
+void S3PersonReset() {
 // LINE 445:
 	asm( 
 "	      00545dbe    push ebp"
@@ -2585,7 +2585,7 @@ S3PersonReset {
 }
 
 // FUNCTION: SIMCOPTER 0x00545ecb
-S3PersonUserStart {
+void S3PersonUserStart() {
 // LINE 455:
 	asm( 
 "	      00545ecb    push ebp"
@@ -2783,7 +2783,7 @@ S3PersonUserStart {
 }
 
 // FUNCTION: SIMCOPTER 0x0054617c
-S3PersonUserAppearNew {
+void S3PersonUserAppearNew() {
 // LINE 464:
 	asm( 
 "	      0054617c    push ebp"
@@ -2956,7 +2956,7 @@ S3PersonUserAppearNew {
 }
 
 // FUNCTION: SIMCOPTER 0x0054634c
-S3PersonUserAppear {
+void S3PersonUserAppear() {
 // LINE 490:
 	asm( 
 "	      0054634c    push ebp"
@@ -3053,7 +3053,7 @@ S3PersonUserAppear {
 }
 
 // FUNCTION: SIMCOPTER 0x0054642e
-IsThisABadGuy {
+int32_t IsThisABadGuy() {
 // LINE 496:
 	asm( 
 "	      0054642e    push ebp"
@@ -3107,7 +3107,7 @@ IsThisABadGuy {
 }
 
 // FUNCTION: SIMCOPTER 0x00546478
-GetAvatarCellX {
+unsigned char GetAvatarCellX() {
 // LINE 506:
 	asm( 
 "	      00546478    push ebp"
@@ -3144,7 +3144,7 @@ GetAvatarCellX {
 }
 
 // FUNCTION: SIMCOPTER 0x005464bc
-GetAvatarCellY {
+unsigned char GetAvatarCellY() {
 // LINE 512:
 	asm( 
 "	      005464bc    push ebp"
@@ -3181,7 +3181,7 @@ GetAvatarCellY {
 }
 
 // FUNCTION: SIMCOPTER 0x00546500
-GetAvatarDYOBJ {
+struct _DYOBJ_INST* GetAvatarDYOBJ() {
 // LINE 518:
 	asm( 
 "	      00546500    push ebp"
@@ -3218,7 +3218,7 @@ GetAvatarDYOBJ {
 }
 
 // FUNCTION: SIMCOPTER 0x00546541
-GetAvatarVector {
+struct Point3d* GetAvatarVector() {
 // LINE 524:
 	asm( 
 "	      00546541    push ebp"
@@ -3255,7 +3255,7 @@ GetAvatarVector {
 }
 
 // FUNCTION: SIMCOPTER 0x00546584
-S3DrawPerson {
+void S3DrawPerson() {
 // LINE 530:
 	asm( 
 "	      00546584    push ebp"
@@ -3372,7 +3372,7 @@ S3DrawPerson {
 }
 
 // FUNCTION: SIMCOPTER 0x005466c5
-cAvatar::GetControlInput {
+void cAvatar::GetControlInput() {
 // LINE 554:
 	asm( 
 "	      005466c5    push ebp"
@@ -3779,7 +3779,7 @@ cAvatar::GetControlInput {
 }
 
 // FUNCTION: SIMCOPTER 0x00546ace
-PersonHeliHasLanded {
+void PersonHeliHasLanded() {
 // LINE 623:
 	asm( 
 "	      00546ace    push ebp"
@@ -3835,7 +3835,7 @@ PersonHeliHasLanded {
 }
 
 // FUNCTION: SIMCOPTER 0x00546b56
-S3PersonGetLandedHeli {
+struct _HELI_DATA* S3PersonGetLandedHeli() {
 // LINE 647:
 	asm( 
 "	      00546b56    push ebp"
@@ -3990,7 +3990,7 @@ S3PersonGetLandedHeli {
 }
 
 // FUNCTION: SIMCOPTER 0x00546c85
-cYObject::GetOnePersonForScurkID {
+class cYObject* cYObject::GetOnePersonForScurkID(short, short) {
 // LINE 695:
 	asm( 
 "	      00546c85    push ebp"
@@ -4151,7 +4151,7 @@ cYObject::GetOnePersonForScurkID {
 }
 
 // FUNCTION: SIMCOPTER 0x00546e70
-cYObject::StartScurkAmbientMission {
+unsigned short cYObject::StartScurkAmbientMission(short, short, enum PersonType, short, short, struct _DYOBJ_INST*, int32_t, int32_t) {
 // LINE 710:
 	asm( 
 "	      00546e70    push ebp"
@@ -4243,7 +4243,7 @@ cYObject::StartScurkAmbientMission {
 }
 
 // FUNCTION: SIMCOPTER 0x00546f45
-cYObject::StartScurkAmbientMission {
+unsigned short cYObject::StartScurkAmbientMission(short, short, enum PersonType, short, short, struct _DYOBJ_INST*, struct Point3d*) {
 // LINE 717:
 	asm( 
 "	      00546f45    push ebp"
@@ -4342,7 +4342,7 @@ cYObject::StartScurkAmbientMission {
 }
 
 // FUNCTION: SIMCOPTER 0x00547044
-cYObject::StartForScurkID {
+void cYObject::StartForScurkID(enum PersonType, enum MissionType, short, short, short, struct _DYOBJ_INST*) {
 // LINE 731:
 	asm( 
 "	      00547044    push ebp"
@@ -4478,7 +4478,7 @@ cYObject::StartForScurkID {
 }
 
 // FUNCTION: SIMCOPTER 0x005471b2
-cYObject::StartForScurkID {
+void cYObject::StartForScurkID(enum PersonType, enum MissionType, short, short, short, struct _DYOBJ_INST*, int32_t, int32_t) {
 // LINE 747:
 	asm( 
 "	      005471b2    push ebp"
@@ -4690,7 +4690,7 @@ cYObject::StartForScurkID {
 }
 
 // FUNCTION: SIMCOPTER 0x00547440
-cYObject::StartScurkPeople {
+void cYObject::StartScurkPeople(short, short) {
 // LINE 778:
 	asm( 
 "	      00547440    push ebp"
@@ -5151,7 +5151,7 @@ cYObject::StartScurkPeople {
 }
 
 // FUNCTION: SIMCOPTER 0x00547937
-cYObject::StartScurkPeopleNearAvatar {
+void cYObject::StartScurkPeopleNearAvatar() {
 // LINE 837:
 	asm( 
 "	      00547937    push ebp"
@@ -5334,7 +5334,7 @@ cYObject::StartScurkPeopleNearAvatar {
 }
 
 // FUNCTION: SIMCOPTER 0x00547ac2
-cYObject::BeamRemainingAmbients {
+void cYObject::BeamRemainingAmbients() {
 // LINE 871:
 	asm( 
 "	      00547ac2    push ebp"
@@ -5473,7 +5473,7 @@ cYObject::BeamRemainingAmbients {
 }
 
 // FUNCTION: SIMCOPTER 0x00547c6b
-cYObject::TryStartAllAmbient {
+void cYObject::TryStartAllAmbient() {
 // LINE 888:
 	asm( 
 "	      00547c6b    push ebp"
@@ -5518,7 +5518,7 @@ cYObject::TryStartAllAmbient {
 }
 
 // FUNCTION: SIMCOPTER 0x00547cc8
-cYObject::GetSleepingPerson {
+class cYObject* cYObject::GetSleepingPerson() {
 // LINE 898:
 	asm( 
 "	      00547cc8    push ebp"
@@ -5624,7 +5624,7 @@ cYObject::GetSleepingPerson {
 }
 
 // FUNCTION: SIMCOPTER 0x00547de1
-MakeAllPeople {
+void MakeAllPeople() {
 // LINE 913:
 	asm( 
 "	      00547de1    push ebp"
@@ -5689,7 +5689,7 @@ MakeAllPeople {
 }
 
 // FUNCTION: SIMCOPTER 0x00547e59
-DeleteAllPeople {
+void DeleteAllPeople() {
 // LINE 929:
 	asm( 
 "	      00547e59    push ebp"
@@ -5730,7 +5730,7 @@ DeleteAllPeople {
 }
 
 // FUNCTION: SIMCOPTER 0x00547e9b
-cYObject::MakePlebes {
+void cYObject::MakePlebes() {
 // LINE 944:
 	asm( 
 "	      00547e9b    push ebp"
@@ -5871,7 +5871,7 @@ cYObject::MakePlebes {
 }
 
 // FUNCTION: SIMCOPTER 0x00548047
-cYObject::InitObjects {
+void cYObject::InitObjects(char *) {
 // LINE 964:
 	asm( 
 "	      00548047    push ebp"
@@ -7893,7 +7893,7 @@ cYObject::InitObjects {
 }
 
 // FUNCTION: SIMCOPTER 0x00549bdd
-cYObject::BeamIntoCameraRange {
+unsigned short cYObject::BeamIntoCameraRange() {
 // LINE 1279:
 	asm( 
 "	      00549bdd    push ebp"
@@ -8326,7 +8326,7 @@ cYObject::BeamIntoCameraRange {
 }
 
 // FUNCTION: SIMCOPTER 0x00549f04
-cYObject::OutOfCameraRange {
+unsigned short cYObject::OutOfCameraRange() {
 // LINE 1413:
 	asm( 
 "	      00549f04    push ebp"
@@ -8618,7 +8618,7 @@ cYObject::OutOfCameraRange {
 }
 
 // FUNCTION: SIMCOPTER 0x0054a1d3
-StartPerson {
+short StartPerson() {
 // LINE 1465:
 	asm( 
 "	      0054a1d3    push ebp"
@@ -8683,7 +8683,7 @@ StartPerson {
 }
 
 // FUNCTION: SIMCOPTER 0x0054a23f
-LiberateMissionPeople {
+void LiberateMissionPeople() {
 // LINE 1476:
 	asm( 
 "	      0054a23f    push ebp"
@@ -8781,7 +8781,7 @@ LiberateMissionPeople {
 }
 
 // FUNCTION: SIMCOPTER 0x0054a35a
-KillMissionPeople {
+void KillMissionPeople() {
 // LINE 1487:
 	asm( 
 "	      0054a35a    push ebp"
@@ -8998,7 +8998,7 @@ KillMissionPeople {
 }
 
 // FUNCTION: SIMCOPTER 0x0054a5a4
-cYObject::SetPersonData {
+void cYObject::SetPersonData(enum PersonType, enum MissionType, long) {
 // LINE 1533:
 	asm( 
 "	      0054a5a4    push ebp"
@@ -9062,7 +9062,7 @@ cYObject::SetPersonData {
 }
 
 // FUNCTION: SIMCOPTER 0x0054a640
-cYObject::IsSuitableForMission {
+unsigned short cYObject::IsSuitableForMission(enum MissionType, short, short) {
 // LINE 1540:
 	asm( 
 "	      0054a640    push ebp"
@@ -9210,7 +9210,7 @@ cYObject::IsSuitableForMission {
 }
 
 // FUNCTION: SIMCOPTER 0x0054a7a5
-cYObject::StartMission {
+unsigned short cYObject::StartMission(enum PersonType, enum MissionType, short, short, long, struct _DYOBJ_INST*, struct Point3d*) {
 // LINE 1566:
 	asm( 
 "	      0054a7a5    push ebp"
@@ -10685,7 +10685,7 @@ cYObject::StartMission {
 }
 
 // FUNCTION: SIMCOPTER 0x0054b820
-cYObject::ResetToAmbient {
+void cYObject::ResetToAmbient() {
 // LINE 1805:
 	asm( 
 "	      0054b820    push ebp"
@@ -10814,7 +10814,7 @@ cYObject::ResetToAmbient {
 }
 
 // FUNCTION: SIMCOPTER 0x0054b9e6
-cYObject::JoinRiot {
+long cYObject::JoinRiot() {
 // LINE 1813:
 	asm( 
 "	      0054b9e6    push ebp"
@@ -11006,7 +11006,7 @@ cYObject::JoinRiot {
 }
 
 // FUNCTION: SIMCOPTER 0x0054bc3c
-cYObject::PhaseAndBeamSoundChannels {
+void cYObject::PhaseAndBeamSoundChannels() {
 // LINE 1839:
 	asm( 
 "	      0054bc3c    push ebp"
@@ -11238,7 +11238,7 @@ cYObject::PhaseAndBeamSoundChannels {
 }
 
 // FUNCTION: SIMCOPTER 0x0054bf20
-cYObject::DistributeSoundChannels {
+short cYObject::DistributeSoundChannels(short, short) {
 // LINE 1864:
 	asm( 
 "	      0054bf20    push ebp"
@@ -11406,7 +11406,7 @@ cYObject::DistributeSoundChannels {
 }
 
 // FUNCTION: SIMCOPTER 0x0054c0e7
-cYObject::SetSoundChannel {
+void cYObject::SetSoundChannel(short) {
 // LINE 1887:
 	asm( 
 "	      0054c0e7    push ebp"
@@ -11494,7 +11494,7 @@ cYObject::SetSoundChannel {
 }
 
 // FUNCTION: SIMCOPTER 0x0054c1dd
-cYObject::PlaySoundA {
+unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum, unsigned short) {
 // LINE 1897:
 	asm( 
 "	      0054c1dd    push ebp"
@@ -11999,7 +11999,7 @@ cYObject::PlaySoundA {
 }
 
 // FUNCTION: SIMCOPTER 0x0054c671
-cYObject::SimulateAll {
+void cYObject::SimulateAll() {
 // LINE 2034:
 	asm( 
 "	      0054c671    push ebp"
@@ -12464,7 +12464,7 @@ cYObject::SimulateAll {
 }
 
 // FUNCTION: SIMCOPTER 0x0054ccbd
-cYObject::AddToHeli {
+unsigned short cYObject::AddToHeli() {
 // LINE 2137:
 	asm( 
 "	      0054ccbd    push ebp"
@@ -12543,7 +12543,7 @@ cYObject::AddToHeli {
 }
 
 // FUNCTION: SIMCOPTER 0x0054cd49
-cYObject::RemoveFromHeli {
+void cYObject::RemoveFromHeli() {
 // LINE 2158:
 	asm( 
 "	      0054cd49    push ebp"
@@ -12594,7 +12594,7 @@ cYObject::RemoveFromHeli {
 }
 
 // FUNCTION: SIMCOPTER 0x0054cdb2
-cYObject::GetPersonWithMaster {
+class cYObject* cYObject::GetPersonWithMaster(struct _DYOBJ_INST*) {
 // LINE 2165:
 	asm( 
 "	      0054cdb2    push ebp"
@@ -12694,7 +12694,7 @@ cYObject::GetPersonWithMaster {
 }
 
 // FUNCTION: SIMCOPTER 0x0054ceca
-cYObject::SetMaster {
+unsigned short cYObject::SetMaster(struct _DYOBJ_INST*) {
 // LINE 2176:
 	asm( 
 "	      0054ceca    push ebp"
@@ -12887,7 +12887,7 @@ cYObject::SetMaster {
 }
 
 // FUNCTION: SIMCOPTER 0x0054d0e3
-cYObject::AdjoinsRoad {
+unsigned short cYObject::AdjoinsRoad(struct Point3d) {
 // LINE 2221:
 	asm( 
 "	      0054d0e3    push ebp"
@@ -13233,7 +13233,7 @@ cYObject::AdjoinsRoad {
 }
 
 // FUNCTION: SIMCOPTER 0x0054d662
-cYObject::GetNeutralLoc {
+unsigned short cYObject::GetNeutralLoc(int32_t *, int32_t *, int32_t *, int32_t *) {
 // LINE 2239:
 	asm( 
 "	      0054d662    push ebp"
@@ -13609,7 +13609,7 @@ cYObject::GetNeutralLoc {
 }
 
 // FUNCTION: SIMCOPTER 0x0054daf3
-cYObject::Simulate {
+void cYObject::Simulate() {
 // LINE 2277:
 	asm( 
 "	      0054daf3    push ebp"
@@ -13760,7 +13760,7 @@ cYObject::Simulate {
 }
 
 // FUNCTION: SIMCOPTER 0x0054dcde
-cAvatar::AvatarMove {
+enum cYObject::MoveErrorCode cAvatar::AvatarMove(struct cYObject::MoveInfo*) {
 // LINE 2289:
 	asm( 
 "	      0054dcde    push ebp"
@@ -13898,7 +13898,7 @@ cAvatar::AvatarMove {
 }
 
 // FUNCTION: SIMCOPTER 0x0054de18
-cAvatar::Simulate {
+void cAvatar::Simulate() {
 // LINE 2308:
 	asm( 
 "	      0054de18    push ebp"
@@ -14489,7 +14489,7 @@ cAvatar::Simulate {
 }
 
 // FUNCTION: SIMCOPTER 0x0054e579
-cYObject::DynEffects {
+void cYObject::DynEffects(short, enum cYObject::MoveErrorCode, struct cYObject::MoveInfo*) {
 // LINE 2404:
 	asm( 
 "	      0054e579    push ebp"
@@ -15867,7 +15867,7 @@ cYObject::DynEffects {
 }
 
 // FUNCTION: SIMCOPTER 0x0054faee
-cAvatar::ResetView {
+void cAvatar::ResetView() {
 // LINE 2501:
 	asm( 
 "	      0054faee    push ebp"
@@ -16003,7 +16003,7 @@ cAvatar::ResetView {
 }
 
 // FUNCTION: SIMCOPTER 0x0054fc2e
-cYObject::SetCellAndLoc {
+void cYObject::SetCellAndLoc(struct Point3d, unsigned char, unsigned char) {
 // LINE 2535:
 	asm( 
 "	      0054fc2e    push ebp"
@@ -16123,7 +16123,7 @@ cYObject::SetCellAndLoc {
 }
 
 // FUNCTION: SIMCOPTER 0x0054fd4d
-cYObject::SetCellAndLoc {
+void cYObject::SetCellAndLoc(unsigned char, unsigned char, int32_t, int32_t) {
 // LINE 2560:
 	asm( 
 "	      0054fd4d    push ebp"
@@ -16228,7 +16228,7 @@ cYObject::SetCellAndLoc {
 }
 
 // FUNCTION: SIMCOPTER 0x0054fe42
-cYObject::SetMissionType {
+void cYObject::SetMissionType(enum MissionType) {
 // LINE 2570:
 	asm( 
 "	      0054fe42    push ebp"
@@ -16395,7 +16395,7 @@ cYObject::SetMissionType {
 }
 
 // FUNCTION: SIMCOPTER 0x0054ffb7
-cYObject::SetPersonType {
+void cYObject::SetPersonType(enum PersonType) {
 // LINE 2614:
 	asm( 
 "	      0054ffb7    push ebp"
@@ -17026,7 +17026,7 @@ cYObject::SetPersonType {
 }
 
 // FUNCTION: SIMCOPTER 0x00550567
-cYObject::DestroyObjects {
+void cYObject::DestroyObjects() {
 // LINE 2759:
 	asm( 
 "	      00550567    push ebp"
@@ -17136,7 +17136,7 @@ cYObject::DestroyObjects {
 }
 
 // FUNCTION: SIMCOPTER 0x0055069b
-cYObject::Link {
+void cYObject::Link() {
 // LINE 2779:
 	asm( 
 "	      0055069b    push ebp"
@@ -17252,7 +17252,7 @@ cYObject::Link {
 }
 
 // FUNCTION: SIMCOPTER 0x005507ec
-cYObject::Unlink {
+void cYObject::Unlink() {
 // LINE 2794:
 	asm( 
 "	      005507ec    push ebp"
@@ -17348,7 +17348,7 @@ cYObject::Unlink {
 }
 
 // FUNCTION: SIMCOPTER 0x005508a3
-cAvatar::MakeAvatar {
+class cAvatar* cAvatar::MakeAvatar() {
 // LINE 2817:
 	asm( 
 "	      005508a3    push ebp"
@@ -17454,7 +17454,7 @@ cAvatar::MakeAvatar {
 }
 
 // FUNCTION: SIMCOPTER 0x005509cb
-cYObject::MakeNewObject {
+short cYObject::MakeNewObject(short, struct Point3d, class Behavior*) {
 // LINE 2825:
 	asm( 
 "	      005509cb    push ebp"
@@ -17597,7 +17597,7 @@ cYObject::MakeNewObject {
 }
 
 // FUNCTION: SIMCOPTER 0x00550b30
-cYObject::InitForEngine {
+void cYObject::InitForEngine(short) {
 // LINE 2844:
 	asm( 
 "	      00550b30    push ebp"
@@ -17733,7 +17733,7 @@ cYObject::InitForEngine {
 }
 
 // FUNCTION: SIMCOPTER 0x00550c30
-cYObject::KillObject {
+void cYObject::KillObject(short) {
 // LINE 2872:
 	asm( 
 "	      00550c30    push ebp"
@@ -17829,7 +17829,7 @@ cYObject::KillObject {
 }
 
 // FUNCTION: SIMCOPTER 0x00550d4d
-cYObject::cYObject {
+void cYObject::cYObject(short, class Behavior*, struct Point3d, short) {
 // LINE 2885:
 	asm( 
 "	      00550d4d    push ebp"
@@ -17997,7 +17997,7 @@ cYObject::cYObject {
 }
 
 // FUNCTION: SIMCOPTER 0x00550f18
-cAvatar::Reset {
+void cAvatar::Reset() {
 // LINE 2915:
 	asm( 
 "	      00550f18    push ebp"
@@ -18067,7 +18067,7 @@ cAvatar::Reset {
 }
 
 // FUNCTION: SIMCOPTER 0x00550f9f
-cYObject::Reset {
+void cYObject::Reset() {
 // LINE 2931:
 	asm( 
 "	      00550f9f    push ebp"
@@ -18357,7 +18357,7 @@ cYObject::Reset {
 }
 
 // FUNCTION: SIMCOPTER 0x00551388
-cYObject::Draw {
+void cYObject::Draw(struct VRBlit*) {
 // LINE 2963:
 	asm( 
 "	      00551388    push ebp"
@@ -18771,7 +18771,7 @@ cYObject::Draw {
 }
 
 // FUNCTION: SIMCOPTER 0x0055181a
-BodyDrawDebugInfo {
+void BodyDrawDebugInfo() {
 // LINE 3050:
 	asm( 
 "	      0055181a    push ebp"
@@ -18847,7 +18847,7 @@ BodyDrawDebugInfo {
 }
 
 // FUNCTION: SIMCOPTER 0x005518ad
-cYObject::~cYObject {
+void cYObject::~cYObject() {
 // LINE 3062:
 	asm( 
 "	      005518ad    push ebp"
@@ -18954,7 +18954,7 @@ cYObject::~cYObject {
 }
 
 // FUNCTION: SIMCOPTER 0x005519d6
-S3PersonTweakInit {
+void S3PersonTweakInit() {
 // LINE 3080:
 	asm( 
 "	      005519d6    push ebp"
@@ -19013,7 +19013,7 @@ S3PersonTweakInit {
 }
 
 // FUNCTION: SIMCOPTER 0x00551a2d
-UpdateFigureVals {
+void UpdateFigureVals() {
 // LINE 3095:
 	asm( 
 "	      00551a2d    push ebp"
@@ -19034,7 +19034,7 @@ UpdateFigureVals {
 }
 
 // FUNCTION: SIMCOPTER 0x00551a3d
-cAvatar::RotateMatrixAndYawForEngine {
+void cAvatar::RotateMatrixAndYawForEngine() {
 // LINE 3099:
 	asm( 
 "	      00551a3d    push ebp"
@@ -19118,7 +19118,7 @@ cAvatar::RotateMatrixAndYawForEngine {
 }
 
 // FUNCTION: SIMCOPTER 0x00551af1
-S3PUtilsGetDir {
+int32_t S3PUtilsGetDir() {
 // LINE 3116:
 	asm( 
 "	      00551af1    push ebp"
@@ -19253,7 +19253,7 @@ S3PUtilsGetDir {
 }
 
 // FUNCTION: SIMCOPTER 0x00551bf7
-S3PUtilsGetAlt {
+int32_t S3PUtilsGetAlt() {
 // LINE 3152:
 	asm( 
 "	      00551bf7    push ebp"
@@ -19425,7 +19425,7 @@ S3PUtilsGetAlt {
 }
 
 // FUNCTION: SIMCOPTER 0x00551d36
-FrameInit {
+void FrameInit() {
 // LINE 3196:
 	asm( 
 "	      00551d36    push ebp"
@@ -19507,7 +19507,7 @@ FrameInit {
 
 // Contribution: 1:00150f40-00150f9e Module: 200, 16 byte alignment, code, (comdat), execute, read, 
 // FUNCTION: SIMCOPTER 0x00551f40
-ResFile::~ResFile {
+public: virtual __thiscall ResFile::~ResFile(void) {
 }
 
 

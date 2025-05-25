@@ -6,7 +6,7 @@
 
 // Contribution: 1:000aa530-000ab9b5 Module: 6, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x004ab530
-ReadFirstMIFFChunk {
+int32_t ReadFirstMIFFChunk() {
 // LINE 17:
 	asm( 
 "	      004ab530    push ebp"
@@ -61,7 +61,7 @@ ReadFirstMIFFChunk {
 }
 
 // FUNCTION: SIMCOPTER 0x004ab57c
-ReadNextMIFFChunk {
+int32_t ReadNextMIFFChunk() {
 // LINE 29:
 	asm( 
 "	      004ab57c    push ebp"
@@ -109,7 +109,7 @@ ReadNextMIFFChunk {
 }
 
 // FUNCTION: SIMCOPTER 0x004ab5bd
-WriteMIFFChunk {
+int32_t WriteMIFFChunk() {
 // LINE 40:
 	asm( 
 "	      004ab5bd    push ebp"
@@ -143,7 +143,7 @@ WriteMIFFChunk {
 }
 
 // FUNCTION: SIMCOPTER 0x004ab5e4
-MIFF::MIFF {
+void MIFF::MIFF() {
 // LINE 56:
 	asm( 
 "	      004ab5e4    push ebp"
@@ -249,7 +249,7 @@ MIFF::MIFF {
 }
 
 // FUNCTION: SIMCOPTER 0x004ab6f5
-MIFF::MIFF {
+void MIFF::MIFF(char *) {
 // LINE 81:
 	asm( 
 "	      004ab6f5    push ebp"
@@ -330,7 +330,7 @@ MIFF::MIFF {
 }
 
 // FUNCTION: SIMCOPTER 0x004ab7cf
-MIFF::~MIFF {
+void MIFF::~MIFF() {
 // LINE 97:
 	asm( 
 "	      004ab7cf    push ebp"
@@ -390,7 +390,7 @@ MIFF::~MIFF {
 }
 
 // FUNCTION: SIMCOPTER 0x004ab878
-MIFF::OpenForReading {
+long MIFF::OpenForReading() {
 // LINE 113:
 	asm( 
 "	      004ab878    push ebp"
@@ -477,7 +477,7 @@ MIFF::OpenForReading {
 }
 
 // FUNCTION: SIMCOPTER 0x004ab937
-MIFF::OpenForWriting {
+long MIFF::OpenForWriting(long, long, long) {
 // LINE 138:
 	asm( 
 "	      004ab937    push ebp"
@@ -591,7 +591,7 @@ MIFF::OpenForWriting {
 }
 
 // FUNCTION: SIMCOPTER 0x004aba2c
-MIFF::OpenForAppending {
+long MIFF::OpenForAppending() {
 // LINE 168:
 	asm( 
 "	      004aba2c    push ebp"
@@ -719,7 +719,7 @@ MIFF::OpenForAppending {
 }
 
 // FUNCTION: SIMCOPTER 0x004abb47
-MIFF::Close {
+long MIFF::Close() {
 // LINE 193:
 	asm( 
 "	      004abb47    push ebp"
@@ -767,7 +767,7 @@ MIFF::Close {
 }
 
 // FUNCTION: SIMCOPTER 0x004abb95
-MIFF::VerifyFile {
+long MIFF::VerifyFile() {
 // LINE 205:
 	asm( 
 "	      004abb95    push ebp"
@@ -841,7 +841,7 @@ MIFF::VerifyFile {
 }
 
 // FUNCTION: SIMCOPTER 0x004abc32
-MIFF::ReadMIFFHeader {
+long MIFF::ReadMIFFHeader() {
 // LINE 222:
 	asm( 
 "	      004abc32    push ebp"
@@ -908,7 +908,7 @@ MIFF::ReadMIFFHeader {
 }
 
 // FUNCTION: SIMCOPTER 0x004abcba
-MIFF::ReadFileCreator {
+long MIFF::ReadFileCreator() {
 // LINE 236:
 	asm( 
 "	      004abcba    push ebp"
@@ -1001,7 +1001,7 @@ MIFF::ReadFileCreator {
 }
 
 // FUNCTION: SIMCOPTER 0x004abd6e
-MIFF::ReadFileType {
+long MIFF::ReadFileType() {
 // LINE 258:
 	asm( 
 "	      004abd6e    push ebp"
@@ -1094,7 +1094,7 @@ MIFF::ReadFileType {
 }
 
 // FUNCTION: SIMCOPTER 0x004abe22
-MIFF::ReadFileVersion {
+long MIFF::ReadFileVersion() {
 // LINE 279:
 	asm( 
 "	      004abe22    push ebp"
@@ -1187,7 +1187,7 @@ MIFF::ReadFileVersion {
 }
 
 // FUNCTION: SIMCOPTER 0x004abed6
-MIFF::ReadRecordHeader {
+long MIFF::ReadRecordHeader() {
 // LINE 308:
 	asm( 
 "	      004abed6    push ebp"
@@ -1303,7 +1303,7 @@ MIFF::ReadRecordHeader {
 }
 
 // FUNCTION: SIMCOPTER 0x004abfcc
-MIFF::CountRecords {
+long MIFF::CountRecords() {
 // LINE 349:
 	asm( 
 "	      004abfcc    push ebp"
@@ -1432,7 +1432,7 @@ MIFF::CountRecords {
 }
 
 // FUNCTION: SIMCOPTER 0x004ac0b4
-MIFF::GoToFirstRecord {
+long MIFF::GoToFirstRecord() {
 // LINE 390:
 	asm( 
 "	      004ac0b4    push ebp"
@@ -1506,7 +1506,7 @@ MIFF::GoToFirstRecord {
 }
 
 // FUNCTION: SIMCOPTER 0x004ac14f
-MIFF::GoToNextRecord {
+long MIFF::GoToNextRecord() {
 // LINE 413:
 	asm( 
 "	      004ac14f    push ebp"
@@ -1689,7 +1689,7 @@ MIFF::GoToNextRecord {
 }
 
 // FUNCTION: SIMCOPTER 0x004ac2f1
-MIFF::GoToPreviousRecord {
+long MIFF::GoToPreviousRecord() {
 // LINE 467:
 	asm( 
 "	      004ac2f1    push ebp"
@@ -1740,7 +1740,7 @@ MIFF::GoToPreviousRecord {
 }
 
 // FUNCTION: SIMCOPTER 0x004ac332
-MIFF::GoToFirstRecordOfGivenType {
+long MIFF::GoToFirstRecordOfGivenType(long) {
 // LINE 491:
 	asm( 
 "	      004ac332    push ebp"
@@ -1815,7 +1815,7 @@ MIFF::GoToFirstRecordOfGivenType {
 }
 
 // FUNCTION: SIMCOPTER 0x004ac3ab
-MIFF::GoToNextRecordOfGivenType {
+long MIFF::GoToNextRecordOfGivenType(long) {
 // LINE 514:
 	asm( 
 "	      004ac3ab    push ebp"
@@ -1869,7 +1869,7 @@ MIFF::GoToNextRecordOfGivenType {
 }
 
 // FUNCTION: SIMCOPTER 0x004ac3fb
-MIFF::GoToNthRecord {
+long MIFF::GoToNthRecord(long) {
 // LINE 535:
 	asm( 
 "	      004ac3fb    push ebp"
@@ -1920,7 +1920,7 @@ MIFF::GoToNthRecord {
 }
 
 // FUNCTION: SIMCOPTER 0x004ac44e
-MIFF::ReadPresentRecord {
+long MIFF::ReadPresentRecord(struct MIFFRecord*, long) {
 // LINE 553:
 	asm( 
 "	      004ac44e    push ebp"
@@ -2034,7 +2034,7 @@ MIFF::ReadPresentRecord {
 }
 
 // FUNCTION: SIMCOPTER 0x004ac544
-MIFF::ReadPresentRecordData {
+long MIFF::ReadPresentRecordData(char *, long) {
 // LINE 591:
 	asm( 
 "	      004ac544    push ebp"
@@ -2142,7 +2142,7 @@ MIFF::ReadPresentRecordData {
 }
 
 // FUNCTION: SIMCOPTER 0x004ac63b
-MIFF::WriteFileHeader {
+long MIFF::WriteFileHeader(long, long, long) {
 // LINE 639:
 	asm( 
 "	      004ac63b    push ebp"
@@ -2268,7 +2268,7 @@ MIFF::WriteFileHeader {
 }
 
 // FUNCTION: SIMCOPTER 0x004ac758
-MIFF::WriteMIFFRecord {
+long MIFF::WriteMIFFRecord(struct MIFFRecord*, long) {
 // LINE 669:
 	asm( 
 "	      004ac758    push ebp"
@@ -2357,7 +2357,7 @@ MIFF::WriteMIFFRecord {
 }
 
 // FUNCTION: SIMCOPTER 0x004ac811
-MIFF::WriteDataRecord {
+long MIFF::WriteDataRecord(long, char *, long) {
 // LINE 701:
 	asm( 
 "	      004ac811    push ebp"
@@ -2464,7 +2464,7 @@ MIFF::WriteDataRecord {
 }
 
 // FUNCTION: SIMCOPTER 0x004ac8fb
-MIFF::WriteEnd {
+long MIFF::WriteEnd() {
 // LINE 735:
 	asm( 
 "	      004ac8fb    push ebp"

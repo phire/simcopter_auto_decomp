@@ -78,7 +78,7 @@
 // $E141
 
 // FUNCTION: SIMCOPTER 0x00487b0f
-GamePreferences::GamePreferences {
+void GamePreferences::GamePreferences() {
 // LINE 96:
 	asm( 
 "	      00487b0f    push ebp"
@@ -118,7 +118,7 @@ GamePreferences::GamePreferences {
 }
 
 // FUNCTION: SIMCOPTER 0x00487b77
-RenderPreferences::RenderPreferences {
+void RenderPreferences::RenderPreferences() {
 // LINE 105:
 	asm( 
 "	      00487b77    push ebp"
@@ -150,7 +150,7 @@ RenderPreferences::RenderPreferences {
 }
 
 // FUNCTION: SIMCOPTER 0x00487bb7
-CGameApp::CGameApp {
+public: __thiscall CGameApp::CGameApp(void) {
 // LINE 119:
 	asm( 
 "	      00487bb7    push ebp"
@@ -404,7 +404,7 @@ CGameApp::CGameApp {
 }
 
 // FUNCTION: SIMCOPTER 0x00487f72
-CGameApp::~CGameApp {
+public: virtual __thiscall CGameApp::~CGameApp(void) {
 // LINE 131:
 	asm( 
 "	      00487f72    push ebp"
@@ -879,7 +879,7 @@ CGameApp::~CGameApp {
 }
 
 // FUNCTION: SIMCOPTER 0x004885ed
-CGameApp::InitializeMemberVariables {
+public: void __thiscall CGameApp::InitializeMemberVariables(void) {
 // LINE 203:
 	asm( 
 "	      004885ed    push ebp"
@@ -1091,7 +1091,7 @@ CGameApp::InitializeMemberVariables {
 }
 
 // FUNCTION: SIMCOPTER 0x004887b7
-CGameApp::PrepareGame {
+public: virtual unsigned long __thiscall CGameApp::PrepareGame(void) {
 // LINE 258:
 	asm( 
 "	      004887b7    push ebp"
@@ -2133,7 +2133,7 @@ CGameApp::PrepareGame {
 }
 
 // FUNCTION: SIMCOPTER 0x004896d1
-CGameApp::NewWindow {
+public: virtual class CSparkalWindow * __thiscall CGameApp::NewWindow(unsigned long, unsigned long, unsigned long, struct SparkalColor const *, char const *) {
 // LINE 373:
 	asm( 
 "	      004896d1    push ebp"
@@ -2179,7 +2179,7 @@ CGameApp::NewWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x00489726
-CGameApp::Initialize {
+public: virtual unsigned long __thiscall CGameApp::Initialize(void) {
 // LINE 386:
 	asm( 
 "	      00489726    push ebp"
@@ -2610,7 +2610,7 @@ CGameApp::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x00489c43
-CGameApp::ParseCommandLine {
+public: virtual void __thiscall CGameApp::ParseCommandLine(void) {
 // LINE 506:
 	asm( 
 "	      00489c43    push ebp"
@@ -2922,7 +2922,7 @@ CGameApp::ParseCommandLine {
 }
 
 // FUNCTION: SIMCOPTER 0x00489f3d
-CGameApp::IsSwitchPresent {
+public: int __thiscall CGameApp::IsSwitchPresent(char, char *) {
 // LINE 593:
 	asm( 
 "	      00489f3d    push ebp"
@@ -3142,7 +3142,7 @@ CGameApp::IsSwitchPresent {
 }
 
 // FUNCTION: SIMCOPTER 0x0048a15d
-CGameApp::SetCurrentLanguageUse {
+public: int __thiscall CGameApp::SetCurrentLanguageUse(int) {
 // LINE 650:
 	asm( 
 "	      0048a15d    push ebp"
@@ -3176,7 +3176,7 @@ CGameApp::SetCurrentLanguageUse {
 }
 
 // FUNCTION: SIMCOPTER 0x0048a186
-CGameApp::DisplayDebugSystemInformation {
+public: void __thiscall CGameApp::DisplayDebugSystemInformation(void) {
 // LINE 661:
 	asm( 
 "	      0048a186    push ebp"
@@ -3383,7 +3383,7 @@ CGameApp::DisplayDebugSystemInformation {
 }
 
 // FUNCTION: SIMCOPTER 0x0048a370
-CGameApp::SetSystemPriorityLevel {
+public: void __thiscall CGameApp::SetSystemPriorityLevel(long) {
 // LINE 719:
 	asm( 
 "	      0048a370    push ebp"
@@ -3462,7 +3462,7 @@ CGameApp::SetSystemPriorityLevel {
 }
 
 // FUNCTION: SIMCOPTER 0x0048a409
-CGameApp::InitializeCommandSystem {
+public: virtual void __thiscall CGameApp::InitializeCommandSystem(void) {
 // LINE 747:
 	asm( 
 "	      0048a409    push ebp"
@@ -3856,7 +3856,7 @@ CGameApp::InitializeCommandSystem {
 }
 
 // FUNCTION: SIMCOPTER 0x0048a943
-CGameApp::InitializeJoysticks {
+public: virtual void __thiscall CGameApp::InitializeJoysticks(void) {
 // LINE 792:
 	asm( 
 "	      0048a943    push ebp"
@@ -3896,7 +3896,7 @@ CGameApp::InitializeJoysticks {
 }
 
 // FUNCTION: SIMCOPTER 0x0048a980
-CGameApp::HaveAnyJoysticksChangedSinceLastPlay {
+public: virtual int __thiscall CGameApp::HaveAnyJoysticksChangedSinceLastPlay(void) {
 // LINE 809:
 	asm( 
 "	      0048a980    push ebp"

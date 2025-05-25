@@ -6,7 +6,7 @@
 
 // Contribution: 1:001339c0-0013483c Module: 161, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x005349c0
-CreateCriminalCarInstance {
+int32_t CreateCriminalCarInstance() {
 // LINE 81:
 	asm( 
 "	      005349c0    push ebp"
@@ -39,7 +39,7 @@ CreateCriminalCarInstance {
 }
 
 // FUNCTION: SIMCOPTER 0x005349f0
-S3CriminalMissionStart {
+int32_t S3CriminalMissionStart() {
 // LINE 87:
 	asm( 
 "	      005349f0    push ebp"
@@ -73,7 +73,7 @@ S3CriminalMissionStart {
 }
 
 // FUNCTION: SIMCOPTER 0x00534a18
-CriminalEvaderCarClass::CriminalEvaderCarClass {
+void CriminalEvaderCarClass::CriminalEvaderCarClass() {
 // LINE 97:
 	asm( 
 "	      00534a18    push ebp"
@@ -106,7 +106,7 @@ CriminalEvaderCarClass::CriminalEvaderCarClass {
 }
 
 // FUNCTION: SIMCOPTER 0x00534a4c
-CriminalEvaderCarClass::~CriminalEvaderCarClass {
+void CriminalEvaderCarClass::~CriminalEvaderCarClass() {
 // LINE 103:
 	asm( 
 "	      00534a4c    push ebp"
@@ -130,7 +130,7 @@ CriminalEvaderCarClass::~CriminalEvaderCarClass {
 }
 
 // FUNCTION: SIMCOPTER 0x00534a73
-CriminalEvaderCarClass::CreateInstance {
+class CriminalEvaderCarClass* CriminalEvaderCarClass::CreateInstance(int32_t) {
 // LINE 123:
 	asm( 
 "	      00534a73    push ebp"
@@ -215,7 +215,7 @@ CriminalEvaderCarClass::CreateInstance {
 }
 
 // FUNCTION: SIMCOPTER 0x00534b21
-CriminalEvaderCarClass::StartCriminalMission {
+int32_t CriminalEvaderCarClass::StartCriminalMission(short, short, long, long) {
 // LINE 156:
 	asm( 
 "	      00534b21    push ebp"
@@ -358,7 +358,7 @@ CriminalEvaderCarClass::StartCriminalMission {
 }
 
 // FUNCTION: SIMCOPTER 0x00534c45
-CriminalEvaderCarClass::ItterateFSM {
+void CriminalEvaderCarClass::ItterateFSM() {
 // LINE 206:
 	asm( 
 "	      00534c45    push ebp"
@@ -902,7 +902,7 @@ CriminalEvaderCarClass::ItterateFSM {
 }
 
 // FUNCTION: SIMCOPTER 0x0053512e
-CriminalEvaderCarClass::PullOver {
+void CriminalEvaderCarClass::PullOver(short) {
 // LINE 391:
 	asm( 
 "	      0053512e    push ebp"
@@ -960,7 +960,7 @@ CriminalEvaderCarClass::PullOver {
 }
 
 // FUNCTION: SIMCOPTER 0x005351b3
-CriminalEvaderCarClass::AdjustSpeed {
+void CriminalEvaderCarClass::AdjustSpeed() {
 // LINE 417:
 	asm( 
 "	      005351b3    push ebp"
@@ -1006,7 +1006,7 @@ CriminalEvaderCarClass::AdjustSpeed {
 }
 
 // FUNCTION: SIMCOPTER 0x00535202
-CriminalEvaderCarClass::NearToBuilding {
+int32_t CriminalEvaderCarClass::NearToBuilding() {
 // LINE 441:
 	asm( 
 "	      00535202    push ebp"
@@ -1671,7 +1671,7 @@ CriminalEvaderCarClass::NearToBuilding {
 }
 
 // FUNCTION: SIMCOPTER 0x00535709
-CriminalEvaderCarClass::ShowWhereWeAre {
+void CriminalEvaderCarClass::ShowWhereWeAre() {
 // LINE 644:
 	asm( 
 "	      00535709    push ebp"
@@ -1725,7 +1725,7 @@ CriminalEvaderCarClass::ShowWhereWeAre {
 }
 
 // FUNCTION: SIMCOPTER 0x00535754
-CriminalEvaderCarClass::SetSaveData {
+void CriminalEvaderCarClass::SetSaveData(struct _AUTO_LOAD_SAVE*) {
 // LINE 667:
 	asm( 
 "	      00535754    push ebp"
@@ -1783,7 +1783,7 @@ CriminalEvaderCarClass::SetSaveData {
 }
 
 // FUNCTION: SIMCOPTER 0x005357c0
-CriminalEvaderCarClass::LoadSaveData {
+void CriminalEvaderCarClass::LoadSaveData(struct _AUTO_LOAD_SAVE*) {
 // LINE 687:
 	asm( 
 "	      005357c0    push ebp"

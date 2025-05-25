@@ -6,7 +6,7 @@
 
 // Contribution: 1:000a9800-000aa528 Module: 7, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x004aa800
-CRLECompressedImage::CRLECompressedImage {
+void CRLECompressedImage::CRLECompressedImage(long) {
 // LINE 47:
 	asm( 
 "	      004aa800    push ebp"
@@ -281,7 +281,7 @@ CRLECompressedImage::CRLECompressedImage {
 }
 
 // FUNCTION: SIMCOPTER 0x004aabb7
-CRLECompressedImage::CRLECompressedImage {
+void CRLECompressedImage::CRLECompressedImage(const class CFlatImage*, long, long, long, long, int32_t) {
 // LINE 97:
 	asm( 
 "	      004aabb7    push ebp"
@@ -309,7 +309,7 @@ CRLECompressedImage::CRLECompressedImage {
 }
 
 // FUNCTION: SIMCOPTER 0x004aabe5
-CRLECompressedImage::~CRLECompressedImage {
+void CRLECompressedImage::~CRLECompressedImage() {
 // LINE 110:
 	asm( 
 "	      004aabe5    push ebp"
@@ -371,7 +371,7 @@ CRLECompressedImage::~CRLECompressedImage {
 }
 
 // FUNCTION: SIMCOPTER 0x004aac7a
-CRLECompressedImage::Lock {
+unsigned long CRLECompressedImage::Lock() {
 // LINE 121:
 	asm( 
 "	      004aac7a    push ebp"
@@ -460,7 +460,7 @@ CRLECompressedImage::Lock {
 }
 
 // FUNCTION: SIMCOPTER 0x004aad3a
-CRLECompressedImage::Unlock {
+unsigned long CRLECompressedImage::Unlock() {
 // LINE 135:
 	asm( 
 "	      004aad3a    push ebp"
@@ -550,7 +550,7 @@ CRLECompressedImage::Unlock {
 }
 
 // FUNCTION: SIMCOPTER 0x004aae02
-CRLECompressedImage::Compose {
+unsigned long CRLECompressedImage::Compose(class IFlatImage*, long, long, long, long, long, long) {
 // LINE 156:
 	asm( 
 "	      004aae02    push ebp"
@@ -844,7 +844,7 @@ CRLECompressedImage::Compose {
 }
 
 // FUNCTION: SIMCOPTER 0x004ab063
-ConvertCompressedByteOrdering {
+void ConvertCompressedByteOrdering() {
 // LINE 232:
 	asm( 
 "	      004ab063    push ebp"
@@ -865,7 +865,7 @@ ConvertCompressedByteOrdering {
 }
 
 // FUNCTION: SIMCOPTER 0x004ab073
-RLEDecompressUnclippedX {
+void RLEDecompressUnclippedX() {
 // LINE 322:
 	asm( 
 "	      004ab073    push ebp"
@@ -1124,7 +1124,7 @@ RLEDecompressUnclippedX {
 }
 
 // FUNCTION: SIMCOPTER 0x004ab1f7
-RLEDecompressClippedX {
+void RLEDecompressClippedX() {
 // LINE 404:
 	asm( 
 "	      004ab1f7    push ebp"

@@ -6,7 +6,7 @@
 
 // Contribution: 1:000737f0-00073953 Module: 35, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x004747f0
-Cursor::Cursor {
+void Cursor::Cursor() {
 // LINE 19:
 	asm( 
 "	      004747f0    push ebp"
@@ -30,7 +30,7 @@ Cursor::Cursor {
 }
 
 // FUNCTION: SIMCOPTER 0x00474809
-Cursor::~Cursor {
+void Cursor::~Cursor() {
 // LINE 22:
 	asm( 
 "	      00474809    push ebp"
@@ -53,7 +53,7 @@ Cursor::~Cursor {
 }
 
 // FUNCTION: SIMCOPTER 0x0047481f
-Cursor::IsButtonDown {
+int32_t Cursor::IsButtonDown(unsigned long, unsigned long) {
 // LINE 35:
 	asm( 
 "	      0047481f    push ebp"
@@ -189,7 +189,7 @@ Cursor::IsButtonDown {
 }
 
 // FUNCTION: SIMCOPTER 0x00474921
-Cursor::WhereIsCursor {
+int32_t Cursor::WhereIsCursor(unsigned long *, unsigned long *) {
 // LINE 89:
 	asm( 
 "	      00474921    push ebp"

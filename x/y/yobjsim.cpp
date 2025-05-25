@@ -6,7 +6,7 @@
 
 // Contribution: 1:00153ff0-0015b264 Module: 196, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x00554ff0
-cYObject::InBoundingRect {
+unsigned short cYObject::InBoundingRect(struct Point3d, int32_t, struct Point3d, int32_t) {
 // LINE 57:
 	asm( 
 "	      00554ff0    push ebp"
@@ -115,7 +115,7 @@ cYObject::InBoundingRect {
 }
 
 // FUNCTION: SIMCOPTER 0x005550ac
-PersonHitDispatch {
+void PersonHitDispatch() {
 // LINE 77:
 	asm( 
 "	      005550ac    push ebp"
@@ -362,7 +362,7 @@ PersonHitDispatch {
 }
 
 // FUNCTION: SIMCOPTER 0x00555369
-cYObject::GetDynObj {
+struct _DYOBJ_INST* cYObject::GetDynObj(struct _DYOBJ_INST*, struct Point3d, int32_t, struct _DYOBJ_INST*, struct _DYOBJ_INST*) {
 // LINE 172:
 	asm( 
 "	      00555369    push ebp"
@@ -689,7 +689,7 @@ cYObject::GetDynObj {
 }
 
 // FUNCTION: SIMCOPTER 0x0055565e
-cYObject::GetStaticObj {
+struct _STOBJ_INST* cYObject::GetStaticObj(struct Point3d, int32_t) {
 // LINE 264:
 	asm( 
 "	      0055565e    push ebp"
@@ -822,7 +822,7 @@ cYObject::GetStaticObj {
 }
 
 // FUNCTION: SIMCOPTER 0x00555746
-cYObject::GetLocType {
+enum cYObject::LocationType cYObject::GetLocType(short, short) {
 // LINE 318:
 	asm( 
 "	      00555746    push ebp"
@@ -901,7 +901,7 @@ cYObject::GetLocType {
 }
 
 // FUNCTION: SIMCOPTER 0x00555819
-cYObject::IsWater {
+unsigned short cYObject::IsWater(short, short) {
 // LINE 329:
 	asm( 
 "	      00555819    push ebp"
@@ -954,7 +954,7 @@ cYObject::IsWater {
 }
 
 // FUNCTION: SIMCOPTER 0x00555873
-cYObject::GetRoadDir {
+char cYObject::GetRoadDir(struct Point3d) {
 // LINE 338:
 	asm( 
 "	      00555873    push ebp"
@@ -979,7 +979,7 @@ cYObject::GetRoadDir {
 }
 
 // FUNCTION: SIMCOPTER 0x00555885
-cYObject::TryTableMove {
+enum cYObject::MoveErrorCode cYObject::TryTableMove(short, unsigned short, struct cYObject::MoveInfo*) {
 // LINE 349:
 	asm( 
 "	      00555885    push ebp"
@@ -1130,7 +1130,7 @@ cYObject::TryTableMove {
 }
 
 // FUNCTION: SIMCOPTER 0x005559b2
-cYObject::TryVectorMove {
+enum cYObject::MoveErrorCode cYObject::TryVectorMove(struct Point3d, int32_t, struct cYObject::MoveInfo*) {
 // LINE 380:
 	asm( 
 "	      005559b2    push ebp"
@@ -1225,7 +1225,7 @@ cYObject::TryVectorMove {
 }
 
 // FUNCTION: SIMCOPTER 0x00555a60
-cYObject::TryMove {
+enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short, struct cYObject::MoveInfo*, int32_t, int32_t, int32_t, unsigned short) {
 // LINE 401:
 	asm( 
 "	      00555a60    push ebp"
@@ -2149,7 +2149,7 @@ cYObject::TryMove {
 }
 
 // FUNCTION: SIMCOPTER 0x00556470
-cYObject::CanJumpOffHere {
+unsigned short cYObject::CanJumpOffHere() {
 // LINE 605:
 	asm( 
 "	      00556470    push ebp"
@@ -2274,7 +2274,7 @@ cYObject::CanJumpOffHere {
 }
 
 // FUNCTION: SIMCOPTER 0x005565b8
-cYObject::IsWalkable {
+unsigned short cYObject::IsWalkable(short, short, enum cYObject::LocationType) {
 // LINE 633:
 	asm( 
 "	      005565b8    push ebp"
@@ -2391,7 +2391,7 @@ cYObject::IsWalkable {
 }
 
 // FUNCTION: SIMCOPTER 0x005566af
-GetRiotCenter {
+struct Point2d GetRiotCenter() {
 // LINE 656:
 	asm( 
 "	      005566af    push ebp"
@@ -2424,7 +2424,7 @@ GetRiotCenter {
 }
 
 // FUNCTION: SIMCOPTER 0x005566da
-cYObject::GetRiotCenter {
+struct Point2d cYObject::GetRiotCenter(long) {
 // LINE 661:
 	asm( 
 "	      005566da    push ebp"
@@ -2570,7 +2570,7 @@ cYObject::GetRiotCenter {
 }
 
 // FUNCTION: SIMCOPTER 0x00556848
-cYObject::GetSurroundingRiotInfo {
+void cYObject::GetSurroundingRiotInfo(short, short *, short *, short *) {
 // LINE 682:
 	asm( 
 "	      00556848    push ebp"
@@ -3024,7 +3024,7 @@ cYObject::GetSurroundingRiotInfo {
 }
 
 // FUNCTION: SIMCOPTER 0x00556cb9
-cYObject::GetNearbyFire {
+unsigned short cYObject::GetNearbyFire(short, short *, short *) {
 // LINE 745:
 	asm( 
 "	      00556cb9    push ebp"
@@ -3238,7 +3238,7 @@ cYObject::GetNearbyFire {
 }
 
 // FUNCTION: SIMCOPTER 0x00556ec0
-cYObject::GetClosest {
+class cYObject* cYObject::GetClosest(enum MissionSupertype, enum MissionType, unsigned short, short *) {
 // LINE 774:
 	asm( 
 "	      00556ec0    push ebp"
@@ -3481,7 +3481,7 @@ cYObject::GetClosest {
 }
 
 // FUNCTION: SIMCOPTER 0x0055716e
-cYObject::Die {
+void cYObject::Die() {
 // LINE 803:
 	asm( 
 "	      0055716e    push ebp"
@@ -3562,7 +3562,7 @@ cYObject::Die {
 }
 
 // FUNCTION: SIMCOPTER 0x005571fb
-cYObject::GetFirst {
+class cYObject* cYObject::GetFirst(short, short) {
 // LINE 821:
 	asm( 
 "	      005571fb    push ebp"
@@ -3684,7 +3684,7 @@ cYObject::GetFirst {
 }
 
 // FUNCTION: SIMCOPTER 0x0055734c
-cYObject::DropToted {
+class cYObject* cYObject::DropToted() {
 // LINE 836:
 	asm( 
 "	      0055734c    push ebp"
@@ -3765,7 +3765,7 @@ cYObject::DropToted {
 }
 
 // FUNCTION: SIMCOPTER 0x005573f5
-cYObject::GetToted {
+class cYObject* cYObject::GetToted() {
 // LINE 849:
 	asm( 
 "	      005573f5    push ebp"
@@ -3878,7 +3878,7 @@ cYObject::GetToted {
 }
 
 // FUNCTION: SIMCOPTER 0x0055752b
-cYObject::iDoIHaveAMaster {
+enum TreeSim::ReturnCode cYObject::iDoIHaveAMaster(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 875:
 	asm( 
 "	      0055752b    push ebp"
@@ -3927,7 +3927,7 @@ cYObject::iDoIHaveAMaster {
 }
 
 // FUNCTION: SIMCOPTER 0x00557570
-cYObject::iPutMyCarInStack {
+enum TreeSim::ReturnCode cYObject::iPutMyCarInStack(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 885:
 	asm( 
 "	      00557570    push ebp"
@@ -3993,7 +3993,7 @@ cYObject::iPutMyCarInStack {
 }
 
 // FUNCTION: SIMCOPTER 0x005575dc
-cYObject::iIdle {
+enum TreeSim::ReturnCode cYObject::iIdle(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 899:
 	asm( 
 "	      005575dc    push ebp"
@@ -4098,7 +4098,7 @@ cYObject::iIdle {
 }
 
 // FUNCTION: SIMCOPTER 0x005576f6
-cYObject::iSetAnim {
+enum TreeSim::ReturnCode cYObject::iSetAnim(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 911:
 	asm( 
 "	      005576f6    push ebp"
@@ -4179,7 +4179,7 @@ cYObject::iSetAnim {
 }
 
 // FUNCTION: SIMCOPTER 0x005577cd
-cYObject::iAttr {
+enum TreeSim::ReturnCode cYObject::iAttr(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 920:
 	asm( 
 "	      005577cd    push ebp"
@@ -4221,7 +4221,7 @@ cYObject::iAttr {
 }
 
 // FUNCTION: SIMCOPTER 0x00557807
-cYObject::iWalk {
+enum TreeSim::ReturnCode cYObject::iWalk(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 927:
 	asm( 
 "	      00557807    push ebp"
@@ -4378,7 +4378,7 @@ cYObject::iWalk {
 }
 
 // FUNCTION: SIMCOPTER 0x00557948
-cYObject::iSetBody {
+enum TreeSim::ReturnCode cYObject::iSetBody(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 966:
 	asm( 
 "	      00557948    push ebp"
@@ -4521,7 +4521,7 @@ cYObject::iSetBody {
 }
 
 // FUNCTION: SIMCOPTER 0x00557b25
-cYObject::iRandom {
+enum TreeSim::ReturnCode cYObject::iRandom(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 976:
 	asm( 
 "	      00557b25    push ebp"
@@ -4626,7 +4626,7 @@ cYObject::iRandom {
 }
 
 // FUNCTION: SIMCOPTER 0x00557c20
-cYObject::iWalkToAndGrabOntoStackObject {
+enum TreeSim::ReturnCode cYObject::iWalkToAndGrabOntoStackObject(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 989:
 	asm( 
 "	      00557c20    push ebp"
@@ -4941,7 +4941,7 @@ cYObject::iWalkToAndGrabOntoStackObject {
 }
 
 // FUNCTION: SIMCOPTER 0x00557f40
-cYObject::iUpdateMyMission {
+enum TreeSim::ReturnCode cYObject::iUpdateMyMission(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1033:
 	asm( 
 "	      00557f40    push ebp"
@@ -4995,7 +4995,7 @@ cYObject::iUpdateMyMission {
 }
 
 // FUNCTION: SIMCOPTER 0x00557f90
-cYObject::iCheckForTrue {
+enum TreeSim::ReturnCode cYObject::iCheckForTrue(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1043:
 	asm( 
 "	      00557f90    push ebp"
@@ -5314,7 +5314,7 @@ cYObject::iCheckForTrue {
 }
 
 // FUNCTION: SIMCOPTER 0x0055826f
-cYObject::iCompareMyLocWith {
+enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1109:
 	asm( 
 "	      0055826f    push ebp"
@@ -5951,7 +5951,7 @@ cYObject::iCompareMyLocWith {
 }
 
 // FUNCTION: SIMCOPTER 0x005587c8
-cYObject::iSelfDecommission {
+enum TreeSim::ReturnCode cYObject::iSelfDecommission(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1245:
 	asm( 
 "	      005587c8    push ebp"
@@ -5991,7 +5991,7 @@ cYObject::iSelfDecommission {
 }
 
 // FUNCTION: SIMCOPTER 0x005587f9
-cYObject::iGetOffMasterObject {
+enum TreeSim::ReturnCode cYObject::iGetOffMasterObject(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1254:
 	asm( 
 "	      005587f9    push ebp"
@@ -6084,7 +6084,7 @@ cYObject::iGetOffMasterObject {
 }
 
 // FUNCTION: SIMCOPTER 0x005588f3
-cYObject::iTurnTowardsStackObject {
+enum TreeSim::ReturnCode cYObject::iTurnTowardsStackObject(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1265:
 	asm( 
 "	      005588f3    push ebp"
@@ -6157,7 +6157,7 @@ cYObject::iTurnTowardsStackObject {
 }
 
 // FUNCTION: SIMCOPTER 0x0055898a
-cYObject::iIsThisLocType {
+enum TreeSim::ReturnCode cYObject::iIsThisLocType(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1275:
 	asm( 
 "	      0055898a    push ebp"
@@ -6227,7 +6227,7 @@ cYObject::iIsThisLocType {
 }
 
 // FUNCTION: SIMCOPTER 0x00558a02
-cYObject::iIsThisLocTypeNeutral {
+enum TreeSim::ReturnCode cYObject::iIsThisLocTypeNeutral(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1288:
 	asm( 
 "	      00558a02    push ebp"
@@ -6305,7 +6305,7 @@ cYObject::iIsThisLocTypeNeutral {
 }
 
 // FUNCTION: SIMCOPTER 0x00558abb
-cYObject::iCanJumpOffHere {
+enum TreeSim::ReturnCode cYObject::iCanJumpOffHere(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1300:
 	asm( 
 "	      00558abb    push ebp"
@@ -6356,7 +6356,7 @@ cYObject::iCanJumpOffHere {
 }
 
 // FUNCTION: SIMCOPTER 0x00558b03
-cYObject::iCheckForSpotlightInMyCell {
+enum TreeSim::ReturnCode cYObject::iCheckForSpotlightInMyCell(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1311:
 	asm( 
 "	      00558b03    push ebp"
@@ -6509,7 +6509,7 @@ cYObject::iCheckForSpotlightInMyCell {
 }
 
 // FUNCTION: SIMCOPTER 0x00558c9c
-cYObject::iIncrementRiotVal {
+enum TreeSim::ReturnCode cYObject::iIncrementRiotVal(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1328:
 	asm( 
 "	      00558c9c    push ebp"
@@ -6580,7 +6580,7 @@ cYObject::iIncrementRiotVal {
 }
 
 // FUNCTION: SIMCOPTER 0x00558d4d
-cYObject::iGetSurroundingRiotVal {
+enum TreeSim::ReturnCode cYObject::iGetSurroundingRiotVal(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1338:
 	asm( 
 "	      00558d4d    push ebp"
@@ -6767,7 +6767,7 @@ cYObject::iGetSurroundingRiotVal {
 }
 
 // FUNCTION: SIMCOPTER 0x00558f7c
-cYObject::iIsThisScurkID {
+enum TreeSim::ReturnCode cYObject::iIsThisScurkID(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1354:
 	asm( 
 "	      00558f7c    push ebp"
@@ -6875,7 +6875,7 @@ cYObject::iIsThisScurkID {
 }
 
 // FUNCTION: SIMCOPTER 0x005590a2
-cYObject::iGosubToInitbhav {
+enum TreeSim::ReturnCode cYObject::iGosubToInitbhav(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1367:
 	asm( 
 "	      005590a2    push ebp"
@@ -6969,7 +6969,7 @@ cYObject::iGosubToInitbhav {
 }
 
 // FUNCTION: SIMCOPTER 0x0055919a
-cYObject::iAdjustRadiusForRiotVal {
+enum TreeSim::ReturnCode cYObject::iAdjustRadiusForRiotVal(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1380:
 	asm( 
 "	      0055919a    push ebp"
@@ -7021,7 +7021,7 @@ cYObject::iAdjustRadiusForRiotVal {
 }
 
 // FUNCTION: SIMCOPTER 0x00559202
-cYObject::iJoinRiot {
+enum TreeSim::ReturnCode cYObject::iJoinRiot(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1389:
 	asm( 
 "	      00559202    push ebp"
@@ -7358,7 +7358,7 @@ cYObject::iJoinRiot {
 }
 
 // FUNCTION: SIMCOPTER 0x00559787
-cYObject::iSetDirection {
+enum TreeSim::ReturnCode cYObject::iSetDirection(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1405:
 	asm( 
 "	      00559787    push ebp"
@@ -7474,7 +7474,7 @@ cYObject::iSetDirection {
 }
 
 // FUNCTION: SIMCOPTER 0x005598ba
-cYObject::iThrowProjectile {
+enum TreeSim::ReturnCode cYObject::iThrowProjectile(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1420:
 	asm( 
 "	      005598ba    push ebp"
@@ -7702,7 +7702,7 @@ cYObject::iThrowProjectile {
 }
 
 // FUNCTION: SIMCOPTER 0x00559b31
-cYObject::iTurnFromStackObject {
+enum TreeSim::ReturnCode cYObject::iTurnFromStackObject(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1445:
 	asm( 
 "	      00559b31    push ebp"
@@ -7775,7 +7775,7 @@ cYObject::iTurnFromStackObject {
 }
 
 // FUNCTION: SIMCOPTER 0x00559bc8
-cYObject::iTurnFromLastHitter {
+enum TreeSim::ReturnCode cYObject::iTurnFromLastHitter(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1455:
 	asm( 
 "	      00559bc8    push ebp"
@@ -7848,7 +7848,7 @@ cYObject::iTurnFromLastHitter {
 }
 
 // FUNCTION: SIMCOPTER 0x00559c65
-cYObject::iTurnTowardsLastHitter {
+enum TreeSim::ReturnCode cYObject::iTurnTowardsLastHitter(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1465:
 	asm( 
 "	      00559c65    push ebp"
@@ -7921,7 +7921,7 @@ cYObject::iTurnTowardsLastHitter {
 }
 
 // FUNCTION: SIMCOPTER 0x00559d02
-cYObject::iGetOutOfRoadEtc {
+enum TreeSim::ReturnCode cYObject::iGetOutOfRoadEtc(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1475:
 	asm( 
 "	      00559d02    push ebp"
@@ -8129,7 +8129,7 @@ cYObject::iGetOutOfRoadEtc {
 }
 
 // FUNCTION: SIMCOPTER 0x00559f1e
-cYObject::iGenerateMedevacAndSetSelfAsVictim {
+enum TreeSim::ReturnCode cYObject::iGenerateMedevacAndSetSelfAsVictim(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1530:
 	asm( 
 "	      00559f1e    push ebp"
@@ -8182,7 +8182,7 @@ cYObject::iGenerateMedevacAndSetSelfAsVictim {
 }
 
 // FUNCTION: SIMCOPTER 0x00559f74
-cYObject::iTurnToNearbyFire {
+enum TreeSim::ReturnCode cYObject::iTurnToNearbyFire(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1543:
 	asm( 
 "	      00559f74    push ebp"
@@ -8361,7 +8361,7 @@ cYObject::iTurnToNearbyFire {
 }
 
 // FUNCTION: SIMCOPTER 0x0055a15b
-cYObject::iDie {
+enum TreeSim::ReturnCode cYObject::iDie(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1560:
 	asm( 
 "	      0055a15b    push ebp"
@@ -8414,7 +8414,7 @@ cYObject::iDie {
 }
 
 // FUNCTION: SIMCOPTER 0x0055a1b1
-cYObject::iWalkToStackObject {
+enum TreeSim::ReturnCode cYObject::iWalkToStackObject(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1571:
 	asm( 
 "	      0055a1b1    push ebp"
@@ -8446,7 +8446,7 @@ cYObject::iWalkToStackObject {
 }
 
 // FUNCTION: SIMCOPTER 0x0055a1d9
-cYObject::iPutObjIntoTreeNum {
+enum TreeSim::ReturnCode cYObject::iPutObjIntoTreeNum(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1576:
 	asm( 
 "	      0055a1d9    push ebp"
@@ -8549,7 +8549,7 @@ cYObject::iPutObjIntoTreeNum {
 }
 
 // FUNCTION: SIMCOPTER 0x0055a2da
-cYObject::iVisitOz {
+enum TreeSim::ReturnCode cYObject::iVisitOz(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1589:
 	asm( 
 "	      0055a2da    push ebp"
@@ -8723,7 +8723,7 @@ cYObject::iVisitOz {
 }
 
 // FUNCTION: SIMCOPTER 0x0055a57f
-cYObject::iMakeMyMedevacVictimVisible {
+enum TreeSim::ReturnCode cYObject::iMakeMyMedevacVictimVisible(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1598:
 	asm( 
 "	      0055a57f    push ebp"
@@ -8808,7 +8808,7 @@ cYObject::iMakeMyMedevacVictimVisible {
 }
 
 // FUNCTION: SIMCOPTER 0x0055a64a
-cYObject::iMakeMyMedevacVictimInvisible {
+enum TreeSim::ReturnCode cYObject::iMakeMyMedevacVictimInvisible(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1611:
 	asm( 
 "	      0055a64a    push ebp"
@@ -8852,7 +8852,7 @@ cYObject::iMakeMyMedevacVictimInvisible {
 }
 
 // FUNCTION: SIMCOPTER 0x0055a68f
-cYObject::iMakeMeMasterOfStackObject {
+enum TreeSim::ReturnCode cYObject::iMakeMeMasterOfStackObject(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1621:
 	asm( 
 "	      0055a68f    push ebp"
@@ -8974,7 +8974,7 @@ cYObject::iMakeMeMasterOfStackObject {
 }
 
 // FUNCTION: SIMCOPTER 0x0055a7ca
-cYObject::iMakeMyStackObjectVisitOz {
+enum TreeSim::ReturnCode cYObject::iMakeMyStackObjectVisitOz(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1634:
 	asm( 
 "	      0055a7ca    push ebp"
@@ -9180,7 +9180,7 @@ cYObject::iMakeMyStackObjectVisitOz {
 }
 
 // FUNCTION: SIMCOPTER 0x0055aad0
-cYObject::iPutTotedMedVicOnStackObject {
+enum TreeSim::ReturnCode cYObject::iPutTotedMedVicOnStackObject(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1646:
 	asm( 
 "	      0055aad0    push ebp"
@@ -9350,7 +9350,7 @@ cYObject::iPutTotedMedVicOnStackObject {
 }
 
 // FUNCTION: SIMCOPTER 0x0055acf9
-cYObject::iTakeAnyMedVicOffStackObject {
+enum TreeSim::ReturnCode cYObject::iTakeAnyMedVicOffStackObject(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1660:
 	asm( 
 "	      0055acf9    push ebp"
@@ -9459,7 +9459,7 @@ cYObject::iTakeAnyMedVicOffStackObject {
 }
 
 // FUNCTION: SIMCOPTER 0x0055adf0
-cYObject::iGetOnStackObject {
+enum TreeSim::ReturnCode cYObject::iGetOnStackObject(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1678:
 	asm( 
 "	      0055adf0    push ebp"
@@ -9583,7 +9583,7 @@ cYObject::iGetOnStackObject {
 }
 
 // FUNCTION: SIMCOPTER 0x0055af39
-cYObject::iUpdateStackVictimToted {
+enum TreeSim::ReturnCode cYObject::iUpdateStackVictimToted(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1692:
 	asm( 
 "	      0055af39    push ebp"
@@ -9672,7 +9672,7 @@ cYObject::iUpdateStackVictimToted {
 }
 
 // FUNCTION: SIMCOPTER 0x0055b003
-cYObject::iGetNumSpacesOnStackObject {
+enum TreeSim::ReturnCode cYObject::iGetNumSpacesOnStackObject(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1705:
 	asm( 
 "	      0055b003    push ebp"
@@ -9821,7 +9821,7 @@ cYObject::iGetNumSpacesOnStackObject {
 }
 
 // FUNCTION: SIMCOPTER 0x0055b1a1
-cYObject::iDropToted {
+enum TreeSim::ReturnCode cYObject::iDropToted(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1722:
 	asm( 
 "	      0055b1a1    push ebp"
@@ -9882,7 +9882,7 @@ cYObject::iDropToted {
 }
 
 // FUNCTION: SIMCOPTER 0x0055b1f7
-cYObject::iUpdateStackVictimPickedUp {
+enum TreeSim::ReturnCode cYObject::iUpdateStackVictimPickedUp(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1736:
 	asm( 
 "	      0055b1f7    push ebp"
@@ -9971,7 +9971,7 @@ cYObject::iUpdateStackVictimPickedUp {
 }
 
 // FUNCTION: SIMCOPTER 0x0055b2c1
-cYObject::iCloseToHeli {
+enum TreeSim::ReturnCode cYObject::iCloseToHeli(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1749:
 	asm( 
 "	      0055b2c1    push ebp"
@@ -10064,7 +10064,7 @@ cYObject::iCloseToHeli {
 }
 
 // FUNCTION: SIMCOPTER 0x0055b3a5
-cYObject::iSetMyExpression {
+enum TreeSim::ReturnCode cYObject::iSetMyExpression(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1762:
 	asm( 
 "	      0055b3a5    push ebp"
@@ -10129,7 +10129,7 @@ cYObject::iSetMyExpression {
 }
 
 // FUNCTION: SIMCOPTER 0x0055b417
-cYObject::iGetHeliSpeedPlusDamage {
+enum TreeSim::ReturnCode cYObject::iGetHeliSpeedPlusDamage(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1775:
 	asm( 
 "	      0055b417    push ebp"
@@ -10257,7 +10257,7 @@ cYObject::iGetHeliSpeedPlusDamage {
 }
 
 // FUNCTION: SIMCOPTER 0x0055b549
-cYObject::iIsThisCellSafe {
+enum TreeSim::ReturnCode cYObject::iIsThisCellSafe(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1792:
 	asm( 
 "	      0055b549    push ebp"
@@ -10323,7 +10323,7 @@ cYObject::iIsThisCellSafe {
 }
 
 // FUNCTION: SIMCOPTER 0x0055b5ca
-cYObject::iPlaySound {
+enum TreeSim::ReturnCode cYObject::iPlaySound(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1805:
 	asm( 
 "	      0055b5ca    push ebp"
@@ -10388,7 +10388,7 @@ cYObject::iPlaySound {
 }
 
 // FUNCTION: SIMCOPTER 0x0055b631
-cYObject::iGetOnHeliIfHarnessRaised {
+enum TreeSim::ReturnCode cYObject::iGetOnHeliIfHarnessRaised(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1830:
 	asm( 
 "	      0055b631    push ebp"
@@ -10497,7 +10497,7 @@ cYObject::iGetOnHeliIfHarnessRaised {
 }
 
 // FUNCTION: SIMCOPTER 0x0055b739
-cYObject::iAmIOnHeli {
+enum TreeSim::ReturnCode cYObject::iAmIOnHeli(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1851:
 	asm( 
 "	      0055b739    push ebp"
@@ -10548,7 +10548,7 @@ cYObject::iAmIOnHeli {
 }
 
 // FUNCTION: SIMCOPTER 0x0055b789
-cYObject::iThrowFieryProjectile {
+enum TreeSim::ReturnCode cYObject::iThrowFieryProjectile(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1862:
 	asm( 
 "	      0055b789    push ebp"
@@ -10580,7 +10580,7 @@ cYObject::iThrowFieryProjectile {
 }
 
 // FUNCTION: SIMCOPTER 0x0055b7b1
-cYObject::iTellStartingObjectTrueOrFalse {
+enum TreeSim::ReturnCode cYObject::iTellStartingObjectTrueOrFalse(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1867:
 	asm( 
 "	      0055b7b1    push ebp"
@@ -10656,7 +10656,7 @@ cYObject::iTellStartingObjectTrueOrFalse {
 }
 
 // FUNCTION: SIMCOPTER 0x0055b84d
-cYObject::TryElement {
+enum TreeSim::ReturnCode cYObject::TryElement(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1880:
 	asm( 
 "	      0055b84d    push ebp"
@@ -10743,7 +10743,7 @@ cYObject::TryElement {
 }
 
 // FUNCTION: SIMCOPTER 0x0055b920
-cYObject::UpdateMission {
+void cYObject::UpdateMission(enum cYObject::MissionUpdates, long) {
 // LINE 1899:
 	asm( 
 "	      0055b920    push ebp"
@@ -11023,7 +11023,7 @@ cYObject::UpdateMission {
 }
 
 // FUNCTION: SIMCOPTER 0x0055bb60
-cYObject::TryExpression {
+enum TreeSim::ReturnCode cYObject::TryExpression(struct YObjLang::AttrParam*) {
 // LINE 1991:
 	asm( 
 "	      0055bb60    push ebp"
@@ -11551,7 +11551,7 @@ cYObject::TryExpression {
 }
 
 // FUNCTION: SIMCOPTER 0x0055bfef
-cYObject::HandleOverflow {
+void cYObject::HandleOverflow() {
 // LINE 2103:
 	asm( 
 "	      0055bfef    push ebp"
@@ -11583,7 +11583,7 @@ cYObject::HandleOverflow {
 }
 
 // FUNCTION: SIMCOPTER 0x0055c021
-cYObject::InterpValue {
+short cYObject::InterpValue(short, short, short **) {
 // LINE 2107:
 	asm( 
 "	      0055c021    push ebp"

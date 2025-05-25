@@ -6,7 +6,7 @@
 
 // Contribution: 1:000ed720-000ee1b4 Module: 177, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x004ee720
-S3ViewerInit {
+void S3ViewerInit() {
 // LINE 97:
 	asm( 
 "	      004ee720    push ebp"
@@ -209,7 +209,7 @@ S3ViewerInit {
 }
 
 // FUNCTION: SIMCOPTER 0x004ee8f1
-S3ViewerControl {
+void S3ViewerControl() {
 // LINE 169:
 	asm( 
 "	      004ee8f1    push ebp"
@@ -795,7 +795,7 @@ S3ViewerControl {
 }
 
 // FUNCTION: SIMCOPTER 0x004eee12
-S3SetBackPlaneBasedOnValue {
+void S3SetBackPlaneBasedOnValue() {
 // LINE 321:
 	asm( 
 "	      004eee12    push ebp"
@@ -890,7 +890,7 @@ S3SetBackPlaneBasedOnValue {
 }
 
 // FUNCTION: SIMCOPTER 0x004eeeb7
-GetRenderBackPlaneValue {
+long GetRenderBackPlaneValue() {
 // LINE 348:
 	asm( 
 "	      004eeeb7    push ebp"
@@ -915,7 +915,7 @@ GetRenderBackPlaneValue {
 }
 
 // FUNCTION: SIMCOPTER 0x004eeecc
-ConvertGUIBackPlaneValueToRender {
+long ConvertGUIBackPlaneValueToRender() {
 // LINE 360:
 	asm( 
 "	      004eeecc    push ebp"
@@ -967,7 +967,7 @@ ConvertGUIBackPlaneValueToRender {
 }
 
 // FUNCTION: SIMCOPTER 0x004eef09
-ConvertRenderBackPlaneValueToGUI {
+long ConvertRenderBackPlaneValueToGUI() {
 // LINE 379:
 	asm( 
 "	      004eef09    push ebp"
@@ -1024,7 +1024,7 @@ ConvertRenderBackPlaneValueToGUI {
 }
 
 // FUNCTION: SIMCOPTER 0x004eef4f
-S3ViewerRotDelta {
+int32_t S3ViewerRotDelta() {
 // LINE 400:
 	asm( 
 "	      004eef4f    push ebp"
@@ -1050,7 +1050,7 @@ S3ViewerRotDelta {
 }
 
 // FUNCTION: SIMCOPTER 0x004eef6a
-S3ViewerPosDelta {
+int32_t S3ViewerPosDelta() {
 // LINE 411:
 	asm( 
 "	      004eef6a    push ebp"
@@ -1075,7 +1075,7 @@ S3ViewerPosDelta {
 }
 
 // FUNCTION: SIMCOPTER 0x004eef7f
-S3ViewerSetView {
+void S3ViewerSetView() {
 // LINE 423:
 	asm( 
 "	      004eef7f    push ebp"
@@ -1136,7 +1136,7 @@ S3ViewerSetView {
 }
 
 // FUNCTION: SIMCOPTER 0x004eefd9
-S3ViewerCommand {
+void S3ViewerCommand() {
 // LINE 443:
 	asm( 
 "	      004eefd9    push ebp"
@@ -1302,7 +1302,7 @@ S3ViewerCommand {
 }
 
 // FUNCTION: SIMCOPTER 0x004ef14b
-S3SetDayNight {
+void S3SetDayNight() {
 // LINE 488:
 	asm( 
 "	      004ef14b    push ebp"

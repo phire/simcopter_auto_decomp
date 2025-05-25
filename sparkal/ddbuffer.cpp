@@ -6,7 +6,7 @@
 
 // Contribution: 1:0006d690-0007056d Module: 39, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x0046e690
-CBackBuffer::CBackBuffer {
+void CBackBuffer::CBackBuffer() {
 // LINE 44:
 	asm( 
 "	      0046e690    push ebp"
@@ -45,7 +45,7 @@ CBackBuffer::CBackBuffer {
 }
 
 // FUNCTION: SIMCOPTER 0x0046e6df
-CBackBuffer::CBackBuffer {
+void CBackBuffer::CBackBuffer(char *) {
 // LINE 60:
 	asm( 
 "	      0046e6df    push ebp"
@@ -386,7 +386,7 @@ CBackBuffer::CBackBuffer {
 }
 
 // FUNCTION: SIMCOPTER 0x0046ea06
-CBackBuffer::CBackBuffer {
+void CBackBuffer::CBackBuffer(long, long, const struct SparkalColor*) {
 // LINE 157:
 	asm( 
 "	      0046ea06    push ebp"
@@ -551,7 +551,7 @@ CBackBuffer::CBackBuffer {
 }
 
 // FUNCTION: SIMCOPTER 0x0046eb58
-CBackBuffer::InitializeMemberVariables {
+void CBackBuffer::InitializeMemberVariables() {
 // LINE 215:
 	asm( 
 "	      0046eb58    push ebp"
@@ -700,7 +700,7 @@ CBackBuffer::InitializeMemberVariables {
 }
 
 // FUNCTION: SIMCOPTER 0x0046ec7a
-CBackBuffer::~CBackBuffer {
+void CBackBuffer::~CBackBuffer() {
 // LINE 253:
 	asm( 
 "	      0046ec7a    push ebp"
@@ -859,7 +859,7 @@ CBackBuffer::~CBackBuffer {
 }
 
 // FUNCTION: SIMCOPTER 0x0046edca
-CBackBuffer::Load {
+unsigned long CBackBuffer::Load() {
 // LINE 305:
 	asm( 
 "	      0046edca    push ebp"
@@ -1221,7 +1221,7 @@ CBackBuffer::Load {
 }
 
 // FUNCTION: SIMCOPTER 0x0046f1bd
-CBackBuffer::DrawBufferText {
+unsigned long CBackBuffer::DrawBufferText(char *, unsigned long, long *, long *, long *, long *, class MFont*) {
 // LINE 378:
 	asm( 
 "	      0046f1bd    push ebp"
@@ -1550,7 +1550,7 @@ CBackBuffer::DrawBufferText {
 }
 
 // FUNCTION: SIMCOPTER 0x0046f403
-CBackBuffer::DrawBufferText {
+unsigned long CBackBuffer::DrawBufferText(char *, long, unsigned long, const class MRect&, class MFont*) {
 // LINE 458:
 	asm( 
 "	      0046f403    push ebp"
@@ -1793,7 +1793,7 @@ CBackBuffer::DrawBufferText {
 }
 
 // FUNCTION: SIMCOPTER 0x0046f5c6
-CBackBuffer::DrawLine {
+unsigned long CBackBuffer::DrawLine(long, long, long, long, long) {
 // LINE 522:
 	asm( 
 "	      0046f5c6    push ebp"
@@ -2028,7 +2028,7 @@ CBackBuffer::DrawLine {
 }
 
 // FUNCTION: SIMCOPTER 0x0046f7bb
-CBackBuffer::Swap {
+unsigned long CBackBuffer::Swap(class CSparkalWindow*, long, long) {
 // LINE 598:
 	asm( 
 "	      0046f7bb    push ebp"
@@ -2093,7 +2093,7 @@ CBackBuffer::Swap {
 }
 
 // FUNCTION: SIMCOPTER 0x0046f828
-CBackBuffer::SwapRect {
+unsigned long CBackBuffer::SwapRect(class CSparkalWindow*, long, long, long, long, long, long) {
 // LINE 627:
 	asm( 
 "	      0046f828    push ebp"
@@ -2227,7 +2227,7 @@ CBackBuffer::SwapRect {
 }
 
 // FUNCTION: SIMCOPTER 0x0046f948
-CBackBuffer::Compose {
+unsigned long CBackBuffer::Compose(class IFlatImage*, long, long, long, long, long, long) {
 // LINE 673:
 	asm( 
 "	      0046f948    push ebp"
@@ -2513,7 +2513,7 @@ CBackBuffer::Compose {
 }
 
 // FUNCTION: SIMCOPTER 0x0046fbb1
-CBackBuffer::ComposeNoClip {
+unsigned long CBackBuffer::ComposeNoClip(class IFlatImage*, long, long, long, long, long, long) {
 // LINE 796:
 	asm( 
 "	      0046fbb1    push ebp"
@@ -2641,7 +2641,7 @@ CBackBuffer::ComposeNoClip {
 }
 
 // FUNCTION: SIMCOPTER 0x0046fce4
-CBackBuffer::ComposeNoClip {
+unsigned long CBackBuffer::ComposeNoClip(class IFlatImage*, const struct SparkalPoint&, const struct SparkalRect&) {
 // LINE 834:
 	asm( 
 "	      0046fce4    push ebp"
@@ -2691,7 +2691,7 @@ CBackBuffer::ComposeNoClip {
 }
 
 // FUNCTION: SIMCOPTER 0x0046fd33
-CBackBuffer::Compose {
+unsigned long CBackBuffer::Compose(class IFlatImage*, const struct SparkalPoint&, const struct SparkalRect&) {
 // LINE 846:
 	asm( 
 "	      0046fd33    push ebp"
@@ -2741,7 +2741,7 @@ CBackBuffer::Compose {
 }
 
 // FUNCTION: SIMCOPTER 0x0046fd82
-CBackBuffer::StretchCompose {
+unsigned long CBackBuffer::StretchCompose(class IFlatImage*, const struct SparkalRect&, const struct SparkalRect&) {
 // LINE 866:
 	asm( 
 "	      0046fd82    push ebp"
@@ -2830,7 +2830,7 @@ CBackBuffer::StretchCompose {
 }
 
 // FUNCTION: SIMCOPTER 0x0046fe13
-CBackBuffer::StretchCompose {
+unsigned long CBackBuffer::StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long) {
 // LINE 903:
 	asm( 
 "	      0046fe13    push ebp"
@@ -2911,7 +2911,7 @@ CBackBuffer::StretchCompose {
 }
 
 // FUNCTION: SIMCOPTER 0x0046fe7c
-CBackBuffer::Duplicate {
+unsigned long CBackBuffer::Duplicate(class CBackBuffer*, int32_t) {
 // LINE 931:
 	asm( 
 "	      0046fe7c    push ebp"
@@ -3051,7 +3051,7 @@ CBackBuffer::Duplicate {
 }
 
 // FUNCTION: SIMCOPTER 0x0046ffcc
-CBackBuffer::StretchRect {
+unsigned long CBackBuffer::StretchRect(class CSparkalWindow*, long, long, long, long, long, long, long, long) {
 // LINE 980:
 	asm( 
 "	      0046ffcc    push ebp"
@@ -3078,7 +3078,7 @@ CBackBuffer::StretchRect {
 }
 
 // FUNCTION: SIMCOPTER 0x0046ffe6
-CBackBuffer::SetTransparentColor {
+void CBackBuffer::SetTransparentColor(int32_t, long) {
 // LINE 991:
 	asm( 
 "	      0046ffe6    push ebp"
@@ -3169,7 +3169,7 @@ CBackBuffer::SetTransparentColor {
 }
 
 // FUNCTION: SIMCOPTER 0x0047006f
-CBackBuffer::Lock {
+unsigned long CBackBuffer::Lock() {
 // LINE 1027:
 	asm( 
 "	      0047006f    push ebp"
@@ -3296,7 +3296,7 @@ CBackBuffer::Lock {
 }
 
 // FUNCTION: SIMCOPTER 0x00470149
-CBackBuffer::Unlock {
+unsigned long CBackBuffer::Unlock() {
 // LINE 1080:
 	asm( 
 "	      00470149    push ebp"
@@ -3425,7 +3425,7 @@ CBackBuffer::Unlock {
 }
 
 // FUNCTION: SIMCOPTER 0x00470221
-CBackBuffer::UpdatePalette {
+void CBackBuffer::UpdatePalette(long, long, const struct SparkalColor*) {
 // LINE 1127:
 	asm( 
 "	      00470221    push ebp"
@@ -3517,7 +3517,7 @@ CBackBuffer::UpdatePalette {
 }
 
 // FUNCTION: SIMCOPTER 0x004702f1
-CBackBuffer::FillRect {
+unsigned long CBackBuffer::FillRect(long, const struct SparkalRect*) {
 // LINE 1169:
 	asm( 
 "	      004702f1    push ebp"
@@ -3705,7 +3705,7 @@ CBackBuffer::FillRect {
 }
 
 // FUNCTION: SIMCOPTER 0x00470440
-CBackBuffer::SetFont {
+unsigned long CBackBuffer::SetFont(class MFont*) {
 // LINE 1224:
 	asm( 
 "	      00470440    push ebp"
@@ -3762,7 +3762,7 @@ CBackBuffer::SetFont {
 }
 
 // FUNCTION: SIMCOPTER 0x004704a7
-CBackBuffer::GetDDSurface {
+struct IDirectDrawSurface* CBackBuffer::GetDDSurface() {
 // LINE 1243:
 	asm( 
 "	      004704a7    push ebp"
@@ -3802,7 +3802,7 @@ CBackBuffer::GetDDSurface {
 }
 
 // FUNCTION: SIMCOPTER 0x004704db
-CBackBuffer::GetPaletteFromImage {
+int32_t CBackBuffer::GetPaletteFromImage(char *, struct SparkalColor*) {
 // LINE 1255:
 	asm( 
 "	      004704db    push ebp"
@@ -4010,7 +4010,7 @@ CBackBuffer::GetPaletteFromImage {
 }
 
 // FUNCTION: SIMCOPTER 0x004706e4
-CBackBuffer::DrawRectangleOutline {
+unsigned long CBackBuffer::DrawRectangleOutline(const struct SparkalRect&, long) {
 // LINE 1297:
 	asm( 
 "	      004706e4    push ebp"
@@ -4117,7 +4117,7 @@ CBackBuffer::DrawRectangleOutline {
 }
 
 // FUNCTION: SIMCOPTER 0x004707a4
-CBackBuffer::DrawRectangleOutlineUnclipped {
+unsigned long CBackBuffer::DrawRectangleOutlineUnclipped(const struct SparkalRect&, long) {
 // LINE 1321:
 	asm( 
 "	      004707a4    push ebp"
@@ -4224,7 +4224,7 @@ CBackBuffer::DrawRectangleOutlineUnclipped {
 }
 
 // FUNCTION: SIMCOPTER 0x00470864
-CBackBuffer::DrawLineUnclipped {
+unsigned long CBackBuffer::DrawLineUnclipped(long, long, long, long, long) {
 // LINE 1455:
 	asm( 
 "	      00470864    push ebp"
@@ -4787,7 +4787,7 @@ CBackBuffer::DrawLineUnclipped {
 }
 
 // FUNCTION: SIMCOPTER 0x00470c22
-CBackBuffer::DrawLineClipped {
+unsigned long CBackBuffer::DrawLineClipped(long, long, long, long, long) {
 // LINE 1625:
 	asm( 
 "	      00470c22    push ebp"

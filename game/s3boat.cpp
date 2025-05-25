@@ -18,7 +18,7 @@
 // $E4
 
 // FUNCTION: SIMCOPTER 0x005274fd
-BoatClass::BoatClass {
+void BoatClass::BoatClass(long, long, int32_t) {
 // LINE 153:
 	asm( 
 "	      005274fd    push ebp"
@@ -182,7 +182,7 @@ BoatClass::BoatClass {
 }
 
 // FUNCTION: SIMCOPTER 0x0052762d
-BoatClass::~BoatClass {
+void BoatClass::~BoatClass() {
 // LINE 213:
 	asm( 
 "	      0052762d    push ebp"
@@ -236,7 +236,7 @@ BoatClass::~BoatClass {
 }
 
 // FUNCTION: SIMCOPTER 0x0052768a
-BoatClass::GetBoatPointer {
+class BoatClass* BoatClass::GetBoatPointer(long) {
 // LINE 254:
 	asm( 
 "	      0052768a    push ebp"
@@ -272,7 +272,7 @@ BoatClass::GetBoatPointer {
 }
 
 // FUNCTION: SIMCOPTER 0x005276b5
-BoatClass::CreateInstance {
+class BoatClass* BoatClass::CreateInstance(int32_t) {
 // LINE 281:
 	asm( 
 "	      005276b5    push ebp"
@@ -302,7 +302,7 @@ BoatClass::CreateInstance {
 }
 
 // FUNCTION: SIMCOPTER 0x005276d5
-BoatClass::CreateInstance {
+class BoatClass* BoatClass::CreateInstance(long, long, int32_t) {
 // LINE 341:
 	asm( 
 "	      005276d5    push ebp"
@@ -386,7 +386,7 @@ BoatClass::CreateInstance {
 }
 
 // FUNCTION: SIMCOPTER 0x00527779
-BoatClass::Initialize {
+int32_t BoatClass::Initialize(int32_t) {
 // LINE 443:
 	asm( 
 "	      00527779    push ebp"
@@ -422,7 +422,7 @@ BoatClass::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x005277ab
-BoatClass::ResetAll {
+void BoatClass::ResetAll() {
 // LINE 468:
 	asm( 
 "	      005277ab    push ebp"
@@ -462,7 +462,7 @@ BoatClass::ResetAll {
 }
 
 // FUNCTION: SIMCOPTER 0x005277eb
-BoatClass::ItterateAll {
+void BoatClass::ItterateAll() {
 // LINE 516:
 	asm( 
 "	      005277eb    push ebp"
@@ -502,7 +502,7 @@ BoatClass::ItterateAll {
 }
 
 // FUNCTION: SIMCOPTER 0x0052782b
-BoatClass::Itterate {
+void BoatClass::Itterate() {
 // LINE 563:
 	asm( 
 "	      0052782b    push ebp"
@@ -635,7 +635,7 @@ BoatClass::Itterate {
 }
 
 // FUNCTION: SIMCOPTER 0x00527954
-BoatClass::Reset {
+void BoatClass::Reset() {
 // LINE 628:
 	asm( 
 "	      00527954    push ebp"
@@ -733,7 +733,7 @@ BoatClass::Reset {
 }
 
 // FUNCTION: SIMCOPTER 0x005279ef
-BoatClass::ItterateFSM {
+void BoatClass::ItterateFSM() {
 // LINE 686:
 	asm( 
 "	      005279ef    push ebp"
@@ -1042,7 +1042,7 @@ BoatClass::ItterateFSM {
 }
 
 // FUNCTION: SIMCOPTER 0x00527c7a
-BoatClass::AdjustSpeed {
+void BoatClass::AdjustSpeed() {
 // LINE 858:
 	asm( 
 "	      00527c7a    push ebp"
@@ -1082,7 +1082,7 @@ BoatClass::AdjustSpeed {
 }
 
 // FUNCTION: SIMCOPTER 0x00527cb3
-BoatClass::IsWaterPathClear {
+enum BoatClass::StoppedReasons BoatClass::IsWaterPathClear() {
 // LINE 887:
 	asm( 
 "	      00527cb3    push ebp"
@@ -1175,7 +1175,7 @@ BoatClass::IsWaterPathClear {
 }
 
 // FUNCTION: SIMCOPTER 0x00527d76
-BoatClass::CheckWaterDynamicObjectsAt {
+enum BoatClass::StoppedReasons BoatClass::CheckWaterDynamicObjectsAt(const struct Point2d&, const struct Point3d&) {
 // LINE 920:
 	asm( 
 "	      00527d76    push ebp"
@@ -1569,7 +1569,7 @@ BoatClass::CheckWaterDynamicObjectsAt {
 }
 
 // FUNCTION: SIMCOPTER 0x005280bb
-BoatClass::IsBoatOutOfCameraRange {
+int32_t BoatClass::IsBoatOutOfCameraRange() {
 // LINE 1074:
 	asm( 
 "	      005280bb    push ebp"
@@ -1706,7 +1706,7 @@ BoatClass::IsBoatOutOfCameraRange {
 }
 
 // FUNCTION: SIMCOPTER 0x005281a8
-BoatClass::SetBoatDirection {
+void BoatClass::SetBoatDirection(unsigned short) {
 // LINE 1139:
 	asm( 
 "	      005281a8    push ebp"
@@ -1990,7 +1990,7 @@ BoatClass::SetBoatDirection {
 }
 
 // FUNCTION: SIMCOPTER 0x0052847a
-BoatClass::SlowDown {
+void BoatClass::SlowDown() {
 // LINE 1214:
 	asm( 
 "	      0052847a    push ebp"
@@ -2018,7 +2018,7 @@ BoatClass::SlowDown {
 }
 
 // FUNCTION: SIMCOPTER 0x0052849a
-BoatClass::Stop {
+void BoatClass::Stop() {
 // LINE 1235:
 	asm( 
 "	      0052849a    push ebp"
@@ -2046,7 +2046,7 @@ BoatClass::Stop {
 }
 
 // FUNCTION: SIMCOPTER 0x005284ba
-BoatClass::MoveForward {
+void BoatClass::MoveForward() {
 // LINE 1256:
 	asm( 
 "	      005284ba    push ebp"
@@ -2193,7 +2193,7 @@ BoatClass::MoveForward {
 }
 
 // FUNCTION: SIMCOPTER 0x00528628
-BoatClass::HaveIReachedNextLoc {
+int32_t BoatClass::HaveIReachedNextLoc() {
 // LINE 1305:
 	asm( 
 "	      00528628    push ebp"
@@ -2235,7 +2235,7 @@ BoatClass::HaveIReachedNextLoc {
 }
 
 // FUNCTION: SIMCOPTER 0x0052865c
-BoatClass::AmIInANewCell {
+int32_t BoatClass::AmIInANewCell() {
 // LINE 1332:
 	asm( 
 "	      0052865c    push ebp"
@@ -2329,7 +2329,7 @@ BoatClass::AmIInANewCell {
 }
 
 // FUNCTION: SIMCOPTER 0x00528746
-BoatClass::UnlinkFromCell {
+void BoatClass::UnlinkFromCell(const struct Point2d&) {
 // LINE 1370:
 	asm( 
 "	      00528746    push ebp"
@@ -2447,7 +2447,7 @@ BoatClass::UnlinkFromCell {
 }
 
 // FUNCTION: SIMCOPTER 0x0052885c
-BoatClass::LinkToCell {
+void BoatClass::LinkToCell(const struct Point2d&) {
 // LINE 1418:
 	asm( 
 "	      0052885c    push ebp"
@@ -2523,7 +2523,7 @@ BoatClass::LinkToCell {
 }
 
 // FUNCTION: SIMCOPTER 0x00528918
-BoatClass::PickTurnDirection {
+enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const struct Point2d&) {
 // LINE 1450:
 	asm( 
 "	      00528918    push ebp"
@@ -3303,7 +3303,7 @@ BoatClass::PickTurnDirection {
 }
 
 // FUNCTION: SIMCOPTER 0x005290e5
-BoatClass::DoWaterTilesConnect {
+int32_t BoatClass::DoWaterTilesConnect(unsigned short, unsigned short, enum DirectionTypes) {
 // LINE 1644:
 	asm( 
 "	      005290e5    push ebp"
@@ -3390,7 +3390,7 @@ BoatClass::DoWaterTilesConnect {
 }
 
 // FUNCTION: SIMCOPTER 0x00529232
-BoatClass::MakeATurn {
+void BoatClass::MakeATurn(enum BoatClass::IntersectionTypes) {
 // LINE 1674:
 	asm( 
 "	      00529232    push ebp"
@@ -3620,7 +3620,7 @@ BoatClass::MakeATurn {
 }
 
 // FUNCTION: SIMCOPTER 0x005293f3
-BoatClass::WhyAmIStopped {
+enum BoatClass::StoppedReasons BoatClass::WhyAmIStopped() {
 // LINE 1784:
 	asm( 
 "	      005293f3    push ebp"
@@ -3683,7 +3683,7 @@ BoatClass::WhyAmIStopped {
 }
 
 // FUNCTION: SIMCOPTER 0x0052948e
-BoatClass::AdjustCurrentPosition {
+void BoatClass::AdjustCurrentPosition() {
 // LINE 1818:
 	asm( 
 "	      0052948e    push ebp"
@@ -3762,7 +3762,7 @@ BoatClass::AdjustCurrentPosition {
 }
 
 // FUNCTION: SIMCOPTER 0x00529543
-BoatClass::AdjustNextPosition {
+void BoatClass::AdjustNextPosition() {
 // LINE 1853:
 	asm( 
 "	      00529543    push ebp"
@@ -3889,7 +3889,7 @@ BoatClass::AdjustNextPosition {
 }
 
 // FUNCTION: SIMCOPTER 0x0052965f
-BoatClass::GoStraight {
+void BoatClass::GoStraight() {
 // LINE 1892:
 	asm( 
 "	      0052965f    push ebp"
@@ -4026,7 +4026,7 @@ BoatClass::GoStraight {
 }
 
 // FUNCTION: SIMCOPTER 0x00529788
-BoatClass::TurnLeft {
+void BoatClass::TurnLeft() {
 // LINE 1942:
 	asm( 
 "	      00529788    push ebp"
@@ -4163,7 +4163,7 @@ BoatClass::TurnLeft {
 }
 
 // FUNCTION: SIMCOPTER 0x005298b1
-BoatClass::TurnRight {
+void BoatClass::TurnRight() {
 // LINE 1993:
 	asm( 
 "	      005298b1    push ebp"
@@ -4300,7 +4300,7 @@ BoatClass::TurnRight {
 }
 
 // FUNCTION: SIMCOPTER 0x005299da
-BoatClass::MakeUturn {
+void BoatClass::MakeUturn() {
 // LINE 2050:
 	asm( 
 "	      005299da    push ebp"
@@ -4349,7 +4349,7 @@ BoatClass::MakeUturn {
 }
 
 // FUNCTION: SIMCOPTER 0x00529a36
-BoatClass::FinishedUturn {
+int32_t BoatClass::FinishedUturn() {
 // LINE 2156:
 	asm( 
 "	      00529a36    push ebp"
@@ -4376,7 +4376,7 @@ BoatClass::FinishedUturn {
 }
 
 // FUNCTION: SIMCOPTER 0x00529a51
-BoatClass::BeamBoatToWithinCameraRange {
+void BoatClass::BeamBoatToWithinCameraRange() {
 // LINE 2189:
 	asm( 
 "	      00529a51    push ebp"
@@ -4928,7 +4928,7 @@ BoatClass::BeamBoatToWithinCameraRange {
 }
 
 // FUNCTION: SIMCOPTER 0x00529ee6
-BoatClass::UnPlaceBoat {
+void BoatClass::UnPlaceBoat() {
 // LINE 2367:
 	asm( 
 "	      00529ee6    push ebp"
@@ -4973,7 +4973,7 @@ BoatClass::UnPlaceBoat {
 }
 
 // FUNCTION: SIMCOPTER 0x00529f2b
-BoatClass::BeamBoatToLocation {
+int32_t BoatClass::BeamBoatToLocation(long, long) {
 // LINE 2394:
 	asm( 
 "	      00529f2b    push ebp"
@@ -5702,7 +5702,7 @@ BoatClass::BeamBoatToLocation {
 }
 
 // FUNCTION: SIMCOPTER 0x0052a81c
-BoatClass::InitializeInstance {
+int32_t BoatClass::InitializeInstance(long, long, int32_t) {
 // LINE 2811:
 	asm( 
 "	      0052a81c    push ebp"
@@ -6075,7 +6075,7 @@ BoatClass::InitializeInstance {
 }
 
 // FUNCTION: SIMCOPTER 0x0052ab24
-CreateBoatInstance {
+int32_t CreateBoatInstance() {
 // LINE 3000:
 	asm( 
 "	      0052ab24    push ebp"
@@ -6108,7 +6108,7 @@ CreateBoatInstance {
 }
 
 // FUNCTION: SIMCOPTER 0x0052ab54
-ItterateAllBoats {
+void ItterateAllBoats() {
 // LINE 3023:
 	asm( 
 "	      0052ab54    push ebp"
@@ -6133,7 +6133,7 @@ ItterateAllBoats {
 }
 
 // FUNCTION: SIMCOPTER 0x0052ab69
-ResetAllBoats {
+void ResetAllBoats() {
 // LINE 3046:
 	asm( 
 "	      0052ab69    push ebp"
@@ -6158,7 +6158,7 @@ ResetAllBoats {
 }
 
 // FUNCTION: SIMCOPTER 0x0052ab7e
-BoatClass::StartCapsizedBoat {
+struct _DYOBJ_INST* BoatClass::StartCapsizedBoat(long, int32_t) {
 // LINE 3059:
 	asm( 
 "	      0052ab7e    push ebp"
@@ -6374,7 +6374,7 @@ BoatClass::StartCapsizedBoat {
 }
 
 // FUNCTION: SIMCOPTER 0x0052acfb
-BoatClass::GetCapsizedBoat {
+struct _DYOBJ_INST* BoatClass::GetCapsizedBoat() {
 // LINE 3127:
 	asm( 
 "	      0052acfb    push ebp"
@@ -6419,7 +6419,7 @@ BoatClass::GetCapsizedBoat {
 }
 
 // FUNCTION: SIMCOPTER 0x0052ad37
-StartCapsizedBoat {
+struct _DYOBJ_INST* StartCapsizedBoat() {
 // LINE 3147:
 	asm( 
 "	      0052ad37    push ebp"
@@ -6449,7 +6449,7 @@ StartCapsizedBoat {
 }
 
 // FUNCTION: SIMCOPTER 0x0052ad57
-GetCapsizedBoat {
+struct _DYOBJ_INST* GetCapsizedBoat() {
 // LINE 3161:
 	asm( 
 "	      0052ad57    push ebp"
@@ -6474,7 +6474,7 @@ GetCapsizedBoat {
 }
 
 // FUNCTION: SIMCOPTER 0x0052ad6c
-S3BoatMIFFLoad {
+int32_t S3BoatMIFFLoad() {
 // LINE 3174:
 	asm( 
 "	      0052ad6c    push ebp"
@@ -6502,7 +6502,7 @@ S3BoatMIFFLoad {
 }
 
 // FUNCTION: SIMCOPTER 0x0052ad88
-S3BoatMIFFSave {
+int32_t S3BoatMIFFSave() {
 // LINE 3187:
 	asm( 
 "	      0052ad88    push ebp"
@@ -6530,7 +6530,7 @@ S3BoatMIFFSave {
 }
 
 // FUNCTION: SIMCOPTER 0x0052ada4
-BoatClass::MIFFLoad {
+int32_t BoatClass::MIFFLoad(void * __ptr32) {
 // LINE 3199:
 	asm( 
 "	      0052ada4    push ebp"
@@ -6824,7 +6824,7 @@ BoatClass::MIFFLoad {
 }
 
 // FUNCTION: SIMCOPTER 0x0052b00a
-BoatClass::MIFFSave {
+int32_t BoatClass::MIFFSave(void * __ptr32) {
 // LINE 3263:
 	asm( 
 "	      0052b00a    push ebp"

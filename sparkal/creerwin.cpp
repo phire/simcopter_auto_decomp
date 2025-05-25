@@ -18,7 +18,7 @@
 // $E66
 
 // FUNCTION: SIMCOPTER 0x0047defe
-CareerWindow::CareerWindow {
+void CareerWindow::CareerWindow(class MRect&, int32_t, void * __ptr32, long *, class GraphicWindow*, class GraphicWindowOwner*, int32_t, int32_t) {
 // LINE 63:
 	asm( 
 "	      0047defe    push ebp"
@@ -205,7 +205,7 @@ CareerWindow::CareerWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x0047e129
-CareerWindow::~CareerWindow {
+void CareerWindow::~CareerWindow() {
 // LINE 93:
 	asm( 
 "	      0047e129    push ebp"
@@ -255,7 +255,7 @@ CareerWindow::~CareerWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x0047e19e
-CareerWindow::Initialize {
+int32_t CareerWindow::Initialize() {
 // LINE 101:
 	asm( 
 "	      0047e19e    push ebp"
@@ -1454,7 +1454,7 @@ CareerWindow::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x0047f391
-CareerWindow::CreateImage {
+int32_t CareerWindow::CreateImage(int32_t) {
 // LINE 201:
 	asm( 
 "	      0047f391    push ebp"
@@ -1750,7 +1750,7 @@ CareerWindow::CreateImage {
 }
 
 // FUNCTION: SIMCOPTER 0x0047f75a
-CareerWindow::DestroyImage {
+void CareerWindow::DestroyImage() {
 // LINE 219:
 	asm( 
 "	      0047f75a    push ebp"
@@ -1807,7 +1807,7 @@ CareerWindow::DestroyImage {
 }
 
 // FUNCTION: SIMCOPTER 0x0047f7cf
-CareerWindow::DrawSelf {
+int32_t CareerWindow::DrawSelf() {
 // LINE 232:
 	asm( 
 "	      0047f7cf    push ebp"
@@ -1904,7 +1904,7 @@ CareerWindow::DrawSelf {
 }
 
 // FUNCTION: SIMCOPTER 0x0047f8ab
-CareerWindow::DrawCitySelection {
+void CareerWindow::DrawCitySelection() {
 // LINE 256:
 	asm( 
 "	      0047f8ab    push ebp"
@@ -2038,7 +2038,7 @@ CareerWindow::DrawCitySelection {
 }
 
 // FUNCTION: SIMCOPTER 0x0047fa75
-CareerWindow::DoKeyDown {
+long CareerWindow::DoKeyDown(long, char) {
 // LINE 279:
 	asm( 
 "	      0047fa75    push ebp"
@@ -2122,7 +2122,7 @@ CareerWindow::DoKeyDown {
 }
 
 // FUNCTION: SIMCOPTER 0x0047fb14
-CareerWindow::DoCursorDown {
+long CareerWindow::DoCursorDown(long, long, unsigned long) {
 // LINE 296:
 	asm( 
 "	      0047fb14    push ebp"
@@ -2251,7 +2251,7 @@ CareerWindow::DoCursorDown {
 }
 
 // FUNCTION: SIMCOPTER 0x0047fc47
-CareerWindow::DoCursorMove {
+long CareerWindow::DoCursorMove(long, long) {
 // LINE 321:
 	asm( 
 "	      0047fc47    push ebp"
@@ -2342,7 +2342,7 @@ CareerWindow::DoCursorMove {
 }
 
 // FUNCTION: SIMCOPTER 0x0047fd2d
-CareerWindow::DoMessage {
+int32_t CareerWindow::DoMessage(class GraphicWindow*, long, long, void * __ptr32) {
 // LINE 338:
 	asm( 
 "	      0047fd2d    push ebp"
@@ -2441,7 +2441,7 @@ CareerWindow::DoMessage {
 }
 
 // FUNCTION: SIMCOPTER 0x0047fdf2
-CareerWindow::SetCurrentCitySelection {
+long CareerWindow::SetCurrentCitySelection(long) {
 // LINE 358:
 	asm( 
 "	      0047fdf2    push ebp"
@@ -2565,7 +2565,7 @@ CareerWindow::SetCurrentCitySelection {
 }
 
 // FUNCTION: SIMCOPTER 0x0047ff29
-CareerWindow::GetCoordinatesForCitySelections {
+void CareerWindow::GetCoordinatesForCitySelections(class MPoint[17]*, class MRect[17]*) {
 // LINE 383:
 	asm( 
 "	      0047ff29    push ebp"
@@ -2680,7 +2680,7 @@ CareerWindow::GetCoordinatesForCitySelections {
 }
 
 // FUNCTION: SIMCOPTER 0x00480032
-CareerWindow::CitySelectionFrame::CitySelectionFrame {
+void CareerWindow::CitySelectionFrame::CitySelectionFrame(int32_t, int32_t, int32_t) {
 // LINE 401:
 	asm( 
 "	      00480032    push ebp"
@@ -2986,7 +2986,7 @@ CareerWindow::CitySelectionFrame::CitySelectionFrame {
 }
 
 // FUNCTION: SIMCOPTER 0x0048049d
-CareerWindow::CitySelectionFrame::FillDestinationPoints {
+void CareerWindow::CitySelectionFrame::FillDestinationPoints(class MPoint*) {
 // LINE 426:
 	asm( 
 "	      0048049d    push ebp"
@@ -3036,7 +3036,7 @@ CareerWindow::CitySelectionFrame::FillDestinationPoints {
 }
 
 // FUNCTION: SIMCOPTER 0x004804f7
-CareerWindow::CitySelectionFrame::FillSourceRects {
+void CareerWindow::CitySelectionFrame::FillSourceRects(class MRect*) {
 // LINE 434:
 	asm( 
 "	      004804f7    push ebp"

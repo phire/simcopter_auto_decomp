@@ -6,7 +6,7 @@
 
 // Contribution: 1:0001ead0-0001f5cb Module: 72, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x0041fad0
-MTimeLocalized::PrintStringLocalized {
+char * MTimeLocalized::PrintStringLocalized(char *, int32_t) {
 // LINE 25:
 	asm( 
 "	      0041fad0    push ebp"
@@ -94,7 +94,7 @@ MTimeLocalized::PrintStringLocalized {
 }
 
 // FUNCTION: SIMCOPTER 0x0041fb6a
-operator<< {
+class ostream& operator<<() {
 // LINE 49:
 	asm( 
 "	      0041fb6a    push ebp"
@@ -393,7 +393,7 @@ operator<< {
 }
 
 // FUNCTION: SIMCOPTER 0x0041fe57
-MDateLocalized::MDateLocalized {
+void MDateLocalized::MDateLocalized() {
 // LINE 121:
 	asm( 
 "	      0041fe57    push ebp"
@@ -423,7 +423,7 @@ MDateLocalized::MDateLocalized {
 }
 
 // FUNCTION: SIMCOPTER 0x0041fe8b
-MDateLocalized::MDateLocalized {
+void MDateLocalized::MDateLocalized(uint32_t, uint32_t) {
 // LINE 129:
 	asm( 
 "	      0041fe8b    push ebp"
@@ -457,7 +457,7 @@ MDateLocalized::MDateLocalized {
 }
 
 // FUNCTION: SIMCOPTER 0x0041fec9
-MDateLocalized::MDateLocalized {
+void MDateLocalized::MDateLocalized(uint32_t, char *, uint32_t) {
 // LINE 137:
 	asm( 
 "	      0041fec9    push ebp"
@@ -510,7 +510,7 @@ MDateLocalized::MDateLocalized {
 }
 
 // FUNCTION: SIMCOPTER 0x0041ff30
-MDateLocalized::MDateLocalized {
+void MDateLocalized::MDateLocalized(uint32_t, uint32_t, uint32_t) {
 // LINE 146:
 	asm( 
 "	      0041ff30    push ebp"
@@ -546,7 +546,7 @@ MDateLocalized::MDateLocalized {
 }
 
 // FUNCTION: SIMCOPTER 0x0041ff72
-MDateLocalized::MDateLocalized {
+void MDateLocalized::MDateLocalized(class istream&) {
 // LINE 154:
 	asm( 
 "	      0041ff72    push ebp"
@@ -581,7 +581,7 @@ MDateLocalized::MDateLocalized {
 }
 
 // FUNCTION: SIMCOPTER 0x0041ffba
-MDateLocalized::MDateLocalized {
+void MDateLocalized::MDateLocalized(const class MTime&) {
 // LINE 162:
 	asm( 
 "	      0041ffba    push ebp"
@@ -613,7 +613,7 @@ MDateLocalized::MDateLocalized {
 }
 
 // FUNCTION: SIMCOPTER 0x0041fff4
-MDateLocalized::NameOfDayLocalized {
+char * MDateLocalized::NameOfDayLocalized(char *, int32_t) {
 // LINE 170:
 	asm( 
 "	      0041fff4    push ebp"
@@ -669,7 +669,7 @@ MDateLocalized::NameOfDayLocalized {
 }
 
 // FUNCTION: SIMCOPTER 0x0042004a
-MDateLocalized::NameOfMonthLocalized {
+char * MDateLocalized::NameOfMonthLocalized(char *, int32_t) {
 // LINE 183:
 	asm( 
 "	      0042004a    push ebp"
@@ -725,7 +725,7 @@ MDateLocalized::NameOfMonthLocalized {
 }
 
 // FUNCTION: SIMCOPTER 0x004200a0
-MDateLocalized::PrintStringLocalized {
+char * MDateLocalized::PrintStringLocalized(char *, int32_t) {
 // LINE 197:
 	asm( 
 "	      004200a0    push ebp"
@@ -823,7 +823,7 @@ MDateLocalized::PrintStringLocalized {
 }
 
 // FUNCTION: SIMCOPTER 0x0042014c
-MDateLocalized::PreviousLocalized {
+class MDate MDateLocalized::PreviousLocalized(char *, int32_t) {
 // LINE 221:
 	asm( 
 "	      0042014c    push ebp"
@@ -899,7 +899,7 @@ MDateLocalized::PreviousLocalized {
 }
 
 // FUNCTION: SIMCOPTER 0x004201c9
-MDateLocalized::DayOfWeekLocalized {
+uint32_t MDateLocalized::DayOfWeekLocalized(char *, int32_t) {
 // LINE 242:
 	asm( 
 "	      004201c9    push ebp"
@@ -961,7 +961,7 @@ MDateLocalized::DayOfWeekLocalized {
 }
 
 // FUNCTION: SIMCOPTER 0x00420237
-MDateLocalized::IndexOfMonthLocalized {
+uint32_t MDateLocalized::IndexOfMonthLocalized(char *, int32_t) {
 // LINE 263:
 	asm( 
 "	      00420237    push ebp"
@@ -1023,7 +1023,7 @@ MDateLocalized::IndexOfMonthLocalized {
 }
 
 // FUNCTION: SIMCOPTER 0x004202a5
-MDateLocalized::DayNameLocalized {
+char * MDateLocalized::DayNameLocalized(uint32_t, char *, int32_t) {
 // LINE 285:
 	asm( 
 "	      004202a5    push ebp"
@@ -1097,7 +1097,7 @@ MDateLocalized::DayNameLocalized {
 }
 
 // FUNCTION: SIMCOPTER 0x0042033c
-MDateLocalized::MonthNameLocalized {
+char * MDateLocalized::MonthNameLocalized(uint32_t, char *, int32_t) {
 // LINE 305:
 	asm( 
 "	      0042033c    push ebp"
@@ -1171,7 +1171,7 @@ MDateLocalized::MonthNameLocalized {
 }
 
 // FUNCTION: SIMCOPTER 0x004203d3
-operator<< {
+class ostream& operator<<() {
 // LINE 325:
 	asm( 
 "	      004203d3    push ebp"

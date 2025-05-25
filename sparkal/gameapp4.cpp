@@ -6,7 +6,7 @@
 
 // Contribution: 1:000baa30-000bb457 Module: 3, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x004bba30
-CGameApp::FinishGame {
+public: virtual unsigned long __thiscall CGameApp::FinishGame(void) {
 // LINE 48:
 	asm( 
 "	      004bba30    push ebp"
@@ -129,7 +129,7 @@ CGameApp::FinishGame {
 }
 
 // FUNCTION: SIMCOPTER 0x004bbb17
-CGameApp::BackgroundVRAppInit {
+public: int __thiscall CGameApp::BackgroundVRAppInit(void) {
 // LINE 92:
 	asm( 
 "	      004bbb17    push ebp"
@@ -724,7 +724,7 @@ CGameApp::BackgroundVRAppInit {
 }
 
 // FUNCTION: SIMCOPTER 0x004bc3db
-AppInitThreadStartRoutine {
+void AppInitThreadStartRoutine() {
 // LINE 157:
 	asm( 
 "	      004bc3db    push ebp"

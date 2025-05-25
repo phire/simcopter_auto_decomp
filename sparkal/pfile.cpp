@@ -6,7 +6,7 @@
 
 // Contribution: 1:0009f3a0-0009f9f6 Module: 10, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x004a03a0
-PFile::Open {
+int32_t PFile::Open(char *, unsigned short, unsigned short, int32_t) {
 // LINE 34:
 	asm( 
 "	      004a03a0    push ebp"
@@ -170,7 +170,7 @@ PFile::Open {
 }
 
 // FUNCTION: SIMCOPTER 0x004a04f0
-PFile::Close {
+int32_t PFile::Close() {
 // LINE 75:
 	asm( 
 "	      004a04f0    push ebp"
@@ -228,7 +228,7 @@ PFile::Close {
 }
 
 // FUNCTION: SIMCOPTER 0x004a0562
-PFile::Length {
+long PFile::Length() {
 // LINE 91:
 	asm( 
 "	      004a0562    push ebp"
@@ -300,7 +300,7 @@ PFile::Length {
 }
 
 // FUNCTION: SIMCOPTER 0x004a05f3
-PFile::FileCreate {
+long PFile::FileCreate(char *, int32_t) {
 // LINE 112:
 	asm( 
 "	      004a05f3    push ebp"
@@ -420,7 +420,7 @@ PFile::FileCreate {
 }
 
 // FUNCTION: SIMCOPTER 0x004a06e6
-PFile::FileExists {
+long PFile::FileExists(char *) {
 // LINE 139:
 	asm( 
 "	      004a06e6    push ebp"
@@ -477,7 +477,7 @@ PFile::FileExists {
 }
 
 // FUNCTION: SIMCOPTER 0x004a0759
-PFile::SetPath {
+long PFile::SetPath(char *) {
 // LINE 160:
 	asm( 
 "	      004a0759    push ebp"
@@ -530,7 +530,7 @@ PFile::SetPath {
 }
 
 // FUNCTION: SIMCOPTER 0x004a07b9
-PFile::Checksum {
+unsigned long PFile::Checksum(char *) {
 // LINE 172:
 	asm( 
 "	      004a07b9    push ebp"

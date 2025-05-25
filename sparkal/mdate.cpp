@@ -6,7 +6,7 @@
 
 // Contribution: 1:000bb460-000bc660 Module: 2, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x004bc460
-MDate::MDate {
+void MDate::MDate() {
 // LINE 75:
 	asm( 
 "	      004bc460    push ebp"
@@ -67,7 +67,7 @@ MDate::MDate {
 }
 
 // FUNCTION: SIMCOPTER 0x004bc4d1
-MDate::MDate {
+void MDate::MDate(uint32_t, uint32_t) {
 // LINE 94:
 	asm( 
 "	      004bc4d1    push ebp"
@@ -125,7 +125,7 @@ MDate::MDate {
 }
 
 // FUNCTION: SIMCOPTER 0x004bc538
-MDate::MDate {
+void MDate::MDate(uint32_t, char *, uint32_t) {
 // LINE 112:
 	asm( 
 "	      004bc538    push ebp"
@@ -169,7 +169,7 @@ MDate::MDate {
 }
 
 // FUNCTION: SIMCOPTER 0x004bc589
-MDate::MDate {
+void MDate::MDate(uint32_t, uint32_t, uint32_t) {
 // LINE 127:
 	asm( 
 "	      004bc589    push ebp"
@@ -210,7 +210,7 @@ MDate::MDate {
 }
 
 // FUNCTION: SIMCOPTER 0x004bc5d1
-MDate::SetPrintOption {
+enum MDate::HowToPrint MDate::SetPrintOption(enum MDate::HowToPrint) {
 // LINE 136:
 	asm( 
 "	      004bc5d1    push ebp"
@@ -249,7 +249,7 @@ MDate::SetPrintOption {
 }
 
 // FUNCTION: SIMCOPTER 0x004bc5fe
-MDate::DayName {
+char * MDate::DayName(uint32_t) {
 // LINE 152:
 	asm( 
 "	      004bc5fe    push ebp"
@@ -287,7 +287,7 @@ MDate::DayName {
 }
 
 // FUNCTION: SIMCOPTER 0x004bc64f
-MDate::DayOfWeek {
+uint32_t MDate::DayOfWeek(char *) {
 // LINE 167:
 	asm( 
 "	      004bc64f    push ebp"
@@ -318,7 +318,7 @@ MDate::DayOfWeek {
 }
 
 // FUNCTION: SIMCOPTER 0x004bc673
-FindMatch {
+int32_t FindMatch() {
 // LINE 55:
 	asm( 
 "	      004bc673    push ebp"
@@ -383,7 +383,7 @@ FindMatch {
 }
 
 // FUNCTION: SIMCOPTER 0x004bc6d7
-MDate::DayWithinMonth {
+int32_t MDate::DayWithinMonth(uint32_t, uint32_t, uint32_t) {
 // LINE 181:
 	asm( 
 "	      004bc6d7    push ebp"
@@ -455,7 +455,7 @@ MDate::DayWithinMonth {
 }
 
 // FUNCTION: SIMCOPTER 0x004bc76f
-MDate::DaysInYear {
+uint32_t MDate::DaysInYear(uint32_t) {
 // LINE 200:
 	asm( 
 "	      004bc76f    push ebp"
@@ -488,7 +488,7 @@ MDate::DaysInYear {
 }
 
 // FUNCTION: SIMCOPTER 0x004bc7a2
-MDate::IndexOfMonth {
+uint32_t MDate::IndexOfMonth(char *) {
 // LINE 215:
 	asm( 
 "	      004bc7a2    push ebp"
@@ -519,7 +519,7 @@ MDate::IndexOfMonth {
 }
 
 // FUNCTION: SIMCOPTER 0x004bc7c6
-MDate::Jday {
+unsigned long MDate::Jday(uint32_t, uint32_t, uint32_t) {
 // LINE 233:
 	asm( 
 "	      004bc7c6    push ebp"
@@ -639,7 +639,7 @@ MDate::Jday {
 }
 
 // FUNCTION: SIMCOPTER 0x004bc89f
-MDate::LeapYear {
+int32_t MDate::LeapYear(uint32_t) {
 // LINE 262:
 	asm( 
 "	      004bc89f    push ebp"
@@ -680,7 +680,7 @@ MDate::LeapYear {
 }
 
 // FUNCTION: SIMCOPTER 0x004bc8ed
-MDate::MonthName {
+char * MDate::MonthName(uint32_t) {
 // LINE 277:
 	asm( 
 "	      004bc8ed    push ebp"
@@ -718,7 +718,7 @@ MDate::MonthName {
 }
 
 // FUNCTION: SIMCOPTER 0x004bc93e
-MDate::CompareTo {
+int32_t MDate::CompareTo(const class MDate&) {
 // LINE 292:
 	asm( 
 "	      004bc93e    push ebp"
@@ -776,7 +776,7 @@ MDate::CompareTo {
 }
 
 // FUNCTION: SIMCOPTER 0x004bc99a
-MDate::Day {
+uint32_t MDate::Day() {
 // LINE 307:
 	asm( 
 "	      004bc99a    push ebp"
@@ -814,7 +814,7 @@ MDate::Day {
 }
 
 // FUNCTION: SIMCOPTER 0x004bc9d0
-MDate::DayOfMonth {
+uint32_t MDate::DayOfMonth() {
 // LINE 320:
 	asm( 
 "	      004bc9d0    push ebp"
@@ -852,7 +852,7 @@ MDate::DayOfMonth {
 }
 
 // FUNCTION: SIMCOPTER 0x004bc9fd
-MDate::FirstDayOfMonth {
+uint32_t MDate::FirstDayOfMonth(uint32_t) {
 // LINE 336:
 	asm( 
 "	      004bc9fd    push ebp"
@@ -919,7 +919,7 @@ MDate::FirstDayOfMonth {
 }
 
 // FUNCTION: SIMCOPTER 0x004bca84
-MDate::Hash {
+uint32_t MDate::Hash() {
 // LINE 351:
 	asm( 
 "	      004bca84    push ebp"
@@ -947,7 +947,7 @@ MDate::Hash {
 }
 
 // FUNCTION: SIMCOPTER 0x004bcaa0
-MDate::Mdy {
+void MDate::Mdy(uint32_t&, uint32_t&, uint32_t&) {
 // LINE 368:
 	asm( 
 "	      004bcaa0    push ebp"
@@ -1111,7 +1111,7 @@ MDate::Mdy {
 }
 
 // FUNCTION: SIMCOPTER 0x004bcbcd
-MDate::MaxDate {
+class MDate MDate::MaxDate(const class MDate&) {
 // LINE 396:
 	asm( 
 "	      004bcbcd    push ebp"
@@ -1161,7 +1161,7 @@ MDate::MaxDate {
 }
 
 // FUNCTION: SIMCOPTER 0x004bcc37
-MDate::MinDate {
+class MDate MDate::MinDate(const class MDate&) {
 // LINE 406:
 	asm( 
 "	      004bcc37    push ebp"
@@ -1211,7 +1211,7 @@ MDate::MinDate {
 }
 
 // FUNCTION: SIMCOPTER 0x004bcca1
-MDate::Month {
+uint32_t MDate::Month() {
 // LINE 419:
 	asm( 
 "	      004bcca1    push ebp"
@@ -1249,7 +1249,7 @@ MDate::Month {
 }
 
 // FUNCTION: SIMCOPTER 0x004bccce
-MDate::Previous {
+class MDate MDate::Previous(char *) {
 // LINE 435:
 	asm( 
 "	      004bccce    push ebp"
@@ -1285,7 +1285,7 @@ MDate::Previous {
 }
 
 // FUNCTION: SIMCOPTER 0x004bcd02
-MDate::Previous {
+class MDate MDate::Previous(uint32_t) {
 // LINE 448:
 	asm( 
 "	      004bcd02    push ebp"
@@ -1365,7 +1365,7 @@ MDate::Previous {
 }
 
 // FUNCTION: SIMCOPTER 0x004bcd7c
-MDate::WeekDay {
+uint32_t MDate::WeekDay() {
 // LINE 472:
 	asm( 
 "	      004bcd7c    push ebp"
@@ -1402,7 +1402,7 @@ MDate::WeekDay {
 }
 
 // FUNCTION: SIMCOPTER 0x004bcdb1
-MDate::Year {
+uint32_t MDate::Year() {
 // LINE 484:
 	asm( 
 "	      004bcdb1    push ebp"
@@ -1440,7 +1440,7 @@ MDate::Year {
 }
 
 // FUNCTION: SIMCOPTER 0x004bcdde
-MDate::YearLastTwoDigits {
+uint32_t MDate::YearLastTwoDigits() {
 // LINE 498:
 	asm( 
 "	      004bcdde    push ebp"
@@ -1472,7 +1472,7 @@ MDate::YearLastTwoDigits {
 }
 
 // FUNCTION: SIMCOPTER 0x004bce07
-MDate::PrintString {
+char * MDate::PrintString(char *) {
 // LINE 510:
 	asm( 
 "	      004bce07    push ebp"
@@ -1531,7 +1531,7 @@ MDate::PrintString {
 }
 
 // FUNCTION: SIMCOPTER 0x004bce73
-MDate::ParseFrom {
+void MDate::ParseFrom(class istream&) {
 // LINE 577:
 	asm( 
 "	      004bce73    push ebp"
@@ -1831,7 +1831,7 @@ MDate::ParseFrom {
 }
 
 // FUNCTION: SIMCOPTER 0x004bd175
-SkipDelim {
+void SkipDelim() {
 // LINE 525:
 	asm( 
 "	      004bd175    push ebp"
@@ -1930,7 +1930,7 @@ SkipDelim {
 }
 
 // FUNCTION: SIMCOPTER 0x004bd27c
-ParseMonth {
+char * ParseMonth() {
 // LINE 547:
 	asm( 
 "	      004bd27c    push ebp"
@@ -2053,7 +2053,7 @@ ParseMonth {
 }
 
 // FUNCTION: SIMCOPTER 0x004bd39a
-operator<< {
+class ostream& operator<<() {
 // LINE 617:
 	asm( 
 "	      004bd39a    push ebp"

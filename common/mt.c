@@ -6,7 +6,7 @@
 
 // Contribution: 1:000c90c0-000ca2a6 Module: 92, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x004ca0c0
-MTMagnitude {
+int32_t MTMagnitude() {
 // LINE 39:
 	asm( 
 "	      004ca0c0    push ebp"
@@ -72,7 +72,7 @@ MTMagnitude {
 }
 
 // FUNCTION: SIMCOPTER 0x004ca140
-MTDistance {
+int32_t MTDistance() {
 // LINE 62:
 	asm( 
 "	      004ca140    push ebp"
@@ -150,7 +150,7 @@ MTDistance {
 }
 
 // FUNCTION: SIMCOPTER 0x004ca1e3
-MTNormalize {
+int32_t MTNormalize() {
 // LINE 83:
 	asm( 
 "	      004ca1e3    push ebp"
@@ -271,7 +271,7 @@ MTNormalize {
 }
 
 // FUNCTION: SIMCOPTER 0x004ca2e1
-MTCreatePlane {
+void MTCreatePlane() {
 // LINE 115:
 	asm( 
 "	      004ca2e1    push ebp"
@@ -345,7 +345,7 @@ MTCreatePlane {
 }
 
 // FUNCTION: SIMCOPTER 0x004ca35c
-MTSideOfPlane {
+int32_t MTSideOfPlane() {
 // LINE 142:
 	asm( 
 "	      004ca35c    push ebp"
@@ -430,7 +430,7 @@ MTSideOfPlane {
 }
 
 // FUNCTION: SIMCOPTER 0x004ca3f0
-MTCreateVelocity {
+void MTCreateVelocity() {
 // LINE 172:
 	asm( 
 "	      004ca3f0    push ebp"
@@ -508,7 +508,7 @@ MTCreateVelocity {
 }
 
 // FUNCTION: SIMCOPTER 0x004ca46a
-MTSameSigns {
+int32_t MTSameSigns() {
 // LINE 199:
 	asm( 
 "	      004ca46a    push ebp"
@@ -536,7 +536,7 @@ MTSameSigns {
 }
 
 // FUNCTION: SIMCOPTER 0x004ca486
-MTVectorBounds {
+int32_t MTVectorBounds() {
 // LINE 218:
 	asm( 
 "	      004ca486    push ebp"
@@ -624,7 +624,7 @@ MTVectorBounds {
 }
 
 // FUNCTION: SIMCOPTER 0x004ca51c
-MTApply_Force {
+void MTApply_Force() {
 // LINE 245:
 	asm( 
 "	      004ca51c    push ebp"
@@ -714,7 +714,7 @@ MTApply_Force {
 }
 
 // FUNCTION: SIMCOPTER 0x004ca5b3
-MTApply_Friction {
+void MTApply_Friction() {
 // LINE 280:
 	asm( 
 "	      004ca5b3    push ebp"
@@ -852,7 +852,7 @@ MTApply_Friction {
 }
 
 // FUNCTION: SIMCOPTER 0x004ca6ae
-MTApply_Force1D {
+int32_t MTApply_Force1D() {
 // LINE 323:
 	asm( 
 "	      004ca6ae    push ebp"
@@ -917,7 +917,7 @@ MTApply_Force1D {
 }
 
 // FUNCTION: SIMCOPTER 0x004ca721
-MTApply_Friction1D {
+int32_t MTApply_Friction1D() {
 // LINE 357:
 	asm( 
 "	      004ca721    push ebp"
@@ -1001,7 +1001,7 @@ MTApply_Friction1D {
 }
 
 // FUNCTION: SIMCOPTER 0x004ca7b4
-MTAngleBounds {
+int32_t MTAngleBounds() {
 // LINE 384:
 	asm( 
 "	      004ca7b4    push ebp"
@@ -1045,7 +1045,7 @@ MTAngleBounds {
 }
 
 // FUNCTION: SIMCOPTER 0x004ca810
-MTArbRotMat {
+void MTArbRotMat() {
 // LINE 401:
 	asm( 
 "	      004ca810    push ebp"
@@ -1311,7 +1311,7 @@ MTArbRotMat {
 }
 
 // FUNCTION: SIMCOPTER 0x004caa19
-MTmat_row_normal {
+void MTmat_row_normal() {
 // LINE 463:
 	asm( 
 "	      004caa19    push ebp"
@@ -1572,7 +1572,7 @@ MTmat_row_normal {
 }
 
 // FUNCTION: SIMCOPTER 0x004cac36
-MTmat_col_normal {
+void MTmat_col_normal() {
 // LINE 502:
 	asm( 
 "	      004cac36    push ebp"
@@ -1833,7 +1833,7 @@ MTmat_col_normal {
 }
 
 // FUNCTION: SIMCOPTER 0x004cae53
-MTXProduct {
+void MTXProduct() {
 // LINE 548:
 	asm( 
 "	      004cae53    push ebp"
@@ -1922,7 +1922,7 @@ MTXProduct {
 }
 
 // FUNCTION: SIMCOPTER 0x004caefb
-MTCreateDOF4x4 {
+void MTCreateDOF4x4() {
 // LINE 568:
 	asm( 
 "	      004caefb    push ebp"
@@ -2072,7 +2072,7 @@ MTCreateDOF4x4 {
 }
 
 // FUNCTION: SIMCOPTER 0x004caff7
-MTCreateDOF4x4Y {
+void MTCreateDOF4x4Y() {
 // LINE 628:
 	asm( 
 "	      004caff7    push ebp"
@@ -2222,7 +2222,7 @@ MTCreateDOF4x4Y {
 }
 
 // FUNCTION: SIMCOPTER 0x004cb0f3
-MTCreateReflection4x4 {
+void MTCreateReflection4x4() {
 // LINE 683:
 	asm( 
 "	      004cb0f3    push ebp"
@@ -2377,7 +2377,7 @@ MTCreateReflection4x4 {
 }
 
 // FUNCTION: SIMCOPTER 0x004cb23c
-MTCheapDist2D {
+int32_t MTCheapDist2D() {
 // LINE 718:
 	asm( 
 "	      004cb23c    push ebp"

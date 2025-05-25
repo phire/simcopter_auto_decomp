@@ -6,7 +6,7 @@
 
 // Contribution: 1:00165850-00165a00 Module: 183, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x00566850
-Swizzle16 {
+void Swizzle16() {
 // LINE 10:
 	asm( 
 "	      00566850    push ebp"
@@ -66,7 +66,7 @@ Swizzle16 {
 }
 
 // FUNCTION: SIMCOPTER 0x0056689d
-Swizzle8 {
+void Swizzle8() {
 // LINE 22:
 	asm( 
 "	      0056689d    push ebp"
@@ -126,7 +126,7 @@ Swizzle8 {
 }
 
 // FUNCTION: SIMCOPTER 0x005668ea
-SwizzleFloat {
+void SwizzleFloat() {
 // LINE 34:
 	asm( 
 "	      005668ea    push ebp"
@@ -154,7 +154,7 @@ SwizzleFloat {
 }
 
 // FUNCTION: SIMCOPTER 0x00566906
-Swizzle4 {
+void Swizzle4() {
 // LINE 39:
 	asm( 
 "	      00566906    push ebp"
@@ -214,7 +214,7 @@ Swizzle4 {
 }
 
 // FUNCTION: SIMCOPTER 0x0056695b
-Swizzle2 {
+void Swizzle2() {
 // LINE 51:
 	asm( 
 "	      0056695b    push ebp"
@@ -260,7 +260,7 @@ Swizzle2 {
 }
 
 // FUNCTION: SIMCOPTER 0x00566990
-SwizzleRect {
+void SwizzleRect() {
 // LINE 62:
 	asm( 
 "	      00566990    push ebp"

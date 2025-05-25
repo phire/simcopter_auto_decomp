@@ -6,7 +6,7 @@
 
 // Contribution: 1:00164a40-00164c90 Module: 185, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x00565a40
-StringSet::StringSet {
+void StringSet::StringSet(class ResFile*, short) {
 // LINE 12:
 	asm( 
 "	      00565a40    push ebp"
@@ -43,7 +43,7 @@ StringSet::StringSet {
 }
 
 // FUNCTION: SIMCOPTER 0x00565a6f
-StringSet::StringSet {
+void StringSet::StringSet(class ResFile*, short, short) {
 // LINE 20:
 	asm( 
 "	      00565a6f    push ebp"
@@ -98,7 +98,7 @@ StringSet::StringSet {
 }
 
 // FUNCTION: SIMCOPTER 0x00565acc
-StringSet::LoadStrings {
+void StringSet::LoadStrings(short) {
 // LINE 32:
 	asm( 
 "	      00565acc    push ebp"
@@ -198,7 +198,7 @@ StringSet::LoadStrings {
 }
 
 // FUNCTION: SIMCOPTER 0x00565ba0
-StringSet::Swizzle {
+void StringSet::Swizzle(void * __ptr32, long) {
 // LINE 51:
 	asm( 
 "	      00565ba0    push ebp"
@@ -226,7 +226,7 @@ StringSet::Swizzle {
 }
 
 // FUNCTION: SIMCOPTER 0x00565bbc
-StringSet::~StringSet {
+void StringSet::~StringSet() {
 // LINE 57:
 	asm( 
 "	      00565bbc    push ebp"
@@ -272,7 +272,7 @@ StringSet::~StringSet {
 }
 
 // FUNCTION: SIMCOPTER 0x00565bff
-StringSet::GetString {
+unsigned char * StringSet::GetString(short) {
 // LINE 65:
 	asm( 
 "	      00565bff    push ebp"

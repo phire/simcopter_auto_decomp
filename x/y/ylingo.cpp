@@ -6,7 +6,7 @@
 
 // Contribution: 1:0015f9d0-0015fba1 Module: 190, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x005609d0
-YObjLang::YObjLang {
+void YObjLang::YObjLang(unsigned char *) {
 // LINE 42:
 	asm( 
 "	      005609d0    push ebp"
@@ -35,7 +35,7 @@ YObjLang::YObjLang {
 }
 
 // FUNCTION: SIMCOPTER 0x00560a02
-YObjLang::SwizzleTreeParam {
+void YObjLang::SwizzleTreeParam(short, struct Behavior::NodeParameter*) {
 // LINE 52:
 	asm( 
 "	      00560a02    push ebp"
@@ -144,7 +144,7 @@ YObjLang::SwizzleTreeParam {
 }
 
 // FUNCTION: SIMCOPTER 0x00560abe
-YObjLang::SwizzleTree {
+void YObjLang::SwizzleTree(void * __ptr32, long) {
 // LINE 75:
 	asm( 
 "	      00560abe    push ebp"
@@ -181,7 +181,7 @@ YObjLang::SwizzleTree {
 }
 
 // FUNCTION: SIMCOPTER 0x00560aec
-YObjLang::YObjLang {
+void YObjLang::YObjLang(class YObjLang&) {
 // LINE 82:
 	asm( 
 "	      00560aec    push ebp"
@@ -210,7 +210,7 @@ YObjLang::YObjLang {
 }
 
 // FUNCTION: SIMCOPTER 0x00560b1e
-YObjLang::~YObjLang {
+void YObjLang::~YObjLang() {
 // LINE 91:
 	asm( 
 "	      00560b1e    push ebp"
@@ -235,7 +235,7 @@ YObjLang::~YObjLang {
 }
 
 // FUNCTION: SIMCOPTER 0x00560b3d
-YObjLang::CountPrimitives {
+short YObjLang::CountPrimitives() {
 // LINE 98:
 	asm( 
 "	      00560b3d    push ebp"
@@ -262,7 +262,7 @@ YObjLang::CountPrimitives {
 }
 
 // FUNCTION: SIMCOPTER 0x00560b57
-YObjLang::GetPrimName {
+void YObjLang::GetPrimName(short, unsigned char *) {
 // LINE 108:
 	asm( 
 "	      00560b57    push ebp"
@@ -285,7 +285,7 @@ YObjLang::GetPrimName {
 }
 
 // FUNCTION: SIMCOPTER 0x00560b6f
-YObjLang::IsSingleExit {
+unsigned short YObjLang::IsSingleExit(struct Behavior::Node*) {
 // LINE 115:
 	asm( 
 "	      00560b6f    push ebp"
@@ -312,7 +312,7 @@ YObjLang::IsSingleExit {
 }
 
 // FUNCTION: SIMCOPTER 0x00560b8a
-YObjLang::GetNodeText {
+void YObjLang::GetNodeText(class Behavior*, struct Behavior::Node*, unsigned char *) {
 // LINE 467:
 	asm( 
 "	      00560b8a    push ebp"

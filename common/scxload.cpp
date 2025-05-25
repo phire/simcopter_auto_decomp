@@ -6,7 +6,7 @@
 
 // Contribution: 1:000ca880-000cc535 Module: 89, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x004cb880
-cLZAPFileBitStream::cLZAPFileBitStream {
+void cLZAPFileBitStream::cLZAPFileBitStream() {
 // LINE 85:
 	asm( 
 "	      004cb880    push ebp"
@@ -45,7 +45,7 @@ cLZAPFileBitStream::cLZAPFileBitStream {
 }
 
 // FUNCTION: SIMCOPTER 0x004cb8c4
-cLZAPFileBitStream::~cLZAPFileBitStream {
+void cLZAPFileBitStream::~cLZAPFileBitStream() {
 // LINE 90:
 	asm( 
 "	      004cb8c4    push ebp"
@@ -86,7 +86,7 @@ cLZAPFileBitStream::~cLZAPFileBitStream {
 }
 
 // FUNCTION: SIMCOPTER 0x004cb90d
-cLZAPFileBitStream::OpenRead {
+int32_t cLZAPFileBitStream::OpenRead(char *) {
 // LINE 95:
 	asm( 
 "	      004cb90d    push ebp"
@@ -161,7 +161,7 @@ cLZAPFileBitStream::OpenRead {
 }
 
 // FUNCTION: SIMCOPTER 0x004cb9d2
-cLZAPFileBitStream::Close {
+void cLZAPFileBitStream::Close() {
 // LINE 102:
 	asm( 
 "	      004cb9d2    push ebp"
@@ -205,7 +205,7 @@ cLZAPFileBitStream::Close {
 }
 
 // FUNCTION: SIMCOPTER 0x004cba1c
-cLZAPFileBitStream::Read {
+unsigned long cLZAPFileBitStream::Read(unsigned char *, unsigned long) {
 // LINE 108:
 	asm( 
 "	      004cba1c    push ebp"
@@ -264,7 +264,7 @@ cLZAPFileBitStream::Read {
 }
 
 // FUNCTION: SIMCOPTER 0x004cba9c
-cLZAPFileBitStream::Write {
+unsigned long cLZAPFileBitStream::Write(unsigned char *, unsigned long) {
 // LINE 115:
 	asm( 
 "	      004cba9c    push ebp"
@@ -323,7 +323,7 @@ cLZAPFileBitStream::Write {
 }
 
 // FUNCTION: SIMCOPTER 0x004cbb1c
-cLZAPFileBitStream::Rewind {
+void cLZAPFileBitStream::Rewind() {
 // LINE 122:
 	asm( 
 "	      004cbb1c    push ebp"
@@ -366,7 +366,7 @@ cLZAPFileBitStream::Rewind {
 }
 
 // FUNCTION: SIMCOPTER 0x004cbb63
-cLZAPFileBitStream::RewindToMark {
+void cLZAPFileBitStream::RewindToMark() {
 // LINE 128:
 	asm( 
 "	      004cbb63    push ebp"
@@ -413,7 +413,7 @@ cLZAPFileBitStream::RewindToMark {
 }
 
 // FUNCTION: SIMCOPTER 0x004cbbb5
-cLZAPFileBitStream::Mark {
+void cLZAPFileBitStream::Mark() {
 // LINE 133:
 	asm( 
 "	      004cbbb5    push ebp"
@@ -465,7 +465,7 @@ cLZAPFileBitStream::Mark {
 }
 
 // FUNCTION: SIMCOPTER 0x004cbc0d
-cLZAPFileBitStream::Size {
+long cLZAPFileBitStream::Size() {
 // LINE 140:
 	asm( 
 "	      004cbc0d    push ebp"
@@ -505,7 +505,7 @@ cLZAPFileBitStream::Size {
 }
 
 // FUNCTION: SIMCOPTER 0x004cbc42
-cLZAPFileBitStream::FreeAll {
+void cLZAPFileBitStream::FreeAll() {
 // LINE 146:
 	asm( 
 "	      004cbc42    push ebp"
@@ -525,7 +525,7 @@ cLZAPFileBitStream::FreeAll {
 }
 
 // FUNCTION: SIMCOPTER 0x004cbc58
-SCXReadBudget {
+void SCXReadBudget() {
 // LINE 169:
 	asm( 
 "	      004cbc58    push ebp"
@@ -556,7 +556,7 @@ SCXReadBudget {
 }
 
 // FUNCTION: SIMCOPTER 0x004cbc7b
-SCXReadGraphData {
+void SCXReadGraphData() {
 // LINE 184:
 	asm( 
 "	      004cbc7b    push ebp"
@@ -587,7 +587,7 @@ SCXReadGraphData {
 }
 
 // FUNCTION: SIMCOPTER 0x004cbc9e
-SCXReadPlayer {
+void SCXReadPlayer() {
 // LINE 196:
 	asm( 
 "	      004cbc9e    push ebp"
@@ -686,7 +686,7 @@ SCXReadPlayer {
 }
 
 // FUNCTION: SIMCOPTER 0x004cbd38
-SCXReadNeighbors {
+void SCXReadNeighbors() {
 // LINE 221:
 	asm( 
 "	      004cbd38    push ebp"
@@ -973,7 +973,7 @@ SCXReadNeighbors {
 }
 
 // FUNCTION: SIMCOPTER 0x004cbfc8
-SCXReadContracts {
+void SCXReadContracts() {
 // LINE 279:
 	asm( 
 "	      004cbfc8    push ebp"
@@ -1018,7 +1018,7 @@ SCXReadContracts {
 }
 
 // FUNCTION: SIMCOPTER 0x004cc003
-ReadSCXFile {
+int32_t ReadSCXFile() {
 // LINE 295:
 	asm( 
 "	      004cc003    push ebp"

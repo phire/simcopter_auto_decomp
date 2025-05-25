@@ -6,7 +6,7 @@
 
 // Contribution: 1:000c3690-000c8acf Module: 94, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x004c481e
-S2CityGetCityNameFromFile {
+short S2CityGetCityNameFromFile() {
 // LINE 180:
 	asm( 
 "	      004c481e    push ebp"
@@ -247,7 +247,7 @@ S2CityGetCityNameFromFile {
 }
 
 // FUNCTION: SIMCOPTER 0x004c49d8
-stol {
+long stol() {
 // LINE 245:
 	asm( 
 "	      004c49d8    push ebp"
@@ -309,7 +309,7 @@ stol {
 }
 
 // FUNCTION: SIMCOPTER 0x004c4a2b
-ValidateSCXSaveGameFile {
+long ValidateSCXSaveGameFile() {
 // LINE 272:
 	asm( 
 "	      004c4a2b    push ebp"
@@ -394,7 +394,7 @@ ValidateSCXSaveGameFile {
 }
 
 // FUNCTION: SIMCOPTER 0x004c4ab6
-S2CityLoad {
+short S2CityLoad() {
 // LINE 298:
 	asm( 
 "	      004c4ab6    push ebp"
@@ -1293,7 +1293,7 @@ S2CityLoad {
 }
 
 // FUNCTION: SIMCOPTER 0x004c5373
-label_kludge {
+void label_kludge() {
 // LINE 473:
 	asm( 
 "	      004c5373    push ebp"
@@ -1367,7 +1367,7 @@ label_kludge {
 }
 
 // FUNCTION: SIMCOPTER 0x004c5412
-clear_label {
+void clear_label() {
 // LINE 496:
 	asm( 
 "	      004c5412    push ebp"
@@ -1421,7 +1421,7 @@ clear_label {
 }
 
 // FUNCTION: SIMCOPTER 0x004c547e
-graph_kludge {
+void graph_kludge() {
 // LINE 516:
 	asm( 
 "	      004c547e    push ebp"
@@ -1515,7 +1515,7 @@ graph_kludge {
 }
 
 // FUNCTION: SIMCOPTER 0x004c555f
-S2CityMakeCityNameFromFilePath {
+void S2CityMakeCityNameFromFilePath() {
 // LINE 542:
 	asm( 
 "	      004c555f    push ebp"
@@ -1577,7 +1577,7 @@ S2CityMakeCityNameFromFilePath {
 }
 
 // FUNCTION: SIMCOPTER 0x004c55d7
-S2CityMakeFileNameFromCityName {
+void S2CityMakeFileNameFromCityName() {
 // LINE 568:
 	asm( 
 "	      004c55d7    push ebp"
@@ -1606,7 +1606,7 @@ S2CityMakeFileNameFromCityName {
 }
 
 // FUNCTION: SIMCOPTER 0x004c55f2
-S2CityReadHeader {
+unsigned short S2CityReadHeader() {
 // LINE 588:
 	asm( 
 "	      004c55f2    push ebp"
@@ -1738,7 +1738,7 @@ S2CityReadHeader {
 }
 
 // FUNCTION: SIMCOPTER 0x004c56e2
-S2CityMiscRead {
+unsigned short S2CityMiscRead() {
 // LINE 629:
 	asm( 
 "	      004c56e2    push ebp"
@@ -3122,7 +3122,7 @@ S2CityMiscRead {
 }
 
 // FUNCTION: SIMCOPTER 0x004c65df
-S2CityGameReadUncompressed {
+unsigned short S2CityGameReadUncompressed() {
 // LINE 861:
 	asm( 
 "	      004c65df    push ebp"
@@ -3166,7 +3166,7 @@ S2CityGameReadUncompressed {
 }
 
 // FUNCTION: SIMCOPTER 0x004c6619
-S2CityBucketGameRead {
+unsigned short S2CityBucketGameRead() {
 // LINE 883:
 	asm( 
 "	      004c6619    push ebp"
@@ -3248,7 +3248,7 @@ S2CityBucketGameRead {
 }
 
 // FUNCTION: SIMCOPTER 0x004c66a4
-S2CityGameReadCompressed {
+unsigned short S2CityGameReadCompressed() {
 // LINE 915:
 	asm( 
 "	      004c66a4    push ebp"
@@ -3439,7 +3439,7 @@ S2CityGameReadCompressed {
 }
 
 // FUNCTION: SIMCOPTER 0x004c680e
-S2CitySave {
+short S2CitySave() {
 // LINE 976:
 	asm( 
 "	      004c680e    push ebp"
@@ -3978,7 +3978,7 @@ S2CitySave {
 }
 
 // FUNCTION: SIMCOPTER 0x004c6cfe
-S2CityWriteName {
+unsigned short S2CityWriteName() {
 // LINE 1072:
 	asm( 
 "	      004c6cfe    push ebp"
@@ -4103,7 +4103,7 @@ S2CityWriteName {
 }
 
 // FUNCTION: SIMCOPTER 0x004c6dd5
-S2CityGameWriteUncompressed {
+unsigned short S2CityGameWriteUncompressed() {
 // LINE 1111:
 	asm( 
 "	      004c6dd5    push ebp"
@@ -4256,7 +4256,7 @@ S2CityGameWriteUncompressed {
 }
 
 // FUNCTION: SIMCOPTER 0x004c6edb
-S2CityWriteHeader {
+unsigned short S2CityWriteHeader() {
 // LINE 1156:
 	asm( 
 "	      004c6edb    push ebp"
@@ -4405,7 +4405,7 @@ S2CityWriteHeader {
 }
 
 // FUNCTION: SIMCOPTER 0x004c6fe6
-S2CityGameWriteCompressed {
+unsigned short S2CityGameWriteCompressed() {
 // LINE 1197:
 	asm( 
 "	      004c6fe6    push ebp"
@@ -4819,7 +4819,7 @@ S2CityGameWriteCompressed {
 }
 
 // FUNCTION: SIMCOPTER 0x004c732e
-S2CityMiscWrite {
+unsigned short S2CityMiscWrite() {
 // LINE 1300:
 	asm( 
 "	      004c732e    push ebp"
@@ -6131,7 +6131,7 @@ S2CityMiscWrite {
 }
 
 // FUNCTION: SIMCOPTER 0x004c81c9
-swizzle_buffer {
+void swizzle_buffer() {
 // LINE 1494:
 	asm( 
 "	      004c81c9    push ebp"
@@ -6196,7 +6196,7 @@ swizzle_buffer {
 }
 
 // FUNCTION: SIMCOPTER 0x004c822d
-swizzle_Micro {
+void swizzle_Micro() {
 // LINE 1522:
 	asm( 
 "	      004c822d    push ebp"
@@ -6275,7 +6275,7 @@ swizzle_Micro {
 }
 
 // FUNCTION: SIMCOPTER 0x004c82b3
-swizzle_shorts {
+void swizzle_shorts() {
 // LINE 1552:
 	asm( 
 "	      004c82b3    push ebp"
@@ -6339,7 +6339,7 @@ swizzle_shorts {
 }
 
 // FUNCTION: SIMCOPTER 0x004c8317
-swizzle_short {
+short swizzle_short() {
 // LINE 1580:
 	asm( 
 "	      004c8317    push ebp"
@@ -6389,7 +6389,7 @@ swizzle_short {
 }
 
 // FUNCTION: SIMCOPTER 0x004c8350
-swap_long {
+long swap_long() {
 // LINE 1605:
 	asm( 
 "	      004c8350    push ebp"
@@ -6439,7 +6439,7 @@ swap_long {
 }
 
 // FUNCTION: SIMCOPTER 0x004c838e
-swizzle_long {
+long swizzle_long() {
 // LINE 1631:
 	asm( 
 "	      004c838e    push ebp"
@@ -6508,7 +6508,7 @@ swizzle_long {
 }
 
 // FUNCTION: SIMCOPTER 0x004c83e4
-GetStringResource {
+void GetStringResource() {
 // LINE 1667:
 	asm( 
 "	      004c83e4    push ebp"
@@ -6533,7 +6533,7 @@ GetStringResource {
 }
 
 // FUNCTION: SIMCOPTER 0x004c83f5
-S2CityAlloc {
+short S2CityAlloc() {
 // LINE 1703:
 	asm( 
 "	      004c83f5    push ebp"
@@ -7928,7 +7928,7 @@ S2CityAlloc {
 }
 
 // FUNCTION: SIMCOPTER 0x004c920e
-S2CityFree {
+void S2CityFree() {
 // LINE 1967:
 	asm( 
 "	      004c920e    push ebp"
@@ -7955,7 +7955,7 @@ S2CityFree {
 }
 
 // FUNCTION: SIMCOPTER 0x004c9227
-PStringToCString {
+void PStringToCString() {
 // LINE 1979:
 	asm( 
 "	      004c9227    push ebp"
@@ -8007,7 +8007,7 @@ PStringToCString {
 }
 
 // FUNCTION: SIMCOPTER 0x004c927b
-CStringToPString {
+void CStringToPString() {
 // LINE 1993:
 	asm( 
 "	      004c927b    push ebp"
@@ -8071,7 +8071,7 @@ CStringToPString {
 }
 
 // FUNCTION: SIMCOPTER 0x004c92e5
-CopyPString {
+void CopyPString() {
 // LINE 2010:
 	asm( 
 "	      004c92e5    push ebp"
@@ -8125,7 +8125,7 @@ CopyPString {
 }
 
 // FUNCTION: SIMCOPTER 0x004c9339
-check_backslash_terminate {
+void check_backslash_terminate() {
 // LINE 2039:
 	asm( 
 "	      004c9339    push ebp"
@@ -8182,7 +8182,7 @@ check_backslash_terminate {
 }
 
 // FUNCTION: SIMCOPTER 0x004c9381
-check_root {
+short check_root() {
 // LINE 2066:
 	asm( 
 "	      004c9381    push ebp"
@@ -8337,7 +8337,7 @@ check_root {
 }
 
 // FUNCTION: SIMCOPTER 0x004c9495
-get_path_at_start {
+void get_path_at_start() {
 // LINE 2121:
 	asm( 
 "	      004c9495    push ebp"
@@ -8452,7 +8452,7 @@ get_path_at_start {
 }
 
 // FUNCTION: SIMCOPTER 0x004c9545
-do_uppercase {
+void do_uppercase() {
 // LINE 2160:
 	asm( 
 "	      004c9545    push ebp"
@@ -8544,7 +8544,7 @@ do_uppercase {
 }
 
 // FUNCTION: SIMCOPTER 0x004c95e3
-get_name_at_end {
+void get_name_at_end() {
 // LINE 2193:
 	asm( 
 "	      004c95e3    push ebp"
@@ -8659,7 +8659,7 @@ get_name_at_end {
 }
 
 // FUNCTION: SIMCOPTER 0x004c9694
-strip_extension {
+void strip_extension() {
 // LINE 2233:
 	asm( 
 "	      004c9694    push ebp"
@@ -8735,7 +8735,7 @@ strip_extension {
 }
 
 // FUNCTION: SIMCOPTER 0x004c96fc
-check_extension {
+void check_extension() {
 // LINE 2266:
 	asm( 
 "	      004c96fc    push ebp"
@@ -8925,7 +8925,7 @@ check_extension {
 }
 
 // FUNCTION: SIMCOPTER 0x004c9835
-check_file_exist {
+short check_file_exist() {
 // LINE 2318:
 	asm( 
 "	      004c9835    push ebp"
@@ -8977,7 +8977,7 @@ check_file_exist {
 }
 
 // FUNCTION: SIMCOPTER 0x004c987e
-remove_illegals {
+void remove_illegals() {
 // LINE 2344:
 	asm( 
 "	      004c987e    push ebp"
@@ -9147,7 +9147,7 @@ remove_illegals {
 }
 
 // FUNCTION: SIMCOPTER 0x004c9a2e
-compress_spaces {
+void compress_spaces() {
 // LINE 2385:
 	asm( 
 "	      004c9a2e    push ebp"

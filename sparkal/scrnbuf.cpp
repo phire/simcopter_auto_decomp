@@ -6,7 +6,7 @@
 
 // Contribution: 1:0009d450-0009e705 Module: 12, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x0049e450
-ScreenBuffer::ScreenBuffer {
+void ScreenBuffer::ScreenBuffer() {
 // LINE 24:
 	asm( 
 "	      0049e450    push ebp"
@@ -117,7 +117,7 @@ ScreenBuffer::ScreenBuffer {
 }
 
 // FUNCTION: SIMCOPTER 0x0049e534
-ScreenBuffer::ScreenBuffer {
+void ScreenBuffer::ScreenBuffer(class CSparkalWindow*, long, long, struct SparkalColor*, int32_t, enum tagModeType, int32_t) {
 // LINE 62:
 	asm( 
 "	      0049e534    push ebp"
@@ -276,7 +276,7 @@ ScreenBuffer::ScreenBuffer {
 }
 
 // FUNCTION: SIMCOPTER 0x0049e667
-ScreenBuffer::~ScreenBuffer {
+void ScreenBuffer::~ScreenBuffer() {
 // LINE 110:
 	asm( 
 "	      0049e667    push ebp"
@@ -313,7 +313,7 @@ ScreenBuffer::~ScreenBuffer {
 }
 
 // FUNCTION: SIMCOPTER 0x0049e69e
-ScreenBuffer::CreateSurfaces {
+int32_t ScreenBuffer::CreateSurfaces() {
 // LINE 127:
 	asm( 
 "	      0049e69e    push ebp"
@@ -768,7 +768,7 @@ ScreenBuffer::CreateSurfaces {
 }
 
 // FUNCTION: SIMCOPTER 0x0049ea6a
-ScreenBuffer::DeleteSurfaces {
+int32_t ScreenBuffer::DeleteSurfaces() {
 // LINE 238:
 	asm( 
 "	      0049ea6a    push ebp"
@@ -891,7 +891,7 @@ ScreenBuffer::DeleteSurfaces {
 }
 
 // FUNCTION: SIMCOPTER 0x0049eb58
-ScreenBuffer::ClearSurfaces {
+int32_t ScreenBuffer::ClearSurfaces(int32_t) {
 // LINE 281:
 	asm( 
 "	      0049eb58    push ebp"
@@ -1214,7 +1214,7 @@ ScreenBuffer::ClearSurfaces {
 }
 
 // FUNCTION: SIMCOPTER 0x0049ee15
-ScreenBuffer::Swap {
+unsigned long ScreenBuffer::Swap(class CSparkalWindow*, long, long) {
 // LINE 361:
 	asm( 
 "	      0049ee15    push ebp"
@@ -1451,7 +1451,7 @@ ScreenBuffer::Swap {
 }
 
 // FUNCTION: SIMCOPTER 0x0049efff
-ScreenBuffer::WaitTillReadyToFlip {
+void ScreenBuffer::WaitTillReadyToFlip() {
 // LINE 420:
 	asm( 
 "	      0049efff    push ebp"
@@ -1492,7 +1492,7 @@ ScreenBuffer::WaitTillReadyToFlip {
 }
 
 // FUNCTION: SIMCOPTER 0x0049f040
-ScreenBuffer::SetPalette {
+void ScreenBuffer::SetPalette() {
 // LINE 438:
 	asm( 
 "	      0049f040    push ebp"
@@ -1590,7 +1590,7 @@ ScreenBuffer::SetPalette {
 }
 
 // FUNCTION: SIMCOPTER 0x0049f0fa
-ScreenBuffer::UsePalette {
+int32_t ScreenBuffer::UsePalette(struct SparkalColor*) {
 // LINE 471:
 	asm( 
 "	      0049f0fa    push ebp"
@@ -1931,7 +1931,7 @@ ScreenBuffer::UsePalette {
 }
 
 // FUNCTION: SIMCOPTER 0x0049f42b
-ScreenBuffer::FreePalette {
+void ScreenBuffer::FreePalette() {
 // LINE 618:
 	asm( 
 "	      0049f42b    push ebp"
@@ -1976,7 +1976,7 @@ ScreenBuffer::FreePalette {
 }
 
 // FUNCTION: SIMCOPTER 0x0049f472
-ScreenBuffer::FillRect {
+unsigned long ScreenBuffer::FillRect(long, struct SparkalRect*) {
 // LINE 649:
 	asm( 
 "	      0049f472    push ebp"
@@ -2248,7 +2248,7 @@ ScreenBuffer::FillRect {
 }
 
 // FUNCTION: SIMCOPTER 0x0049f690
-ScreenBuffer::SetWindowRect {
+void ScreenBuffer::SetWindowRect(struct SparkalRect*) {
 // LINE 719:
 	asm( 
 "	      0049f690    push ebp"

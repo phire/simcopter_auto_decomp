@@ -6,7 +6,7 @@
 
 // Contribution: 1:000ca2b0-000ca878 Module: 91, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x004cb2b0
-S2AllocInit {
+struct alloc_handle_t* S2AllocInit() {
 // LINE 267:
 	asm( 
 "	      004cb2b0    push ebp"
@@ -81,7 +81,7 @@ S2AllocInit {
 }
 
 // FUNCTION: SIMCOPTER 0x004cb34d
-S2AllocHdr {
+struct alloc_hdr_s* S2AllocHdr() {
 // LINE 234:
 	asm( 
 "	      004cb34d    push ebp"
@@ -179,7 +179,7 @@ S2AllocHdr {
 }
 
 // FUNCTION: SIMCOPTER 0x004cb401
-S2AllocPool {
+int32_t S2AllocPool() {
 // LINE 291:
 	asm( 
 "	      004cb401    push ebp"
@@ -273,7 +273,7 @@ S2AllocPool {
 }
 
 // FUNCTION: SIMCOPTER 0x004cb4ac
-S2Alloc {
+char * S2Alloc() {
 // LINE 330:
 	asm( 
 "	      004cb4ac    push ebp"
@@ -415,7 +415,7 @@ S2Alloc {
 }
 
 // FUNCTION: SIMCOPTER 0x004cb5ab
-S2AllocMem1 {
+char * S2AllocMem1() {
 // LINE 393:
 	asm( 
 "	      004cb5ab    push ebp"
@@ -447,7 +447,7 @@ S2AllocMem1 {
 }
 
 // FUNCTION: SIMCOPTER 0x004cb5cf
-S2AllocMem {
+char * S2AllocMem() {
 // LINE 408:
 	asm( 
 "	      004cb5cf    push ebp"
@@ -483,7 +483,7 @@ S2AllocMem {
 }
 
 // FUNCTION: SIMCOPTER 0x004cb5f8
-S2AllocSetPool {
+struct alloc_handle_t* S2AllocSetPool() {
 // LINE 437:
 	asm( 
 "	      004cb5f8    push ebp"
@@ -521,7 +521,7 @@ S2AllocSetPool {
 }
 
 // FUNCTION: SIMCOPTER 0x004cb628
-S2AllocReset {
+void S2AllocReset() {
 // LINE 456:
 	asm( 
 "	      004cb628    push ebp"
@@ -605,7 +605,7 @@ S2AllocReset {
 }
 
 // FUNCTION: SIMCOPTER 0x004cb6c3
-S2AllocFreePool {
+void S2AllocFreePool() {
 // LINE 489:
 	asm( 
 "	      004cb6c3    push ebp"
@@ -738,7 +738,7 @@ S2AllocFreePool {
 }
 
 // FUNCTION: SIMCOPTER 0x004cb7a5
-S2AllocAligned {
+void * __ptr32 S2AllocAligned() {
 // LINE 554:
 	asm( 
 "	      004cb7a5    push ebp"
@@ -763,7 +763,7 @@ S2AllocAligned {
 }
 
 // FUNCTION: SIMCOPTER 0x004cb7ba
-DOSAllocAlignedHack {
+void * __ptr32 DOSAllocAlignedHack() {
 // LINE 749:
 	asm( 
 "	      004cb7ba    push ebp"
@@ -834,7 +834,7 @@ DOSAllocAlignedHack {
 }
 
 // FUNCTION: SIMCOPTER 0x004cb83f
-S2FreeAligned {
+void S2FreeAligned() {
 // LINE 785:
 	asm( 
 "	      004cb83f    push ebp"

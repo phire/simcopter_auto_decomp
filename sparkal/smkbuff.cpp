@@ -6,7 +6,7 @@
 
 // Contribution: 1:00096c00-00098e2e Module: 17, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x00497c00
-SmackerBuffer::SmackerBuffer {
+void SmackerBuffer::SmackerBuffer() {
 // LINE 39:
 	asm( 
 "	      00497c00    push ebp"
@@ -116,7 +116,7 @@ SmackerBuffer::SmackerBuffer {
 }
 
 // FUNCTION: SIMCOPTER 0x00497ccf
-SmackerBuffer::SmackerBuffer {
+void SmackerBuffer::SmackerBuffer(char *, int32_t, int32_t) {
 // LINE 62:
 	asm( 
 "	      00497ccf    push ebp"
@@ -234,7 +234,7 @@ SmackerBuffer::SmackerBuffer {
 }
 
 // FUNCTION: SIMCOPTER 0x00497da1
-SmackerBuffer::~SmackerBuffer {
+void SmackerBuffer::~SmackerBuffer() {
 // LINE 89:
 	asm( 
 "	      00497da1    push ebp"
@@ -264,7 +264,7 @@ SmackerBuffer::~SmackerBuffer {
 }
 
 // FUNCTION: SIMCOPTER 0x00497dc8
-SmackerBuffer::Initialize {
+int32_t SmackerBuffer::Initialize() {
 // LINE 105:
 	asm( 
 "	      00497dc8    push ebp"
@@ -294,7 +294,7 @@ SmackerBuffer::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x00497de9
-SmackerBuffer::SetPalette {
+int32_t SmackerBuffer::SetPalette() {
 // LINE 114:
 	asm( 
 "	      00497de9    push ebp"
@@ -337,7 +337,7 @@ SmackerBuffer::SetPalette {
 }
 
 // FUNCTION: SIMCOPTER 0x00497e25
-SmackerBuffer::CreateSurface {
+int32_t SmackerBuffer::CreateSurface() {
 // LINE 131:
 	asm( 
 "	      00497e25    push ebp"
@@ -472,7 +472,7 @@ SmackerBuffer::CreateSurface {
 }
 
 // FUNCTION: SIMCOPTER 0x00497f22
-SmackerBuffer::Open {
+int32_t SmackerBuffer::Open(char *, unsigned long, unsigned long) {
 // LINE 159:
 	asm( 
 "	      00497f22    push ebp"
@@ -541,7 +541,7 @@ SmackerBuffer::Open {
 }
 
 // FUNCTION: SIMCOPTER 0x00497f91
-SmackerBuffer::Close {
+void SmackerBuffer::Close() {
 // LINE 178:
 	asm( 
 "	      00497f91    push ebp"
@@ -602,7 +602,7 @@ SmackerBuffer::Close {
 }
 
 // FUNCTION: SIMCOPTER 0x00497ff3
-SmackerBuffer::Reset {
+void SmackerBuffer::Reset() {
 // LINE 194:
 	asm( 
 "	      00497ff3    push ebp"
@@ -649,7 +649,7 @@ SmackerBuffer::Reset {
 }
 
 // FUNCTION: SIMCOPTER 0x00498043
-SmackerBuffer::ClearBuffer {
+void SmackerBuffer::ClearBuffer(int32_t) {
 // LINE 211:
 	asm( 
 "	      00498043    push ebp"
@@ -672,7 +672,7 @@ SmackerBuffer::ClearBuffer {
 }
 
 // FUNCTION: SIMCOPTER 0x0049805b
-SmackerBuffer::SetWindow {
+void SmackerBuffer::SetWindow(void * __ptr32) {
 // LINE 228:
 	asm( 
 "	      0049805b    push ebp"
@@ -740,7 +740,7 @@ SmackerBuffer::SetWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004980b3
-SmackerBuffer::SetWindow {
+void SmackerBuffer::SetWindow(class CSparkalWindow*) {
 // LINE 251:
 	asm( 
 "	      004980b3    push ebp"
@@ -772,7 +772,7 @@ SmackerBuffer::SetWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004980df
-SmackerBuffer::CenterBufferInRect {
+void SmackerBuffer::CenterBufferInRect(struct SparkalRect*) {
 // LINE 268:
 	asm( 
 "	      004980df    push ebp"
@@ -875,7 +875,7 @@ SmackerBuffer::CenterBufferInRect {
 }
 
 // FUNCTION: SIMCOPTER 0x00498188
-SmackerBuffer::ComposeToWindow {
+int32_t SmackerBuffer::ComposeToWindow() {
 // LINE 305:
 	asm( 
 "	      00498188    push ebp"
@@ -1252,7 +1252,7 @@ SmackerBuffer::ComposeToWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x00498489
-VRSmackerInit {
+void * __ptr32 VRSmackerInit() {
 // LINE 423:
 	asm( 
 "	      00498489    push ebp"
@@ -1298,7 +1298,7 @@ VRSmackerInit {
 }
 
 // FUNCTION: SIMCOPTER 0x004984dc
-VRSmackerDestroy {
+void VRSmackerDestroy() {
 // LINE 432:
 	asm( 
 "	      004984dc    push ebp"
@@ -1335,7 +1335,7 @@ VRSmackerDestroy {
 }
 
 // FUNCTION: SIMCOPTER 0x00498516
-VRSmackerSetBitmap {
+int32_t VRSmackerSetBitmap() {
 // LINE 439:
 	asm( 
 "	      00498516    push ebp"
@@ -1369,7 +1369,7 @@ VRSmackerSetBitmap {
 }
 
 // FUNCTION: SIMCOPTER 0x0049853d
-VRSmackerNextFrame {
+int32_t VRSmackerNextFrame() {
 // LINE 445:
 	asm( 
 "	      0049853d    push ebp"
@@ -1395,7 +1395,7 @@ VRSmackerNextFrame {
 }
 
 // FUNCTION: SIMCOPTER 0x00498555
-VRSmackerReset {
+void VRSmackerReset() {
 // LINE 449:
 	asm( 
 "	      00498555    push ebp"
@@ -1421,7 +1421,7 @@ VRSmackerReset {
 }
 
 // FUNCTION: SIMCOPTER 0x0049856d
-VRSmackerStatus {
+int32_t VRSmackerStatus() {
 // LINE 453:
 	asm( 
 "	      0049856d    push ebp"
@@ -1447,7 +1447,7 @@ VRSmackerStatus {
 }
 
 // FUNCTION: SIMCOPTER 0x00498583
-VRSmackerGetBitmap {
+struct VRBmpHdr* VRSmackerGetBitmap() {
 // LINE 457:
 	asm( 
 "	      00498583    push ebp"
@@ -1473,7 +1473,7 @@ VRSmackerGetBitmap {
 }
 
 // FUNCTION: SIMCOPTER 0x0049859c
-VRSmackerGetBitmapBits {
+char * VRSmackerGetBitmapBits() {
 // LINE 461:
 	asm( 
 "	      0049859c    push ebp"
@@ -1499,7 +1499,7 @@ VRSmackerGetBitmapBits {
 }
 
 // FUNCTION: SIMCOPTER 0x004985b5
-VRBmpSmackerBuffer::VRBmpSmackerBuffer {
+void VRBmpSmackerBuffer::VRBmpSmackerBuffer() {
 // LINE 472:
 	asm( 
 "	      004985b5    push ebp"
@@ -1534,7 +1534,7 @@ VRBmpSmackerBuffer::VRBmpSmackerBuffer {
 }
 
 // FUNCTION: SIMCOPTER 0x004985f4
-VRBmpSmackerBuffer::VRBmpSmackerBuffer {
+void VRBmpSmackerBuffer::VRBmpSmackerBuffer(char *, int32_t, int32_t, int32_t) {
 // LINE 485:
 	asm( 
 "	      004985f4    push ebp"
@@ -1576,7 +1576,7 @@ VRBmpSmackerBuffer::VRBmpSmackerBuffer {
 }
 
 // FUNCTION: SIMCOPTER 0x00498640
-VRBmpSmackerBuffer::~VRBmpSmackerBuffer {
+void VRBmpSmackerBuffer::~VRBmpSmackerBuffer() {
 // LINE 494:
 	asm( 
 "	      00498640    push ebp"
@@ -1640,7 +1640,7 @@ VRBmpSmackerBuffer::~VRBmpSmackerBuffer {
 }
 
 // FUNCTION: SIMCOPTER 0x004986bf
-VRBmpSmackerBuffer::InitializeVRBmpMembers {
+void VRBmpSmackerBuffer::InitializeVRBmpMembers() {
 // LINE 507:
 	asm( 
 "	      004986bf    push ebp"
@@ -1703,7 +1703,7 @@ VRBmpSmackerBuffer::InitializeVRBmpMembers {
 }
 
 // FUNCTION: SIMCOPTER 0x0049873d
-VRBmpSmackerBuffer::CreateSurface {
+int32_t VRBmpSmackerBuffer::CreateSurface(int32_t) {
 // LINE 532:
 	asm( 
 "	      0049873d    push ebp"
@@ -1916,7 +1916,7 @@ VRBmpSmackerBuffer::CreateSurface {
 }
 
 // FUNCTION: SIMCOPTER 0x0049891f
-VRBmpSmackerBuffer::DeleteSurface {
+void VRBmpSmackerBuffer::DeleteSurface() {
 // LINE 580:
 	asm( 
 "	      0049891f    push ebp"
@@ -1972,7 +1972,7 @@ VRBmpSmackerBuffer::DeleteSurface {
 }
 
 // FUNCTION: SIMCOPTER 0x0049898a
-VRBmpSmackerBuffer::Open {
+int32_t VRBmpSmackerBuffer::Open(char *, unsigned long, unsigned long) {
 // LINE 595:
 	asm( 
 "	      0049898a    push ebp"
@@ -2048,7 +2048,7 @@ VRBmpSmackerBuffer::Open {
 }
 
 // FUNCTION: SIMCOPTER 0x00498a0b
-VRBmpSmackerBuffer::ClearBuffer {
+void VRBmpSmackerBuffer::ClearBuffer(int32_t) {
 // LINE 620:
 	asm( 
 "	      00498a0b    push ebp"
@@ -2114,7 +2114,7 @@ VRBmpSmackerBuffer::ClearBuffer {
 }
 
 // FUNCTION: SIMCOPTER 0x00498a93
-VRBmpSmackerBuffer::Compose {
+int32_t VRBmpSmackerBuffer::Compose() {
 // LINE 649:
 	asm( 
 "	      00498a93    push ebp"
@@ -2297,7 +2297,7 @@ VRBmpSmackerBuffer::Compose {
 }
 
 // FUNCTION: SIMCOPTER 0x00498c00
-VRBmpSmackerBuffer::SetDefaultVRBmp {
+int32_t VRBmpSmackerBuffer::SetDefaultVRBmp(char *, int32_t, int32_t) {
 // LINE 698:
 	asm( 
 "	      00498c00    push ebp"
@@ -2384,7 +2384,7 @@ VRBmpSmackerBuffer::SetDefaultVRBmp {
 }
 
 // FUNCTION: SIMCOPTER 0x00498ca3
-VRBmpSmackerBuffer::DrawDefaultVRBmp {
+int32_t VRBmpSmackerBuffer::DrawDefaultVRBmp() {
 // LINE 722:
 	asm( 
 "	      00498ca3    push ebp"
@@ -2639,7 +2639,7 @@ VRBmpSmackerBuffer::DrawDefaultVRBmp {
 }
 
 // FUNCTION: SIMCOPTER 0x00498ee8
-SmackerBackBuffer::SmackerBackBuffer {
+void SmackerBackBuffer::SmackerBackBuffer() {
 // LINE 805:
 	asm( 
 "	      00498ee8    push ebp"
@@ -2692,7 +2692,7 @@ SmackerBackBuffer::SmackerBackBuffer {
 }
 
 // FUNCTION: SIMCOPTER 0x00498f61
-SmackerBackBuffer::SmackerBackBuffer {
+void SmackerBackBuffer::SmackerBackBuffer(char *, int32_t, int32_t, int32_t, int32_t, int32_t) {
 // LINE 819:
 	asm( 
 "	      00498f61    push ebp"
@@ -2754,7 +2754,7 @@ SmackerBackBuffer::SmackerBackBuffer {
 }
 
 // FUNCTION: SIMCOPTER 0x00498fe5
-SmackerBackBuffer::~SmackerBackBuffer {
+void SmackerBackBuffer::~SmackerBackBuffer() {
 // LINE 832:
 	asm( 
 "	      00498fe5    push ebp"
@@ -2813,7 +2813,7 @@ SmackerBackBuffer::~SmackerBackBuffer {
 }
 
 // FUNCTION: SIMCOPTER 0x00499074
-SmackerBackBuffer::SetDirectBlit {
+void SmackerBackBuffer::SetDirectBlit() {
 // LINE 848:
 	asm( 
 "	      00499074    push ebp"
@@ -2841,7 +2841,7 @@ SmackerBackBuffer::SetDirectBlit {
 }
 
 // FUNCTION: SIMCOPTER 0x00499097
-SmackerBackBuffer::Initialize {
+int32_t SmackerBackBuffer::Initialize() {
 // LINE 865:
 	asm( 
 "	      00499097    push ebp"
@@ -2882,7 +2882,7 @@ SmackerBackBuffer::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x004990d2
-SmackerBackBuffer::SetBackBufferData {
+void SmackerBackBuffer::SetBackBufferData(char *, int32_t, int32_t, int32_t, int32_t, int32_t) {
 // LINE 883:
 	asm( 
 "	      004990d2    push ebp"
@@ -2959,7 +2959,7 @@ SmackerBackBuffer::SetBackBufferData {
 }
 
 // FUNCTION: SIMCOPTER 0x00499149
-SmackerBackBuffer::Open {
+int32_t SmackerBackBuffer::Open(char *, unsigned long, unsigned long) {
 // LINE 901:
 	asm( 
 "	      00499149    push ebp"
@@ -3066,7 +3066,7 @@ SmackerBackBuffer::Open {
 }
 
 // FUNCTION: SIMCOPTER 0x0049920a
-SmackerBackBuffer::CreateSurface {
+int32_t SmackerBackBuffer::CreateSurface() {
 // LINE 933:
 	asm( 
 "	      0049920a    push ebp"
@@ -3242,7 +3242,7 @@ SmackerBackBuffer::CreateSurface {
 }
 
 // FUNCTION: SIMCOPTER 0x00499396
-SmackerBackBuffer::Compose {
+unsigned long SmackerBackBuffer::Compose(class IFlatImage*, long, long, long, long, long, long) {
 // LINE 1014:
 	asm( 
 "	      00499396    push ebp"
@@ -3692,7 +3692,7 @@ SmackerBackBuffer::Compose {
 }
 
 // FUNCTION: SIMCOPTER 0x0049976d
-SmackerBackBuffer::StretchCompose {
+unsigned long SmackerBackBuffer::StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long) {
 // LINE 1104:
 	asm( 
 "	      0049976d    push ebp"
@@ -4141,7 +4141,7 @@ SmackerBackBuffer::StretchCompose {
 }
 
 // FUNCTION: SIMCOPTER 0x00499b35
-SmackerBackBuffer::BltParts {
+void SmackerBackBuffer::BltParts(class IFlatImage*, long, long, long, long, long, long) {
 // LINE 1215:
 	asm( 
 "	      00499b35    push ebp"
@@ -4458,7 +4458,7 @@ SmackerBackBuffer::BltParts {
 }
 
 // FUNCTION: SIMCOPTER 0x00499d5c
-SmackerBackBuffer::BltAll {
+void SmackerBackBuffer::BltAll(class IFlatImage*, long, long, long, long, long, long) {
 // LINE 1328:
 	asm( 
 "	      00499d5c    push ebp"

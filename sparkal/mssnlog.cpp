@@ -6,7 +6,7 @@
 
 // Contribution: 1:0006aca0-0006d4f0 Module: 40, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x0046bca0
-MissionLogWindow::MissionLogWindow {
+void MissionLogWindow::MissionLogWindow(int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
 // LINE 47:
 	asm( 
 "	      0046bca0    push ebp"
@@ -248,7 +248,7 @@ MissionLogWindow::MissionLogWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x0046bfb4
-MissionLogWindow::~MissionLogWindow {
+void MissionLogWindow::~MissionLogWindow() {
 // LINE 58:
 	asm( 
 "	      0046bfb4    push ebp"
@@ -280,7 +280,7 @@ MissionLogWindow::~MissionLogWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x0046bfe3
-MissionLogWindow::Initialize {
+int32_t MissionLogWindow::Initialize() {
 // LINE 66:
 	asm( 
 "	      0046bfe3    push ebp"
@@ -956,7 +956,7 @@ MissionLogWindow::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x0046c90a
-MissionLogWindow::ReadPalette {
+int32_t MissionLogWindow::ReadPalette(struct SparkalColor*) {
 // LINE 118:
 	asm( 
 "	      0046c90a    push ebp"
@@ -1069,7 +1069,7 @@ MissionLogWindow::ReadPalette {
 }
 
 // FUNCTION: SIMCOPTER 0x0046ca4c
-MissionLogWindow::CreateImage {
+int32_t MissionLogWindow::CreateImage(int32_t) {
 // LINE 126:
 	asm( 
 "	      0046ca4c    push ebp"
@@ -1138,7 +1138,7 @@ MissionLogWindow::CreateImage {
 }
 
 // FUNCTION: SIMCOPTER 0x0046caf6
-MissionLogWindow::DestroyImage {
+void MissionLogWindow::DestroyImage() {
 // LINE 142:
 	asm( 
 "	      0046caf6    push ebp"
@@ -1195,7 +1195,7 @@ MissionLogWindow::DestroyImage {
 }
 
 // FUNCTION: SIMCOPTER 0x0046cb62
-MissionLogWindow::ComposeSelf {
+int32_t MissionLogWindow::ComposeSelf() {
 // LINE 159:
 	asm( 
 "	      0046cb62    push ebp"
@@ -1314,7 +1314,7 @@ MissionLogWindow::ComposeSelf {
 }
 
 // FUNCTION: SIMCOPTER 0x0046cc44
-MissionLogWindow::DrawBackground {
+void MissionLogWindow::DrawBackground() {
 // LINE 186:
 	asm( 
 "	      0046cc44    push ebp"
@@ -1375,7 +1375,7 @@ MissionLogWindow::DrawBackground {
 }
 
 // FUNCTION: SIMCOPTER 0x0046ccb5
-MissionLogWindow::DoMessage {
+int32_t MissionLogWindow::DoMessage(class GraphicWindow*, long, long, void * __ptr32) {
 // LINE 203:
 	asm( 
 "	      0046ccb5    push ebp"
@@ -1458,7 +1458,7 @@ MissionLogWindow::DoMessage {
 }
 
 // FUNCTION: SIMCOPTER 0x0046cd45
-MissionLogWindow::SortByTimeDate {
+void MissionLogWindow::SortByTimeDate() {
 // LINE 224:
 	asm( 
 "	      0046cd45    push ebp"
@@ -1660,7 +1660,7 @@ MissionLogWindow::SortByTimeDate {
 }
 
 // FUNCTION: SIMCOPTER 0x0046cf77
-MissionLogWindow::SortByType {
+void MissionLogWindow::SortByType() {
 // LINE 244:
 	asm( 
 "	      0046cf77    push ebp"
@@ -1998,7 +1998,7 @@ MissionLogWindow::SortByType {
 }
 
 // FUNCTION: SIMCOPTER 0x0046d388
-MessageDisplayManager::MessageDisplayManager {
+void MessageDisplayManager::MessageDisplayManager() {
 // LINE 291:
 	asm( 
 "	      0046d388    push ebp"
@@ -2088,7 +2088,7 @@ MessageDisplayManager::MessageDisplayManager {
 }
 
 // FUNCTION: SIMCOPTER 0x0046d496
-MessageDisplayManager::~MessageDisplayManager {
+void MessageDisplayManager::~MessageDisplayManager() {
 // LINE 299:
 	asm( 
 "	      0046d496    push ebp"
@@ -2217,7 +2217,7 @@ MessageDisplayManager::~MessageDisplayManager {
 }
 
 // FUNCTION: SIMCOPTER 0x0046d612
-MessageDisplayManager::Initialize {
+int32_t MessageDisplayManager::Initialize() {
 // LINE 309:
 	asm( 
 "	      0046d612    push ebp"
@@ -2388,7 +2388,7 @@ MessageDisplayManager::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x0046d802
-MessageDisplayManager::DisplayCurrentMessages {
+void MessageDisplayManager::DisplayCurrentMessages(class CBackBuffer*) {
 // LINE 323:
 	asm( 
 "	      0046d802    push ebp"
@@ -2789,7 +2789,7 @@ MessageDisplayManager::DisplayCurrentMessages {
 }
 
 // FUNCTION: SIMCOPTER 0x0046dccd
-MessageDisplayManager::AddNewMessage {
+void MessageDisplayManager::AddNewMessage(char *) {
 // LINE 356:
 	asm( 
 "	      0046dccd    push ebp"
@@ -3289,7 +3289,7 @@ MessageDisplayManager::AddNewMessage {
 }
 
 // FUNCTION: SIMCOPTER 0x0046e3ca
-MessageDisplayManager::AddNewMessage {
+void MessageDisplayManager::AddNewMessage(class basic_string<char>&) {
 // LINE 382:
 	asm( 
 "	      0046e3ca    push ebp"

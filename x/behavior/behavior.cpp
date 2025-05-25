@@ -6,7 +6,7 @@
 
 // Contribution: 1:0015f290-0015f9c8 Module: 191, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x00560290
-Behavior::Behavior {
+void Behavior::Behavior(class Language*, class NResFile*, class NResFile*) {
 // LINE 16:
 	asm( 
 "	      00560290    push ebp"
@@ -87,7 +87,7 @@ Behavior::Behavior {
 }
 
 // FUNCTION: SIMCOPTER 0x0056032e
-Behavior::~Behavior {
+void Behavior::~Behavior() {
 // LINE 33:
 	asm( 
 "	      0056032e    push ebp"
@@ -112,7 +112,7 @@ Behavior::~Behavior {
 }
 
 // FUNCTION: SIMCOPTER 0x0056034d
-Behavior::GetPrivFile {
+class ResFile* Behavior::GetPrivFile() {
 // LINE 38:
 	asm( 
 "	      0056034d    push ebp"
@@ -140,7 +140,7 @@ Behavior::GetPrivFile {
 }
 
 // FUNCTION: SIMCOPTER 0x00560369
-Behavior::GetGlobFile {
+class ResFile* Behavior::GetGlobFile() {
 // LINE 43:
 	asm( 
 "	      00560369    push ebp"
@@ -168,7 +168,7 @@ Behavior::GetGlobFile {
 }
 
 // FUNCTION: SIMCOPTER 0x00560385
-Behavior::StdTreeSwizzle {
+void Behavior::StdTreeSwizzle(struct Behavior::Tree*, long, void (*)(short, struct Behavior::NodeParameter*)) {
 // LINE 48:
 	asm( 
 "	      00560385    push ebp"
@@ -239,7 +239,7 @@ Behavior::StdTreeSwizzle {
 }
 
 // FUNCTION: SIMCOPTER 0x0056040a
-Behavior::GetNodeRef {
+const struct Behavior::Node* Behavior::GetNodeRef(short, short) {
 // LINE 57:
 	asm( 
 "	      0056040a    push ebp"
@@ -382,7 +382,7 @@ Behavior::GetNodeRef {
 }
 
 // FUNCTION: SIMCOPTER 0x005605ac
-Behavior::GetNodeText {
+void Behavior::GetNodeText(struct Behavior::Node*, unsigned char *) {
 // LINE 91:
 	asm( 
 "	      005605ac    push ebp"
@@ -405,7 +405,7 @@ Behavior::GetNodeText {
 }
 
 // FUNCTION: SIMCOPTER 0x005605c4
-Behavior::GetNodeText {
+void Behavior::GetNodeText(short, short, unsigned char *) {
 // LINE 131:
 	asm( 
 "	      005605c4    push ebp"
@@ -456,7 +456,7 @@ Behavior::GetNodeText {
 }
 
 // FUNCTION: SIMCOPTER 0x00560616
-Behavior::CountPrimitives {
+short Behavior::CountPrimitives() {
 // LINE 139:
 	asm( 
 "	      00560616    push ebp"
@@ -488,7 +488,7 @@ Behavior::CountPrimitives {
 }
 
 // FUNCTION: SIMCOPTER 0x0056063d
-Behavior::GetTreeName {
+void Behavior::GetTreeName(short, unsigned char *) {
 // LINE 145:
 	asm( 
 "	      0056063d    push ebp"
@@ -603,7 +603,7 @@ Behavior::GetTreeName {
 }
 
 // FUNCTION: SIMCOPTER 0x0056072f
-Behavior::GetResFile {
+class ResFile* Behavior::GetResFile(short) {
 // LINE 177:
 	asm( 
 "	      0056072f    push ebp"
@@ -654,7 +654,7 @@ Behavior::GetResFile {
 }
 
 // FUNCTION: SIMCOPTER 0x0056077d
-Behavior::GetBaseID {
+short Behavior::GetBaseID(short) {
 // LINE 189:
 	asm( 
 "	      0056077d    push ebp"
@@ -737,7 +737,7 @@ Behavior::GetBaseID {
 }
 
 // FUNCTION: SIMCOPTER 0x005607fb
-Behavior::GetMaxID {
+short Behavior::GetMaxID(short) {
 // LINE 208:
 	asm( 
 "	      005607fb    push ebp"
@@ -821,7 +821,7 @@ Behavior::GetMaxID {
 }
 
 // FUNCTION: SIMCOPTER 0x00560879
-Behavior::GetTreeClass {
+short Behavior::GetTreeClass(short) {
 // LINE 227:
 	asm( 
 "	      00560879    push ebp"
@@ -902,7 +902,7 @@ Behavior::GetTreeClass {
 }
 
 // FUNCTION: SIMCOPTER 0x00560924
-Behavior::GetClassNameA {
+void Behavior::GetClassNameA(short, unsigned char *) {
 // LINE 239:
 	asm( 
 "	      00560924    push ebp"

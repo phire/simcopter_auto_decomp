@@ -6,7 +6,7 @@
 
 // Contribution: 1:00065f70-00067019 Module: 43, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x00466f70
-GameWindow::GameWindow {
+void GameWindow::GameWindow(unsigned long, unsigned long, unsigned long, const struct SparkalColor*, char *) {
 // LINE 36:
 	asm( 
 "	      00466f70    push ebp"
@@ -184,7 +184,7 @@ GameWindow::GameWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004670df
-GameWindow::CreateSparkalWindow {
+unsigned long GameWindow::CreateSparkalWindow() {
 // LINE 78:
 	asm( 
 "	      004670df    push ebp"
@@ -436,7 +436,7 @@ GameWindow::CreateSparkalWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004672cb
-GameWindow::~GameWindow {
+void GameWindow::~GameWindow() {
 // LINE 149:
 	asm( 
 "	      004672cb    push ebp"
@@ -475,7 +475,7 @@ GameWindow::~GameWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x00467310
-GameWindow::Initialize {
+int32_t GameWindow::Initialize() {
 // LINE 158:
 	asm( 
 "	      00467310    push ebp"
@@ -509,7 +509,7 @@ GameWindow::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x00467336
-GameWindow::Draw {
+unsigned long GameWindow::Draw() {
 // LINE 169:
 	asm( 
 "	      00467336    push ebp"
@@ -566,7 +566,7 @@ GameWindow::Draw {
 }
 
 // FUNCTION: SIMCOPTER 0x00467390
-GameWindow::SwapBuffer {
+unsigned long GameWindow::SwapBuffer() {
 // LINE 184:
 	asm( 
 "	      00467390    push ebp"
@@ -623,7 +623,7 @@ GameWindow::SwapBuffer {
 }
 
 // FUNCTION: SIMCOPTER 0x004673ea
-GameWindow::MakePalette {
+unsigned long GameWindow::MakePalette(const struct SparkalColor*) {
 // LINE 197:
 	asm( 
 "	      004673ea    push ebp"
@@ -951,7 +951,7 @@ GameWindow::MakePalette {
 }
 
 // FUNCTION: SIMCOPTER 0x004676a1
-GameWindow::UpdatePalette {
+void GameWindow::UpdatePalette(long, long, struct SparkalColor*) {
 // LINE 285:
 	asm( 
 "	      004676a1    push ebp"
@@ -986,7 +986,7 @@ GameWindow::UpdatePalette {
 }
 
 // FUNCTION: SIMCOPTER 0x004676d0
-GameWindow::ProcessWindowMove {
+void GameWindow::ProcessWindowMove() {
 // LINE 297:
 	asm( 
 "	      004676d0    push ebp"
@@ -1111,7 +1111,7 @@ GameWindow::ProcessWindowMove {
 }
 
 // FUNCTION: SIMCOPTER 0x004677ae
-GameWindow::PrepareForSwitchToWindowedMode {
+int32_t GameWindow::PrepareForSwitchToWindowedMode() {
 // LINE 333:
 	asm( 
 "	      004677ae    push ebp"
@@ -1138,7 +1138,7 @@ GameWindow::PrepareForSwitchToWindowedMode {
 }
 
 // FUNCTION: SIMCOPTER 0x004677c9
-GameWindow::CompleteSwitchToWindowedMode {
+int32_t GameWindow::CompleteSwitchToWindowedMode() {
 // LINE 346:
 	asm( 
 "	      004677c9    push ebp"
@@ -1308,7 +1308,7 @@ GameWindow::CompleteSwitchToWindowedMode {
 }
 
 // FUNCTION: SIMCOPTER 0x00467918
-GameWindow::PrepareForSwitchToFullScreenMode {
+int32_t GameWindow::PrepareForSwitchToFullScreenMode() {
 // LINE 389:
 	asm( 
 "	      00467918    push ebp"
@@ -1335,7 +1335,7 @@ GameWindow::PrepareForSwitchToFullScreenMode {
 }
 
 // FUNCTION: SIMCOPTER 0x00467933
-GameWindow::CompleteSwitchToFullScreenMode {
+int32_t GameWindow::CompleteSwitchToFullScreenMode() {
 // LINE 402:
 	asm( 
 "	      00467933    push ebp"
@@ -1469,7 +1469,7 @@ GameWindow::CompleteSwitchToFullScreenMode {
 }
 
 // FUNCTION: SIMCOPTER 0x00467a48
-GameWindow::CenterWindow {
+void GameWindow::CenterWindow() {
 // LINE 441:
 	asm( 
 "	      00467a48    push ebp"
@@ -1562,7 +1562,7 @@ GameWindow::CenterWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x00467af9
-GameWindow::PlaceWindowRect {
+void GameWindow::PlaceWindowRect(class MRect*) {
 // LINE 469:
 	asm( 
 "	      00467af9    push ebp"
@@ -1653,7 +1653,7 @@ GameWindow::PlaceWindowRect {
 }
 
 // FUNCTION: SIMCOPTER 0x00467b9c
-GameWindow::MySparkalWindowProc {
+long GameWindow::MySparkalWindowProc(void * __ptr32, uint32_t, uint32_t, long) {
 // LINE 493:
 	asm( 
 "	      00467b9c    push ebp"

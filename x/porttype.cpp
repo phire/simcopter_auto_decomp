@@ -6,7 +6,7 @@
 
 // Contribution: 1:00165a10-001661fc Module: 182, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x00566a10
-GlobalToLocal {
+void GlobalToLocal() {
 // LINE 8:
 	asm( 
 "	      00566a10    push ebp"
@@ -60,7 +60,7 @@ GlobalToLocal {
 }
 
 // FUNCTION: SIMCOPTER 0x00566a59
-LocalToGlobal {
+void LocalToGlobal() {
 // LINE 17:
 	asm( 
 "	      00566a59    push ebp"
@@ -114,7 +114,7 @@ LocalToGlobal {
 }
 
 // FUNCTION: SIMCOPTER 0x00566aa2
-TickCount {
+long TickCount() {
 // LINE 26:
 	asm( 
 "	      00566aa2    push ebp"
@@ -145,7 +145,7 @@ TickCount {
 }
 
 // FUNCTION: SIMCOPTER 0x00566aca
-StringWidth {
+short StringWidth() {
 // LINE 35:
 	asm( 
 "	      00566aca    push ebp"
@@ -197,7 +197,7 @@ StringWidth {
 }
 
 // FUNCTION: SIMCOPTER 0x00566b13
-PtoCstr {
+void PtoCstr() {
 // LINE 44:
 	asm( 
 "	      00566b13    push ebp"
@@ -243,7 +243,7 @@ PtoCstr {
 }
 
 // FUNCTION: SIMCOPTER 0x00566b52
-CtoPstr {
+void CtoPstr() {
 // LINE 52:
 	asm( 
 "	      00566b52    push ebp"
@@ -298,7 +298,7 @@ CtoPstr {
 }
 
 // FUNCTION: SIMCOPTER 0x00566ba8
-OffsetRect {
+void OffsetRect() {
 // LINE 60:
 	asm( 
 "	      00566ba8    push ebp"
@@ -355,7 +355,7 @@ OffsetRect {
 }
 
 // FUNCTION: SIMCOPTER 0x00566c06
-SectRect {
+unsigned short SectRect() {
 // LINE 74:
 	asm( 
 "	      00566c06    push ebp"
@@ -437,7 +437,7 @@ SectRect {
 }
 
 // FUNCTION: SIMCOPTER 0x00566ca8
-SetPortDC {
+void SetPortDC() {
 // LINE 103:
 	asm( 
 "	      00566ca8    push ebp"
@@ -471,7 +471,7 @@ SetPortDC {
 }
 
 // FUNCTION: SIMCOPTER 0x00566ccf
-CleanUpPort {
+void CleanUpPort() {
 // LINE 84:
 	asm( 
 "	      00566ccf    push ebp"
@@ -524,7 +524,7 @@ CleanUpPort {
 }
 
 // FUNCTION: SIMCOPTER 0x00566d38
-SetPort {
+void SetPort() {
 // LINE 111:
 	asm( 
 "	      00566d38    push ebp"
@@ -561,7 +561,7 @@ SetPort {
 }
 
 // FUNCTION: SIMCOPTER 0x00566d66
-SetPort {
+void SetPort() {
 // LINE 119:
 	asm( 
 "	      00566d66    push ebp"
@@ -606,7 +606,7 @@ SetPort {
 }
 
 // FUNCTION: SIMCOPTER 0x00566da7
-GetPort {
+void GetPort() {
 // LINE 130:
 	asm( 
 "	      00566da7    push ebp"
@@ -635,7 +635,7 @@ GetPort {
 }
 
 // FUNCTION: SIMCOPTER 0x00566dca
-EraseRect {
+void EraseRect() {
 // LINE 135:
 	asm( 
 "	      00566dca    push ebp"
@@ -713,7 +713,7 @@ EraseRect {
 }
 
 // FUNCTION: SIMCOPTER 0x00566e67
-EraseRect {
+void EraseRect() {
 // LINE 146:
 	asm( 
 "	      00566e67    push ebp"
@@ -757,7 +757,7 @@ EraseRect {
 }
 
 // FUNCTION: SIMCOPTER 0x00566ead
-FrameRect {
+void FrameRect() {
 // LINE 153:
 	asm( 
 "	      00566ead    push ebp"
@@ -832,7 +832,7 @@ FrameRect {
 }
 
 // FUNCTION: SIMCOPTER 0x00566f42
-SetRect {
+void SetRect() {
 // LINE 164:
 	asm( 
 "	      00566f42    push ebp"
@@ -877,7 +877,7 @@ SetRect {
 }
 
 // FUNCTION: SIMCOPTER 0x00566f7d
-UnionRect {
+void UnionRect() {
 // LINE 172:
 	asm( 
 "	      00566f7d    push ebp"
@@ -1006,7 +1006,7 @@ UnionRect {
 }
 
 // FUNCTION: SIMCOPTER 0x00567063
-EqualRect {
+unsigned short EqualRect() {
 // LINE 195:
 	asm( 
 "	      00567063    push ebp"
@@ -1051,7 +1051,7 @@ EqualRect {
 }
 
 // FUNCTION: SIMCOPTER 0x005670a9
-InsetRect {
+void InsetRect() {
 // LINE 202:
 	asm( 
 "	      005670a9    push ebp"
@@ -1108,7 +1108,7 @@ InsetRect {
 }
 
 // FUNCTION: SIMCOPTER 0x00567107
-PtInRect {
+unsigned short PtInRect() {
 // LINE 210:
 	asm( 
 "	      00567107    push ebp"
@@ -1159,7 +1159,7 @@ PtInRect {
 }
 
 // FUNCTION: SIMCOPTER 0x00567173
-EmptyRect {
+unsigned short EmptyRect() {
 // LINE 216:
 	asm( 
 "	      00567173    push ebp"
@@ -1201,7 +1201,7 @@ EmptyRect {
 }
 
 // FUNCTION: SIMCOPTER 0x005671ba
-GetBackColor {
+void GetBackColor() {
 // LINE 222:
 	asm( 
 "	      005671ba    push ebp"
@@ -1230,7 +1230,7 @@ GetBackColor {
 }
 
 // FUNCTION: SIMCOPTER 0x005671db
-RGBBackColor {
+void RGBBackColor() {
 // LINE 227:
 	asm( 
 "	      005671db    push ebp"

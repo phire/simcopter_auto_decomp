@@ -6,7 +6,7 @@
 
 // Contribution: 1:0003d250-00040e21 Module: 53, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x0043e250
-SoundCompletionDeletionFunction {
+void SoundCompletionDeletionFunction() {
 // LINE 76:
 	asm( 
 "	      0043e250    push ebp"
@@ -43,7 +43,7 @@ SoundCompletionDeletionFunction {
 }
 
 // FUNCTION: SIMCOPTER 0x0043e28a
-SoundCompletionUnloadFunction {
+void SoundCompletionUnloadFunction() {
 // LINE 86:
 	asm( 
 "	      0043e28a    push ebp"
@@ -71,7 +71,7 @@ SoundCompletionUnloadFunction {
 }
 
 // FUNCTION: SIMCOPTER 0x0043e2a5
-CGameApp::ShowVersion {
+public: void __thiscall CGameApp::ShowVersion(void) {
 // LINE 105:
 	asm( 
 "	      0043e2a5    push ebp"
@@ -917,7 +917,7 @@ CGameApp::ShowVersion {
 }
 
 // FUNCTION: SIMCOPTER 0x0043eda6
-CGameApp::CreateMessageBox {
+public: int __thiscall CGameApp::CreateMessageBox(long, class basic_string<char> &, long) {
 // LINE 186:
 	asm( 
 "	      0043eda6    push ebp"
@@ -1467,7 +1467,7 @@ CGameApp::CreateMessageBox {
 }
 
 // FUNCTION: SIMCOPTER 0x0043f2b9
-CGameApp::CreateMessageBox {
+public: int __thiscall CGameApp::CreateMessageBox(long, int, long) {
 // LINE 280:
 	asm( 
 "	      0043f2b9    push ebp"
@@ -1857,7 +1857,7 @@ CGameApp::CreateMessageBox {
 }
 
 // FUNCTION: SIMCOPTER 0x0043f8cc
-CGameApp::DestroyMessageBox {
+public: void __thiscall CGameApp::DestroyMessageBox(void) {
 // LINE 297:
 	asm( 
 "	      0043f8cc    push ebp"
@@ -1896,7 +1896,7 @@ CGameApp::DestroyMessageBox {
 }
 
 // FUNCTION: SIMCOPTER 0x0043f908
-CGameApp::CreateCheatCodeEntryMessageBox {
+public: int __thiscall CGameApp::CreateCheatCodeEntryMessageBox(void) {
 // LINE 307:
 	asm( 
 "	      0043f908    push ebp"
@@ -2139,7 +2139,7 @@ CGameApp::CreateCheatCodeEntryMessageBox {
 }
 
 // FUNCTION: SIMCOPTER 0x0043fbaf
-CGameApp::DestroyCheatCodeEntryMessageBox {
+public: void __thiscall CGameApp::DestroyCheatCodeEntryMessageBox(void) {
 // LINE 339:
 	asm( 
 "	      0043fbaf    push ebp"
@@ -2167,7 +2167,7 @@ CGameApp::DestroyCheatCodeEntryMessageBox {
 }
 
 // FUNCTION: SIMCOPTER 0x0043fbcd
-CGameApp::DoCheatCode {
+public: int __thiscall CGameApp::DoCheatCode(class basic_string<char> &) {
 // LINE 352:
 	asm( 
 "	      0043fbcd    push ebp"
@@ -3279,7 +3279,7 @@ CGameApp::DoCheatCode {
 }
 
 // FUNCTION: SIMCOPTER 0x00440b3f
-CGameApp::CheckCommandLineForCheatCodes {
+public: int __thiscall CGameApp::CheckCommandLineForCheatCodes(void) {
 // LINE 504:
 	asm( 
 "	      00440b3f    push ebp"
@@ -3451,7 +3451,7 @@ CGameApp::CheckCommandLineForCheatCodes {
 }
 
 // FUNCTION: SIMCOPTER 0x00440dcf
-CGameApp::CreateDebugBuffer {
+public: void __thiscall CGameApp::CreateDebugBuffer(void) {
 // LINE 523:
 	asm( 
 "	      00440dcf    push ebp"
@@ -3575,7 +3575,7 @@ CGameApp::CreateDebugBuffer {
 }
 
 // FUNCTION: SIMCOPTER 0x00440ed6
-CGameApp::DestroyDebugBuffer {
+public: void __thiscall CGameApp::DestroyDebugBuffer(void) {
 // LINE 543:
 	asm( 
 "	      00440ed6    push ebp"
@@ -3627,7 +3627,7 @@ CGameApp::DestroyDebugBuffer {
 }
 
 // FUNCTION: SIMCOPTER 0x00440f3a
-CGameApp::CreatePaletteBuffer {
+public: void __thiscall CGameApp::CreatePaletteBuffer(void) {
 // LINE 554:
 	asm( 
 "	      00440f3a    push ebp"
@@ -3672,7 +3672,7 @@ CGameApp::CreatePaletteBuffer {
 }
 
 // FUNCTION: SIMCOPTER 0x00440f9d
-CGameApp::TogglePaletteBufferDisplay {
+public: void __thiscall CGameApp::TogglePaletteBufferDisplay(void) {
 // LINE 564:
 	asm( 
 "	      00440f9d    push ebp"
@@ -3726,7 +3726,7 @@ CGameApp::TogglePaletteBufferDisplay {
 }
 
 // FUNCTION: SIMCOPTER 0x00440ffa
-CGameApp::ToggleDebugWindowDisplay {
+public: void __thiscall CGameApp::ToggleDebugWindowDisplay(void) {
 // LINE 581:
 	asm( 
 "	      00440ffa    push ebp"
@@ -3789,7 +3789,7 @@ CGameApp::ToggleDebugWindowDisplay {
 }
 
 // FUNCTION: SIMCOPTER 0x0044106f
-CGameApp::CreatePlayMenu {
+public: void __thiscall CGameApp::CreatePlayMenu(void) {
 // LINE 600:
 	asm( 
 "	      0044106f    push ebp"
@@ -4048,7 +4048,7 @@ CGameApp::CreatePlayMenu {
 }
 
 // FUNCTION: SIMCOPTER 0x004413e5
-CGameApp::CreateUserInputWindow {
+public: void __thiscall CGameApp::CreateUserInputWindow(void) {
 // LINE 633:
 	asm( 
 "	      004413e5    push ebp"
@@ -4163,7 +4163,7 @@ CGameApp::CreateUserInputWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x0044150b
-CGameApp::DestroyUserInputWindow {
+public: void __thiscall CGameApp::DestroyUserInputWindow(class UserInputWindow *, int) {
 // LINE 649:
 	asm( 
 "	      0044150b    push ebp"
@@ -4250,7 +4250,7 @@ CGameApp::DestroyUserInputWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004415c7
-CGameApp::CreateRenderSettingsWindow {
+public: void __thiscall CGameApp::CreateRenderSettingsWindow(void) {
 // LINE 669:
 	asm( 
 "	      004415c7    push ebp"
@@ -4377,7 +4377,7 @@ CGameApp::CreateRenderSettingsWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x00441715
-CGameApp::DestroyRenderSettingsWindow {
+public: void __thiscall CGameApp::DestroyRenderSettingsWindow(class RenderSettingsWindow *, int) {
 // LINE 690:
 	asm( 
 "	      00441715    push ebp"
@@ -4491,7 +4491,7 @@ CGameApp::DestroyRenderSettingsWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004417fe
-CGameApp::CreateSoundSettingsWindow {
+public: void __thiscall CGameApp::CreateSoundSettingsWindow(void) {
 // LINE 728:
 	asm( 
 "	      004417fe    push ebp"
@@ -4668,7 +4668,7 @@ CGameApp::CreateSoundSettingsWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004419b8
-CGameApp::DestroySoundSettingsWindow {
+public: void __thiscall CGameApp::DestroySoundSettingsWindow(class SoundSettingsWindow *, int) {
 // LINE 767:
 	asm( 
 "	      004419b8    push ebp"
@@ -4781,7 +4781,7 @@ CGameApp::DestroySoundSettingsWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x00441a89
-CGameApp::CreateCitySettingsWindow {
+public: void __thiscall CGameApp::CreateCitySettingsWindow(void) {
 // LINE 807:
 	asm( 
 "	      00441a89    push ebp"
@@ -4869,7 +4869,7 @@ CGameApp::CreateCitySettingsWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x00441b5f
-CGameApp::DestroyCitySettingsWindow {
+public: void __thiscall CGameApp::DestroyCitySettingsWindow(class CitySettingsWindow *, int) {
 // LINE 824:
 	asm( 
 "	      00441b5f    push ebp"
@@ -4927,7 +4927,7 @@ CGameApp::DestroyCitySettingsWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x00441bc0
-CGameApp::CreateControlDisplayWindow {
+public: void __thiscall CGameApp::CreateControlDisplayWindow(void) {
 // LINE 837:
 	asm( 
 "	      00441bc0    push ebp"
@@ -5018,7 +5018,7 @@ CGameApp::CreateControlDisplayWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x00441c9f
-CGameApp::DestroyControlDisplayWindow {
+public: void __thiscall CGameApp::DestroyControlDisplayWindow(void) {
 // LINE 850:
 	asm( 
 "	      00441c9f    push ebp"
@@ -5046,7 +5046,7 @@ CGameApp::DestroyControlDisplayWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x00441cbe
-CGameApp::CreateCheckupWindow {
+public: void __thiscall CGameApp::CreateCheckupWindow(void) {
 // LINE 858:
 	asm( 
 "	      00441cbe    push ebp"
@@ -5127,7 +5127,7 @@ CGameApp::CreateCheckupWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x00441d86
-CGameApp::DestroyCheckupWindow {
+public: void __thiscall CGameApp::DestroyCheckupWindow(class CheckupWindow *, int) {
 // LINE 870:
 	asm( 
 "	      00441d86    push ebp"

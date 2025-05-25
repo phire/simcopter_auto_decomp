@@ -6,7 +6,7 @@
 
 // Contribution: 1:0008a2b0-0008d894 Module: 26, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x0048b2b0
-CommandSystem::CommandSystem {
+void CommandSystem::CommandSystem() {
 // LINE 31:
 	asm( 
 "	      0048b2b0    push ebp"
@@ -188,7 +188,7 @@ CommandSystem::CommandSystem {
 }
 
 // FUNCTION: SIMCOPTER 0x0048b534
-CommandSystem::Initialize {
+void CommandSystem::Initialize() {
 // LINE 43:
 	asm( 
 "	      0048b534    push ebp"
@@ -297,7 +297,7 @@ CommandSystem::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x0048b631
-CommandSystem::ClearAllCommands {
+void CommandSystem::ClearAllCommands() {
 // LINE 71:
 	asm( 
 "	      0048b631    push ebp"
@@ -342,7 +342,7 @@ CommandSystem::ClearAllCommands {
 }
 
 // FUNCTION: SIMCOPTER 0x0048b682
-CommandSystem::ClearAllCommandsDevice {
+void CommandSystem::ClearAllCommandsDevice(long) {
 // LINE 86:
 	asm( 
 "	      0048b682    push ebp"
@@ -396,7 +396,7 @@ CommandSystem::ClearAllCommandsDevice {
 }
 
 // FUNCTION: SIMCOPTER 0x0048b6ed
-CommandSystem::SetUpCommandArraysFromShortcuts {
+void CommandSystem::SetUpCommandArraysFromShortcuts() {
 // LINE 124:
 	asm( 
 "	      0048b6ed    push ebp"
@@ -706,7 +706,7 @@ CommandSystem::SetUpCommandArraysFromShortcuts {
 }
 
 // FUNCTION: SIMCOPTER 0x0048b9a9
-CommandSystem::PollJoysticksForCommands {
+void CommandSystem::PollJoysticksForCommands() {
 // LINE 190:
 	asm( 
 "	      0048b9a9    push ebp"
@@ -914,7 +914,7 @@ CommandSystem::PollJoysticksForCommands {
 }
 
 // FUNCTION: SIMCOPTER 0x0048bb88
-CGameCommander::CGameCommander {
+void CGameCommander::CGameCommander() {
 // LINE 248:
 	asm( 
 "	      0048bb88    push ebp"
@@ -947,7 +947,7 @@ CGameCommander::CGameCommander {
 }
 
 // FUNCTION: SIMCOPTER 0x0048bbbc
-CGameCommander::~CGameCommander {
+void CGameCommander::~CGameCommander() {
 // LINE 255:
 	asm( 
 "	      0048bbbc    push ebp"
@@ -974,7 +974,7 @@ CGameCommander::~CGameCommander {
 }
 
 // FUNCTION: SIMCOPTER 0x0048bbe3
-CGameCommander::Idle {
+unsigned long CGameCommander::Idle() {
 // LINE 263:
 	asm( 
 "	      0048bbe3    push ebp"
@@ -1001,7 +1001,7 @@ CGameCommander::Idle {
 }
 
 // FUNCTION: SIMCOPTER 0x0048bbfb
-CGameCommander::OnLMouseDown {
+unsigned long CGameCommander::OnLMouseDown(int32_t, int32_t) {
 // LINE 273:
 	asm( 
 "	      0048bbfb    push ebp"
@@ -1042,7 +1042,7 @@ CGameCommander::OnLMouseDown {
 }
 
 // FUNCTION: SIMCOPTER 0x0048bc33
-CGameCommander::OnLMouseUp {
+unsigned long CGameCommander::OnLMouseUp(int32_t, int32_t) {
 // LINE 283:
 	asm( 
 "	      0048bc33    push ebp"
@@ -1083,7 +1083,7 @@ CGameCommander::OnLMouseUp {
 }
 
 // FUNCTION: SIMCOPTER 0x0048bc6b
-CGameCommander::OnRMouseDown {
+unsigned long CGameCommander::OnRMouseDown(int32_t, int32_t) {
 // LINE 292:
 	asm( 
 "	      0048bc6b    push ebp"
@@ -1124,7 +1124,7 @@ CGameCommander::OnRMouseDown {
 }
 
 // FUNCTION: SIMCOPTER 0x0048bca3
-CGameCommander::OnRMouseUp {
+unsigned long CGameCommander::OnRMouseUp(int32_t, int32_t) {
 // LINE 302:
 	asm( 
 "	      0048bca3    push ebp"
@@ -1165,7 +1165,7 @@ CGameCommander::OnRMouseUp {
 }
 
 // FUNCTION: SIMCOPTER 0x0048bcdb
-CGameCommander::OnMouseMove {
+unsigned long CGameCommander::OnMouseMove(int32_t, int32_t) {
 // LINE 312:
 	asm( 
 "	      0048bcdb    push ebp"
@@ -1205,7 +1205,7 @@ CGameCommander::OnMouseMove {
 }
 
 // FUNCTION: SIMCOPTER 0x0048bd11
-CGameCommander::OnWindowActivate {
+unsigned long CGameCommander::OnWindowActivate() {
 // LINE 322:
 	asm( 
 "	      0048bd11    push ebp"
@@ -1241,7 +1241,7 @@ CGameCommander::OnWindowActivate {
 }
 
 // FUNCTION: SIMCOPTER 0x0048bd44
-CGameCommander::OnWindowDeactivate {
+unsigned long CGameCommander::OnWindowDeactivate() {
 // LINE 332:
 	asm( 
 "	      0048bd44    push ebp"
@@ -1277,7 +1277,7 @@ CGameCommander::OnWindowDeactivate {
 }
 
 // FUNCTION: SIMCOPTER 0x0048bd77
-CGameCommander::ProcessSetFocus {
+void CGameCommander::ProcessSetFocus() {
 // LINE 351:
 	asm( 
 "	      0048bd77    push ebp"
@@ -1314,7 +1314,7 @@ CGameCommander::ProcessSetFocus {
 }
 
 // FUNCTION: SIMCOPTER 0x0048bdab
-CGameCommander::OnCharacter {
+unsigned long CGameCommander::OnCharacter(long) {
 // LINE 363:
 	asm( 
 "	      0048bdab    push ebp"
@@ -1352,7 +1352,7 @@ CGameCommander::OnCharacter {
 }
 
 // FUNCTION: SIMCOPTER 0x0048bddd
-CGameCommander::ProcessKeyDown {
+void CGameCommander::ProcessKeyDown(long) {
 // LINE 373:
 	asm( 
 "	      0048bddd    push ebp"
@@ -1396,7 +1396,7 @@ CGameCommander::ProcessKeyDown {
 }
 
 // FUNCTION: SIMCOPTER 0x0048be26
-CGameCommander::ProcessKeyUp {
+void CGameCommander::ProcessKeyUp(long) {
 // LINE 385:
 	asm( 
 "	      0048be26    push ebp"
@@ -1440,7 +1440,7 @@ CGameCommander::ProcessKeyUp {
 }
 
 // FUNCTION: SIMCOPTER 0x0048be6f
-CGameCommander::ProcessKeyDown {
+void CGameCommander::ProcessKeyDown(long, struct CommandSystem&, int32_t&, int32_t&) {
 // LINE 402:
 	asm( 
 "	      0048be6f    push ebp"
@@ -1686,7 +1686,7 @@ CGameCommander::ProcessKeyDown {
 }
 
 // FUNCTION: SIMCOPTER 0x0048c064
-CGameCommander::ProcessKeyUp {
+void CGameCommander::ProcessKeyUp(long, struct CommandSystem&) {
 // LINE 478:
 	asm( 
 "	      0048c064    push ebp"
@@ -1896,7 +1896,7 @@ CGameCommander::ProcessKeyUp {
 }
 
 // FUNCTION: SIMCOPTER 0x0048c213
-CGameCommander::ProcessSystemCloseRequest {
+void CGameCommander::ProcessSystemCloseRequest() {
 // LINE 527:
 	asm( 
 "	      0048c213    push ebp"
@@ -1925,7 +1925,7 @@ CGameCommander::ProcessSystemCloseRequest {
 }
 
 // FUNCTION: SIMCOPTER 0x0048c234
-ReadShortcutPrefsFile {
+int32_t ReadShortcutPrefsFile() {
 // LINE 552:
 	asm( 
 "	      0048c234    push ebp"
@@ -2228,7 +2228,7 @@ ReadShortcutPrefsFile {
 }
 
 // FUNCTION: SIMCOPTER 0x0048c6f1
-WriteShortcutPrefsFile {
+int32_t WriteShortcutPrefsFile() {
 // LINE 586:
 	asm( 
 "	      0048c6f1    push ebp"
@@ -2386,7 +2386,7 @@ WriteShortcutPrefsFile {
 }
 
 // FUNCTION: SIMCOPTER 0x0048c8bd
-MakeDefaultConfigurableShortcuts {
+void MakeDefaultConfigurableShortcuts() {
 // LINE 611:
 	asm( 
 "	      0048c8bd    push ebp"
@@ -4688,7 +4688,7 @@ MakeDefaultConfigurableShortcuts {
 }
 
 // FUNCTION: SIMCOPTER 0x0048e3b4
-GetPushAndIgnoreSettingsForCommand {
+int32_t GetPushAndIgnoreSettingsForCommand() {
 // LINE 928:
 	asm( 
 "	      0048e3b4    push ebp"
@@ -4785,7 +4785,7 @@ GetPushAndIgnoreSettingsForCommand {
 }
 
 // FUNCTION: SIMCOPTER 0x0048e4b5
-DeleteShortcutPrefsFile {
+void DeleteShortcutPrefsFile() {
 // LINE 968:
 	asm( 
 "	      0048e4b5    push ebp"
@@ -4837,7 +4837,7 @@ DeleteShortcutPrefsFile {
 }
 
 // FUNCTION: SIMCOPTER 0x0048e515
-ValidateConfigurableShortcut {
+int32_t ValidateConfigurableShortcut() {
 // LINE 979:
 	asm( 
 "	      0048e515    push ebp"
@@ -4954,7 +4954,7 @@ ValidateConfigurableShortcut {
 }
 
 // FUNCTION: SIMCOPTER 0x0048e5fa
-IsKeyReserved {
+int32_t IsKeyReserved() {
 // LINE 1013:
 	asm( 
 "	      0048e5fa    push ebp"
@@ -4991,7 +4991,7 @@ IsKeyReserved {
 }
 
 // FUNCTION: SIMCOPTER 0x0048e64b
-GetReservedKeyArray {
+void GetReservedKeyArray() {
 // LINE 1029:
 	asm( 
 "	      0048e64b    push ebp"
@@ -5042,7 +5042,7 @@ GetReservedKeyArray {
 }
 
 // FUNCTION: SIMCOPTER 0x0048e696
-IsCommandConfigurable {
+int32_t IsCommandConfigurable() {
 // LINE 1043:
 	asm( 
 "	      0048e696    push ebp"
@@ -5073,7 +5073,7 @@ IsCommandConfigurable {
 }
 
 // FUNCTION: SIMCOPTER 0x0048e6c6
-GetJoystickCommandTwin {
+long GetJoystickCommandTwin() {
 // LINE 1056:
 	asm( 
 "	      0048e6c6    push ebp"

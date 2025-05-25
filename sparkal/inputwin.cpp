@@ -39,7 +39,7 @@
 // $E99
 
 // FUNCTION: SIMCOPTER 0x004012fe
-KeyboardWindow::KeyboardWindow {
+void KeyboardWindow::KeyboardWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
 // LINE 68:
 	asm( 
 "	      004012fe    push ebp"
@@ -496,7 +496,7 @@ KeyboardWindow::KeyboardWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x00401acc
-KeyboardWindow::~KeyboardWindow {
+void KeyboardWindow::~KeyboardWindow() {
 // LINE 76:
 	asm( 
 "	      00401acc    push ebp"
@@ -821,7 +821,7 @@ KeyboardWindow::~KeyboardWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x0040200d
-KeyboardWindow::Initialize {
+int32_t KeyboardWindow::Initialize() {
 // LINE 89:
 	asm( 
 "	      0040200d    push ebp"
@@ -945,7 +945,7 @@ KeyboardWindow::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x00402108
-KeyboardWindow::CreateImage {
+int32_t KeyboardWindow::CreateImage(int32_t) {
 // LINE 111:
 	asm( 
 "	      00402108    push ebp"
@@ -1327,7 +1327,7 @@ KeyboardWindow::CreateImage {
 }
 
 // FUNCTION: SIMCOPTER 0x00402659
-KeyboardWindow::DestroyImage {
+void KeyboardWindow::DestroyImage() {
 // LINE 137:
 	asm( 
 "	      00402659    push ebp"
@@ -1413,7 +1413,7 @@ KeyboardWindow::DestroyImage {
 }
 
 // FUNCTION: SIMCOPTER 0x00402725
-KeyboardWindow::ConvertKeyToString {
+int32_t KeyboardWindow::ConvertKeyToString(int32_t, long, class basic_string<char>&) {
 // LINE 162:
 	asm( 
 "	      00402725    push ebp"
@@ -1844,7 +1844,7 @@ KeyboardWindow::ConvertKeyToString {
 }
 
 // FUNCTION: SIMCOPTER 0x00402e31
-KeyboardWindow::DoesKeyExistOnKeyboard {
+int32_t KeyboardWindow::DoesKeyExistOnKeyboard(long) {
 // LINE 174:
 	asm( 
 "	      00402e31    push ebp"
@@ -2008,7 +2008,7 @@ KeyboardWindow::DoesKeyExistOnKeyboard {
 }
 
 // FUNCTION: SIMCOPTER 0x00402fcd
-KeyboardWindow::DoesPositionHitKey {
+int32_t KeyboardWindow::DoesPositionHitKey(long, long, long&) {
 // LINE 199:
 	asm( 
 "	      00402fcd    push ebp"
@@ -2198,7 +2198,7 @@ KeyboardWindow::DoesPositionHitKey {
 }
 
 // FUNCTION: SIMCOPTER 0x004031a1
-KeyboardWindow::DoesKeyRequireTextDraw {
+int32_t KeyboardWindow::DoesKeyRequireTextDraw(long) {
 // LINE 228:
 	asm( 
 "	      004031a1    push ebp"
@@ -2253,7 +2253,7 @@ KeyboardWindow::DoesKeyRequireTextDraw {
 }
 
 // FUNCTION: SIMCOPTER 0x00403247
-KeyboardWindow::GetRectOfNonTextImage {
+int32_t KeyboardWindow::GetRectOfNonTextImage(long, class MRect&) {
 // LINE 252:
 	asm( 
 "	      00403247    push ebp"
@@ -2490,7 +2490,7 @@ KeyboardWindow::GetRectOfNonTextImage {
 }
 
 // FUNCTION: SIMCOPTER 0x00403508
-KeyboardWindow::ComposeSelf {
+int32_t KeyboardWindow::ComposeSelf() {
 // LINE 286:
 	asm( 
 "	      00403508    push ebp"
@@ -2650,7 +2650,7 @@ KeyboardWindow::ComposeSelf {
 }
 
 // FUNCTION: SIMCOPTER 0x0040364f
-KeyboardWindow::DrawKeyColorsOnKeyboard {
+void KeyboardWindow::DrawKeyColorsOnKeyboard() {
 // LINE 319:
 	asm( 
 "	      0040364f    push ebp"
@@ -3051,7 +3051,7 @@ KeyboardWindow::DrawKeyColorsOnKeyboard {
 }
 
 // FUNCTION: SIMCOPTER 0x00403a8f
-KeyboardWindow::DrawCharactersOnKeyboard {
+void KeyboardWindow::DrawCharactersOnKeyboard() {
 // LINE 386:
 	asm( 
 "	      00403a8f    push ebp"
@@ -3703,7 +3703,7 @@ KeyboardWindow::DrawCharactersOnKeyboard {
 }
 
 // FUNCTION: SIMCOPTER 0x004042e5
-KeyboardWindow::DrawLightsOnKeyboard {
+void KeyboardWindow::DrawLightsOnKeyboard() {
 // LINE 458:
 	asm( 
 "	      004042e5    push ebp"
@@ -3843,7 +3843,7 @@ KeyboardWindow::DrawLightsOnKeyboard {
 }
 
 // FUNCTION: SIMCOPTER 0x00404400
-KeyboardWindow::DoesWindowNeedUpdating {
+int32_t KeyboardWindow::DoesWindowNeedUpdating() {
 // LINE 492:
 	asm( 
 "	      00404400    push ebp"
@@ -3894,7 +3894,7 @@ KeyboardWindow::DoesWindowNeedUpdating {
 }
 
 // FUNCTION: SIMCOPTER 0x00404485
-KeyboardWindow::DoKeyDown {
+long KeyboardWindow::DoKeyDown(long, char) {
 // LINE 504:
 	asm( 
 "	      00404485    push ebp"
@@ -3955,7 +3955,7 @@ KeyboardWindow::DoKeyDown {
 }
 
 // FUNCTION: SIMCOPTER 0x004044e7
-KeyboardWindow::DoKeyUp {
+long KeyboardWindow::DoKeyUp(long, char) {
 // LINE 517:
 	asm( 
 "	      004044e7    push ebp"
@@ -4016,7 +4016,7 @@ KeyboardWindow::DoKeyUp {
 }
 
 // FUNCTION: SIMCOPTER 0x00404549
-KeyboardWindow::DoCursorDown {
+long KeyboardWindow::DoCursorDown(long, long, unsigned long) {
 // LINE 530:
 	asm( 
 "	      00404549    push ebp"
@@ -4093,7 +4093,7 @@ KeyboardWindow::DoCursorDown {
 }
 
 // FUNCTION: SIMCOPTER 0x004045cb
-KeyboardWindow::DoCursorUp {
+long KeyboardWindow::DoCursorUp(long, long, unsigned long) {
 // LINE 549:
 	asm( 
 "	      004045cb    push ebp"
@@ -4163,7 +4163,7 @@ KeyboardWindow::DoCursorUp {
 }
 
 // FUNCTION: SIMCOPTER 0x00404641
-KeyboardWindow::DoCursorMove {
+long KeyboardWindow::DoCursorMove(long, long) {
 // LINE 567:
 	asm( 
 "	      00404641    push ebp"
@@ -4232,7 +4232,7 @@ KeyboardWindow::DoCursorMove {
 }
 
 // FUNCTION: SIMCOPTER 0x004046b8
-JoystickWindow::JoystickWindow {
+void JoystickWindow::JoystickWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
 // LINE 612:
 	asm( 
 "	      004046b8    push ebp"
@@ -4546,7 +4546,7 @@ JoystickWindow::JoystickWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x00404bde
-JoystickWindow::~JoystickWindow {
+void JoystickWindow::~JoystickWindow() {
 // LINE 646:
 	asm( 
 "	      00404bde    push ebp"
@@ -4578,7 +4578,7 @@ JoystickWindow::~JoystickWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x00404c0d
-JoystickWindow::Initialize {
+int32_t JoystickWindow::Initialize() {
 // LINE 654:
 	asm( 
 "	      00404c0d    push ebp"
@@ -4613,7 +4613,7 @@ JoystickWindow::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x00404c35
-JoystickWindow::CreateImage {
+int32_t JoystickWindow::CreateImage(int32_t) {
 // LINE 663:
 	asm( 
 "	      00404c35    push ebp"
@@ -5123,7 +5123,7 @@ JoystickWindow::CreateImage {
 }
 
 // FUNCTION: SIMCOPTER 0x00405383
-JoystickWindow::DestroyImage {
+void JoystickWindow::DestroyImage() {
 // LINE 697:
 	asm( 
 "	      00405383    push ebp"
@@ -5267,7 +5267,7 @@ JoystickWindow::DestroyImage {
 }
 
 // FUNCTION: SIMCOPTER 0x004054fd
-JoystickWindow::ComposeSelf {
+int32_t JoystickWindow::ComposeSelf() {
 // LINE 724:
 	asm( 
 "	      004054fd    push ebp"
@@ -5390,7 +5390,7 @@ JoystickWindow::ComposeSelf {
 }
 
 // FUNCTION: SIMCOPTER 0x004055ec
-JoystickWindow::DrawCurrentJoystick {
+void JoystickWindow::DrawCurrentJoystick() {
 // LINE 761:
 	asm( 
 "	      004055ec    push ebp"
@@ -5486,7 +5486,7 @@ JoystickWindow::DrawCurrentJoystick {
 }
 
 // FUNCTION: SIMCOPTER 0x004056b8
-JoystickWindow::DrawButton {
+void JoystickWindow::DrawButton(int32_t) {
 // LINE 787:
 	asm( 
 "	      004056b8    push ebp"
@@ -5574,7 +5574,7 @@ JoystickWindow::DrawButton {
 }
 
 // FUNCTION: SIMCOPTER 0x00405781
-JoystickWindow::DrawSlider {
+void JoystickWindow::DrawSlider(int32_t) {
 // LINE 810:
 	asm( 
 "	      00405781    push ebp"
@@ -5677,7 +5677,7 @@ JoystickWindow::DrawSlider {
 }
 
 // FUNCTION: SIMCOPTER 0x00405867
-JoystickWindow::DrawHandle {
+void JoystickWindow::DrawHandle() {
 // LINE 833:
 	asm( 
 "	      00405867    push ebp"
@@ -5839,7 +5839,7 @@ JoystickWindow::DrawHandle {
 }
 
 // FUNCTION: SIMCOPTER 0x004059eb
-JoystickWindow::GetSourceHandleBaseRects {
+void JoystickWindow::GetSourceHandleBaseRects(class MRect*) {
 // LINE 870:
 	asm( 
 "	      004059eb    push ebp"
@@ -6044,7 +6044,7 @@ JoystickWindow::GetSourceHandleBaseRects {
 }
 
 // FUNCTION: SIMCOPTER 0x00405c7a
-JoystickWindow::GetHandleImageToUse {
+int32_t JoystickWindow::GetHandleImageToUse() {
 // LINE 913:
 	asm( 
 "	      00405c7a    push ebp"
@@ -6076,7 +6076,7 @@ JoystickWindow::GetHandleImageToUse {
 }
 
 // FUNCTION: SIMCOPTER 0x00405ca4
-JoystickWindow::GetNewJoystickControlStates {
+void JoystickWindow::GetNewJoystickControlStates(long *) {
 // LINE 925:
 	asm( 
 "	      00405ca4    push ebp"
@@ -6165,7 +6165,7 @@ JoystickWindow::GetNewJoystickControlStates {
 }
 
 // FUNCTION: SIMCOPTER 0x00405d58
-JoystickWindow::DoesWindowNeedUpdating {
+int32_t JoystickWindow::DoesWindowNeedUpdating() {
 // LINE 942:
 	asm( 
 "	      00405d58    push ebp"
@@ -6192,7 +6192,7 @@ JoystickWindow::DoesWindowNeedUpdating {
 }
 
 // FUNCTION: SIMCOPTER 0x00405d73
-JoystickWindow::SetCurrentJoystick {
+void JoystickWindow::SetCurrentJoystick(int32_t) {
 // LINE 954:
 	asm( 
 "	      00405d73    push ebp"
@@ -6240,7 +6240,7 @@ JoystickWindow::SetCurrentJoystick {
 }
 
 // FUNCTION: SIMCOPTER 0x00405db8
-JoystickWindow::DoCursorDown {
+long JoystickWindow::DoCursorDown(long, long, unsigned long) {
 // LINE 964:
 	asm( 
 "	      00405db8    push ebp"
@@ -6312,7 +6312,7 @@ JoystickWindow::DoCursorDown {
 }
 
 // FUNCTION: SIMCOPTER 0x00405e34
-JoystickWindow::DoCursorUp {
+long JoystickWindow::DoCursorUp(long, long, unsigned long) {
 // LINE 979:
 	asm( 
 "	      00405e34    push ebp"
@@ -6339,7 +6339,7 @@ JoystickWindow::DoCursorUp {
 }
 
 // FUNCTION: SIMCOPTER 0x00405e51
-JoystickWindow::DoCursorMove {
+long JoystickWindow::DoCursorMove(long, long) {
 // LINE 987:
 	asm( 
 "	      00405e51    push ebp"
@@ -6366,7 +6366,7 @@ JoystickWindow::DoCursorMove {
 }
 
 // FUNCTION: SIMCOPTER 0x00405e6e
-JoystickWindow::DoesPositionHitKey {
+int32_t JoystickWindow::DoesPositionHitKey(long, long, long&) {
 // LINE 995:
 	asm( 
 "	      00405e6e    push ebp"
@@ -6621,7 +6621,7 @@ JoystickWindow::DoesPositionHitKey {
 }
 
 // FUNCTION: SIMCOPTER 0x004061a4
-UserInputWindow::UserInputWindow {
+void UserInputWindow::UserInputWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
 // LINE 1078:
 	asm( 
 "	      004061a4    push ebp"
@@ -7078,7 +7078,7 @@ UserInputWindow::UserInputWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x004069bb
-UserInputWindow::Initialize {
+int32_t UserInputWindow::Initialize() {
 // LINE 1087:
 	asm( 
 "	      004069bb    push ebp"
@@ -8416,7 +8416,7 @@ UserInputWindow::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x00407d47
-UserInputWindow::DoKeyDown {
+long UserInputWindow::DoKeyDown(long, char) {
 // LINE 1178:
 	asm( 
 "	      00407d47    push ebp"
@@ -8481,7 +8481,7 @@ UserInputWindow::DoKeyDown {
 }
 
 // FUNCTION: SIMCOPTER 0x00407db1
-UserInputWindow::DoMessage {
+int32_t UserInputWindow::DoMessage(class GraphicWindow*, long, long, void * __ptr32) {
 // LINE 1195:
 	asm( 
 "	      00407db1    push ebp"
@@ -8849,7 +8849,7 @@ UserInputWindow::DoMessage {
 }
 
 // FUNCTION: SIMCOPTER 0x00408142
-UserInputWindow::DoJoystickWindowMessage {
+int32_t UserInputWindow::DoJoystickWindowMessage(long, void * __ptr32) {
 // LINE 1251:
 	asm( 
 "	      00408142    push ebp"
@@ -9495,7 +9495,7 @@ UserInputWindow::DoJoystickWindowMessage {
 }
 
 // FUNCTION: SIMCOPTER 0x004089e6
-UserInputWindow::AddJoystickTwinCommand {
+void UserInputWindow::AddJoystickTwinCommand(long, long, long) {
 // LINE 1342:
 	asm( 
 "	      004089e6    push ebp"
@@ -9739,7 +9739,7 @@ UserInputWindow::AddJoystickTwinCommand {
 }
 
 // FUNCTION: SIMCOPTER 0x00408d04
-UserInputWindow::RemoveJoystickTwinCommand {
+void UserInputWindow::RemoveJoystickTwinCommand(long, long, long) {
 // LINE 1365:
 	asm( 
 "	      00408d04    push ebp"
@@ -9786,7 +9786,7 @@ UserInputWindow::RemoveJoystickTwinCommand {
 }
 
 // FUNCTION: SIMCOPTER 0x00408d49
-UserInputWindow::DoKeyboardWindowMessage {
+int32_t UserInputWindow::DoKeyboardWindowMessage(long, void * __ptr32) {
 // LINE 1378:
 	asm( 
 "	      00408d49    push ebp"
@@ -10206,7 +10206,7 @@ UserInputWindow::DoKeyboardWindowMessage {
 }
 
 // FUNCTION: SIMCOPTER 0x0040920e
-UserInputWindow::GetKeyUsageType {
+enum UserInputWindow::KeyUsageType UserInputWindow::GetKeyUsageType(long, long) {
 // LINE 1443:
 	asm( 
 "	      0040920e    push ebp"
@@ -10457,7 +10457,7 @@ UserInputWindow::GetKeyUsageType {
 }
 
 // FUNCTION: SIMCOPTER 0x00409494
-UserInputWindow::RemoveShortcutFromList {
+void UserInputWindow::RemoveShortcutFromList(long, long, long) {
 // LINE 1489:
 	asm( 
 "	      00409494    push ebp"
@@ -10602,7 +10602,7 @@ UserInputWindow::RemoveShortcutFromList {
 }
 
 // FUNCTION: SIMCOPTER 0x00409609
-UserInputWindow::DoInputDeviceListBoxWindowMessage {
+int32_t UserInputWindow::DoInputDeviceListBoxWindowMessage(long, void * __ptr32) {
 // LINE 1512:
 	asm( 
 "	      00409609    push ebp"
@@ -10645,7 +10645,7 @@ UserInputWindow::DoInputDeviceListBoxWindowMessage {
 }
 
 // FUNCTION: SIMCOPTER 0x00409644
-UserInputWindow::DoCommandListBoxWindowMessage {
+int32_t UserInputWindow::DoCommandListBoxWindowMessage(long, void * __ptr32) {
 // LINE 1524:
 	asm( 
 "	      00409644    push ebp"
@@ -10688,7 +10688,7 @@ UserInputWindow::DoCommandListBoxWindowMessage {
 }
 
 // FUNCTION: SIMCOPTER 0x0040967f
-UserInputWindow::GetCurrentDevice {
+long UserInputWindow::GetCurrentDevice() {
 // LINE 1537:
 	asm( 
 "	      0040967f    push ebp"
@@ -10792,7 +10792,7 @@ UserInputWindow::GetCurrentDevice {
 }
 
 // FUNCTION: SIMCOPTER 0x00409740
-UserInputWindow::GetCurrentCommand {
+long UserInputWindow::GetCurrentCommand() {
 // LINE 1559:
 	asm( 
 "	      00409740    push ebp"
@@ -10896,7 +10896,7 @@ UserInputWindow::GetCurrentCommand {
 }
 
 // FUNCTION: SIMCOPTER 0x00409804
-UserInputWindow::UpdateDisplay {
+void UserInputWindow::UpdateDisplay(int32_t) {
 // LINE 1585:
 	asm( 
 "	      00409804    push ebp"
@@ -11713,7 +11713,7 @@ UserInputWindow::UpdateDisplay {
 }
 
 // FUNCTION: SIMCOPTER 0x0040a345
-UserInputWindow::DoesTwinCommandExistForShortcut {
+int32_t UserInputWindow::DoesTwinCommandExistForShortcut(long, long, long) {
 // LINE 1694:
 	asm( 
 "	      0040a345    push ebp"
@@ -11823,7 +11823,7 @@ UserInputWindow::DoesTwinCommandExistForShortcut {
 }
 
 // FUNCTION: SIMCOPTER 0x0040a459
-UserInputWindow::ClearDeviceArea {
+void UserInputWindow::ClearDeviceArea() {
 // LINE 1716:
 	asm( 
 "	      0040a459    push ebp"
@@ -11893,7 +11893,7 @@ UserInputWindow::ClearDeviceArea {
 }
 
 // FUNCTION: SIMCOPTER 0x0040a508
-UserInputWindow::SetupAllInputDevices {
+void UserInputWindow::SetupAllInputDevices() {
 // LINE 1732:
 	asm( 
 "	      0040a508    push ebp"
@@ -12262,7 +12262,7 @@ UserInputWindow::SetupAllInputDevices {
 }
 
 // FUNCTION: SIMCOPTER 0x0040aa51
-UserInputWindow::SetupAllCommands {
+void UserInputWindow::SetupAllCommands() {
 // LINE 1767:
 	asm( 
 "	      0040aa51    push ebp"
@@ -12572,7 +12572,7 @@ UserInputWindow::SetupAllCommands {
 }
 
 // FUNCTION: SIMCOPTER 0x0040ae7c
-UserInputWindow::ReadShortcuts {
+void UserInputWindow::ReadShortcuts(class list<Shortcut>&) {
 // LINE 1785:
 	asm( 
 "	      0040ae7c    push ebp"
@@ -12963,7 +12963,7 @@ UserInputWindow::ReadShortcuts {
 }
 
 // FUNCTION: SIMCOPTER 0x0040b471
-UserInputWindow::WriteShortcutsToPreferenceFile {
+void UserInputWindow::WriteShortcutsToPreferenceFile() {
 // LINE 1804:
 	asm( 
 "	      0040b471    push ebp"
@@ -12994,7 +12994,7 @@ UserInputWindow::WriteShortcutsToPreferenceFile {
 }
 
 // FUNCTION: SIMCOPTER 0x0040b498
-UserInputWindow::DisplayError {
+void UserInputWindow::DisplayError(int32_t) {
 // LINE 1813:
 	asm( 
 "	      0040b498    push ebp"
@@ -13017,7 +13017,7 @@ UserInputWindow::DisplayError {
 }
 
 // FUNCTION: SIMCOPTER 0x0040b4b0
-ControlDisplayWindow::ControlDisplayWindow {
+void ControlDisplayWindow::ControlDisplayWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
 // LINE 1853:
 	asm( 
 "	      0040b4b0    push ebp"
@@ -13065,7 +13065,7 @@ ControlDisplayWindow::ControlDisplayWindow {
 }
 
 // FUNCTION: SIMCOPTER 0x0040b51a
-ControlDisplayWindow::Initialize {
+int32_t ControlDisplayWindow::Initialize() {
 // LINE 1862:
 	asm( 
 "	      0040b51a    push ebp"
@@ -14090,7 +14090,7 @@ ControlDisplayWindow::Initialize {
 }
 
 // FUNCTION: SIMCOPTER 0x0040c352
-ControlDisplayWindow::DoMessage {
+int32_t ControlDisplayWindow::DoMessage(class GraphicWindow*, long, long, void * __ptr32) {
 // LINE 1931:
 	asm( 
 "	      0040c352    push ebp"
@@ -14347,7 +14347,7 @@ ControlDisplayWindow::DoMessage {
 }
 
 // FUNCTION: SIMCOPTER 0x0040c5b1
-ControlDisplayWindow::ReadShortcuts {
+void ControlDisplayWindow::ReadShortcuts(class list<Shortcut>*) {
 // LINE 1982:
 	asm( 
 "	      0040c5b1    push ebp"
@@ -14793,7 +14793,7 @@ ControlDisplayWindow::ReadShortcuts {
 }
 
 // FUNCTION: SIMCOPTER 0x0040cb52
-ControlDisplayWindow::GetCommandString {
+void ControlDisplayWindow::GetCommandString(class basic_string<char>&, long) {
 // LINE 2043:
 	asm( 
 "	      0040cb52    push ebp"
@@ -15220,7 +15220,7 @@ ControlDisplayWindow::GetCommandString {
 }
 
 // FUNCTION: SIMCOPTER 0x0040d24a
-ControlDisplayWindow::AppendKeysString {
+void ControlDisplayWindow::AppendKeysString(class basic_string<char>&, long, long, int32_t) {
 // LINE 2054:
 	asm( 
 "	      0040d24a    push ebp"

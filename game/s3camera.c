@@ -6,7 +6,7 @@
 
 // Contribution: 1:000f7af0-000f8bb0 Module: 175, 16 byte alignment, code, execute, read, 
 // FUNCTION: SIMCOPTER 0x004f8af0
-S3CameraMove {
+void S3CameraMove() {
 // LINE 100:
 	asm( 
 "	      004f8af0    push ebp"
@@ -526,7 +526,7 @@ S3CameraMove {
 }
 
 // FUNCTION: SIMCOPTER 0x004f8f69
-NormalizeGridPoint {
+void NormalizeGridPoint() {
 // LINE 283:
 	asm( 
 "	      004f8f69    push ebp"
@@ -592,7 +592,7 @@ NormalizeGridPoint {
 }
 
 // FUNCTION: SIMCOPTER 0x004f8fe2
-SetIdealCameraPos {
+void SetIdealCameraPos() {
 // LINE 306:
 	asm( 
 "	      004f8fe2    push ebp"
@@ -862,7 +862,7 @@ SetIdealCameraPos {
 }
 
 // FUNCTION: SIMCOPTER 0x004f9240
-GetIdealCameraPos {
+void GetIdealCameraPos() {
 // LINE 403:
 	asm( 
 "	      004f9240    push ebp"
@@ -893,7 +893,7 @@ GetIdealCameraPos {
 }
 
 // FUNCTION: SIMCOPTER 0x004f9263
-CalcCameraAngles {
+void CalcCameraAngles() {
 // LINE 423:
 	asm( 
 "	      004f9263    push ebp"
@@ -1266,7 +1266,7 @@ CalcCameraAngles {
 }
 
 // FUNCTION: SIMCOPTER 0x004f955f
-S3AngleRotMat {
+void S3AngleRotMat() {
 // LINE 528:
 	asm( 
 "	      004f955f    push ebp"
@@ -1502,7 +1502,7 @@ S3AngleRotMat {
 }
 
 // FUNCTION: SIMCOPTER 0x004f9735
-S3CameraRotate {
+void S3CameraRotate() {
 // LINE 564:
 	asm( 
 "	      004f9735    push ebp"
@@ -1685,7 +1685,7 @@ S3CameraRotate {
 }
 
 // FUNCTION: SIMCOPTER 0x004f98dc
-S3CameraTweakInit {
+void S3CameraTweakInit() {
 // LINE 711:
 	asm( 
 "	      004f98dc    push ebp"
@@ -1727,7 +1727,7 @@ S3CameraTweakInit {
 }
 
 // FUNCTION: SIMCOPTER 0x004f9912
-S3CameraChaseAdjust {
+void S3CameraChaseAdjust() {
 // LINE 742:
 	asm( 
 "	      004f9912    push ebp"
@@ -1869,7 +1869,7 @@ S3CameraChaseAdjust {
 }
 
 // FUNCTION: SIMCOPTER 0x004f9a4e
-S3CameraCycleChase {
+void S3CameraCycleChase() {
 // LINE 781:
 	asm( 
 "	      004f9a4e    push ebp"
@@ -1902,7 +1902,7 @@ S3CameraCycleChase {
 }
 
 // FUNCTION: SIMCOPTER 0x004f9a76
-S3CameraGetChaseInfo {
+struct _CHASE_INFO* S3CameraGetChaseInfo() {
 // LINE 794:
 	asm( 
 "	      004f9a76    push ebp"
@@ -1927,7 +1927,7 @@ S3CameraGetChaseInfo {
 }
 
 // FUNCTION: SIMCOPTER 0x004f9a8b
-S3CameraSetChaseInfo {
+void S3CameraSetChaseInfo() {
 // LINE 805:
 	asm( 
 "	      004f9a8b    push ebp"
@@ -1954,7 +1954,7 @@ S3CameraSetChaseInfo {
 }
 
 // FUNCTION: SIMCOPTER 0x004f9aa5
-S3CameraGetBldAlt {
+int32_t S3CameraGetBldAlt() {
 // LINE 817:
 	asm( 
 "	      004f9aa5    push ebp"
