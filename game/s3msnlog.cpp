@@ -18,7 +18,7 @@
 // $E55
 
 // FUNCTION: COPTER_D 0x004ebc2b
-void S3AddLogEntry() {
+void S3AddLogEntry(struct tagLogBase*, int32_t) {
 // LINE 36:
 	asm( 
 "	      004ebc2b    push ebp"

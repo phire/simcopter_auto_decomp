@@ -6,7 +6,7 @@
 
 // Contribution: 1:00135100-00135db2 Module: 159, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00536100
-int32_t CreateFireTruckInstance() {
+int32_t CreateFireTruckInstance(int32_t) {
 // LINE 76:
 	asm( 
 "	      00536100    push ebp"

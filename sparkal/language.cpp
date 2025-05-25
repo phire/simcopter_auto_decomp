@@ -3890,7 +3890,7 @@ int32_t LanguageManager::GetLanguageRoadDrivingSide(int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x0042d3c9
-int32_t EnumFontFamilyProcecure() {
+int32_t EnumFontFamilyProcecure(struct tagENUMLOGFONTA*, struct tagNEWTEXTMETRICA*, int32_t, long) {
 // LINE 626:
 	asm( 
 "	      0042d3c9    push ebp"

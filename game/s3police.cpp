@@ -6,7 +6,7 @@
 
 // Contribution: 1:00135e00-00137427 Module: 158, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00536e00
-int32_t CreatePoliceCarInstance() {
+int32_t CreatePoliceCarInstance(int32_t) {
 // LINE 89:
 	asm( 
 "	      00536e00    push ebp"

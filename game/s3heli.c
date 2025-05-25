@@ -6,7 +6,7 @@
 
 // Contribution: 1:000ee1c0-000f7aeb Module: 176, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004ef1c0
-void S3HeliInitInstance() {
+void S3HeliInitInstance(struct _HELI_DATA*) {
 // LINE 485:
 	asm( 
 "	      004ef1c0    push ebp"
@@ -1567,7 +1567,7 @@ void S3HeliInitInstance() {
 }
 
 // FUNCTION: COPTER_D 0x004effa0
-void S3HeliGenInit() {
+void S3HeliGenInit(struct _HELI_DATA*, long, long) {
 // LINE 820:
 	asm( 
 "	      004effa0    push ebp"
@@ -2417,7 +2417,7 @@ void S3HeliGenInit() {
 }
 
 // FUNCTION: COPTER_D 0x004f07ba
-void S3HeliNextFrame() {
+void S3HeliNextFrame(struct _HELI_DATA*) {
 // LINE 1010:
 	asm( 
 "	      004f07ba    push ebp"
@@ -4034,7 +4034,7 @@ void S3HeliNextFrame() {
 }
 
 // FUNCTION: COPTER_D 0x004f176d
-int32_t S3HeliCollideTest() {
+int32_t S3HeliCollideTest(struct _HELI_DATA*, long) {
 // LINE 1441:
 	asm( 
 "	      004f176d    push ebp"
@@ -4348,7 +4348,7 @@ int32_t S3HeliCollideTest() {
 }
 
 // FUNCTION: COPTER_D 0x004f1a20
-int32_t S3HeliHeadToLocXZ() {
+int32_t S3HeliHeadToLocXZ(struct _HELI_DATA*, struct Point3d*) {
 // LINE 1514:
 	asm( 
 "	      004f1a20    push ebp"
@@ -4647,7 +4647,7 @@ int32_t S3HeliHeadToLocXZ() {
 }
 
 // FUNCTION: COPTER_D 0x004f1c83
-void S3HeliSetShadow() {
+void S3HeliSetShadow(struct _HELI_DATA*, int32_t, int32_t, int32_t) {
 // LINE 1617:
 	asm( 
 "	      004f1c83    push ebp"
@@ -4870,7 +4870,7 @@ void S3HeliSetShadow() {
 }
 
 // FUNCTION: COPTER_D 0x004f1e8a
-int32_t S3HeliControlInputs() {
+int32_t S3HeliControlInputs(struct _HELI_DATA*) {
 // LINE 1687:
 	asm( 
 "	      004f1e8a    push ebp"
@@ -5970,7 +5970,7 @@ int32_t S3HeliControlInputs() {
 }
 
 // FUNCTION: COPTER_D 0x004f2916
-void S3HeliYawPitchRollSlide() {
+void S3HeliYawPitchRollSlide(struct _HELI_DATA*) {
 // LINE 1929:
 	asm( 
 "	      004f2916    push ebp"
@@ -6605,7 +6605,7 @@ void S3HeliYawPitchRollSlide() {
 }
 
 // FUNCTION: COPTER_D 0x004f2ec9
-void S3HeliMoveXZ() {
+void S3HeliMoveXZ(struct _HELI_DATA*) {
 // LINE 2088:
 	asm( 
 "	      004f2ec9    push ebp"
@@ -7024,7 +7024,7 @@ void S3HeliMoveXZ() {
 }
 
 // FUNCTION: COPTER_D 0x004f32fe
-void S3HeliMoveY() {
+void S3HeliMoveY(struct _HELI_DATA*) {
 // LINE 2180:
 	asm( 
 "	      004f32fe    push ebp"
@@ -7816,7 +7816,7 @@ void S3HeliMoveY() {
 }
 
 // FUNCTION: COPTER_D 0x004f3b82
-void S3HeliMainRotor() {
+void S3HeliMainRotor(struct _HELI_DATA*) {
 // LINE 2395:
 	asm( 
 "	      004f3b82    push ebp"
@@ -8411,7 +8411,7 @@ void S3HeliMainRotor() {
 }
 
 // FUNCTION: COPTER_D 0x004f40c7
-void S3HeliRopeAndBucket() {
+void S3HeliRopeAndBucket(struct _HELI_DATA*, struct _CELL_INFO*) {
 // LINE 2536:
 	asm( 
 "	      004f40c7    push ebp"
@@ -9104,7 +9104,7 @@ void S3HeliRopeAndBucket() {
 }
 
 // FUNCTION: COPTER_D 0x004f4766
-void S3HeliDropWater() {
+void S3HeliDropWater(struct _HELI_DATA*, int32_t, struct _CELL_INFO*) {
 // LINE 2701:
 	asm( 
 "	      004f4766    push ebp"
@@ -9293,7 +9293,7 @@ void S3HeliDropWater() {
 }
 
 // FUNCTION: COPTER_D 0x004f48ec
-void S3HeliSimDust() {
+void S3HeliSimDust(struct _HELI_DATA*, int32_t) {
 // LINE 2754:
 	asm( 
 "	      004f48ec    push ebp"
@@ -9480,7 +9480,7 @@ void S3HeliSimDust() {
 }
 
 // FUNCTION: COPTER_D 0x004f4a69
-void NormalizeMapPoints() {
+void NormalizeMapPoints(int32_t *, int32_t *) {
 // LINE 2812:
 	asm( 
 "	      004f4a69    push ebp"
@@ -9544,7 +9544,7 @@ void NormalizeMapPoints() {
 }
 
 // FUNCTION: COPTER_D 0x004f4ad4
-void NormalizeXZVector() {
+void NormalizeXZVector(struct Point3d*) {
 // LINE 2834:
 	asm( 
 "	      004f4ad4    push ebp"
@@ -9726,7 +9726,7 @@ void NormalizeXZVector() {
 }
 
 // FUNCTION: COPTER_D 0x004f4c0e
-void S3HeliRopeNextFrame() {
+void S3HeliRopeNextFrame(struct _HELI_DATA*, int32_t, struct _CELL_INFO*) {
 // LINE 2895:
 	asm( 
 "	      004f4c0e    push ebp"
@@ -10402,7 +10402,7 @@ void S3HeliRopeNextFrame() {
 }
 
 // FUNCTION: COPTER_D 0x004f512e
-void S3DrawWater() {
+void S3DrawWater(struct VRBlit*) {
 // LINE 3089:
 	asm( 
 "	      004f512e    push ebp"
@@ -10422,7 +10422,7 @@ void S3DrawWater() {
 }
 
 // FUNCTION: COPTER_D 0x004f5139
-int32_t GetCopterTerAlt() {
+int32_t GetCopterTerAlt(struct _HELI_DATA*) {
 // LINE 3324:
 	asm( 
 "	      004f5139    push ebp"
@@ -10465,7 +10465,7 @@ int32_t GetCopterTerAlt() {
 }
 
 // FUNCTION: COPTER_D 0x004f517d
-int32_t GetCopterBldAlt() {
+int32_t GetCopterBldAlt(struct _HELI_DATA*) {
 // LINE 3336:
 	asm( 
 "	      004f517d    push ebp"
@@ -10671,7 +10671,7 @@ int32_t GetCopterBldAlt() {
 }
 
 // FUNCTION: COPTER_D 0x004f5316
-void S3HeliTestCopter() {
+void S3HeliTestCopter(struct _HELI_DATA*) {
 // LINE 3396:
 	asm( 
 "	      004f5316    push ebp"
@@ -11068,7 +11068,7 @@ void S3HeliTestCopter() {
 }
 
 // FUNCTION: COPTER_D 0x004f56b9
-int32_t S3HeliLand() {
+int32_t S3HeliLand(struct _HELI_DATA*, struct Point3d*) {
 // LINE 3535:
 	asm( 
 "	      004f56b9    push ebp"
@@ -11226,7 +11226,7 @@ int32_t S3HeliLand() {
 }
 
 // FUNCTION: COPTER_D 0x004f5800
-int32_t S3HeliTakeOff() {
+int32_t S3HeliTakeOff(struct _HELI_DATA*) {
 // LINE 3598:
 	asm( 
 "	      004f5800    push ebp"
@@ -11330,7 +11330,7 @@ void S3HeliHeadsUp() {
 }
 
 // FUNCTION: COPTER_D 0x004f58a3
-int32_t S3HeliGetDeflection() {
+int32_t S3HeliGetDeflection(struct _HELI_DATA*, struct Point3d*, int32_t *, int32_t *) {
 // LINE 3655:
 	asm( 
 "	      004f58a3    push ebp"
@@ -11522,7 +11522,7 @@ int32_t S3HeliGetDeflection() {
 }
 
 // FUNCTION: COPTER_D 0x004f5a0c
-int32_t S3HeliHighestBuildAlt() {
+int32_t S3HeliHighestBuildAlt(struct _CELL_INFO*) {
 // LINE 3727:
 	asm( 
 "	      004f5a0c    push ebp"
@@ -11601,7 +11601,7 @@ int32_t S3HeliHighestBuildAlt() {
 }
 
 // FUNCTION: COPTER_D 0x004f5a80
-void S3HeliSwitchType() {
+void S3HeliSwitchType(struct _HELI_DATA*) {
 // LINE 3758:
 	asm( 
 "	      004f5a80    push ebp"
@@ -11625,7 +11625,7 @@ void S3HeliSwitchType() {
 }
 
 // FUNCTION: COPTER_D 0x004f5a90
-struct _HELI_DATA* S3HeliGetDataByDyObj() {
+struct _HELI_DATA* S3HeliGetDataByDyObj(struct _DYOBJ_INST*) {
 // LINE 3772:
 	asm( 
 "	      004f5a90    push ebp"
@@ -12112,7 +12112,7 @@ void S3HeliSoundDriver() {
 }
 
 // FUNCTION: COPTER_D 0x004f5e67
-void S3HeliSetSpotlite() {
+void S3HeliSetSpotlite(struct _HELI_DATA*, int32_t, int32_t, int32_t) {
 // LINE 3970:
 	asm( 
 "	      004f5e67    push ebp"
@@ -12633,7 +12633,7 @@ void S3HeliSetSpotlite() {
 }
 
 // FUNCTION: COPTER_D 0x004f6321
-void S3HeliGetSpotLoc() {
+void S3HeliGetSpotLoc(struct Point2d*) {
 // LINE 4129:
 	asm( 
 "	      004f6321    push ebp"
@@ -12665,7 +12665,7 @@ void S3HeliGetSpotLoc() {
 }
 
 // FUNCTION: COPTER_D 0x004f6341
-int32_t S3HeliSpotDistance() {
+int32_t S3HeliSpotDistance(struct Point3d*, struct Point3d*, int32_t, struct _CELL_INFO*) {
 // LINE 4145:
 	asm( 
 "	      004f6341    push ebp"
@@ -12852,7 +12852,7 @@ int32_t S3HeliSpotDistance() {
 }
 
 // FUNCTION: COPTER_D 0x004f6477
-void S3HeliRotateSpotLite() {
+void S3HeliRotateSpotLite(int32_t, int32_t) {
 // LINE 4221:
 	asm( 
 "	      004f6477    push ebp"
@@ -12951,7 +12951,7 @@ void S3HeliRotateSpotLite() {
 }
 
 // FUNCTION: COPTER_D 0x004f6555
-void S3HeliTurbulence() {
+void S3HeliTurbulence(struct _HELI_DATA*) {
 // LINE 4284:
 	asm( 
 "	      004f6555    push ebp"
@@ -13369,7 +13369,7 @@ void S3HeliTurbulence() {
 }
 
 // FUNCTION: COPTER_D 0x004f6912
-void S3HeliSmokeTrail() {
+void S3HeliSmokeTrail(struct _HELI_DATA*) {
 // LINE 4409:
 	asm( 
 "	      004f6912    push ebp"
@@ -14884,7 +14884,7 @@ void S3HeliTweakInit() {
 }
 
 // FUNCTION: COPTER_D 0x004f73bd
-int32_t S3HeliGetRepairRate() {
+int32_t S3HeliGetRepairRate(struct _HELI_DATA*) {
 // LINE 4762:
 	asm( 
 "	      004f73bd    push ebp"
@@ -14921,7 +14921,7 @@ int32_t S3HeliGetRepairRate() {
 }
 
 // FUNCTION: COPTER_D 0x004f73ed
-int32_t S3HeliGetFuelRate() {
+int32_t S3HeliGetFuelRate(struct _HELI_DATA*) {
 // LINE 4770:
 	asm( 
 "	      004f73ed    push ebp"
@@ -14958,7 +14958,7 @@ int32_t S3HeliGetFuelRate() {
 }
 
 // FUNCTION: COPTER_D 0x004f741d
-long S3GetFullRepairCost() {
+long S3GetFullRepairCost(struct _HELI_DATA*) {
 // LINE 4779:
 	asm( 
 "	      004f741d    push ebp"
@@ -15014,7 +15014,7 @@ long S3GetFullRepairCost() {
 }
 
 // FUNCTION: COPTER_D 0x004f7473
-void S3HeliPurchaseRepairs() {
+void S3HeliPurchaseRepairs(struct _HELI_DATA*, long) {
 // LINE 4799:
 	asm( 
 "	      004f7473    push ebp"
@@ -15084,7 +15084,7 @@ void S3HeliPurchaseRepairs() {
 }
 
 // FUNCTION: COPTER_D 0x004f74eb
-long S3GetFullRefuelCost() {
+long S3GetFullRefuelCost(struct _HELI_DATA*) {
 // LINE 4819:
 	asm( 
 "	      004f74eb    push ebp"
@@ -15139,7 +15139,7 @@ long S3GetFullRefuelCost() {
 }
 
 // FUNCTION: COPTER_D 0x004f753e
-void S3HeliPurchaseFuel() {
+void S3HeliPurchaseFuel(struct _HELI_DATA*, long) {
 // LINE 4838:
 	asm( 
 "	      004f753e    push ebp"
@@ -15209,7 +15209,7 @@ void S3HeliPurchaseFuel() {
 }
 
 // FUNCTION: COPTER_D 0x004f75b5
-int32_t S3HeliGetMaximumDamage() {
+int32_t S3HeliGetMaximumDamage(struct _HELI_DATA*) {
 // LINE 4857:
 	asm( 
 "	      004f75b5    push ebp"
@@ -15246,7 +15246,7 @@ int32_t S3HeliGetMaximumDamage() {
 }
 
 // FUNCTION: COPTER_D 0x004f75e5
-int32_t S3HeliGetCurrentDamage() {
+int32_t S3HeliGetCurrentDamage(struct _HELI_DATA*) {
 // LINE 4866:
 	asm( 
 "	      004f75e5    push ebp"
@@ -15272,7 +15272,7 @@ int32_t S3HeliGetCurrentDamage() {
 }
 
 // FUNCTION: COPTER_D 0x004f75fe
-int32_t S3HeliGetMaximumFuel() {
+int32_t S3HeliGetMaximumFuel(struct _HELI_DATA*) {
 // LINE 4874:
 	asm( 
 "	      004f75fe    push ebp"
@@ -15309,7 +15309,7 @@ int32_t S3HeliGetMaximumFuel() {
 }
 
 // FUNCTION: COPTER_D 0x004f762e
-void S3HeliCommand() {
+void S3HeliCommand(int32_t) {
 // LINE 4887:
 	asm( 
 "	      004f762e    push ebp"
@@ -15509,7 +15509,7 @@ void S3HeliCommand() {
 }
 
 // FUNCTION: COPTER_D 0x004f781b
-void S3PlayMegaphoneMessage() {
+void S3PlayMegaphoneMessage(int32_t) {
 // LINE 4936:
 	asm( 
 "	      004f781b    push ebp"
@@ -15606,7 +15606,7 @@ void S3PlayMegaphoneMessage() {
 }
 
 // FUNCTION: COPTER_D 0x004f78fa
-int32_t S3HeliCrashed() {
+int32_t S3HeliCrashed(struct _HELI_DATA*) {
 // LINE 4958:
 	asm( 
 "	      004f78fa    push ebp"
@@ -16180,7 +16180,7 @@ int32_t S3HeliCrashed() {
 }
 
 // FUNCTION: COPTER_D 0x004f7de6
-int32_t S3HeliDyObjCollisionCheck() {
+int32_t S3HeliDyObjCollisionCheck(struct _HELI_DATA*) {
 // LINE 5128:
 	asm( 
 "	      004f7de6    push ebp"
@@ -16376,7 +16376,7 @@ int32_t S3HeliDyObjCollisionCheck() {
 }
 
 // FUNCTION: COPTER_D 0x004f7f7d
-void S3HeliHitSpiral() {
+void S3HeliHitSpiral(long, struct Point2d*, struct _DYOBJ_INST*, long, long) {
 // LINE 5212:
 	asm( 
 "	      004f7f7d    push ebp"
@@ -16815,7 +16815,7 @@ struct Point2d* S3HeliGetFreePad() {
 }
 
 // FUNCTION: COPTER_D 0x004f8270
-struct _HELI_DATA* S3HeliGetDataForType() {
+struct _HELI_DATA* S3HeliGetDataForType(long) {
 // LINE 5402:
 	asm( 
 "	      004f8270    push ebp"
@@ -16876,7 +16876,7 @@ struct _HELI_DATA* S3HeliGetDataForType() {
 }
 
 // FUNCTION: COPTER_D 0x004f82df
-long S3HeliGetNewValue() {
+long S3HeliGetNewValue(long) {
 // LINE 5419:
 	asm( 
 "	      004f82df    push ebp"
@@ -16922,7 +16922,7 @@ long S3HeliGetNewValue() {
 }
 
 // FUNCTION: COPTER_D 0x004f831e
-long S3HeliGetCurrentValue() {
+long S3HeliGetCurrentValue(long) {
 // LINE 5438:
 	asm( 
 "	      004f831e    push ebp"
@@ -17001,7 +17001,7 @@ long S3HeliGetCurrentValue() {
 }
 
 // FUNCTION: COPTER_D 0x004f83a8
-long S3HeliGetEquipmentNewValue() {
+long S3HeliGetEquipmentNewValue(long) {
 // LINE 5466:
 	asm( 
 "	      004f83a8    push ebp"
@@ -17092,7 +17092,7 @@ long S3HeliGetEquipmentNewValue() {
 }
 
 // FUNCTION: COPTER_D 0x004f843e
-void S3HeliPurchaseTeargasCanisters() {
+void S3HeliPurchaseTeargasCanisters(long) {
 // LINE 5502:
 	asm( 
 "	      004f843e    push ebp"
@@ -17124,7 +17124,7 @@ void S3HeliPurchaseTeargasCanisters() {
 }
 
 // FUNCTION: COPTER_D 0x004f8465
-long S3HeliGetEquipmentCurrentValue() {
+long S3HeliGetEquipmentCurrentValue(long) {
 // LINE 5515:
 	asm( 
 "	      004f8465    push ebp"
@@ -17158,7 +17158,7 @@ long S3HeliGetEquipmentCurrentValue() {
 }
 
 // FUNCTION: COPTER_D 0x004f8492
-void S3HeliMakeHelicopter() {
+void S3HeliMakeHelicopter(long) {
 // LINE 5528:
 	asm( 
 "	      004f8492    push ebp"
@@ -17248,7 +17248,7 @@ void S3HeliMakeHelicopter() {
 }
 
 // FUNCTION: COPTER_D 0x004f852a
-void S3HeliRemoveHelicopter() {
+void S3HeliRemoveHelicopter(long) {
 // LINE 5556:
 	asm( 
 "	      004f852a    push ebp"
@@ -17349,7 +17349,7 @@ void S3HeliRemoveHelicopter() {
 }
 
 // FUNCTION: COPTER_D 0x004f85e8
-void S3HeliUnlink() {
+void S3HeliUnlink(struct _HELI_DATA*, struct _CELL_INFO*) {
 // LINE 5591:
 	asm( 
 "	      004f85e8    push ebp"
@@ -17421,7 +17421,7 @@ void S3HeliUnlink() {
 }
 
 // FUNCTION: COPTER_D 0x004f8653
-void S3HeliHitDispatch() {
+void S3HeliHitDispatch(long, struct _DYOBJ_INST*, struct _DYOBJ_INST*, long, long) {
 // LINE 5616:
 	asm( 
 "	      004f8653    push ebp"
@@ -17671,7 +17671,7 @@ void S3HeliHitDispatch() {
 }
 
 // FUNCTION: COPTER_D 0x004f8847
-int32_t S3HeliMIFFLoad() {
+int32_t S3HeliMIFFLoad(void * __ptr32) {
 // LINE 5694:
 	asm( 
 "	      004f8847    push ebp"
@@ -17798,7 +17798,7 @@ int32_t S3HeliMIFFLoad() {
 }
 
 // FUNCTION: COPTER_D 0x004f894f
-int32_t S3HeliMIFFSave() {
+int32_t S3HeliMIFFSave(void * __ptr32) {
 // LINE 5733:
 	asm( 
 "	      004f894f    push ebp"

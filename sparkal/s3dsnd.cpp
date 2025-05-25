@@ -160,7 +160,7 @@ void SoundChangeNotificationSink::DoNotificationChange(long, class PreferenceMan
 }
 
 // FUNCTION: COPTER_D 0x00441fb5
-int32_t S3DSInit() {
+int32_t S3DSInit(void * __ptr32) {
 // LINE 124:
 	asm( 
 "	      00441fb5    push ebp"
@@ -4826,7 +4826,7 @@ int32_t S3LoadSounds() {
 }
 
 // FUNCTION: COPTER_D 0x00446a6b
-void S3DSSetFile() {
+void S3DSSetFile(int32_t, char *) {
 // LINE 466:
 	asm( 
 "	      00446a6b    push ebp"
@@ -4981,7 +4981,7 @@ void S3DSSetFile() {
 }
 
 // FUNCTION: COPTER_D 0x00446cc2
-int32_t S3DSPlay() {
+int32_t S3DSPlay(int32_t, struct Point3d*, int32_t) {
 // LINE 491:
 	asm( 
 "	      00446cc2    push ebp"
@@ -5152,7 +5152,7 @@ int32_t S3DSPlay() {
 }
 
 // FUNCTION: COPTER_D 0x00446e04
-void S3DSStopPlay() {
+void S3DSStopPlay(int32_t) {
 // LINE 547:
 	asm( 
 "	      00446e04    push ebp"
@@ -5206,7 +5206,7 @@ void S3DSStopAllSounds() {
 }
 
 // FUNCTION: COPTER_D 0x00446e3c
-void S3SoundAdjFreq() {
+void S3SoundAdjFreq(int32_t, long) {
 // LINE 584:
 	asm( 
 "	      00446e3c    push ebp"
@@ -5253,7 +5253,7 @@ void S3SoundAdjFreq() {
 }
 
 // FUNCTION: COPTER_D 0x00446e82
-void S3SoundAdjVol() {
+void S3SoundAdjVol(int32_t, long) {
 // LINE 607:
 	asm( 
 "	      00446e82    push ebp"
@@ -5318,7 +5318,7 @@ void S3SoundAdjVol() {
 }
 
 // FUNCTION: COPTER_D 0x00446f02
-int32_t S3SoundIsPlaying() {
+int32_t S3SoundIsPlaying(int32_t) {
 // LINE 633:
 	asm( 
 "	      00446f02    push ebp"
@@ -5359,7 +5359,7 @@ int32_t S3SoundIsPlaying() {
 }
 
 // FUNCTION: COPTER_D 0x00446f43
-void S3SoundSetPosition() {
+void S3SoundSetPosition(int32_t, struct Point3d*) {
 // LINE 674:
 	asm( 
 "	      00446f43    push ebp"
@@ -5546,7 +5546,7 @@ void S3SoundSetPosition() {
 }
 
 // FUNCTION: COPTER_D 0x004470fa
-void S3SoundAddToQueue() {
+void S3SoundAddToQueue(int32_t, int32_t, int32_t) {
 // LINE 736:
 	asm( 
 "	      004470fa    push ebp"

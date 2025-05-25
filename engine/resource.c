@@ -53,7 +53,7 @@ void InitResource() {
 }
 
 // FUNCTION: COPTER_D 0x004d530f
-void VRResFreeBarrys() {
+void VRResFreeBarrys(struct VRResource*) {
 // LINE 112:
 	asm( 
 "	      004d530f    push ebp"
@@ -107,7 +107,7 @@ void VRResFreeBarrys() {
 }
 
 // FUNCTION: COPTER_D 0x004d5356
-struct VRResource* VRLoadResource() {
+struct VRResource* VRLoadResource(char *, int32_t, void * __ptr32) {
 // LINE 138:
 	asm( 
 "	      004d5356    push ebp"
@@ -739,7 +739,7 @@ int32_t VRUnLoadAllResources() {
 }
 
 // FUNCTION: COPTER_D 0x004d5872
-int32_t VRUnLoadResource() {
+int32_t VRUnLoadResource(struct VRResource*) {
 // LINE 301:
 	asm( 
 "	      004d5872    push ebp"
@@ -844,7 +844,7 @@ int32_t VRUnLoadResource() {
 }
 
 // FUNCTION: COPTER_D 0x004d5926
-int32_t GetDir_GEOM() {
+int32_t GetDir_GEOM(char *) {
 // LINE 358:
 	asm( 
 "	      004d5926    push ebp"
@@ -1133,7 +1133,7 @@ int32_t GetDir_GEOM() {
 }
 
 // FUNCTION: COPTER_D 0x004d5baf
-int32_t GetDir_CMAP() {
+int32_t GetDir_CMAP(char *) {
 // LINE 635:
 	asm( 
 "	      004d5baf    push ebp"
@@ -1328,7 +1328,7 @@ int32_t GetDir_CMAP() {
 }
 
 // FUNCTION: COPTER_D 0x004d5d48
-int32_t GetResourceDir() {
+int32_t GetResourceDir(char *) {
 // LINE 752:
 	asm( 
 "	      004d5d48    push ebp"
@@ -1487,7 +1487,7 @@ int32_t GetResourceDir() {
 }
 
 // FUNCTION: COPTER_D 0x004d5e81
-int32_t OpenResourceFile() {
+int32_t OpenResourceFile(char *) {
 // LINE 868:
 	asm( 
 "	      004d5e81    push ebp"
@@ -1569,7 +1569,7 @@ int32_t OpenResourceFile() {
 }
 
 // FUNCTION: COPTER_D 0x004d5f1e
-int32_t ReadResource() {
+int32_t ReadResource(void * __ptr32, int32_t) {
 // LINE 915:
 	asm( 
 "	      004d5f1e    push ebp"
@@ -1664,7 +1664,7 @@ void VRCloseResourceFile() {
 }
 
 // FUNCTION: COPTER_D 0x004d5fa9
-int32_t RegisterResource() {
+int32_t RegisterResource(struct VRResource*) {
 // LINE 1117:
 	asm( 
 "	      004d5fa9    push ebp"
@@ -1716,7 +1716,7 @@ int32_t RegisterResource() {
 }
 
 // FUNCTION: COPTER_D 0x004d5ffd
-void UnRegisterResource() {
+void UnRegisterResource(struct VRResource*) {
 // LINE 1142:
 	asm( 
 "	      004d5ffd    push ebp"

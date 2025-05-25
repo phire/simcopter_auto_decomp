@@ -6075,7 +6075,7 @@ int32_t BoatClass::InitializeInstance(long, long, int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x0052ab24
-int32_t CreateBoatInstance() {
+int32_t CreateBoatInstance(int32_t) {
 // LINE 3000:
 	asm( 
 "	      0052ab24    push ebp"
@@ -6419,7 +6419,7 @@ struct _DYOBJ_INST* BoatClass::GetCapsizedBoat() {
 }
 
 // FUNCTION: COPTER_D 0x0052ad37
-struct _DYOBJ_INST* StartCapsizedBoat() {
+struct _DYOBJ_INST* StartCapsizedBoat(long, int32_t) {
 // LINE 3147:
 	asm( 
 "	      0052ad37    push ebp"
@@ -6474,7 +6474,7 @@ struct _DYOBJ_INST* GetCapsizedBoat() {
 }
 
 // FUNCTION: COPTER_D 0x0052ad6c
-int32_t S3BoatMIFFLoad() {
+int32_t S3BoatMIFFLoad(void * __ptr32) {
 // LINE 3174:
 	asm( 
 "	      0052ad6c    push ebp"
@@ -6502,7 +6502,7 @@ int32_t S3BoatMIFFLoad() {
 }
 
 // FUNCTION: COPTER_D 0x0052ad88
-int32_t S3BoatMIFFSave() {
+int32_t S3BoatMIFFSave(void * __ptr32) {
 // LINE 3187:
 	asm( 
 "	      0052ad88    push ebp"

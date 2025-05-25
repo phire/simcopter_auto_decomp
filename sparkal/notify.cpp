@@ -136,7 +136,7 @@ class NotificationItem& NotificationItem::operator=(const class NotificationItem
 }
 
 // FUNCTION: COPTER_D 0x0043e210
-int32_t operator==() {
+int32_t operator==(const class NotificationItem&, const class NotificationItem&) {
 // LINE 29:
 	asm( 
 "	      0043e210    push ebp"

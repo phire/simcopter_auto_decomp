@@ -143,7 +143,7 @@ void S3StationReset() {
 }
 
 // FUNCTION: COPTER_D 0x00539d67
-short S3GetNearestStation() {
+short S3GetNearestStation(class Station*, struct _GridCoordinates, struct _GridCoordinates*) {
 // LINE 48:
 	asm( 
 "	      00539d67    push ebp"
@@ -173,7 +173,7 @@ short S3GetNearestStation() {
 }
 
 // FUNCTION: COPTER_D 0x00539d87
-short S3GetNextNearest() {
+short S3GetNextNearest(class Station*, struct _GridCoordinates*) {
 // LINE 56:
 	asm( 
 "	      00539d87    push ebp"

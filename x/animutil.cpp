@@ -6,7 +6,7 @@
 
 // Contribution: 1:00161610-00162e95 Module: 187, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00562610
-void GetAxis() {
+void GetAxis(float, float, struct DXZY, struct DXZY*) {
 // LINE 46:
 	asm( 
 "	      00562610    push ebp"
@@ -71,7 +71,7 @@ void GetAxis() {
 }
 
 // FUNCTION: COPTER_D 0x0056269d
-void GetAxes() {
+void GetAxes(float, float, struct DXZY, struct DXZY, struct DXZY*, struct DXZY*, float, float) {
 // LINE 51:
 	asm( 
 "	      0056269d    push ebp"
@@ -130,7 +130,7 @@ void GetAxes() {
 }
 
 // FUNCTION: COPTER_D 0x005626f5
-unsigned short PutInPerspective() {
+unsigned short PutInPerspective(struct DXZY*, short) {
 // LINE 57:
 	asm( 
 "	      005626f5    push ebp"
@@ -193,7 +193,7 @@ unsigned short PutInPerspective() {
 }
 
 // FUNCTION: COPTER_D 0x00562766
-unsigned short PutInPerspective() {
+unsigned short PutInPerspective(struct XZY*, short) {
 // LINE 67:
 	asm( 
 "	      00562766    push ebp"
@@ -270,7 +270,7 @@ unsigned short PutInPerspective() {
 }
 
 // FUNCTION: COPTER_D 0x00562802
-void XY2Cartesian() {
+void XY2Cartesian(float, float, float, float *, float *, float *) {
 // LINE 76:
 	asm( 
 "	      00562802    push ebp"
@@ -379,7 +379,7 @@ void XY2Cartesian() {
 }
 
 // FUNCTION: COPTER_D 0x005628eb
-void XYIncrementCartesian() {
+void XYIncrementCartesian(float, float, float, float, struct DXZY, struct DXZY*) {
 // LINE 93:
 	asm( 
 "	      005628eb    push ebp"
@@ -442,7 +442,7 @@ void XYIncrementCartesian() {
 }
 
 // FUNCTION: COPTER_D 0x00562950
-void TransformToAxes() {
+void TransformToAxes(struct DXZY*, struct DXZY*, struct DXZY*, struct DXZY, struct DXZY*) {
 // LINE 102:
 	asm( 
 "	      00562950    push ebp"
@@ -562,7 +562,7 @@ void TransformToAxes() {
 }
 
 // FUNCTION: COPTER_D 0x00562a31
-void AxisTransformToScreen() {
+void AxisTransformToScreen(struct DXZY*, struct DXZY*, struct DXZY*, struct DXZY*, struct DXZY*) {
 // LINE 118:
 	asm( 
 "	      00562a31    push ebp"
@@ -653,7 +653,7 @@ void AxisTransformToScreen() {
 }
 
 // FUNCTION: COPTER_D 0x00562ac5
-void XYTransformToScreen() {
+void XYTransformToScreen(float, float, float, float, float, struct DXZY, short *, short *, short *, unsigned short) {
 // LINE 132:
 	asm( 
 "	      00562ac5    push ebp"
@@ -756,7 +756,7 @@ void XYTransformToScreen() {
 }
 
 // FUNCTION: COPTER_D 0x00562b82
-void IncrementXY() {
+void IncrementXY(struct Polar*, struct Polar*) {
 // LINE 151:
 	asm( 
 "	      00562b82    push ebp"
@@ -811,7 +811,7 @@ void IncrementXY() {
 }
 
 // FUNCTION: COPTER_D 0x00562bdb
-void Keep0to2pi() {
+void Keep0to2pi(float *) {
 // LINE 159:
 	asm( 
 "	      00562bdb    push ebp"
@@ -868,7 +868,7 @@ void Keep0to2pi() {
 }
 
 // FUNCTION: COPTER_D 0x00562c41
-void Keep0to2pi() {
+void Keep0to2pi(struct Polar*) {
 // LINE 167:
 	asm( 
 "	      00562c41    push ebp"
@@ -912,7 +912,7 @@ void Keep0to2pi() {
 }
 
 // FUNCTION: COPTER_D 0x00562c7b
-float Keep0to2pi() {
+float Keep0to2pi(float) {
 // LINE 174:
 	asm( 
 "	      00562c7b    push ebp"
@@ -944,7 +944,7 @@ float Keep0to2pi() {
 }
 
 // FUNCTION: COPTER_D 0x00562c9a
-void IncrementFloat() {
+void IncrementFloat(struct Polar, struct Polar*) {
 // LINE 180:
 	asm( 
 "	      00562c9a    push ebp"
@@ -996,7 +996,7 @@ void IncrementFloat() {
 }
 
 // FUNCTION: COPTER_D 0x00562ce1
-float my_acos() {
+float my_acos(float, float) {
 // LINE 188:
 	asm( 
 "	      00562ce1    push ebp"
@@ -1115,7 +1115,7 @@ float my_acos() {
 }
 
 // FUNCTION: COPTER_D 0x00562df2
-void NormalizeTo1() {
+void NormalizeTo1(struct DXZY*) {
 // LINE 207:
 	asm( 
 "	      00562df2    push ebp"
@@ -1136,7 +1136,7 @@ void NormalizeTo1() {
 }
 
 // FUNCTION: COPTER_D 0x00562e02
-double GetLength() {
+double GetLength(float, float, float) {
 // LINE 212:
 	asm( 
 "	      00562e02    push ebp"
@@ -1186,7 +1186,7 @@ double GetLength() {
 }
 
 // FUNCTION: COPTER_D 0x00562e50
-void DrawDirectionDisk() {
+void DrawDirectionDisk(struct Rect*, short, short, short, short, unsigned short, struct Point*, short) {
 // LINE 224:
 	asm( 
 "	      00562e50    push ebp"
@@ -1246,7 +1246,7 @@ void DrawDirectionDisk() {
 }
 
 // FUNCTION: COPTER_D 0x00562eab
-void DrawDirectionDisk() {
+void DrawDirectionDisk(struct Rect*, float, float, unsigned short, struct Point*, short) {
 // LINE 231:
 	asm( 
 "	      00562eab    push ebp"
@@ -1519,7 +1519,7 @@ void DrawDirectionDisk() {
 }
 
 // FUNCTION: COPTER_D 0x005630d0
-void DrawDirectionDisk() {
+void DrawDirectionDisk(struct Point, struct DXZY, float) {
 // LINE 268:
 	asm( 
 "	      005630d0    push ebp"
@@ -1562,7 +1562,7 @@ void DrawDirectionDisk() {
 }
 
 // FUNCTION: COPTER_D 0x00563116
-void DrawDirectionDisk() {
+void DrawDirectionDisk(struct DXZY, struct DXZY) {
 // LINE 273:
 	asm( 
 "	      00563116    push ebp"
@@ -1653,7 +1653,7 @@ void DrawDirectionDisk() {
 }
 
 // FUNCTION: COPTER_D 0x005631d0
-void DrawDirectionDisk() {
+void DrawDirectionDisk(struct Point, float, float, float, float, unsigned short) {
 // LINE 282:
 	asm( 
 "	      005631d0    push ebp"
@@ -1674,7 +1674,7 @@ void DrawDirectionDisk() {
 }
 
 // FUNCTION: COPTER_D 0x005631e0
-void Score() {
+void Score(struct Point, struct Point, struct Point) {
 // LINE 357:
 	asm( 
 "	      005631e0    push ebp"
@@ -1695,7 +1695,7 @@ void Score() {
 }
 
 // FUNCTION: COPTER_D 0x005631f0
-unsigned short DrawGrid() {
+unsigned short DrawGrid(float, float, short, short, unsigned short, float, short, unsigned long, unsigned long, enum UseDrawGrid, short, short, short) {
 // LINE 374:
 	asm( 
 "	      005631f0    push ebp"
@@ -1720,7 +1720,7 @@ unsigned short DrawGrid() {
 }
 
 // FUNCTION: COPTER_D 0x00563204
-void GetChildIncrement() {
+void GetChildIncrement(struct Polar*, struct Polar*, struct Polar*) {
 // LINE 508:
 	asm( 
 "	      00563204    push ebp"
@@ -1979,7 +1979,7 @@ void GetChildIncrement() {
 }
 
 // FUNCTION: COPTER_D 0x00563420
-void IncrementAngles() {
+void IncrementAngles(float, float, float, float, float *, float *, unsigned short) {
 // LINE 568:
 	asm( 
 "	      00563420    push ebp"
@@ -2085,7 +2085,7 @@ void IncrementAngles() {
 }
 
 // FUNCTION: COPTER_D 0x005634fc
-void IncrementPhiPsi() {
+void IncrementPhiPsi(struct Polar*, struct Polar*, struct Polar*) {
 // LINE 583:
 	asm( 
 "	      005634fc    push ebp"
@@ -2309,7 +2309,7 @@ void IncrementPhiPsi() {
 }
 
 // FUNCTION: COPTER_D 0x005636d5
-void FillLatLngTrq() {
+void FillLatLngTrq(struct Polar*, short, short, short) {
 // LINE 623:
 	asm( 
 "	      005636d5    push ebp"
@@ -2377,7 +2377,7 @@ void FillLatLngTrq() {
 }
 
 // FUNCTION: COPTER_D 0x0056374c
-void FillPhiPsiTau() {
+void FillPhiPsiTau(struct Polar*, short, short, short) {
 // LINE 631:
 	asm( 
 "	      0056374c    push ebp"
@@ -2448,7 +2448,7 @@ void FillPhiPsiTau() {
 }
 
 // FUNCTION: COPTER_D 0x005637d3
-void SnapToIncs() {
+void SnapToIncs(struct Polar*, short, short, short) {
 // LINE 639:
 	asm( 
 "	      005637d3    push ebp"
@@ -2521,7 +2521,7 @@ void SnapToIncs() {
 }
 
 // FUNCTION: COPTER_D 0x00563859
-void PolarDouble2Incs() {
+void PolarDouble2Incs(float, float, float, short, short, short, short *, short *, short *) {
 // LINE 649:
 	asm( 
 "	      00563859    push ebp"
@@ -2699,7 +2699,7 @@ void PolarDouble2Incs() {
 }
 
 // FUNCTION: COPTER_D 0x005639d2
-void PolarIncs2Double() {
+void PolarIncs2Double(short, short, short, short, short, short, float *, float *, float *) {
 // LINE 673:
 	asm( 
 "	      005639d2    push ebp"
@@ -2757,7 +2757,7 @@ void PolarIncs2Double() {
 }
 
 // FUNCTION: COPTER_D 0x00563a42
-void Polar2Cartesian() {
+void Polar2Cartesian(float, float, float, float *, float *, float *) {
 // LINE 685:
 	asm( 
 "	      00563a42    push ebp"
@@ -2848,7 +2848,7 @@ void Polar2Cartesian() {
 }
 
 // FUNCTION: COPTER_D 0x00563aec
-void Polar2Cartesian() {
+void Polar2Cartesian(float, struct Polar*, struct DXZY*) {
 // LINE 696:
 	asm( 
 "	      00563aec    push ebp"
@@ -2890,7 +2890,7 @@ void Polar2Cartesian() {
 }
 
 // FUNCTION: COPTER_D 0x00563b27
-void PolarTransformToScreen() {
+void PolarTransformToScreen(float, float, float, struct DXZY*, struct DXZY*, short *, short *, short *, unsigned short) {
 // LINE 702:
 	asm( 
 "	      00563b27    push ebp"
@@ -3030,7 +3030,7 @@ void PolarTransformToScreen() {
 }
 
 // FUNCTION: COPTER_D 0x00563c20
-void Cartesian2Polar() {
+void Cartesian2Polar(float, float, float, float *, float *, float *) {
 // LINE 740:
 	asm( 
 "	      00563c20    push ebp"
@@ -3145,7 +3145,7 @@ void Cartesian2Polar() {
 }
 
 // FUNCTION: COPTER_D 0x00563cf6
-void Cartesian2Polar() {
+void Cartesian2Polar(struct DXZY, struct Polar*, float *) {
 // LINE 763:
 	asm( 
 "	      00563cf6    push ebp"
@@ -3189,7 +3189,7 @@ void Cartesian2Polar() {
 }
 
 // FUNCTION: COPTER_D 0x00563d33
-void IncrementTorque() {
+void IncrementTorque(float, struct Polar*, struct Polar*) {
 // LINE 939:
 	asm( 
 "	      00563d33    push ebp"
@@ -3284,7 +3284,7 @@ void IncrementTorque() {
 }
 
 // FUNCTION: COPTER_D 0x00563dd3
-void IncrementXYTorque() {
+void IncrementXYTorque(float, struct Polar*, struct Polar*) {
 // LINE 955:
 	asm( 
 "	      00563dd3    push ebp"
@@ -3368,7 +3368,7 @@ void IncrementXYTorque() {
 }
 
 // FUNCTION: COPTER_D 0x00563e67
-unsigned short IsPixelFilled() {
+unsigned short IsPixelFilled(void * __ptr32, short, short) {
 // LINE 1815:
 	asm( 
 "	      00563e67    push ebp"

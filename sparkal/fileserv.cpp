@@ -18,7 +18,7 @@
 // $E30
 
 // FUNCTION: COPTER_D 0x0049172b
-int32_t GetPathForFile() {
+int32_t GetPathForFile(int32_t, int32_t, char *, char *) {
 // LINE 25:
 	asm( 
 "	      0049172b    push ebp"

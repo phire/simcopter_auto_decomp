@@ -6,7 +6,7 @@
 
 // Contribution: 1:000d5b40-000d62f3 Module: 141, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004d6b40
-short VRInitGridObj() {
+short VRInitGridObj(long) {
 // LINE 121:
 	asm( 
 "	      004d6b40    push ebp"

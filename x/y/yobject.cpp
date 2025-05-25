@@ -72,7 +72,7 @@ void RemoveAvatarFromBuilding() {
 // $E84
 
 // FUNCTION: COPTER_D 0x0054433f
-void JacquesGetDebugData() {
+void JacquesGetDebugData(int32_t *, int32_t *, int32_t *, int32_t *, int32_t *, int32_t *) {
 // LINE 149:
 	asm( 
 "	      0054433f    push ebp"
@@ -234,7 +234,7 @@ void JacquesGetDebugData() {
 }
 
 // FUNCTION: COPTER_D 0x0054454e
-unsigned short GetOutOfHeli() {
+unsigned short GetOutOfHeli(long) {
 // LINE 166:
 	asm( 
 "	      0054454e    push ebp"
@@ -419,7 +419,7 @@ unsigned short cYObject::GetOutOfHeli(long) {
 }
 
 // FUNCTION: COPTER_D 0x00544760
-void AdjustPersonBeamingSlices() {
+void AdjustPersonBeamingSlices(int32_t) {
 // LINE 191:
 	asm( 
 "	      00544760    push ebp"
@@ -2318,7 +2318,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO*, int32_t *, int3
 }
 
 // FUNCTION: COPTER_D 0x00545cc3
-void duh() {
+void duh(double) {
 // LINE 403:
 	asm( 
 "	      00545cc3    push ebp"
@@ -2585,7 +2585,7 @@ void S3PersonReset() {
 }
 
 // FUNCTION: COPTER_D 0x00545ecb
-void S3PersonUserStart() {
+void S3PersonUserStart(int32_t, int32_t, int32_t, int32_t) {
 // LINE 455:
 	asm( 
 "	      00545ecb    push ebp"
@@ -2783,7 +2783,7 @@ void S3PersonUserStart() {
 }
 
 // FUNCTION: COPTER_D 0x0054617c
-void S3PersonUserAppearNew() {
+void S3PersonUserAppearNew(struct Point3d*, struct Point3d*) {
 // LINE 464:
 	asm( 
 "	      0054617c    push ebp"
@@ -2956,7 +2956,7 @@ void S3PersonUserAppearNew() {
 }
 
 // FUNCTION: COPTER_D 0x0054634c
-void S3PersonUserAppear() {
+void S3PersonUserAppear(int32_t, int32_t, int32_t, int32_t) {
 // LINE 490:
 	asm( 
 "	      0054634c    push ebp"
@@ -3053,7 +3053,7 @@ void S3PersonUserAppear() {
 }
 
 // FUNCTION: COPTER_D 0x0054642e
-int32_t IsThisABadGuy() {
+int32_t IsThisABadGuy(struct _DYOBJ_INST*) {
 // LINE 496:
 	asm( 
 "	      0054642e    push ebp"
@@ -3255,7 +3255,7 @@ struct Point3d* GetAvatarVector() {
 }
 
 // FUNCTION: COPTER_D 0x00546584
-void S3DrawPerson() {
+void S3DrawPerson(struct VRBlit*) {
 // LINE 530:
 	asm( 
 "	      00546584    push ebp"
@@ -3835,7 +3835,7 @@ void PersonHeliHasLanded() {
 }
 
 // FUNCTION: COPTER_D 0x00546b56
-struct _HELI_DATA* S3PersonGetLandedHeli() {
+struct _HELI_DATA* S3PersonGetLandedHeli(struct Point3d*) {
 // LINE 647:
 	asm( 
 "	      00546b56    push ebp"
@@ -8618,7 +8618,7 @@ unsigned short cYObject::OutOfCameraRange() {
 }
 
 // FUNCTION: COPTER_D 0x0054a1d3
-short StartPerson() {
+short StartPerson(enum PersonType, enum MissionType, short, short, long, struct _DYOBJ_INST*, struct Point3d*) {
 // LINE 1465:
 	asm( 
 "	      0054a1d3    push ebp"
@@ -8683,7 +8683,7 @@ short StartPerson() {
 }
 
 // FUNCTION: COPTER_D 0x0054a23f
-void LiberateMissionPeople() {
+void LiberateMissionPeople(long) {
 // LINE 1476:
 	asm( 
 "	      0054a23f    push ebp"
@@ -8781,7 +8781,7 @@ void LiberateMissionPeople() {
 }
 
 // FUNCTION: COPTER_D 0x0054a35a
-void KillMissionPeople() {
+void KillMissionPeople(long) {
 // LINE 1487:
 	asm( 
 "	      0054a35a    push ebp"
@@ -18771,7 +18771,7 @@ void cYObject::Draw(struct VRBlit*) {
 }
 
 // FUNCTION: COPTER_D 0x0055181a
-void BodyDrawDebugInfo() {
+void BodyDrawDebugInfo(class CBackBuffer*) {
 // LINE 3050:
 	asm( 
 "	      0055181a    push ebp"
@@ -19118,7 +19118,7 @@ void cAvatar::RotateMatrixAndYawForEngine() {
 }
 
 // FUNCTION: COPTER_D 0x00551af1
-int32_t S3PUtilsGetDir() {
+int32_t S3PUtilsGetDir(int32_t, int32_t, int32_t, int32_t) {
 // LINE 3116:
 	asm( 
 "	      00551af1    push ebp"
@@ -19253,7 +19253,7 @@ int32_t S3PUtilsGetDir() {
 }
 
 // FUNCTION: COPTER_D 0x00551bf7
-int32_t S3PUtilsGetAlt() {
+int32_t S3PUtilsGetAlt(int32_t, int32_t, int32_t) {
 // LINE 3152:
 	asm( 
 "	      00551bf7    push ebp"

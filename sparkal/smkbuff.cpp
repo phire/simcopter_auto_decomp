@@ -1252,7 +1252,7 @@ int32_t SmackerBuffer::ComposeToWindow() {
 }
 
 // FUNCTION: COPTER_D 0x00498489
-void * __ptr32 VRSmackerInit() {
+void * __ptr32 VRSmackerInit(char *, int32_t) {
 // LINE 423:
 	asm( 
 "	      00498489    push ebp"
@@ -1298,7 +1298,7 @@ void * __ptr32 VRSmackerInit() {
 }
 
 // FUNCTION: COPTER_D 0x004984dc
-void VRSmackerDestroy() {
+void VRSmackerDestroy(void * __ptr32) {
 // LINE 432:
 	asm( 
 "	      004984dc    push ebp"
@@ -1335,7 +1335,7 @@ void VRSmackerDestroy() {
 }
 
 // FUNCTION: COPTER_D 0x00498516
-int32_t VRSmackerSetBitmap() {
+int32_t VRSmackerSetBitmap(void * __ptr32, char *, int32_t, int32_t) {
 // LINE 439:
 	asm( 
 "	      00498516    push ebp"
@@ -1369,7 +1369,7 @@ int32_t VRSmackerSetBitmap() {
 }
 
 // FUNCTION: COPTER_D 0x0049853d
-int32_t VRSmackerNextFrame() {
+int32_t VRSmackerNextFrame(void * __ptr32) {
 // LINE 445:
 	asm( 
 "	      0049853d    push ebp"
@@ -1395,7 +1395,7 @@ int32_t VRSmackerNextFrame() {
 }
 
 // FUNCTION: COPTER_D 0x00498555
-void VRSmackerReset() {
+void VRSmackerReset(void * __ptr32) {
 // LINE 449:
 	asm( 
 "	      00498555    push ebp"
@@ -1421,7 +1421,7 @@ void VRSmackerReset() {
 }
 
 // FUNCTION: COPTER_D 0x0049856d
-int32_t VRSmackerStatus() {
+int32_t VRSmackerStatus(void * __ptr32) {
 // LINE 453:
 	asm( 
 "	      0049856d    push ebp"
@@ -1447,7 +1447,7 @@ int32_t VRSmackerStatus() {
 }
 
 // FUNCTION: COPTER_D 0x00498583
-struct VRBmpHdr* VRSmackerGetBitmap() {
+struct VRBmpHdr* VRSmackerGetBitmap(void * __ptr32) {
 // LINE 457:
 	asm( 
 "	      00498583    push ebp"
@@ -1473,7 +1473,7 @@ struct VRBmpHdr* VRSmackerGetBitmap() {
 }
 
 // FUNCTION: COPTER_D 0x0049859c
-char * VRSmackerGetBitmapBits() {
+char * VRSmackerGetBitmapBits(void * __ptr32) {
 // LINE 461:
 	asm( 
 "	      0049859c    push ebp"

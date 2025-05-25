@@ -57,7 +57,7 @@ void S3PrintScreen() {
 }
 
 // FUNCTION: COPTER_D 0x0046b8db
-void S3BufferPrint() {
+void S3BufferPrint(char *, char *) {
 // LINE 68:
 	asm( 
 "	      0046b8db    push ebp"
@@ -302,7 +302,7 @@ void S3BufferPrint() {
 }
 
 // FUNCTION: COPTER_D 0x0046bac3
-int32_t S3WritePCXLine() {
+int32_t S3WritePCXLine(struct _iobuf*, char *, unsigned short) {
 // LINE 136:
 	asm( 
 "	      0046bac3    push ebp"

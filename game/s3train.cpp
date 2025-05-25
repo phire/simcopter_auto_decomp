@@ -11688,7 +11688,7 @@ short GetMaximumNumberOfTrains() {
 }
 
 // FUNCTION: COPTER_D 0x005342ef
-int32_t CreateTrainInstance() {
+int32_t CreateTrainInstance(int32_t) {
 // LINE 4625:
 	asm( 
 "	      005342ef    push ebp"
@@ -11771,7 +11771,7 @@ void ItterateAllTrains() {
 }
 
 // FUNCTION: COPTER_D 0x00534349
-int32_t S3TrainCrashWhenReady() {
+int32_t S3TrainCrashWhenReady(long) {
 // LINE 4688:
 	asm( 
 "	      00534349    push ebp"
@@ -11799,7 +11799,7 @@ int32_t S3TrainCrashWhenReady() {
 }
 
 // FUNCTION: COPTER_D 0x00534365
-int32_t S3TrainStartRescue() {
+int32_t S3TrainStartRescue(long, int32_t) {
 // LINE 4709:
 	asm( 
 "	      00534365    push ebp"
@@ -12084,7 +12084,7 @@ int32_t TrainClass::FindTrainForRescue(long, int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x0053456c
-int32_t S3TrainMIFFLoad() {
+int32_t S3TrainMIFFLoad(void * __ptr32) {
 // LINE 4825:
 	asm( 
 "	      0053456c    push ebp"
@@ -12112,7 +12112,7 @@ int32_t S3TrainMIFFLoad() {
 }
 
 // FUNCTION: COPTER_D 0x00534588
-int32_t S3TrainMIFFSave() {
+int32_t S3TrainMIFFSave(void * __ptr32) {
 // LINE 4838:
 	asm( 
 "	      00534588    push ebp"

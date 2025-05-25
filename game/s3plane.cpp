@@ -4672,7 +4672,7 @@ void PlaneClass::HandleUFOStuff() {
 }
 
 // FUNCTION: COPTER_D 0x0052d6bd
-void CreatePlaneInstance() {
+void CreatePlaneInstance(int32_t) {
 // LINE 2553:
 	asm( 
 "	      0052d6bd    push ebp"
@@ -4700,7 +4700,7 @@ void CreatePlaneInstance() {
 }
 
 // FUNCTION: COPTER_D 0x0052d6d9
-int32_t S3PlaneCrashWhenReady() {
+int32_t S3PlaneCrashWhenReady(long) {
 // LINE 2573:
 	asm( 
 "	      0052d6d9    push ebp"
@@ -5041,7 +5041,7 @@ void PlaneClass::HitDispatch(long, struct _DYOBJ_INST*, struct _DYOBJ_INST*, lon
 }
 
 // FUNCTION: COPTER_D 0x0052d975
-void PlaneHitDispatch() {
+void PlaneHitDispatch(long, struct _DYOBJ_INST*, struct _DYOBJ_INST*, long, long) {
 // LINE 2707:
 	asm( 
 "	      0052d975    push ebp"
@@ -5259,7 +5259,7 @@ void PlaneClass::TurnOffShields() {
 }
 
 // FUNCTION: COPTER_D 0x0052dadb
-int32_t S3PlaneMIFFLoad() {
+int32_t S3PlaneMIFFLoad(void * __ptr32) {
 // LINE 2772:
 	asm( 
 "	      0052dadb    push ebp"
@@ -5287,7 +5287,7 @@ int32_t S3PlaneMIFFLoad() {
 }
 
 // FUNCTION: COPTER_D 0x0052daf7
-int32_t S3PlaneMIFFSave() {
+int32_t S3PlaneMIFFSave(void * __ptr32) {
 // LINE 2785:
 	asm( 
 "	      0052daf7    push ebp"

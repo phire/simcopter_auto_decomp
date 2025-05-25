@@ -6,7 +6,7 @@
 
 // Contribution: 1:00112d50-00117f8b Module: 169, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00513d50
-short GetAltitude() {
+short GetAltitude(int32_t, int32_t) {
 // LINE 93:
 	asm( 
 "	      00513d50    push ebp"
@@ -4627,7 +4627,7 @@ short S3TerrainInitMap() {
 }
 
 // FUNCTION: COPTER_D 0x0051723c
-void do_map_square() {
+void do_map_square(short, short, short) {
 // LINE 1012:
 	asm( 
 "	      0051723c    push ebp"
@@ -5593,7 +5593,7 @@ void do_map_square() {
 }
 
 // FUNCTION: COPTER_D 0x00517dc6
-unsigned short noise() {
+unsigned short noise(unsigned short, unsigned short) {
 // LINE 1109:
 	asm( 
 "	      00517dc6    push ebp"
@@ -6863,7 +6863,7 @@ void AdjustTerrainMap() {
 }
 
 // FUNCTION: COPTER_D 0x00518a8c
-int32_t S3TerrPrecisionAlt() {
+int32_t S3TerrPrecisionAlt(int32_t, int32_t, int32_t *) {
 // LINE 1605:
 	asm( 
 "	      00518a8c    push ebp"
@@ -7298,7 +7298,7 @@ int32_t S3TerrPrecisionAlt() {
 }
 
 // FUNCTION: COPTER_D 0x00518e64
-unsigned char S3TerrGetShadeIndex() {
+unsigned char S3TerrGetShadeIndex(long, long) {
 // LINE 1738:
 	asm( 
 "	      00518e64    push ebp"
@@ -7323,7 +7323,7 @@ unsigned char S3TerrGetShadeIndex() {
 }
 
 // FUNCTION: COPTER_D 0x00518e76
-int32_t S3ObjectPrecisionAlt() {
+int32_t S3ObjectPrecisionAlt(int32_t, int32_t) {
 // LINE 1822:
 	asm( 
 "	      00518e76    push ebp"

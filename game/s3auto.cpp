@@ -98,7 +98,7 @@ int32_t S3StartSpeederMission() {
 }
 
 // FUNCTION: COPTER_D 0x005016c9
-int32_t Distance() {
+int32_t Distance(struct _GridCoordinates, struct _GridCoordinates) {
 // LINE 104:
 	asm( 
 "	      005016c9    push ebp"
@@ -685,7 +685,7 @@ int32_t GetTheCurrentNumberOfAutomobiles() {
 }
 
 // FUNCTION: COPTER_D 0x00501b0e
-int32_t SetTheCurrentNumberOfAutomobiles() {
+int32_t SetTheCurrentNumberOfAutomobiles(int32_t) {
 // LINE 274:
 	asm( 
 "	      00501b0e    push ebp"
@@ -725,7 +725,7 @@ int32_t SetTheCurrentNumberOfAutomobiles() {
 }
 
 // FUNCTION: COPTER_D 0x00501b3c
-int32_t CreateAutomobileInstance() {
+int32_t CreateAutomobileInstance(int32_t) {
 // LINE 303:
 	asm( 
 "	      00501b3c    push ebp"
@@ -8498,7 +8498,7 @@ void AutomobileClass::HitDispatch(long, struct _DYOBJ_INST*, long, long) {
 }
 
 // FUNCTION: COPTER_D 0x0050654c
-void AutoHitDispatch() {
+void AutoHitDispatch(long, struct _DYOBJ_INST*, struct _DYOBJ_INST*, long, long) {
 // LINE 3085:
 	asm( 
 "	      0050654c    push ebp"
@@ -8534,7 +8534,7 @@ void AutoHitDispatch() {
 }
 
 // FUNCTION: COPTER_D 0x0050657f
-int32_t AutoMissionStartFire() {
+int32_t AutoMissionStartFire(long, struct Point2d*) {
 // LINE 3097:
 	asm( 
 "	      0050657f    push ebp"
@@ -8564,7 +8564,7 @@ int32_t AutoMissionStartFire() {
 }
 
 // FUNCTION: COPTER_D 0x0050659f
-int32_t AutoMissionStartJam() {
+int32_t AutoMissionStartJam(long, struct Point2d*) {
 // LINE 3110:
 	asm( 
 "	      0050659f    push ebp"
@@ -9435,7 +9435,7 @@ void AutomobileClass::RunJamState() {
 }
 
 // FUNCTION: COPTER_D 0x00506c61
-void AutoMissionCancel() {
+void AutoMissionCancel(long) {
 // LINE 3408:
 	asm( 
 "	      00506c61    push ebp"
@@ -9579,7 +9579,7 @@ void AutomobileClass::MissionCancel(long) {
 }
 
 // FUNCTION: COPTER_D 0x00506d4e
-void AutoSetAllHeadlights() {
+void AutoSetAllHeadlights(int32_t) {
 // LINE 3493:
 	asm( 
 "	      00506d4e    push ebp"
@@ -13025,7 +13025,7 @@ void AutomobileClass::MoveForwardOnHiway() {
 }
 
 // FUNCTION: COPTER_D 0x00509007
-int32_t S3AutoMIFFLoad() {
+int32_t S3AutoMIFFLoad(void * __ptr32) {
 // LINE 4517:
 	asm( 
 "	      00509007    push ebp"
@@ -13053,7 +13053,7 @@ int32_t S3AutoMIFFLoad() {
 }
 
 // FUNCTION: COPTER_D 0x00509023
-int32_t S3AutoMIFFSave() {
+int32_t S3AutoMIFFSave(void * __ptr32) {
 // LINE 4530:
 	asm( 
 "	      00509023    push ebp"

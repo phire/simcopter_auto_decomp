@@ -6,7 +6,7 @@
 
 // Contribution: 1:000d7cc0-000d89a4 Module: 132, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004d8cc0
-int32_t VRCreateTexColors() {
+int32_t VRCreateTexColors(struct VRResource*, int32_t) {
 // LINE 115:
 	asm( 
 "	      004d8cc0    push ebp"
@@ -217,7 +217,7 @@ int32_t VRCreateTexColors() {
 }
 
 // FUNCTION: COPTER_D 0x004d8e58
-int32_t CreateTiledTexColors() {
+int32_t CreateTiledTexColors(uint32_t *, struct VRBmpHdr*, struct VRResource*, int32_t) {
 // LINE 190:
 	asm( 
 "	      004d8e58    push ebp"
@@ -420,7 +420,7 @@ int32_t CreateTiledTexColors() {
 }
 
 // FUNCTION: COPTER_D 0x004d8fd7
-void VRFaceSetTexColor() {
+void VRFaceSetTexColor(int32_t) {
 // LINE 271:
 	asm( 
 "	      004d8fd7    push ebp"
@@ -520,7 +520,7 @@ void VRFaceSetTexColor() {
 }
 
 // FUNCTION: COPTER_D 0x004d9093
-int32_t VRGetTexColor() {
+int32_t VRGetTexColor(int32_t) {
 // LINE 313:
 	asm( 
 "	      004d9093    push ebp"
@@ -590,7 +590,7 @@ int32_t VRGetTexColor() {
 }
 
 // FUNCTION: COPTER_D 0x004d90fa
-struct COLOR_SHADE* VRGetColorShade() {
+struct COLOR_SHADE* VRGetColorShade(int32_t) {
 // LINE 347:
 	asm( 
 "	      004d90fa    push ebp"
@@ -653,7 +653,7 @@ struct COLOR_SHADE* VRGetColorShade() {
 }
 
 // FUNCTION: COPTER_D 0x004d9160
-void VRSetIntensities() {
+void VRSetIntensities(int32_t, int32_t, int32_t, int32_t) {
 // LINE 370:
 	asm( 
 "	      004d9160    push ebp"
@@ -693,7 +693,7 @@ void VRSetIntensities() {
 }
 
 // FUNCTION: COPTER_D 0x004d918b
-void VRObjSetShading() {
+void VRObjSetShading(int32_t) {
 // LINE 389:
 	asm( 
 "	      004d918b    push ebp"
@@ -969,7 +969,7 @@ void VRObjSetShading() {
 }
 
 // FUNCTION: COPTER_D 0x004d93d6
-void VRDyObjSetShading() {
+void VRDyObjSetShading(int32_t, int32_t[17][17]*) {
 // LINE 480:
 	asm( 
 "	      004d93d6    push ebp"
@@ -1192,7 +1192,7 @@ void VRDyObjSetShading() {
 }
 
 // FUNCTION: COPTER_D 0x004d958c
-void VRTexTileSqFace() {
+void VRTexTileSqFace(int32_t, struct VRResource*, int32_t) {
 // LINE 562:
 	asm( 
 "	      004d958c    push ebp"
@@ -1390,7 +1390,7 @@ void VRTexTileSqFace() {
 }
 
 // FUNCTION: COPTER_D 0x004d9712
-void VRObjSetGouraudShade() {
+void VRObjSetGouraudShade(struct ObjectHdr*, struct Point3d*) {
 // LINE 610:
 	asm( 
 "	      004d9712    push ebp"
@@ -1640,7 +1640,7 @@ void VRObjSetGouraudShade() {
 }
 
 // FUNCTION: COPTER_D 0x004d9907
-void VRObjSetTranslucent() {
+void VRObjSetTranslucent(int32_t, struct VRResource*, int32_t) {
 // LINE 698:
 	asm( 
 "	      004d9907    push ebp"
@@ -1718,7 +1718,7 @@ void VRObjSetTranslucent() {
 }
 
 // FUNCTION: COPTER_D 0x004d997f
-void VRFaceSetColor() {
+void VRFaceSetColor(int32_t, int32_t) {
 // LINE 727:
 	asm( 
 "	      004d997f    push ebp"

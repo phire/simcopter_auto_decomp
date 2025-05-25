@@ -12,7 +12,7 @@
 // $E1
 
 // FUNCTION: COPTER_D 0x00490fd3
-unsigned long __long_random() {
+unsigned long __long_random(unsigned long) {
 // LINE 26:
 	asm( 
 "	      00490fd3    push ebp"

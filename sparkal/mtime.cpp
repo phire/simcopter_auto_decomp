@@ -1204,7 +1204,7 @@ public: char * __thiscall MTime::PrintString(char *) {
 }
 
 // FUNCTION: COPTER_D 0x0043d02b
-class ostream& operator<<() {
+class ostream& operator<<(class ostream&, const class MTime&) {
 // LINE 407:
 	asm( 
 "	      0043d02b    push ebp"

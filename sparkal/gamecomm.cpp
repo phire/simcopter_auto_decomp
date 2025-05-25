@@ -1925,7 +1925,7 @@ void CGameCommander::ProcessSystemCloseRequest() {
 }
 
 // FUNCTION: COPTER_D 0x0048c234
-int32_t ReadShortcutPrefsFile() {
+int32_t ReadShortcutPrefsFile(class list<Shortcut>&) {
 // LINE 552:
 	asm( 
 "	      0048c234    push ebp"
@@ -2228,7 +2228,7 @@ int32_t ReadShortcutPrefsFile() {
 }
 
 // FUNCTION: COPTER_D 0x0048c6f1
-int32_t WriteShortcutPrefsFile() {
+int32_t WriteShortcutPrefsFile(class list<Shortcut>&) {
 // LINE 586:
 	asm( 
 "	      0048c6f1    push ebp"
@@ -2386,7 +2386,7 @@ int32_t WriteShortcutPrefsFile() {
 }
 
 // FUNCTION: COPTER_D 0x0048c8bd
-void MakeDefaultConfigurableShortcuts() {
+void MakeDefaultConfigurableShortcuts(class list<Shortcut>&) {
 // LINE 611:
 	asm( 
 "	      0048c8bd    push ebp"
@@ -4688,7 +4688,7 @@ void MakeDefaultConfigurableShortcuts() {
 }
 
 // FUNCTION: COPTER_D 0x0048e3b4
-int32_t GetPushAndIgnoreSettingsForCommand() {
+int32_t GetPushAndIgnoreSettingsForCommand(long, long&, long&) {
 // LINE 928:
 	asm( 
 "	      0048e3b4    push ebp"
@@ -4837,7 +4837,7 @@ void DeleteShortcutPrefsFile() {
 }
 
 // FUNCTION: COPTER_D 0x0048e515
-int32_t ValidateConfigurableShortcut() {
+int32_t ValidateConfigurableShortcut(struct Shortcut&) {
 // LINE 979:
 	asm( 
 "	      0048e515    push ebp"
@@ -4954,7 +4954,7 @@ int32_t ValidateConfigurableShortcut() {
 }
 
 // FUNCTION: COPTER_D 0x0048e5fa
-int32_t IsKeyReserved() {
+int32_t IsKeyReserved(long) {
 // LINE 1013:
 	asm( 
 "	      0048e5fa    push ebp"
@@ -4991,7 +4991,7 @@ int32_t IsKeyReserved() {
 }
 
 // FUNCTION: COPTER_D 0x0048e64b
-void GetReservedKeyArray() {
+void GetReservedKeyArray(long *) {
 // LINE 1029:
 	asm( 
 "	      0048e64b    push ebp"
@@ -5042,7 +5042,7 @@ void GetReservedKeyArray() {
 }
 
 // FUNCTION: COPTER_D 0x0048e696
-int32_t IsCommandConfigurable() {
+int32_t IsCommandConfigurable(long) {
 // LINE 1043:
 	asm( 
 "	      0048e696    push ebp"
@@ -5073,7 +5073,7 @@ int32_t IsCommandConfigurable() {
 }
 
 // FUNCTION: COPTER_D 0x0048e6c6
-long GetJoystickCommandTwin() {
+long GetJoystickCommandTwin(long) {
 // LINE 1056:
 	asm( 
 "	      0048e6c6    push ebp"

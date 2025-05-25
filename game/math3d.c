@@ -6,7 +6,7 @@
 
 // Contribution: 1:00141f80-00142684 Module: 152, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00542f80
-int32_t Magnitude() {
+int32_t Magnitude(struct Point3d*) {
 // LINE 29:
 	asm( 
 "	      00542f80    push ebp"
@@ -68,7 +68,7 @@ int32_t Magnitude() {
 }
 
 // FUNCTION: COPTER_D 0x00542ff4
-int32_t Distance() {
+int32_t Distance(struct Point3d*, struct Point3d*) {
 // LINE 51:
 	asm( 
 "	      00542ff4    push ebp"
@@ -143,7 +143,7 @@ int32_t Distance() {
 }
 
 // FUNCTION: COPTER_D 0x0054308e
-int32_t Normalize() {
+int32_t Normalize(struct Point3d*) {
 // LINE 71:
 	asm( 
 "	      0054308e    push ebp"
@@ -261,7 +261,7 @@ int32_t Normalize() {
 }
 
 // FUNCTION: COPTER_D 0x00543183
-void CreatePlane() {
+void CreatePlane(struct Plane*, struct Point3d*, struct Point3d*) {
 // LINE 102:
 	asm( 
 "	      00543183    push ebp"
@@ -335,7 +335,7 @@ void CreatePlane() {
 }
 
 // FUNCTION: COPTER_D 0x005431fe
-int32_t SideOfPlane() {
+int32_t SideOfPlane(struct Point3d*, struct Point3d*, struct Point3d*) {
 // LINE 128:
 	asm( 
 "	      005431fe    push ebp"
@@ -420,7 +420,7 @@ int32_t SideOfPlane() {
 }
 
 // FUNCTION: COPTER_D 0x00543292
-void CreateVelocity() {
+void CreateVelocity(struct Point3d*, struct Point3d*, struct Point3d*, int32_t) {
 // LINE 157:
 	asm( 
 "	      00543292    push ebp"
@@ -498,7 +498,7 @@ void CreateVelocity() {
 }
 
 // FUNCTION: COPTER_D 0x0054330c
-int32_t SameSigns() {
+int32_t SameSigns(int32_t, int32_t) {
 // LINE 183:
 	asm( 
 "	      0054330c    push ebp"
@@ -526,7 +526,7 @@ int32_t SameSigns() {
 }
 
 // FUNCTION: COPTER_D 0x00543328
-int32_t VectorBounds() {
+int32_t VectorBounds(struct Point3d*, int32_t) {
 // LINE 201:
 	asm( 
 "	      00543328    push ebp"
@@ -614,7 +614,7 @@ int32_t VectorBounds() {
 }
 
 // FUNCTION: COPTER_D 0x005433be
-void Apply_Force() {
+void Apply_Force(struct Point3d*, struct mv*, int32_t) {
 // LINE 227:
 	asm( 
 "	      005433be    push ebp"
@@ -704,7 +704,7 @@ void Apply_Force() {
 }
 
 // FUNCTION: COPTER_D 0x00543455
-void Apply_Friction() {
+void Apply_Friction(int32_t, struct mv*, int32_t) {
 // LINE 261:
 	asm( 
 "	      00543455    push ebp"
@@ -831,7 +831,7 @@ void Apply_Friction() {
 }
 
 // FUNCTION: COPTER_D 0x00543535
-int32_t Apply_Force1D() {
+int32_t Apply_Force1D(int32_t, int32_t, int32_t, int32_t, int32_t) {
 // LINE 299:
 	asm( 
 "	      00543535    push ebp"
@@ -896,7 +896,7 @@ int32_t Apply_Force1D() {
 }
 
 // FUNCTION: COPTER_D 0x005435a4
-int32_t Apply_Friction1D() {
+int32_t Apply_Friction1D(int32_t, int32_t, int32_t, int32_t) {
 // LINE 332:
 	asm( 
 "	      005435a4    push ebp"
@@ -978,7 +978,7 @@ int32_t Apply_Friction1D() {
 }
 
 // FUNCTION: COPTER_D 0x00543629
-int32_t AngleBounds() {
+int32_t AngleBounds(int32_t) {
 // LINE 358:
 	asm( 
 "	      00543629    push ebp"

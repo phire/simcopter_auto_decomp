@@ -6,7 +6,7 @@
 
 // Contribution: 1:000d5060-000d560b Module: 145, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004d6060
-struct VRResource* LoadImages() {
+struct VRResource* LoadImages(char *) {
 // LINE 70:
 	asm( 
 "	      004d6060    push ebp"
@@ -260,7 +260,7 @@ struct VRResource* LoadImages() {
 }
 
 // FUNCTION: COPTER_D 0x004d6246
-struct VRBmpHdr* VRInt2BmpHdr() {
+struct VRBmpHdr* VRInt2BmpHdr(struct VRResource*, int32_t) {
 // LINE 223:
 	asm( 
 "	      004d6246    push ebp"
@@ -324,7 +324,7 @@ struct VRBmpHdr* VRInt2BmpHdr() {
 }
 
 // FUNCTION: COPTER_D 0x004d62a5
-int32_t VRGetResTextureCnt() {
+int32_t VRGetResTextureCnt(struct VRResource*) {
 // LINE 254:
 	asm( 
 "	      004d62a5    push ebp"
@@ -356,7 +356,7 @@ int32_t VRGetResTextureCnt() {
 }
 
 // FUNCTION: COPTER_D 0x004d62c4
-int32_t VRSetBmpToTiled() {
+int32_t VRSetBmpToTiled(struct VRResource*, int32_t, int32_t, unsigned char *) {
 // LINE 282:
 	asm( 
 "	      004d62c4    push ebp"
@@ -576,7 +576,7 @@ int32_t VRSetBmpToTiled() {
 }
 
 // FUNCTION: COPTER_D 0x004d6460
-int32_t VRLoadAlignedBmp() {
+int32_t VRLoadAlignedBmp(char *, struct VRResource*, int32_t, int32_t) {
 // LINE 384:
 	asm( 
 "	      004d6460    push ebp"

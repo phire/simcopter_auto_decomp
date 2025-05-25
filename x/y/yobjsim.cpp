@@ -115,7 +115,7 @@ unsigned short cYObject::InBoundingRect(struct Point3d, int32_t, struct Point3d,
 }
 
 // FUNCTION: COPTER_D 0x005550ac
-void PersonHitDispatch() {
+void PersonHitDispatch(long, struct _DYOBJ_INST*, struct _DYOBJ_INST*, long, long) {
 // LINE 77:
 	asm( 
 "	      005550ac    push ebp"
@@ -2391,7 +2391,7 @@ unsigned short cYObject::IsWalkable(short, short, enum cYObject::LocationType) {
 }
 
 // FUNCTION: COPTER_D 0x005566af
-struct Point2d GetRiotCenter() {
+struct Point2d GetRiotCenter(long) {
 // LINE 656:
 	asm( 
 "	      005566af    push ebp"

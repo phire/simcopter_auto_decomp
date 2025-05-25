@@ -3282,7 +3282,7 @@ void DestroyDebugWindow() {
 }
 
 // FUNCTION: COPTER_D 0x00424b14
-void DebugOutput() {
+void DebugOutput(char *, <NoType>) {
 // LINE 401:
 	asm( 
 "	      00424b14    push ebp"
@@ -3332,7 +3332,7 @@ void DebugOutput() {
 }
 
 // FUNCTION: COPTER_D 0x00424b6c
-void RegisterDebugCommand() {
+void RegisterDebugCommand(struct debug_command*) {
 // LINE 411:
 	asm( 
 "	      00424b6c    push ebp"
@@ -3623,7 +3623,7 @@ void RegisterDebugCommand() {
 }
 
 // FUNCTION: COPTER_D 0x00424f30
-void UnregisterDebugCommand() {
+void UnregisterDebugCommand(struct debug_command*) {
 // LINE 417:
 	asm( 
 "	      00424f30    push ebp"
@@ -3707,7 +3707,7 @@ void UnregisterDebugCommand() {
 }
 
 // FUNCTION: COPTER_D 0x00425015
-void SaveDebugWindow() {
+void SaveDebugWindow(char *) {
 // LINE 423:
 	asm( 
 "	      00425015    push ebp"
@@ -3740,7 +3740,7 @@ void SaveDebugWindow() {
 }
 
 // FUNCTION: COPTER_D 0x00425041
-int32_t ParseCommandLine() {
+int32_t ParseCommandLine(class basic_string<char>, class vector<basic_string<char>>&) {
 // LINE 430:
 	asm( 
 "	      00425041    push ebp"

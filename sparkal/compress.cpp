@@ -844,7 +844,7 @@ unsigned long CRLECompressedImage::Compose(class IFlatImage*, long, long, long, 
 }
 
 // FUNCTION: COPTER_D 0x004ab063
-void ConvertCompressedByteOrdering() {
+void ConvertCompressedByteOrdering(struct RLEHeader*) {
 // LINE 232:
 	asm( 
 "	      004ab063    push ebp"
@@ -865,7 +865,7 @@ void ConvertCompressedByteOrdering() {
 }
 
 // FUNCTION: COPTER_D 0x004ab073
-void RLEDecompressUnclippedX() {
+void RLEDecompressUnclippedX(unsigned char *, long, unsigned char *, short, unsigned char) {
 // LINE 322:
 	asm( 
 "	      004ab073    push ebp"
@@ -1124,7 +1124,7 @@ void RLEDecompressUnclippedX() {
 }
 
 // FUNCTION: COPTER_D 0x004ab1f7
-void RLEDecompressClippedX() {
+void RLEDecompressClippedX(unsigned char *, long, unsigned char *, short, short, short, unsigned char) {
 // LINE 404:
 	asm( 
 "	      004ab1f7    push ebp"

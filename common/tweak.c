@@ -6,7 +6,7 @@
 
 // Contribution: 1:000c8ad0-000c90b4 Module: 93, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004c9ad0
-int32_t TWKEnQueue() {
+int32_t TWKEnQueue(int32_t **, int32_t, char *) {
 // LINE 40:
 	asm( 
 "	      004c9ad0    push ebp"
@@ -104,7 +104,7 @@ int32_t TWKEnQueue() {
 }
 
 // FUNCTION: COPTER_D 0x004c9b9b
-int32_t TWKReadFile() {
+int32_t TWKReadFile(char *, int32_t) {
 // LINE 70:
 	asm( 
 "	      004c9b9b    push ebp"
@@ -318,7 +318,7 @@ void TWKUpdate() {
 }
 
 // FUNCTION: COPTER_D 0x004c9d68
-void TWKReadAllFiles() {
+void TWKReadAllFiles(char *) {
 // LINE 154:
 	asm( 
 "	      004c9d68    push ebp"
@@ -422,7 +422,7 @@ void TWKReadAllFiles() {
 }
 
 // FUNCTION: COPTER_D 0x004c9e4f
-void TWKReadSection() {
+void TWKReadSection(char *, char *, int32_t) {
 // LINE 203:
 	asm( 
 "	      004c9e4f    push ebp"
@@ -634,7 +634,7 @@ void TWKReadSection() {
 }
 
 // FUNCTION: COPTER_D 0x004ca059
-int32_t TWKDOSRead() {
+int32_t TWKDOSRead(char *) {
 // LINE 262:
 	asm( 
 "	      004ca059    push ebp"
@@ -659,7 +659,7 @@ int32_t TWKDOSRead() {
 }
 
 // FUNCTION: COPTER_D 0x004ca06e
-void TWKGetToEOLN() {
+void TWKGetToEOLN(char *, char *) {
 // LINE 361:
 	asm( 
 "	      004ca06e    push ebp"

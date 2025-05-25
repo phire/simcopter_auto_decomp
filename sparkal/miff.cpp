@@ -6,7 +6,7 @@
 
 // Contribution: 1:000aa530-000ab9b5 Module: 6, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004ab530
-int32_t ReadFirstMIFFChunk() {
+int32_t ReadFirstMIFFChunk(void * __ptr32, long, char *, long) {
 // LINE 17:
 	asm( 
 "	      004ab530    push ebp"
@@ -61,7 +61,7 @@ int32_t ReadFirstMIFFChunk() {
 }
 
 // FUNCTION: COPTER_D 0x004ab57c
-int32_t ReadNextMIFFChunk() {
+int32_t ReadNextMIFFChunk(void * __ptr32, long, char *, long) {
 // LINE 29:
 	asm( 
 "	      004ab57c    push ebp"
@@ -109,7 +109,7 @@ int32_t ReadNextMIFFChunk() {
 }
 
 // FUNCTION: COPTER_D 0x004ab5bd
-int32_t WriteMIFFChunk() {
+int32_t WriteMIFFChunk(void * __ptr32, long, char *, long) {
 // LINE 40:
 	asm( 
 "	      004ab5bd    push ebp"

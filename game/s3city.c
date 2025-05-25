@@ -508,7 +508,7 @@ void S3CityDeInit() {
 }
 
 // FUNCTION: COPTER_D 0x0050a478
-void VRSetBackPlane() {
+void VRSetBackPlane(int32_t) {
 // LINE 363:
 	asm( 
 "	      0050a478    push ebp"
@@ -10659,7 +10659,7 @@ void S3CityGrid() {
 }
 
 // FUNCTION: COPTER_D 0x0050f67e
-void S3CityGetCells() {
+void S3CityGetCells(struct Point3d*, struct Point2d*, struct Point2d**, struct Point3d*, struct Point2d*) {
 // LINE 2916:
 	asm( 
 "	      0050f67e    push ebp"
@@ -12635,7 +12635,7 @@ void city_fovscan_vertedge() {
 }
 
 // FUNCTION: COPTER_D 0x00510776
-void city_subscan_horiz() {
+void city_subscan_horiz(long, long, long, struct Point2d*, struct Point2d*, struct Point2d**) {
 // LINE 3520:
 	asm( 
 "	      00510776    push ebp"
@@ -13131,7 +13131,7 @@ void city_subscan_horiz() {
 }
 
 // FUNCTION: COPTER_D 0x00510beb
-void city_subscan_vert() {
+void city_subscan_vert(long, long, long, struct Point2d*, struct Point2d*, struct Point2d**) {
 // LINE 3637:
 	asm( 
 "	      00510beb    push ebp"
@@ -14145,7 +14145,7 @@ void S3CityDrawGrid() {
 }
 
 // FUNCTION: COPTER_D 0x0051147c
-void S3CityDyObjFixup() {
+void S3CityDyObjFixup(struct _CELL_INFO**, struct _CELL_INFO***) {
 // LINE 3931:
 	asm( 
 "	      0051147c    push ebp"
@@ -15681,7 +15681,7 @@ void S3CityDyObjFixup() {
 }
 
 // FUNCTION: COPTER_D 0x0051215e
-int32_t S3CityCellInFront() {
+int32_t S3CityCellInFront(struct _CELL_INFO***, struct _CELL_INFO***, struct _CELL_INFO**, struct _CELL_INFO**) {
 // LINE 4314:
 	asm( 
 "	      0051215e    push ebp"
@@ -16110,7 +16110,7 @@ void S3CityCheckGridPos() {
 }
 
 // FUNCTION: COPTER_D 0x005124fe
-void S3CitySpiralScan() {
+void S3CitySpiralScan(long, long, long) {
 // LINE 4453:
 	asm( 
 "	      005124fe    push ebp"
@@ -16333,7 +16333,7 @@ void S3CitySpiralScan() {
 }
 
 // FUNCTION: COPTER_D 0x00512670
-int32_t S3CityCellViewReject() {
+int32_t S3CityCellViewReject(struct _CELL_INFO*) {
 // LINE 4733:
 	asm( 
 "	      00512670    push ebp"
@@ -16829,7 +16829,7 @@ void S3CityDrawOverHeadGrid() {
 }
 
 // FUNCTION: COPTER_D 0x00512a46
-short S3CityLowestTerrAlt() {
+short S3CityLowestTerrAlt(long, long, long) {
 // LINE 4939:
 	asm( 
 "	      00512a46    push ebp"
@@ -16914,7 +16914,7 @@ short S3CityLowestTerrAlt() {
 }
 
 // FUNCTION: COPTER_D 0x00512af5
-int32_t S3CityIsCellFlat() {
+int32_t S3CityIsCellFlat(long, long) {
 // LINE 4965:
 	asm( 
 "	      00512af5    push ebp"
@@ -17023,7 +17023,7 @@ int32_t S3CityIsCellFlat() {
 }
 
 // FUNCTION: COPTER_D 0x00512c2b
-int32_t S3CityGetBase() {
+int32_t S3CityGetBase(long, long, long) {
 // LINE 4984:
 	asm( 
 "	      00512c2b    push ebp"
@@ -17249,7 +17249,7 @@ int32_t S3CityGetBase() {
 }
 
 // FUNCTION: COPTER_D 0x00512e3a
-void S3CityCreateHeliBase() {
+void S3CityCreateHeliBase(long, long) {
 // LINE 5051:
 	asm( 
 "	      00512e3a    push ebp"

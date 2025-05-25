@@ -18,7 +18,7 @@
 // $E2
 
 // FUNCTION: COPTER_D 0x00431cc0
-int32_t IsModifierSet() {
+int32_t IsModifierSet(unsigned char) {
 // LINE 16:
 	asm( 
 "	      00431cc0    push ebp"

@@ -313,7 +313,7 @@ void S3MapDestroy() {
 }
 
 // FUNCTION: COPTER_D 0x004fea13
-void S3MapRender() {
+void S3MapRender(long, long) {
 // LINE 294:
 	asm( 
 "	      004fea13    push ebp"
@@ -3189,7 +3189,7 @@ void S3MapRender() {
 }
 
 // FUNCTION: COPTER_D 0x005001cb
-void S3MapDrawPosLines() {
+void S3MapDrawPosLines(long, long) {
 // LINE 965:
 	asm( 
 "	      005001cb    push ebp"
@@ -3597,7 +3597,7 @@ void S3MapDrawPosLines() {
 }
 
 // FUNCTION: COPTER_D 0x005004cf
-void S3MapDrawLine() {
+void S3MapDrawLine(int32_t, int32_t, char, long) {
 // LINE 1072:
 	asm( 
 "	      005004cf    push ebp"
@@ -3870,7 +3870,7 @@ void S3MapDrawLine() {
 }
 
 // FUNCTION: COPTER_D 0x005006b9
-void S3MapBlit() {
+void S3MapBlit(char *, long) {
 // LINE 1160:
 	asm( 
 "	      005006b9    push ebp"
@@ -3954,7 +3954,7 @@ void S3MapBlit() {
 }
 
 // FUNCTION: COPTER_D 0x0050074d
-void S3MapBlitPosition() {
+void S3MapBlitPosition(char *, long, long, long) {
 // LINE 1188:
 	asm( 
 "	      0050074d    push ebp"
@@ -4190,7 +4190,7 @@ void S3MapRestore3dRender() {
 }
 
 // FUNCTION: COPTER_D 0x005008ea
-int32_t S3MapCursorDown() {
+int32_t S3MapCursorDown(long, long) {
 // LINE 1283:
 	asm( 
 "	      005008ea    push ebp"
@@ -4274,7 +4274,7 @@ int32_t S3MapCursorDown() {
 }
 
 // FUNCTION: COPTER_D 0x0050098b
-int32_t S3MapCursorUp() {
+int32_t S3MapCursorUp(long, long) {
 // LINE 1313:
 	asm( 
 "	      0050098b    push ebp"
@@ -4405,7 +4405,7 @@ void S3MapCommandNextMission() {
 }
 
 // FUNCTION: COPTER_D 0x005009fc
-void S3MapCommandCurrentMissionVehicleFilter() {
+void S3MapCommandCurrentMissionVehicleFilter(int32_t) {
 // LINE 1359:
 	asm( 
 "	      005009fc    push ebp"
@@ -4425,7 +4425,7 @@ void S3MapCommandCurrentMissionVehicleFilter() {
 }
 
 // FUNCTION: COPTER_D 0x00500a07
-void S3MapCommandOtherMissionVehicleFilter() {
+void S3MapCommandOtherMissionVehicleFilter(int32_t) {
 // LINE 1368:
 	asm( 
 "	      00500a07    push ebp"
@@ -4445,7 +4445,7 @@ void S3MapCommandOtherMissionVehicleFilter() {
 }
 
 // FUNCTION: COPTER_D 0x00500a12
-void S3MapBlitIcon() {
+void S3MapBlitIcon(long, long, long) {
 // LINE 1385:
 	asm( 
 "	      00500a12    push ebp"
@@ -4603,7 +4603,7 @@ void S3MapBlitIcon() {
 }
 
 // FUNCTION: COPTER_D 0x00500b65
-void S3MapGetMissionIcons() {
+void S3MapGetMissionIcons(long, long *, long *) {
 // LINE 1431:
 	asm( 
 "	      00500b65    push ebp"
@@ -4859,7 +4859,7 @@ void S3MapGetMissionIcons() {
 }
 
 // FUNCTION: COPTER_D 0x00500de3
-void S3MapDrawMissionIcons() {
+void S3MapDrawMissionIcons(long, long) {
 // LINE 1503:
 	asm( 
 "	      00500de3    push ebp"
@@ -5017,7 +5017,7 @@ void S3MapDrawMissionIcons() {
 }
 
 // FUNCTION: COPTER_D 0x00500f34
-void S3MapAddCarInfo() {
+void S3MapAddCarInfo(long, long, long, struct _GridCoordinates*, struct _GridCoordinates*) {
 // LINE 1562:
 	asm( 
 "	      00500f34    push ebp"
@@ -5111,7 +5111,7 @@ void S3MapAddCarInfo() {
 }
 
 // FUNCTION: COPTER_D 0x00500fc3
-void S3MapRemoveCarInfo() {
+void S3MapRemoveCarInfo(long) {
 // LINE 1597:
 	asm( 
 "	      00500fc3    push ebp"
@@ -5406,7 +5406,7 @@ void S3MapDrawCarIcons() {
 }
 
 // FUNCTION: COPTER_D 0x00501220
-void S3MapBlitDIcon() {
+void S3MapBlitDIcon(long, long, long) {
 // LINE 1697:
 	asm( 
 "	      00501220    push ebp"
@@ -5526,7 +5526,7 @@ void S3MapBlitDIcon() {
 }
 
 // FUNCTION: COPTER_D 0x005012f5
-void S3MapDrawDispatchLine() {
+void S3MapDrawDispatchLine(int32_t, int32_t, int32_t, int32_t, char) {
 // LINE 1742:
 	asm( 
 "	      005012f5    push ebp"
@@ -5779,7 +5779,7 @@ void S3MapDrawDispatchLine() {
 }
 
 // FUNCTION: COPTER_D 0x005014c6
-void S3MapGetDxDy() {
+void S3MapGetDxDy(long, long, long, long, long *, long *) {
 // LINE 1826:
 	asm( 
 "	      005014c6    push ebp"

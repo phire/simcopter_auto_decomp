@@ -6,7 +6,7 @@
 
 // Contribution: 1:000c3690-000c8acf Module: 94, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004c4690
-int32_t S2CityValidate() {
+int32_t S2CityValidate(char *) {
 // LINE 110:
 	asm( 
 "	      004c4690    push ebp"
@@ -228,7 +228,7 @@ int32_t S2CityValidate() {
 }
 
 // FUNCTION: COPTER_D 0x004c481e
-short S2CityGetCityNameFromFile() {
+short S2CityGetCityNameFromFile(char *, char *) {
 // LINE 180:
 	asm( 
 "	      004c481e    push ebp"
@@ -469,7 +469,7 @@ short S2CityGetCityNameFromFile() {
 }
 
 // FUNCTION: COPTER_D 0x004c49d8
-long stol() {
+long stol(char *) {
 // LINE 245:
 	asm( 
 "	      004c49d8    push ebp"
@@ -531,7 +531,7 @@ long stol() {
 }
 
 // FUNCTION: COPTER_D 0x004c4a2b
-long ValidateSCXSaveGameFile() {
+long ValidateSCXSaveGameFile(char *) {
 // LINE 272:
 	asm( 
 "	      004c4a2b    push ebp"
@@ -616,7 +616,7 @@ long ValidateSCXSaveGameFile() {
 }
 
 // FUNCTION: COPTER_D 0x004c4ab6
-short S2CityLoad() {
+short S2CityLoad(char *) {
 // LINE 298:
 	asm( 
 "	      004c4ab6    push ebp"
@@ -1737,7 +1737,7 @@ void graph_kludge() {
 }
 
 // FUNCTION: COPTER_D 0x004c555f
-void S2CityMakeCityNameFromFilePath() {
+void S2CityMakeCityNameFromFilePath(char *, char *) {
 // LINE 542:
 	asm( 
 "	      004c555f    push ebp"
@@ -1799,7 +1799,7 @@ void S2CityMakeCityNameFromFilePath() {
 }
 
 // FUNCTION: COPTER_D 0x004c55d7
-void S2CityMakeFileNameFromCityName() {
+void S2CityMakeFileNameFromCityName(char *, char *) {
 // LINE 568:
 	asm( 
 "	      004c55d7    push ebp"
@@ -1828,7 +1828,7 @@ void S2CityMakeFileNameFromCityName() {
 }
 
 // FUNCTION: COPTER_D 0x004c55f2
-unsigned short S2CityReadHeader() {
+unsigned short S2CityReadHeader(struct _iobuf*, long *) {
 // LINE 588:
 	asm( 
 "	      004c55f2    push ebp"
@@ -1960,7 +1960,7 @@ unsigned short S2CityReadHeader() {
 }
 
 // FUNCTION: COPTER_D 0x004c56e2
-unsigned short S2CityMiscRead() {
+unsigned short S2CityMiscRead(struct _iobuf*, long) {
 // LINE 629:
 	asm( 
 "	      004c56e2    push ebp"
@@ -3344,7 +3344,7 @@ unsigned short S2CityMiscRead() {
 }
 
 // FUNCTION: COPTER_D 0x004c65df
-unsigned short S2CityGameReadUncompressed() {
+unsigned short S2CityGameReadUncompressed(struct _iobuf*, long, char *) {
 // LINE 861:
 	asm( 
 "	      004c65df    push ebp"
@@ -3388,7 +3388,7 @@ unsigned short S2CityGameReadUncompressed() {
 }
 
 // FUNCTION: COPTER_D 0x004c6619
-unsigned short S2CityBucketGameRead() {
+unsigned short S2CityBucketGameRead(struct _iobuf*, long) {
 // LINE 883:
 	asm( 
 "	      004c6619    push ebp"
@@ -3470,7 +3470,7 @@ unsigned short S2CityBucketGameRead() {
 }
 
 // FUNCTION: COPTER_D 0x004c66a4
-unsigned short S2CityGameReadCompressed() {
+unsigned short S2CityGameReadCompressed(struct _iobuf*, long, char *, long) {
 // LINE 915:
 	asm( 
 "	      004c66a4    push ebp"
@@ -3661,7 +3661,7 @@ unsigned short S2CityGameReadCompressed() {
 }
 
 // FUNCTION: COPTER_D 0x004c680e
-short S2CitySave() {
+short S2CitySave(char *) {
 // LINE 976:
 	asm( 
 "	      004c680e    push ebp"
@@ -4200,7 +4200,7 @@ short S2CitySave() {
 }
 
 // FUNCTION: COPTER_D 0x004c6cfe
-unsigned short S2CityWriteName() {
+unsigned short S2CityWriteName(struct _iobuf*, long, char *) {
 // LINE 1072:
 	asm( 
 "	      004c6cfe    push ebp"
@@ -4325,7 +4325,7 @@ unsigned short S2CityWriteName() {
 }
 
 // FUNCTION: COPTER_D 0x004c6dd5
-unsigned short S2CityGameWriteUncompressed() {
+unsigned short S2CityGameWriteUncompressed(struct _iobuf*, long, char *, long) {
 // LINE 1111:
 	asm( 
 "	      004c6dd5    push ebp"
@@ -4478,7 +4478,7 @@ unsigned short S2CityGameWriteUncompressed() {
 }
 
 // FUNCTION: COPTER_D 0x004c6edb
-unsigned short S2CityWriteHeader() {
+unsigned short S2CityWriteHeader(struct _iobuf*, long) {
 // LINE 1156:
 	asm( 
 "	      004c6edb    push ebp"
@@ -4627,7 +4627,7 @@ unsigned short S2CityWriteHeader() {
 }
 
 // FUNCTION: COPTER_D 0x004c6fe6
-unsigned short S2CityGameWriteCompressed() {
+unsigned short S2CityGameWriteCompressed(struct _iobuf*, long, char *, long) {
 // LINE 1197:
 	asm( 
 "	      004c6fe6    push ebp"
@@ -5041,7 +5041,7 @@ unsigned short S2CityGameWriteCompressed() {
 }
 
 // FUNCTION: COPTER_D 0x004c732e
-unsigned short S2CityMiscWrite() {
+unsigned short S2CityMiscWrite(struct _iobuf*) {
 // LINE 1300:
 	asm( 
 "	      004c732e    push ebp"
@@ -6353,7 +6353,7 @@ unsigned short S2CityMiscWrite() {
 }
 
 // FUNCTION: COPTER_D 0x004c81c9
-void swizzle_buffer() {
+void swizzle_buffer(char *, long) {
 // LINE 1494:
 	asm( 
 "	      004c81c9    push ebp"
@@ -6418,7 +6418,7 @@ void swizzle_buffer() {
 }
 
 // FUNCTION: COPTER_D 0x004c822d
-void swizzle_Micro() {
+void swizzle_Micro(char *, long) {
 // LINE 1522:
 	asm( 
 "	      004c822d    push ebp"
@@ -6497,7 +6497,7 @@ void swizzle_Micro() {
 }
 
 // FUNCTION: COPTER_D 0x004c82b3
-void swizzle_shorts() {
+void swizzle_shorts(char *, long) {
 // LINE 1552:
 	asm( 
 "	      004c82b3    push ebp"
@@ -6561,7 +6561,7 @@ void swizzle_shorts() {
 }
 
 // FUNCTION: COPTER_D 0x004c8317
-short swizzle_short() {
+short swizzle_short(short) {
 // LINE 1580:
 	asm( 
 "	      004c8317    push ebp"
@@ -6611,7 +6611,7 @@ short swizzle_short() {
 }
 
 // FUNCTION: COPTER_D 0x004c8350
-long swap_long() {
+long swap_long(long) {
 // LINE 1605:
 	asm( 
 "	      004c8350    push ebp"
@@ -6661,7 +6661,7 @@ long swap_long() {
 }
 
 // FUNCTION: COPTER_D 0x004c838e
-long swizzle_long() {
+long swizzle_long(long) {
 // LINE 1631:
 	asm( 
 "	      004c838e    push ebp"
@@ -6730,7 +6730,7 @@ long swizzle_long() {
 }
 
 // FUNCTION: COPTER_D 0x004c83e4
-void GetStringResource() {
+void GetStringResource(unsigned char *, short, short) {
 // LINE 1667:
 	asm( 
 "	      004c83e4    push ebp"
@@ -8177,7 +8177,7 @@ void S2CityFree() {
 }
 
 // FUNCTION: COPTER_D 0x004c9227
-void PStringToCString() {
+void PStringToCString(char *) {
 // LINE 1979:
 	asm( 
 "	      004c9227    push ebp"
@@ -8229,7 +8229,7 @@ void PStringToCString() {
 }
 
 // FUNCTION: COPTER_D 0x004c927b
-void CStringToPString() {
+void CStringToPString(char *) {
 // LINE 1993:
 	asm( 
 "	      004c927b    push ebp"
@@ -8293,7 +8293,7 @@ void CStringToPString() {
 }
 
 // FUNCTION: COPTER_D 0x004c92e5
-void CopyPString() {
+void CopyPString(char *, char *) {
 // LINE 2010:
 	asm( 
 "	      004c92e5    push ebp"
@@ -8347,7 +8347,7 @@ void CopyPString() {
 }
 
 // FUNCTION: COPTER_D 0x004c9339
-void check_backslash_terminate() {
+void check_backslash_terminate(char *) {
 // LINE 2039:
 	asm( 
 "	      004c9339    push ebp"
@@ -8404,7 +8404,7 @@ void check_backslash_terminate() {
 }
 
 // FUNCTION: COPTER_D 0x004c9381
-short check_root() {
+short check_root(char *) {
 // LINE 2066:
 	asm( 
 "	      004c9381    push ebp"
@@ -8559,7 +8559,7 @@ short check_root() {
 }
 
 // FUNCTION: COPTER_D 0x004c9495
-void get_path_at_start() {
+void get_path_at_start(char *, char *) {
 // LINE 2121:
 	asm( 
 "	      004c9495    push ebp"
@@ -8674,7 +8674,7 @@ void get_path_at_start() {
 }
 
 // FUNCTION: COPTER_D 0x004c9545
-void do_uppercase() {
+void do_uppercase(char *, char *) {
 // LINE 2160:
 	asm( 
 "	      004c9545    push ebp"
@@ -8766,7 +8766,7 @@ void do_uppercase() {
 }
 
 // FUNCTION: COPTER_D 0x004c95e3
-void get_name_at_end() {
+void get_name_at_end(char *, char *) {
 // LINE 2193:
 	asm( 
 "	      004c95e3    push ebp"
@@ -8881,7 +8881,7 @@ void get_name_at_end() {
 }
 
 // FUNCTION: COPTER_D 0x004c9694
-void strip_extension() {
+void strip_extension(char *) {
 // LINE 2233:
 	asm( 
 "	      004c9694    push ebp"
@@ -8957,7 +8957,7 @@ void strip_extension() {
 }
 
 // FUNCTION: COPTER_D 0x004c96fc
-void check_extension() {
+void check_extension(char *, char *) {
 // LINE 2266:
 	asm( 
 "	      004c96fc    push ebp"
@@ -9147,7 +9147,7 @@ void check_extension() {
 }
 
 // FUNCTION: COPTER_D 0x004c9835
-short check_file_exist() {
+short check_file_exist(char *) {
 // LINE 2318:
 	asm( 
 "	      004c9835    push ebp"
@@ -9199,7 +9199,7 @@ short check_file_exist() {
 }
 
 // FUNCTION: COPTER_D 0x004c987e
-void remove_illegals() {
+void remove_illegals(char *) {
 // LINE 2344:
 	asm( 
 "	      004c987e    push ebp"
@@ -9369,7 +9369,7 @@ void remove_illegals() {
 }
 
 // FUNCTION: COPTER_D 0x004c9a2e
-void compress_spaces() {
+void compress_spaces(char *) {
 // LINE 2385:
 	asm( 
 "	      004c9a2e    push ebp"

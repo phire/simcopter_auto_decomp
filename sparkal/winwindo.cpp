@@ -1650,7 +1650,7 @@ void CSparkalWindow::UpdatePalette(long, long, struct SparkalColor*) {
 }
 
 // FUNCTION: COPTER_D 0x0048132b
-int32_t CheckIdentityPalette() {
+int32_t CheckIdentityPalette(void * __ptr32, void * __ptr32, struct tagPALETTEENTRY*) {
 // LINE 505:
 	asm( 
 "	      0048132b    push ebp"
@@ -1911,7 +1911,7 @@ int32_t CheckIdentityPalette() {
 }
 
 // FUNCTION: COPTER_D 0x004815dd
-long SparkalWindowProc() {
+long SparkalWindowProc(void * __ptr32, uint32_t, uint32_t, long) {
 // LINE 584:
 	asm( 
 "	      004815dd    push ebp"

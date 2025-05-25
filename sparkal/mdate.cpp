@@ -318,7 +318,7 @@ uint32_t MDate::DayOfWeek(char *) {
 }
 
 // FUNCTION: COPTER_D 0x004bc673
-int32_t FindMatch() {
+int32_t FindMatch(char *, char **, int32_t) {
 // LINE 55:
 	asm( 
 "	      004bc673    push ebp"
@@ -1831,7 +1831,7 @@ void MDate::ParseFrom(class istream&) {
 }
 
 // FUNCTION: COPTER_D 0x004bd175
-void SkipDelim() {
+void SkipDelim(class istream&) {
 // LINE 525:
 	asm( 
 "	      004bd175    push ebp"
@@ -1930,7 +1930,7 @@ void SkipDelim() {
 }
 
 // FUNCTION: COPTER_D 0x004bd27c
-char * ParseMonth() {
+char * ParseMonth(class istream&) {
 // LINE 547:
 	asm( 
 "	      004bd27c    push ebp"
@@ -2053,7 +2053,7 @@ char * ParseMonth() {
 }
 
 // FUNCTION: COPTER_D 0x004bd39a
-class ostream& operator<<() {
+class ostream& operator<<(class ostream&, const class MDate&) {
 // LINE 617:
 	asm( 
 "	      004bd39a    push ebp"

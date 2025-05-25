@@ -6,7 +6,7 @@
 
 // Contribution: 1:001664e0-001683d3 Module: 180, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x005674e0
-unsigned short OpenFile() {
+unsigned short OpenFile(class ResFile*) {
 // LINE 16:
 	asm( 
 "	      005674e0    push ebp"

@@ -1912,7 +1912,7 @@ class HotSpot& HotSpot::operator=(const class HotSpot&) {
 }
 
 // FUNCTION: COPTER_D 0x004bab7b
-int32_t operator==() {
+int32_t operator==(const class HotSpot&, const class HotSpot&) {
 // LINE 116:
 	asm( 
 "	      004bab7b    push ebp"
@@ -2798,7 +2798,7 @@ void HotSpot::GetBoundingRect(class MRect&) {
 }
 
 // FUNCTION: COPTER_D 0x004bb49b
-int32_t LoadListFromResource() {
+int32_t LoadListFromResource(class list<HotSpot>&, int32_t) {
 // LINE 269:
 	asm( 
 "	      004bb49b    push ebp"

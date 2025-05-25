@@ -6,7 +6,7 @@
 
 // Contribution: 1:001348a0-0013509d Module: 160, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x005358a0
-int32_t CreateAmbulanceInstance() {
+int32_t CreateAmbulanceInstance(int32_t) {
 // LINE 76:
 	asm( 
 "	      005358a0    push ebp"

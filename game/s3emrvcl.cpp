@@ -2020,7 +2020,7 @@ void EmergencyVehicleClass::Reset() {
 }
 
 // FUNCTION: COPTER_D 0x005426ab
-void DispatchEmergencyVehicle() {
+void DispatchEmergencyVehicle(int32_t, int32_t, long, long) {
 // LINE 1351:
 	asm( 
 "	      005426ab    push ebp"

@@ -272,7 +272,7 @@ void S3FireInit() {
 }
 
 // FUNCTION: COPTER_D 0x00524829
-int32_t S3FireStart() {
+int32_t S3FireStart(struct _CELL_FIRE_DATA*, long, long, int32_t, int32_t, int32_t, long, long, long) {
 // LINE 203:
 	asm( 
 "	      00524829    push ebp"
@@ -1372,7 +1372,7 @@ void S3FireDriver() {
 }
 
 // FUNCTION: COPTER_D 0x005250be
-void S3FireSpread() {
+void S3FireSpread(struct _FIRE_DATA*) {
 // LINE 574:
 	asm( 
 "	      005250be    push ebp"
@@ -1557,7 +1557,7 @@ struct _CELL_FIRE_DATA* S3FireGetCellData() {
 }
 
 // FUNCTION: COPTER_D 0x0052522c
-void S3FireDouse() {
+void S3FireDouse(struct _CELL_INFO*, struct Point3d*, int32_t) {
 // LINE 640:
 	asm( 
 "	      0052522c    push ebp"
@@ -2069,7 +2069,7 @@ void S3FireDouse() {
 }
 
 // FUNCTION: COPTER_D 0x00525624
-int32_t S3FireStartCell() {
+int32_t S3FireStartCell(struct _CELL_FIRE_DATA*, long, long, long, long) {
 // LINE 831:
 	asm( 
 "	      00525624    push ebp"
@@ -3269,7 +3269,7 @@ int32_t S3FireStartCell() {
 }
 
 // FUNCTION: COPTER_D 0x00526128
-struct _FIRE_DATA* S3FireGetByMission() {
+struct _FIRE_DATA* S3FireGetByMission(long) {
 // LINE 943:
 	asm( 
 "	      00526128    push ebp"
@@ -3324,7 +3324,7 @@ struct _FIRE_DATA* S3FireGetByMission() {
 }
 
 // FUNCTION: COPTER_D 0x00526192
-int32_t S3FireGetAltitude() {
+int32_t S3FireGetAltitude(struct _CELL_INFO*, struct Point3d*) {
 // LINE 965:
 	asm( 
 "	      00526192    push ebp"
@@ -3461,7 +3461,7 @@ int32_t S3FireGetAltitude() {
 }
 
 // FUNCTION: COPTER_D 0x00526292
-int32_t S3FireTruckDouse() {
+int32_t S3FireTruckDouse(struct _FIRE_DATA*, int32_t, struct _DYOBJ_INST*, struct Point3d*) {
 // LINE 1029:
 	asm( 
 "	      00526292    push ebp"
@@ -3640,7 +3640,7 @@ int32_t S3FireTruckDouse() {
 }
 
 // FUNCTION: COPTER_D 0x005263ec
-int32_t S3FireTruckDouseDyObj() {
+int32_t S3FireTruckDouseDyObj(struct _DYOBJ_INST*, int32_t, struct _DYOBJ_INST*, struct Point3d*) {
 // LINE 1110:
 	asm( 
 "	      005263ec    push ebp"
@@ -3874,7 +3874,7 @@ void S3FireTweakInit() {
 }
 
 // FUNCTION: COPTER_D 0x00526595
-int32_t S3FireCanCellBurn() {
+int32_t S3FireCanCellBurn(long, long) {
 // LINE 1197:
 	asm( 
 "	      00526595    push ebp"
@@ -3951,7 +3951,7 @@ int32_t S3FireCanCellBurn() {
 }
 
 // FUNCTION: COPTER_D 0x00526661
-void S3FireDestroyCell() {
+void S3FireDestroyCell(struct _FIRE_DATA*) {
 // LINE 1231:
 	asm( 
 "	      00526661    push ebp"
@@ -4553,7 +4553,7 @@ long S3FireGetCount() {
 }
 
 // FUNCTION: COPTER_D 0x00526b96
-long S3FireAddToNearest() {
+long S3FireAddToNearest(struct _CELL_INFO*, struct Point2d*) {
 // LINE 1396:
 	asm( 
 "	      00526b96    push ebp"
@@ -4838,7 +4838,7 @@ long S3FireAddToNearest() {
 }
 
 // FUNCTION: COPTER_D 0x00526d7e
-void S3FireDyObjCollisionCheck() {
+void S3FireDyObjCollisionCheck(struct _FIRE_DATA*, long) {
 // LINE 1504:
 	asm( 
 "	      00526d7e    push ebp"
@@ -5100,7 +5100,7 @@ void S3FireDyObjCollisionCheck() {
 }
 
 // FUNCTION: COPTER_D 0x00526fb5
-int32_t S3FireMIFFLoad() {
+int32_t S3FireMIFFLoad(void * __ptr32) {
 // LINE 1618:
 	asm( 
 "	      00526fb5    push ebp"
@@ -5502,7 +5502,7 @@ int32_t S3FireMIFFLoad() {
 }
 
 // FUNCTION: COPTER_D 0x0052735a
-int32_t S3FireMIFFSave() {
+int32_t S3FireMIFFSave(void * __ptr32) {
 // LINE 1727:
 	asm( 
 "	      0052735a    push ebp"

@@ -127,7 +127,7 @@ class CopterGameMode& CopterGameMode::operator=(const class CopterGameMode&) {
 }
 
 // FUNCTION: COPTER_D 0x004bd701
-int32_t operator==() {
+int32_t operator==(const class CopterGameMode&, const class CopterGameMode&) {
 // LINE 69:
 	asm( 
 "	      004bd701    push ebp"

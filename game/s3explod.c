@@ -765,7 +765,7 @@ void S3ExplosionInit() {
 }
 
 // FUNCTION: COPTER_D 0x00523f50
-void S3ExplosionStart() {
+void S3ExplosionStart(struct _CELL_INFO*, int32_t, int32_t, int32_t, long, long) {
 // LINE 233:
 	asm( 
 "	      00523f50    push ebp"
@@ -984,7 +984,7 @@ void S3ExplosionStart() {
 }
 
 // FUNCTION: COPTER_D 0x005240dc
-void S3ExplosionSmokeStart() {
+void S3ExplosionSmokeStart(struct _CELL_INFO*, struct Point3d*, long) {
 // LINE 313:
 	asm( 
 "	      005240dc    push ebp"

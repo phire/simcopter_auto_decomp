@@ -6,7 +6,7 @@
 
 // Contribution: 1:001339c0-0013483c Module: 161, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x005349c0
-int32_t CreateCriminalCarInstance() {
+int32_t CreateCriminalCarInstance(int32_t) {
 // LINE 81:
 	asm( 
 "	      005349c0    push ebp"
@@ -39,7 +39,7 @@ int32_t CreateCriminalCarInstance() {
 }
 
 // FUNCTION: COPTER_D 0x005349f0
-int32_t S3CriminalMissionStart() {
+int32_t S3CriminalMissionStart(short, short, long, long) {
 // LINE 87:
 	asm( 
 "	      005349f0    push ebp"

@@ -6,7 +6,7 @@
 
 // Contribution: 1:000d1180-000d42ba Module: 147, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004d2180
-struct VRResource* LoadGroup() {
+struct VRResource* LoadGroup(struct ObjInfo*, int32_t) {
 // LINE 145:
 	asm( 
 "	      004d2180    push ebp"
@@ -252,7 +252,7 @@ struct VRResource* LoadGroup() {
 }
 
 // FUNCTION: COPTER_D 0x004d2379
-void VRAssignMemPoolToRes() {
+void VRAssignMemPoolToRes(struct VRResource*, struct VRMemPool*) {
 // LINE 225:
 	asm( 
 "	      004d2379    push ebp"
@@ -303,7 +303,7 @@ void VRAssignMemPoolToRes() {
 }
 
 // FUNCTION: COPTER_D 0x004d23c7
-int32_t VRGetResObjectCnt() {
+int32_t VRGetResObjectCnt(struct VRResource*) {
 // LINE 244:
 	asm( 
 "	      004d23c7    push ebp"
@@ -335,7 +335,7 @@ int32_t VRGetResObjectCnt() {
 }
 
 // FUNCTION: COPTER_D 0x004d23e6
-int32_t VRGetResObject() {
+int32_t VRGetResObject(struct VRResource*, int32_t) {
 // LINE 261:
 	asm( 
 "	      004d23e6    push ebp"
@@ -368,7 +368,7 @@ int32_t VRGetResObject() {
 }
 
 // FUNCTION: COPTER_D 0x004d2409
-int32_t LoadObjtType() {
+int32_t LoadObjtType(int32_t) {
 // LINE 280:
 	asm( 
 "	      004d2409    push ebp"
@@ -1124,7 +1124,7 @@ int32_t LoadObjtType() {
 }
 
 // FUNCTION: COPTER_D 0x004d2ac6
-int32_t VRGetDyObjAlt() {
+int32_t VRGetDyObjAlt(int32_t, int32_t[17][17]*, struct Point3d*, int32_t) {
 // LINE 730:
 	asm( 
 "	      004d2ac6    push ebp"
@@ -1189,7 +1189,7 @@ int32_t VRGetDyObjAlt() {
 }
 
 // FUNCTION: COPTER_D 0x004d2b28
-int32_t VRGetObjAlt() {
+int32_t VRGetObjAlt(int32_t, int32_t, int32_t, int32_t, int32_t *, int32_t, struct Point3d*, int32_t *) {
 // LINE 775:
 	asm( 
 "	      004d2b28    push ebp"
@@ -2013,7 +2013,7 @@ int32_t VRGetObjAlt() {
 }
 
 // FUNCTION: COPTER_D 0x004d31e7
-int32_t VRGetObjAlt2() {
+int32_t VRGetObjAlt2(int32_t, int32_t, int32_t, int32_t, int32_t *, int32_t, int32_t, struct Point3d*, int32_t *) {
 // LINE 1087:
 	asm( 
 "	      004d31e7    push ebp"
@@ -2914,7 +2914,7 @@ int32_t VRGetObjAlt2() {
 }
 
 // FUNCTION: COPTER_D 0x004d392f
-int32_t VRGetObjZdist() {
+int32_t VRGetObjZdist(int32_t, int32_t, int32_t, int32_t, int32_t) {
 // LINE 1423:
 	asm( 
 "	      004d392f    push ebp"
@@ -3173,7 +3173,7 @@ int32_t VRGetObjZdist() {
 }
 
 // FUNCTION: COPTER_D 0x004d3b43
-int32_t VRGetObjXdist() {
+int32_t VRGetObjXdist(int32_t, int32_t, int32_t, int32_t, int32_t) {
 // LINE 1525:
 	asm( 
 "	      004d3b43    push ebp"
@@ -3432,7 +3432,7 @@ int32_t VRGetObjXdist() {
 }
 
 // FUNCTION: COPTER_D 0x004d3d55
-void VRObjResize2dFace() {
+void VRObjResize2dFace(int32_t, int32_t, int32_t) {
 // LINE 1629:
 	asm( 
 "	      004d3d55    push ebp"
@@ -3561,7 +3561,7 @@ void VRObjResize2dFace() {
 }
 
 // FUNCTION: COPTER_D 0x004d3e24
-void VR3dObjLocate() {
+void VR3dObjLocate(int32_t, int32_t, int32_t, int32_t) {
 // LINE 1684:
 	asm( 
 "	      004d3e24    push ebp"
@@ -3641,7 +3641,7 @@ void VR3dObjLocate() {
 }
 
 // FUNCTION: COPTER_D 0x004d3e9d
-int32_t VRObjGetHeight() {
+int32_t VRObjGetHeight(int32_t) {
 // LINE 1712:
 	asm( 
 "	      004d3e9d    push ebp"
@@ -3707,7 +3707,7 @@ int32_t VRObjGetHeight() {
 }
 
 // FUNCTION: COPTER_D 0x004d3f08
-void VR2dObjLocate() {
+void VR2dObjLocate(int32_t, int32_t, int32_t, int32_t) {
 // LINE 1739:
 	asm( 
 "	      004d3f08    push ebp"
@@ -3974,7 +3974,7 @@ struct _BSPtree* ReadTree() {
 }
 
 // FUNCTION: COPTER_D 0x004d40e1
-void NormalizeObj() {
+void NormalizeObj(struct ObjectHdr*) {
 // LINE 1844:
 	asm( 
 "	      004d40e1    push ebp"
@@ -4078,7 +4078,7 @@ void NormalizeObj() {
 }
 
 // FUNCTION: COPTER_D 0x004d4192
-int32_t VRAssignTextureResToGroup() {
+int32_t VRAssignTextureResToGroup(struct VRResource*, struct VRResource*) {
 // LINE 1870:
 	asm( 
 "	      004d4192    push ebp"
@@ -4290,7 +4290,7 @@ int32_t VRAssignTextureResToGroup() {
 }
 
 // FUNCTION: COPTER_D 0x004d4337
-void VRBCApplyTiledMap() {
+void VRBCApplyTiledMap(struct _FaceHdr*, struct VRBmpHdr*, int32_t) {
 // LINE 1933:
 	asm( 
 "	      004d4337    push ebp"
@@ -4382,7 +4382,7 @@ void VRBCApplyTiledMap() {
 }
 
 // FUNCTION: COPTER_D 0x004d43c3
-struct VRMemPool* VRCreateMemPool() {
+struct VRMemPool* VRCreateMemPool(int32_t, int32_t) {
 // LINE 1970:
 	asm( 
 "	      004d43c3    push ebp"
@@ -4506,7 +4506,7 @@ struct VRMemPool* VRCreateMemPool() {
 }
 
 // FUNCTION: COPTER_D 0x004d44bb
-void VRFreeMemPool() {
+void VRFreeMemPool(struct VRMemPool*) {
 // LINE 2009:
 	asm( 
 "	      004d44bb    push ebp"
@@ -4540,7 +4540,7 @@ void VRFreeMemPool() {
 }
 
 // FUNCTION: COPTER_D 0x004d44de
-void FaceCalcNormal() {
+void FaceCalcNormal(struct Point3d*, struct Point3d*, struct Point3d*, struct Project3d*) {
 // LINE 2027:
 	asm( 
 "	      004d44de    push ebp"
@@ -4745,7 +4745,7 @@ void FaceCalcNormal() {
 }
 
 // FUNCTION: COPTER_D 0x004d46bc
-void ObjCalcVnormsAndShade() {
+void ObjCalcVnormsAndShade(struct ObjectHdr*) {
 // LINE 2092:
 	asm( 
 "	      004d46bc    push ebp"
@@ -5061,7 +5061,7 @@ void ObjCalcVnormsAndShade() {
 }
 
 // FUNCTION: COPTER_D 0x004d494c
-void VRObjAssignLowRes() {
+void VRObjAssignLowRes(int32_t, int32_t) {
 // LINE 2203:
 	asm( 
 "	      004d494c    push ebp"
@@ -5097,7 +5097,7 @@ void VRObjAssignLowRes() {
 }
 
 // FUNCTION: COPTER_D 0x004d496e
-int32_t VRObjCreateRope() {
+int32_t VRObjCreateRope(int32_t, int32_t, int32_t) {
 // LINE 2224:
 	asm( 
 "	      004d496e    push ebp"
@@ -5405,7 +5405,7 @@ int32_t VRObjCreateRope() {
 }
 
 // FUNCTION: COPTER_D 0x004d4b80
-int32_t VRObjCreatePoint() {
+int32_t VRObjCreatePoint(int32_t, int32_t) {
 // LINE 2329:
 	asm( 
 "	      004d4b80    push ebp"
@@ -5695,7 +5695,7 @@ int32_t VRObjCreatePoint() {
 }
 
 // FUNCTION: COPTER_D 0x004d4d73
-int32_t VRGetObjDupMemReq() {
+int32_t VRGetObjDupMemReq(int32_t) {
 // LINE 2431:
 	asm( 
 "	      004d4d73    push ebp"
@@ -5751,7 +5751,7 @@ int32_t VRGetObjDupMemReq() {
 }
 
 // FUNCTION: COPTER_D 0x004d4dbf
-int32_t VRCreateObjDuplicate() {
+int32_t VRCreateObjDuplicate(int32_t, char *) {
 // LINE 2451:
 	asm( 
 "	      004d4dbf    push ebp"
@@ -5964,7 +5964,7 @@ int32_t VRCreateObjDuplicate() {
 }
 
 // FUNCTION: COPTER_D 0x004d4f25
-int32_t VRStObjPolyHit() {
+int32_t VRStObjPolyHit(struct Point3d*, struct Point3d*, int32_t, struct Point3d*, int32_t, struct Point3d**) {
 // LINE 2528:
 	asm( 
 "	      004d4f25    push ebp"

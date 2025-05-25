@@ -1275,7 +1275,7 @@ void S3ObjLinkLowRes() {
 }
 
 // FUNCTION: COPTER_D 0x00519aa4
-void S3DrawBlinkingLight() {
+void S3DrawBlinkingLight(struct VRBlit*) {
 // LINE 852:
 	asm( 
 "	      00519aa4    push ebp"
@@ -1541,7 +1541,7 @@ void S3DrawBlinkingLight() {
 }
 
 // FUNCTION: COPTER_D 0x00519c86
-void S3DrawWaterPoint() {
+void S3DrawWaterPoint(struct VRBlit*) {
 // LINE 951:
 	asm( 
 "	      00519c86    push ebp"
@@ -12467,7 +12467,7 @@ void S3DrawWaterPoint() {
 }
 
 // FUNCTION: COPTER_D 0x0051da5b
-struct _LZ_INFO* S3ObjGetLandingZone() {
+struct _LZ_INFO* S3ObjGetLandingZone(long) {
 // LINE 3683:
 	asm( 
 "	      0051da5b    push ebp"
@@ -12506,7 +12506,7 @@ struct _LZ_INFO* S3ObjGetLandingZone() {
 }
 
 // FUNCTION: COPTER_D 0x0051da96
-void S3ObjHitDispatch() {
+void S3ObjHitDispatch(long, struct _DYOBJ_INST*, struct _DYOBJ_INST*, long, long) {
 // LINE 3703:
 	asm( 
 "	      0051da96    push ebp"

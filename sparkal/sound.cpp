@@ -1413,7 +1413,7 @@ class Sound& Sound::operator=(const class Sound&) {
 }
 
 // FUNCTION: COPTER_D 0x0042eafa
-int32_t operator<() {
+int32_t operator<(const class Sound&, const class Sound&) {
 // LINE 467:
 	asm( 
 "	      0042eafa    push ebp"
@@ -1445,7 +1445,7 @@ int32_t operator<() {
 }
 
 // FUNCTION: COPTER_D 0x0042eb28
-int32_t operator==() {
+int32_t operator==(const class Sound&, const class Sound&) {
 // LINE 484:
 	asm( 
 "	      0042eb28    push ebp"
@@ -5881,7 +5881,7 @@ long DigitalSound::StopStream() {
 }
 
 // FUNCTION: COPTER_D 0x004310a5
-void StreamingBufferTimerCallback() {
+void StreamingBufferTimerCallback(uint32_t, uint32_t, unsigned long, unsigned long, unsigned long) {
 // LINE 1797:
 	asm( 
 "	      004310a5    push ebp"
@@ -6972,7 +6972,7 @@ long DigitalSound::EstimateRemainingPlayTime() {
 }
 
 // FUNCTION: COPTER_D 0x00431947
-void CompletionEstimationTimerCallback() {
+void CompletionEstimationTimerCallback(uint32_t, uint32_t, unsigned long, unsigned long, unsigned long) {
 // LINE 2106:
 	asm( 
 "	      00431947    push ebp"

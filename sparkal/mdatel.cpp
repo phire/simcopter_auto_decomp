@@ -94,7 +94,7 @@ char * MTimeLocalized::PrintStringLocalized(char *, int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x0041fb6a
-class ostream& operator<<() {
+class ostream& operator<<(class ostream&, const class MTimeLocalized&) {
 // LINE 49:
 	asm( 
 "	      0041fb6a    push ebp"
@@ -1171,7 +1171,7 @@ char * MDateLocalized::MonthNameLocalized(uint32_t, char *, int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x004203d3
-class ostream& operator<<() {
+class ostream& operator<<(class ostream&, const class MDateLocalized&) {
 // LINE 325:
 	asm( 
 "	      004203d3    push ebp"

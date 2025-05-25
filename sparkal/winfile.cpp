@@ -6,7 +6,7 @@
 
 // Contribution: 1:0008eed0-0008ff8c Module: 23, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0048fed0
-void FixResourceFilterString() {
+void FixResourceFilterString(class basic_string<char>&, char) {
 // LINE 33:
 	asm( 
 "	      0048fed0    push ebp"
@@ -429,7 +429,7 @@ void FixResourceFilterString() {
 }
 
 // FUNCTION: COPTER_D 0x00490439
-unsigned long GetLoadFilePath() {
+unsigned long GetLoadFilePath(char *, int32_t, int32_t, char *) {
 // LINE 62:
 	asm( 
 "	      00490439    push ebp"
@@ -791,7 +791,7 @@ unsigned long GetLoadFilePath() {
 }
 
 // FUNCTION: COPTER_D 0x0049092a
-unsigned long GetLoadFilePath() {
+unsigned long GetLoadFilePath(char *, char *, char *, char *) {
 // LINE 83:
 	asm( 
 "	      0049092a    push ebp"
@@ -916,7 +916,7 @@ unsigned long GetLoadFilePath() {
 }
 
 // FUNCTION: COPTER_D 0x004909e3
-unsigned long GetSaveFilePath() {
+unsigned long GetSaveFilePath(char *, int32_t, int32_t, char *) {
 // LINE 120:
 	asm( 
 "	      004909e3    push ebp"
@@ -1278,7 +1278,7 @@ unsigned long GetSaveFilePath() {
 }
 
 // FUNCTION: COPTER_D 0x00490ed4
-unsigned long GetSaveFilePath() {
+unsigned long GetSaveFilePath(char *, char *, char *, char *) {
 // LINE 140:
 	asm( 
 "	      00490ed4    push ebp"

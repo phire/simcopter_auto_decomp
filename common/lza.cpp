@@ -6,7 +6,7 @@
 
 // Contribution: 1:000ce090-000cfa4b Module: 88, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004cf090
-short LZACompress() {
+short LZACompress(class cGZXBitstream*, class cGZXBitstream*, unsigned long *) {
 // LINE 646:
 	asm( 
 "	      004cf090    push ebp"
@@ -318,7 +318,7 @@ short LZACompress() {
 }
 
 // FUNCTION: COPTER_D 0x004cf2ed
-short Encode() {
+short Encode(struct tACompModel*, struct tLZSSBinaryForest*, struct tCompressState*) {
 // LINE 525:
 	asm( 
 "	      004cf2ed    push ebp"
@@ -699,7 +699,7 @@ short Encode() {
 }
 
 // FUNCTION: COPTER_D 0x004cf607
-void InitTree() {
+void InitTree(struct tLZSSBinaryForest*) {
 // LINE 195:
 	asm( 
 "	      004cf607    push ebp"
@@ -745,7 +745,7 @@ void InitTree() {
 }
 
 // FUNCTION: COPTER_D 0x004cf67e
-void InsertNode() {
+void InsertNode(long, struct tLZSSBinaryForest*) {
 // LINE 217:
 	asm( 
 "	      004cf67e    push ebp"
@@ -1039,7 +1039,7 @@ void InsertNode() {
 }
 
 // FUNCTION: COPTER_D 0x004cf96a
-void DeleteNode() {
+void DeleteNode(long, struct tLZSSBinaryForest*) {
 // LINE 266:
 	asm( 
 "	      004cf96a    push ebp"
@@ -1223,7 +1223,7 @@ void DeleteNode() {
 }
 
 // FUNCTION: COPTER_D 0x004cfb73
-void StartModel() {
+void StartModel(struct tACompModel*) {
 // LINE 300:
 	asm( 
 "	      004cfb73    push ebp"
@@ -1334,7 +1334,7 @@ void StartModel() {
 }
 
 // FUNCTION: COPTER_D 0x004cfc72
-short EncodeChar() {
+short EncodeChar(long, struct tACompModel*, struct tCompressState*) {
 // LINE 356:
 	asm( 
 "	      004cfc72    push ebp"
@@ -1512,7 +1512,7 @@ short EncodeChar() {
 }
 
 // FUNCTION: COPTER_D 0x004cfde2
-void UpdateModel() {
+void UpdateModel(long, struct tACompModel*) {
 // LINE 320:
 	asm( 
 "	      004cfde2    push ebp"
@@ -1663,7 +1663,7 @@ void UpdateModel() {
 }
 
 // FUNCTION: COPTER_D 0x004cff3b
-short Output() {
+short Output(long, struct tACompModel*, struct tCompressState*) {
 // LINE 346:
 	asm( 
 "	      004cff3b    push ebp"
@@ -1731,7 +1731,7 @@ short Output() {
 }
 
 // FUNCTION: COPTER_D 0x004cffb8
-short PutBit() {
+short PutBit(long, struct tCompressState*) {
 // LINE 124:
 	asm( 
 "	      004cffb8    push ebp"
@@ -1814,7 +1814,7 @@ short PutBit() {
 }
 
 // FUNCTION: COPTER_D 0x004d0041
-short EncodePosition() {
+short EncodePosition(long, struct tACompModel*, struct tCompressState*) {
 // LINE 386:
 	asm( 
 "	      004d0041    push ebp"
@@ -1976,7 +1976,7 @@ short EncodePosition() {
 }
 
 // FUNCTION: COPTER_D 0x004d0194
-short EncodeEnd() {
+short EncodeEnd(struct tACompModel*, struct tCompressState*) {
 // LINE 412:
 	asm( 
 "	      004d0194    push ebp"
@@ -2049,7 +2049,7 @@ short EncodeEnd() {
 }
 
 // FUNCTION: COPTER_D 0x004d0216
-short FlushBitBuffer() {
+short FlushBitBuffer(struct tCompressState*) {
 // LINE 145:
 	asm( 
 "	      004d0216    push ebp"
@@ -2107,7 +2107,7 @@ short FlushBitBuffer() {
 }
 
 // FUNCTION: COPTER_D 0x004d0271
-short LZAExpand() {
+short LZAExpand(class cGZXBitstream*, class cGZXBitstream*) {
 // LINE 731:
 	asm( 
 "	      004d0271    push ebp"
@@ -2306,7 +2306,7 @@ short LZAExpand() {
 }
 
 // FUNCTION: COPTER_D 0x004d03e6
-short Decode() {
+short Decode(struct tACompModel*, struct tLZSSBinaryForest*, struct tCompressState*) {
 // LINE 592:
 	asm( 
 "	      004d03e6    push ebp"
@@ -2546,7 +2546,7 @@ short Decode() {
 }
 
 // FUNCTION: COPTER_D 0x004d05b8
-void StartDecode() {
+void StartDecode(struct tACompModel*, struct tCompressState*) {
 // LINE 455:
 	asm( 
 "	      004d05b8    push ebp"
@@ -2589,7 +2589,7 @@ void StartDecode() {
 }
 
 // FUNCTION: COPTER_D 0x004d0604
-long GetBit() {
+long GetBit(struct tCompressState*) {
 // LINE 162:
 	asm( 
 "	      004d0604    push ebp"
@@ -2678,7 +2678,7 @@ long GetBit() {
 }
 
 // FUNCTION: COPTER_D 0x004d06a5
-long DecodeChar() {
+long DecodeChar(struct tACompModel*, struct tCompressState*) {
 // LINE 463:
 	asm( 
 "	      004d06a5    push ebp"
@@ -2858,7 +2858,7 @@ long DecodeChar() {
 }
 
 // FUNCTION: COPTER_D 0x004d081c
-long BinarySearchSym() {
+long BinarySearchSym(unsigned long, struct tACompModel*) {
 // LINE 426:
 	asm( 
 "	      004d081c    push ebp"
@@ -2925,7 +2925,7 @@ long BinarySearchSym() {
 }
 
 // FUNCTION: COPTER_D 0x004d0888
-long DecodePosition() {
+long DecodePosition(struct tACompModel*, struct tCompressState*) {
 // LINE 494:
 	asm( 
 "	      004d0888    push ebp"
@@ -3089,7 +3089,7 @@ long DecodePosition() {
 }
 
 // FUNCTION: COPTER_D 0x004d09df
-long BinarySearchPos() {
+long BinarySearchPos(unsigned long, struct tACompModel*) {
 // LINE 442:
 	asm( 
 "	      004d09df    push ebp"

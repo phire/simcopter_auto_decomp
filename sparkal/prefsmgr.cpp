@@ -273,7 +273,7 @@ class PreferenceItem& PreferenceItem::operator=(const class PreferenceItem&) {
 }
 
 // FUNCTION: COPTER_D 0x0047bd26
-int32_t operator==() {
+int32_t operator==(const class PreferenceItem&, const class PreferenceItem&) {
 // LINE 85:
 	asm( 
 "	      0047bd26    push ebp"
@@ -341,7 +341,7 @@ int32_t PreferenceItem::Compare(const class PreferenceItem&) {
 }
 
 // FUNCTION: COPTER_D 0x0047bd7e
-int32_t operator<() {
+int32_t operator<(const class PreferenceItem&, const class PreferenceItem&) {
 // LINE 119:
 	asm( 
 "	      0047bd7e    push ebp"
