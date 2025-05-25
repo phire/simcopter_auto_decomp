@@ -5,12 +5,21 @@
 
 
 // Contribution: 1:00000000-000001ac Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00401000
+// basic_string<char>::operator vector<char>
+
 
 
 // Contribution: 1:000001b0-000001e8 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004011b0
+// endl
+
 
 
 // Contribution: 1:000001f0-00000207 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004011f0
+// flush
+
 
 
 // Contribution: 1:00000210-0000023b Module: 75, 16 byte alignment, code, (comdat), execute, read, 
@@ -15724,6 +15733,9 @@ void ControlDisplayWindow::AppendKeysString(class basic_string<char>&, long, lon
 
 
 // Contribution: 1:0000c920-0000cac7 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0040d920
+// list<KeyColors>::add_new_buffer
+
 
 
 // Contribution: 1:0000cad0-0000cb08 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
@@ -15733,12 +15745,21 @@ void ControlDisplayWindow::AppendKeysString(class basic_string<char>&, long, lon
 
 
 // Contribution: 1:0000cb10-0000cb4b Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0040db10
+// list<HotSpot>::iterator::operator++
+
 
 
 // Contribution: 1:0000cb50-0000cc16 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0040db50
+// list<HotSpot>::erase
+
 
 
 // Contribution: 1:0000cc20-0000cc79 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0040dc20
+// list<KeyColors>::erase
+
 
 
 // Contribution: 1:0000cc80-0000cc9d Module: 75, 16 byte alignment, code, (comdat), execute, read, 
@@ -15751,6 +15772,9 @@ void ControlDisplayWindow::AppendKeysString(class basic_string<char>&, long, lon
 
 
 // Contribution: 1:0000cce0-0000ce87 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0040dce0
+// list<Shortcut>::add_new_buffer
+
 
 
 // Contribution: 1:0000ce90-0000d37a Module: 75, 16 byte alignment, code, (comdat), execute, read, 
@@ -15760,21 +15784,39 @@ void ControlDisplayWindow::AppendKeysString(class basic_string<char>&, long, lon
 
 
 // Contribution: 1:0000d380-0000d3bb Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0040e380
+// list<Shortcut>::iterator::operator++
+
 
 
 // Contribution: 1:0000d3c0-0000d419 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0040e3c0
+// list<Shortcut>::erase
+
 
 
 // Contribution: 1:0000d420-0000d45b Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0040e420
+// list<StringIDAssociation>::iterator::operator++
+
 
 
 // Contribution: 1:0000d460-0000d595 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0040e460
+// list<StringIDAssociation>::erase
+
 
 
 // Contribution: 1:0000d5a0-0000d9f1 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0040e5a0
+// list<StringIDAssociation>::insert
+
 
 
 // Contribution: 1:0000da00-0000dc15 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0040ea00
+// list<StringIDAssociation>::get_node
+
 
 
 // Contribution: 1:0000dc20-0000dc5d Module: 75, 16 byte alignment, code, (comdat), execute, read, 
@@ -15784,330 +15826,654 @@ void ControlDisplayWindow::AppendKeysString(class basic_string<char>&, long, lon
 
 
 // Contribution: 1:0000dc60-0000dd37 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0040ec60
+// rb_tree<long,long,ident<long,long>,less<long>>::const_iterator::operator++
+
 
 
 // Contribution: 1:0000dd40-0000e303 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0040ed40
+// rb_tree<long,long,ident<long,long>,less<long>>::init
+
 
 
 // Contribution: 1:0000e310-0000e62b Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0040f310
+// rb_tree<long,long,ident<long,long>,less<long>>::~rb_tree<long,long,ident<long,long>,less<long>>
+
 
 
 // Contribution: 1:0000e630-0000e707 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0040f630
+// rb_tree<long,long,ident<long,long>,less<long>>::iterator::operator++
+
 
 
 // Contribution: 1:0000e710-0000ee53 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
 
 
 // Contribution: 1:0000ee60-0000ee7d Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0040fe60
+// basic_string<char>::point
+
 
 
 // Contribution: 1:0000ee80-0000ee9e Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0040fe80
+// basic_string<char>::len
+
 
 
 // Contribution: 1:0000eea0-0000eebe Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0040fea0
+// basic_string<char>::ref_count
+
 
 
 // Contribution: 1:0000eec0-0000eed6 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0040fec0
+// basic_string<char>::eos
+
 
 
 // Contribution: 1:0000eee0-0000f129 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0040fee0
+// basic_string<char>::assign_str
+
 
 
 // Contribution: 1:0000f130-0000f3c1 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00410130
+// basic_string<char>::append_str
+
 
 
 // Contribution: 1:0000f3d0-0000f7ad Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004103d0
+// basic_string<char>::insert_str
+
 
 
 // Contribution: 1:0000f7b0-0000fc3a Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004107b0
+// basic_string<char>::replace_str
+
 
 
 // Contribution: 1:0000fc40-0000fd77 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00410c40
+// basic_string<char>::compare_str
+
 
 
 // Contribution: 1:0000fd80-0000ff88 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00410d80
+// basic_string<char>::find_str
+
 
 
 // Contribution: 1:0000ff90-00010267 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00410f90
+// basic_string<char>::rfind_str
+
 
 
 // Contribution: 1:00010270-00010383 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00411270
+// basic_string<char>::find_first_of_str
+
 
 
 // Contribution: 1:00010390-000104ce Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00411390
+// basic_string<char>::find_last_of_str
+
 
 
 // Contribution: 1:000104d0-000105cc Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004114d0
+// basic_string<char>::find_first_not_of_str
+
 
 
 // Contribution: 1:000105d0-00010715 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004115d0
+// basic_string<char>::find_last_not_of_str
+
 
 
 // Contribution: 1:00010720-00010855 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00411720
+// basic_string<char>::basic_string<char>
+
 
 
 // Contribution: 1:00010860-00010982 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00411860
+// basic_string<char>::basic_string<char>
+
 
 
 // Contribution: 1:00010990-00010a6d Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00411990
+// basic_string<char>::basic_string<char>
+
 
 
 // Contribution: 1:00010a70-00010b7b Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00411a70
+// basic_string<char>::basic_string<char>
+
 
 
 // Contribution: 1:00010b80-00010d50 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00411b80
+// basic_string<char>::basic_string<char>
+
 
 
 // Contribution: 1:00010d60-00010ed7 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00411d60
+// basic_string<char>::basic_string<char>
+
 
 
 // Contribution: 1:00010ee0-00010f5e Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00411ee0
+// basic_string<char>::basic_string<char>
+
 
 
 // Contribution: 1:00010f60-0001107f Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00411f60
+// basic_string<char>::basic_string<char>
+
 
 
 // Contribution: 1:00011080-00011121 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00412080
+// basic_string<char>::delete_ref
+
 
 
 // Contribution: 1:00011130-000111fc Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00412130
+// basic_string<char>::~basic_string<char>
+
 
 
 // Contribution: 1:00011200-000113ff Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00412200
+// basic_string<char>::operator=
+
 
 
 // Contribution: 1:00011400-00011665 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00412400
+// basic_string<char>::operator=
+
 
 
 // Contribution: 1:00011670-00011849 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00412670
+// basic_string<char>::operator=
+
 
 
 // Contribution: 1:00011850-00011abf Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00412850
+// basic_string<char>::operator+=
+
 
 
 // Contribution: 1:00011ac0-00011d6d Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00412ac0
+// basic_string<char>::operator+=
+
 
 
 // Contribution: 1:00011d70-00012050 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00412d70
+// basic_string<char>::operator+=
+
 
 
 // Contribution: 1:00012060-0001230b Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00413060
+// basic_string<char>::append
+
 
 
 // Contribution: 1:00012310-000125bd Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00413310
+// basic_string<char>::append
+
 
 
 // Contribution: 1:000125c0-00012859 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004135c0
+// basic_string<char>::append
+
 
 
 // Contribution: 1:00012860-00012bb4 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00413860
+// basic_string<char>::append
+
 
 
 // Contribution: 1:00012bc0-00012e30 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00413bc0
+// basic_string<char>::assign
+
 
 
 // Contribution: 1:00012e40-000130a5 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00413e40
+// basic_string<char>::assign
+
 
 
 // Contribution: 1:000130b0-00013301 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004140b0
+// basic_string<char>::assign
+
 
 
 // Contribution: 1:00013310-000136f6 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00414310
+// basic_string<char>::assign
+
 
 
 // Contribution: 1:00013700-00013b2c Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00414700
+// basic_string<char>::insert
+
 
 
 // Contribution: 1:00013b30-00013f29 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00414b30
+// basic_string<char>::insert
+
 
 
 // Contribution: 1:00013f30-00014315 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00414f30
+// basic_string<char>::insert
+
 
 
 // Contribution: 1:00014320-000147c0 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00415320
+// basic_string<char>::insert
+
 
 
 // Contribution: 1:000147d0-00014b67 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004157d0
+// basic_string<char>::remove
+
 
 
 // Contribution: 1:00014b70-000155a3 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00415b70
+// basic_string<char>::replace
+
 
 
 // Contribution: 1:000155b0-00015a8f Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004165b0
+// basic_string<char>::replace
+
 
 
 // Contribution: 1:00015a90-00015f5b Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00416a90
+// basic_string<char>::replace
+
 
 
 // Contribution: 1:00015f60-000164e6 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00416f60
+// basic_string<char>::replace
+
 
 
 // Contribution: 1:000164f0-00016590 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004174f0
+// basic_string<char>::get_at
+
 
 
 // Contribution: 1:000165a0-00016826 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004175a0
+// basic_string<char>::put_at
+
 
 
 // Contribution: 1:00016830-00016a57 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00417830
+// basic_string<char>::operator[]
+
 
 
 // Contribution: 1:00016a60-00016ada Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00417a60
+// basic_string<char>::operator[]
+
 
 
 // Contribution: 1:00016ae0-00016bf3 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00417ae0
+// basic_string<char>::c_str
+
 
 
 // Contribution: 1:00016c00-00016c3e Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00417c00
+// basic_string<char>::data
+
 
 
 // Contribution: 1:00016c40-00016c5e Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00417c40
+// basic_string<char>::length
+
 
 
 // Contribution: 1:00016c60-00016ef7 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00417c60
+// basic_string<char>::resize
+
 
 
 // Contribution: 1:00016f00-00017184 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00417f00
+// basic_string<char>::resize
+
 
 
 // Contribution: 1:00017190-0001738b Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00418190
+// basic_string<char>::reserve
+
 
 
 // Contribution: 1:00017390-000173ae Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00418390
+// basic_string<char>::reserve
+
 
 
 // Contribution: 1:000173b0-000174b3 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004183b0
+// basic_string<char>::copy
+
 
 
 // Contribution: 1:000174c0-0001757f Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004184c0
+// basic_string<char>::find
+
 
 
 // Contribution: 1:00017580-000177ad Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00418580
+// basic_string<char>::find
+
 
 
 // Contribution: 1:000177b0-000179c9 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004187b0
+// basic_string<char>::find
+
 
 
 // Contribution: 1:000179d0-00017c30 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004189d0
+// basic_string<char>::find
+
 
 
 // Contribution: 1:00017c40-00017da0 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00418c40
+// basic_string<char>::rfind
+
 
 
 // Contribution: 1:00017db0-000180ac Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00418db0
+// basic_string<char>::rfind
+
 
 
 // Contribution: 1:000180b0-00018398 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004190b0
+// basic_string<char>::rfind
+
 
 
 // Contribution: 1:000183a0-000186cf Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004193a0
+// basic_string<char>::rfind
+
 
 
 // Contribution: 1:000186d0-000187a3 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004196d0
+// basic_string<char>::find_first_of
+
 
 
 // Contribution: 1:000187b0-000188dc Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004197b0
+// basic_string<char>::find_first_of
+
 
 
 // Contribution: 1:000188e0-000189f8 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004198e0
+// basic_string<char>::find_first_of
+
 
 
 // Contribution: 1:00018a00-00018b5f Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00419a00
+// basic_string<char>::find_first_of
+
 
 
 // Contribution: 1:00018b60-00018cd5 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00419b60
+// basic_string<char>::find_last_of
+
 
 
 // Contribution: 1:00018ce0-00018e3a Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00419ce0
+// basic_string<char>::find_last_of
+
 
 
 // Contribution: 1:00018e40-00018f86 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00419e40
+// basic_string<char>::find_last_of
+
 
 
 // Contribution: 1:00018f90-00019123 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00419f90
+// basic_string<char>::find_last_of
+
 
 
 // Contribution: 1:00019130-000191ef Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0041a130
+// basic_string<char>::find_first_not_of
+
 
 
 // Contribution: 1:000191f0-00019308 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0041a1f0
+// basic_string<char>::find_first_not_of
+
 
 
 // Contribution: 1:00019310-00019414 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0041a310
+// basic_string<char>::find_first_not_of
+
 
 
 // Contribution: 1:00019420-0001956b Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0041a420
+// basic_string<char>::find_first_not_of
+
 
 
 // Contribution: 1:00019570-000196d0 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0041a570
+// basic_string<char>::find_last_not_of
+
 
 
 // Contribution: 1:000196e0-00019841 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0041a6e0
+// basic_string<char>::find_last_not_of
+
 
 
 // Contribution: 1:00019850-0001999d Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0041a850
+// basic_string<char>::find_last_not_of
+
 
 
 // Contribution: 1:000199a0-00019b3a Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0041a9a0
+// basic_string<char>::find_last_not_of
+
 
 
 // Contribution: 1:00019b40-0001a034 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0041ab40
+// basic_string<char>::substr
+
 
 
 // Contribution: 1:0001a040-0001a241 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0041b040
+// basic_string<char>::compare
+
 
 
 // Contribution: 1:0001a250-0001a3c5 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0041b250
+// basic_string<char>::compare
+
 
 
 // Contribution: 1:0001a3d0-0001a56d Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0041b3d0
+// basic_string<char>::compare
+
 
 
 // Contribution: 1:0001a570-0001a73d Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0041b570
+// basic_string<char>::compare
+
 
 
 // Contribution: 1:0001a740-0001a7a8 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0041b740
+// allocate
+
 
 
 // Contribution: 1:0001a7b0-0001a81b Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0041b7b0
+// allocate
+
 
 
 // Contribution: 1:0001a820-0001a888 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0041b820
+// allocate
+
 
 
 // Contribution: 1:0001a890-0001a8f8 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0041b890
+// allocate
+
 
 
 // Contribution: 1:0001a900-0001a968 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0041b900
+// allocate
+
 
 
 // Contribution: 1:0001a970-0001a9df Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0041b970
+// allocate
+
 
 
 // Contribution: 1:0001a9e0-0001abcd Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0041b9e0
+// construct
+
 
 
 // Contribution: 1:0001abd0-0001ac5e Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0041bbd0
+// list<HotSpot>::deallocate_buffers
+
 
 
 // Contribution: 1:0001ac60-0001acee Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0041bc60
+// list<Shortcut>::deallocate_buffers
+
 
 
 // Contribution: 1:0001acf0-0001ad7e Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0041bcf0
+// list<KeyColors>::deallocate_buffers
+
 
 
 // Contribution: 1:0001ad80-0001ae0e Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0041bd80
+// list<StringIDAssociation>::deallocate_buffers
+
 
 
 // Contribution: 1:0001ae10-0001b69f Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0041be10
+// rb_tree<long,long,ident<long,long>,less<long>>::insert
+
 
 
 // Contribution: 1:0001b6a0-0001b8b6 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0041c6a0
+// rb_tree<long,long,ident<long,long>,less<long>>::get_node
+
 
 
 // Contribution: 1:0001b8c0-0001b9cb Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0041c8c0
+// rb_tree<long,long,ident<long,long>,less<long>>::iterator::operator--
+
 
 
 // Contribution: 1:0001b9d0-0001cd6c Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0041c9d0
+// rb_tree<long,long,ident<long,long>,less<long>>::erase
+
 
 
 // Contribution: 1:0001cd70-0001cde4 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
@@ -16129,33 +16495,63 @@ void ControlDisplayWindow::AppendKeysString(class basic_string<char>&, long, lon
 
 
 // Contribution: 1:0001cfe0-0001d080 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0041dfe0
+// basic_string_ref<char>::basic_string_ref<char>
+
 
 
 // Contribution: 1:0001d090-0001d15e Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0041e090
+// basic_string_ref<char>::basic_string_ref<char>
+
 
 
 // Contribution: 1:0001d160-0001d1fc Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0041e160
+// basic_string_ref<char>::basic_string_ref<char>
+
 
 
 // Contribution: 1:0001d200-0001d2cb Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0041e200
+// basic_string_ref<char>::basic_string_ref<char>
+
 
 
 // Contribution: 1:0001d2d0-0001d311 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0041e2d0
+// basic_string_ref<char>::basic_string_ref<char>
+
 
 
 // Contribution: 1:0001d320-0001e162 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0041e320
+// rb_tree<long,long,ident<long,long>,less<long>>::__insert
+
 
 
 // Contribution: 1:0001e170-0001e1e9 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0041f170
+// rb_tree<long,long,ident<long,long>,less<long>>::__erase
+
 
 
 // Contribution: 1:0001e1f0-0001e34c Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0041f1f0
+// rb_tree<long,long,ident<long,long>,less<long>>::rotate_left
+
 
 
 // Contribution: 1:0001e350-0001e4ac Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0041f350
+// rb_tree<long,long,ident<long,long>,less<long>>::rotate_right
+
 
 
 // Contribution: 1:0001e4b0-0001e4ff Module: 75, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0041f4b0
+// basic_string_ref<char>::delete_ptr
+
 
 
 // Contribution: 2:00000058-0000013b Module: 75, 8 byte alignment, initialized_data, (comdat), read, 

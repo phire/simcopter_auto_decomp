@@ -4310,12 +4310,21 @@ int32_t BitmappedFont::GetPathForBitmapFile(char *, char *, char *) {
 
 
 // Contribution: 1:0006a0d0-0006a138 Module: 42, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0046b0d0
+// allocate
+
 
 
 // Contribution: 1:0006a140-0006a533 Module: 42, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0046b140
+// vector<MRect>::insert_aux
+
 
 
 // Contribution: 1:0006a540-0006a867 Module: 42, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0046b540
+// vector<unsigned char>::insert_aux
+
 
 
 // Contribution: 2:000014d0-000014f3 Module: 42, 8 byte alignment, initialized_data, (comdat), read, 

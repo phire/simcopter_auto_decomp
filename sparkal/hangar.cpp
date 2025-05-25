@@ -3486,9 +3486,15 @@ void HangarWindow::LoadHotSpots() {
 
 
 // Contribution: 1:000737c0-000737db Module: 36, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004747c0
+// deallocate
+
 
 
 // Contribution: 1:000737e0-000737ef Module: 36, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004747e0
+// destroy
+
 
 
 // Contribution: 2:00001c20-00001ce3 Module: 36, 8 byte alignment, initialized_data, (comdat), read, 

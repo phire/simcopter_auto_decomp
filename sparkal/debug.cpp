@@ -4246,27 +4246,51 @@ int32_t ParseCommandLine() {
 
 
 // Contribution: 1:00024710-00024759 Module: 70, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00425710
+// deque<basic_string<char>>::iterator::iterator
+
 
 
 // Contribution: 1:00024760-00024d34 Module: 70, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00425760
+// vector<basic_string<char>>::push_back
+
 
 
 // Contribution: 1:00024d40-00024da8 Module: 70, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00425d40
+// allocate
+
 
 
 // Contribution: 1:00024db0-00024e18 Module: 70, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00425db0
+// allocate
+
 
 
 // Contribution: 1:00024e20-00024ffc Module: 70, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00425e20
+// construct
+
 
 
 // Contribution: 1:00025000-00025561 Module: 70, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00426000
+// deque<basic_string<char>>::allocate_at_end
+
 
 
 // Contribution: 1:00025570-000258f7 Module: 70, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00426570
+// vector<debug_command *>::insert_aux
+
 
 
 // Contribution: 1:00025900-00025fba Module: 70, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00426900
+// vector<basic_string<char>>::insert_aux
+
 
 
 // Contribution: 2:0000041c-0000041f Module: 70, 4 byte alignment, initialized_data, (comdat), read, 

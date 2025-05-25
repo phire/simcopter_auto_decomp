@@ -8586,6 +8586,9 @@ protected: virtual int __thiscall Radio::DoesAtLeastOneSoundEntryExistForTheGive
 
 
 // Contribution: 1:000389c0-00038bcf Module: 59, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004399c0
+// list<basic_string<char>>::get_node
+
 
 
 // Contribution: 1:00038bd0-00038c3a Module: 59, 16 byte alignment, code, (comdat), execute, read, 
@@ -8595,6 +8598,9 @@ protected: virtual int __thiscall Radio::DoesAtLeastOneSoundEntryExistForTheGive
 
 
 // Contribution: 1:00038cc0-00039038 Module: 59, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00439cc0
+// vector<int>::push_back
+
 
 
 // Contribution: 1:00039040-00039078 Module: 59, 16 byte alignment, code, (comdat), execute, read, 
@@ -8604,15 +8610,27 @@ protected: virtual int __thiscall Radio::DoesAtLeastOneSoundEntryExistForTheGive
 
 
 // Contribution: 1:00039080-000390b1 Module: 59, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0043a080
+// list<basic_string<char>>::begin
+
 
 
 // Contribution: 1:000390c0-000392c0 Module: 59, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0043a0c0
+// list<basic_string<char>>::~list<basic_string<char>>
+
 
 
 // Contribution: 1:000392d0-0003930b Module: 59, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0043a2d0
+// list<basic_string<char>>::iterator::operator++
+
 
 
 // Contribution: 1:00039310-00039440 Module: 59, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0043a310
+// list<basic_string<char>>::erase
+
 
 
 // Contribution: 1:00039450-00039488 Module: 59, 16 byte alignment, code, (comdat), execute, read, 
@@ -8622,48 +8640,90 @@ protected: virtual int __thiscall Radio::DoesAtLeastOneSoundEntryExistForTheGive
 
 
 // Contribution: 1:00039490-000396e1 Module: 59, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0043a490
+// list<basic_string<char>>::list<basic_string<char>>
+
 
 
 // Contribution: 1:000396f0-000397c3 Module: 59, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0043a6f0
+// vector<RadioStation>::erase
+
 
 
 // Contribution: 1:000397d0-000397ff Module: 59, 16 byte alignment, code, (comdat), execute, read, 
 
 
 // Contribution: 1:00039800-00039868 Module: 59, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0043a800
+// allocate
+
 
 
 // Contribution: 1:00039870-000398a8 Module: 59, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0043a870
+// construct
+
 
 
 // Contribution: 1:000398b0-0003993e Module: 59, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0043a8b0
+// list<basic_string<char>>::deallocate_buffers
+
 
 
 // Contribution: 1:00039940-00039adc Module: 59, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0043a940
+// list<basic_string<char>>::erase
+
 
 
 // Contribution: 1:00039ae0-0003a09c Module: 59, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0043aae0
+// list<basic_string<char>>::operator=
+
 
 
 // Contribution: 1:0003a0a0-0003a247 Module: 59, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0043b0a0
+// list<basic_string<char>>::add_new_buffer
+
 
 
 // Contribution: 1:0003a250-0003a5de Module: 59, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0043b250
+// vector<int>::operator=
+
 
 
 // Contribution: 1:0003a5e0-0003a9d6 Module: 59, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0043b5e0
+// vector<RadioStation>::insert_aux
+
 
 
 // Contribution: 1:0003a9e0-0003adec Module: 59, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0043b9e0
+// operator+
+
 
 
 // Contribution: 1:0003adf0-0003b256 Module: 59, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0043bdf0
+// operator+
+
 
 
 // Contribution: 1:0003b260-0003b2eb Module: 59, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0043c260
+// __random_shuffle
+
 
 
 // Contribution: 1:0003b2f0-0003b70f Module: 59, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0043c2f0
+// __iter_swap
+
 
 
 // Contribution: 2:00000518-0000055b Module: 59, 8 byte alignment, initialized_data, (comdat), read, 

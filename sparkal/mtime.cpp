@@ -1427,9 +1427,15 @@ class ostream& operator<<() {
 
 
 // Contribution: 1:0003c390-0003c3bc Module: 58, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0043d390
+// __setfill
+
 
 
 // Contribution: 1:0003c3c0-0003c3ec Module: 58, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0043d3c0
+// __setw
+
 
 
 // Contribution: 3:00000028-00000033 Module: 58, 4 byte alignment, initialized_data, read, write, 

@@ -3295,6 +3295,9 @@ void NotificationPreferenceManager::DoNotification(long) {
 
 
 // Contribution: 1:0007caf0-0007cc9d Module: 32, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0047daf0
+// list<PreferenceItem>::add_new_buffer
+
 
 
 // Contribution: 1:0007cca0-0007ce7f Module: 32, 16 byte alignment, code, (comdat), execute, read, 

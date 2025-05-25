@@ -3327,21 +3327,39 @@ long LogManager::GetStringIDFromLogEvent(const struct tagLogMissionEvent*) {
 
 
 // Contribution: 1:000ed280-000ed495 Module: 178, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004ee280
+// list<tagLogBase *>::get_node
+
 
 
 // Contribution: 1:000ed4a0-000ed508 Module: 178, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004ee4a0
+// allocate
+
 
 
 // Contribution: 1:000ed510-000ed57b Module: 178, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004ee510
+// allocate
+
 
 
 // Contribution: 1:000ed580-000ed5b6 Module: 178, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004ee580
+// construct
+
 
 
 // Contribution: 1:000ed5c0-000ed64e Module: 178, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004ee5c0
+// list<tagLogBase *>::deallocate_buffers
+
 
 
 // Contribution: 1:000ed650-000ed715 Module: 178, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004ee650
+// list<tagLogBase *>::erase
+
 
 
 // Contribution: 2:00003680-00003683 Module: 178, 4 byte alignment, initialized_data, (comdat), read, 

@@ -1942,6 +1942,9 @@ public: int __thiscall CGameApp::DisplayFileOpenError(unsigned long) {
 
 
 // Contribution: 1:00027c70-00027e75 Module: 68, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00428c70
+// list<DirectoryEntry>::~list<DirectoryEntry>
+
 
 
 // Contribution: 3:00000484-000004ab Module: 68, 4 byte alignment, initialized_data, read, write, 

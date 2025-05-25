@@ -5306,6 +5306,9 @@ long GetJoystickCommandTwin() {
 
 
 // Contribution: 1:0008d910-0008dba7 Module: 26, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0048e910
+// list<Shortcut>::insert
+
 
 
 // Contribution: 2:00001ff8-0000204b Module: 26, 8 byte alignment, initialized_data, (comdat), read, 

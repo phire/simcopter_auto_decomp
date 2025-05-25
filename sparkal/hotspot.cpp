@@ -3139,6 +3139,12 @@ int32_t LoadListFromResource() {
 
 
 // Contribution: 1:000ba950-000ba9b8 Module: 4, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004bb950
+// allocate
+
 
 
 // Contribution: 1:000ba9c0-000baa29 Module: 4, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004bb9c0
+// uninitialized_copy
+

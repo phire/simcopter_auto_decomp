@@ -4054,21 +4054,39 @@ public: virtual int __thiscall CGameApp::HaveAnyJoysticksChangedSinceLastPlay(vo
 
 
 // Contribution: 1:00089ae0-00089b11 Module: 28, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0048aae0
+// list<Shortcut>::begin
+
 
 
 // Contribution: 1:00089b20-00089ccf Module: 28, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0048ab20
+// list<Shortcut>::~list<Shortcut>
+
 
 
 // Contribution: 1:00089cd0-00089edf Module: 28, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0048acd0
+// list<Shortcut>::get_node
+
 
 
 // Contribution: 1:00089ee0-00089fa5 Module: 28, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0048aee0
+// list<Shortcut>::erase
+
 
 
 // Contribution: 1:00089fb0-0008a03e Module: 28, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0048afb0
+// list<CopterGameMode>::deallocate_buffers
+
 
 
 // Contribution: 1:0008a040-0008a105 Module: 28, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0048b040
+// list<CopterGameMode>::erase
+
 
 
 // Contribution: 2:00001f2c-00001f2f Module: 28, 4 byte alignment, initialized_data, (comdat), read, 

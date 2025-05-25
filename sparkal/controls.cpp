@@ -18364,6 +18364,9 @@ void PopupMenuWindow::ResizeWindowToFitMenuItems() {
 
 
 // Contribution: 1:000b7860-000b7947 Module: 5, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004b8860
+// list<basic_string<char>>::splice
+
 
 
 // Contribution: 1:000b7950-000b7b93 Module: 5, 16 byte alignment, code, (comdat), execute, read, 
@@ -18373,9 +18376,15 @@ void PopupMenuWindow::ResizeWindowToFitMenuItems() {
 
 
 // Contribution: 1:000b7ba0-000b7c08 Module: 5, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004b8ba0
+// allocate
+
 
 
 // Contribution: 1:000b7c10-000b803e Module: 5, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004b8c10
+// list<basic_string<char>>::merge
+
 
 
 // Contribution: 2:000029c0-00002a8b Module: 5, 8 byte alignment, initialized_data, (comdat), read, 

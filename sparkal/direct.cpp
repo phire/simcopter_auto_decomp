@@ -6085,18 +6085,33 @@ public: static void __cdecl Directory::SplitDirectoryPath(class basic_string<cha
 
 
 // Contribution: 1:00085dd0-00085e0b Module: 29, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00486dd0
+// list<DirectoryEntry>::iterator::operator++
+
 
 
 // Contribution: 1:00085e10-00085e41 Module: 29, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00486e10
+// list<DirectoryEntry>::begin
+
 
 
 // Contribution: 1:00085e50-000862ac Module: 29, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00486e50
+// list<DirectoryEntry>::insert
+
 
 
 // Contribution: 1:000862b0-000863e5 Module: 29, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004872b0
+// list<DirectoryEntry>::erase
+
 
 
 // Contribution: 1:000863f0-0008682a Module: 29, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004873f0
+// list<basic_string<char>>::insert
+
 
 
 // Contribution: 3:00002b8c-00002bb9 Module: 29, 4 byte alignment, initialized_data, read, write, 

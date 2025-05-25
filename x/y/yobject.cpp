@@ -19522,6 +19522,9 @@ public: virtual __thiscall ResFile::~ResFile(void) {
 
 
 // Contribution: 1:00151000-00151038 Module: 200, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00552000
+// vector<char>::~vector<char>
+
 
 
 // Contribution: 1:00151040-001510d6 Module: 200, 16 byte alignment, code, (comdat), execute, read, 

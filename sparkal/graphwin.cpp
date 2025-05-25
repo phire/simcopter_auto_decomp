@@ -9715,6 +9715,9 @@ int32_t ScreenWindow::DrawSelf() {
 
 
 // Contribution: 1:000a6bc0-000a6dd5 Module: 9, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004a7bc0
+// list<GraphicWindow *>::get_node
+
 
 
 // Contribution: 1:000a6de0-000a6e18 Module: 9, 16 byte alignment, code, (comdat), execute, read, 
@@ -9724,15 +9727,27 @@ int32_t ScreenWindow::DrawSelf() {
 
 
 // Contribution: 1:000a6e20-000a6e5b Module: 9, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004a7e20
+// list<GraphicWindow *>::iterator::operator++
+
 
 
 // Contribution: 1:000a6e60-000a6eb9 Module: 9, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004a7e60
+// list<GraphicWindow *>::erase
+
 
 
 // Contribution: 1:000a6ec0-000a6ef1 Module: 9, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004a7ec0
+// list<GraphicWindow *>::begin
+
 
 
 // Contribution: 1:000a6f00-000a6f31 Module: 9, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004a7f00
+// list<GraphicWindow *>::begin
+
 
 
 // Contribution: 1:000a6f40-000a6f78 Module: 9, 16 byte alignment, code, (comdat), execute, read, 
@@ -9742,12 +9757,21 @@ int32_t ScreenWindow::DrawSelf() {
 
 
 // Contribution: 1:000a6f80-000a6fb6 Module: 9, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004a7f80
+// construct
+
 
 
 // Contribution: 1:000a6fc0-000a704e Module: 9, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004a7fc0
+// list<GraphicWindow *>::deallocate_buffers
+
 
 
 // Contribution: 1:000a7050-000a7359 Module: 9, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004a8050
+// list<GraphicWindow *>::insert
+
 
 
 // Contribution: 2:00002648-0000267f Module: 9, 8 byte alignment, initialized_data, (comdat), read, 

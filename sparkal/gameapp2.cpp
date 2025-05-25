@@ -8557,12 +8557,21 @@ public: void __thiscall CGameApp::ComposeMainMenuVideoFrame(void) {
 
 
 // Contribution: 1:00065cb0-00065ec5 Module: 44, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00466cb0
+// list<CopterGameMode>::get_node
+
 
 
 // Contribution: 1:00065ed0-00065f29 Module: 44, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00466ed0
+// list<CopterGameMode>::erase
+
 
 
 // Contribution: 1:00065f30-00065f68 Module: 44, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x00466f30
+// construct
+
 
 
 // Contribution: 2:00001464-00001467 Module: 44, 4 byte alignment, initialized_data, read, 

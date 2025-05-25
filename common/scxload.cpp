@@ -2571,6 +2571,9 @@ int32_t ReadSCXFile() {
 
 
 // Contribution: 1:000cc540-000cc59d Module: 89, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004cd540
+// vector<tGZXBitstreamNode>::~vector<tGZXBitstreamNode>
+
 
 
 // Contribution: 1:000cc5a0-000ccf60 Module: 89, 16 byte alignment, code, (comdat), execute, read, 
@@ -2598,9 +2601,15 @@ int32_t ReadSCXFile() {
 
 
 // Contribution: 1:000cdfb0-000ce018 Module: 89, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004cefb0
+// allocate
+
 
 
 // Contribution: 1:000ce020-000ce089 Module: 89, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x004cf020
+// uninitialized_copy
+
 
 
 // Contribution: 2:000033f8-00003413 Module: 89, 8 byte alignment, initialized_data, (comdat), read, 

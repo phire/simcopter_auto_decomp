@@ -4556,6 +4556,9 @@ int32_t UserMenuWindow::GetLineCount() {
 
 
 // Contribution: 1:0009d3e0-0009d448 Module: 13, 16 byte alignment, code, (comdat), execute, read, 
+// LIBRARY: MSVC 0x0049e3e0
+// allocate
+
 
 
 // Contribution: 2:000022f8-000023df Module: 13, 8 byte alignment, initialized_data, (comdat), read, 
