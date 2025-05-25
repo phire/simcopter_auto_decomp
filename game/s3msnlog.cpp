@@ -3345,13 +3345,13 @@ long LogManager::GetStringIDFromLogEvent(const struct tagLogMissionEvent*) {
 
 
 // Contribution: 2:00003680-00003683 Module: 178, 4 byte alignment, initialized_data, (comdat), read, 
+// GLOBAL: COPTER_D 0x00003680
+// ??_7MTimeLocalized@@6B@
 
 
 // Contribution: 3:000000a0-000000a3 Module: 178, 4 byte alignment, initialized_data, read, write, 
 // LOCAL: COPTER_D 0x000000a0
 // $S58
-// LOCAL: COPTER_D 0x000000a4
-// $S8
 
 
 // Contribution: 3:0001d878-0001d880 Module: 178, 4 byte alignment, initialized_data, read, write, 
@@ -3365,21 +3365,23 @@ long LogManager::GetStringIDFromLogEvent(const struct tagLogMissionEvent*) {
 // Contribution: 3:0001d888-0001d88b Module: 178, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0001d888
 // list<tagLogBase *>::last
+
+
+// Contribution: 3:0001d88c-0001d88f Module: 178, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0001d88c
 // list<tagLogBase *>::next_avail
 
 
-// Contribution: 3:0001d88c-0001d88f Module: 178, 4 byte alignment, initialized_data, (comdat), read, write, 
+// Contribution: 3:0001d890-0001d893 Module: 178, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0001d890
 // list<tagLogBase *>::free_list
 
 
-// Contribution: 3:0001d890-0001d893 Module: 178, 4 byte alignment, initialized_data, (comdat), read, write, 
+// Contribution: 3:0001d894-0001d897 Module: 178, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0001d894
 // list<tagLogBase *>::buffer_list
 
 
-// Contribution: 3:0001d894-0001d897 Module: 178, 4 byte alignment, initialized_data, (comdat), read, write, 
-
-
 // Contribution: 3:0006fe78-0006fe83 Module: 178, 8 byte alignment, uninitialized_data, read, write, 
+// GLOBAL: COPTER_D 0x0006fe78
+// gLogManager

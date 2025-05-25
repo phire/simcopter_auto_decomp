@@ -8582,8 +8582,6 @@ long S3MissionGetSoundQuadrant() {
 // RRT
 // LOCAL: COPTER_D 0x00003a68
 // LRT
-// LOCAL: COPTER_D 0x00003ab0
-// TurnTable3
 
 
 // Contribution: 3:0001de18-0001e1fa Module: 173, 8 byte alignment, initialized_data, read, write, 
@@ -8704,5 +8702,3 @@ long S3MissionGetSoundQuadrant() {
 // Contribution: 3:000702b8-00071bc7 Module: 173, 8 byte alignment, uninitialized_data, read, write, 
 // LOCAL: COPTER_D 0x000702b8
 // S_mstatics
-// LOCAL: COPTER_D 0x00071bc8
-// S_dicon_dim

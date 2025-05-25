@@ -1717,8 +1717,6 @@ struct Point center() {
 
 
 // Contribution: 2:00004a18-00004a2f Module: 184, 8 byte alignment, initialized_data, read, 
-// GLOBAL: COPTER_D 0x00004a30
-// ??_7?$cArray@UPrivAnimPartInfo@@@@6B@
 
 
 // Contribution: 3:00028570-00028630 Module: 184, 4 byte alignment, initialized_data, read, write, 

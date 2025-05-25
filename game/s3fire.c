@@ -5631,6 +5631,8 @@ int32_t S3FireMIFFSave() {
 
 
 // Contribution: 2:00003ff0-000041ff Module: 165, 8 byte alignment, initialized_data, read, 
+// LOCAL: COPTER_D 0x00003ff0
+// TurnTable3
 // LOCAL: COPTER_D 0x00004070
 // TurnTable2
 // LOCAL: COPTER_D 0x000040b0
@@ -5648,6 +5650,8 @@ int32_t S3FireMIFFSave() {
 
 
 // Contribution: 3:00020388-000203e6 Module: 165, 8 byte alignment, initialized_data, read, write, 
+// GLOBAL: COPTER_D 0x00020388
+// S_ftwk_douse_points
 // GLOBAL: COPTER_D 0x0002038c
 // S_ftwk_douse_multiplier
 // GLOBAL: COPTER_D 0x00020390
@@ -5675,5 +5679,7 @@ int32_t S3FireMIFFSave() {
 
 
 // Contribution: 3:00094548-000945ef Module: 165, 8 byte alignment, uninitialized_data, read, write, 
+// LOCAL: COPTER_D 0x00094548
+// lscfd
 // LOCAL: COPTER_D 0x00094550
 // lsfire

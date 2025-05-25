@@ -3411,13 +3411,13 @@ void MessageDisplayManager::AddNewMessage(class basic_string<char>&) {
 
 
 // Contribution: 2:00001708-000017cb Module: 40, 8 byte alignment, initialized_data, (comdat), read, 
+// GLOBAL: COPTER_D 0x00001708
+// ??_7MissionLogWindow@@6B@
 
 
 // Contribution: 2:000017d0-000017df Module: 40, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x000017d0
 // ??_7MessageDisplayManager@@6B@
-// GLOBAL: COPTER_D 0x000017e0
-// ??_7IBackBuffer@@6B@
 
 
 // Contribution: 3:00002448-00002494 Module: 40, 4 byte alignment, initialized_data, read, write, 

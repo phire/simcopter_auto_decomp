@@ -5802,6 +5802,8 @@ unsigned long CBackBuffer::DrawLineClipped(long, long, long, long, long) {
 
 
 // Contribution: 2:000017e0-00001807 Module: 39, 8 byte alignment, initialized_data, (comdat), read, 
+// GLOBAL: COPTER_D 0x000017e0
+// ??_7IBackBuffer@@6B@
 
 
 // Contribution: 2:00001808-0000186b Module: 39, 8 byte alignment, initialized_data, (comdat), read, 

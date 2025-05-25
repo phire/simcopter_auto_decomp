@@ -9743,36 +9743,38 @@ void GameModeInventoryData::SetCommandsToDefaults() {
 
 
 // Contribution: 2:000033c0-000033c3 Module: 1, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: COPTER_D 0x000033c4
-// ??_7GameModeMainMenuData@@6B@
+// GLOBAL: COPTER_D 0x000033c0
+// ??_7GameModeCoreData@@6B@
 
 
 // Contribution: 2:000033c4-000033c7 Module: 1, 4 byte alignment, initialized_data, (comdat), read, 
+// GLOBAL: COPTER_D 0x000033c4
+// ??_7GameModeMainMenuData@@6B@
 
 
 // Contribution: 2:000033c8-000033cb Module: 1, 4 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x000033c8
 // ??_7GameModePickCareerCityData@@6B@
+
+
+// Contribution: 2:000033cc-000033cf Module: 1, 4 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x000033cc
 // ??_7GameModePlayData@@6B@
 
 
-// Contribution: 2:000033cc-000033cf Module: 1, 4 byte alignment, initialized_data, (comdat), read, 
+// Contribution: 2:000033d0-000033d3 Module: 1, 4 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x000033d0
 // ??_7GameModeHangarData@@6B@
 
 
-// Contribution: 2:000033d0-000033d3 Module: 1, 4 byte alignment, initialized_data, (comdat), read, 
+// Contribution: 2:000033d4-000033d7 Module: 1, 4 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x000033d4
 // ??_7GameModeCatalogData@@6B@
 
 
-// Contribution: 2:000033d4-000033d7 Module: 1, 4 byte alignment, initialized_data, (comdat), read, 
+// Contribution: 2:000033d8-000033db Module: 1, 4 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x000033d8
 // ??_7GameModeMissionLogData@@6B@
-
-
-// Contribution: 2:000033d8-000033db Module: 1, 4 byte alignment, initialized_data, (comdat), read, 
 
 
 // Contribution: 2:000033dc-000033df Module: 1, 4 byte alignment, initialized_data, (comdat), read, 

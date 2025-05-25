@@ -695,3 +695,5 @@ short SGSRand() {
 
 
 // Contribution: 3:000a06a8-000a06ab Module: 193, 4 byte alignment, uninitialized_data, read, write, 
+// LOCAL: COPTER_D 0x000a06a8
+// srandSeed

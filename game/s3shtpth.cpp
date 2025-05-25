@@ -1213,5 +1213,3 @@ void ShortestPath::PriorityHeapRemove(struct _FringeHeapNode*) {
 // Contribution: 2:000044f8-00004507 Module: 151, 8 byte alignment, initialized_data, read, 
 // LOCAL: COPTER_D 0x000044f8
 // IndexToType
-// GLOBAL: COPTER_D 0x00004508
-// ??_7FlatResFile@@6B@

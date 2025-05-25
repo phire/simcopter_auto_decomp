@@ -505,8 +505,6 @@ int32_t S3WritePCXLine() {
 // RRT
 // LOCAL: COPTER_D 0x000016c8
 // LRT
-// GLOBAL: COPTER_D 0x00001708
-// ??_7MissionLogWindow@@6B@
 
 
 // Contribution: 3:00002430-00002446 Module: 41, 4 byte alignment, initialized_data, read, write, 

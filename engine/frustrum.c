@@ -5,3 +5,164 @@
 
 
 // Contribution: 1:000d56c0-000d57db Module: 143, 16 byte alignment, code, execute, read, 
+// FUNCTION: COPTER_D 0x004d66c0
+void VRFrustSetNormals() {
+// LINE 49:
+	asm( 
+"	      004d66c0    push ebp"
+"	      004d66c1    mov ebp,esp"
+"	      004d66c3    sub esp,1Ch"
+"	      004d66c6    push ebx"
+"	      004d66c7    push esi"
+"	      004d66c8    push edi"
+);
+// LINE 74:
+	asm( 
+"	      004d66c9    mov eax,ds:[59C248h]"
+"	      004d66ce    shl eax,4"
+"	      004d66d1    mov [ebp-10h],eax"
+);
+// LINE 75:
+	asm( 
+"	      004d66d4    mov eax,ds:[59C24Ch]"
+"	      004d66d9    shl eax,4"
+"	      004d66dc    mov [ebp-14h],eax"
+);
+// LINE 76:
+	asm( 
+"	      004d66df    mov eax,ds:[59C254h]"
+"	      004d66e4    shl eax,4"
+"	      004d66e7    mov [ebp-1Ch],eax"
+);
+// LINE 77:
+	asm( 
+"	      004d66ea    mov eax,ds:[59C258h]"
+"	      004d66ef    shl eax,4"
+"	      004d66f2    mov [ebp-18h],eax"
+);
+// LINE 81:
+	asm( 
+"	      004d66f5    mov eax,[ebp-10h]"
+"	      004d66f8    add eax,eax"
+"	      004d66fa    push eax"
+"	      004d66fb    mov eax,[ebp-1Ch]"
+"	      004d66fe    push eax"
+"	      004d66ff    call 004D19DFh"
+"	      004d6704    add esp,8"
+"	      004d6707    mov [ebp-0Ch],eax"
+);
+// LINE 82:
+	asm( 
+"	      004d670a    mov dword ptr [ebp-8],0"
+);
+// LINE 83:
+	asm( 
+"	      004d6711    mov dword ptr [ebp-4],10000h"
+);
+// LINE 86:
+	asm( 
+"	      004d6718    lea eax,[ebp-0Ch]"
+"	      004d671b    push eax"
+"	      004d671c    call 004CA1E3h"
+"	      004d6721    add esp,4"
+);
+// LINE 89:
+	asm( 
+"	      004d6724    mov eax,[ebp-4]"
+"	      004d6727    neg eax"
+"	      004d6729    mov ds:[6663D0h],eax"
+);
+// LINE 90:
+	asm( 
+"	      004d672e    mov eax,[ebp-0Ch]"
+"	      004d6731    mov ds:[6663D8h],eax"
+);
+// LINE 91:
+	asm( 
+"	      004d6736    mov dword ptr ds:[6663D4h],0"
+);
+// LINE 94:
+	asm( 
+"	      004d6740    mov eax,6663D0h"
+"	      004d6745    mov ecx,6663C0h"
+"	      004d674a    mov edx,[eax]"
+"	      004d674c    mov [ecx],edx"
+"	      004d674e    mov edx,[eax+4]"
+"	      004d6751    mov [ecx+4],edx"
+"	      004d6754    mov eax,[eax+8]"
+"	      004d6757    mov [ecx+8],eax"
+);
+// LINE 95:
+	asm( 
+"	      004d675a    mov eax,ds:[6663C0h]"
+"	      004d675f    neg eax"
+"	      004d6761    mov ds:[6663C0h],eax"
+);
+// LINE 99:
+	asm( 
+"	      004d6766    mov eax,[ebp-14h]"
+"	      004d6769    add eax,eax"
+"	      004d676b    push eax"
+"	      004d676c    mov eax,[ebp-18h]"
+"	      004d676f    push eax"
+"	      004d6770    call 004D19DFh"
+"	      004d6775    add esp,8"
+"	      004d6778    mov [ebp-8],eax"
+);
+// LINE 100:
+	asm( 
+"	      004d677b    mov dword ptr [ebp-0Ch],0"
+);
+// LINE 101:
+	asm( 
+"	      004d6782    mov dword ptr [ebp-4],10000h"
+);
+// LINE 104:
+	asm( 
+"	      004d6789    lea eax,[ebp-0Ch]"
+"	      004d678c    push eax"
+"	      004d678d    call 004CA1E3h"
+"	      004d6792    add esp,4"
+);
+// LINE 107:
+	asm( 
+"	      004d6795    mov eax,[ebp-4]"
+"	      004d6798    neg eax"
+"	      004d679a    mov ds:[6663B4h],eax"
+);
+// LINE 108:
+	asm( 
+"	      004d679f    mov eax,[ebp-8]"
+"	      004d67a2    mov ds:[6663B8h],eax"
+);
+// LINE 109:
+	asm( 
+"	      004d67a7    mov dword ptr ds:[6663B0h],0"
+);
+// LINE 112:
+	asm( 
+"	      004d67b1    mov eax,6663B0h"
+"	      004d67b6    mov ecx,6663E0h"
+"	      004d67bb    mov edx,[eax]"
+"	      004d67bd    mov [ecx],edx"
+"	      004d67bf    mov edx,[eax+4]"
+"	      004d67c2    mov [ecx+4],edx"
+"	      004d67c5    mov eax,[eax+8]"
+"	      004d67c8    mov [ecx+8],eax"
+);
+// LINE 113:
+	asm( 
+"	      004d67cb    mov eax,ds:[6663B4h]"
+"	      004d67d0    neg eax"
+"	      004d67d2    mov ds:[6663E4h],eax"
+);
+// LINE 114:
+	asm( 
+"	      004d67d7    pop edi"
+"	      004d67d8    pop esi"
+"	      004d67d9    pop ebx"
+"	      004d67da    leave"
+"	      004d67db    ret"
+);
+}
+

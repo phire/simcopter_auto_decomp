@@ -5626,8 +5626,8 @@ int32_t PlaneClass::MIFFSave(void * __ptr32) {
 
 
 // Contribution: 3:000000a8-000000ab Module: 163, 4 byte alignment, initialized_data, read, write, 
-// LOCAL: COPTER_D 0x000000ac
-// $S8
+// LOCAL: COPTER_D 0x000000a8
+// $S9
 
 
 // Contribution: 3:00020690-0002080a Module: 163, 8 byte alignment, initialized_data, read, write, 

@@ -15024,6 +15024,8 @@ void AutomobileClass::ChangeAutoColor() {
 
 
 // Contribution: 3:0001e2c4-0001e7b5 Module: 171, 4 byte alignment, initialized_data, read, write, 
+// LOCAL: COPTER_D 0x0001e2c4
+// lastSpeederID
 // GLOBAL: COPTER_D 0x0001e2c8
 // curAutos
 
@@ -15031,11 +15033,11 @@ void AutomobileClass::ChangeAutoColor() {
 // Contribution: 3:0001e7b8-0001e7c3 Module: 171, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0001e7b8
 // ??_C@_0M@DOIM@cellPointer?$AA@
-// GLOBAL: COPTER_D 0x0001e7c4
-// ??_C@_0CB@DNKM@C?3?2Copter?2source?2game?2S3MOBILE?4H@
 
 
 // Contribution: 3:0001e7c4-0001e7e4 Module: 171, 4 byte alignment, initialized_data, (comdat), read, write, 
+// GLOBAL: COPTER_D 0x0001e7c4
+// ??_C@_0CB@DNKM@C?3?2Copter?2source?2game?2S3MOBILE?4H@
 
 
 // Contribution: 3:0001e7e8-0001e9cf Module: 171, 8 byte alignment, initialized_data, (comdat), read, write, 

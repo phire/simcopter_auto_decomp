@@ -4461,6 +4461,8 @@ int32_t FileServices::GetPathForFileString(int32_t, int32_t, class basic_string<
 
 
 // Contribution: 3:00000088-0000008b Module: 21, 4 byte alignment, initialized_data, read, write, 
+// LOCAL: COPTER_D 0x00000088
+// $S33
 
 
 // Contribution: 3:000030a4-000030c3 Module: 21, 4 byte alignment, initialized_data, read, write, 
@@ -4499,11 +4501,11 @@ int32_t FileServices::GetPathForFileString(int32_t, int32_t, class basic_string<
 // Contribution: 3:000030f8-000030ff Module: 21, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x000030f8
 // ??_C@_07JPDD@cities?2?$AA@
-// GLOBAL: COPTER_D 0x00003100
-// ??_C@_0N@HBG@sound?2radio?2?$AA@
 
 
 // Contribution: 3:00003100-0000310c Module: 21, 4 byte alignment, initialized_data, (comdat), read, write, 
+// GLOBAL: COPTER_D 0x00003100
+// ??_C@_0N@HBG@sound?2radio?2?$AA@
 
 
 // Contribution: 3:00003110-00003116 Module: 21, 4 byte alignment, initialized_data, (comdat), read, write, 

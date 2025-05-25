@@ -2324,6 +2324,8 @@ void ScreenBuffer::SetWindowRect(struct SparkalRect*) {
 
 
 // Contribution: 2:000025b0-0000263b Module: 12, 8 byte alignment, initialized_data, (comdat), read, 
+// GLOBAL: COPTER_D 0x000025b0
+// ??_7ScreenBuffer@@6B@
 
 
 // Contribution: 2:00006c58-00006cdf Module: 12, 8 byte alignment, initialized_data, read, 

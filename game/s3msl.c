@@ -9264,8 +9264,6 @@ int32_t S3MissileMIFFSave() {
 
 
 // Contribution: 2:00003fd8-00003fef Module: 167, 8 byte alignment, initialized_data, read, 
-// LOCAL: COPTER_D 0x00003ff0
-// TurnTable3
 
 
 // Contribution: 3:000202c8-0002037c Module: 167, 8 byte alignment, initialized_data, read, write, 
@@ -9302,5 +9300,3 @@ int32_t S3MissileMIFFSave() {
 // Contribution: 3:00093530-00093577 Module: 167, 8 byte alignment, uninitialized_data, read, write, 
 // LOCAL: COPTER_D 0x00093530
 // lsmsl
-// LOCAL: COPTER_D 0x00093578
-// S_explosions

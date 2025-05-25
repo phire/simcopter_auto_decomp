@@ -1277,15 +1277,11 @@ void JoystickManager::SetNormalizedMinMax(long, long) {
 // Contribution: 2:00002228-000022a7 Module: 15, 8 byte alignment, initialized_data, read, 
 // LOCAL: COPTER_D 0x00002228
 // dwJoystickButtonConstants
-// GLOBAL: COPTER_D 0x000022a8
-// ??_7ICommander@@6B@
 
 
 // Contribution: 3:0000008c-0000008f Module: 15, 4 byte alignment, initialized_data, read, write, 
 // LOCAL: COPTER_D 0x0000008c
 // $S3
-// LOCAL: COPTER_D 0x00000090
-// $S49
 
 
 // Contribution: 3:0000328c-0000329b Module: 15, 4 byte alignment, initialized_data, read, write, 

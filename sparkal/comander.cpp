@@ -378,12 +378,12 @@ unsigned long CDefaultCommander::OnWindowDeactivate() {
 );
 }
 
-// FUNCTION: COPTER_D 0x0049af00
-// ICommander::`scalar deleting destructor'
-
 
 
 // Contribution: 1:00099f00-00099f38 Module: 14, 16 byte alignment, code, (comdat), execute, read, 
+// FUNCTION: COPTER_D 0x0049af00
+// ICommander::`scalar deleting destructor'
+
 
 
 // Contribution: 1:00099f40-00099f78 Module: 14, 16 byte alignment, code, (comdat), execute, read, 
@@ -393,6 +393,8 @@ unsigned long CDefaultCommander::OnWindowDeactivate() {
 
 
 // Contribution: 2:000022a8-000022cb Module: 14, 8 byte alignment, initialized_data, (comdat), read, 
+// GLOBAL: COPTER_D 0x000022a8
+// ??_7ICommander@@6B@
 
 
 // Contribution: 2:000022d0-000022f3 Module: 14, 8 byte alignment, initialized_data, (comdat), read, 

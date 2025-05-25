@@ -456,3 +456,5 @@ struct IDirectDrawPalette* ReadPalFile() {
 
 
 // Contribution: 3:0002b798-0002b843 Module: 74, 8 byte alignment, uninitialized_data, read, write, 
+// GLOBAL: COPTER_D 0x0002b798
+// ddCaps

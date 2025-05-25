@@ -6100,6 +6100,8 @@ public: static void __cdecl Directory::SplitDirectoryPath(class basic_string<cha
 
 
 // Contribution: 3:00002b8c-00002bb9 Module: 29, 4 byte alignment, initialized_data, read, write, 
+// GLOBAL: COPTER_D 0x00002b8c
+// SZ_DEFAULT_FILTER
 // GLOBAL: COPTER_D 0x00002b90
 // SZ_CURRENT_DIR_NAME
 // GLOBAL: COPTER_D 0x00002b94

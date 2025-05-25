@@ -2526,8 +2526,6 @@ void InitializeAllCareerCitiesInfo() {
 // Contribution: 3:00000020-00000023 Module: 67, 4 byte alignment, initialized_data, read, write, 
 // LOCAL: COPTER_D 0x00000020
 // $S49
-// LOCAL: COPTER_D 0x00000024
-// $S5
 
 
 // Contribution: 3:000004c0-00000662 Module: 67, 4 byte alignment, initialized_data, read, write, 
@@ -2618,5 +2616,3 @@ void InitializeAllCareerCitiesInfo() {
 // gGraduationState
 // GLOBAL: COPTER_D 0x0002c3e8
 // gGameFilePath
-// GLOBAL: COPTER_D 0x0002c4f0
-// gKeyboard

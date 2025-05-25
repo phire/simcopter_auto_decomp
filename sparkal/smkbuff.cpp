@@ -4616,11 +4616,11 @@ void SmackerBackBuffer::BltAll(class IFlatImage*, long, long, long, long, long, 
 // Contribution: 2:00002158-00002187 Module: 17, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00002158
 // ??_7VRBmpSmackerBuffer@@6B@
-// GLOBAL: COPTER_D 0x00002188
-// ??_7SmackerBackBuffer@@6BCBackBuffer@@@
 
 
 // Contribution: 2:00002188-000021eb Module: 17, 8 byte alignment, initialized_data, (comdat), read, 
+// GLOBAL: COPTER_D 0x00002188
+// ??_7SmackerBackBuffer@@6BCBackBuffer@@@
 
 
 // Contribution: 2:000021f0-00002217 Module: 17, 8 byte alignment, initialized_data, (comdat), read, 

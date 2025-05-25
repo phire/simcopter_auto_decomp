@@ -11858,5 +11858,3 @@ short cYObject::InterpValue(short, short, short **) {
 // Contribution: 3:000a05a8-000a06a7 Module: 196, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x000a05a8
 // cYObject::PrimProcs
-// LOCAL: COPTER_D 0x000a06a8
-// srandSeed

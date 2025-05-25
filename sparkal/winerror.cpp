@@ -125,9 +125,6 @@ void GUIReportError() {
 );
 }
 
-// FUNCTION: COPTER_D 0x00450050
-// $E66
-
 
 
 // Contribution: 3:000020e4-0000213b Module: 46, 4 byte alignment, initialized_data, read, write, 

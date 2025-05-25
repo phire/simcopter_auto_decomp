@@ -1897,8 +1897,6 @@ void SetUserVars() {
 // RRT
 // LOCAL: COPTER_D 0x00003640
 // LRT
-// GLOBAL: COPTER_D 0x00003680
-// ??_7MTimeLocalized@@6B@
 
 
 // Contribution: 3:0001d744-0001d876 Module: 179, 4 byte alignment, initialized_data, read, write, 

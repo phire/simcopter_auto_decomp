@@ -5,6 +5,228 @@
 
 
 // Contribution: 1:000c3690-000c8acf Module: 94, 16 byte alignment, code, execute, read, 
+// FUNCTION: COPTER_D 0x004c4690
+int32_t S2CityValidate() {
+// LINE 110:
+	asm( 
+"	      004c4690    push ebp"
+"	      004c4691    mov ebp,esp"
+"	      004c4693    sub esp,1Ch"
+"	      004c4696    push ebx"
+"	      004c4697    push esi"
+"	      004c4698    push edi"
+);
+// LINE 115:
+	asm( 
+"	      004c4699    push 59AFF0h"
+"	      004c469e    mov eax,[ebp+8]"
+"	      004c46a1    push eax"
+"	      004c46a2    call 0056D910h"
+"	      004c46a7    add esp,8"
+"	      004c46aa    mov [ebp-0Ch],eax"
+"	      004c46ad    cmp dword ptr [ebp-0Ch],0"
+"	      004c46b1    jne near ptr 004C46BEh"
+);
+// LINE 116:
+	asm( 
+"	      004c46b7    xor eax,eax"
+"	      004c46b9    jmp near ptr 004C4819h"
+);
+// LINE 119:
+	asm( 
+"	      004c46be    push 2"
+"	      004c46c0    push 0"
+"	      004c46c2    mov eax,[ebp-0Ch]"
+"	      004c46c5    push eax"
+"	      004c46c6    call 00572470h"
+"	      004c46cb    add esp,0Ch"
+);
+// LINE 120:
+	asm( 
+"	      004c46ce    mov eax,[ebp-0Ch]"
+"	      004c46d1    push eax"
+"	      004c46d2    call 00572630h"
+"	      004c46d7    add esp,4"
+"	      004c46da    mov [ebp-10h],eax"
+);
+// LINE 121:
+	asm( 
+"	      004c46dd    push 0"
+"	      004c46df    push 0"
+"	      004c46e1    mov eax,[ebp-0Ch]"
+"	      004c46e4    push eax"
+"	      004c46e5    call 00572470h"
+"	      004c46ea    add esp,0Ch"
+);
+// LINE 123:
+	asm( 
+"	      004c46ed    lea eax,[ebp-14h]"
+"	      004c46f0    push eax"
+"	      004c46f1    mov eax,[ebp-0Ch]"
+"	      004c46f4    push eax"
+"	      004c46f5    call 004C55F2h"
+"	      004c46fa    add esp,8"
+"	      004c46fd    movzx eax,ax"
+"	      004c4700    test eax,eax"
+"	      004c4702    jne near ptr 004C4714h"
+);
+// LINE 124:
+	asm( 
+"	      004c4708    mov dword ptr [ebp-18h],0"
+);
+// LINE 125:
+	asm( 
+"	      004c470f    jmp near ptr 004C4805h"
+);
+// LINE 128:
+	asm( 
+"	      004c4714    mov dword ptr [ebp-18h],1"
+);
+// LINE 129:
+	asm( 
+"	      004c471b    mov dword ptr [ebp-1Ch],4"
+);
+// LINE 132:
+	asm( 
+"	      004c4722    mov eax,[ebp-0Ch]"
+"	      004c4725    push eax"
+"	      004c4726    push 1"
+"	      004c4728    push 4"
+"	      004c472a    lea eax,[ebp-4]"
+"	      004c472d    push eax"
+"	      004c472e    call 00572960h"
+"	      004c4733    add esp,10h"
+"	      004c4736    test eax,eax"
+"	      004c4738    jne near ptr 004C474Ah"
+);
+// LINE 133:
+	asm( 
+"	      004c473e    mov dword ptr [ebp-18h],0"
+);
+// LINE 134:
+	asm( 
+"	      004c4745    jmp near ptr 004C4805h"
+);
+// LINE 136:
+	asm( 
+"	      004c474a    mov eax,[ebp-4]"
+"	      004c474d    push eax"
+"	      004c474e    call 004C838Eh"
+"	      004c4753    add esp,4"
+"	      004c4756    mov [ebp-4],eax"
+);
+// LINE 138:
+	asm( 
+"	      004c4759    mov eax,[ebp-0Ch]"
+"	      004c475c    push eax"
+"	      004c475d    push 1"
+"	      004c475f    push 4"
+"	      004c4761    lea eax,[ebp-8]"
+"	      004c4764    push eax"
+"	      004c4765    call 00572960h"
+"	      004c476a    add esp,10h"
+"	      004c476d    test eax,eax"
+"	      004c476f    jne near ptr 004C4781h"
+);
+// LINE 139:
+	asm( 
+"	      004c4775    mov dword ptr [ebp-18h],0"
+);
+// LINE 140:
+	asm( 
+"	      004c477c    jmp near ptr 004C4805h"
+);
+// LINE 142:
+	asm( 
+"	      004c4781    mov eax,[ebp-8]"
+"	      004c4784    push eax"
+"	      004c4785    call 004C838Eh"
+"	      004c478a    add esp,4"
+"	      004c478d    mov [ebp-8],eax"
+);
+// LINE 143:
+	asm( 
+"	      004c4790    cmp dword ptr [ebp-8],0"
+"	      004c4794    jl near ptr 004C47B4h"
+"	      004c479a    mov eax,[ebp-0Ch]"
+"	      004c479d    push eax"
+"	      004c479e    call 00572630h"
+"	      004c47a3    add esp,4"
+"	      004c47a6    mov ecx,[ebp-8]"
+"	      004c47a9    add ecx,eax"
+"	      004c47ab    cmp ecx,[ebp-10h]"
+"	      004c47ae    jle near ptr 004C47C0h"
+);
+// LINE 144:
+	asm( 
+"	      004c47b4    mov dword ptr [ebp-18h],0"
+);
+// LINE 145:
+	asm( 
+"	      004c47bb    jmp near ptr 004C4805h"
+);
+// LINE 147:
+	asm( 
+"	      004c47c0    push 1"
+"	      004c47c2    mov eax,[ebp-8]"
+"	      004c47c5    push eax"
+"	      004c47c6    mov eax,[ebp-0Ch]"
+"	      004c47c9    push eax"
+"	      004c47ca    call 00572470h"
+"	      004c47cf    add esp,0Ch"
+"	      004c47d2    test eax,eax"
+"	      004c47d4    je near ptr 004C47E6h"
+);
+// LINE 148:
+	asm( 
+"	      004c47da    mov dword ptr [ebp-18h],0"
+);
+// LINE 149:
+	asm( 
+"	      004c47e1    jmp near ptr 004C4805h"
+);
+// LINE 152:
+	asm( 
+"	      004c47e6    mov eax,[ebp-8]"
+"	      004c47e9    add eax,8"
+"	      004c47ec    add [ebp-1Ch],eax"
+);
+// LINE 153:
+	asm( 
+"	      004c47ef    mov eax,[ebp-1Ch]"
+"	      004c47f2    cmp [ebp-14h],eax"
+"	      004c47f5    jg near ptr 004C4800h"
+);
+// LINE 154:
+	asm( 
+"	      004c47fb    jmp near ptr 004C4805h"
+);
+// LINE 155:
+	asm( 
+"	      004c4800    jmp near ptr 004C4722h"
+);
+// LINE 158:
+	asm( 
+"	      004c4805    mov eax,[ebp-0Ch]"
+"	      004c4808    push eax"
+"	      004c4809    call 0056D120h"
+"	      004c480e    add esp,4"
+);
+// LINE 159:
+	asm( 
+"	      004c4811    mov eax,[ebp-18h]"
+"	      004c4814    jmp near ptr 004C4819h"
+);
+// LINE 160:
+	asm( 
+"	      004c4819    pop edi"
+"	      004c481a    pop esi"
+"	      004c481b    pop ebx"
+"	      004c481c    leave"
+"	      004c481d    ret"
+);
+}
+
 // FUNCTION: COPTER_D 0x004c481e
 short S2CityGetCityNameFromFile() {
 // LINE 180:
@@ -9270,5 +9492,3 @@ void compress_spaces() {
 // S_ptr5
 // LOCAL: COPTER_D 0x0006f9d4
 // S_ptr4
-// LOCAL: COPTER_D 0x0006f9d8
-// root

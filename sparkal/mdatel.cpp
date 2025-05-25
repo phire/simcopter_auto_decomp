@@ -1406,11 +1406,11 @@ class ostream& operator<<() {
 // Contribution: 2:000003d0-000003e7 Module: 72, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x000003d0
 // ??_7MDateLocalized@@6B@
-// GLOBAL: COPTER_D 0x000003e8
-// ??_7MDate@@6B@
 
 
 // Contribution: 2:000003e8-000003ef Module: 72, 8 byte alignment, initialized_data, (comdat), read, 
+// GLOBAL: COPTER_D 0x000003e8
+// ??_7MDate@@6B@
 
 
 // Contribution: 3:00000298-00000317 Module: 72, 4 byte alignment, initialized_data, read, write, 

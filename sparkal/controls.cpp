@@ -18411,21 +18411,21 @@ void PopupMenuWindow::ResizeWindowToFitMenuItems() {
 // Contribution: 2:00002ee8-00002fbf Module: 5, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00002ee8
 // ??_7SliderWindow@@6B@
-// GLOBAL: COPTER_D 0x00002fc0
-// ??_7ScrollBarWindow@@6B@
 
 
 // Contribution: 2:00002fc0-000030c7 Module: 5, 8 byte alignment, initialized_data, (comdat), read, 
+// GLOBAL: COPTER_D 0x00002fc0
+// ??_7ScrollBarWindow@@6B@
 
 
 // Contribution: 2:000030c8-0000321f Module: 5, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x000030c8
 // ??_7ListBoxWindow@@6B@
-// GLOBAL: COPTER_D 0x00003220
-// ??_7PopupMenuWindow@@6B@
 
 
 // Contribution: 2:00003220-0000337b Module: 5, 8 byte alignment, initialized_data, (comdat), read, 
+// GLOBAL: COPTER_D 0x00003220
+// ??_7PopupMenuWindow@@6B@
 
 
 // Contribution: 3:00003ba0-00003c2e Module: 5, 4 byte alignment, initialized_data, read, write, 
@@ -18450,25 +18450,23 @@ void PopupMenuWindow::ResizeWindowToFitMenuItems() {
 // Contribution: 3:00003c30-00003c33 Module: 5, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00003c30
 // list<RadioButtonWindow *>::number_of_lists
+
+
+// Contribution: 3:00003c34-00003c37 Module: 5, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00003c34
 // list<RadioButtonWindow *>::last
 
 
-// Contribution: 3:00003c34-00003c37 Module: 5, 4 byte alignment, initialized_data, (comdat), read, write, 
+// Contribution: 3:00003c38-00003c3b Module: 5, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00003c38
 // list<RadioButtonWindow *>::next_avail
 
 
-// Contribution: 3:00003c38-00003c3b Module: 5, 4 byte alignment, initialized_data, (comdat), read, write, 
+// Contribution: 3:00003c3c-00003c3f Module: 5, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00003c3c
 // list<RadioButtonWindow *>::free_list
-
-
-// Contribution: 3:00003c3c-00003c3f Module: 5, 4 byte alignment, initialized_data, (comdat), read, write, 
 
 
 // Contribution: 3:00003c40-00003c43 Module: 5, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00003c40
 // list<RadioButtonWindow *>::buffer_list
-// GLOBAL: COPTER_D 0x00003c44
-// SZ_HOURGLASS_VIDEO_FILE_NAME

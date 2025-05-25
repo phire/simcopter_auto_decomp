@@ -1008,8 +1008,6 @@ void Behavior::GetClassNameA(short, unsigned char *) {
 // Contribution: 2:000046d8-000046e7 Module: 191, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x000046d8
 // ??_7Behavior@@6B@
-// GLOBAL: COPTER_D 0x000046e8
-// ??_7YObjLang@@6B@
 
 
 // Contribution: 3:00027510-00027627 Module: 191, 4 byte alignment, initialized_data, read, write, 

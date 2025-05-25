@@ -4090,6 +4090,8 @@ public: virtual int __thiscall CGameApp::HaveAnyJoysticksChangedSinceLastPlay(vo
 
 
 // Contribution: 3:0000006c-00000083 Module: 28, 4 byte alignment, initialized_data, read, write, 
+// LOCAL: COPTER_D 0x0000006c
+// $S119
 // LOCAL: COPTER_D 0x00000070
 // $S124
 // LOCAL: COPTER_D 0x00000074
@@ -4100,8 +4102,6 @@ public: virtual int __thiscall CGameApp::HaveAnyJoysticksChangedSinceLastPlay(vo
 // $S139
 // LOCAL: COPTER_D 0x00000080
 // $S144
-// LOCAL: COPTER_D 0x00000084
-// $S3
 
 
 // Contribution: 3:00002bbc-00002d72 Module: 28, 4 byte alignment, initialized_data, read, write, 
@@ -4118,14 +4118,16 @@ public: virtual int __thiscall CGameApp::HaveAnyJoysticksChangedSinceLastPlay(vo
 // Contribution: 3:00002d74-00002d77 Module: 28, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00002d74
 // list<CopterGameMode>::number_of_lists
+
+
+// Contribution: 3:00002d78-00002d7c Module: 28, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00002d78
 // ??_C@_04JEFE@2?40y?$AA@
 
 
-// Contribution: 3:00002d78-00002d7c Module: 28, 4 byte alignment, initialized_data, (comdat), read, write, 
-
-
 // Contribution: 3:0006d450-0006d817 Module: 28, 8 byte alignment, uninitialized_data, read, write, 
+// GLOBAL: COPTER_D 0x0006d450
+// gSoundQueue
 // GLOBAL: COPTER_D 0x0006d480
 // gCopterRadio
 // GLOBAL: COPTER_D 0x0006d530
@@ -4136,5 +4138,3 @@ public: virtual int __thiscall CGameApp::HaveAnyJoysticksChangedSinceLastPlay(vo
 // gSoundManager
 // GLOBAL: COPTER_D 0x0006d808
 // gCopterPalette
-// GLOBAL: COPTER_D 0x0006d818
-// gModeList

@@ -3525,5 +3525,3 @@ short _cArray::GetLoadedIndex(class ResFile*, unsigned long) {
 // Contribution: 3:000a1998-000a1b97 Module: 180, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x000a1998
 // _cArray::fsLoaded
-// LOCAL: COPTER_D 0x000a1b98
-// __InitCerr

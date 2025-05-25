@@ -1549,8 +1549,6 @@ void FireEngineClass::LoadSaveData(struct _AUTO_LOAD_SAVE*) {
 // Contribution: 2:000042a8-000042cf Module: 159, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x000042a8
 // ??_7FireEngineClass@@6B@
-// LOCAL: COPTER_D 0x000042d0
-// TILUT
 
 
 // Contribution: 3:00020dc8-00020eac Module: 159, 4 byte alignment, initialized_data, read, write, 

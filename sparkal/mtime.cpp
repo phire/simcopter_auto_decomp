@@ -1433,6 +1433,8 @@ class ostream& operator<<() {
 
 
 // Contribution: 3:00000028-00000033 Module: 58, 4 byte alignment, initialized_data, read, write, 
+// LOCAL: COPTER_D 0x00000028
+// $S15
 // LOCAL: COPTER_D 0x0000002c
 // $S18
 // LOCAL: COPTER_D 0x00000030

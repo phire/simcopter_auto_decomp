@@ -343,6 +343,8 @@ void YObjLang::GetNodeText(class Behavior*, struct Behavior::Node*, unsigned cha
 
 
 // Contribution: 2:000046e8-000046fb Module: 190, 8 byte alignment, initialized_data, (comdat), read, 
+// GLOBAL: COPTER_D 0x000046e8
+// ??_7YObjLang@@6B@
 
 
 // Contribution: 2:00004700-00004713 Module: 190, 8 byte alignment, initialized_data, (comdat), read, 

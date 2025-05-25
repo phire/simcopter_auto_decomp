@@ -4561,18 +4561,16 @@ int32_t UserMenuWindow::GetLineCount() {
 // Contribution: 2:000022f8-000023df Module: 13, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x000022f8
 // ??_7UserMenuWindow@@6B@
-// GLOBAL: COPTER_D 0x000023e0
-// ??_7CopterMainMenu@@6B@
 
 
 // Contribution: 2:000023e0-000024c7 Module: 13, 8 byte alignment, initialized_data, (comdat), read, 
+// GLOBAL: COPTER_D 0x000023e0
+// ??_7CopterMainMenu@@6B@
 
 
 // Contribution: 2:000024c8-000025af Module: 13, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x000024c8
 // ??_7CopterPlayMenu@@6B@
-// GLOBAL: COPTER_D 0x000025b0
-// ??_7ScreenBuffer@@6B@
 
 
 // Contribution: 3:000032d0-0000333e Module: 13, 4 byte alignment, initialized_data, read, write, 

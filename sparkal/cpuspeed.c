@@ -933,5 +933,3 @@ unsigned long NormFreq() {
 // Contribution: 3:00001f28-00001f57 Module: 48, 8 byte alignment, initialized_data, read, write, 
 // LOCAL: COPTER_D 0x00001f28
 // processor_cycles
-// GLOBAL: COPTER_D 0x00001f58
-// SZ_RADIO_COMPASS_WINDOW_IMAGE_FILE_NAME

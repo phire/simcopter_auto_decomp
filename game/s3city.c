@@ -19068,5 +19068,3 @@ void S3CityCreateHeliBase() {
 // S_world_eye
 // LOCAL: COPTER_D 0x000934f8
 // S_last_pos
-// LOCAL: COPTER_D 0x00093500
-// S_h1

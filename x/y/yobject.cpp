@@ -19702,15 +19702,17 @@ public: virtual __thiscall ResFile::~ResFile(void) {
 
 
 // Contribution: 1:00151a70-00151a8f Module: 200, 16 byte alignment, code, (comdat), execute, read, 
+
+
+// Contribution: 1:00151a90-00151b0f Module: 200, 16 byte alignment, code, (comdat), execute, read, 
 // FUNCTION: COPTER_D 0x00552a90
 // cAvatar::`scalar deleting destructor'
 
 
 
-// Contribution: 1:00151a90-00151b0f Module: 200, 16 byte alignment, code, (comdat), execute, read, 
-
-
 // Contribution: 2:00004508-00004517 Module: 200, 8 byte alignment, initialized_data, (comdat), read, 
+// GLOBAL: COPTER_D 0x00004508
+// ??_7FlatResFile@@6B@
 
 
 // Contribution: 2:00004518-00004527 Module: 200, 8 byte alignment, initialized_data, (comdat), read, 
@@ -19719,11 +19721,11 @@ public: virtual __thiscall ResFile::~ResFile(void) {
 
 
 // Contribution: 2:00004528-0000458f Module: 200, 8 byte alignment, initialized_data, read, 
-// GLOBAL: COPTER_D 0x00004590
-// ??_7cAvatar@@6BYObjLang@@@
 
 
 // Contribution: 2:00004590-000045a3 Module: 200, 8 byte alignment, initialized_data, (comdat), read, 
+// GLOBAL: COPTER_D 0x00004590
+// ??_7cAvatar@@6BYObjLang@@@
 
 
 // Contribution: 2:000045a8-000045c3 Module: 200, 8 byte alignment, initialized_data, (comdat), read, 
@@ -19760,8 +19762,6 @@ public: virtual __thiscall ResFile::~ResFile(void) {
 // $S82
 // LOCAL: COPTER_D 0x000000b8
 // $S87
-// GLOBAL: COPTER_D 0x000000bc
-// __xc_z
 
 
 // Contribution: 3:00021644-00024974 Module: 200, 4 byte alignment, initialized_data, read, write, 
@@ -19853,26 +19853,26 @@ public: virtual __thiscall ResFile::~ResFile(void) {
 // Contribution: 3:00024a34-00024a53 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00024a34
 // ??_C@_0CA@JOHG@out?9of?9range?5scurkID?5for?5a?5tile?$AA@
+
+
+// Contribution: 3:00024a54-00024a7b Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00024a54
 // ??_C@_0CI@FJMN@must?5set?5cell?5location?5before?5wa@
 
 
-// Contribution: 3:00024a54-00024a7b Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
+// Contribution: 3:00024a7c-00024a9b Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00024a7c
 // ??_C@_0CA@BGFC@how?8d?5you?5wake?5up?5past?5the?5max?$DP?$AA@
-
-
-// Contribution: 3:00024a7c-00024a9b Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
 
 
 // Contribution: 3:00024a9c-00024abb Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00024a9c
 // ??_C@_0CA@MKGD@trying?5to?5wake?5up?5already?5awake?$AA@
-// GLOBAL: COPTER_D 0x00024abc
-// ??_C@_0BF@KBDF@y?5and?5x?5out?5of?5sync?$DP?$AA@
 
 
 // Contribution: 3:00024abc-00024ad0 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
+// GLOBAL: COPTER_D 0x00024abc
+// ??_C@_0BF@KBDF@y?5and?5x?5out?5of?5sync?$DP?$AA@
 
 
 // Contribution: 3:00024ad4-00024ae8 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
@@ -19883,11 +19883,11 @@ public: virtual __thiscall ResFile::~ResFile(void) {
 // Contribution: 3:00024aec-00024b17 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00024aec
 // ??_C@_0CM@FHJC@why?5positioning?5unlinked?5object?5@
-// GLOBAL: COPTER_D 0x00024b18
-// ??_C@_0BJ@LCNK@rxn?5tree?5id?5out?5of?5range?$AA@
 
 
 // Contribution: 3:00024b18-00024b30 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
+// GLOBAL: COPTER_D 0x00024b18
+// ??_C@_0BJ@LCNK@rxn?5tree?5id?5out?5of?5range?$AA@
 
 
 // Contribution: 3:00024b34-00024b72 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 

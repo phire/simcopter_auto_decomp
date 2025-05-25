@@ -665,6 +665,8 @@ unsigned long CSparkalApp::FinishGame() {
 
 
 // Contribution: 3:00000424-0000042e Module: 69, 4 byte alignment, initialized_data, (comdat), read, write, 
+// GLOBAL: COPTER_D 0x00000424
+// ??_C@_0L@JPFL@?$CIint?$CJpPool?$AA@
 
 
 // Contribution: 3:00000430-00000442 Module: 69, 4 byte alignment, initialized_data, (comdat), read, write, 
@@ -675,11 +677,11 @@ unsigned long CSparkalApp::FinishGame() {
 // Contribution: 3:00000444-00000467 Module: 69, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00000444
 // ??_C@_0CE@KOME@C?3?2Copter?2source?2sparkal?2memory?4@
-// GLOBAL: COPTER_D 0x00000468
-// ??_C@_09IHHC@?$CIint?$CJPool?$AA@
 
 
 // Contribution: 3:00000468-00000471 Module: 69, 4 byte alignment, initialized_data, (comdat), read, write, 
+// GLOBAL: COPTER_D 0x00000468
+// ??_C@_09IHHC@?$CIint?$CJPool?$AA@
 
 
 // Contribution: 3:00000474-00000483 Module: 69, 4 byte alignment, initialized_data, (comdat), read, write, 

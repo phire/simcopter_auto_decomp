@@ -5929,6 +5929,8 @@ void S3MapGetDxDy() {
 
 
 // Contribution: 2:00003ab0-00003cbf Module: 172, 8 byte alignment, initialized_data, read, 
+// LOCAL: COPTER_D 0x00003ab0
+// TurnTable3
 // LOCAL: COPTER_D 0x00003b30
 // TurnTable2
 // LOCAL: COPTER_D 0x00003b70
@@ -5986,11 +5988,11 @@ void S3MapGetDxDy() {
 // S_save_width
 // LOCAL: COPTER_D 0x0001e298
 // S_mapzoom
-// LOCAL: COPTER_D 0x0001e2c4
-// lastSpeederID
 
 
 // Contribution: 3:00071bc8-00071c23 Module: 172, 8 byte alignment, uninitialized_data, read, write, 
+// LOCAL: COPTER_D 0x00071bc8
+// S_dicon_dim
 // LOCAL: COPTER_D 0x00071bd0
 // S_icons
 // LOCAL: COPTER_D 0x00071bf0

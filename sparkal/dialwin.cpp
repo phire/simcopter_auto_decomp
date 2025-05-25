@@ -11295,6 +11295,8 @@ void EquipmentPanelWindow::CreateMegaphoneSelectionPopupWindow() {
 
 
 // Contribution: 3:00001f58-000020e0 Module: 47, 8 byte alignment, initialized_data, read, write, 
+// GLOBAL: COPTER_D 0x00001f58
+// SZ_RADIO_COMPASS_WINDOW_IMAGE_FILE_NAME
 // GLOBAL: COPTER_D 0x00001f5c
 // SZ_COMPASS_IMAGE_FILE_NAME
 // GLOBAL: COPTER_D 0x00001f60

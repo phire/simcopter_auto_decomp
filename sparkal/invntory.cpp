@@ -3016,6 +3016,8 @@ void InventoryWindow::GetTitleAndAddressRects(class MRect&, class MRect&, class 
 
 
 // Contribution: 3:00003984-000039d1 Module: 8, 4 byte alignment, initialized_data, read, write, 
+// GLOBAL: COPTER_D 0x00003984
+// SZ_INVENTORY_IMAGE_FILE_NAME
 // GLOBAL: COPTER_D 0x00003988
 // SZ_INVENTORY_CHECKMARK_IMAGE_FILE_NAME
 // GLOBAL: COPTER_D 0x0000398c

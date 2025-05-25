@@ -7511,6 +7511,8 @@ int32_t S3ObjectPrecisionAlt() {
 
 
 // Contribution: 3:00093500-00093527 Module: 169, 4 byte alignment, uninitialized_data, read, write, 
+// LOCAL: COPTER_D 0x00093500
+// S_h1
 // LOCAL: COPTER_D 0x00093504
 // S_h2
 // LOCAL: COPTER_D 0x00093508

@@ -789,11 +789,13 @@ int32_t Keyboard::IsToggleKeySet(unsigned char) {
 
 
 // Contribution: 3:00000024-00000027 Module: 62, 4 byte alignment, initialized_data, read, write, 
-// LOCAL: COPTER_D 0x00000028
-// $S15
+// LOCAL: COPTER_D 0x00000024
+// $S5
 
 
 // Contribution: 3:00001350-0000136a Module: 62, 8 byte alignment, initialized_data, read, write, 
 
 
 // Contribution: 3:0002c4f0-0002c5ff Module: 62, 8 byte alignment, uninitialized_data, read, write, 
+// GLOBAL: COPTER_D 0x0002c4f0
+// gKeyboard

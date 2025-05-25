@@ -9753,11 +9753,11 @@ int32_t ScreenWindow::DrawSelf() {
 // Contribution: 2:00002648-0000267f Module: 9, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00002648
 // ??_7GraphicWindowManager@@6B@
-// GLOBAL: COPTER_D 0x00002680
-// ??_7GraphicWindow@@6B@
 
 
 // Contribution: 2:00002680-00002743 Module: 9, 8 byte alignment, initialized_data, (comdat), read, 
+// GLOBAL: COPTER_D 0x00002680
+// ??_7GraphicWindow@@6B@
 
 
 // Contribution: 2:00002748-0000280b Module: 9, 8 byte alignment, initialized_data, (comdat), read, 
@@ -9766,6 +9766,8 @@ int32_t ScreenWindow::DrawSelf() {
 
 
 // Contribution: 3:00000090-0000009f Module: 9, 4 byte alignment, initialized_data, read, write, 
+// LOCAL: COPTER_D 0x00000090
+// $S49
 // LOCAL: COPTER_D 0x00000094
 // $S54
 // LOCAL: COPTER_D 0x00000098
@@ -9786,28 +9788,26 @@ int32_t ScreenWindow::DrawSelf() {
 // Contribution: 3:00003970-00003973 Module: 9, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00003970
 // list<GraphicWindow *>::number_of_lists
+
+
+// Contribution: 3:00003974-00003977 Module: 9, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00003974
 // list<GraphicWindow *>::last
 
 
-// Contribution: 3:00003974-00003977 Module: 9, 4 byte alignment, initialized_data, (comdat), read, write, 
+// Contribution: 3:00003978-0000397b Module: 9, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00003978
 // list<GraphicWindow *>::next_avail
 
 
-// Contribution: 3:00003978-0000397b Module: 9, 4 byte alignment, initialized_data, (comdat), read, write, 
+// Contribution: 3:0000397c-0000397f Module: 9, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0000397c
 // list<GraphicWindow *>::free_list
 
 
-// Contribution: 3:0000397c-0000397f Module: 9, 4 byte alignment, initialized_data, (comdat), read, write, 
+// Contribution: 3:00003980-00003983 Module: 9, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00003980
 // list<GraphicWindow *>::buffer_list
-
-
-// Contribution: 3:00003980-00003983 Module: 9, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: COPTER_D 0x00003984
-// SZ_INVENTORY_IMAGE_FILE_NAME
 
 
 // Contribution: 3:0006f960-0006f9a7 Module: 9, 8 byte alignment, uninitialized_data, read, write, 

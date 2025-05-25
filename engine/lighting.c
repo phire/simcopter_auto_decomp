@@ -1758,6 +1758,8 @@ void VRFaceSetColor() {
 
 
 // Contribution: 3:00016c10-00016d6b Module: 132, 8 byte alignment, initialized_data, read, write, 
+// GLOBAL: COPTER_D 0x00016c10
+// G_shadetab
 // GLOBAL: COPTER_D 0x00016d30
 // G_litevect1
 // GLOBAL: COPTER_D 0x00016d40
@@ -1779,5 +1781,3 @@ void VRFaceSetColor() {
 // S_texres
 // LOCAL: COPTER_D 0x0006fa78
 // S_ctrs
-// GLOBAL: COPTER_D 0x0006fe78
-// gLogManager

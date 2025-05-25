@@ -12609,6 +12609,8 @@ int32_t TrainClass::MIFFSave(void * __ptr32) {
 
 
 // Contribution: 3:000000ac-000000af Module: 162, 4 byte alignment, initialized_data, read, write, 
+// LOCAL: COPTER_D 0x000000ac
+// $S8
 
 
 // Contribution: 3:00020830-00020bb3 Module: 162, 8 byte alignment, initialized_data, read, write, 

@@ -5,6 +5,9 @@
 
 
 // Contribution: 1:0004f050-0005f979 Module: 45, 16 byte alignment, code, execute, read, 
+// FUNCTION: COPTER_D 0x00450050
+// $E66
+
 // FUNCTION: COPTER_D 0x00450065
 // $E65
 
@@ -20915,11 +20918,11 @@ long CheckupWindow::DoKeyDown(long, char) {
 
 
 // Contribution: 2:00000db0-00000dcf Module: 45, 8 byte alignment, initialized_data, read, 
-// GLOBAL: COPTER_D 0x00000dd0
-// ??_7CitySettingsWindow@@6B@
 
 
 // Contribution: 2:00000dd0-00000e93 Module: 45, 8 byte alignment, initialized_data, (comdat), read, 
+// GLOBAL: COPTER_D 0x00000dd0
+// ??_7CitySettingsWindow@@6B@
 
 
 // Contribution: 2:00000e98-00000ff7 Module: 45, 8 byte alignment, initialized_data, (comdat), read, 
@@ -20953,6 +20956,8 @@ long CheckupWindow::DoKeyDown(long, char) {
 
 
 // Contribution: 3:00000044-00000053 Module: 45, 4 byte alignment, initialized_data, read, write, 
+// LOCAL: COPTER_D 0x00000044
+// $S67
 // LOCAL: COPTER_D 0x00000048
 // $S70
 // LOCAL: COPTER_D 0x0000004c
@@ -21004,11 +21009,11 @@ long CheckupWindow::DoKeyDown(long, char) {
 // SZ_CHECKUP_WINDOW_IMAGE_FILE_NAME
 // GLOBAL: COPTER_D 0x0000218c
 // SZ_CHECKUP_SLIDER_IMAGE_FILE_NAME
-// GLOBAL: COPTER_D 0x00002284
-// SZ_SMACKER_INTRO_FILE_NAME
 
 
 // Contribution: 3:0006cab0-0006cabf Module: 45, 4 byte alignment, uninitialized_data, read, write, 
+// LOCAL: COPTER_D 0x0006cab0
+// colorTextGamePaletteNormal
 // LOCAL: COPTER_D 0x0006cab4
 // colorTextCheckupHighlighted
 // LOCAL: COPTER_D 0x0006cab8

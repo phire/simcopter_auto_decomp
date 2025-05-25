@@ -2079,6 +2079,8 @@ int32_t DoRoadTilesConnect() {
 
 
 // Contribution: 2:00004338-0000442f Module: 157, 8 byte alignment, initialized_data, read, 
+// LOCAL: COPTER_D 0x00004338
+// OT
 // LOCAL: COPTER_D 0x00004378
 // RRT
 // LOCAL: COPTER_D 0x000043b8

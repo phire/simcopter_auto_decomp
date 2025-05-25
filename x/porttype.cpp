@@ -1264,5 +1264,3 @@ void RGBBackColor() {
 // Contribution: 3:00028638-000286d3 Module: 182, 8 byte alignment, initialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00028638
 // gPort
-// GLOBAL: COPTER_D 0x000286d4
-// cCopterAnim::fsList

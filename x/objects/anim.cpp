@@ -217,9 +217,13 @@ void cCopterAnim::InstallArrayPointers(unsigned short) {
 
 
 // Contribution: 2:00004a30-00004a33 Module: 181, 4 byte alignment, initialized_data, (comdat), read, 
+// GLOBAL: COPTER_D 0x00004a30
+// ??_7?$cArray@UPrivAnimPartInfo@@@@6B@
 
 
 // Contribution: 2:000071b0-000071df Module: 181, 8 byte alignment, initialized_data, read, 
 
 
 // Contribution: 3:000286d4-0002874b Module: 181, 4 byte alignment, initialized_data, read, write, 
+// GLOBAL: COPTER_D 0x000286d4
+// cCopterAnim::fsList

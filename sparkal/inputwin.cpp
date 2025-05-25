@@ -16166,11 +16166,11 @@ void ControlDisplayWindow::AppendKeysString(class basic_string<char>&, long, lon
 // Contribution: 2:00000140-00000227 Module: 75, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00000140
 // ??_7JoystickWindow@@6B@
-// GLOBAL: COPTER_D 0x00000228
-// ??_7UserInputWindow@@6B@
 
 
 // Contribution: 2:00000228-000002fb Module: 75, 8 byte alignment, initialized_data, (comdat), read, 
+// GLOBAL: COPTER_D 0x00000228
+// ??_7UserInputWindow@@6B@
 
 
 // Contribution: 2:00000300-000003c7 Module: 75, 8 byte alignment, initialized_data, (comdat), read, 
@@ -16218,51 +16218,51 @@ void ControlDisplayWindow::AppendKeysString(class basic_string<char>&, long, lon
 // Contribution: 3:000001bc-000001bf Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x000001bc
 // list<KeyColors>::number_of_lists
+
+
+// Contribution: 3:000001c0-000001c3 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x000001c0
 // list<KeyColors>::last
 
 
-// Contribution: 3:000001c0-000001c3 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
+// Contribution: 3:000001c4-000001c7 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x000001c4
 // list<KeyColors>::next_avail
 
 
-// Contribution: 3:000001c4-000001c7 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
+// Contribution: 3:000001c8-000001cb Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x000001c8
 // list<KeyColors>::free_list
-
-
-// Contribution: 3:000001c8-000001cb Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 
 
 // Contribution: 3:000001cc-000001cf Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x000001cc
 // list<HotSpot>::number_of_lists
+
+
+// Contribution: 3:000001d0-000001d3 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x000001d0
 // list<HotSpot>::last
 
 
-// Contribution: 3:000001d0-000001d3 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
+// Contribution: 3:000001d4-000001d7 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x000001d4
 // list<HotSpot>::next_avail
 
 
-// Contribution: 3:000001d4-000001d7 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
+// Contribution: 3:000001d8-000001db Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x000001d8
 // list<HotSpot>::free_list
 
 
-// Contribution: 3:000001d8-000001db Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
+// Contribution: 3:000001dc-000001df Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x000001dc
 // list<HotSpot>::buffer_list
 
 
-// Contribution: 3:000001dc-000001df Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
+// Contribution: 3:000001e0-000001e3 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x000001e0
 // list<KeyColors>::buffer_list
-
-
-// Contribution: 3:000001e0-000001e3 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 
 
 // Contribution: 3:000001e4-000001fd Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
@@ -16273,46 +16273,46 @@ void ControlDisplayWindow::AppendKeysString(class basic_string<char>&, long, lon
 // Contribution: 3:00000200-00000203 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00000200
 // ??_C@_03LNFH@?$CI?$CB?$CJ?$AA@
+
+
+// Contribution: 3:00000204-00000207 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00000204
 // list<StringIDAssociation>::number_of_lists
 
 
-// Contribution: 3:00000204-00000207 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
+// Contribution: 3:00000208-0000020b Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00000208
 // list<StringIDAssociation>::last
 
 
-// Contribution: 3:00000208-0000020b Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
+// Contribution: 3:0000020c-0000020f Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0000020c
 // list<StringIDAssociation>::next_avail
-
-
-// Contribution: 3:0000020c-0000020f Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 
 
 // Contribution: 3:00000210-00000213 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00000210
 // list<StringIDAssociation>::free_list
+
+
+// Contribution: 3:00000214-00000217 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00000214
 // list<StringIDAssociation>::buffer_list
 
 
-// Contribution: 3:00000214-00000217 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
+// Contribution: 3:00000218-0000021b Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00000218
 // list<Shortcut>::number_of_lists
 
 
-// Contribution: 3:00000218-0000021b Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
+// Contribution: 3:0000021c-0000021f Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0000021c
 // list<Shortcut>::last
 
 
-// Contribution: 3:0000021c-0000021f Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
+// Contribution: 3:00000220-00000223 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00000220
 // list<Shortcut>::next_avail
-
-
-// Contribution: 3:00000220-00000223 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 
 
 // Contribution: 3:00000224-00000227 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
@@ -16323,41 +16323,41 @@ void ControlDisplayWindow::AppendKeysString(class basic_string<char>&, long, lon
 // Contribution: 3:00000228-0000022b Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00000228
 // list<Shortcut>::buffer_list
+
+
+// Contribution: 3:0000022c-0000024b Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0000022c
 // ??_C@_0CA@KCID@Out?5of?5range?5exception?5occurred?$AA@
 
 
-// Contribution: 3:0000022c-0000024b Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
+// Contribution: 3:0000024c-0000024f Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0000024c
 // rb_tree<long,long,ident<long,long>,less<long>>::NIL
-
-
-// Contribution: 3:0000024c-0000024f Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 
 
 // Contribution: 3:00000250-00000253 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00000250
 // rb_tree<long,long,ident<long,long>,less<long>>::number_of_trees
-// GLOBAL: COPTER_D 0x00000254
-// rb_tree<long,long,ident<long,long>,less<long>>::last
 
 
 // Contribution: 3:00000254-00000257 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
+// GLOBAL: COPTER_D 0x00000254
+// rb_tree<long,long,ident<long,long>,less<long>>::last
 
 
 // Contribution: 3:00000258-0000025b Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00000258
 // rb_tree<long,long,ident<long,long>,less<long>>::next_avail
+
+
+// Contribution: 3:0000025c-0000025f Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0000025c
 // rb_tree<long,long,ident<long,long>,less<long>>::free_list
 
 
-// Contribution: 3:0000025c-0000025f Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
+// Contribution: 3:00000260-00000263 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00000260
 // rb_tree<long,long,ident<long,long>,less<long>>::buffer_list
-
-
-// Contribution: 3:00000260-00000263 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
 
 
 // Contribution: 3:0002b790-0002b797 Module: 75, 4 byte alignment, uninitialized_data, read, write, 
@@ -16365,5 +16365,3 @@ void ControlDisplayWindow::AppendKeysString(class basic_string<char>&, long, lon
 // colorTextGamePaletteNormal
 // GLOBAL: COPTER_D 0x0002b794
 // colorTextGamePaletteHighlighted
-// GLOBAL: COPTER_D 0x0002b798
-// ddCaps

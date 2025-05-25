@@ -232,8 +232,8 @@ unsigned long Random::operator()(unsigned long) {
 
 
 // Contribution: 3:00000084-00000087 Module: 22, 4 byte alignment, initialized_data, read, write, 
-// LOCAL: COPTER_D 0x00000088
-// $S33
+// LOCAL: COPTER_D 0x00000084
+// $S3
 
 
 // Contribution: 3:0006db18-0006dbfb Module: 22, 8 byte alignment, uninitialized_data, read, write, 

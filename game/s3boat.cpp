@@ -6898,8 +6898,8 @@ int32_t BoatClass::MIFFSave(void * __ptr32) {
 
 
 // Contribution: 3:000000a4-000000a7 Module: 164, 4 byte alignment, initialized_data, read, write, 
-// LOCAL: COPTER_D 0x000000a8
-// $S9
+// LOCAL: COPTER_D 0x000000a4
+// $S8
 
 
 // Contribution: 3:000203e8-00020664 Module: 164, 8 byte alignment, initialized_data, read, write, 

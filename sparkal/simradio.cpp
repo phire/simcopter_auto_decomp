@@ -8700,23 +8700,23 @@ protected: virtual int __thiscall Radio::DoesAtLeastOneSoundEntryExistForTheGive
 // Contribution: 3:00001560-00001563 Module: 59, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00001560
 // list<basic_string<char>>::number_of_lists
+
+
+// Contribution: 3:00001564-00001567 Module: 59, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00001564
 // list<basic_string<char>>::last
 
 
-// Contribution: 3:00001564-00001567 Module: 59, 4 byte alignment, initialized_data, (comdat), read, write, 
+// Contribution: 3:00001568-0000156b Module: 59, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00001568
 // list<basic_string<char>>::next_avail
 
 
-// Contribution: 3:00001568-0000156b Module: 59, 4 byte alignment, initialized_data, (comdat), read, write, 
+// Contribution: 3:0000156c-0000156f Module: 59, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x0000156c
 // list<basic_string<char>>::free_list
 
 
-// Contribution: 3:0000156c-0000156f Module: 59, 4 byte alignment, initialized_data, (comdat), read, write, 
+// Contribution: 3:00001570-00001573 Module: 59, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00001570
 // list<basic_string<char>>::buffer_list
-
-
-// Contribution: 3:00001570-00001573 Module: 59, 4 byte alignment, initialized_data, (comdat), read, write, 

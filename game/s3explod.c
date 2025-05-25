@@ -1641,16 +1641,14 @@ void S3ExplosionDriver() {
 // S_num_expls
 // LOCAL: COPTER_D 0x00020384
 // S_num_smoke
-// GLOBAL: COPTER_D 0x00020388
-// S_ftwk_douse_points
 
 
 // Contribution: 3:00093578-00094547 Module: 166, 8 byte alignment, uninitialized_data, read, write, 
+// LOCAL: COPTER_D 0x00093578
+// S_explosions
 // LOCAL: COPTER_D 0x00093988
 // S_spark_vectors
 // LOCAL: COPTER_D 0x00093a30
 // S_explseq
 // LOCAL: COPTER_D 0x00093a58
 // S_smoke
-// LOCAL: COPTER_D 0x00094548
-// lscfd

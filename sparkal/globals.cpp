@@ -30,8 +30,6 @@
 // $S5
 // LOCAL: COPTER_D 0x00000040
 // $S8
-// LOCAL: COPTER_D 0x00000044
-// $S67
 
 
 // Contribution: 3:00001e50-00001f13 Module: 51, 8 byte alignment, initialized_data, read, write, 
@@ -112,5 +110,3 @@
 // gFireStations
 // GLOBAL: COPTER_D 0x0002cab0
 // gScratchBuffer
-// LOCAL: COPTER_D 0x0006cab0
-// colorTextGamePaletteNormal

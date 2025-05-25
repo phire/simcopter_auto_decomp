@@ -2460,5 +2460,3 @@ int32_t MTCheapDist2D() {
 // Y_axis
 // GLOBAL: COPTER_D 0x00004518
 // Z_axis
-// GLOBAL: COPTER_D 0x00004524
-// G_alloc_curr

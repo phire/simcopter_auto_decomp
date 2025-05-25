@@ -2317,8 +2317,6 @@ class ostream& operator<<() {
 // DaysInMonth
 // LOCAL: COPTER_D 0x00003390
 // FirstDayOfEachMonth
-// GLOBAL: COPTER_D 0x000033c0
-// ??_7GameModeCoreData@@6B@
 
 
 // Contribution: 3:00003c98-00003ec1 Module: 2, 8 byte alignment, initialized_data, read, write, 

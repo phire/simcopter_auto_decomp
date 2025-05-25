@@ -7237,11 +7237,11 @@ void DigitalSound::StopCompletionNotificationEstimationTimer() {
 // Contribution: 2:00000448-00000457 Module: 64, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00000448
 // ??_7SoundManager@@6B@
-// GLOBAL: COPTER_D 0x00000458
-// ??_7Sound@@6B@
 
 
 // Contribution: 2:00000458-00000483 Module: 64, 8 byte alignment, initialized_data, (comdat), read, 
+// GLOBAL: COPTER_D 0x00000458
+// ??_7Sound@@6B@
 
 
 // Contribution: 2:00000488-00000513 Module: 64, 8 byte alignment, initialized_data, (comdat), read, 

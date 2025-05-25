@@ -4272,11 +4272,11 @@ int32_t ParseCommandLine() {
 // Contribution: 2:0000041c-0000041f Module: 70, 4 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x0000041c
 // ??_7?$class_debugger@VCDebugWindow@@$1?CDebugWindowhelp_text@@3PBDB$1?CDebugWindowusage_text@@3PBDB@@6B@
-// GLOBAL: COPTER_D 0x00000420
-// ??_7debug_command@@6B@
 
 
 // Contribution: 2:00000420-00000423 Module: 70, 4 byte alignment, initialized_data, (comdat), read, 
+// GLOBAL: COPTER_D 0x00000420
+// ??_7debug_command@@6B@
 
 
 // Contribution: 3:00000368-0000041d Module: 70, 4 byte alignment, initialized_data, read, write, 
@@ -4293,8 +4293,6 @@ int32_t ParseCommandLine() {
 // Contribution: 3:00000420-00000423 Module: 70, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00000420
 // deque<basic_string<char>>::buffer_size
-// GLOBAL: COPTER_D 0x00000424
-// ??_C@_0L@JPFL@?$CIint?$CJpPool?$AA@
 
 
 // Contribution: 3:0002b8d0-0002b917 Module: 70, 8 byte alignment, uninitialized_data, read, write, 

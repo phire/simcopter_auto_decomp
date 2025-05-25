@@ -1135,21 +1135,21 @@ void DeleteBodiesAndAnimations() {
 
 
 // Contribution: 2:00004640-0000464f Module: 192, 8 byte alignment, initialized_data, read, 
-// GLOBAL: COPTER_D 0x00004650
-// ??_7?$cBList@VcCopterBody@@@@6B@
 
 
 // Contribution: 2:00004650-00004653 Module: 192, 4 byte alignment, initialized_data, (comdat), read, 
+// GLOBAL: COPTER_D 0x00004650
+// ??_7?$cBList@VcCopterBody@@@@6B@
 
 
 // Contribution: 2:00004654-00004657 Module: 192, 4 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x00004654
 // ??_7?$cBList@VcCopterAnim@@@@6B@
-// GLOBAL: COPTER_D 0x00004658
-// ??_7cCopterAnim@@6B@
 
 
 // Contribution: 2:00004658-00004683 Module: 192, 8 byte alignment, initialized_data, (comdat), read, 
+// GLOBAL: COPTER_D 0x00004658
+// ??_7cCopterAnim@@6B@
 
 
 // Contribution: 2:00004688-000046ab Module: 192, 8 byte alignment, initialized_data, (comdat), read, 
@@ -1215,11 +1215,11 @@ void DeleteBodiesAndAnimations() {
 // Contribution: 3:000271bc-000271eb Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x000271bc
 // ??_C@_0DA@MJOK@make?5a?5new?5resfile?5and?5then?5it?8s@
-// GLOBAL: COPTER_D 0x000271ec
-// ??_C@_0CD@JLCJ@C?3?2Copter?2Source?2X?2Objects?2bList@
 
 
 // Contribution: 3:000271ec-0002720e Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
+// GLOBAL: COPTER_D 0x000271ec
+// ??_C@_0CD@JLCJ@C?3?2Copter?2Source?2X?2Objects?2bList@
 
 
 // Contribution: 3:00027210-0002722d Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
@@ -1295,11 +1295,11 @@ void DeleteBodiesAndAnimations() {
 // Contribution: 3:000273fc-0002744b Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x000273fc
 // ??_C@_0FA@GBAP@shouldn?8t?5destroy?5privanims?5one?5@
-// GLOBAL: COPTER_D 0x0002744c
-// ??_C@_0CB@EMHA@don?8t?5call?5IsDirty?5for?5privanims@
 
 
 // Contribution: 3:0002744c-0002746c Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
+// GLOBAL: COPTER_D 0x0002744c
+// ??_C@_0CB@EMHA@don?8t?5call?5IsDirty?5for?5privanims@
 
 
 // Contribution: 3:00027470-00027499 Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 

@@ -5632,11 +5632,11 @@ void S3SoundAddToQueue() {
 // Contribution: 2:000005c0-000005c7 Module: 52, 8 byte alignment, initialized_data, (comdat), read, 
 // GLOBAL: COPTER_D 0x000005c0
 // ??_7SoundChangeNotificationSink@@6B@
-// GLOBAL: COPTER_D 0x000005c8
-// ??_7NotificationSink@@6B@
 
 
 // Contribution: 2:000005c8-000005cb Module: 52, 4 byte alignment, initialized_data, (comdat), read, 
+// GLOBAL: COPTER_D 0x000005c8
+// ??_7NotificationSink@@6B@
 
 
 // Contribution: 2:000005d0-000005df Module: 52, 8 byte alignment, initialized_data, read, 
