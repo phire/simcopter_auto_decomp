@@ -6919,3 +6919,13 @@ int32_t BoatClass::MIFFSave(void * __ptr32) {
 // boats
 // LOCAL: COPTER_D 0x0062b6e4
 // $S5
+
+
+// Unknown globals:
+// The PDB was slightly corrupted and we aren't sure which file these globals belong to.
+// GLOBAL: COPTER_D 0x0066eb10
+// _G_texmap
+
+// WARNING: this global might actually belong to: C:\Copter\source\game\S3fire.c
+// GLOBAL: COPTER_D 0x0066eb10
+// G_texmap

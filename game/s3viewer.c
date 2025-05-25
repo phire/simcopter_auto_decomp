@@ -1404,3 +1404,71 @@ void S3SetDayNight() {
 // S_last_viewvect
 // LOCAL: COPTER_D 0x00606ea0
 // S_last_viewpos
+
+
+// Unknown globals:
+// The PDB was slightly corrupted and we aren't sure which file these globals belong to.
+
+// WARNING: this global might actually belong to: gridrend.asm
+// GLOBAL: COPTER_D 0x00662870
+// GridNSortFaces
+
+// WARNING: this global might actually belong to: gridrend.asm
+// GLOBAL: COPTER_D 0x00666390
+// GridNSortCells
+
+// WARNING: this global might actually belong to: gridrend.asm
+// GLOBAL: COPTER_D 0x006663a0
+// G_ViewSize
+
+// WARNING: this global might actually belong to: gridrend.asm
+// GLOBAL: COPTER_D 0x0066282c
+// G_gdpolys
+
+// WARNING: this global might actually belong to: gridrend.asm
+// GLOBAL: COPTER_D 0x0066635c
+// G_opolys
+
+// WARNING: this global might actually belong to: gridrend.asm
+// GLOBAL: COPTER_D 0x0066636c
+// G_odpolys
+// GLOBAL: COPTER_D 0x006c1328
+// _rFriction
+// GLOBAL: COPTER_D 0x006c1324
+// _theta
+// GLOBAL: COPTER_D 0x006c129c
+// _tVmax
+// GLOBAL: COPTER_D 0x006c1298
+// _tFrictionGnd
+// GLOBAL: COPTER_D 0x006c1294
+// _tForce
+// GLOBAL: COPTER_D 0x006c1290
+// _tFrictionAir
+// GLOBAL: COPTER_D 0x006c128c
+// _rForce
+// GLOBAL: COPTER_D 0x006c1288
+// _phi
+// GLOBAL: COPTER_D 0x006c1284
+// _rVmax
+
+// WARNING: this global might actually belong to: C:\Copter\Source\Game\s3msnlog.cpp
+// GLOBAL: COPTER_D 0x006c1324
+// theta
+
+// WARNING: this global might actually belong to: C:\Copter\Source\Game\s3msnlog.cpp
+// GLOBAL: COPTER_D 0x006c1288
+// phi
+// GLOBAL: COPTER_D 0x006c1328
+// rFriction
+// GLOBAL: COPTER_D 0x006c128c
+// rForce
+// GLOBAL: COPTER_D 0x006c1284
+// rVmax
+// GLOBAL: COPTER_D 0x006c1290
+// tFrictionAir
+// GLOBAL: COPTER_D 0x006c1298
+// tFrictionGnd
+// GLOBAL: COPTER_D 0x006c1294
+// tForce
+// GLOBAL: COPTER_D 0x006c129c
+// tVmax

@@ -1942,3 +1942,17 @@ void SetUserVars() {
 // G_InitializationProgress
 // GLOBAL: COPTER_D 0x005b4794
 // G_VRAppInitCalled
+
+
+// Unknown globals:
+// The PDB was slightly corrupted and we aren't sure which file these globals belong to.
+
+// WARNING: this global might actually belong to: C:\Copter\source\sparkal\gameapp1.cpp
+// GLOBAL: COPTER_D 0x0063a858
+// MainPoolIndex
+
+// WARNING: this global might actually belong to: C:\Copter\source\sparkal\gameapp1.cpp
+// GLOBAL: COPTER_D 0x0063a854
+// ScratchPoolIndex
+// GLOBAL: COPTER_D 0x006bf1d0
+// G_helidata

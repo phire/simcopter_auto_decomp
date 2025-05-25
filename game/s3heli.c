@@ -18118,3 +18118,27 @@ void S3HeliUserExit() {
 // S_turbslide
 // LOCAL: COPTER_D 0x00607290
 // S_turbpitch
+
+
+// Unknown globals:
+// The PDB was slightly corrupted and we aren't sure which file these globals belong to.
+
+// WARNING: this global might actually belong to: C:\Copter\source\game\S3city.c
+// GLOBAL: COPTER_D 0x006c1190
+// G_helibase
+// GLOBAL: COPTER_D 0x006c1200
+// _S_spotlevels
+// GLOBAL: COPTER_D 0x006bf1d0
+// _G_helidata
+// GLOBAL: COPTER_D 0x006bf1c0
+// _G_testloc
+// GLOBAL: COPTER_D 0x006bf1b8
+// _S_spotloc
+// GLOBAL: COPTER_D 0x006bf1b8
+// S_spotloc
+// GLOBAL: COPTER_D 0x006bf1d0
+// G_helidata
+// GLOBAL: COPTER_D 0x006bf1c0
+// G_testloc
+// GLOBAL: COPTER_D 0x006c1200
+// S_spotlevels

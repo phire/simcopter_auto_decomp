@@ -290,3 +290,9 @@ int32_t WinMain() {
 // _ghWindowsInstance
 // GLOBAL: COPTER_D 0x005c28cc
 // _gTimerFrequency
+
+
+// Unknown globals:
+// The PDB was slightly corrupted and we aren't sure which file these globals belong to.
+
+// WARNING: this global might actually belong to: C:\Copter\source\sparkal\Fileserv.cpp

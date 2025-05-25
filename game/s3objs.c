@@ -14320,3 +14320,43 @@ void S3ObjSetFlatShading() {
 // Contribution: 3:00093528-0009352b Module: 168, 4 byte alignment, uninitialized_data, read, write, 
 // LOCAL: COPTER_D 0x0062a528
 // S_hires_color
+
+
+// Unknown globals:
+// The PDB was slightly corrupted and we aren't sure which file these globals belong to.
+
+// WARNING: this global might actually belong to: C:\Copter\source\game\S3msl.c
+// GLOBAL: COPTER_D 0x0066eaf0
+// _G_lightshad
+
+// WARNING: this global might actually belong to: C:\Copter\source\game\S3msl.c
+// GLOBAL: COPTER_D 0x0066eae8
+// _G_fireshad
+
+// WARNING: this global might actually belong to: C:\Copter\source\game\S3msl.c
+// GLOBAL: COPTER_D 0x0066eae4
+// _G_smokshad
+
+// WARNING: this global might actually belong to: C:\Copter\source\game\S3msl.c
+// GLOBAL: COPTER_D 0x0066eae0
+// _G_darkshad
+
+// WARNING: this global might actually belong to: C:\Copter\source\game\S3terr.c
+// GLOBAL: COPTER_D 0x0066eaec
+// G_blueshad
+
+// WARNING: this global might actually belong to: C:\Copter\source\game\S3terr.c
+// GLOBAL: COPTER_D 0x0066eae8
+// G_fireshad
+
+// WARNING: this global might actually belong to: C:\Copter\source\game\S3terr.c
+// GLOBAL: COPTER_D 0x0066eae4
+// G_smokshad
+
+// WARNING: this global might actually belong to: C:\Copter\source\game\S3terr.c
+// GLOBAL: COPTER_D 0x0066eae0
+// G_darkshad
+
+// WARNING: this global might actually belong to: C:\Copter\source\game\S3terr.c
+// GLOBAL: COPTER_D 0x0066eaf0
+// G_lightshad

@@ -110,3 +110,11 @@
 // gFireStations
 // GLOBAL: COPTER_D 0x005c3ab0
 // gScratchBuffer
+
+
+// Unknown globals:
+// The PDB was slightly corrupted and we aren't sure which file these globals belong to.
+
+// WARNING: this global might actually belong to: C:\Copter\source\sparkal\sound.cpp
+// GLOBAL: COPTER_D 0x00666390
+// _GridNSortCells

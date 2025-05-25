@@ -5683,3 +5683,19 @@ int32_t S3FireMIFFSave() {
 // lscfd
 // LOCAL: COPTER_D 0x0062b550
 // lsfire
+
+
+// Unknown globals:
+// The PDB was slightly corrupted and we aren't sure which file these globals belong to.
+// GLOBAL: COPTER_D 0x0066be90
+// _S_cfdata
+// GLOBAL: COPTER_D 0x0066be70
+// _G_fireseq
+// GLOBAL: COPTER_D 0x006666f0
+// _S_fires
+// GLOBAL: COPTER_D 0x006666d0
+// _G_smokeseq
+// GLOBAL: COPTER_D 0x006666f0
+// S_fires
+// GLOBAL: COPTER_D 0x0066be90
+// S_cfdata

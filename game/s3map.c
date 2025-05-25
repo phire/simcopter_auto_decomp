@@ -6007,3 +6007,17 @@ void S3MapGetDxDy() {
 // S_icon_pitch
 // LOCAL: COPTER_D 0x00608c18
 // S_dicons
+
+
+// Unknown globals:
+// The PDB was slightly corrupted and we aren't sure which file these globals belong to.
+
+// WARNING: this global might actually belong to: C:\Copter\source\game\S3auto.cpp
+// GLOBAL: COPTER_D 0x0067ed30
+// _G_omap
+
+// WARNING: this global might actually belong to: C:\Copter\source\game\S3viewer.c
+// GLOBAL: COPTER_D 0x006c1330
+// _ViewYRot
+// GLOBAL: COPTER_D 0x006bed40
+// _S_carinfo

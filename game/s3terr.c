@@ -7531,3 +7531,27 @@ int32_t S3ObjectPrecisionAlt() {
 // S_h9
 // LOCAL: COPTER_D 0x0062a524
 // S_recip_celldim
+
+
+// Unknown globals:
+// The PDB was slightly corrupted and we aren't sure which file these globals belong to.
+// GLOBAL: COPTER_D 0x0067eb20
+// _G_terr2bmp
+// GLOBAL: COPTER_D 0x0067eb10
+// _G_tmap
+// GLOBAL: COPTER_D 0x0066eb00
+// _G_terr_minalt
+// GLOBAL: COPTER_D 0x0066eaf8
+// _G_morphcell
+// GLOBAL: COPTER_D 0x0067ed28
+// _G_grid_ulc
+// GLOBAL: COPTER_D 0x0067ed28
+// G_grid_ulc
+// GLOBAL: COPTER_D 0x0067eb10
+// G_tmap
+// GLOBAL: COPTER_D 0x0066eaf8
+// G_morphcell
+// GLOBAL: COPTER_D 0x0067eb20
+// G_terr2bmp
+// GLOBAL: COPTER_D 0x0066eb00
+// G_terr_minalt

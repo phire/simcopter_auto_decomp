@@ -2878,3 +2878,11 @@ void EmergencyVehicleClass::LoadSaveData(struct _AUTO_LOAD_SAVE*) {
 
 
 // Contribution: 3:00021268-00021641 Module: 154, 4 byte alignment, initialized_data, read, write, 
+
+
+// Unknown globals:
+// The PDB was slightly corrupted and we aren't sure which file these globals belong to.
+
+// WARNING: this global might actually belong to: C:\Copter\Source\Game\S3rdgrph.cpp
+// GLOBAL: COPTER_D 0x0067ed30
+// G_omap

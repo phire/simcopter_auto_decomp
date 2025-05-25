@@ -1784,3 +1784,37 @@ void UnRegisterResource() {
 // ResFileMemPool
 // GLOBAL: COPTER_D 0x0059c22c
 // G_currmempool
+
+
+// Unknown globals:
+// The PDB was slightly corrupted and we aren't sure which file these globals belong to.
+// GLOBAL: COPTER_D 0x006666b0
+// _GEOM_hdr
+// GLOBAL: COPTER_D 0x006666a4
+// _CMAP_hdr
+// GLOBAL: COPTER_D 0x006666a0
+// _ResourceFilePtr
+// GLOBAL: COPTER_D 0x0066669c
+// _GEOM_IDdir
+// GLOBAL: COPTER_D 0x00666698
+// _GEOM_GPdir
+// GLOBAL: COPTER_D 0x00666694
+// _ResourceDirHdr
+// GLOBAL: COPTER_D 0x00666690
+// _CMAP_directory
+// GLOBAL: COPTER_D 0x00666500
+// _ResourceArray
+// GLOBAL: COPTER_D 0x006663f0
+// _ResourceFileName
+// GLOBAL: COPTER_D 0x006663ec
+// _ResourceDir
+// GLOBAL: COPTER_D 0x006663f0
+// ResourceFileName
+// GLOBAL: COPTER_D 0x006663ec
+// ResourceDir
+// GLOBAL: COPTER_D 0x006666a0
+// ResourceFilePtr
+// GLOBAL: COPTER_D 0x00666694
+// ResourceDirHdr
+// GLOBAL: COPTER_D 0x00666500
+// ResourceArray

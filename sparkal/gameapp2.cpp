@@ -8605,3 +8605,15 @@ public: void __thiscall CGameApp::ComposeMainMenuVideoFrame(void) {
 // Contribution: 3:00002310-00002313 Module: 44, 4 byte alignment, initialized_data, (comdat), read, write, 
 // GLOBAL: COPTER_D 0x00599310
 // list<CopterGameMode>::buffer_list
+
+
+// Unknown globals:
+// The PDB was slightly corrupted and we aren't sure which file these globals belong to.
+
+// WARNING: this global might actually belong to: C:\Copter\source\common\Tweak.c
+// GLOBAL: COPTER_D 0x00646ed0
+// _g_uTWKMessageNum
+
+// WARNING: this global might actually belong to: C:\Copter\source\sparkal\Winwindo.cpp
+// GLOBAL: COPTER_D 0x00646ed0
+// g_uTWKMessageNum

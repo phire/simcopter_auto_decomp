@@ -930,3 +930,21 @@ unsigned long SkyImage::Compose(class CBackBuffer*, int32_t) {
 // SZ_SKY_DAY_IMAGE_FILE_NAME
 // GLOBAL: COPTER_D 0x0059a124
 // SZ_SKY_NIGHT_IMAGE_FILE_NAME
+
+
+// Unknown globals:
+// The PDB was slightly corrupted and we aren't sure which file these globals belong to.
+
+// WARNING: this global might actually belong to: gridrend.asm
+// GLOBAL: COPTER_D 0x00662820
+// _GridProjectEnd
+// GLOBAL: COPTER_D 0x0067ed20
+// _G_terr_maxalt
+
+// WARNING: this global might actually belong to: C:\Copter\source\sparkal\Fileserv.cpp
+// GLOBAL: COPTER_D 0x006bf1ac
+// cameraHeading
+
+// WARNING: this global might actually belong to: C:\Copter\source\sparkal\Fileserv.cpp
+// GLOBAL: COPTER_D 0x006bf1b0
+// cameraPitch

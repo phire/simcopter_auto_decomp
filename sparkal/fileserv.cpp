@@ -4521,3 +4521,27 @@ int32_t FileServices::GetPathForFileString(int32_t, int32_t, class basic_string<
 // Contribution: 3:0006dc00-0006dc73 Module: 21, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x00604c00
 // gFileServices
+
+
+// Unknown globals:
+// The PDB was slightly corrupted and we aren't sure which file these globals belong to.
+
+// WARNING: this global might actually belong to: FIXED.OBJ
+// GLOBAL: COPTER_D 0x006bf1ac
+// _cameraHeading
+
+// WARNING: this global might actually belong to: FIXED.OBJ
+// GLOBAL: COPTER_D 0x006bf1b0
+// _cameraPitch
+
+// WARNING: this global might actually belong to: FIXED.OBJ
+// GLOBAL: COPTER_D 0x006c1210
+// _ViewState
+
+// WARNING: this global might actually belong to: C:\Copter\source\game\S3render.c
+// GLOBAL: COPTER_D 0x0067ed20
+// G_terr_maxalt
+
+// WARNING: this global might actually belong to: C:\Copter\source\game\S3render.c
+// GLOBAL: COPTER_D 0x006c1210
+// ViewState

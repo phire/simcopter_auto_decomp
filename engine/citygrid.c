@@ -947,3 +947,191 @@ void InitGridPool() {
 // Contribution: 3:000062d4-00006342 Module: 141, 4 byte alignment, initialized_data, read, write, 
 // LOCAL: COPTER_D 0x0059d2d4
 // S_gridmempool
+
+
+// Unknown globals:
+// The PDB was slightly corrupted and we aren't sure which file these globals belong to.
+
+// WARNING: this global might actually belong to: gridrend.asm
+// GLOBAL: COPTER_D 0x0066286c
+// _dbgvertptr
+
+// WARNING: this global might actually belong to: gridrend.asm
+// GLOBAL: COPTER_D 0x006662f4
+// _dbgverts
+
+// WARNING: this global might actually belong to: gridrend.asm
+// GLOBAL: COPTER_D 0x0066639c
+// _GridSortFacesEnd
+
+// WARNING: this global might actually belong to: gridrend.asm
+// GLOBAL: COPTER_D 0x00666394
+// _GridFacesEnd
+
+// WARNING: this global might actually belong to: gridrend.asm
+// GLOBAL: COPTER_D 0x00666380
+// _GridCellAddrsEnd
+
+// WARNING: this global might actually belong to: gridrend.asm
+// GLOBAL: COPTER_D 0x00666378
+// _GridSortCellsEnd
+
+// WARNING: this global might actually belong to: gridrend.asm
+// GLOBAL: COPTER_D 0x00666374
+// _GridCellAddrs
+
+// WARNING: this global might actually belong to: gridrend.asm
+// GLOBAL: COPTER_D 0x00666370
+// _WhereIsItEnd
+
+// WARNING: this global might actually belong to: gridrend.asm
+// GLOBAL: COPTER_D 0x00666358
+// _G_VertDim
+
+// WARNING: this global might actually belong to: gridrend.asm
+// GLOBAL: COPTER_D 0x006662a4
+// _GridRotateEnd
+
+// WARNING: this global might actually belong to: gridrend.asm
+// GLOBAL: COPTER_D 0x00662880
+// _GridCellOffsets
+
+// WARNING: this global might actually belong to: gridrend.asm
+// GLOBAL: COPTER_D 0x00662874
+// _GridVertsEnd
+
+// WARNING: this global might actually belong to: gridrend.asm
+// GLOBAL: COPTER_D 0x00662868
+// _G_fog
+
+// WARNING: this global might actually belong to: gridrend.asm
+// GLOBAL: COPTER_D 0x00662864
+// _IsRotatedEnd
+
+// WARNING: this global might actually belong to: gridrend.asm
+// GLOBAL: COPTER_D 0x00662840
+// _CVerts
+
+// WARNING: this global might actually belong to: gridrend.asm
+// GLOBAL: COPTER_D 0x00662830
+// _G_FaceDim
+
+// WARNING: this global might actually belong to: vrcalls.asm
+// GLOBAL: COPTER_D 0x00662834
+// G_fogbase
+
+// WARNING: this global might actually belong to: vrcalls.asm
+// GLOBAL: COPTER_D 0x00662868
+// G_fog
+
+// WARNING: this global might actually belong to: vrcalls.asm
+// GLOBAL: COPTER_D 0x00662818
+// G_fogZ1
+
+// WARNING: this global might actually belong to: vrcalls.asm
+// GLOBAL: COPTER_D 0x0066281c
+// G_plotglob
+
+// WARNING: this global might actually belong to: vrcalls.asm
+// GLOBAL: COPTER_D 0x00666388
+// G_deltafogZ
+
+// WARNING: this global might actually belong to: vrcalls.asm
+// GLOBAL: COPTER_D 0x00666398
+// WhereIsIt
+
+// WARNING: this global might actually belong to: vrcalls.asm
+// GLOBAL: COPTER_D 0x00666370
+// WhereIsItEnd
+
+// WARNING: this global might actually belong to: vrcalls.asm
+// GLOBAL: COPTER_D 0x00666368
+// GridVerts
+
+// WARNING: this global might actually belong to: vrcalls.asm
+// GLOBAL: COPTER_D 0x00662874
+// GridVertsEnd
+
+// WARNING: this global might actually belong to: vrcalls.asm
+// GLOBAL: COPTER_D 0x00666360
+// IsRotated
+
+// WARNING: this global might actually belong to: vrcalls.asm
+// GLOBAL: COPTER_D 0x00662864
+// IsRotatedEnd
+
+// WARNING: this global might actually belong to: vrcalls.asm
+// GLOBAL: COPTER_D 0x00662828
+// GridRotate
+
+// WARNING: this global might actually belong to: vrcalls.asm
+// GLOBAL: COPTER_D 0x006662a4
+// GridRotateEnd
+
+// WARNING: this global might actually belong to: vrcalls.asm
+// GLOBAL: COPTER_D 0x006662f0
+// GridProject
+
+// WARNING: this global might actually belong to: vrcalls.asm
+// GLOBAL: COPTER_D 0x006662b0
+// GridMat
+
+// WARNING: this global might actually belong to: vrcalls.asm
+// GLOBAL: COPTER_D 0x00666364
+// GridSortFaces
+
+// WARNING: this global might actually belong to: vrcalls.asm
+// GLOBAL: COPTER_D 0x0066639c
+// GridSortFacesEnd
+
+// WARNING: this global might actually belong to: vrcalls.asm
+// GLOBAL: COPTER_D 0x00662814
+// GridNVerts
+
+// WARNING: this global might actually belong to: vrcalls.asm
+// GLOBAL: COPTER_D 0x0066637c
+// GridNFaces
+
+// WARNING: this global might actually belong to: vrcalls.asm
+// GLOBAL: COPTER_D 0x006662a8
+// GridFaceSize
+
+// WARNING: this global might actually belong to: vrcalls.asm
+// GLOBAL: COPTER_D 0x00666300
+// GridPos
+
+// WARNING: this global might actually belong to: vrcalls.asm
+// GLOBAL: COPTER_D 0x00662824
+// GridFaces
+
+// WARNING: this global might actually belong to: vrcalls.asm
+// GLOBAL: COPTER_D 0x00666384
+// GridSortCells
+
+// WARNING: this global might actually belong to: vrcalls.asm
+// GLOBAL: COPTER_D 0x00666378
+// GridSortCellsEnd
+
+// WARNING: this global might actually belong to: vrcalls.asm
+// GLOBAL: COPTER_D 0x00666374
+// GridCellAddrs
+
+// WARNING: this global might actually belong to: vrcalls.asm
+// GLOBAL: COPTER_D 0x00666380
+// GridCellAddrsEnd
+
+// WARNING: this global might actually belong to: vrcalls.asm
+// GLOBAL: COPTER_D 0x00666358
+// G_VertDim
+
+// WARNING: this global might actually belong to: vrcalls.asm
+// GLOBAL: COPTER_D 0x00662830
+// G_FaceDim
+
+// WARNING: this global might actually belong to: vrcalls.asm
+// GLOBAL: COPTER_D 0x00662880
+// GridCellOffsets
+
+// WARNING: this global might actually belong to: vrcalls.asm
+// GLOBAL: COPTER_D 0x00666394
+// GridFacesEnd

@@ -1115,3 +1115,9 @@ unsigned short check_IDProc() {
 
 
 // Contribution: 3:000029d0-00002a2c Module: 33, 4 byte alignment, initialized_data, read, write, 
+
+
+// Unknown globals:
+// The PDB was slightly corrupted and we aren't sure which file these globals belong to.
+// GLOBAL: COPTER_D 0x00638ed4
+// _clone_flag

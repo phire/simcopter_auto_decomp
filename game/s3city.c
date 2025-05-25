@@ -19068,3 +19068,47 @@ void S3CityCreateHeliBase() {
 // S_world_eye
 // LOCAL: COPTER_D 0x0062a4f8
 // S_last_pos
+
+
+// Unknown globals:
+// The PDB was slightly corrupted and we aren't sure which file these globals belong to.
+
+// WARNING: this global might actually belong to: C:\Copter\source\sparkal\Globals.cpp
+// GLOBAL: COPTER_D 0x00662870
+// _GridNSortFaces
+
+// WARNING: this global might actually belong to: C:\Copter\source\sparkal\Globals.cpp
+// GLOBAL: COPTER_D 0x0066635c
+// _G_opolys
+
+// WARNING: this global might actually belong to: C:\Copter\source\sparkal\Globals.cpp
+// GLOBAL: COPTER_D 0x0066282c
+// _G_gdpolys
+
+// WARNING: this global might actually belong to: C:\Copter\source\sparkal\Globals.cpp
+// GLOBAL: COPTER_D 0x0066636c
+// _G_odpolys
+
+// WARNING: this global might actually belong to: C:\Copter\source\sparkal\Globals.cpp
+// GLOBAL: COPTER_D 0x006663a0
+// _G_ViewSize
+// GLOBAL: COPTER_D 0x006bed30
+// _S_curr_pos
+// GLOBAL: COPTER_D 0x006c1190
+// _G_helibase
+// GLOBAL: COPTER_D 0x006c1370
+// _ViewRot
+
+// WARNING: this global might actually belong to: C:\Copter\source\game\S3auto.cpp
+// GLOBAL: COPTER_D 0x006c1370
+// ViewRot
+
+// WARNING: this global might actually belong to: C:\Copter\source\game\S3auto.cpp
+// GLOBAL: COPTER_D 0x006c1330
+// ViewYRot
+
+// WARNING: this global might actually belong to: C:\Copter\source\game\S3auto.cpp
+// GLOBAL: COPTER_D 0x006bed30
+// S_curr_pos
+// GLOBAL: COPTER_D 0x006bed38
+// G_smokey

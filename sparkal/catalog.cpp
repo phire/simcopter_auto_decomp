@@ -7536,3 +7536,9 @@ int32_t CatalogWindow::DoCatalogWindowSell() {
 // SZ_CATALOG_WINDOW_PAPER_CLIP_IMAGEFILE_NAME
 // GLOBAL: COPTER_D 0x00599830
 // SZ_CATALOG_WINDOW_TEXT_NAME
+
+
+// Unknown globals:
+// The PDB was slightly corrupted and we aren't sure which file these globals belong to.
+// GLOBAL: COPTER_D 0x00638ed4
+// clone_flag

@@ -9492,3 +9492,25 @@ void compress_spaces() {
 // S_ptr5
 // LOCAL: COPTER_D 0x006069d4
 // S_ptr4
+
+
+// Unknown globals:
+// The PDB was slightly corrupted and we aren't sure which file these globals belong to.
+
+// WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
+// GLOBAL: COPTER_D 0x0063984c
+// _NeighborFame
+
+// WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
+// GLOBAL: COPTER_D 0x0063a264
+// _NeighborValue
+
+// WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
+// GLOBAL: COPTER_D 0x00639710
+// _NeighborPop
+
+// WARNING: this global might actually belong to: C:\Copter\Source\Common\scxload.cpp
+// GLOBAL: COPTER_D 0x00639250
+// _Neighbor
+// GLOBAL: COPTER_D 0x00647200
+// G_citymempool

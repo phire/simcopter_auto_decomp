@@ -11858,3 +11858,9 @@ short cYObject::InterpValue(short, short, short **) {
 // Contribution: 3:000a05a8-000a06a7 Module: 196, 8 byte alignment, uninitialized_data, read, write, 
 // GLOBAL: COPTER_D 0x006375a8
 // cYObject::PrimProcs
+
+
+// Unknown globals:
+// The PDB was slightly corrupted and we aren't sure which file these globals belong to.
+// GLOBAL: COPTER_D 0x0067ed30
+// G_omap

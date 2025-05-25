@@ -1781,3 +1781,17 @@ void VRFaceSetColor() {
 // S_texres
 // LOCAL: COPTER_D 0x00606a78
 // S_ctrs
+
+
+// Unknown globals:
+// The PDB was slightly corrupted and we aren't sure which file these globals belong to.
+
+// WARNING: this global might actually belong to: Io.obj
+// GLOBAL: COPTER_D 0x00654cdc
+// VRClearClr
+// GLOBAL: COPTER_D 0x00662810
+// _GlobalError
+
+// WARNING: this global might actually belong to: matrix.asm
+// GLOBAL: COPTER_D 0x00662810
+// GlobalError

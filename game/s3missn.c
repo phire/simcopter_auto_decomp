@@ -8702,3 +8702,23 @@ long S3MissionGetSoundQuadrant() {
 // Contribution: 3:000702b8-00071bc7 Module: 173, 8 byte alignment, uninitialized_data, read, write, 
 // LOCAL: COPTER_D 0x006072b8
 // S_mstatics
+
+
+// Unknown globals:
+// The PDB was slightly corrupted and we aren't sure which file these globals belong to.
+
+// WARNING: this global might actually belong to: C:\Copter\source\game\S3explod.c
+// GLOBAL: COPTER_D 0x0066be70
+// G_fireseq
+
+// WARNING: this global might actually belong to: C:\Copter\source\game\S3explod.c
+// GLOBAL: COPTER_D 0x006666d0
+// G_smokeseq
+
+// WARNING: this global might actually belong to: C:\Copter\source\game\S3map.c
+// GLOBAL: COPTER_D 0x006bed40
+// S_carinfo
+// GLOBAL: COPTER_D 0x006bf060
+// _logmsg
+// GLOBAL: COPTER_D 0x006bf060
+// logmsg

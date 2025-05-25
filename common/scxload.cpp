@@ -2624,3 +2624,11 @@ int32_t ReadSCXFile() {
 // Contribution: 3:0006fa58-0006fa5b Module: 89, 4 byte alignment, uninitialized_data, read, write, 
 // LOCAL: COPTER_D 0x00606a58
 // scxbuf
+
+
+// Unknown globals:
+// The PDB was slightly corrupted and we aren't sure which file these globals belong to.
+
+// WARNING: this global might actually belong to: C:\Copter\source\common\S2lodsav.c
+// GLOBAL: COPTER_D 0x0063a578
+// _NeighborName

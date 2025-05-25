@@ -12630,3 +12630,11 @@ int32_t TrainClass::MIFFSave(void * __ptr32) {
 // trains
 // LOCAL: COPTER_D 0x0062b998
 // $S5
+
+
+// Unknown globals:
+// The PDB was slightly corrupted and we aren't sure which file these globals belong to.
+// GLOBAL: COPTER_D 0x006bf188
+// _CameraCell
+// GLOBAL: COPTER_D 0x006bf188
+// CameraCell

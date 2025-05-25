@@ -2125,3 +2125,27 @@ int32_t S3CameraGetBldAlt() {
 // S_curr_chase
 // GLOBAL: COPTER_D 0x005b4e00
 // S_altdiff
+
+
+// Unknown globals:
+// The PDB was slightly corrupted and we aren't sure which file these globals belong to.
+// GLOBAL: COPTER_D 0x006bf1a0
+// _CameraIdeal
+// GLOBAL: COPTER_D 0x006bf194
+// _G_camera_targ2objy
+// GLOBAL: COPTER_D 0x006bf190
+// _G_camera_targ2firey
+// GLOBAL: COPTER_D 0x006bf160
+// _S_chase
+
+// WARNING: this global might actually belong to: C:\Copter\source\game\S3heli.c
+// GLOBAL: COPTER_D 0x006bf194
+// G_camera_targ2objy
+
+// WARNING: this global might actually belong to: C:\Copter\source\game\S3heli.c
+// GLOBAL: COPTER_D 0x006bf190
+// G_camera_targ2firey
+// GLOBAL: COPTER_D 0x006bf1a0
+// CameraIdeal
+// GLOBAL: COPTER_D 0x006bf160
+// S_chase

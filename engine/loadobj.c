@@ -6410,3 +6410,39 @@ int32_t VRStObjPolyHit() {
 // Tree
 // LOCAL: COPTER_D 0x00606a68
 // BSPIndex
+
+
+// Unknown globals:
+// The PDB was slightly corrupted and we aren't sure which file these globals belong to.
+
+// WARNING: this global might actually belong to: C:\Copter\source\common\S2alloc.c
+// GLOBAL: COPTER_D 0x0063a858
+// _MainPoolIndex
+
+// WARNING: this global might actually belong to: C:\Copter\source\common\S2alloc.c
+// GLOBAL: COPTER_D 0x0063a854
+// _ScratchPoolIndex
+
+// WARNING: this global might actually belong to: C:\Copter\source\engine\Resource.c
+// GLOBAL: COPTER_D 0x006666b0
+// GEOM_hdr
+
+// WARNING: this global might actually belong to: C:\Copter\source\engine\Resource.c
+// GLOBAL: COPTER_D 0x00666698
+// GEOM_GPdir
+
+// WARNING: this global might actually belong to: C:\Copter\source\engine\Resource.c
+// GLOBAL: COPTER_D 0x0066669c
+// GEOM_IDdir
+
+// WARNING: this global might actually belong to: C:\Copter\source\engine\Resource.c
+// GLOBAL: COPTER_D 0x006666a4
+// CMAP_hdr
+
+// WARNING: this global might actually belong to: C:\Copter\source\engine\Resource.c
+// GLOBAL: COPTER_D 0x00666690
+// CMAP_directory
+
+// WARNING: this global might actually belong to: C:\Copter\source\engine\Resource.c
+// GLOBAL: COPTER_D 0x006666c0
+// _FaceArray

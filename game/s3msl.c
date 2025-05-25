@@ -9300,3 +9300,31 @@ int32_t S3MissileMIFFSave() {
 // Contribution: 3:00093530-00093577 Module: 167, 8 byte alignment, uninitialized_data, read, write, 
 // LOCAL: COPTER_D 0x0062a530
 // lsmsl
+
+
+// Unknown globals:
+// The PDB was slightly corrupted and we aren't sure which file these globals belong to.
+// GLOBAL: COPTER_D 0x0066e270
+// _S_debris
+// GLOBAL: COPTER_D 0x0066dfa0
+// _S_traj
+// GLOBAL: COPTER_D 0x0066c920
+// _S_bullets
+// GLOBAL: COPTER_D 0x0066c890
+// _S_lasers
+// GLOBAL: COPTER_D 0x0066c5c0
+// _S_teargas
+// GLOBAL: COPTER_D 0x0066c2f0
+// _S_missiles
+// GLOBAL: COPTER_D 0x0066c2f0
+// S_missiles
+// GLOBAL: COPTER_D 0x0066c5c0
+// S_teargas
+// GLOBAL: COPTER_D 0x0066c920
+// S_bullets
+// GLOBAL: COPTER_D 0x0066e270
+// S_debris
+// GLOBAL: COPTER_D 0x0066dfa0
+// S_traj
+// GLOBAL: COPTER_D 0x0066c890
+// S_lasers

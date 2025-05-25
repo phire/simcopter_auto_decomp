@@ -20055,3 +20055,13 @@ public: virtual __thiscall ResFile::~ResFile(void) {
 // $S73
 // LOCAL: COPTER_D 0x006375a4
 // $S79
+
+
+// Unknown globals:
+// The PDB was slightly corrupted and we aren't sure which file these globals belong to.
+// GLOBAL: COPTER_D 0x006bf188
+// CameraCell
+// GLOBAL: COPTER_D 0x006c12a0
+// Viewer
+// GLOBAL: COPTER_D 0x006c1210
+// ViewState

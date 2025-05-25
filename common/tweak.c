@@ -726,3 +726,17 @@ void TWKGetToEOLN() {
 // g_nNextTWKQueueSlot
 // GLOBAL: COPTER_D 0x0059b3ac
 // g_nNextTWKErrorSlot
+
+
+// Unknown globals:
+// The PDB was slightly corrupted and we aren't sure which file these globals belong to.
+// GLOBAL: COPTER_D 0x00646ee0
+// _TWKErrorSlot
+// GLOBAL: COPTER_D 0x0063a860
+// _TWKQueue
+
+// WARNING: this global might actually belong to: C:\Copter\source\common\S2lodsav.c
+// GLOBAL: COPTER_D 0x0063a860
+// TWKQueue
+// GLOBAL: COPTER_D 0x00646ee0
+// TWKErrorSlot
