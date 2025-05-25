@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:0006a870-0006ac9e Module: 41, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x0046b870
+// FUNCTION: COPTER_D 0x0046b870
 void S3PrintScreen() {
 // LINE 52:
 	asm( 
@@ -56,7 +56,7 @@ void S3PrintScreen() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046b8db
+// FUNCTION: COPTER_D 0x0046b8db
 void S3BufferPrint() {
 // LINE 68:
 	asm( 
@@ -301,7 +301,7 @@ void S3BufferPrint() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046bac3
+// FUNCTION: COPTER_D 0x0046bac3
 int32_t S3WritePCXLine() {
 // LINE 136:
 	asm( 
@@ -489,37 +489,37 @@ int32_t S3WritePCXLine() {
 
 
 // Contribution: 2:000014f8-00001707 Module: 41, 8 byte alignment, initialized_data, read, 
-// LOCAL: SIMCOPTER 0x000014f8
+// LOCAL: COPTER_D 0x000014f8
 // TurnTable3
-// LOCAL: SIMCOPTER 0x00001578
+// LOCAL: COPTER_D 0x00001578
 // TurnTable2
-// LOCAL: SIMCOPTER 0x000015b8
+// LOCAL: COPTER_D 0x000015b8
 // IndexToType
-// LOCAL: SIMCOPTER 0x000015c8
+// LOCAL: COPTER_D 0x000015c8
 // TypeToIndex2
-// LOCAL: SIMCOPTER 0x00001608
+// LOCAL: COPTER_D 0x00001608
 // TILUT
-// LOCAL: SIMCOPTER 0x00001648
+// LOCAL: COPTER_D 0x00001648
 // OT
-// LOCAL: SIMCOPTER 0x00001688
+// LOCAL: COPTER_D 0x00001688
 // RRT
-// LOCAL: SIMCOPTER 0x000016c8
+// LOCAL: COPTER_D 0x000016c8
 // LRT
-// GLOBAL: SIMCOPTER 0x00001708
+// GLOBAL: COPTER_D 0x00001708
 // ??_7MissionLogWindow@@6B@
 
 
 // Contribution: 3:00002430-00002446 Module: 41, 4 byte alignment, initialized_data, read, write, 
-// LOCAL: SIMCOPTER 0x00002430
+// LOCAL: COPTER_D 0x00002430
 // S_ctr
 
 
 // Contribution: 3:0006cac0-0006d247 Module: 41, 8 byte alignment, uninitialized_data, read, write, 
-// LOCAL: SIMCOPTER 0x0006cac0
+// LOCAL: COPTER_D 0x0006cac0
 // wpal
-// LOCAL: SIMCOPTER 0x0006cdc0
+// LOCAL: COPTER_D 0x0006cdc0
 // hdc
-// LOCAL: SIMCOPTER 0x0006cdc8
+// LOCAL: COPTER_D 0x0006cdc8
 // pcx
-// LOCAL: SIMCOPTER 0x0006ce48
+// LOCAL: COPTER_D 0x0006ce48
 // ppe

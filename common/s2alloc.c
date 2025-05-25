@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:000ca2b0-000ca878 Module: 91, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x004cb2b0
+// FUNCTION: COPTER_D 0x004cb2b0
 struct alloc_handle_t* S2AllocInit() {
 // LINE 267:
 	asm( 
@@ -80,7 +80,7 @@ struct alloc_handle_t* S2AllocInit() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004cb34d
+// FUNCTION: COPTER_D 0x004cb34d
 struct alloc_hdr_s* S2AllocHdr() {
 // LINE 234:
 	asm( 
@@ -178,7 +178,7 @@ struct alloc_hdr_s* S2AllocHdr() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004cb401
+// FUNCTION: COPTER_D 0x004cb401
 int32_t S2AllocPool() {
 // LINE 291:
 	asm( 
@@ -272,7 +272,7 @@ int32_t S2AllocPool() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004cb4ac
+// FUNCTION: COPTER_D 0x004cb4ac
 char * S2Alloc() {
 // LINE 330:
 	asm( 
@@ -414,7 +414,7 @@ char * S2Alloc() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004cb5ab
+// FUNCTION: COPTER_D 0x004cb5ab
 char * S2AllocMem1() {
 // LINE 393:
 	asm( 
@@ -446,7 +446,7 @@ char * S2AllocMem1() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004cb5cf
+// FUNCTION: COPTER_D 0x004cb5cf
 char * S2AllocMem() {
 // LINE 408:
 	asm( 
@@ -482,7 +482,7 @@ char * S2AllocMem() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004cb5f8
+// FUNCTION: COPTER_D 0x004cb5f8
 struct alloc_handle_t* S2AllocSetPool() {
 // LINE 437:
 	asm( 
@@ -520,7 +520,7 @@ struct alloc_handle_t* S2AllocSetPool() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004cb628
+// FUNCTION: COPTER_D 0x004cb628
 void S2AllocReset() {
 // LINE 456:
 	asm( 
@@ -604,7 +604,7 @@ void S2AllocReset() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004cb6c3
+// FUNCTION: COPTER_D 0x004cb6c3
 void S2AllocFreePool() {
 // LINE 489:
 	asm( 
@@ -737,7 +737,7 @@ void S2AllocFreePool() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004cb7a5
+// FUNCTION: COPTER_D 0x004cb7a5
 void * __ptr32 S2AllocAligned() {
 // LINE 554:
 	asm( 
@@ -762,7 +762,7 @@ void * __ptr32 S2AllocAligned() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004cb7ba
+// FUNCTION: COPTER_D 0x004cb7ba
 void * __ptr32 DOSAllocAlignedHack() {
 // LINE 749:
 	asm( 
@@ -833,7 +833,7 @@ void * __ptr32 DOSAllocAlignedHack() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004cb83f
+// FUNCTION: COPTER_D 0x004cb83f
 void S2FreeAligned() {
 // LINE 785:
 	asm( 
@@ -876,15 +876,15 @@ void S2FreeAligned() {
 
 
 // Contribution: 3:00004524-0000454a Module: 91, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x00004528
+// GLOBAL: COPTER_D 0x00004528
 // G_alloc_free
-// GLOBAL: SIMCOPTER 0x0000452c
+// GLOBAL: COPTER_D 0x0000452c
 // G_alloc_max
-// GLOBAL: SIMCOPTER 0x00004530
+// GLOBAL: COPTER_D 0x00004530
 // G_alloc_used
-// LOCAL: SIMCOPTER 0x00004534
+// LOCAL: COPTER_D 0x00004534
 // poolCount
-// LOCAL: SIMCOPTER 0x00004538
+// LOCAL: COPTER_D 0x00004538
 // S_alignmem
 
 

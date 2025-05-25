@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:0006d690-0007056d Module: 39, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x0046e690
+// FUNCTION: COPTER_D 0x0046e690
 void CBackBuffer::CBackBuffer() {
 // LINE 44:
 	asm( 
@@ -44,7 +44,7 @@ void CBackBuffer::CBackBuffer() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046e6df
+// FUNCTION: COPTER_D 0x0046e6df
 void CBackBuffer::CBackBuffer(char *) {
 // LINE 60:
 	asm( 
@@ -385,7 +385,7 @@ void CBackBuffer::CBackBuffer(char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046ea06
+// FUNCTION: COPTER_D 0x0046ea06
 void CBackBuffer::CBackBuffer(long, long, const struct SparkalColor*) {
 // LINE 157:
 	asm( 
@@ -550,7 +550,7 @@ void CBackBuffer::CBackBuffer(long, long, const struct SparkalColor*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046eb58
+// FUNCTION: COPTER_D 0x0046eb58
 void CBackBuffer::InitializeMemberVariables() {
 // LINE 215:
 	asm( 
@@ -699,7 +699,7 @@ void CBackBuffer::InitializeMemberVariables() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046ec7a
+// FUNCTION: COPTER_D 0x0046ec7a
 void CBackBuffer::~CBackBuffer() {
 // LINE 253:
 	asm( 
@@ -858,7 +858,7 @@ void CBackBuffer::~CBackBuffer() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046edca
+// FUNCTION: COPTER_D 0x0046edca
 unsigned long CBackBuffer::Load() {
 // LINE 305:
 	asm( 
@@ -1220,7 +1220,7 @@ unsigned long CBackBuffer::Load() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046f1bd
+// FUNCTION: COPTER_D 0x0046f1bd
 unsigned long CBackBuffer::DrawBufferText(char *, unsigned long, long *, long *, long *, long *, class MFont*) {
 // LINE 378:
 	asm( 
@@ -1549,7 +1549,7 @@ unsigned long CBackBuffer::DrawBufferText(char *, unsigned long, long *, long *,
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046f403
+// FUNCTION: COPTER_D 0x0046f403
 unsigned long CBackBuffer::DrawBufferText(char *, long, unsigned long, const class MRect&, class MFont*) {
 // LINE 458:
 	asm( 
@@ -1792,7 +1792,7 @@ unsigned long CBackBuffer::DrawBufferText(char *, long, unsigned long, const cla
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046f5c6
+// FUNCTION: COPTER_D 0x0046f5c6
 unsigned long CBackBuffer::DrawLine(long, long, long, long, long) {
 // LINE 522:
 	asm( 
@@ -2027,7 +2027,7 @@ unsigned long CBackBuffer::DrawLine(long, long, long, long, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046f7bb
+// FUNCTION: COPTER_D 0x0046f7bb
 unsigned long CBackBuffer::Swap(class CSparkalWindow*, long, long) {
 // LINE 598:
 	asm( 
@@ -2092,7 +2092,7 @@ unsigned long CBackBuffer::Swap(class CSparkalWindow*, long, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046f828
+// FUNCTION: COPTER_D 0x0046f828
 unsigned long CBackBuffer::SwapRect(class CSparkalWindow*, long, long, long, long, long, long) {
 // LINE 627:
 	asm( 
@@ -2226,7 +2226,7 @@ unsigned long CBackBuffer::SwapRect(class CSparkalWindow*, long, long, long, lon
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046f948
+// FUNCTION: COPTER_D 0x0046f948
 unsigned long CBackBuffer::Compose(class IFlatImage*, long, long, long, long, long, long) {
 // LINE 673:
 	asm( 
@@ -2512,7 +2512,7 @@ unsigned long CBackBuffer::Compose(class IFlatImage*, long, long, long, long, lo
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046fbb1
+// FUNCTION: COPTER_D 0x0046fbb1
 unsigned long CBackBuffer::ComposeNoClip(class IFlatImage*, long, long, long, long, long, long) {
 // LINE 796:
 	asm( 
@@ -2640,7 +2640,7 @@ unsigned long CBackBuffer::ComposeNoClip(class IFlatImage*, long, long, long, lo
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046fce4
+// FUNCTION: COPTER_D 0x0046fce4
 unsigned long CBackBuffer::ComposeNoClip(class IFlatImage*, const struct SparkalPoint&, const struct SparkalRect&) {
 // LINE 834:
 	asm( 
@@ -2690,7 +2690,7 @@ unsigned long CBackBuffer::ComposeNoClip(class IFlatImage*, const struct Sparkal
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046fd33
+// FUNCTION: COPTER_D 0x0046fd33
 unsigned long CBackBuffer::Compose(class IFlatImage*, const struct SparkalPoint&, const struct SparkalRect&) {
 // LINE 846:
 	asm( 
@@ -2740,7 +2740,7 @@ unsigned long CBackBuffer::Compose(class IFlatImage*, const struct SparkalPoint&
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046fd82
+// FUNCTION: COPTER_D 0x0046fd82
 unsigned long CBackBuffer::StretchCompose(class IFlatImage*, const struct SparkalRect&, const struct SparkalRect&) {
 // LINE 866:
 	asm( 
@@ -2829,7 +2829,7 @@ unsigned long CBackBuffer::StretchCompose(class IFlatImage*, const struct Sparka
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046fe13
+// FUNCTION: COPTER_D 0x0046fe13
 unsigned long CBackBuffer::StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long) {
 // LINE 903:
 	asm( 
@@ -2910,7 +2910,7 @@ unsigned long CBackBuffer::StretchCompose(class IFlatImage*, long, long, long, l
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046fe7c
+// FUNCTION: COPTER_D 0x0046fe7c
 unsigned long CBackBuffer::Duplicate(class CBackBuffer*, int32_t) {
 // LINE 931:
 	asm( 
@@ -3050,7 +3050,7 @@ unsigned long CBackBuffer::Duplicate(class CBackBuffer*, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046ffcc
+// FUNCTION: COPTER_D 0x0046ffcc
 unsigned long CBackBuffer::StretchRect(class CSparkalWindow*, long, long, long, long, long, long, long, long) {
 // LINE 980:
 	asm( 
@@ -3077,7 +3077,7 @@ unsigned long CBackBuffer::StretchRect(class CSparkalWindow*, long, long, long, 
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046ffe6
+// FUNCTION: COPTER_D 0x0046ffe6
 void CBackBuffer::SetTransparentColor(int32_t, long) {
 // LINE 991:
 	asm( 
@@ -3168,7 +3168,7 @@ void CBackBuffer::SetTransparentColor(int32_t, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047006f
+// FUNCTION: COPTER_D 0x0047006f
 unsigned long CBackBuffer::Lock() {
 // LINE 1027:
 	asm( 
@@ -3295,7 +3295,7 @@ unsigned long CBackBuffer::Lock() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00470149
+// FUNCTION: COPTER_D 0x00470149
 unsigned long CBackBuffer::Unlock() {
 // LINE 1080:
 	asm( 
@@ -3424,7 +3424,7 @@ unsigned long CBackBuffer::Unlock() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00470221
+// FUNCTION: COPTER_D 0x00470221
 void CBackBuffer::UpdatePalette(long, long, const struct SparkalColor*) {
 // LINE 1127:
 	asm( 
@@ -3516,7 +3516,7 @@ void CBackBuffer::UpdatePalette(long, long, const struct SparkalColor*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004702f1
+// FUNCTION: COPTER_D 0x004702f1
 unsigned long CBackBuffer::FillRect(long, const struct SparkalRect*) {
 // LINE 1169:
 	asm( 
@@ -3704,7 +3704,7 @@ unsigned long CBackBuffer::FillRect(long, const struct SparkalRect*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00470440
+// FUNCTION: COPTER_D 0x00470440
 unsigned long CBackBuffer::SetFont(class MFont*) {
 // LINE 1224:
 	asm( 
@@ -3761,7 +3761,7 @@ unsigned long CBackBuffer::SetFont(class MFont*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004704a7
+// FUNCTION: COPTER_D 0x004704a7
 struct IDirectDrawSurface* CBackBuffer::GetDDSurface() {
 // LINE 1243:
 	asm( 
@@ -3801,7 +3801,7 @@ struct IDirectDrawSurface* CBackBuffer::GetDDSurface() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004704db
+// FUNCTION: COPTER_D 0x004704db
 int32_t CBackBuffer::GetPaletteFromImage(char *, struct SparkalColor*) {
 // LINE 1255:
 	asm( 
@@ -4009,7 +4009,7 @@ int32_t CBackBuffer::GetPaletteFromImage(char *, struct SparkalColor*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004706e4
+// FUNCTION: COPTER_D 0x004706e4
 unsigned long CBackBuffer::DrawRectangleOutline(const struct SparkalRect&, long) {
 // LINE 1297:
 	asm( 
@@ -4116,7 +4116,7 @@ unsigned long CBackBuffer::DrawRectangleOutline(const struct SparkalRect&, long)
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004707a4
+// FUNCTION: COPTER_D 0x004707a4
 unsigned long CBackBuffer::DrawRectangleOutlineUnclipped(const struct SparkalRect&, long) {
 // LINE 1321:
 	asm( 
@@ -4223,7 +4223,7 @@ unsigned long CBackBuffer::DrawRectangleOutlineUnclipped(const struct SparkalRec
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00470864
+// FUNCTION: COPTER_D 0x00470864
 unsigned long CBackBuffer::DrawLineUnclipped(long, long, long, long, long) {
 // LINE 1455:
 	asm( 
@@ -4786,7 +4786,7 @@ unsigned long CBackBuffer::DrawLineUnclipped(long, long, long, long, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00470c22
+// FUNCTION: COPTER_D 0x00470c22
 unsigned long CBackBuffer::DrawLineClipped(long, long, long, long, long) {
 // LINE 1625:
 	asm( 
@@ -5805,7 +5805,7 @@ unsigned long CBackBuffer::DrawLineClipped(long, long, long, long, long) {
 
 
 // Contribution: 2:00001808-0000186b Module: 39, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00001808
+// GLOBAL: COPTER_D 0x00001808
 // ??_7CBackBuffer@@6B@
 
 

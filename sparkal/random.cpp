@@ -5,13 +5,13 @@
 
 
 // Contribution: 1:0008ff90-00090171 Module: 22, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00490f90
+// FUNCTION: COPTER_D 0x00490f90
 // $E2
 
-// FUNCTION: SIMCOPTER 0x00490fa5
+// FUNCTION: COPTER_D 0x00490fa5
 // $E1
 
-// FUNCTION: SIMCOPTER 0x00490fd3
+// FUNCTION: COPTER_D 0x00490fd3
 unsigned long __long_random() {
 // LINE 26:
 	asm( 
@@ -39,7 +39,7 @@ unsigned long __long_random() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00490ff1
+// FUNCTION: COPTER_D 0x00490ff1
 void Random::seed(unsigned long) {
 // LINE 34:
 	asm( 
@@ -161,7 +161,7 @@ void Random::seed(unsigned long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004910ea
+// FUNCTION: COPTER_D 0x004910ea
 unsigned long Random::operator()(unsigned long) {
 // LINE 58:
 	asm( 
@@ -232,10 +232,10 @@ unsigned long Random::operator()(unsigned long) {
 
 
 // Contribution: 3:00000084-00000087 Module: 22, 4 byte alignment, initialized_data, read, write, 
-// LOCAL: SIMCOPTER 0x00000088
+// LOCAL: COPTER_D 0x00000088
 // $S33
 
 
 // Contribution: 3:0006db18-0006dbfb Module: 22, 8 byte alignment, uninitialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x0006db18
+// GLOBAL: COPTER_D 0x0006db18
 // gRandom

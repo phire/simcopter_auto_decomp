@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:000f8bc0-000f9082 Module: 174, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x004f9bc0
+// FUNCTION: COPTER_D 0x004f9bc0
 int32_t HeliPassengerHasChanged() {
 // LINE 29:
 	asm( 
@@ -31,7 +31,7 @@ int32_t HeliPassengerHasChanged() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f9bd5
+// FUNCTION: COPTER_D 0x004f9bd5
 void HeliPassengerSetChanged() {
 // LINE 37:
 	asm( 
@@ -56,7 +56,7 @@ void HeliPassengerSetChanged() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f9be9
+// FUNCTION: COPTER_D 0x004f9be9
 void HeliPassengerClearChanged() {
 // LINE 45:
 	asm( 
@@ -81,7 +81,7 @@ void HeliPassengerClearChanged() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f9bfd
+// FUNCTION: COPTER_D 0x004f9bfd
 void HeliPassengerInit() {
 // LINE 54:
 	asm( 
@@ -207,7 +207,7 @@ void HeliPassengerInit() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f9cfa
+// FUNCTION: COPTER_D 0x004f9cfa
 int32_t HeliPassengerCanAdd() {
 // LINE 94:
 	asm( 
@@ -235,7 +235,7 @@ int32_t HeliPassengerCanAdd() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f9d16
+// FUNCTION: COPTER_D 0x004f9d16
 int32_t HeliPassengerAdd() {
 // LINE 108:
 	asm( 
@@ -367,7 +367,7 @@ int32_t HeliPassengerAdd() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f9e04
+// FUNCTION: COPTER_D 0x004f9e04
 int32_t HeliPassengerGetIndexInHeli() {
 // LINE 144:
 	asm( 
@@ -420,7 +420,7 @@ int32_t HeliPassengerGetIndexInHeli() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f9e5b
+// FUNCTION: COPTER_D 0x004f9e5b
 int32_t HeliPassengerSetExpression() {
 // LINE 159:
 	asm( 
@@ -475,7 +475,7 @@ int32_t HeliPassengerSetExpression() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f9eaa
+// FUNCTION: COPTER_D 0x004f9eaa
 int32_t HeliPassengerRemove() {
 // LINE 173:
 	asm( 
@@ -585,7 +585,7 @@ int32_t HeliPassengerRemove() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f9f6e
+// FUNCTION: COPTER_D 0x004f9f6e
 long HeliPassengerCountFreeSeats() {
 // LINE 203:
 	asm( 
@@ -613,7 +613,7 @@ long HeliPassengerCountFreeSeats() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f9f8a
+// FUNCTION: COPTER_D 0x004f9f8a
 void HeliPassengerFitToSeats() {
 // LINE 215:
 	asm( 
@@ -698,7 +698,7 @@ void HeliPassengerFitToSeats() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004fa033
+// FUNCTION: COPTER_D 0x004fa033
 int32_t FindFreeSeatForPassenger() {
 // LINE 242:
 	asm( 

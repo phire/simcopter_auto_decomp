@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:000d10d0-000d1175 Module: 148, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x004d20d0
+// FUNCTION: COPTER_D 0x004d20d0
 struct VRResource* LoadPalette() {
 // LINE 53:
 	asm( 
@@ -85,7 +85,7 @@ struct VRResource* LoadPalette() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004d2157
+// FUNCTION: COPTER_D 0x004d2157
 char * VRGetPalFromResource() {
 // LINE 110:
 	asm( 

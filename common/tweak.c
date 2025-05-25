@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:000c8ad0-000c90b4 Module: 93, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x004c9ad0
+// FUNCTION: COPTER_D 0x004c9ad0
 int32_t TWKEnQueue() {
 // LINE 40:
 	asm( 
@@ -103,7 +103,7 @@ int32_t TWKEnQueue() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c9b9b
+// FUNCTION: COPTER_D 0x004c9b9b
 int32_t TWKReadFile() {
 // LINE 70:
 	asm( 
@@ -263,7 +263,7 @@ int32_t TWKReadFile() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c9d2e
+// FUNCTION: COPTER_D 0x004c9d2e
 void TWKGameInit() {
 // LINE 115:
 	asm( 
@@ -297,7 +297,7 @@ void TWKGameInit() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c9d5d
+// FUNCTION: COPTER_D 0x004c9d5d
 void TWKUpdate() {
 // LINE 135:
 	asm( 
@@ -317,7 +317,7 @@ void TWKUpdate() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c9d68
+// FUNCTION: COPTER_D 0x004c9d68
 void TWKReadAllFiles() {
 // LINE 154:
 	asm( 
@@ -421,7 +421,7 @@ void TWKReadAllFiles() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c9e4f
+// FUNCTION: COPTER_D 0x004c9e4f
 void TWKReadSection() {
 // LINE 203:
 	asm( 
@@ -633,7 +633,7 @@ void TWKReadSection() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ca059
+// FUNCTION: COPTER_D 0x004ca059
 int32_t TWKDOSRead() {
 // LINE 262:
 	asm( 
@@ -658,7 +658,7 @@ int32_t TWKDOSRead() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ca06e
+// FUNCTION: COPTER_D 0x004ca06e
 void TWKGetToEOLN() {
 // LINE 361:
 	asm( 
@@ -722,7 +722,7 @@ void TWKGetToEOLN() {
 
 
 // Contribution: 3:000043a8-000044f6 Module: 93, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x000043a8
+// GLOBAL: COPTER_D 0x000043a8
 // g_nNextTWKQueueSlot
-// GLOBAL: SIMCOPTER 0x000043ac
+// GLOBAL: COPTER_D 0x000043ac
 // g_nNextTWKErrorSlot

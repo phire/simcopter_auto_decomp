@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:00151b10-0015371d Module: 199, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00552b10
+// FUNCTION: COPTER_D 0x00552b10
 void FlatResFile::LoadResMap(void * __ptr32*, short *, long *) {
 // LINE 97:
 	asm( 
@@ -323,7 +323,7 @@ void FlatResFile::LoadResMap(void * __ptr32*, short *, long *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00552e51
+// FUNCTION: COPTER_D 0x00552e51
 long FlatResFile::Open(char *) {
 // LINE 157:
 	asm( 
@@ -389,7 +389,7 @@ long FlatResFile::Open(char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00552ec5
+// FUNCTION: COPTER_D 0x00552ec5
 long FlatResFile::Open(unsigned char *) {
 // LINE 178:
 	asm( 
@@ -455,7 +455,7 @@ long FlatResFile::Open(unsigned char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00552f39
+// FUNCTION: COPTER_D 0x00552f39
 long ResFile::OpenFromOtherFile(class ResFile*) {
 // LINE 197:
 	asm( 
@@ -489,7 +489,7 @@ long ResFile::OpenFromOtherFile(class ResFile*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00552f5f
+// FUNCTION: COPTER_D 0x00552f5f
 long FlatResFile::Close() {
 // LINE 206:
 	asm( 
@@ -544,7 +544,7 @@ long FlatResFile::Close() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00552fca
+// FUNCTION: COPTER_D 0x00552fca
 short FlatResFile::CheckForLeaks() {
 // LINE 259:
 	asm( 
@@ -583,7 +583,7 @@ short FlatResFile::CheckForLeaks() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00552ffc
+// FUNCTION: COPTER_D 0x00552ffc
 long FlatResFile::GetError() {
 // LINE 269:
 	asm( 
@@ -611,7 +611,7 @@ long FlatResFile::GetError() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055301b
+// FUNCTION: COPTER_D 0x0055301b
 void FlatResFile::~FlatResFile() {
 // LINE 277:
 	asm( 
@@ -662,7 +662,7 @@ void FlatResFile::~FlatResFile() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055309e
+// FUNCTION: COPTER_D 0x0055309e
 short FlatResFile::CountTypes() {
 // LINE 286:
 	asm( 
@@ -708,7 +708,7 @@ short FlatResFile::CountTypes() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055310d
+// FUNCTION: COPTER_D 0x0055310d
 unsigned long FlatResFile::GetIndType(short) {
 // LINE 311:
 	asm( 
@@ -767,7 +767,7 @@ unsigned long FlatResFile::GetIndType(short) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055319a
+// FUNCTION: COPTER_D 0x0055319a
 short FlatResFile::Count(unsigned long) {
 // LINE 325:
 	asm( 
@@ -814,7 +814,7 @@ short FlatResFile::Count(unsigned long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055320b
+// FUNCTION: COPTER_D 0x0055320b
 void * __ptr32 FlatResFile::GetByID(unsigned long, short, void (*)(void * __ptr32, long)) {
 // LINE 336:
 	asm( 
@@ -933,7 +933,7 @@ void * __ptr32 FlatResFile::GetByID(unsigned long, short, void (*)(void * __ptr3
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055331d
+// FUNCTION: COPTER_D 0x0055331d
 void * __ptr32 FlatResFile::GetByName(unsigned long, unsigned char *, void (*)(void * __ptr32, long)) {
 // LINE 363:
 	asm( 
@@ -1064,7 +1064,7 @@ void * __ptr32 FlatResFile::GetByName(unsigned long, unsigned char *, void (*)(v
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00553452
+// FUNCTION: COPTER_D 0x00553452
 void * __ptr32 FlatResFile::GetByIndex(unsigned long, short, void (*)(void * __ptr32, long)) {
 // LINE 392:
 	asm( 
@@ -1183,7 +1183,7 @@ void * __ptr32 FlatResFile::GetByIndex(unsigned long, short, void (*)(void * __p
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00553564
+// FUNCTION: COPTER_D 0x00553564
 void FlatResFile::GetName(void * __ptr32, unsigned char *) {
 // LINE 419:
 	asm( 
@@ -1253,7 +1253,7 @@ void FlatResFile::GetName(void * __ptr32, unsigned char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055360d
+// FUNCTION: COPTER_D 0x0055360d
 void FlatResFile::GetID(void * __ptr32, short *) {
 // LINE 436:
 	asm( 
@@ -1320,7 +1320,7 @@ void FlatResFile::GetID(void * __ptr32, short *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005536ae
+// FUNCTION: COPTER_D 0x005536ae
 unsigned long FlatResFile::GetResType(void * __ptr32) {
 // LINE 449:
 	asm( 
@@ -1408,7 +1408,7 @@ unsigned long FlatResFile::GetResType(void * __ptr32) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00553794
+// FUNCTION: COPTER_D 0x00553794
 void FlatResFile::Release(void * __ptr32) {
 // LINE 468:
 	asm( 
@@ -1477,7 +1477,7 @@ void FlatResFile::Release(void * __ptr32) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055383a
+// FUNCTION: COPTER_D 0x0055383a
 void FlatResFile::Detach(void * __ptr32) {
 // LINE 496:
 	asm( 
@@ -1537,7 +1537,7 @@ void FlatResFile::Detach(void * __ptr32) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005538d1
+// FUNCTION: COPTER_D 0x005538d1
 void FlatResFile::Load(void * __ptr32) {
 // LINE 522:
 	asm( 
@@ -1641,7 +1641,7 @@ void FlatResFile::Load(void * __ptr32) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005539be
+// FUNCTION: COPTER_D 0x005539be
 void FlatResFile::GetString(unsigned char *, short, short) {
 // LINE 595:
 	asm( 
@@ -1728,7 +1728,7 @@ void FlatResFile::GetString(unsigned char *, short, short) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00553a84
+// FUNCTION: COPTER_D 0x00553a84
 private: __thiscall ResMap::ResMap(short, short, void *, unsigned char *, long) {
 // LINE 671:
 	asm( 
@@ -1881,7 +1881,7 @@ private: __thiscall ResMap::ResMap(short, short, void *, unsigned char *, long) 
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00553ba0
+// FUNCTION: COPTER_D 0x00553ba0
 private: __thiscall ResMap::~ResMap(void) {
 // LINE 728:
 	asm( 
@@ -1993,7 +1993,7 @@ private: __thiscall ResMap::~ResMap(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00553c5b
+// FUNCTION: COPTER_D 0x00553c5b
 public: static long __cdecl ResMap::Get(class FlatResFile *) {
 // LINE 753:
 	asm( 
@@ -2155,7 +2155,7 @@ public: static long __cdecl ResMap::Get(class FlatResFile *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00553dcc
+// FUNCTION: COPTER_D 0x00553dcc
 public: void __thiscall ResMap::Release(void) {
 // LINE 785:
 	asm( 
@@ -2243,7 +2243,7 @@ public: void __thiscall ResMap::Release(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00553e96
+// FUNCTION: COPTER_D 0x00553e96
 public: static short __cdecl ResMap::CheckForLeaks(void) {
 // LINE 802:
 	asm( 
@@ -2289,7 +2289,7 @@ public: static short __cdecl ResMap::CheckForLeaks(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00553edb
+// FUNCTION: COPTER_D 0x00553edb
 public: void __thiscall ResMap::LoadEntry(struct ResMap::Entry *, class FlatResFile *, unsigned short) {
 // LINE 814:
 	asm( 
@@ -2592,7 +2592,7 @@ public: void __thiscall ResMap::LoadEntry(struct ResMap::Entry *, class FlatResF
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005541a4
+// FUNCTION: COPTER_D 0x005541a4
 public: unsigned long __thiscall ResMap::GetIndType(short) {
 // LINE 882:
 	asm( 
@@ -2647,7 +2647,7 @@ public: unsigned long __thiscall ResMap::GetIndType(short) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005541fe
+// FUNCTION: COPTER_D 0x005541fe
 public: short __thiscall ResMap::Count(unsigned long) {
 // LINE 895:
 	asm( 
@@ -2722,7 +2722,7 @@ public: short __thiscall ResMap::Count(unsigned long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00554272
+// FUNCTION: COPTER_D 0x00554272
 public: unsigned long __thiscall ResMap::FindType(struct ResMap::Entry *) {
 // LINE 911:
 	asm( 
@@ -2817,7 +2817,7 @@ public: unsigned long __thiscall ResMap::FindType(struct ResMap::Entry *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055430b
+// FUNCTION: COPTER_D 0x0055430b
 public: struct ResMap::Entry * __thiscall ResMap::FindEntry(void *) {
 // LINE 934:
 	asm( 
@@ -2888,7 +2888,7 @@ public: struct ResMap::Entry * __thiscall ResMap::FindEntry(void *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055437a
+// FUNCTION: COPTER_D 0x0055437a
 public: struct ResMap::Entry * __thiscall ResMap::FindEntry(unsigned long, short) {
 // LINE 947:
 	asm( 
@@ -3008,7 +3008,7 @@ public: struct ResMap::Entry * __thiscall ResMap::FindEntry(unsigned long, short
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055443d
+// FUNCTION: COPTER_D 0x0055443d
 public: struct ResMap::Entry * __thiscall ResMap::FindEntry(unsigned long, unsigned char *) {
 // LINE 975:
 	asm( 
@@ -3150,7 +3150,7 @@ public: struct ResMap::Entry * __thiscall ResMap::FindEntry(unsigned long, unsig
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00554536
+// FUNCTION: COPTER_D 0x00554536
 public: struct ResMap::Entry * __thiscall ResMap::FindIndEntry(unsigned long, short) {
 // LINE 1007:
 	asm( 
@@ -3259,7 +3259,7 @@ public: struct ResMap::Entry * __thiscall ResMap::FindIndEntry(unsigned long, sh
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005545f1
+// FUNCTION: COPTER_D 0x005545f1
 public: void __thiscall ResMap::GetName(struct ResMap::Entry *, unsigned char *const) {
 // LINE 1032:
 	asm( 
@@ -3322,7 +3322,7 @@ public: void __thiscall ResMap::GetName(struct ResMap::Entry *, unsigned char *c
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00554651
+// FUNCTION: COPTER_D 0x00554651
 private: static void __cdecl ResMap::SwapTypeHead(struct ResMap::TypeHead *) {
 // LINE 1048:
 	asm( 
@@ -3366,7 +3366,7 @@ private: static void __cdecl ResMap::SwapTypeHead(struct ResMap::TypeHead *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055468b
+// FUNCTION: COPTER_D 0x0055468b
 private: static void __cdecl ResMap::SwapResEntry(struct ResMap::Entry *) {
 // LINE 1069:
 	asm( 
@@ -3472,5 +3472,5 @@ private: static void __cdecl ResMap::SwapResEntry(struct ResMap::Entry *) {
 
 
 // Contribution: 3:00024edc-0002512c Module: 199, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x00024edc
+// GLOBAL: COPTER_D 0x00024edc
 // ResMap::sMaps

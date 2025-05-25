@@ -5,19 +5,19 @@
 
 
 // Contribution: 1:00030c50-00031258 Module: 62, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00431c50
+// FUNCTION: COPTER_D 0x00431c50
 // $E4
 
-// FUNCTION: SIMCOPTER 0x00431c6a
+// FUNCTION: COPTER_D 0x00431c6a
 // $E1
 
-// FUNCTION: SIMCOPTER 0x00431c84
+// FUNCTION: COPTER_D 0x00431c84
 // $E3
 
-// FUNCTION: SIMCOPTER 0x00431ca1
+// FUNCTION: COPTER_D 0x00431ca1
 // $E2
 
-// FUNCTION: SIMCOPTER 0x00431cc0
+// FUNCTION: COPTER_D 0x00431cc0
 int32_t IsModifierSet() {
 // LINE 16:
 	asm( 
@@ -47,7 +47,7 @@ int32_t IsModifierSet() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00431ce4
+// FUNCTION: COPTER_D 0x00431ce4
 void Keyboard::Keyboard() {
 // LINE 31:
 	asm( 
@@ -78,7 +78,7 @@ void Keyboard::Keyboard() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00431d0d
+// FUNCTION: COPTER_D 0x00431d0d
 int32_t Keyboard::IsKeyDown(unsigned char) {
 // LINE 40:
 	asm( 
@@ -108,7 +108,7 @@ int32_t Keyboard::IsKeyDown(unsigned char) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00431d32
+// FUNCTION: COPTER_D 0x00431d32
 int32_t Keyboard::IsKeyDown(unsigned char, unsigned char) {
 // LINE 49:
 	asm( 
@@ -162,7 +162,7 @@ int32_t Keyboard::IsKeyDown(unsigned char, unsigned char) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00431d8d
+// FUNCTION: COPTER_D 0x00431d8d
 void Keyboard::ProcessKeyDown(unsigned char) {
 // LINE 66:
 	asm( 
@@ -208,7 +208,7 @@ void Keyboard::ProcessKeyDown(unsigned char) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00431dd3
+// FUNCTION: COPTER_D 0x00431dd3
 void Keyboard::ProcessKeyUp(unsigned char) {
 // LINE 82:
 	asm( 
@@ -254,7 +254,7 @@ void Keyboard::ProcessKeyUp(unsigned char) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00431e19
+// FUNCTION: COPTER_D 0x00431e19
 void Keyboard::ClearSettings() {
 // LINE 95:
 	asm( 
@@ -297,7 +297,7 @@ void Keyboard::ClearSettings() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00431e63
+// FUNCTION: COPTER_D 0x00431e63
 int32_t Keyboard::CharIsModifier(unsigned char) {
 // LINE 109:
 	asm( 
@@ -344,7 +344,7 @@ int32_t Keyboard::CharIsModifier(unsigned char) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00431eb1
+// FUNCTION: COPTER_D 0x00431eb1
 char Keyboard::GetCurrentModifierState() {
 // LINE 124:
 	asm( 
@@ -417,7 +417,7 @@ char Keyboard::GetCurrentModifierState() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00431f1f
+// FUNCTION: COPTER_D 0x00431f1f
 char Keyboard::ConvertKeyToCharacter(unsigned char, unsigned char) {
 // LINE 165:
 	asm( 
@@ -746,7 +746,7 @@ char Keyboard::ConvertKeyToCharacter(unsigned char, unsigned char) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00432226
+// FUNCTION: COPTER_D 0x00432226
 int32_t Keyboard::IsToggleKeySet(unsigned char) {
 // LINE 241:
 	asm( 
@@ -789,7 +789,7 @@ int32_t Keyboard::IsToggleKeySet(unsigned char) {
 
 
 // Contribution: 3:00000024-00000027 Module: 62, 4 byte alignment, initialized_data, read, write, 
-// LOCAL: SIMCOPTER 0x00000028
+// LOCAL: COPTER_D 0x00000028
 // $S15
 
 

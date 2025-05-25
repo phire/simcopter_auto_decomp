@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:00109000-00112d42 Module: 170, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x0050a000
+// FUNCTION: COPTER_D 0x0050a000
 short S3CityInit() {
 // LINE 206:
 	asm( 
@@ -433,7 +433,7 @@ short S3CityInit() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0050a406
+// FUNCTION: COPTER_D 0x0050a406
 void S3CityDeInit() {
 // LINE 334:
 	asm( 
@@ -507,7 +507,7 @@ void S3CityDeInit() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0050a478
+// FUNCTION: COPTER_D 0x0050a478
 void VRSetBackPlane() {
 // LINE 363:
 	asm( 
@@ -686,7 +686,7 @@ void VRSetBackPlane() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0050a5df
+// FUNCTION: COPTER_D 0x0050a5df
 short S3CityInitOmap() {
 // LINE 447:
 	asm( 
@@ -9827,7 +9827,7 @@ short S3CityInitOmap() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0050ef4e
+// FUNCTION: COPTER_D 0x0050ef4e
 void S3CityGrid() {
 // LINE 2446:
 	asm( 
@@ -10658,7 +10658,7 @@ void S3CityGrid() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0050f67e
+// FUNCTION: COPTER_D 0x0050f67e
 void S3CityGetCells() {
 // LINE 2916:
 	asm( 
@@ -11527,7 +11527,7 @@ void S3CityGetCells() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0050fe32
+// FUNCTION: COPTER_D 0x0050fe32
 void city_fovscan_horizedge() {
 // LINE 3210:
 	asm( 
@@ -12094,7 +12094,7 @@ void city_fovscan_horizedge() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005102d4
+// FUNCTION: COPTER_D 0x005102d4
 void city_fovscan_vertedge() {
 // LINE 3360:
 	asm( 
@@ -12634,7 +12634,7 @@ void city_fovscan_vertedge() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00510776
+// FUNCTION: COPTER_D 0x00510776
 void city_subscan_horiz() {
 // LINE 3520:
 	asm( 
@@ -13130,7 +13130,7 @@ void city_subscan_horiz() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00510beb
+// FUNCTION: COPTER_D 0x00510beb
 void city_subscan_vert() {
 // LINE 3637:
 	asm( 
@@ -13605,7 +13605,7 @@ void city_subscan_vert() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0051103e
+// FUNCTION: COPTER_D 0x0051103e
 void S3CityDrawGrid() {
 // LINE 3754:
 	asm( 
@@ -14144,7 +14144,7 @@ void S3CityDrawGrid() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0051147c
+// FUNCTION: COPTER_D 0x0051147c
 void S3CityDyObjFixup() {
 // LINE 3931:
 	asm( 
@@ -15680,7 +15680,7 @@ void S3CityDyObjFixup() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0051215e
+// FUNCTION: COPTER_D 0x0051215e
 int32_t S3CityCellInFront() {
 // LINE 4314:
 	asm( 
@@ -15792,7 +15792,7 @@ int32_t S3CityCellInFront() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0051221e
+// FUNCTION: COPTER_D 0x0051221e
 void S3CityCheckGridPos() {
 // LINE 4355:
 	asm( 
@@ -16109,7 +16109,7 @@ void S3CityCheckGridPos() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005124fe
+// FUNCTION: COPTER_D 0x005124fe
 void S3CitySpiralScan() {
 // LINE 4453:
 	asm( 
@@ -16332,7 +16332,7 @@ void S3CitySpiralScan() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00512670
+// FUNCTION: COPTER_D 0x00512670
 int32_t S3CityCellViewReject() {
 // LINE 4733:
 	asm( 
@@ -16710,7 +16710,7 @@ int32_t S3CityCellViewReject() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00512961
+// FUNCTION: COPTER_D 0x00512961
 void S3CityDrawOverHeadGrid() {
 // LINE 4888:
 	asm( 
@@ -16828,7 +16828,7 @@ void S3CityDrawOverHeadGrid() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00512a46
+// FUNCTION: COPTER_D 0x00512a46
 short S3CityLowestTerrAlt() {
 // LINE 4939:
 	asm( 
@@ -16913,7 +16913,7 @@ short S3CityLowestTerrAlt() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00512af5
+// FUNCTION: COPTER_D 0x00512af5
 int32_t S3CityIsCellFlat() {
 // LINE 4965:
 	asm( 
@@ -17022,7 +17022,7 @@ int32_t S3CityIsCellFlat() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00512c2b
+// FUNCTION: COPTER_D 0x00512c2b
 int32_t S3CityGetBase() {
 // LINE 4984:
 	asm( 
@@ -17248,7 +17248,7 @@ int32_t S3CityGetBase() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00512e3a
+// FUNCTION: COPTER_D 0x00512e3a
 void S3CityCreateHeliBase() {
 // LINE 5051:
 	asm( 
@@ -18976,97 +18976,97 @@ void S3CityCreateHeliBase() {
 
 
 // Contribution: 2:00003dc0-00003fd7 Module: 170, 8 byte alignment, initialized_data, read, 
-// LOCAL: SIMCOPTER 0x00003dc0
+// LOCAL: COPTER_D 0x00003dc0
 // TurnTable3
-// LOCAL: SIMCOPTER 0x00003e40
+// LOCAL: COPTER_D 0x00003e40
 // TurnTable2
-// LOCAL: SIMCOPTER 0x00003e80
+// LOCAL: COPTER_D 0x00003e80
 // IndexToType
-// LOCAL: SIMCOPTER 0x00003e90
+// LOCAL: COPTER_D 0x00003e90
 // TypeToIndex2
-// LOCAL: SIMCOPTER 0x00003ed0
+// LOCAL: COPTER_D 0x00003ed0
 // TILUT
-// LOCAL: SIMCOPTER 0x00003f10
+// LOCAL: COPTER_D 0x00003f10
 // OT
-// LOCAL: SIMCOPTER 0x00003f50
+// LOCAL: COPTER_D 0x00003f50
 // RRT
-// LOCAL: SIMCOPTER 0x00003f90
+// LOCAL: COPTER_D 0x00003f90
 // LRT
 
 
 // Contribution: 3:0001e9d0-0001ecb1 Module: 170, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x0001e9d0
+// GLOBAL: COPTER_D 0x0001e9d0
 // G_alt
-// GLOBAL: SIMCOPTER 0x0001e9d4
+// GLOBAL: COPTER_D 0x0001e9d4
 // G_last_grid_size
-// GLOBAL: SIMCOPTER 0x0001e9d8
+// GLOBAL: COPTER_D 0x0001e9d8
 // S_down_trend
-// GLOBAL: SIMCOPTER 0x0001e9dc
+// GLOBAL: COPTER_D 0x0001e9dc
 // S_up_trend
-// LOCAL: SIMCOPTER 0x0001e9e0
+// LOCAL: COPTER_D 0x0001e9e0
 // S_S2CityAlloc_Count
-// LOCAL: SIMCOPTER 0x0001e9e4
+// LOCAL: COPTER_D 0x0001e9e4
 // S_inmapmode
-// LOCAL: SIMCOPTER 0x0001e9e8
+// LOCAL: COPTER_D 0x0001e9e8
 // S_watermorph
-// LOCAL: SIMCOPTER 0x0001e9ec
+// LOCAL: COPTER_D 0x0001e9ec
 // how_deep
-// LOCAL: SIMCOPTER 0x0001e9f0
+// LOCAL: COPTER_D 0x0001e9f0
 // S_water_cycle
-// LOCAL: SIMCOPTER 0x0001e9f4
+// LOCAL: COPTER_D 0x0001e9f4
 // S_water_timer
 
 
 // Contribution: 3:00072098-000934ff Module: 170, 8 byte alignment, uninitialized_data, read, write, 
-// LOCAL: SIMCOPTER 0x00072098
+// LOCAL: COPTER_D 0x00072098
 // S_local_lstart
-// LOCAL: SIMCOPTER 0x000720a4
+// LOCAL: COPTER_D 0x000720a4
 // S_used_spiralscan
-// LOCAL: SIMCOPTER 0x000720a8
+// LOCAL: COPTER_D 0x000720a8
 // S_terr_pos
-// LOCAL: SIMCOPTER 0x00072100
+// LOCAL: COPTER_D 0x00072100
 // S_facesort
-// LOCAL: SIMCOPTER 0x00072104
+// LOCAL: COPTER_D 0x00072104
 // S_rlast
-// LOCAL: SIMCOPTER 0x00072108
+// LOCAL: COPTER_D 0x00072108
 // S_lcells
-// LOCAL: SIMCOPTER 0x00072908
+// LOCAL: COPTER_D 0x00072908
 // S_XposZneg
-// LOCAL: SIMCOPTER 0x00072918
+// LOCAL: COPTER_D 0x00072918
 // S_tmp_cells
-// LOCAL: SIMCOPTER 0x00072be8
+// LOCAL: COPTER_D 0x00072be8
 // S_fovlast
-// LOCAL: SIMCOPTER 0x00072bf0
+// LOCAL: COPTER_D 0x00072bf0
 // S_world_lstart
-// LOCAL: SIMCOPTER 0x00072c00
+// LOCAL: COPTER_D 0x00072c00
 // S_rrotmat
-// LOCAL: SIMCOPTER 0x00072c40
+// LOCAL: COPTER_D 0x00072c40
 // S_XposZpos
-// LOCAL: SIMCOPTER 0x00072c50
+// LOCAL: COPTER_D 0x00072c50
 // S_fov_cells
-// LOCAL: SIMCOPTER 0x00092c50
+// LOCAL: COPTER_D 0x00092c50
 // S_rcells
-// LOCAL: SIMCOPTER 0x00093450
+// LOCAL: COPTER_D 0x00093450
 // S_tmpcell_ctr
-// LOCAL: SIMCOPTER 0x00093458
+// LOCAL: COPTER_D 0x00093458
 // S_lrotmat
-// LOCAL: SIMCOPTER 0x00093498
+// LOCAL: COPTER_D 0x00093498
 // S_pos
-// LOCAL: SIMCOPTER 0x000934a0
+// LOCAL: COPTER_D 0x000934a0
 // S_llast
-// LOCAL: SIMCOPTER 0x000934a8
+// LOCAL: COPTER_D 0x000934a8
 // S_local_rstart
-// LOCAL: SIMCOPTER 0x000934b8
+// LOCAL: COPTER_D 0x000934b8
 // S_XnegZneg
-// LOCAL: SIMCOPTER 0x000934c8
+// LOCAL: COPTER_D 0x000934c8
 // S_world_rstart
-// LOCAL: SIMCOPTER 0x000934d4
+// LOCAL: COPTER_D 0x000934d4
 // S_lowres_dist
-// LOCAL: SIMCOPTER 0x000934d8
+// LOCAL: COPTER_D 0x000934d8
 // S_XnegZpos
-// LOCAL: SIMCOPTER 0x000934e8
+// LOCAL: COPTER_D 0x000934e8
 // S_world_eye
-// LOCAL: SIMCOPTER 0x000934f8
+// LOCAL: COPTER_D 0x000934f8
 // S_last_pos
-// LOCAL: SIMCOPTER 0x00093500
+// LOCAL: COPTER_D 0x00093500
 // S_h1

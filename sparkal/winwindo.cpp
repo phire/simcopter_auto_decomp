@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:0007f690-00080ad0 Module: 30, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00480690
+// FUNCTION: COPTER_D 0x00480690
 void CSparkalWindow::CSparkalWindow() {
 // LINE 52:
 	asm( 
@@ -91,7 +91,7 @@ void CSparkalWindow::CSparkalWindow() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00480738
+// FUNCTION: COPTER_D 0x00480738
 void CSparkalWindow::CSparkalWindow(unsigned long, unsigned long, unsigned long, const struct SparkalColor*, char *) {
 // LINE 76:
 	asm( 
@@ -781,7 +781,7 @@ void CSparkalWindow::CSparkalWindow(unsigned long, unsigned long, unsigned long,
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00480d01
+// FUNCTION: COPTER_D 0x00480d01
 void CSparkalWindow::~CSparkalWindow() {
 // LINE 248:
 	asm( 
@@ -884,7 +884,7 @@ void CSparkalWindow::~CSparkalWindow() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00480dca
+// FUNCTION: COPTER_D 0x00480dca
 unsigned long CSparkalWindow::GetClientSize(long *, long *) {
 // LINE 276:
 	asm( 
@@ -975,7 +975,7 @@ unsigned long CSparkalWindow::GetClientSize(long *, long *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00480e74
+// FUNCTION: COPTER_D 0x00480e74
 unsigned long CSparkalWindow::SetCursor(unsigned long) {
 // LINE 308:
 	asm( 
@@ -1084,7 +1084,7 @@ unsigned long CSparkalWindow::SetCursor(unsigned long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00480f32
+// FUNCTION: COPTER_D 0x00480f32
 unsigned long CSparkalWindow::SetCursorFromIndex(int32_t) {
 // LINE 337:
 	asm( 
@@ -1136,7 +1136,7 @@ unsigned long CSparkalWindow::SetCursorFromIndex(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00480f80
+// FUNCTION: COPTER_D 0x00480f80
 unsigned long CSparkalWindow::LoadGameCursors() {
 // LINE 352:
 	asm( 
@@ -1163,7 +1163,7 @@ unsigned long CSparkalWindow::LoadGameCursors() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00480f9b
+// FUNCTION: COPTER_D 0x00480f9b
 void CSparkalWindow::FreeGameCursors() {
 // LINE 360:
 	asm( 
@@ -1186,7 +1186,7 @@ void CSparkalWindow::FreeGameCursors() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00480fb1
+// FUNCTION: COPTER_D 0x00480fb1
 unsigned long CSparkalWindow::DrawBufferText(const const char*, unsigned long, long, long, long *, long *, long *, long *) {
 // LINE 372:
 	asm( 
@@ -1474,7 +1474,7 @@ unsigned long CSparkalWindow::DrawBufferText(const const char*, unsigned long, l
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004811bb
+// FUNCTION: COPTER_D 0x004811bb
 unsigned long CSparkalWindow::ScreenScroll(long, long, long, long, long, long) {
 // LINE 462:
 	asm( 
@@ -1561,7 +1561,7 @@ unsigned long CSparkalWindow::ScreenScroll(long, long, long, long, long, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00481265
+// FUNCTION: COPTER_D 0x00481265
 void CSparkalWindow::UpdatePalette(long, long, struct SparkalColor*) {
 // LINE 482:
 	asm( 
@@ -1649,7 +1649,7 @@ void CSparkalWindow::UpdatePalette(long, long, struct SparkalColor*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048132b
+// FUNCTION: COPTER_D 0x0048132b
 int32_t CheckIdentityPalette() {
 // LINE 505:
 	asm( 
@@ -1910,7 +1910,7 @@ int32_t CheckIdentityPalette() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004815dd
+// FUNCTION: COPTER_D 0x004815dd
 long SparkalWindowProc() {
 // LINE 584:
 	asm( 
@@ -1975,7 +1975,7 @@ long SparkalWindowProc() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00481647
+// FUNCTION: COPTER_D 0x00481647
 long CSparkalWindow::MySparkalWindowProc(void * __ptr32, uint32_t, uint32_t, long) {
 // LINE 602:
 	asm( 
@@ -2506,7 +2506,7 @@ long CSparkalWindow::MySparkalWindowProc(void * __ptr32, uint32_t, uint32_t, lon
 
 
 // Contribution: 1:00080ae0-00080b18 Module: 30, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x00481ae0
+// FUNCTION: COPTER_D 0x00481ae0
 // CSparkalWindow::`scalar deleting destructor'
 
 
@@ -2515,7 +2515,7 @@ long CSparkalWindow::MySparkalWindowProc(void * __ptr32, uint32_t, uint32_t, lon
 
 
 // Contribution: 3:00002ab8-00002b8b Module: 30, 8 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x00002ab8
+// GLOBAL: COPTER_D 0x00002ab8
 // gWindowClassName
-// GLOBAL: SIMCOPTER 0x00002b8c
+// GLOBAL: COPTER_D 0x00002b8c
 // SZ_DEFAULT_FILTER

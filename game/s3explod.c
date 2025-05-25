@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:00122910-001235ed Module: 166, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00523910
+// FUNCTION: COPTER_D 0x00523910
 void S3ExplosionReset() {
 // LINE 54:
 	asm( 
@@ -72,7 +72,7 @@ void S3ExplosionReset() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00523996
+// FUNCTION: COPTER_D 0x00523996
 void S3ExplosionInit() {
 // LINE 86:
 	asm( 
@@ -764,7 +764,7 @@ void S3ExplosionInit() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00523f50
+// FUNCTION: COPTER_D 0x00523f50
 void S3ExplosionStart() {
 // LINE 233:
 	asm( 
@@ -983,7 +983,7 @@ void S3ExplosionStart() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005240dc
+// FUNCTION: COPTER_D 0x005240dc
 void S3ExplosionSmokeStart() {
 // LINE 313:
 	asm( 
@@ -1247,7 +1247,7 @@ void S3ExplosionSmokeStart() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052429d
+// FUNCTION: COPTER_D 0x0052429d
 void S3ExplosionDriver() {
 // LINE 400:
 	asm( 
@@ -1637,20 +1637,20 @@ void S3ExplosionDriver() {
 
 
 // Contribution: 3:00020380-00020387 Module: 166, 4 byte alignment, initialized_data, read, write, 
-// LOCAL: SIMCOPTER 0x00020380
+// LOCAL: COPTER_D 0x00020380
 // S_num_expls
-// LOCAL: SIMCOPTER 0x00020384
+// LOCAL: COPTER_D 0x00020384
 // S_num_smoke
-// GLOBAL: SIMCOPTER 0x00020388
+// GLOBAL: COPTER_D 0x00020388
 // S_ftwk_douse_points
 
 
 // Contribution: 3:00093578-00094547 Module: 166, 8 byte alignment, uninitialized_data, read, write, 
-// LOCAL: SIMCOPTER 0x00093988
+// LOCAL: COPTER_D 0x00093988
 // S_spark_vectors
-// LOCAL: SIMCOPTER 0x00093a30
+// LOCAL: COPTER_D 0x00093a30
 // S_explseq
-// LOCAL: SIMCOPTER 0x00093a58
+// LOCAL: COPTER_D 0x00093a58
 // S_smoke
-// LOCAL: SIMCOPTER 0x00094548
+// LOCAL: COPTER_D 0x00094548
 // lscfd

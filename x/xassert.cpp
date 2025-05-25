@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:00153f30-00153fea Module: 197, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00554f30
+// FUNCTION: COPTER_D 0x00554f30
 void doAssert() {
 // LINE 36:
 	asm( 

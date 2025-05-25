@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:00135e00-00137427 Module: 158, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00536e00
+// FUNCTION: COPTER_D 0x00536e00
 int32_t CreatePoliceCarInstance() {
 // LINE 89:
 	asm( 
@@ -38,7 +38,7 @@ int32_t CreatePoliceCarInstance() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00536e30
+// FUNCTION: COPTER_D 0x00536e30
 void PoliceCarClass::PoliceCarClass() {
 // LINE 95:
 	asm( 
@@ -76,7 +76,7 @@ void PoliceCarClass::PoliceCarClass() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00536e71
+// FUNCTION: COPTER_D 0x00536e71
 void PoliceCarClass::~PoliceCarClass() {
 // LINE 102:
 	asm( 
@@ -100,7 +100,7 @@ void PoliceCarClass::~PoliceCarClass() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00536e98
+// FUNCTION: COPTER_D 0x00536e98
 class PoliceCarClass* PoliceCarClass::CreateInstance(int32_t) {
 // LINE 118:
 	asm( 
@@ -315,7 +315,7 @@ class PoliceCarClass* PoliceCarClass::CreateInstance(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00537081
+// FUNCTION: COPTER_D 0x00537081
 unsigned char PoliceCarClass::Dispatch(enum EmergencyType, enum EmergencyLevel, long, long) {
 // LINE 215:
 	asm( 
@@ -351,7 +351,7 @@ unsigned char PoliceCarClass::Dispatch(enum EmergencyType, enum EmergencyLevel, 
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005370b3
+// FUNCTION: COPTER_D 0x005370b3
 void PoliceCarClass::ItterateFSM() {
 // LINE 240:
 	asm( 
@@ -1412,7 +1412,7 @@ void PoliceCarClass::ItterateFSM() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00537a2c
+// FUNCTION: COPTER_D 0x00537a2c
 enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal*) {
 // LINE 540:
 	asm( 
@@ -1809,7 +1809,7 @@ enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00537e2f
+// FUNCTION: COPTER_D 0x00537e2f
 int32_t PoliceCarClass::ChangeEmergencyLocationToSpotlightLocation() {
 // LINE 642:
 	asm( 
@@ -1927,7 +1927,7 @@ int32_t PoliceCarClass::ChangeEmergencyLocationToSpotlightLocation() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00537f6c
+// FUNCTION: COPTER_D 0x00537f6c
 int32_t PoliceCarClass::AtScene() {
 // LINE 668:
 	asm( 
@@ -1984,7 +1984,7 @@ int32_t PoliceCarClass::AtScene() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00537fd9
+// FUNCTION: COPTER_D 0x00537fd9
 struct _DYOBJ_INST* PoliceCarClass::ScanForBadGuys(struct _GridCoordinates&) {
 // LINE 686:
 	asm( 
@@ -2125,7 +2125,7 @@ struct _DYOBJ_INST* PoliceCarClass::ScanForBadGuys(struct _GridCoordinates&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0053811f
+// FUNCTION: COPTER_D 0x0053811f
 void PoliceCarClass::SetSaveData(struct _AUTO_LOAD_SAVE*) {
 // LINE 728:
 	asm( 
@@ -2246,7 +2246,7 @@ void PoliceCarClass::SetSaveData(struct _AUTO_LOAD_SAVE*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0053822e
+// FUNCTION: COPTER_D 0x0053822e
 void PoliceCarClass::LoadSaveData(struct _AUTO_LOAD_SAVE*) {
 // LINE 760:
 	asm( 
@@ -2463,7 +2463,7 @@ void PoliceCarClass::LoadSaveData(struct _AUTO_LOAD_SAVE*) {
 
 
 // Contribution: 1:00137430-00137468 Module: 158, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x00538430
+// FUNCTION: COPTER_D 0x00538430
 // PoliceCarClass::`scalar deleting destructor'
 
 
@@ -2472,17 +2472,17 @@ void PoliceCarClass::LoadSaveData(struct _AUTO_LOAD_SAVE*) {
 
 
 // Contribution: 2:00004310-00004337 Module: 158, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00004310
+// GLOBAL: COPTER_D 0x00004310
 // ??_7PoliceCarClass@@6B@
-// LOCAL: SIMCOPTER 0x00004338
+// LOCAL: COPTER_D 0x00004338
 // OT
 
 
 // Contribution: 3:00020eb0-00021049 Module: 158, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x00020eb0
+// GLOBAL: COPTER_D 0x00020eb0
 // curPoliceCars
 
 
 // Contribution: 3:000949e8-000949fb Module: 158, 8 byte alignment, uninitialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x000949e8
+// GLOBAL: COPTER_D 0x000949e8
 // policeCars

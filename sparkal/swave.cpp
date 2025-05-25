@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:0008dbb0-0008e11e Module: 25, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x0048ebb0
+// FUNCTION: COPTER_D 0x0048ebb0
 int32_t WaveOpenFile() {
 // LINE 48:
 	asm( 
@@ -256,7 +256,7 @@ int32_t WaveOpenFile() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048edb9
+// FUNCTION: COPTER_D 0x0048edb9
 int32_t WaveStartDataRead() {
 // LINE 157:
 	asm( 
@@ -321,7 +321,7 @@ int32_t WaveStartDataRead() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048ee25
+// FUNCTION: COPTER_D 0x0048ee25
 int32_t WaveReadFile() {
 // LINE 191:
 	asm( 
@@ -499,7 +499,7 @@ int32_t WaveReadFile() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048ef6f
+// FUNCTION: COPTER_D 0x0048ef6f
 int32_t WaveCloseReadFile() {
 // LINE 251:
 	asm( 
@@ -543,7 +543,7 @@ int32_t WaveCloseReadFile() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048efa4
+// FUNCTION: COPTER_D 0x0048efa4
 int32_t WaveLoadFile() {
 // LINE 278:
 	asm( 

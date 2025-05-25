@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:00070f70-00073776 Module: 36, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00471f70
+// FUNCTION: COPTER_D 0x00471f70
 void HangarWindow::HangarWindow(int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
 // LINE 53:
 	asm( 
@@ -298,7 +298,7 @@ void HangarWindow::HangarWindow(int32_t, class GraphicWindow*, class GraphicWind
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004723af
+// FUNCTION: COPTER_D 0x004723af
 void HangarWindow::~HangarWindow() {
 // LINE 65:
 	asm( 
@@ -472,7 +472,7 @@ void HangarWindow::~HangarWindow() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00472611
+// FUNCTION: COPTER_D 0x00472611
 int32_t HangarWindow::Initialize() {
 // LINE 73:
 	asm( 
@@ -1161,7 +1161,7 @@ int32_t HangarWindow::Initialize() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00472f61
+// FUNCTION: COPTER_D 0x00472f61
 int32_t HangarWindow::ReadPalette(struct SparkalColor*) {
 // LINE 121:
 	asm( 
@@ -1274,7 +1274,7 @@ int32_t HangarWindow::ReadPalette(struct SparkalColor*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004730a3
+// FUNCTION: COPTER_D 0x004730a3
 int32_t HangarWindow::CreateImage(int32_t) {
 // LINE 129:
 	asm( 
@@ -1409,7 +1409,7 @@ int32_t HangarWindow::CreateImage(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00473229
+// FUNCTION: COPTER_D 0x00473229
 void HangarWindow::DestroyImage() {
 // LINE 143:
 	asm( 
@@ -1461,7 +1461,7 @@ void HangarWindow::DestroyImage() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00473296
+// FUNCTION: COPTER_D 0x00473296
 int32_t HangarWindow::ComposeSelf() {
 // LINE 153:
 	asm( 
@@ -1671,7 +1671,7 @@ int32_t HangarWindow::ComposeSelf() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004734ed
+// FUNCTION: COPTER_D 0x004734ed
 int32_t HangarWindow::DoMessage(class GraphicWindow*, long, long, void * __ptr32) {
 // LINE 183:
 	asm( 
@@ -1805,7 +1805,7 @@ int32_t HangarWindow::DoMessage(class GraphicWindow*, long, long, void * __ptr32
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004735e1
+// FUNCTION: COPTER_D 0x004735e1
 long HangarWindow::DoKeyDown(long, char) {
 // LINE 210:
 	asm( 
@@ -1865,7 +1865,7 @@ long HangarWindow::DoKeyDown(long, char) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047363c
+// FUNCTION: COPTER_D 0x0047363c
 long HangarWindow::DoCursorDown(long, long, unsigned long) {
 // LINE 232:
 	asm( 
@@ -1926,7 +1926,7 @@ long HangarWindow::DoCursorDown(long, long, unsigned long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004736a8
+// FUNCTION: COPTER_D 0x004736a8
 long HangarWindow::DoCursorUp(long, long, unsigned long) {
 // LINE 249:
 	asm( 
@@ -1953,7 +1953,7 @@ long HangarWindow::DoCursorUp(long, long, unsigned long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004736c5
+// FUNCTION: COPTER_D 0x004736c5
 long HangarWindow::DoCursorMove(long, long) {
 // LINE 259:
 	asm( 
@@ -2078,7 +2078,7 @@ long HangarWindow::DoCursorMove(long, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00473826
+// FUNCTION: COPTER_D 0x00473826
 void HangarWindow::GetImagePath() {
 // LINE 279:
 	asm( 
@@ -2333,7 +2333,7 @@ void HangarWindow::GetImagePath() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00473b5c
+// FUNCTION: COPTER_D 0x00473b5c
 int32_t HangarWindow::GetHotspotFromPosition(long&, class MPoint&) {
 // LINE 292:
 	asm( 
@@ -2453,7 +2453,7 @@ int32_t HangarWindow::GetHotspotFromPosition(long&, class MPoint&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00473c6c
+// FUNCTION: COPTER_D 0x00473c6c
 void HangarWindow::ScrollHangarView(long) {
 // LINE 313:
 	asm( 
@@ -2585,7 +2585,7 @@ void HangarWindow::ScrollHangarView(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00473de1
+// FUNCTION: COPTER_D 0x00473de1
 int32_t HangarWindow::IsHangarRectVisibleInWindow(class MRect&) {
 // LINE 364:
 	asm( 
@@ -2689,7 +2689,7 @@ int32_t HangarWindow::IsHangarRectVisibleInWindow(class MRect&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00473ec5
+// FUNCTION: COPTER_D 0x00473ec5
 void HangarWindow::ClipRectToWindow(class MRect&) {
 // LINE 383:
 	asm( 
@@ -2772,7 +2772,7 @@ void HangarWindow::ClipRectToWindow(class MRect&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00473f53
+// FUNCTION: COPTER_D 0x00473f53
 void HangarWindow::DisplayHelp(int32_t, class MPoint&) {
 // LINE 438:
 	asm( 
@@ -3275,7 +3275,7 @@ void HangarWindow::DisplayHelp(int32_t, class MPoint&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00474577
+// FUNCTION: COPTER_D 0x00474577
 void HangarWindow::HideHelp() {
 // LINE 485:
 	asm( 
@@ -3307,7 +3307,7 @@ void HangarWindow::HideHelp() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004745a5
+// FUNCTION: COPTER_D 0x004745a5
 int32_t HangarWindow::GetSoundFileNameFromHelpID(long, class basic_string<char>&) {
 // LINE 494:
 	asm( 
@@ -3445,7 +3445,7 @@ int32_t HangarWindow::GetSoundFileNameFromHelpID(long, class basic_string<char>&
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047474e
+// FUNCTION: COPTER_D 0x0047474e
 void HangarWindow::LoadHotSpots() {
 // LINE 504:
 	asm( 
@@ -3480,7 +3480,7 @@ void HangarWindow::LoadHotSpots() {
 
 
 // Contribution: 1:00073780-000737b8 Module: 36, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x00474780
+// FUNCTION: COPTER_D 0x00474780
 // HangarWindow::`scalar deleting destructor'
 
 
@@ -3492,16 +3492,16 @@ void HangarWindow::LoadHotSpots() {
 
 
 // Contribution: 2:00001c20-00001ce3 Module: 36, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00001c20
+// GLOBAL: COPTER_D 0x00001c20
 // ??_7HangarWindow@@6B@
 
 
 // Contribution: 3:000027c8-00002818 Module: 36, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x000027c8
+// GLOBAL: COPTER_D 0x000027c8
 // SZ_HANGAR_DAY_IMAGE_FILE_NAME
-// GLOBAL: SIMCOPTER 0x000027cc
+// GLOBAL: COPTER_D 0x000027cc
 // SZ_HANGAR_NIGHT_IMAGE_FILE_NAME
-// GLOBAL: SIMCOPTER 0x000027d0
+// GLOBAL: COPTER_D 0x000027d0
 // SZ_HANGAR_DAY_BUTTON_FILE_NAME
-// GLOBAL: SIMCOPTER 0x000027d4
+// GLOBAL: COPTER_D 0x000027d4
 // SZ_HANGAR_NIGHT_BUTTON_FILE_NAME

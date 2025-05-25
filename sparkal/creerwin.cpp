@@ -5,19 +5,19 @@
 
 
 // Contribution: 1:0007ce80-0007f60b Module: 31, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x0047de80
+// FUNCTION: COPTER_D 0x0047de80
 // $E64
 
-// FUNCTION: SIMCOPTER 0x0047de95
+// FUNCTION: COPTER_D 0x0047de95
 // $E63
 
-// FUNCTION: SIMCOPTER 0x0047debf
+// FUNCTION: COPTER_D 0x0047debf
 // $E67
 
-// FUNCTION: SIMCOPTER 0x0047ded4
+// FUNCTION: COPTER_D 0x0047ded4
 // $E66
 
-// FUNCTION: SIMCOPTER 0x0047defe
+// FUNCTION: COPTER_D 0x0047defe
 void CareerWindow::CareerWindow(class MRect&, int32_t, void * __ptr32, long *, class GraphicWindow*, class GraphicWindowOwner*, int32_t, int32_t) {
 // LINE 63:
 	asm( 
@@ -204,7 +204,7 @@ void CareerWindow::CareerWindow(class MRect&, int32_t, void * __ptr32, long *, c
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047e129
+// FUNCTION: COPTER_D 0x0047e129
 void CareerWindow::~CareerWindow() {
 // LINE 93:
 	asm( 
@@ -254,7 +254,7 @@ void CareerWindow::~CareerWindow() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047e19e
+// FUNCTION: COPTER_D 0x0047e19e
 int32_t CareerWindow::Initialize() {
 // LINE 101:
 	asm( 
@@ -1453,7 +1453,7 @@ int32_t CareerWindow::Initialize() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047f391
+// FUNCTION: COPTER_D 0x0047f391
 int32_t CareerWindow::CreateImage(int32_t) {
 // LINE 201:
 	asm( 
@@ -1749,7 +1749,7 @@ int32_t CareerWindow::CreateImage(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047f75a
+// FUNCTION: COPTER_D 0x0047f75a
 void CareerWindow::DestroyImage() {
 // LINE 219:
 	asm( 
@@ -1806,7 +1806,7 @@ void CareerWindow::DestroyImage() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047f7cf
+// FUNCTION: COPTER_D 0x0047f7cf
 int32_t CareerWindow::DrawSelf() {
 // LINE 232:
 	asm( 
@@ -1903,7 +1903,7 @@ int32_t CareerWindow::DrawSelf() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047f8ab
+// FUNCTION: COPTER_D 0x0047f8ab
 void CareerWindow::DrawCitySelection() {
 // LINE 256:
 	asm( 
@@ -2037,7 +2037,7 @@ void CareerWindow::DrawCitySelection() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047fa75
+// FUNCTION: COPTER_D 0x0047fa75
 long CareerWindow::DoKeyDown(long, char) {
 // LINE 279:
 	asm( 
@@ -2121,7 +2121,7 @@ long CareerWindow::DoKeyDown(long, char) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047fb14
+// FUNCTION: COPTER_D 0x0047fb14
 long CareerWindow::DoCursorDown(long, long, unsigned long) {
 // LINE 296:
 	asm( 
@@ -2250,7 +2250,7 @@ long CareerWindow::DoCursorDown(long, long, unsigned long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047fc47
+// FUNCTION: COPTER_D 0x0047fc47
 long CareerWindow::DoCursorMove(long, long) {
 // LINE 321:
 	asm( 
@@ -2341,7 +2341,7 @@ long CareerWindow::DoCursorMove(long, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047fd2d
+// FUNCTION: COPTER_D 0x0047fd2d
 int32_t CareerWindow::DoMessage(class GraphicWindow*, long, long, void * __ptr32) {
 // LINE 338:
 	asm( 
@@ -2440,7 +2440,7 @@ int32_t CareerWindow::DoMessage(class GraphicWindow*, long, long, void * __ptr32
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047fdf2
+// FUNCTION: COPTER_D 0x0047fdf2
 long CareerWindow::SetCurrentCitySelection(long) {
 // LINE 358:
 	asm( 
@@ -2564,7 +2564,7 @@ long CareerWindow::SetCurrentCitySelection(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047ff29
+// FUNCTION: COPTER_D 0x0047ff29
 void CareerWindow::GetCoordinatesForCitySelections(class MPoint[17]*, class MRect[17]*) {
 // LINE 383:
 	asm( 
@@ -2679,7 +2679,7 @@ void CareerWindow::GetCoordinatesForCitySelections(class MPoint[17]*, class MRec
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00480032
+// FUNCTION: COPTER_D 0x00480032
 void CareerWindow::CitySelectionFrame::CitySelectionFrame(int32_t, int32_t, int32_t) {
 // LINE 401:
 	asm( 
@@ -2985,7 +2985,7 @@ void CareerWindow::CitySelectionFrame::CitySelectionFrame(int32_t, int32_t, int3
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048049d
+// FUNCTION: COPTER_D 0x0048049d
 void CareerWindow::CitySelectionFrame::FillDestinationPoints(class MPoint*) {
 // LINE 426:
 	asm( 
@@ -3035,7 +3035,7 @@ void CareerWindow::CitySelectionFrame::FillDestinationPoints(class MPoint*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004804f7
+// FUNCTION: COPTER_D 0x004804f7
 void CareerWindow::CitySelectionFrame::FillSourceRects(class MRect*) {
 // LINE 434:
 	asm( 
@@ -3152,51 +3152,51 @@ void CareerWindow::CitySelectionFrame::FillSourceRects(class MRect*) {
 
 
 // Contribution: 1:0007f610-0007f648 Module: 31, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x00480610
+// FUNCTION: COPTER_D 0x00480610
 // CareerWindow::`scalar deleting destructor'
 
 
 
 // Contribution: 1:0007f650-0007f68e Module: 31, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x00480650
+// FUNCTION: COPTER_D 0x00480650
 // CareerWindow::CitySelectionFrame::`scalar deleting destructor'
 
 
 
 // Contribution: 2:00001e30-00001ef3 Module: 31, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00001e30
+// GLOBAL: COPTER_D 0x00001e30
 // ??_7CareerWindow@@6B@
 
 
 // Contribution: 2:00001ef4-00001ef7 Module: 31, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00001ef4
+// GLOBAL: COPTER_D 0x00001ef4
 // ??_7CitySelectionFrame@CareerWindow@@6B@
-// GLOBAL: SIMCOPTER 0x00001ef8
+// GLOBAL: COPTER_D 0x00001ef8
 // ??_7CSparkalWindow@@6B@
 
 
 // Contribution: 3:00000064-0000006b Module: 31, 4 byte alignment, initialized_data, read, write, 
-// LOCAL: SIMCOPTER 0x00000064
+// LOCAL: COPTER_D 0x00000064
 // $S65
-// LOCAL: SIMCOPTER 0x00000068
+// LOCAL: COPTER_D 0x00000068
 // $S68
-// LOCAL: SIMCOPTER 0x0000006c
+// LOCAL: COPTER_D 0x0000006c
 // $S119
 
 
 // Contribution: 3:00002a84-00002ab3 Module: 31, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x00002a84
+// GLOBAL: COPTER_D 0x00002a84
 // SZ_CAREER_WINDOW_IMAGE_FILE_NAME
-// GLOBAL: SIMCOPTER 0x00002a88
+// GLOBAL: COPTER_D 0x00002a88
 // SZ_CAREER_WINDOW_SELECTION_FILE_NAME
-// GLOBAL: SIMCOPTER 0x00002a8c
+// GLOBAL: COPTER_D 0x00002a8c
 // SZ_CAREER_WINDOW_BUTTON_FILE_NAME
 
 
 // Contribution: 3:0006d448-0006d44f Module: 31, 4 byte alignment, uninitialized_data, read, write, 
-// LOCAL: SIMCOPTER 0x0006d448
+// LOCAL: COPTER_D 0x0006d448
 // colorTextGamePaletteNormal
-// LOCAL: SIMCOPTER 0x0006d44c
+// LOCAL: COPTER_D 0x0006d44c
 // colorTextGamePaletteHighlighted
-// GLOBAL: SIMCOPTER 0x0006d450
+// GLOBAL: COPTER_D 0x0006d450
 // gSoundQueue

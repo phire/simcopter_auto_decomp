@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:000294f0-0002c41c Module: 66, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x0042a4f0
+// FUNCTION: COPTER_D 0x0042a4f0
 int32_t LanguageManager::Initialize() {
 // LINE 43:
 	asm( 
@@ -30,7 +30,7 @@ int32_t LanguageManager::Initialize() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042a505
+// FUNCTION: COPTER_D 0x0042a505
 int32_t LanguageManager::Uninitialize() {
 // LINE 52:
 	asm( 
@@ -62,7 +62,7 @@ int32_t LanguageManager::Uninitialize() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042a528
+// FUNCTION: COPTER_D 0x0042a528
 int32_t LanguageManager::SetDefaultLanguage(int32_t) {
 // LINE 64:
 	asm( 
@@ -392,7 +392,7 @@ int32_t LanguageManager::SetDefaultLanguage(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042a92c
+// FUNCTION: COPTER_D 0x0042a92c
 int32_t LanguageManager::ConvertIDToName(int32_t, char *) {
 // LINE 95:
 	asm( 
@@ -720,7 +720,7 @@ int32_t LanguageManager::ConvertIDToName(int32_t, char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042ad95
+// FUNCTION: COPTER_D 0x0042ad95
 int32_t LanguageManager::ConvertNameToID(char *, int32_t *) {
 // LINE 128:
 	asm( 
@@ -1024,7 +1024,7 @@ int32_t LanguageManager::ConvertNameToID(char *, int32_t *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042b15f
+// FUNCTION: COPTER_D 0x0042b15f
 int32_t LanguageManager::GetFullStringID(int32_t, int32_t) {
 // LINE 155:
 	asm( 
@@ -1076,7 +1076,7 @@ int32_t LanguageManager::GetFullStringID(int32_t, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042b1af
+// FUNCTION: COPTER_D 0x0042b1af
 int32_t LanguageManager::CanWeSwitchToGivenLanguage(int32_t) {
 // LINE 173:
 	asm( 
@@ -1460,7 +1460,7 @@ int32_t LanguageManager::CanWeSwitchToGivenLanguage(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042b7ae
+// FUNCTION: COPTER_D 0x0042b7ae
 int32_t LanguageManager::GetNextLanguage(int32_t) {
 // LINE 192:
 	asm( 
@@ -1528,7 +1528,7 @@ int32_t LanguageManager::GetNextLanguage(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042b819
+// FUNCTION: COPTER_D 0x0042b819
 int32_t LanguageManager::GetLanguageIDAlias(int32_t) {
 // LINE 229:
 	asm( 
@@ -1667,7 +1667,7 @@ int32_t LanguageManager::GetLanguageIDAlias(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042b91a
+// FUNCTION: COPTER_D 0x0042b91a
 int32_t LanguageManager::DoesLanguageUseLatinCharacters(int32_t) {
 // LINE 275:
 	asm( 
@@ -1742,7 +1742,7 @@ int32_t LanguageManager::DoesLanguageUseLatinCharacters(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042ba26
+// FUNCTION: COPTER_D 0x0042ba26
 int32_t LanguageManager::GetLanguageDirectoryName(class basic_string<char>&, int32_t) {
 // LINE 313:
 	asm( 
@@ -1772,7 +1772,7 @@ int32_t LanguageManager::GetLanguageDirectoryName(class basic_string<char>&, int
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042ba46
+// FUNCTION: COPTER_D 0x0042ba46
 int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>&, int32_t) {
 // LINE 325:
 	asm( 
@@ -2226,7 +2226,7 @@ int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>&, int32
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042c0de
+// FUNCTION: COPTER_D 0x0042c0de
 int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>&, int32_t) {
 // LINE 347:
 	asm( 
@@ -2680,7 +2680,7 @@ int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>&, int32_t
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042c776
+// FUNCTION: COPTER_D 0x0042c776
 int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>&, int32_t) {
 // LINE 369:
 	asm( 
@@ -3134,7 +3134,7 @@ int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>&
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042ce0e
+// FUNCTION: COPTER_D 0x0042ce0e
 int32_t LanguageManager::GetTypefaceForLanguage(int32_t, int32_t, char *) {
 // LINE 392:
 	asm( 
@@ -3217,7 +3217,7 @@ int32_t LanguageManager::GetTypefaceForLanguage(int32_t, int32_t, char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042ce9f
+// FUNCTION: COPTER_D 0x0042ce9f
 int32_t LanguageManager::GetFontFilePathForLanguage(int32_t, int32_t, char *) {
 // LINE 426:
 	asm( 
@@ -3262,7 +3262,7 @@ int32_t LanguageManager::GetFontFilePathForLanguage(int32_t, int32_t, char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042ceda
+// FUNCTION: COPTER_D 0x0042ceda
 int32_t LanguageManager::LoadLanguageSystemFonts(int32_t) {
 // LINE 448:
 	asm( 
@@ -3362,7 +3362,7 @@ int32_t LanguageManager::LoadLanguageSystemFonts(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042cf8e
+// FUNCTION: COPTER_D 0x0042cf8e
 int32_t LanguageManager::UnloadLanguageSystemFonts(int32_t) {
 // LINE 488:
 	asm( 
@@ -3449,7 +3449,7 @@ int32_t LanguageManager::UnloadLanguageSystemFonts(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042d023
+// FUNCTION: COPTER_D 0x0042d023
 int32_t LanguageManager::IsTypefaceLoaded(char *) {
 // LINE 524:
 	asm( 
@@ -3517,7 +3517,7 @@ int32_t LanguageManager::IsTypefaceLoaded(char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042d083
+// FUNCTION: COPTER_D 0x0042d083
 int32_t LanguageManager::GetCurrentSystemLocale() {
 // LINE 549:
 	asm( 
@@ -3842,7 +3842,7 @@ int32_t LanguageManager::GetCurrentSystemLocale() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042d387
+// FUNCTION: COPTER_D 0x0042d387
 int32_t LanguageManager::GetLanguageRoadDrivingSide(int32_t) {
 // LINE 603:
 	asm( 
@@ -3889,7 +3889,7 @@ int32_t LanguageManager::GetLanguageRoadDrivingSide(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042d3c9
+// FUNCTION: COPTER_D 0x0042d3c9
 int32_t EnumFontFamilyProcecure() {
 // LINE 626:
 	asm( 
@@ -3951,5 +3951,5 @@ int32_t EnumFontFamilyProcecure() {
 
 
 // Contribution: 3:00000664-000006a7 Module: 66, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x00000664
+// GLOBAL: COPTER_D 0x00000664
 // gDefaultLanguage

@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:000bc670-000c27dd Module: 1, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x004bd670
+// FUNCTION: COPTER_D 0x004bd670
 void CopterGameMode::CopterGameMode() {
 // LINE 50:
 	asm( 
@@ -34,7 +34,7 @@ void CopterGameMode::CopterGameMode() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bd692
+// FUNCTION: COPTER_D 0x004bd692
 void CopterGameMode::CopterGameMode(int32_t) {
 // LINE 56:
 	asm( 
@@ -61,7 +61,7 @@ void CopterGameMode::CopterGameMode(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bd6b5
+// FUNCTION: COPTER_D 0x004bd6b5
 void CopterGameMode::CopterGameMode(const class CopterGameMode&) {
 // LINE 59:
 	asm( 
@@ -92,7 +92,7 @@ void CopterGameMode::CopterGameMode(const class CopterGameMode&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bd6dc
+// FUNCTION: COPTER_D 0x004bd6dc
 class CopterGameMode& CopterGameMode::operator=(const class CopterGameMode&) {
 // LINE 64:
 	asm( 
@@ -126,7 +126,7 @@ class CopterGameMode& CopterGameMode::operator=(const class CopterGameMode&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bd701
+// FUNCTION: COPTER_D 0x004bd701
 int32_t operator==() {
 // LINE 69:
 	asm( 
@@ -158,7 +158,7 @@ int32_t operator==() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bd72d
+// FUNCTION: COPTER_D 0x004bd72d
 void GameModeCoreData::GameModeCoreData() {
 // LINE 132:
 	asm( 
@@ -192,7 +192,7 @@ void GameModeCoreData::GameModeCoreData() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bd777
+// FUNCTION: COPTER_D 0x004bd777
 void GameModeCoreData::~GameModeCoreData() {
 // LINE 139:
 	asm( 
@@ -240,7 +240,7 @@ void GameModeCoreData::~GameModeCoreData() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bd7c8
+// FUNCTION: COPTER_D 0x004bd7c8
 void GameModeMainMenuData::GameModeMainMenuData() {
 // LINE 156:
 	asm( 
@@ -288,7 +288,7 @@ void GameModeMainMenuData::GameModeMainMenuData() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bd81a
+// FUNCTION: COPTER_D 0x004bd81a
 void GameModeMainMenuData::CreatePalette() {
 // LINE 169:
 	asm( 
@@ -363,7 +363,7 @@ void GameModeMainMenuData::CreatePalette() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bd8f7
+// FUNCTION: COPTER_D 0x004bd8f7
 void GameModeMainMenuData::UsePalette() {
 // LINE 184:
 	asm( 
@@ -414,7 +414,7 @@ void GameModeMainMenuData::UsePalette() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bd94a
+// FUNCTION: COPTER_D 0x004bd94a
 int32_t GameModeMainMenuData::CreateAllSurfaces() {
 // LINE 196:
 	asm( 
@@ -663,7 +663,7 @@ int32_t GameModeMainMenuData::CreateAllSurfaces() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bdc6f
+// FUNCTION: COPTER_D 0x004bdc6f
 int32_t GameModeMainMenuData::DestroyAllSurfaces() {
 // LINE 229:
 	asm( 
@@ -717,7 +717,7 @@ int32_t GameModeMainMenuData::DestroyAllSurfaces() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bdccb
+// FUNCTION: COPTER_D 0x004bdccb
 void GameModePickCareerCityData::GameModePickCareerCityData() {
 // LINE 250:
 	asm( 
@@ -777,7 +777,7 @@ void GameModePickCareerCityData::GameModePickCareerCityData() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bdd3b
+// FUNCTION: COPTER_D 0x004bdd3b
 void GameModePickCareerCityData::Initialize() {
 // LINE 264:
 	asm( 
@@ -805,7 +805,7 @@ void GameModePickCareerCityData::Initialize() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bdd5b
+// FUNCTION: COPTER_D 0x004bdd5b
 void GameModePickCareerCityData::CreatePalette() {
 // LINE 273:
 	asm( 
@@ -880,7 +880,7 @@ void GameModePickCareerCityData::CreatePalette() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bde38
+// FUNCTION: COPTER_D 0x004bde38
 void GameModePickCareerCityData::UsePalette() {
 // LINE 288:
 	asm( 
@@ -931,7 +931,7 @@ void GameModePickCareerCityData::UsePalette() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bde8b
+// FUNCTION: COPTER_D 0x004bde8b
 int32_t GameModePickCareerCityData::CreateAllSurfaces() {
 // LINE 300:
 	asm( 
@@ -1052,7 +1052,7 @@ int32_t GameModePickCareerCityData::CreateAllSurfaces() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bdfa9
+// FUNCTION: COPTER_D 0x004bdfa9
 int32_t GameModePickCareerCityData::DestroyAllSurfaces() {
 // LINE 324:
 	asm( 
@@ -1106,7 +1106,7 @@ int32_t GameModePickCareerCityData::DestroyAllSurfaces() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004be005
+// FUNCTION: COPTER_D 0x004be005
 void GameModePlayData::GameModePlayData() {
 // LINE 342:
 	asm( 
@@ -1272,7 +1272,7 @@ void GameModePlayData::GameModePlayData() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004be148
+// FUNCTION: COPTER_D 0x004be148
 void GameModePlayData::Initialize() {
 // LINE 389:
 	asm( 
@@ -1305,7 +1305,7 @@ void GameModePlayData::Initialize() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004be16e
+// FUNCTION: COPTER_D 0x004be16e
 void GameModePlayData::CreatePalette() {
 // LINE 399:
 	asm( 
@@ -1441,7 +1441,7 @@ void GameModePlayData::CreatePalette() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004be305
+// FUNCTION: COPTER_D 0x004be305
 void GameModePlayData::UsePalette() {
 // LINE 438:
 	asm( 
@@ -1492,7 +1492,7 @@ void GameModePlayData::UsePalette() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004be358
+// FUNCTION: COPTER_D 0x004be358
 void GameModePlayData::Sleep() {
 // LINE 450:
 	asm( 
@@ -1789,7 +1789,7 @@ void GameModePlayData::Sleep() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004be5d0
+// FUNCTION: COPTER_D 0x004be5d0
 void GameModePlayData::Awake() {
 // LINE 491:
 	asm( 
@@ -2126,7 +2126,7 @@ void GameModePlayData::Awake() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004be898
+// FUNCTION: COPTER_D 0x004be898
 int32_t GameModePlayData::CreateAllSurfaces() {
 // LINE 542:
 	asm( 
@@ -2168,7 +2168,7 @@ int32_t GameModePlayData::CreateAllSurfaces() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004be8cb
+// FUNCTION: COPTER_D 0x004be8cb
 int32_t GameModePlayData::CreatePanels() {
 // LINE 554:
 	asm( 
@@ -2743,7 +2743,7 @@ int32_t GameModePlayData::CreatePanels() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bf018
+// FUNCTION: COPTER_D 0x004bf018
 void GameModePlayData::MakeSureHeliHasProperFlaps() {
 // LINE 636:
 	asm( 
@@ -3246,7 +3246,7 @@ void GameModePlayData::MakeSureHeliHasProperFlaps() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bf4fc
+// FUNCTION: COPTER_D 0x004bf4fc
 int32_t GameModePlayData::CreateIndependentSurfaces() {
 // LINE 719:
 	asm( 
@@ -3334,7 +3334,7 @@ int32_t GameModePlayData::CreateIndependentSurfaces() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bf5ca
+// FUNCTION: COPTER_D 0x004bf5ca
 void GameModePlayData::DestroyIndependentSurfaces() {
 // LINE 735:
 	asm( 
@@ -3416,7 +3416,7 @@ void GameModePlayData::DestroyIndependentSurfaces() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bf681
+// FUNCTION: COPTER_D 0x004bf681
 void GameModePlayData::DestroyAllSurfaces() {
 // LINE 752:
 	asm( 
@@ -3449,7 +3449,7 @@ void GameModePlayData::DestroyAllSurfaces() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bf6a7
+// FUNCTION: COPTER_D 0x004bf6a7
 int32_t GameModePlayData::DestroyPanels() {
 // LINE 762:
 	asm( 
@@ -3716,7 +3716,7 @@ int32_t GameModePlayData::DestroyPanels() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bf8a2
+// FUNCTION: COPTER_D 0x004bf8a2
 void GameModePlayData::ShowPanels() {
 // LINE 832:
 	asm( 
@@ -3944,7 +3944,7 @@ void GameModePlayData::ShowPanels() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bfaab
+// FUNCTION: COPTER_D 0x004bfaab
 void GameModePlayData::HidePanels() {
 // LINE 887:
 	asm( 
@@ -4163,7 +4163,7 @@ void GameModePlayData::HidePanels() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bfc9a
+// FUNCTION: COPTER_D 0x004bfc9a
 void GameModePlayData::ShowEquipment() {
 // LINE 929:
 	asm( 
@@ -4266,7 +4266,7 @@ void GameModePlayData::ShowEquipment() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bfd75
+// FUNCTION: COPTER_D 0x004bfd75
 void GameModePlayData::HideEquipment() {
 // LINE 951:
 	asm( 
@@ -4360,7 +4360,7 @@ void GameModePlayData::HideEquipment() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bfe36
+// FUNCTION: COPTER_D 0x004bfe36
 void GameModePlayData::TogglePanelDisplay() {
 // LINE 971:
 	asm( 
@@ -4413,7 +4413,7 @@ void GameModePlayData::TogglePanelDisplay() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bfe82
+// FUNCTION: COPTER_D 0x004bfe82
 void GameModePlayData::ToggleEquipmentDisplay() {
 // LINE 990:
 	asm( 
@@ -4456,7 +4456,7 @@ void GameModePlayData::ToggleEquipmentDisplay() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bfeba
+// FUNCTION: COPTER_D 0x004bfeba
 void GameModePlayData::Shutdown() {
 // LINE 1002:
 	asm( 
@@ -4484,7 +4484,7 @@ void GameModePlayData::Shutdown() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bfed8
+// FUNCTION: COPTER_D 0x004bfed8
 long GameModePlayData::TestForUserInHelicopter() {
 // LINE 1011:
 	asm( 
@@ -4563,7 +4563,7 @@ long GameModePlayData::TestForUserInHelicopter() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bff6b
+// FUNCTION: COPTER_D 0x004bff6b
 long GameModePlayData::ProcessUserJustJumpedIntoHelicopter() {
 // LINE 1043:
 	asm( 
@@ -4606,7 +4606,7 @@ long GameModePlayData::ProcessUserJustJumpedIntoHelicopter() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bffa3
+// FUNCTION: COPTER_D 0x004bffa3
 long GameModePlayData::ProcessUserJustJumpedOutOfHelicopter() {
 // LINE 1058:
 	asm( 
@@ -4648,7 +4648,7 @@ long GameModePlayData::ProcessUserJustJumpedOutOfHelicopter() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bffda
+// FUNCTION: COPTER_D 0x004bffda
 void GameModePlayData::SetUpRenderWindowSizes() {
 // LINE 1083:
 	asm( 
@@ -4864,7 +4864,7 @@ void GameModePlayData::SetUpRenderWindowSizes() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c0176
+// FUNCTION: COPTER_D 0x004c0176
 void GameModePlayData::ReadUserConfigurableCommands() {
 // LINE 1132:
 	asm( 
@@ -4908,7 +4908,7 @@ void GameModePlayData::ReadUserConfigurableCommands() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c01b8
+// FUNCTION: COPTER_D 0x004c01b8
 void GameModePlayData::RemoveUserConfigurableCommands() {
 // LINE 1143:
 	asm( 
@@ -5036,7 +5036,7 @@ void GameModePlayData::RemoveUserConfigurableCommands() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c02ff
+// FUNCTION: COPTER_D 0x004c02ff
 void GameModePlayData::SetUserConfigurableCommandsToDefaults() {
 // LINE 1160:
 	asm( 
@@ -5067,7 +5067,7 @@ void GameModePlayData::SetUserConfigurableCommandsToDefaults() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c0326
+// FUNCTION: COPTER_D 0x004c0326
 void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 // LINE 1175:
 	asm( 
@@ -6294,7 +6294,7 @@ void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c12a8
+// FUNCTION: COPTER_D 0x004c12a8
 void GameModeHangarData::GameModeHangarData() {
 // LINE 1426:
 	asm( 
@@ -6355,7 +6355,7 @@ void GameModeHangarData::GameModeHangarData() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c1317
+// FUNCTION: COPTER_D 0x004c1317
 int32_t GameModeHangarData::CreateAllSurfaces() {
 // LINE 1442:
 	asm( 
@@ -6428,7 +6428,7 @@ int32_t GameModeHangarData::CreateAllSurfaces() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c13b9
+// FUNCTION: COPTER_D 0x004c13b9
 void GameModeHangarData::DestroyAllSurfaces() {
 // LINE 1452:
 	asm( 
@@ -6471,7 +6471,7 @@ void GameModeHangarData::DestroyAllSurfaces() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c13f7
+// FUNCTION: COPTER_D 0x004c13f7
 void GameModeHangarData::Sleep() {
 // LINE 1463:
 	asm( 
@@ -6517,7 +6517,7 @@ void GameModeHangarData::Sleep() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c143c
+// FUNCTION: COPTER_D 0x004c143c
 void GameModeHangarData::Awake() {
 // LINE 1472:
 	asm( 
@@ -6586,7 +6586,7 @@ void GameModeHangarData::Awake() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c14af
+// FUNCTION: COPTER_D 0x004c14af
 void GameModeHangarData::CreatePalette() {
 // LINE 1487:
 	asm( 
@@ -6649,7 +6649,7 @@ void GameModeHangarData::CreatePalette() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c1542
+// FUNCTION: COPTER_D 0x004c1542
 void GameModeHangarData::UsePalette() {
 // LINE 1498:
 	asm( 
@@ -6700,7 +6700,7 @@ void GameModeHangarData::UsePalette() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c1595
+// FUNCTION: COPTER_D 0x004c1595
 void GameModeHangarData::Shutdown() {
 // LINE 1509:
 	asm( 
@@ -6728,7 +6728,7 @@ void GameModeHangarData::Shutdown() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c15b3
+// FUNCTION: COPTER_D 0x004c15b3
 void GameModeHangarData::SetCommandsToDefaults() {
 // LINE 1518:
 	asm( 
@@ -7172,7 +7172,7 @@ void GameModeHangarData::SetCommandsToDefaults() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c1b46
+// FUNCTION: COPTER_D 0x004c1b46
 void GameModeCatalogData::GameModeCatalogData() {
 // LINE 1585:
 	asm( 
@@ -7213,7 +7213,7 @@ void GameModeCatalogData::GameModeCatalogData() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c1b8d
+// FUNCTION: COPTER_D 0x004c1b8d
 int32_t GameModeCatalogData::CreateAllSurfaces() {
 // LINE 1596:
 	asm( 
@@ -7286,7 +7286,7 @@ int32_t GameModeCatalogData::CreateAllSurfaces() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c1c2f
+// FUNCTION: COPTER_D 0x004c1c2f
 void GameModeCatalogData::DestroyAllSurfaces() {
 // LINE 1606:
 	asm( 
@@ -7329,7 +7329,7 @@ void GameModeCatalogData::DestroyAllSurfaces() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c1c6d
+// FUNCTION: COPTER_D 0x004c1c6d
 void GameModeCatalogData::Sleep() {
 // LINE 1617:
 	asm( 
@@ -7375,7 +7375,7 @@ void GameModeCatalogData::Sleep() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c1cb2
+// FUNCTION: COPTER_D 0x004c1cb2
 void GameModeCatalogData::Awake() {
 // LINE 1626:
 	asm( 
@@ -7444,7 +7444,7 @@ void GameModeCatalogData::Awake() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c1d25
+// FUNCTION: COPTER_D 0x004c1d25
 void GameModeCatalogData::CreatePalette() {
 // LINE 1641:
 	asm( 
@@ -7507,7 +7507,7 @@ void GameModeCatalogData::CreatePalette() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c1db8
+// FUNCTION: COPTER_D 0x004c1db8
 void GameModeCatalogData::UsePalette() {
 // LINE 1652:
 	asm( 
@@ -7558,7 +7558,7 @@ void GameModeCatalogData::UsePalette() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c1e0b
+// FUNCTION: COPTER_D 0x004c1e0b
 void GameModeCatalogData::Shutdown() {
 // LINE 1663:
 	asm( 
@@ -7586,7 +7586,7 @@ void GameModeCatalogData::Shutdown() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c1e29
+// FUNCTION: COPTER_D 0x004c1e29
 void GameModeCatalogData::SetCommandsToDefaults() {
 // LINE 1672:
 	asm( 
@@ -8012,7 +8012,7 @@ void GameModeCatalogData::SetCommandsToDefaults() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c24ce
+// FUNCTION: COPTER_D 0x004c24ce
 void GameModeMissionLogData::GameModeMissionLogData() {
 // LINE 1710:
 	asm( 
@@ -8053,7 +8053,7 @@ void GameModeMissionLogData::GameModeMissionLogData() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c2515
+// FUNCTION: COPTER_D 0x004c2515
 int32_t GameModeMissionLogData::CreateAllSurfaces() {
 // LINE 1721:
 	asm( 
@@ -8126,7 +8126,7 @@ int32_t GameModeMissionLogData::CreateAllSurfaces() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c25b7
+// FUNCTION: COPTER_D 0x004c25b7
 void GameModeMissionLogData::DestroyAllSurfaces() {
 // LINE 1731:
 	asm( 
@@ -8169,7 +8169,7 @@ void GameModeMissionLogData::DestroyAllSurfaces() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c25f5
+// FUNCTION: COPTER_D 0x004c25f5
 void GameModeMissionLogData::Sleep() {
 // LINE 1742:
 	asm( 
@@ -8215,7 +8215,7 @@ void GameModeMissionLogData::Sleep() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c263a
+// FUNCTION: COPTER_D 0x004c263a
 void GameModeMissionLogData::Awake() {
 // LINE 1751:
 	asm( 
@@ -8284,7 +8284,7 @@ void GameModeMissionLogData::Awake() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c26ad
+// FUNCTION: COPTER_D 0x004c26ad
 void GameModeMissionLogData::CreatePalette() {
 // LINE 1766:
 	asm( 
@@ -8347,7 +8347,7 @@ void GameModeMissionLogData::CreatePalette() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c2740
+// FUNCTION: COPTER_D 0x004c2740
 void GameModeMissionLogData::UsePalette() {
 // LINE 1777:
 	asm( 
@@ -8398,7 +8398,7 @@ void GameModeMissionLogData::UsePalette() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c2793
+// FUNCTION: COPTER_D 0x004c2793
 void GameModeMissionLogData::Shutdown() {
 // LINE 1788:
 	asm( 
@@ -8426,7 +8426,7 @@ void GameModeMissionLogData::Shutdown() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c27b1
+// FUNCTION: COPTER_D 0x004c27b1
 void GameModeMissionLogData::SetCommandsToDefaults() {
 // LINE 1797:
 	asm( 
@@ -8852,7 +8852,7 @@ void GameModeMissionLogData::SetCommandsToDefaults() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c2e56
+// FUNCTION: COPTER_D 0x004c2e56
 void GameModeInventoryData::GameModeInventoryData() {
 // LINE 1832:
 	asm( 
@@ -8893,7 +8893,7 @@ void GameModeInventoryData::GameModeInventoryData() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c2e9d
+// FUNCTION: COPTER_D 0x004c2e9d
 int32_t GameModeInventoryData::CreateAllSurfaces() {
 // LINE 1843:
 	asm( 
@@ -8966,7 +8966,7 @@ int32_t GameModeInventoryData::CreateAllSurfaces() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c2f3f
+// FUNCTION: COPTER_D 0x004c2f3f
 void GameModeInventoryData::DestroyAllSurfaces() {
 // LINE 1853:
 	asm( 
@@ -9009,7 +9009,7 @@ void GameModeInventoryData::DestroyAllSurfaces() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c2f7d
+// FUNCTION: COPTER_D 0x004c2f7d
 void GameModeInventoryData::Sleep() {
 // LINE 1864:
 	asm( 
@@ -9055,7 +9055,7 @@ void GameModeInventoryData::Sleep() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c2fc2
+// FUNCTION: COPTER_D 0x004c2fc2
 void GameModeInventoryData::Awake() {
 // LINE 1873:
 	asm( 
@@ -9124,7 +9124,7 @@ void GameModeInventoryData::Awake() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c3035
+// FUNCTION: COPTER_D 0x004c3035
 void GameModeInventoryData::CreatePalette() {
 // LINE 1888:
 	asm( 
@@ -9187,7 +9187,7 @@ void GameModeInventoryData::CreatePalette() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c30c8
+// FUNCTION: COPTER_D 0x004c30c8
 void GameModeInventoryData::UsePalette() {
 // LINE 1899:
 	asm( 
@@ -9238,7 +9238,7 @@ void GameModeInventoryData::UsePalette() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c311b
+// FUNCTION: COPTER_D 0x004c311b
 void GameModeInventoryData::Shutdown() {
 // LINE 1910:
 	asm( 
@@ -9266,7 +9266,7 @@ void GameModeInventoryData::Shutdown() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c3139
+// FUNCTION: COPTER_D 0x004c3139
 void GameModeInventoryData::SetCommandsToDefaults() {
 // LINE 1918:
 	asm( 
@@ -9695,55 +9695,55 @@ void GameModeInventoryData::SetCommandsToDefaults() {
 
 
 // Contribution: 1:000c27e0-000c2818 Module: 1, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x004c37e0
+// FUNCTION: COPTER_D 0x004c37e0
 // GameModeCoreData::`scalar deleting destructor'
 
 
 
 // Contribution: 1:000c2820-000c285d Module: 1, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x004c3820
+// FUNCTION: COPTER_D 0x004c3820
 // GameModeMainMenuData::`scalar deleting destructor'
 
 
 
 // Contribution: 1:000c2860-000c289d Module: 1, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x004c3860
+// FUNCTION: COPTER_D 0x004c3860
 // GameModePickCareerCityData::`scalar deleting destructor'
 
 
 
 // Contribution: 1:000c28a0-000c2a9e Module: 1, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x004c38a0
+// FUNCTION: COPTER_D 0x004c38a0
 // GameModePlayData::`scalar deleting destructor'
 
 
 
 // Contribution: 1:000c2aa0-000c2c9e Module: 1, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x004c3aa0
+// FUNCTION: COPTER_D 0x004c3aa0
 // GameModeHangarData::`scalar deleting destructor'
 
 
 
 // Contribution: 1:000c2ca0-000c2e9e Module: 1, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x004c3ca0
+// FUNCTION: COPTER_D 0x004c3ca0
 // GameModeCatalogData::`scalar deleting destructor'
 
 
 
 // Contribution: 1:000c2ea0-000c309e Module: 1, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x004c3ea0
+// FUNCTION: COPTER_D 0x004c3ea0
 // GameModeMissionLogData::`scalar deleting destructor'
 
 
 
 // Contribution: 1:000c30a0-000c329e Module: 1, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x004c40a0
+// FUNCTION: COPTER_D 0x004c40a0
 // GameModeInventoryData::`scalar deleting destructor'
 
 
 
 // Contribution: 2:000033c0-000033c3 Module: 1, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x000033c4
+// GLOBAL: COPTER_D 0x000033c4
 // ??_7GameModeMainMenuData@@6B@
 
 
@@ -9751,24 +9751,24 @@ void GameModeInventoryData::SetCommandsToDefaults() {
 
 
 // Contribution: 2:000033c8-000033cb Module: 1, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x000033c8
+// GLOBAL: COPTER_D 0x000033c8
 // ??_7GameModePickCareerCityData@@6B@
-// GLOBAL: SIMCOPTER 0x000033cc
+// GLOBAL: COPTER_D 0x000033cc
 // ??_7GameModePlayData@@6B@
 
 
 // Contribution: 2:000033cc-000033cf Module: 1, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x000033d0
+// GLOBAL: COPTER_D 0x000033d0
 // ??_7GameModeHangarData@@6B@
 
 
 // Contribution: 2:000033d0-000033d3 Module: 1, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x000033d4
+// GLOBAL: COPTER_D 0x000033d4
 // ??_7GameModeCatalogData@@6B@
 
 
 // Contribution: 2:000033d4-000033d7 Module: 1, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x000033d8
+// GLOBAL: COPTER_D 0x000033d8
 // ??_7GameModeMissionLogData@@6B@
 
 
@@ -9776,38 +9776,38 @@ void GameModeInventoryData::SetCommandsToDefaults() {
 
 
 // Contribution: 2:000033dc-000033df Module: 1, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x000033dc
+// GLOBAL: COPTER_D 0x000033dc
 // ??_7GameModeInventoryData@@6B@
 
 
 // Contribution: 3:00003ec4-00003fad Module: 1, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x00003ec4
+// GLOBAL: COPTER_D 0x00003ec4
 // SZ_VR_APP_PALETTE_FILE_NAME
-// GLOBAL: SIMCOPTER 0x00003ec8
+// GLOBAL: COPTER_D 0x00003ec8
 // SZ_VR_APP_PALETTE_CHUNK_TYPE
-// GLOBAL: SIMCOPTER 0x00003ecc
+// GLOBAL: COPTER_D 0x00003ecc
 // SZ_MAIN_MENU_IMAGE_FILE_NAME
-// GLOBAL: SIMCOPTER 0x00003ed0
+// GLOBAL: COPTER_D 0x00003ed0
 // SZ_CAREER_PALETTE_IMAGE_FILE_NAME
-// GLOBAL: SIMCOPTER 0x00003ed4
+// GLOBAL: COPTER_D 0x00003ed4
 // SZ_PANEL0_IMAGE_FILE_NAME
-// GLOBAL: SIMCOPTER 0x00003ed8
+// GLOBAL: COPTER_D 0x00003ed8
 // SZ_PANEL1_IMAGE_FILE_NAME
-// GLOBAL: SIMCOPTER 0x00003edc
+// GLOBAL: COPTER_D 0x00003edc
 // SZ_PANEL2_IMAGE_FILE_NAME
-// GLOBAL: SIMCOPTER 0x00003ee0
+// GLOBAL: COPTER_D 0x00003ee0
 // SZ_PANEL3_IMAGE_FILE_NAME
-// GLOBAL: SIMCOPTER 0x00003ee4
+// GLOBAL: COPTER_D 0x00003ee4
 // SZ_PANEL4_IMAGE_FILE_NAME
-// GLOBAL: SIMCOPTER 0x00003ee8
+// GLOBAL: COPTER_D 0x00003ee8
 // SZ_PANEL5_IMAGE_FILE_NAME
-// GLOBAL: SIMCOPTER 0x00003eec
+// GLOBAL: COPTER_D 0x00003eec
 // SZ_PANEL6_IMAGE_FILE_NAME
-// GLOBAL: SIMCOPTER 0x00003ef0
+// GLOBAL: COPTER_D 0x00003ef0
 // SZ_FLAP0_IMAGE_FILE_NAME
-// GLOBAL: SIMCOPTER 0x00003ef4
+// GLOBAL: COPTER_D 0x00003ef4
 // SZ_FLAP1_IMAGE_FILE_NAME
-// GLOBAL: SIMCOPTER 0x00003ef8
+// GLOBAL: COPTER_D 0x00003ef8
 // SZ_FLAP2_IMAGE_FILE_NAME
-// GLOBAL: SIMCOPTER 0x00003efc
+// GLOBAL: COPTER_D 0x00003efc
 // SZ_FLAP3_IMAGE_FILE_NAME

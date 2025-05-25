@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:00098ef0-0009943b Module: 16, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00499ef0
+// FUNCTION: COPTER_D 0x00499ef0
 class StdResLoader* NResFile::GetLoader(unsigned long, void (*)(void * __ptr32, long)) {
 // LINE 11:
 	asm( 
@@ -250,7 +250,7 @@ class StdResLoader* NResFile::GetLoader(unsigned long, void (*)(void * __ptr32, 
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049a1f5
+// FUNCTION: COPTER_D 0x0049a1f5
 void NResFile::~NResFile() {
 // LINE 30:
 	asm( 
@@ -426,26 +426,26 @@ void NResFile::~NResFile() {
 
 
 // Contribution: 1:00099440-00099478 Module: 16, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x0049a440
+// FUNCTION: COPTER_D 0x0049a440
 // NResFile::`scalar deleting destructor'
 
 
 
 // Contribution: 2:00002218-00002227 Module: 16, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00002218
+// GLOBAL: COPTER_D 0x00002218
 // ??_7NResFile@@6B@
 
 
 // Contribution: 3:0000324c-00003252 Module: 16, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x0000324c
+// GLOBAL: COPTER_D 0x0000324c
 // ??_C@_06BBEO@whoops?$AA@
 
 
 // Contribution: 3:00003254-00003270 Module: 16, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00003254
+// GLOBAL: COPTER_D 0x00003254
 // ??_C@_0BN@BGMO@c?3?2copter?2source?2x?2PtrList?4h?$AA@
 
 
 // Contribution: 3:00003274-0000328a Module: 16, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00003274
+// GLOBAL: COPTER_D 0x00003274
 // ??_C@_0BH@OELJ@count?5error?5in?5ptrlist?$AA@

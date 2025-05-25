@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:000c3690-000c8acf Module: 94, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x004c481e
+// FUNCTION: COPTER_D 0x004c481e
 short S2CityGetCityNameFromFile() {
 // LINE 180:
 	asm( 
@@ -246,7 +246,7 @@ short S2CityGetCityNameFromFile() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c49d8
+// FUNCTION: COPTER_D 0x004c49d8
 long stol() {
 // LINE 245:
 	asm( 
@@ -308,7 +308,7 @@ long stol() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c4a2b
+// FUNCTION: COPTER_D 0x004c4a2b
 long ValidateSCXSaveGameFile() {
 // LINE 272:
 	asm( 
@@ -393,7 +393,7 @@ long ValidateSCXSaveGameFile() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c4ab6
+// FUNCTION: COPTER_D 0x004c4ab6
 short S2CityLoad() {
 // LINE 298:
 	asm( 
@@ -1292,7 +1292,7 @@ short S2CityLoad() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c5373
+// FUNCTION: COPTER_D 0x004c5373
 void label_kludge() {
 // LINE 473:
 	asm( 
@@ -1366,7 +1366,7 @@ void label_kludge() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c5412
+// FUNCTION: COPTER_D 0x004c5412
 void clear_label() {
 // LINE 496:
 	asm( 
@@ -1420,7 +1420,7 @@ void clear_label() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c547e
+// FUNCTION: COPTER_D 0x004c547e
 void graph_kludge() {
 // LINE 516:
 	asm( 
@@ -1514,7 +1514,7 @@ void graph_kludge() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c555f
+// FUNCTION: COPTER_D 0x004c555f
 void S2CityMakeCityNameFromFilePath() {
 // LINE 542:
 	asm( 
@@ -1576,7 +1576,7 @@ void S2CityMakeCityNameFromFilePath() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c55d7
+// FUNCTION: COPTER_D 0x004c55d7
 void S2CityMakeFileNameFromCityName() {
 // LINE 568:
 	asm( 
@@ -1605,7 +1605,7 @@ void S2CityMakeFileNameFromCityName() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c55f2
+// FUNCTION: COPTER_D 0x004c55f2
 unsigned short S2CityReadHeader() {
 // LINE 588:
 	asm( 
@@ -1737,7 +1737,7 @@ unsigned short S2CityReadHeader() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c56e2
+// FUNCTION: COPTER_D 0x004c56e2
 unsigned short S2CityMiscRead() {
 // LINE 629:
 	asm( 
@@ -3121,7 +3121,7 @@ unsigned short S2CityMiscRead() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c65df
+// FUNCTION: COPTER_D 0x004c65df
 unsigned short S2CityGameReadUncompressed() {
 // LINE 861:
 	asm( 
@@ -3165,7 +3165,7 @@ unsigned short S2CityGameReadUncompressed() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c6619
+// FUNCTION: COPTER_D 0x004c6619
 unsigned short S2CityBucketGameRead() {
 // LINE 883:
 	asm( 
@@ -3247,7 +3247,7 @@ unsigned short S2CityBucketGameRead() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c66a4
+// FUNCTION: COPTER_D 0x004c66a4
 unsigned short S2CityGameReadCompressed() {
 // LINE 915:
 	asm( 
@@ -3438,7 +3438,7 @@ unsigned short S2CityGameReadCompressed() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c680e
+// FUNCTION: COPTER_D 0x004c680e
 short S2CitySave() {
 // LINE 976:
 	asm( 
@@ -3977,7 +3977,7 @@ short S2CitySave() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c6cfe
+// FUNCTION: COPTER_D 0x004c6cfe
 unsigned short S2CityWriteName() {
 // LINE 1072:
 	asm( 
@@ -4102,7 +4102,7 @@ unsigned short S2CityWriteName() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c6dd5
+// FUNCTION: COPTER_D 0x004c6dd5
 unsigned short S2CityGameWriteUncompressed() {
 // LINE 1111:
 	asm( 
@@ -4255,7 +4255,7 @@ unsigned short S2CityGameWriteUncompressed() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c6edb
+// FUNCTION: COPTER_D 0x004c6edb
 unsigned short S2CityWriteHeader() {
 // LINE 1156:
 	asm( 
@@ -4404,7 +4404,7 @@ unsigned short S2CityWriteHeader() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c6fe6
+// FUNCTION: COPTER_D 0x004c6fe6
 unsigned short S2CityGameWriteCompressed() {
 // LINE 1197:
 	asm( 
@@ -4818,7 +4818,7 @@ unsigned short S2CityGameWriteCompressed() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c732e
+// FUNCTION: COPTER_D 0x004c732e
 unsigned short S2CityMiscWrite() {
 // LINE 1300:
 	asm( 
@@ -6130,7 +6130,7 @@ unsigned short S2CityMiscWrite() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c81c9
+// FUNCTION: COPTER_D 0x004c81c9
 void swizzle_buffer() {
 // LINE 1494:
 	asm( 
@@ -6195,7 +6195,7 @@ void swizzle_buffer() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c822d
+// FUNCTION: COPTER_D 0x004c822d
 void swizzle_Micro() {
 // LINE 1522:
 	asm( 
@@ -6274,7 +6274,7 @@ void swizzle_Micro() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c82b3
+// FUNCTION: COPTER_D 0x004c82b3
 void swizzle_shorts() {
 // LINE 1552:
 	asm( 
@@ -6338,7 +6338,7 @@ void swizzle_shorts() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c8317
+// FUNCTION: COPTER_D 0x004c8317
 short swizzle_short() {
 // LINE 1580:
 	asm( 
@@ -6388,7 +6388,7 @@ short swizzle_short() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c8350
+// FUNCTION: COPTER_D 0x004c8350
 long swap_long() {
 // LINE 1605:
 	asm( 
@@ -6438,7 +6438,7 @@ long swap_long() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c838e
+// FUNCTION: COPTER_D 0x004c838e
 long swizzle_long() {
 // LINE 1631:
 	asm( 
@@ -6507,7 +6507,7 @@ long swizzle_long() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c83e4
+// FUNCTION: COPTER_D 0x004c83e4
 void GetStringResource() {
 // LINE 1667:
 	asm( 
@@ -6532,7 +6532,7 @@ void GetStringResource() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c83f5
+// FUNCTION: COPTER_D 0x004c83f5
 short S2CityAlloc() {
 // LINE 1703:
 	asm( 
@@ -7927,7 +7927,7 @@ short S2CityAlloc() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c920e
+// FUNCTION: COPTER_D 0x004c920e
 void S2CityFree() {
 // LINE 1967:
 	asm( 
@@ -7954,7 +7954,7 @@ void S2CityFree() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c9227
+// FUNCTION: COPTER_D 0x004c9227
 void PStringToCString() {
 // LINE 1979:
 	asm( 
@@ -8006,7 +8006,7 @@ void PStringToCString() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c927b
+// FUNCTION: COPTER_D 0x004c927b
 void CStringToPString() {
 // LINE 1993:
 	asm( 
@@ -8070,7 +8070,7 @@ void CStringToPString() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c92e5
+// FUNCTION: COPTER_D 0x004c92e5
 void CopyPString() {
 // LINE 2010:
 	asm( 
@@ -8124,7 +8124,7 @@ void CopyPString() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c9339
+// FUNCTION: COPTER_D 0x004c9339
 void check_backslash_terminate() {
 // LINE 2039:
 	asm( 
@@ -8181,7 +8181,7 @@ void check_backslash_terminate() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c9381
+// FUNCTION: COPTER_D 0x004c9381
 short check_root() {
 // LINE 2066:
 	asm( 
@@ -8336,7 +8336,7 @@ short check_root() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c9495
+// FUNCTION: COPTER_D 0x004c9495
 void get_path_at_start() {
 // LINE 2121:
 	asm( 
@@ -8451,7 +8451,7 @@ void get_path_at_start() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c9545
+// FUNCTION: COPTER_D 0x004c9545
 void do_uppercase() {
 // LINE 2160:
 	asm( 
@@ -8543,7 +8543,7 @@ void do_uppercase() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c95e3
+// FUNCTION: COPTER_D 0x004c95e3
 void get_name_at_end() {
 // LINE 2193:
 	asm( 
@@ -8658,7 +8658,7 @@ void get_name_at_end() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c9694
+// FUNCTION: COPTER_D 0x004c9694
 void strip_extension() {
 // LINE 2233:
 	asm( 
@@ -8734,7 +8734,7 @@ void strip_extension() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c96fc
+// FUNCTION: COPTER_D 0x004c96fc
 void check_extension() {
 // LINE 2266:
 	asm( 
@@ -8924,7 +8924,7 @@ void check_extension() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c9835
+// FUNCTION: COPTER_D 0x004c9835
 short check_file_exist() {
 // LINE 2318:
 	asm( 
@@ -8976,7 +8976,7 @@ short check_file_exist() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c987e
+// FUNCTION: COPTER_D 0x004c987e
 void remove_illegals() {
 // LINE 2344:
 	asm( 
@@ -9146,7 +9146,7 @@ void remove_illegals() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004c9a2e
+// FUNCTION: COPTER_D 0x004c9a2e
 void compress_spaces() {
 // LINE 2385:
 	asm( 
@@ -9247,28 +9247,28 @@ void compress_spaces() {
 
 
 // Contribution: 3:00003fb0-000043a6 Module: 94, 8 byte alignment, initialized_data, read, write, 
-// LOCAL: SIMCOPTER 0x00003fb0
+// LOCAL: COPTER_D 0x00003fb0
 // GraphStart
 
 
 // Contribution: 3:0006f9b4-0006f9d7 Module: 94, 4 byte alignment, uninitialized_data, read, write, 
-// LOCAL: SIMCOPTER 0x0006f9b4
+// LOCAL: COPTER_D 0x0006f9b4
 // newCX
-// LOCAL: SIMCOPTER 0x0006f9b8
+// LOCAL: COPTER_D 0x0006f9b8
 // newCY
-// LOCAL: SIMCOPTER 0x0006f9bc
+// LOCAL: COPTER_D 0x0006f9bc
 // newSC
-// LOCAL: SIMCOPTER 0x0006f9c0
+// LOCAL: COPTER_D 0x0006f9c0
 // WriteLength
-// LOCAL: SIMCOPTER 0x0006f9c4
+// LOCAL: COPTER_D 0x0006f9c4
 // S_ptr1
-// LOCAL: SIMCOPTER 0x0006f9c8
+// LOCAL: COPTER_D 0x0006f9c8
 // S_ptr3
-// LOCAL: SIMCOPTER 0x0006f9cc
+// LOCAL: COPTER_D 0x0006f9cc
 // S_ptr2
-// LOCAL: SIMCOPTER 0x0006f9d0
+// LOCAL: COPTER_D 0x0006f9d0
 // S_ptr5
-// LOCAL: SIMCOPTER 0x0006f9d4
+// LOCAL: COPTER_D 0x0006f9d4
 // S_ptr4
-// LOCAL: SIMCOPTER 0x0006f9d8
+// LOCAL: COPTER_D 0x0006f9d8
 // root

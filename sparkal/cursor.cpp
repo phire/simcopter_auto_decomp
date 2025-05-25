@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:000737f0-00073953 Module: 35, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x004747f0
+// FUNCTION: COPTER_D 0x004747f0
 void Cursor::Cursor() {
 // LINE 19:
 	asm( 
@@ -29,7 +29,7 @@ void Cursor::Cursor() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00474809
+// FUNCTION: COPTER_D 0x00474809
 void Cursor::~Cursor() {
 // LINE 22:
 	asm( 
@@ -52,7 +52,7 @@ void Cursor::~Cursor() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047481f
+// FUNCTION: COPTER_D 0x0047481f
 int32_t Cursor::IsButtonDown(unsigned long, unsigned long) {
 // LINE 35:
 	asm( 
@@ -188,7 +188,7 @@ int32_t Cursor::IsButtonDown(unsigned long, unsigned long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00474921
+// FUNCTION: COPTER_D 0x00474921
 int32_t Cursor::WhereIsCursor(unsigned long *, unsigned long *) {
 // LINE 89:
 	asm( 

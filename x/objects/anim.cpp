@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:00166200-001664d4 Module: 181, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00567200
+// FUNCTION: COPTER_D 0x00567200
 void cCopterAnim::InstallArrayPointers(unsigned short) {
 // LINE 37:
 	asm( 

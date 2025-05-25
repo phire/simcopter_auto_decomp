@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:00161610-00162e95 Module: 187, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00562610
+// FUNCTION: COPTER_D 0x00562610
 void GetAxis() {
 // LINE 46:
 	asm( 
@@ -70,7 +70,7 @@ void GetAxis() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0056269d
+// FUNCTION: COPTER_D 0x0056269d
 void GetAxes() {
 // LINE 51:
 	asm( 
@@ -129,7 +129,7 @@ void GetAxes() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005626f5
+// FUNCTION: COPTER_D 0x005626f5
 unsigned short PutInPerspective() {
 // LINE 57:
 	asm( 
@@ -192,7 +192,7 @@ unsigned short PutInPerspective() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00562766
+// FUNCTION: COPTER_D 0x00562766
 unsigned short PutInPerspective() {
 // LINE 67:
 	asm( 
@@ -269,7 +269,7 @@ unsigned short PutInPerspective() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00562802
+// FUNCTION: COPTER_D 0x00562802
 void XY2Cartesian() {
 // LINE 76:
 	asm( 
@@ -378,7 +378,7 @@ void XY2Cartesian() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005628eb
+// FUNCTION: COPTER_D 0x005628eb
 void XYIncrementCartesian() {
 // LINE 93:
 	asm( 
@@ -441,7 +441,7 @@ void XYIncrementCartesian() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00562950
+// FUNCTION: COPTER_D 0x00562950
 void TransformToAxes() {
 // LINE 102:
 	asm( 
@@ -561,7 +561,7 @@ void TransformToAxes() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00562a31
+// FUNCTION: COPTER_D 0x00562a31
 void AxisTransformToScreen() {
 // LINE 118:
 	asm( 
@@ -652,7 +652,7 @@ void AxisTransformToScreen() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00562ac5
+// FUNCTION: COPTER_D 0x00562ac5
 void XYTransformToScreen() {
 // LINE 132:
 	asm( 
@@ -755,7 +755,7 @@ void XYTransformToScreen() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00562b82
+// FUNCTION: COPTER_D 0x00562b82
 void IncrementXY() {
 // LINE 151:
 	asm( 
@@ -810,7 +810,7 @@ void IncrementXY() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00562bdb
+// FUNCTION: COPTER_D 0x00562bdb
 void Keep0to2pi() {
 // LINE 159:
 	asm( 
@@ -867,7 +867,7 @@ void Keep0to2pi() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00562c41
+// FUNCTION: COPTER_D 0x00562c41
 void Keep0to2pi() {
 // LINE 167:
 	asm( 
@@ -911,7 +911,7 @@ void Keep0to2pi() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00562c7b
+// FUNCTION: COPTER_D 0x00562c7b
 float Keep0to2pi() {
 // LINE 174:
 	asm( 
@@ -943,7 +943,7 @@ float Keep0to2pi() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00562c9a
+// FUNCTION: COPTER_D 0x00562c9a
 void IncrementFloat() {
 // LINE 180:
 	asm( 
@@ -995,7 +995,7 @@ void IncrementFloat() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00562ce1
+// FUNCTION: COPTER_D 0x00562ce1
 float my_acos() {
 // LINE 188:
 	asm( 
@@ -1114,7 +1114,7 @@ float my_acos() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00562df2
+// FUNCTION: COPTER_D 0x00562df2
 void NormalizeTo1() {
 // LINE 207:
 	asm( 
@@ -1135,7 +1135,7 @@ void NormalizeTo1() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00562e02
+// FUNCTION: COPTER_D 0x00562e02
 double GetLength() {
 // LINE 212:
 	asm( 
@@ -1185,7 +1185,7 @@ double GetLength() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00562e50
+// FUNCTION: COPTER_D 0x00562e50
 void DrawDirectionDisk() {
 // LINE 224:
 	asm( 
@@ -1245,7 +1245,7 @@ void DrawDirectionDisk() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00562eab
+// FUNCTION: COPTER_D 0x00562eab
 void DrawDirectionDisk() {
 // LINE 231:
 	asm( 
@@ -1518,7 +1518,7 @@ void DrawDirectionDisk() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005630d0
+// FUNCTION: COPTER_D 0x005630d0
 void DrawDirectionDisk() {
 // LINE 268:
 	asm( 
@@ -1561,7 +1561,7 @@ void DrawDirectionDisk() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00563116
+// FUNCTION: COPTER_D 0x00563116
 void DrawDirectionDisk() {
 // LINE 273:
 	asm( 
@@ -1652,7 +1652,7 @@ void DrawDirectionDisk() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005631d0
+// FUNCTION: COPTER_D 0x005631d0
 void DrawDirectionDisk() {
 // LINE 282:
 	asm( 
@@ -1673,7 +1673,7 @@ void DrawDirectionDisk() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005631e0
+// FUNCTION: COPTER_D 0x005631e0
 void Score() {
 // LINE 357:
 	asm( 
@@ -1694,7 +1694,7 @@ void Score() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005631f0
+// FUNCTION: COPTER_D 0x005631f0
 unsigned short DrawGrid() {
 // LINE 374:
 	asm( 
@@ -1719,7 +1719,7 @@ unsigned short DrawGrid() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00563204
+// FUNCTION: COPTER_D 0x00563204
 void GetChildIncrement() {
 // LINE 508:
 	asm( 
@@ -1978,7 +1978,7 @@ void GetChildIncrement() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00563420
+// FUNCTION: COPTER_D 0x00563420
 void IncrementAngles() {
 // LINE 568:
 	asm( 
@@ -2084,7 +2084,7 @@ void IncrementAngles() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005634fc
+// FUNCTION: COPTER_D 0x005634fc
 void IncrementPhiPsi() {
 // LINE 583:
 	asm( 
@@ -2308,7 +2308,7 @@ void IncrementPhiPsi() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005636d5
+// FUNCTION: COPTER_D 0x005636d5
 void FillLatLngTrq() {
 // LINE 623:
 	asm( 
@@ -2376,7 +2376,7 @@ void FillLatLngTrq() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0056374c
+// FUNCTION: COPTER_D 0x0056374c
 void FillPhiPsiTau() {
 // LINE 631:
 	asm( 
@@ -2447,7 +2447,7 @@ void FillPhiPsiTau() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005637d3
+// FUNCTION: COPTER_D 0x005637d3
 void SnapToIncs() {
 // LINE 639:
 	asm( 
@@ -2520,7 +2520,7 @@ void SnapToIncs() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00563859
+// FUNCTION: COPTER_D 0x00563859
 void PolarDouble2Incs() {
 // LINE 649:
 	asm( 
@@ -2698,7 +2698,7 @@ void PolarDouble2Incs() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005639d2
+// FUNCTION: COPTER_D 0x005639d2
 void PolarIncs2Double() {
 // LINE 673:
 	asm( 
@@ -2756,7 +2756,7 @@ void PolarIncs2Double() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00563a42
+// FUNCTION: COPTER_D 0x00563a42
 void Polar2Cartesian() {
 // LINE 685:
 	asm( 
@@ -2847,7 +2847,7 @@ void Polar2Cartesian() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00563aec
+// FUNCTION: COPTER_D 0x00563aec
 void Polar2Cartesian() {
 // LINE 696:
 	asm( 
@@ -2889,7 +2889,7 @@ void Polar2Cartesian() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00563b27
+// FUNCTION: COPTER_D 0x00563b27
 void PolarTransformToScreen() {
 // LINE 702:
 	asm( 
@@ -3029,7 +3029,7 @@ void PolarTransformToScreen() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00563c20
+// FUNCTION: COPTER_D 0x00563c20
 void Cartesian2Polar() {
 // LINE 740:
 	asm( 
@@ -3144,7 +3144,7 @@ void Cartesian2Polar() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00563cf6
+// FUNCTION: COPTER_D 0x00563cf6
 void Cartesian2Polar() {
 // LINE 763:
 	asm( 
@@ -3188,7 +3188,7 @@ void Cartesian2Polar() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00563d33
+// FUNCTION: COPTER_D 0x00563d33
 void IncrementTorque() {
 // LINE 939:
 	asm( 
@@ -3283,7 +3283,7 @@ void IncrementTorque() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00563dd3
+// FUNCTION: COPTER_D 0x00563dd3
 void IncrementXYTorque() {
 // LINE 955:
 	asm( 
@@ -3367,7 +3367,7 @@ void IncrementXYTorque() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00563e67
+// FUNCTION: COPTER_D 0x00563e67
 unsigned short IsPixelFilled() {
 // LINE 1815:
 	asm( 

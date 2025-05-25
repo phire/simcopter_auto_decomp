@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:00026550-00027c67 Module: 68, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00427550
+// FUNCTION: COPTER_D 0x00427550
 public: unsigned long __thiscall CGameApp::GetLoadFileType(char *, long &) {
 // LINE 61:
 	asm( 
@@ -95,7 +95,7 @@ public: unsigned long __thiscall CGameApp::GetLoadFileType(char *, long &) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004275e3
+// FUNCTION: COPTER_D 0x004275e3
 public: unsigned long __thiscall CGameApp::SetUpLoadGame(char *, long) {
 // LINE 85:
 	asm( 
@@ -192,7 +192,7 @@ public: unsigned long __thiscall CGameApp::SetUpLoadGame(char *, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00427691
+// FUNCTION: COPTER_D 0x00427691
 public: unsigned long __thiscall CGameApp::LoadUserOrCareerGame(char *) {
 // LINE 109:
 	asm( 
@@ -659,7 +659,7 @@ public: unsigned long __thiscall CGameApp::LoadUserOrCareerGame(char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00427bf4
+// FUNCTION: COPTER_D 0x00427bf4
 public: unsigned long __thiscall CGameApp::SaveUserOrCareerGame(char *, char *) {
 // LINE 222:
 	asm( 
@@ -996,7 +996,7 @@ public: unsigned long __thiscall CGameApp::SaveUserOrCareerGame(char *, char *) 
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00427f98
+// FUNCTION: COPTER_D 0x00427f98
 public: unsigned long __thiscall CGameApp::DoSaveGameAs(void) {
 // LINE 305:
 	asm( 
@@ -1756,7 +1756,7 @@ public: unsigned long __thiscall CGameApp::DoSaveGameAs(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00428a74
+// FUNCTION: COPTER_D 0x00428a74
 public: long __thiscall CGameApp::ValidateCopterSaveGameFile(char *) {
 // LINE 421:
 	asm( 
@@ -1906,7 +1906,7 @@ public: long __thiscall CGameApp::ValidateCopterSaveGameFile(char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00428c38
+// FUNCTION: COPTER_D 0x00428c38
 public: int __thiscall CGameApp::DisplayFileOpenError(unsigned long) {
 // LINE 462:
 	asm( 
@@ -1945,13 +1945,13 @@ public: int __thiscall CGameApp::DisplayFileOpenError(unsigned long) {
 
 
 // Contribution: 3:00000484-000004ab Module: 68, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x00000484
+// GLOBAL: COPTER_D 0x00000484
 // SZ_CITY_DATA_FILE_SUFFIX
-// GLOBAL: SIMCOPTER 0x00000488
+// GLOBAL: COPTER_D 0x00000488
 // SZ_CAREER_DATA_FILE_SUFFIX
-// GLOBAL: SIMCOPTER 0x0000048c
+// GLOBAL: COPTER_D 0x0000048c
 // SZ_USER_DATA_FILE_SUFFIX
-// GLOBAL: SIMCOPTER 0x000004ac
+// GLOBAL: COPTER_D 0x000004ac
 // list<DirectoryEntry>::number_of_lists
 
 
@@ -1959,19 +1959,19 @@ public: int __thiscall CGameApp::DisplayFileOpenError(unsigned long) {
 
 
 // Contribution: 3:000004b0-000004b3 Module: 68, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x000004b0
+// GLOBAL: COPTER_D 0x000004b0
 // list<DirectoryEntry>::last
-// GLOBAL: SIMCOPTER 0x000004b4
+// GLOBAL: COPTER_D 0x000004b4
 // list<DirectoryEntry>::next_avail
 
 
 // Contribution: 3:000004b4-000004b7 Module: 68, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x000004b8
+// GLOBAL: COPTER_D 0x000004b8
 // list<DirectoryEntry>::free_list
 
 
 // Contribution: 3:000004b8-000004bb Module: 68, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x000004bc
+// GLOBAL: COPTER_D 0x000004bc
 // list<DirectoryEntry>::buffer_list
 
 

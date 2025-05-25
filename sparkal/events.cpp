@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:00030b60-00030c4c Module: 63, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00431b60
+// FUNCTION: COPTER_D 0x00431b60
 int32_t IsEventSet() {
 // LINE 22:
 	asm( 
@@ -35,7 +35,7 @@ int32_t IsEventSet() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00431b89
+// FUNCTION: COPTER_D 0x00431b89
 int32_t IsEventRangeSet() {
 // LINE 32:
 	asm( 
@@ -89,7 +89,7 @@ int32_t IsEventRangeSet() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00431bd6
+// FUNCTION: COPTER_D 0x00431bd6
 long GetJoystickValue() {
 // LINE 46:
 	asm( 
@@ -117,7 +117,7 @@ long GetJoystickValue() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00431bfb
+// FUNCTION: COPTER_D 0x00431bfb
 long GetJoystickValueEither() {
 // LINE 55:
 	asm( 

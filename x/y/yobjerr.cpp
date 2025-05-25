@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:00161500-0016160a Module: 188, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00562500
+// FUNCTION: COPTER_D 0x00562500
 void cYObject::Error(short) {
 // LINE 13:
 	asm( 

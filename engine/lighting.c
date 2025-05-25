@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:000d7cc0-000d89a4 Module: 132, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x004d8cc0
+// FUNCTION: COPTER_D 0x004d8cc0
 int32_t VRCreateTexColors() {
 // LINE 115:
 	asm( 
@@ -216,7 +216,7 @@ int32_t VRCreateTexColors() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004d8e58
+// FUNCTION: COPTER_D 0x004d8e58
 int32_t CreateTiledTexColors() {
 // LINE 190:
 	asm( 
@@ -419,7 +419,7 @@ int32_t CreateTiledTexColors() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004d8fd7
+// FUNCTION: COPTER_D 0x004d8fd7
 void VRFaceSetTexColor() {
 // LINE 271:
 	asm( 
@@ -519,7 +519,7 @@ void VRFaceSetTexColor() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004d9093
+// FUNCTION: COPTER_D 0x004d9093
 int32_t VRGetTexColor() {
 // LINE 313:
 	asm( 
@@ -589,7 +589,7 @@ int32_t VRGetTexColor() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004d90fa
+// FUNCTION: COPTER_D 0x004d90fa
 struct COLOR_SHADE* VRGetColorShade() {
 // LINE 347:
 	asm( 
@@ -652,7 +652,7 @@ struct COLOR_SHADE* VRGetColorShade() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004d9160
+// FUNCTION: COPTER_D 0x004d9160
 void VRSetIntensities() {
 // LINE 370:
 	asm( 
@@ -692,7 +692,7 @@ void VRSetIntensities() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004d918b
+// FUNCTION: COPTER_D 0x004d918b
 void VRObjSetShading() {
 // LINE 389:
 	asm( 
@@ -968,7 +968,7 @@ void VRObjSetShading() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004d93d6
+// FUNCTION: COPTER_D 0x004d93d6
 void VRDyObjSetShading() {
 // LINE 480:
 	asm( 
@@ -1191,7 +1191,7 @@ void VRDyObjSetShading() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004d958c
+// FUNCTION: COPTER_D 0x004d958c
 void VRTexTileSqFace() {
 // LINE 562:
 	asm( 
@@ -1389,7 +1389,7 @@ void VRTexTileSqFace() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004d9712
+// FUNCTION: COPTER_D 0x004d9712
 void VRObjSetGouraudShade() {
 // LINE 610:
 	asm( 
@@ -1639,7 +1639,7 @@ void VRObjSetGouraudShade() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004d9907
+// FUNCTION: COPTER_D 0x004d9907
 void VRObjSetTranslucent() {
 // LINE 698:
 	asm( 
@@ -1717,7 +1717,7 @@ void VRObjSetTranslucent() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004d997f
+// FUNCTION: COPTER_D 0x004d997f
 void VRFaceSetColor() {
 // LINE 727:
 	asm( 
@@ -1758,26 +1758,26 @@ void VRFaceSetColor() {
 
 
 // Contribution: 3:00016c10-00016d6b Module: 132, 8 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x00016d30
+// GLOBAL: COPTER_D 0x00016d30
 // G_litevect1
-// GLOBAL: SIMCOPTER 0x00016d40
+// GLOBAL: COPTER_D 0x00016d40
 // G_litevect2
-// GLOBAL: SIMCOPTER 0x00016d50
+// GLOBAL: COPTER_D 0x00016d50
 // G_litevect3
-// LOCAL: SIMCOPTER 0x00016d5c
+// LOCAL: COPTER_D 0x00016d5c
 // S_ambient
-// LOCAL: SIMCOPTER 0x00016d60
+// LOCAL: COPTER_D 0x00016d60
 // S_intensity1
-// LOCAL: SIMCOPTER 0x00016d64
+// LOCAL: COPTER_D 0x00016d64
 // S_intensity2
-// LOCAL: SIMCOPTER 0x00016d68
+// LOCAL: COPTER_D 0x00016d68
 // S_intensity3
 
 
 // Contribution: 3:0006fa70-0006fe77 Module: 132, 8 byte alignment, uninitialized_data, read, write, 
-// LOCAL: SIMCOPTER 0x0006fa70
+// LOCAL: COPTER_D 0x0006fa70
 // S_texres
-// LOCAL: SIMCOPTER 0x0006fa78
+// LOCAL: COPTER_D 0x0006fa78
 // S_ctrs
-// GLOBAL: SIMCOPTER 0x0006fe78
+// GLOBAL: COPTER_D 0x0006fe78
 // gLogManager

@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:000e9c40-000eabb1 Module: 179, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x004eac40
+// FUNCTION: COPTER_D 0x004eac40
 int32_t VRAppInit() {
 // LINE 163:
 	asm( 
@@ -997,7 +997,7 @@ int32_t VRAppInit() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004eb5ca
+// FUNCTION: COPTER_D 0x004eb5ca
 int32_t VRAppCityInit() {
 // LINE 548:
 	asm( 
@@ -1336,7 +1336,7 @@ int32_t VRAppCityInit() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004eb877
+// FUNCTION: COPTER_D 0x004eb877
 int32_t VRAppGameInit() {
 // LINE 705:
 	asm( 
@@ -1433,7 +1433,7 @@ int32_t VRAppGameInit() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004eb909
+// FUNCTION: COPTER_D 0x004eb909
 int32_t VRAppGameSave() {
 // LINE 739:
 	asm( 
@@ -1514,7 +1514,7 @@ int32_t VRAppGameSave() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004eb97e
+// FUNCTION: COPTER_D 0x004eb97e
 void VRAppDeInit() {
 // LINE 766:
 	asm( 
@@ -1552,7 +1552,7 @@ void VRAppDeInit() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004eb9aa
+// FUNCTION: COPTER_D 0x004eb9aa
 void VRAppNextFrame() {
 // LINE 784:
 	asm( 
@@ -1738,7 +1738,7 @@ void VRAppNextFrame() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ebae1
+// FUNCTION: COPTER_D 0x004ebae1
 void VRAppNewTextures() {
 // LINE 922:
 	asm( 
@@ -1758,7 +1758,7 @@ void VRAppNewTextures() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ebaec
+// FUNCTION: COPTER_D 0x004ebaec
 void SetUserVars() {
 // LINE 939:
 	asm( 
@@ -1881,66 +1881,66 @@ void SetUserVars() {
 
 
 // Contribution: 2:00003470-0000367f Module: 179, 8 byte alignment, initialized_data, read, 
-// LOCAL: SIMCOPTER 0x00003470
+// LOCAL: COPTER_D 0x00003470
 // TurnTable3
-// LOCAL: SIMCOPTER 0x000034f0
+// LOCAL: COPTER_D 0x000034f0
 // TurnTable2
-// LOCAL: SIMCOPTER 0x00003530
+// LOCAL: COPTER_D 0x00003530
 // IndexToType
-// LOCAL: SIMCOPTER 0x00003540
+// LOCAL: COPTER_D 0x00003540
 // TypeToIndex2
-// LOCAL: SIMCOPTER 0x00003580
+// LOCAL: COPTER_D 0x00003580
 // TILUT
-// LOCAL: SIMCOPTER 0x000035c0
+// LOCAL: COPTER_D 0x000035c0
 // OT
-// LOCAL: SIMCOPTER 0x00003600
+// LOCAL: COPTER_D 0x00003600
 // RRT
-// LOCAL: SIMCOPTER 0x00003640
+// LOCAL: COPTER_D 0x00003640
 // LRT
-// GLOBAL: SIMCOPTER 0x00003680
+// GLOBAL: COPTER_D 0x00003680
 // ??_7MTimeLocalized@@6B@
 
 
 // Contribution: 3:0001d744-0001d876 Module: 179, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x0001d744
+// GLOBAL: COPTER_D 0x0001d744
 // keyRotateXp
-// GLOBAL: SIMCOPTER 0x0001d748
+// GLOBAL: COPTER_D 0x0001d748
 // keyRotateXm
-// GLOBAL: SIMCOPTER 0x0001d74c
+// GLOBAL: COPTER_D 0x0001d74c
 // keyRotateYp
-// GLOBAL: SIMCOPTER 0x0001d750
+// GLOBAL: COPTER_D 0x0001d750
 // keyRotateYm
-// GLOBAL: SIMCOPTER 0x0001d754
+// GLOBAL: COPTER_D 0x0001d754
 // keyRotateZp
-// GLOBAL: SIMCOPTER 0x0001d758
+// GLOBAL: COPTER_D 0x0001d758
 // keyRotateZm
-// GLOBAL: SIMCOPTER 0x0001d75c
+// GLOBAL: COPTER_D 0x0001d75c
 // LoopTimer
-// GLOBAL: SIMCOPTER 0x0001d760
+// GLOBAL: COPTER_D 0x0001d760
 // LoopTime
-// GLOBAL: SIMCOPTER 0x0001d764
+// GLOBAL: COPTER_D 0x0001d764
 // AlwaysTimer
-// GLOBAL: SIMCOPTER 0x0001d768
+// GLOBAL: COPTER_D 0x0001d768
 // G_AvLoopTime
-// GLOBAL: SIMCOPTER 0x0001d76c
+// GLOBAL: COPTER_D 0x0001d76c
 // G_restex
-// GLOBAL: SIMCOPTER 0x0001d770
+// GLOBAL: COPTER_D 0x0001d770
 // G_respal
-// GLOBAL: SIMCOPTER 0x0001d774
+// GLOBAL: COPTER_D 0x0001d774
 // G_resgeo1
-// GLOBAL: SIMCOPTER 0x0001d778
+// GLOBAL: COPTER_D 0x0001d778
 // G_resgeo2
-// GLOBAL: SIMCOPTER 0x0001d77c
+// GLOBAL: COPTER_D 0x0001d77c
 // G_resgeo3
-// GLOBAL: SIMCOPTER 0x0001d780
+// GLOBAL: COPTER_D 0x0001d780
 // G_main_mp
-// GLOBAL: SIMCOPTER 0x0001d784
+// GLOBAL: COPTER_D 0x0001d784
 // buffer
-// GLOBAL: SIMCOPTER 0x0001d788
+// GLOBAL: COPTER_D 0x0001d788
 // G_framectr
-// GLOBAL: SIMCOPTER 0x0001d78c
+// GLOBAL: COPTER_D 0x0001d78c
 // G_maptics
-// GLOBAL: SIMCOPTER 0x0001d790
+// GLOBAL: COPTER_D 0x0001d790
 // G_InitializationProgress
-// GLOBAL: SIMCOPTER 0x0001d794
+// GLOBAL: COPTER_D 0x0001d794
 // G_VRAppInitCalled

@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:0015c500-0015c948 Module: 193, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x0055d500
+// FUNCTION: COPTER_D 0x0055d500
 void SetRRandSeed() {
 // LINE 33:
 	asm( 
@@ -25,7 +25,7 @@ void SetRRandSeed() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055d518
+// FUNCTION: COPTER_D 0x0055d518
 unsigned long GetSRandSeed() {
 // LINE 45:
 	asm( 
@@ -44,7 +44,7 @@ unsigned long GetSRandSeed() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055d52d
+// FUNCTION: COPTER_D 0x0055d52d
 void SetSRandSeed() {
 // LINE 48:
 	asm( 
@@ -64,7 +64,7 @@ void SetSRandSeed() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055d545
+// FUNCTION: COPTER_D 0x0055d545
 unsigned short RRand() {
 // LINE 55:
 	asm( 
@@ -239,7 +239,7 @@ unsigned short RRand() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055d6a3
+// FUNCTION: COPTER_D 0x0055d6a3
 unsigned short GetNextRandomNumber() {
 // LINE 104:
 	asm( 
@@ -304,7 +304,7 @@ unsigned short GetNextRandomNumber() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055d717
+// FUNCTION: COPTER_D 0x0055d717
 unsigned short SRand() {
 // LINE 118:
 	asm( 
@@ -332,7 +332,7 @@ unsigned short SRand() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055d74a
+// FUNCTION: COPTER_D 0x0055d74a
 unsigned short SRand2() {
 // LINE 119:
 	asm( 
@@ -353,7 +353,7 @@ unsigned short SRand2() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055d765
+// FUNCTION: COPTER_D 0x0055d765
 unsigned short SRand4() {
 // LINE 120:
 	asm( 
@@ -374,7 +374,7 @@ unsigned short SRand4() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055d780
+// FUNCTION: COPTER_D 0x0055d780
 unsigned short SRand8() {
 // LINE 121:
 	asm( 
@@ -395,7 +395,7 @@ unsigned short SRand8() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055d79b
+// FUNCTION: COPTER_D 0x0055d79b
 unsigned short SRand16() {
 // LINE 122:
 	asm( 
@@ -416,7 +416,7 @@ unsigned short SRand16() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055d7b6
+// FUNCTION: COPTER_D 0x0055d7b6
 unsigned short SRand32() {
 // LINE 123:
 	asm( 
@@ -437,7 +437,7 @@ unsigned short SRand32() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055d7d1
+// FUNCTION: COPTER_D 0x0055d7d1
 unsigned short SRand64() {
 // LINE 124:
 	asm( 
@@ -458,7 +458,7 @@ unsigned short SRand64() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055d7ec
+// FUNCTION: COPTER_D 0x0055d7ec
 unsigned short SRand128() {
 // LINE 125:
 	asm( 
@@ -479,7 +479,7 @@ unsigned short SRand128() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055d807
+// FUNCTION: COPTER_D 0x0055d807
 unsigned short SRand256() {
 // LINE 126:
 	asm( 
@@ -500,7 +500,7 @@ unsigned short SRand256() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055d824
+// FUNCTION: COPTER_D 0x0055d824
 unsigned short SGIRand() {
 // LINE 132:
 	asm( 
@@ -560,7 +560,7 @@ unsigned short SGIRand() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055d882
+// FUNCTION: COPTER_D 0x0055d882
 unsigned short SGRand() {
 // LINE 147:
 	asm( 
@@ -620,7 +620,7 @@ unsigned short SGRand() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055d8e0
+// FUNCTION: COPTER_D 0x0055d8e0
 short SGSRand() {
 // LINE 162:
 	asm( 
@@ -690,7 +690,7 @@ short SGSRand() {
 
 
 // Contribution: 3:00026fdc-00027008 Module: 193, 4 byte alignment, initialized_data, read, write, 
-// LOCAL: SIMCOPTER 0x00026fdc
+// LOCAL: COPTER_D 0x00026fdc
 // rrandSeed
 
 

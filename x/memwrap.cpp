@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:00153720-00153f24 Module: 198, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00554720
+// FUNCTION: COPTER_D 0x00554720
 void * __ptr32 Memory::DetachPlatformHandle(void * __ptr32) {
 // LINE 103:
 	asm( 
@@ -30,7 +30,7 @@ void * __ptr32 Memory::DetachPlatformHandle(void * __ptr32) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00554733
+// FUNCTION: COPTER_D 0x00554733
 void * __ptr32 Memory::GetPlatformHandle(void * __ptr32) {
 // LINE 107:
 	asm( 
@@ -55,7 +55,7 @@ void * __ptr32 Memory::GetPlatformHandle(void * __ptr32) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00554746
+// FUNCTION: COPTER_D 0x00554746
 void * __ptr32 Memory::AdoptPlatformHandle(void * __ptr32) {
 // LINE 114:
 	asm( 
@@ -80,7 +80,7 @@ void * __ptr32 Memory::AdoptPlatformHandle(void * __ptr32) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00554759
+// FUNCTION: COPTER_D 0x00554759
 void * __ptr32 Memory::HAlloc(long, long) {
 // LINE 150:
 	asm( 
@@ -200,7 +200,7 @@ void * __ptr32 Memory::HAlloc(long, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00554848
+// FUNCTION: COPTER_D 0x00554848
 void Memory::HUnpurge(void * __ptr32, long) {
 // LINE 190:
 	asm( 
@@ -235,7 +235,7 @@ void Memory::HUnpurge(void * __ptr32, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00554870
+// FUNCTION: COPTER_D 0x00554870
 unsigned char * Memory::PAlloc(long *, long) {
 // LINE 202:
 	asm( 
@@ -285,7 +285,7 @@ unsigned char * Memory::PAlloc(long *, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005548c3
+// FUNCTION: COPTER_D 0x005548c3
 void Memory::HFree(void * __ptr32) {
 // LINE 219:
 	asm( 
@@ -376,7 +376,7 @@ void Memory::HFree(void * __ptr32) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00554976
+// FUNCTION: COPTER_D 0x00554976
 void Memory::PFree(unsigned char *) {
 // LINE 248:
 	asm( 
@@ -433,7 +433,7 @@ void Memory::PFree(unsigned char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005549e0
+// FUNCTION: COPTER_D 0x005549e0
 unsigned char * Memory::HLock(void * __ptr32) {
 // LINE 265:
 	asm( 
@@ -489,7 +489,7 @@ unsigned char * Memory::HLock(void * __ptr32) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00554a3d
+// FUNCTION: COPTER_D 0x00554a3d
 void Memory::HUnlock(void * __ptr32) {
 // LINE 295:
 	asm( 
@@ -539,7 +539,7 @@ void Memory::HUnlock(void * __ptr32) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00554a94
+// FUNCTION: COPTER_D 0x00554a94
 void Memory::HMoveHi(void * __ptr32) {
 // LINE 312:
 	asm( 
@@ -565,7 +565,7 @@ void Memory::HMoveHi(void * __ptr32) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00554aac
+// FUNCTION: COPTER_D 0x00554aac
 void Memory::HPurge(void * __ptr32) {
 // LINE 327:
 	asm( 
@@ -595,7 +595,7 @@ void Memory::HPurge(void * __ptr32) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00554ad8
+// FUNCTION: COPTER_D 0x00554ad8
 void Memory::HNoPurge(void * __ptr32) {
 // LINE 339:
 	asm( 
@@ -625,7 +625,7 @@ void Memory::HNoPurge(void * __ptr32) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00554b04
+// FUNCTION: COPTER_D 0x00554b04
 unsigned char * Memory::Stash(void * __ptr32) {
 // LINE 350:
 	asm( 
@@ -691,7 +691,7 @@ unsigned char * Memory::Stash(void * __ptr32) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00554b76
+// FUNCTION: COPTER_D 0x00554b76
 void Memory::BlockMove(void * __ptr32, void * __ptr32, unsigned long) {
 // LINE 370:
 	asm( 
@@ -734,7 +734,7 @@ void Memory::BlockMove(void * __ptr32, void * __ptr32, unsigned long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00554bc3
+// FUNCTION: COPTER_D 0x00554bc3
 void Memory::BlockCopy(void * __ptr32, void * __ptr32, unsigned long) {
 // LINE 380:
 	asm( 
@@ -777,7 +777,7 @@ void Memory::BlockCopy(void * __ptr32, void * __ptr32, unsigned long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00554c10
+// FUNCTION: COPTER_D 0x00554c10
 void Memory::BlockFill(void * __ptr32, unsigned char, unsigned long) {
 // LINE 392:
 	asm( 
@@ -833,7 +833,7 @@ void Memory::BlockFill(void * __ptr32, unsigned char, unsigned long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00554c73
+// FUNCTION: COPTER_D 0x00554c73
 unsigned short Memory::BlockCompare(void * __ptr32, void * __ptr32, unsigned long) {
 // LINE 401:
 	asm( 
@@ -870,7 +870,7 @@ unsigned short Memory::BlockCompare(void * __ptr32, void * __ptr32, unsigned lon
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00554cab
+// FUNCTION: COPTER_D 0x00554cab
 long * Memory::PoolAlloc(long, enum Memory::PoolType) {
 // LINE 408:
 	asm( 
@@ -904,7 +904,7 @@ long * Memory::PoolAlloc(long, enum Memory::PoolType) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00554cd9
+// FUNCTION: COPTER_D 0x00554cd9
 void Memory::PoolFree(long *) {
 // LINE 416:
 	asm( 
@@ -934,7 +934,7 @@ void Memory::PoolFree(long *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00554d05
+// FUNCTION: COPTER_D 0x00554d05
 unsigned long Memory::HGetSize(void * __ptr32) {
 // LINE 423:
 	asm( 
@@ -984,7 +984,7 @@ unsigned long Memory::HGetSize(void * __ptr32) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00554d5a
+// FUNCTION: COPTER_D 0x00554d5a
 unsigned long Memory::PGetSize(unsigned char *) {
 // LINE 438:
 	asm( 
@@ -1034,7 +1034,7 @@ unsigned long Memory::PGetSize(unsigned char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00554daf
+// FUNCTION: COPTER_D 0x00554daf
 unsigned short Memory::HIsLocked(void * __ptr32) {
 // LINE 453:
 	asm( 
@@ -1072,7 +1072,7 @@ unsigned short Memory::HIsLocked(void * __ptr32) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00554de7
+// FUNCTION: COPTER_D 0x00554de7
 long Memory::HGetState(void * __ptr32) {
 // LINE 462:
 	asm( 
@@ -1138,7 +1138,7 @@ long Memory::HGetState(void * __ptr32) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00554e62
+// FUNCTION: COPTER_D 0x00554e62
 void Memory::HSetState(void * __ptr32, long) {
 // LINE 480:
 	asm( 
@@ -1176,7 +1176,7 @@ void Memory::HSetState(void * __ptr32, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00554e99
+// FUNCTION: COPTER_D 0x00554e99
 long Memory::HSetSize(void * __ptr32, unsigned long) {
 // LINE 494:
 	asm( 
@@ -1238,7 +1238,7 @@ long Memory::HSetSize(void * __ptr32, unsigned long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00554f06
+// FUNCTION: COPTER_D 0x00554f06
 long Memory::Error() {
 // LINE 536:
 	asm( 

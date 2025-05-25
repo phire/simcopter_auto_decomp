@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:0007ab70-0007caa5 Module: 32, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x0047bb70
+// FUNCTION: COPTER_D 0x0047bb70
 void PreferenceItem::PreferenceItem() {
 // LINE 17:
 	asm( 
@@ -44,7 +44,7 @@ void PreferenceItem::PreferenceItem() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047bba6
+// FUNCTION: COPTER_D 0x0047bba6
 void PreferenceItem::PreferenceItem(const class PreferenceItem&) {
 // LINE 29:
 	asm( 
@@ -136,7 +136,7 @@ void PreferenceItem::PreferenceItem(const class PreferenceItem&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047bc47
+// FUNCTION: COPTER_D 0x0047bc47
 void PreferenceItem::~PreferenceItem() {
 // LINE 52:
 	asm( 
@@ -177,7 +177,7 @@ void PreferenceItem::~PreferenceItem() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047bc85
+// FUNCTION: COPTER_D 0x0047bc85
 class PreferenceItem& PreferenceItem::operator=(const class PreferenceItem&) {
 // LINE 62:
 	asm( 
@@ -272,7 +272,7 @@ class PreferenceItem& PreferenceItem::operator=(const class PreferenceItem&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047bd26
+// FUNCTION: COPTER_D 0x0047bd26
 int32_t operator==() {
 // LINE 85:
 	asm( 
@@ -302,7 +302,7 @@ int32_t operator==() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047bd4e
+// FUNCTION: COPTER_D 0x0047bd4e
 int32_t PreferenceItem::Compare(const class PreferenceItem&) {
 // LINE 93:
 	asm( 
@@ -340,7 +340,7 @@ int32_t PreferenceItem::Compare(const class PreferenceItem&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047bd7e
+// FUNCTION: COPTER_D 0x0047bd7e
 int32_t operator<() {
 // LINE 119:
 	asm( 
@@ -372,7 +372,7 @@ int32_t operator<() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047bdaa
+// FUNCTION: COPTER_D 0x0047bdaa
 class PreferenceItem* PreferenceItem::DuplicatePointer() {
 // LINE 129:
 	asm( 
@@ -497,7 +497,7 @@ class PreferenceItem* PreferenceItem::DuplicatePointer() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047bea2
+// FUNCTION: COPTER_D 0x0047bea2
 void PreferenceManager::PreferenceManager(long, long, long, int32_t) {
 // LINE 165:
 	asm( 
@@ -709,7 +709,7 @@ void PreferenceManager::PreferenceManager(long, long, long, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047c147
+// FUNCTION: COPTER_D 0x0047c147
 int32_t PreferenceManager::IPreferenceManager(char *) {
 // LINE 178:
 	asm( 
@@ -772,7 +772,7 @@ int32_t PreferenceManager::IPreferenceManager(char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047c1be
+// FUNCTION: COPTER_D 0x0047c1be
 void PreferenceManager::~PreferenceManager() {
 // LINE 191:
 	asm( 
@@ -939,7 +939,7 @@ void PreferenceManager::~PreferenceManager() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047c3e2
+// FUNCTION: COPTER_D 0x0047c3e2
 void PreferenceManager::EnumeratePrefs() {
 // LINE 203:
 	asm( 
@@ -1024,7 +1024,7 @@ void PreferenceManager::EnumeratePrefs() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047c4ad
+// FUNCTION: COPTER_D 0x0047c4ad
 long PreferenceManager::SaveAllPrefs() {
 // LINE 222:
 	asm( 
@@ -1229,7 +1229,7 @@ long PreferenceManager::SaveAllPrefs() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047c670
+// FUNCTION: COPTER_D 0x0047c670
 long PreferenceManager::LoadAllPrefs() {
 // LINE 270:
 	asm( 
@@ -1452,7 +1452,7 @@ long PreferenceManager::LoadAllPrefs() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047c834
+// FUNCTION: COPTER_D 0x0047c834
 long PreferenceManager::ClearPrefsMemory() {
 // LINE 311:
 	asm( 
@@ -1563,7 +1563,7 @@ long PreferenceManager::ClearPrefsMemory() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047c970
+// FUNCTION: COPTER_D 0x0047c970
 long PreferenceManager::RemovePref(long) {
 // LINE 326:
 	asm( 
@@ -1714,7 +1714,7 @@ long PreferenceManager::RemovePref(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047cae0
+// FUNCTION: COPTER_D 0x0047cae0
 class PreferenceItem* PreferenceManager::GetPrefPointer(long) {
 // LINE 354:
 	asm( 
@@ -1813,7 +1813,7 @@ class PreferenceItem* PreferenceManager::GetPrefPointer(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047cbc3
+// FUNCTION: COPTER_D 0x0047cbc3
 class PreferenceItem* PreferenceManager::GetPrefCopy(long) {
 // LINE 375:
 	asm( 
@@ -1866,7 +1866,7 @@ class PreferenceItem* PreferenceManager::GetPrefCopy(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047cc0c
+// FUNCTION: COPTER_D 0x0047cc0c
 char * PreferenceManager::GetPrefDataPointer(long) {
 // LINE 401:
 	asm( 
@@ -1914,7 +1914,7 @@ char * PreferenceManager::GetPrefDataPointer(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047cc4d
+// FUNCTION: COPTER_D 0x0047cc4d
 char * PreferenceManager::GetPrefDataCopy(long) {
 // LINE 421:
 	asm( 
@@ -1983,7 +1983,7 @@ char * PreferenceManager::GetPrefDataCopy(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047ccb7
+// FUNCTION: COPTER_D 0x0047ccb7
 long PreferenceManager::GetPrefDataLength(long) {
 // LINE 451:
 	asm( 
@@ -2031,7 +2031,7 @@ long PreferenceManager::GetPrefDataLength(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047ccf8
+// FUNCTION: COPTER_D 0x0047ccf8
 long PreferenceManager::SetPref(long, char *, long) {
 // LINE 465:
 	asm( 
@@ -2267,7 +2267,7 @@ long PreferenceManager::SetPref(long, char *, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047cf57
+// FUNCTION: COPTER_D 0x0047cf57
 long PreferenceManager::SetPref(class PreferenceItem*) {
 // LINE 507:
 	asm( 
@@ -2505,7 +2505,7 @@ long PreferenceManager::SetPref(class PreferenceItem*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047d250
+// FUNCTION: COPTER_D 0x0047d250
 void NotificationPreferenceManager::NotificationPreferenceManager(long, long, long, int32_t) {
 // LINE 534:
 	asm( 
@@ -2691,7 +2691,7 @@ void NotificationPreferenceManager::NotificationPreferenceManager(long, long, lo
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047d4cf
+// FUNCTION: COPTER_D 0x0047d4cf
 int32_t NotificationPreferenceManager::AddNotification(long, class NotificationSink*) {
 // LINE 546:
 	asm( 
@@ -2732,7 +2732,7 @@ int32_t NotificationPreferenceManager::AddNotification(long, class NotificationS
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047d506
+// FUNCTION: COPTER_D 0x0047d506
 int32_t NotificationPreferenceManager::AddNotification(class NotificationItem&) {
 // LINE 555:
 	asm( 
@@ -2940,7 +2940,7 @@ int32_t NotificationPreferenceManager::AddNotification(class NotificationItem&) 
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047d7c7
+// FUNCTION: COPTER_D 0x0047d7c7
 int32_t NotificationPreferenceManager::RemoveNotification(class NotificationSink*, long) {
 // LINE 568:
 	asm( 
@@ -3085,7 +3085,7 @@ int32_t NotificationPreferenceManager::RemoveNotification(class NotificationSink
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047d92f
+// FUNCTION: COPTER_D 0x0047d92f
 long NotificationPreferenceManager::SetPref(long, char *, long) {
 // LINE 593:
 	asm( 
@@ -3138,7 +3138,7 @@ long NotificationPreferenceManager::SetPref(long, char *, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047d97a
+// FUNCTION: COPTER_D 0x0047d97a
 long NotificationPreferenceManager::SetPref(class PreferenceItem*) {
 // LINE 604:
 	asm( 
@@ -3188,7 +3188,7 @@ long NotificationPreferenceManager::SetPref(class PreferenceItem*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047d9bf
+// FUNCTION: COPTER_D 0x0047d9bf
 void NotificationPreferenceManager::DoNotification(long) {
 // LINE 615:
 	asm( 
@@ -3289,7 +3289,7 @@ void NotificationPreferenceManager::DoNotification(long) {
 
 
 // Contribution: 1:0007cab0-0007cae8 Module: 32, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x0047dab0
+// FUNCTION: COPTER_D 0x0047dab0
 // PreferenceManager::`scalar deleting destructor'
 
 
@@ -3298,18 +3298,18 @@ void NotificationPreferenceManager::DoNotification(long) {
 
 
 // Contribution: 1:0007cca0-0007ce7f Module: 32, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x0047dca0
+// FUNCTION: COPTER_D 0x0047dca0
 // NotificationPreferenceManager::`scalar deleting destructor'
 
 
 
 // Contribution: 2:00001db0-00001de3 Module: 32, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00001db0
+// GLOBAL: COPTER_D 0x00001db0
 // ??_7PreferenceManager@@6B@
 
 
 // Contribution: 2:00001de8-00001e2b Module: 32, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00001de8
+// GLOBAL: COPTER_D 0x00001de8
 // ??_7NotificationPreferenceManager@@6B@
 
 
@@ -3317,34 +3317,34 @@ void NotificationPreferenceManager::DoNotification(long) {
 
 
 // Contribution: 3:00002a5c-00002a5f Module: 32, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00002a5c
+// GLOBAL: COPTER_D 0x00002a5c
 // list<PreferenceItem>::number_of_lists
 
 
 // Contribution: 3:00002a60-00002a63 Module: 32, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00002a60
+// GLOBAL: COPTER_D 0x00002a60
 // list<PreferenceItem>::last
-// GLOBAL: SIMCOPTER 0x00002a64
+// GLOBAL: COPTER_D 0x00002a64
 // list<PreferenceItem>::next_avail
 
 
 // Contribution: 3:00002a64-00002a67 Module: 32, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00002a68
+// GLOBAL: COPTER_D 0x00002a68
 // list<PreferenceItem>::free_list
 
 
 // Contribution: 3:00002a68-00002a6b Module: 32, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00002a6c
+// GLOBAL: COPTER_D 0x00002a6c
 // list<PreferenceItem>::buffer_list
 
 
 // Contribution: 3:00002a6c-00002a6f Module: 32, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00002a70
+// GLOBAL: COPTER_D 0x00002a70
 // list<NotificationItem>::number_of_lists
 
 
 // Contribution: 3:00002a70-00002a73 Module: 32, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00002a74
+// GLOBAL: COPTER_D 0x00002a74
 // list<NotificationItem>::last
 
 
@@ -3352,14 +3352,14 @@ void NotificationPreferenceManager::DoNotification(long) {
 
 
 // Contribution: 3:00002a78-00002a7b Module: 32, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00002a78
+// GLOBAL: COPTER_D 0x00002a78
 // list<NotificationItem>::next_avail
-// GLOBAL: SIMCOPTER 0x00002a7c
+// GLOBAL: COPTER_D 0x00002a7c
 // list<NotificationItem>::free_list
 
 
 // Contribution: 3:00002a7c-00002a7f Module: 32, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00002a80
+// GLOBAL: COPTER_D 0x00002a80
 // list<NotificationItem>::buffer_list
 
 

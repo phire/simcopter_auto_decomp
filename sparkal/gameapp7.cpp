@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:0003d250-00040e21 Module: 53, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x0043e250
+// FUNCTION: COPTER_D 0x0043e250
 void SoundCompletionDeletionFunction() {
 // LINE 76:
 	asm( 
@@ -42,7 +42,7 @@ void SoundCompletionDeletionFunction() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043e28a
+// FUNCTION: COPTER_D 0x0043e28a
 void SoundCompletionUnloadFunction() {
 // LINE 86:
 	asm( 
@@ -70,7 +70,7 @@ void SoundCompletionUnloadFunction() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043e2a5
+// FUNCTION: COPTER_D 0x0043e2a5
 public: void __thiscall CGameApp::ShowVersion(void) {
 // LINE 105:
 	asm( 
@@ -916,7 +916,7 @@ public: void __thiscall CGameApp::ShowVersion(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043eda6
+// FUNCTION: COPTER_D 0x0043eda6
 public: int __thiscall CGameApp::CreateMessageBox(long, class basic_string<char> &, long) {
 // LINE 186:
 	asm( 
@@ -1466,7 +1466,7 @@ public: int __thiscall CGameApp::CreateMessageBox(long, class basic_string<char>
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043f2b9
+// FUNCTION: COPTER_D 0x0043f2b9
 public: int __thiscall CGameApp::CreateMessageBox(long, int, long) {
 // LINE 280:
 	asm( 
@@ -1856,7 +1856,7 @@ public: int __thiscall CGameApp::CreateMessageBox(long, int, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043f8cc
+// FUNCTION: COPTER_D 0x0043f8cc
 public: void __thiscall CGameApp::DestroyMessageBox(void) {
 // LINE 297:
 	asm( 
@@ -1895,7 +1895,7 @@ public: void __thiscall CGameApp::DestroyMessageBox(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043f908
+// FUNCTION: COPTER_D 0x0043f908
 public: int __thiscall CGameApp::CreateCheatCodeEntryMessageBox(void) {
 // LINE 307:
 	asm( 
@@ -2138,7 +2138,7 @@ public: int __thiscall CGameApp::CreateCheatCodeEntryMessageBox(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043fbaf
+// FUNCTION: COPTER_D 0x0043fbaf
 public: void __thiscall CGameApp::DestroyCheatCodeEntryMessageBox(void) {
 // LINE 339:
 	asm( 
@@ -2166,7 +2166,7 @@ public: void __thiscall CGameApp::DestroyCheatCodeEntryMessageBox(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043fbcd
+// FUNCTION: COPTER_D 0x0043fbcd
 public: int __thiscall CGameApp::DoCheatCode(class basic_string<char> &) {
 // LINE 352:
 	asm( 
@@ -3278,7 +3278,7 @@ public: int __thiscall CGameApp::DoCheatCode(class basic_string<char> &) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00440b3f
+// FUNCTION: COPTER_D 0x00440b3f
 public: int __thiscall CGameApp::CheckCommandLineForCheatCodes(void) {
 // LINE 504:
 	asm( 
@@ -3450,7 +3450,7 @@ public: int __thiscall CGameApp::CheckCommandLineForCheatCodes(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00440dcf
+// FUNCTION: COPTER_D 0x00440dcf
 public: void __thiscall CGameApp::CreateDebugBuffer(void) {
 // LINE 523:
 	asm( 
@@ -3574,7 +3574,7 @@ public: void __thiscall CGameApp::CreateDebugBuffer(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00440ed6
+// FUNCTION: COPTER_D 0x00440ed6
 public: void __thiscall CGameApp::DestroyDebugBuffer(void) {
 // LINE 543:
 	asm( 
@@ -3626,7 +3626,7 @@ public: void __thiscall CGameApp::DestroyDebugBuffer(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00440f3a
+// FUNCTION: COPTER_D 0x00440f3a
 public: void __thiscall CGameApp::CreatePaletteBuffer(void) {
 // LINE 554:
 	asm( 
@@ -3671,7 +3671,7 @@ public: void __thiscall CGameApp::CreatePaletteBuffer(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00440f9d
+// FUNCTION: COPTER_D 0x00440f9d
 public: void __thiscall CGameApp::TogglePaletteBufferDisplay(void) {
 // LINE 564:
 	asm( 
@@ -3725,7 +3725,7 @@ public: void __thiscall CGameApp::TogglePaletteBufferDisplay(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00440ffa
+// FUNCTION: COPTER_D 0x00440ffa
 public: void __thiscall CGameApp::ToggleDebugWindowDisplay(void) {
 // LINE 581:
 	asm( 
@@ -3788,7 +3788,7 @@ public: void __thiscall CGameApp::ToggleDebugWindowDisplay(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044106f
+// FUNCTION: COPTER_D 0x0044106f
 public: void __thiscall CGameApp::CreatePlayMenu(void) {
 // LINE 600:
 	asm( 
@@ -4047,7 +4047,7 @@ public: void __thiscall CGameApp::CreatePlayMenu(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004413e5
+// FUNCTION: COPTER_D 0x004413e5
 public: void __thiscall CGameApp::CreateUserInputWindow(void) {
 // LINE 633:
 	asm( 
@@ -4162,7 +4162,7 @@ public: void __thiscall CGameApp::CreateUserInputWindow(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044150b
+// FUNCTION: COPTER_D 0x0044150b
 public: void __thiscall CGameApp::DestroyUserInputWindow(class UserInputWindow *, int) {
 // LINE 649:
 	asm( 
@@ -4249,7 +4249,7 @@ public: void __thiscall CGameApp::DestroyUserInputWindow(class UserInputWindow *
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004415c7
+// FUNCTION: COPTER_D 0x004415c7
 public: void __thiscall CGameApp::CreateRenderSettingsWindow(void) {
 // LINE 669:
 	asm( 
@@ -4376,7 +4376,7 @@ public: void __thiscall CGameApp::CreateRenderSettingsWindow(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00441715
+// FUNCTION: COPTER_D 0x00441715
 public: void __thiscall CGameApp::DestroyRenderSettingsWindow(class RenderSettingsWindow *, int) {
 // LINE 690:
 	asm( 
@@ -4490,7 +4490,7 @@ public: void __thiscall CGameApp::DestroyRenderSettingsWindow(class RenderSettin
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004417fe
+// FUNCTION: COPTER_D 0x004417fe
 public: void __thiscall CGameApp::CreateSoundSettingsWindow(void) {
 // LINE 728:
 	asm( 
@@ -4667,7 +4667,7 @@ public: void __thiscall CGameApp::CreateSoundSettingsWindow(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004419b8
+// FUNCTION: COPTER_D 0x004419b8
 public: void __thiscall CGameApp::DestroySoundSettingsWindow(class SoundSettingsWindow *, int) {
 // LINE 767:
 	asm( 
@@ -4780,7 +4780,7 @@ public: void __thiscall CGameApp::DestroySoundSettingsWindow(class SoundSettings
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00441a89
+// FUNCTION: COPTER_D 0x00441a89
 public: void __thiscall CGameApp::CreateCitySettingsWindow(void) {
 // LINE 807:
 	asm( 
@@ -4868,7 +4868,7 @@ public: void __thiscall CGameApp::CreateCitySettingsWindow(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00441b5f
+// FUNCTION: COPTER_D 0x00441b5f
 public: void __thiscall CGameApp::DestroyCitySettingsWindow(class CitySettingsWindow *, int) {
 // LINE 824:
 	asm( 
@@ -4926,7 +4926,7 @@ public: void __thiscall CGameApp::DestroyCitySettingsWindow(class CitySettingsWi
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00441bc0
+// FUNCTION: COPTER_D 0x00441bc0
 public: void __thiscall CGameApp::CreateControlDisplayWindow(void) {
 // LINE 837:
 	asm( 
@@ -5017,7 +5017,7 @@ public: void __thiscall CGameApp::CreateControlDisplayWindow(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00441c9f
+// FUNCTION: COPTER_D 0x00441c9f
 public: void __thiscall CGameApp::DestroyControlDisplayWindow(void) {
 // LINE 850:
 	asm( 
@@ -5045,7 +5045,7 @@ public: void __thiscall CGameApp::DestroyControlDisplayWindow(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00441cbe
+// FUNCTION: COPTER_D 0x00441cbe
 public: void __thiscall CGameApp::CreateCheckupWindow(void) {
 // LINE 858:
 	asm( 
@@ -5126,7 +5126,7 @@ public: void __thiscall CGameApp::CreateCheckupWindow(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00441d86
+// FUNCTION: COPTER_D 0x00441d86
 public: void __thiscall CGameApp::DestroyCheckupWindow(class CheckupWindow *, int) {
 // LINE 870:
 	asm( 
@@ -5225,55 +5225,55 @@ public: void __thiscall CGameApp::DestroyCheckupWindow(class CheckupWindow *, in
 
 
 // Contribution: 3:00001680-00001970 Module: 53, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x00001680
+// GLOBAL: COPTER_D 0x00001680
 // SZ_PLAY_MENU_IMAGE_FILE_NAME
-// GLOBAL: SIMCOPTER 0x00001684
+// GLOBAL: COPTER_D 0x00001684
 // SZ_ABOUT_BOX_IMAGE_FILE_NAME_0
-// GLOBAL: SIMCOPTER 0x00001688
+// GLOBAL: COPTER_D 0x00001688
 // SZ_ABOUT_BOX_IMAGE_FILE_NAME_1
-// GLOBAL: SIMCOPTER 0x0000168c
+// GLOBAL: COPTER_D 0x0000168c
 // SZ_ABOUT_BOX_IMAGE_FILE_NAME_2N
-// GLOBAL: SIMCOPTER 0x00001690
+// GLOBAL: COPTER_D 0x00001690
 // SZ_ABOUT_BOX_IMAGE_FILE_NAME_2D
-// GLOBAL: SIMCOPTER 0x00001694
+// GLOBAL: COPTER_D 0x00001694
 // SZ_ABOUT_BOX_IMAGE_FILE_NAME_3
-// GLOBAL: SIMCOPTER 0x00001698
+// GLOBAL: COPTER_D 0x00001698
 // SZ_ABOUT_BOX_IMAGE_FILE_NAME_4
-// GLOBAL: SIMCOPTER 0x0000169c
+// GLOBAL: COPTER_D 0x0000169c
 // SZ_ABOUT_BOX_IMAGE_FILE_NAME_5
-// GLOBAL: SIMCOPTER 0x000016a0
+// GLOBAL: COPTER_D 0x000016a0
 // SZ_ABOUT_BOX_IMAGE_FILE_NAME_6
-// GLOBAL: SIMCOPTER 0x000016a4
+// GLOBAL: COPTER_D 0x000016a4
 // SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_0
-// GLOBAL: SIMCOPTER 0x000016a8
+// GLOBAL: COPTER_D 0x000016a8
 // SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_1
-// GLOBAL: SIMCOPTER 0x000016ac
+// GLOBAL: COPTER_D 0x000016ac
 // SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_2N
-// GLOBAL: SIMCOPTER 0x000016b0
+// GLOBAL: COPTER_D 0x000016b0
 // SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_2D
-// GLOBAL: SIMCOPTER 0x000016b4
+// GLOBAL: COPTER_D 0x000016b4
 // SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_3
-// GLOBAL: SIMCOPTER 0x000016b8
+// GLOBAL: COPTER_D 0x000016b8
 // SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_4
-// GLOBAL: SIMCOPTER 0x000016bc
+// GLOBAL: COPTER_D 0x000016bc
 // SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_5
-// GLOBAL: SIMCOPTER 0x000016c0
+// GLOBAL: COPTER_D 0x000016c0
 // SZ_ABOUT_BOX_BUTTON_IMAGE_FILE_NAME_6
-// GLOBAL: SIMCOPTER 0x000016c4
+// GLOBAL: COPTER_D 0x000016c4
 // SZ_ABOUT_BOX_ANIMATION_FILE_NAME_0
-// GLOBAL: SIMCOPTER 0x000016c8
+// GLOBAL: COPTER_D 0x000016c8
 // SZ_ABOUT_BOX_ANIMATION_FILE_NAME_1
-// GLOBAL: SIMCOPTER 0x000016cc
+// GLOBAL: COPTER_D 0x000016cc
 // SZ_ABOUT_BOX_ANIMATION_FILE_NAME_2N
-// GLOBAL: SIMCOPTER 0x000016d0
+// GLOBAL: COPTER_D 0x000016d0
 // SZ_ABOUT_BOX_ANIMATION_FILE_NAME_2D
-// GLOBAL: SIMCOPTER 0x000016d4
+// GLOBAL: COPTER_D 0x000016d4
 // SZ_ABOUT_BOX_ANIMATION_FILE_NAME_3
-// GLOBAL: SIMCOPTER 0x000016d8
+// GLOBAL: COPTER_D 0x000016d8
 // SZ_ABOUT_BOX_ANIMATION_FILE_NAME_4
-// GLOBAL: SIMCOPTER 0x000016dc
+// GLOBAL: COPTER_D 0x000016dc
 // SZ_ABOUT_BOX_ANIMATION_FILE_NAME_5
-// GLOBAL: SIMCOPTER 0x000016e0
+// GLOBAL: COPTER_D 0x000016e0
 // SZ_ABOUT_BOX_ANIMATION_FILE_NAME_6
-// GLOBAL: SIMCOPTER 0x000016e4
+// GLOBAL: COPTER_D 0x000016e4
 // SZ_CHEAT_BOX_TEXT_IMAGE_FILE_NAME

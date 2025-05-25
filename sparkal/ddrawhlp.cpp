@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:0001e500-0001e869 Module: 74, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x0041f500
+// FUNCTION: COPTER_D 0x0041f500
 long DDEnable() {
 // LINE 30:
 	asm( 
@@ -94,7 +94,7 @@ long DDEnable() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0041f5a5
+// FUNCTION: COPTER_D 0x0041f5a5
 void DDDisable() {
 // LINE 59:
 	asm( 
@@ -139,7 +139,7 @@ void DDDisable() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0041f5f1
+// FUNCTION: COPTER_D 0x0041f5f1
 unsigned long DDColorMatch() {
 // LINE 84:
 	asm( 
@@ -288,7 +288,7 @@ unsigned long DDColorMatch() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0041f6e4
+// FUNCTION: COPTER_D 0x0041f6e4
 struct IDirectDrawPalette* ReadPalFile() {
 // LINE 126:
 	asm( 
@@ -449,9 +449,9 @@ struct IDirectDrawPalette* ReadPalFile() {
 
 
 // Contribution: 3:00000264-00000297 Module: 74, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x00000264
+// GLOBAL: COPTER_D 0x00000264
 // lpDD
-// GLOBAL: SIMCOPTER 0x00000268
+// GLOBAL: COPTER_D 0x00000268
 // lpPalette
 
 

@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:000ee1c0-000f7aeb Module: 176, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x004ef1c0
+// FUNCTION: COPTER_D 0x004ef1c0
 void S3HeliInitInstance() {
 // LINE 485:
 	asm( 
@@ -1566,7 +1566,7 @@ void S3HeliInitInstance() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004effa0
+// FUNCTION: COPTER_D 0x004effa0
 void S3HeliGenInit() {
 // LINE 820:
 	asm( 
@@ -2416,7 +2416,7 @@ void S3HeliGenInit() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f07ba
+// FUNCTION: COPTER_D 0x004f07ba
 void S3HeliNextFrame() {
 // LINE 1010:
 	asm( 
@@ -4033,7 +4033,7 @@ void S3HeliNextFrame() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f176d
+// FUNCTION: COPTER_D 0x004f176d
 int32_t S3HeliCollideTest() {
 // LINE 1441:
 	asm( 
@@ -4347,7 +4347,7 @@ int32_t S3HeliCollideTest() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f1a20
+// FUNCTION: COPTER_D 0x004f1a20
 int32_t S3HeliHeadToLocXZ() {
 // LINE 1514:
 	asm( 
@@ -4646,7 +4646,7 @@ int32_t S3HeliHeadToLocXZ() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f1c83
+// FUNCTION: COPTER_D 0x004f1c83
 void S3HeliSetShadow() {
 // LINE 1617:
 	asm( 
@@ -4869,7 +4869,7 @@ void S3HeliSetShadow() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f1e8a
+// FUNCTION: COPTER_D 0x004f1e8a
 int32_t S3HeliControlInputs() {
 // LINE 1687:
 	asm( 
@@ -5969,7 +5969,7 @@ int32_t S3HeliControlInputs() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f2916
+// FUNCTION: COPTER_D 0x004f2916
 void S3HeliYawPitchRollSlide() {
 // LINE 1929:
 	asm( 
@@ -6604,7 +6604,7 @@ void S3HeliYawPitchRollSlide() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f2ec9
+// FUNCTION: COPTER_D 0x004f2ec9
 void S3HeliMoveXZ() {
 // LINE 2088:
 	asm( 
@@ -7023,7 +7023,7 @@ void S3HeliMoveXZ() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f32fe
+// FUNCTION: COPTER_D 0x004f32fe
 void S3HeliMoveY() {
 // LINE 2180:
 	asm( 
@@ -7815,7 +7815,7 @@ void S3HeliMoveY() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f3b82
+// FUNCTION: COPTER_D 0x004f3b82
 void S3HeliMainRotor() {
 // LINE 2395:
 	asm( 
@@ -8410,7 +8410,7 @@ void S3HeliMainRotor() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f40c7
+// FUNCTION: COPTER_D 0x004f40c7
 void S3HeliRopeAndBucket() {
 // LINE 2536:
 	asm( 
@@ -9103,7 +9103,7 @@ void S3HeliRopeAndBucket() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f4766
+// FUNCTION: COPTER_D 0x004f4766
 void S3HeliDropWater() {
 // LINE 2701:
 	asm( 
@@ -9292,7 +9292,7 @@ void S3HeliDropWater() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f48ec
+// FUNCTION: COPTER_D 0x004f48ec
 void S3HeliSimDust() {
 // LINE 2754:
 	asm( 
@@ -9479,7 +9479,7 @@ void S3HeliSimDust() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f4a69
+// FUNCTION: COPTER_D 0x004f4a69
 void NormalizeMapPoints() {
 // LINE 2812:
 	asm( 
@@ -9543,7 +9543,7 @@ void NormalizeMapPoints() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f4ad4
+// FUNCTION: COPTER_D 0x004f4ad4
 void NormalizeXZVector() {
 // LINE 2834:
 	asm( 
@@ -9725,7 +9725,7 @@ void NormalizeXZVector() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f4c0e
+// FUNCTION: COPTER_D 0x004f4c0e
 void S3HeliRopeNextFrame() {
 // LINE 2895:
 	asm( 
@@ -10401,7 +10401,7 @@ void S3HeliRopeNextFrame() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f512e
+// FUNCTION: COPTER_D 0x004f512e
 void S3DrawWater() {
 // LINE 3089:
 	asm( 
@@ -10421,7 +10421,7 @@ void S3DrawWater() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f5139
+// FUNCTION: COPTER_D 0x004f5139
 int32_t GetCopterTerAlt() {
 // LINE 3324:
 	asm( 
@@ -10464,7 +10464,7 @@ int32_t GetCopterTerAlt() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f517d
+// FUNCTION: COPTER_D 0x004f517d
 int32_t GetCopterBldAlt() {
 // LINE 3336:
 	asm( 
@@ -10670,7 +10670,7 @@ int32_t GetCopterBldAlt() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f5316
+// FUNCTION: COPTER_D 0x004f5316
 void S3HeliTestCopter() {
 // LINE 3396:
 	asm( 
@@ -11067,7 +11067,7 @@ void S3HeliTestCopter() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f56b9
+// FUNCTION: COPTER_D 0x004f56b9
 int32_t S3HeliLand() {
 // LINE 3535:
 	asm( 
@@ -11225,7 +11225,7 @@ int32_t S3HeliLand() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f5800
+// FUNCTION: COPTER_D 0x004f5800
 int32_t S3HeliTakeOff() {
 // LINE 3598:
 	asm( 
@@ -11309,7 +11309,7 @@ int32_t S3HeliTakeOff() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f5898
+// FUNCTION: COPTER_D 0x004f5898
 void S3HeliHeadsUp() {
 // LINE 3637:
 	asm( 
@@ -11329,7 +11329,7 @@ void S3HeliHeadsUp() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f58a3
+// FUNCTION: COPTER_D 0x004f58a3
 int32_t S3HeliGetDeflection() {
 // LINE 3655:
 	asm( 
@@ -11521,7 +11521,7 @@ int32_t S3HeliGetDeflection() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f5a0c
+// FUNCTION: COPTER_D 0x004f5a0c
 int32_t S3HeliHighestBuildAlt() {
 // LINE 3727:
 	asm( 
@@ -11600,7 +11600,7 @@ int32_t S3HeliHighestBuildAlt() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f5a80
+// FUNCTION: COPTER_D 0x004f5a80
 void S3HeliSwitchType() {
 // LINE 3758:
 	asm( 
@@ -11624,7 +11624,7 @@ void S3HeliSwitchType() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f5a90
+// FUNCTION: COPTER_D 0x004f5a90
 struct _HELI_DATA* S3HeliGetDataByDyObj() {
 // LINE 3772:
 	asm( 
@@ -11682,7 +11682,7 @@ struct _HELI_DATA* S3HeliGetDataByDyObj() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f5afc
+// FUNCTION: COPTER_D 0x004f5afc
 void S3HeliNextFrameDriver() {
 // LINE 3797:
 	asm( 
@@ -11744,7 +11744,7 @@ void S3HeliNextFrameDriver() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f5b6a
+// FUNCTION: COPTER_D 0x004f5b6a
 void S3HeliSoundDriver() {
 // LINE 3830:
 	asm( 
@@ -12111,7 +12111,7 @@ void S3HeliSoundDriver() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f5e67
+// FUNCTION: COPTER_D 0x004f5e67
 void S3HeliSetSpotlite() {
 // LINE 3970:
 	asm( 
@@ -12632,7 +12632,7 @@ void S3HeliSetSpotlite() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f6321
+// FUNCTION: COPTER_D 0x004f6321
 void S3HeliGetSpotLoc() {
 // LINE 4129:
 	asm( 
@@ -12664,7 +12664,7 @@ void S3HeliGetSpotLoc() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f6341
+// FUNCTION: COPTER_D 0x004f6341
 int32_t S3HeliSpotDistance() {
 // LINE 4145:
 	asm( 
@@ -12851,7 +12851,7 @@ int32_t S3HeliSpotDistance() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f6477
+// FUNCTION: COPTER_D 0x004f6477
 void S3HeliRotateSpotLite() {
 // LINE 4221:
 	asm( 
@@ -12950,7 +12950,7 @@ void S3HeliRotateSpotLite() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f6555
+// FUNCTION: COPTER_D 0x004f6555
 void S3HeliTurbulence() {
 // LINE 4284:
 	asm( 
@@ -13368,7 +13368,7 @@ void S3HeliTurbulence() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f6912
+// FUNCTION: COPTER_D 0x004f6912
 void S3HeliSmokeTrail() {
 // LINE 4409:
 	asm( 
@@ -13859,7 +13859,7 @@ void S3HeliSmokeTrail() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f6d6e
+// FUNCTION: COPTER_D 0x004f6d6e
 void S3HeliReset() {
 // LINE 4543:
 	asm( 
@@ -13886,7 +13886,7 @@ void S3HeliReset() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f6d87
+// FUNCTION: COPTER_D 0x004f6d87
 void S3HeliTweakInit() {
 // LINE 4556:
 	asm( 
@@ -14883,7 +14883,7 @@ void S3HeliTweakInit() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f73bd
+// FUNCTION: COPTER_D 0x004f73bd
 int32_t S3HeliGetRepairRate() {
 // LINE 4762:
 	asm( 
@@ -14920,7 +14920,7 @@ int32_t S3HeliGetRepairRate() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f73ed
+// FUNCTION: COPTER_D 0x004f73ed
 int32_t S3HeliGetFuelRate() {
 // LINE 4770:
 	asm( 
@@ -14957,7 +14957,7 @@ int32_t S3HeliGetFuelRate() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f741d
+// FUNCTION: COPTER_D 0x004f741d
 long S3GetFullRepairCost() {
 // LINE 4779:
 	asm( 
@@ -15013,7 +15013,7 @@ long S3GetFullRepairCost() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f7473
+// FUNCTION: COPTER_D 0x004f7473
 void S3HeliPurchaseRepairs() {
 // LINE 4799:
 	asm( 
@@ -15083,7 +15083,7 @@ void S3HeliPurchaseRepairs() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f74eb
+// FUNCTION: COPTER_D 0x004f74eb
 long S3GetFullRefuelCost() {
 // LINE 4819:
 	asm( 
@@ -15138,7 +15138,7 @@ long S3GetFullRefuelCost() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f753e
+// FUNCTION: COPTER_D 0x004f753e
 void S3HeliPurchaseFuel() {
 // LINE 4838:
 	asm( 
@@ -15208,7 +15208,7 @@ void S3HeliPurchaseFuel() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f75b5
+// FUNCTION: COPTER_D 0x004f75b5
 int32_t S3HeliGetMaximumDamage() {
 // LINE 4857:
 	asm( 
@@ -15245,7 +15245,7 @@ int32_t S3HeliGetMaximumDamage() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f75e5
+// FUNCTION: COPTER_D 0x004f75e5
 int32_t S3HeliGetCurrentDamage() {
 // LINE 4866:
 	asm( 
@@ -15271,7 +15271,7 @@ int32_t S3HeliGetCurrentDamage() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f75fe
+// FUNCTION: COPTER_D 0x004f75fe
 int32_t S3HeliGetMaximumFuel() {
 // LINE 4874:
 	asm( 
@@ -15308,7 +15308,7 @@ int32_t S3HeliGetMaximumFuel() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f762e
+// FUNCTION: COPTER_D 0x004f762e
 void S3HeliCommand() {
 // LINE 4887:
 	asm( 
@@ -15508,7 +15508,7 @@ void S3HeliCommand() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f781b
+// FUNCTION: COPTER_D 0x004f781b
 void S3PlayMegaphoneMessage() {
 // LINE 4936:
 	asm( 
@@ -15605,7 +15605,7 @@ void S3PlayMegaphoneMessage() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f78fa
+// FUNCTION: COPTER_D 0x004f78fa
 int32_t S3HeliCrashed() {
 // LINE 4958:
 	asm( 
@@ -16179,7 +16179,7 @@ int32_t S3HeliCrashed() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f7de6
+// FUNCTION: COPTER_D 0x004f7de6
 int32_t S3HeliDyObjCollisionCheck() {
 // LINE 5128:
 	asm( 
@@ -16375,7 +16375,7 @@ int32_t S3HeliDyObjCollisionCheck() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f7f7d
+// FUNCTION: COPTER_D 0x004f7f7d
 void S3HeliHitSpiral() {
 // LINE 5212:
 	asm( 
@@ -16707,7 +16707,7 @@ void S3HeliHitSpiral() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f81bb
+// FUNCTION: COPTER_D 0x004f81bb
 struct Point2d* S3HeliGetFreePad() {
 // LINE 5349:
 	asm( 
@@ -16814,7 +16814,7 @@ struct Point2d* S3HeliGetFreePad() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f8270
+// FUNCTION: COPTER_D 0x004f8270
 struct _HELI_DATA* S3HeliGetDataForType() {
 // LINE 5402:
 	asm( 
@@ -16875,7 +16875,7 @@ struct _HELI_DATA* S3HeliGetDataForType() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f82df
+// FUNCTION: COPTER_D 0x004f82df
 long S3HeliGetNewValue() {
 // LINE 5419:
 	asm( 
@@ -16921,7 +16921,7 @@ long S3HeliGetNewValue() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f831e
+// FUNCTION: COPTER_D 0x004f831e
 long S3HeliGetCurrentValue() {
 // LINE 5438:
 	asm( 
@@ -17000,7 +17000,7 @@ long S3HeliGetCurrentValue() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f83a8
+// FUNCTION: COPTER_D 0x004f83a8
 long S3HeliGetEquipmentNewValue() {
 // LINE 5466:
 	asm( 
@@ -17091,7 +17091,7 @@ long S3HeliGetEquipmentNewValue() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f843e
+// FUNCTION: COPTER_D 0x004f843e
 void S3HeliPurchaseTeargasCanisters() {
 // LINE 5502:
 	asm( 
@@ -17123,7 +17123,7 @@ void S3HeliPurchaseTeargasCanisters() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f8465
+// FUNCTION: COPTER_D 0x004f8465
 long S3HeliGetEquipmentCurrentValue() {
 // LINE 5515:
 	asm( 
@@ -17157,7 +17157,7 @@ long S3HeliGetEquipmentCurrentValue() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f8492
+// FUNCTION: COPTER_D 0x004f8492
 void S3HeliMakeHelicopter() {
 // LINE 5528:
 	asm( 
@@ -17247,7 +17247,7 @@ void S3HeliMakeHelicopter() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f852a
+// FUNCTION: COPTER_D 0x004f852a
 void S3HeliRemoveHelicopter() {
 // LINE 5556:
 	asm( 
@@ -17348,7 +17348,7 @@ void S3HeliRemoveHelicopter() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f85e8
+// FUNCTION: COPTER_D 0x004f85e8
 void S3HeliUnlink() {
 // LINE 5591:
 	asm( 
@@ -17420,7 +17420,7 @@ void S3HeliUnlink() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f8653
+// FUNCTION: COPTER_D 0x004f8653
 void S3HeliHitDispatch() {
 // LINE 5616:
 	asm( 
@@ -17670,7 +17670,7 @@ void S3HeliHitDispatch() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f8847
+// FUNCTION: COPTER_D 0x004f8847
 int32_t S3HeliMIFFLoad() {
 // LINE 5694:
 	asm( 
@@ -17797,7 +17797,7 @@ int32_t S3HeliMIFFLoad() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f894f
+// FUNCTION: COPTER_D 0x004f894f
 int32_t S3HeliMIFFSave() {
 // LINE 5733:
 	asm( 
@@ -17864,7 +17864,7 @@ int32_t S3HeliMIFFSave() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f89c8
+// FUNCTION: COPTER_D 0x004f89c8
 void S3HeliUserExit() {
 // LINE 5759:
 	asm( 
@@ -18002,119 +18002,119 @@ void S3HeliUserExit() {
 
 
 // Contribution: 2:00003688-00003897 Module: 176, 8 byte alignment, initialized_data, read, 
-// LOCAL: SIMCOPTER 0x00003688
+// LOCAL: COPTER_D 0x00003688
 // TurnTable3
-// LOCAL: SIMCOPTER 0x00003708
+// LOCAL: COPTER_D 0x00003708
 // TurnTable2
-// LOCAL: SIMCOPTER 0x00003748
+// LOCAL: COPTER_D 0x00003748
 // IndexToType
-// LOCAL: SIMCOPTER 0x00003758
+// LOCAL: COPTER_D 0x00003758
 // TypeToIndex2
-// LOCAL: SIMCOPTER 0x00003798
+// LOCAL: COPTER_D 0x00003798
 // TILUT
-// LOCAL: SIMCOPTER 0x000037d8
+// LOCAL: COPTER_D 0x000037d8
 // OT
-// LOCAL: SIMCOPTER 0x00003818
+// LOCAL: COPTER_D 0x00003818
 // RRT
-// LOCAL: SIMCOPTER 0x00003858
+// LOCAL: COPTER_D 0x00003858
 // LRT
 
 
 // Contribution: 3:0001d8c0-0001ddb4 Module: 176, 8 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x0001d8c0
+// GLOBAL: COPTER_D 0x0001d8c0
 // S_htwk_landing_yspeed
-// GLOBAL: SIMCOPTER 0x0001d8c4
+// GLOBAL: COPTER_D 0x0001d8c4
 // S_htwk_landing_pitch
-// GLOBAL: SIMCOPTER 0x0001d8c8
+// GLOBAL: COPTER_D 0x0001d8c8
 // S_htwk_landing_slide
-// GLOBAL: SIMCOPTER 0x0001d8cc
+// GLOBAL: COPTER_D 0x0001d8cc
 // S_htwk_landing_speed
-// GLOBAL: SIMCOPTER 0x0001d8d0
+// GLOBAL: COPTER_D 0x0001d8d0
 // S_htwk_max_descent_rate
-// GLOBAL: SIMCOPTER 0x0001d8d4
+// GLOBAL: COPTER_D 0x0001d8d4
 // S_htwk_bucket_fillrate
-// GLOBAL: SIMCOPTER 0x0001d8d8
+// GLOBAL: COPTER_D 0x0001d8d8
 // S_htwk_bucket_dumprate
-// GLOBAL: SIMCOPTER 0x0001d8dc
+// GLOBAL: COPTER_D 0x0001d8dc
 // S_htwk_rope_loadfactor
-// GLOBAL: SIMCOPTER 0x0001d8e0
+// GLOBAL: COPTER_D 0x0001d8e0
 // S_htwk_rope_tension
-// GLOBAL: SIMCOPTER 0x0001d8e4
+// GLOBAL: COPTER_D 0x0001d8e4
 // S_htwk_water_throwfact
-// GLOBAL: SIMCOPTER 0x0001d8e8
+// GLOBAL: COPTER_D 0x0001d8e8
 // S_htwk_watercannon_speed
-// GLOBAL: SIMCOPTER 0x0001d8ec
+// GLOBAL: COPTER_D 0x0001d8ec
 // S_htwk_firedmg_alt_min
-// GLOBAL: SIMCOPTER 0x0001d8f0
+// GLOBAL: COPTER_D 0x0001d8f0
 // S_htwk_firedmg_alt_max
-// GLOBAL: SIMCOPTER 0x0001d8f4
+// GLOBAL: COPTER_D 0x0001d8f4
 // S_htwk_max_helialt
-// GLOBAL: SIMCOPTER 0x0001d8f8
+// GLOBAL: COPTER_D 0x0001d8f8
 // S_htwk_collide_damage_val
-// GLOBAL: SIMCOPTER 0x0001d8fc
+// GLOBAL: COPTER_D 0x0001d8fc
 // S_htwk_depreciation
-// LOCAL: SIMCOPTER 0x0001d900
+// LOCAL: COPTER_D 0x0001d900
 // ControlNoise
-// LOCAL: SIMCOPTER 0x0001d904
+// LOCAL: COPTER_D 0x0001d904
 // S_sound_frames
-// LOCAL: SIMCOPTER 0x0001d908
+// LOCAL: COPTER_D 0x0001d908
 // RopeSeg
-// LOCAL: SIMCOPTER 0x0001d90c
+// LOCAL: COPTER_D 0x0001d90c
 // RopeDim
-// GLOBAL: SIMCOPTER 0x0001d910
+// GLOBAL: COPTER_D 0x0001d910
 // G_helidir
-// GLOBAL: SIMCOPTER 0x0001d91c
+// GLOBAL: COPTER_D 0x0001d91c
 // G_helibase_found
-// GLOBAL: SIMCOPTER 0x0001d920
+// GLOBAL: COPTER_D 0x0001d920
 // G_apachebase_found
-// GLOBAL: SIMCOPTER 0x0001d924
+// GLOBAL: COPTER_D 0x0001d924
 // G_apache_placed
-// GLOBAL: SIMCOPTER 0x0001d928
+// GLOBAL: COPTER_D 0x0001d928
 // G_uheli_objalt
-// GLOBAL: SIMCOPTER 0x0001d92c
+// GLOBAL: COPTER_D 0x0001d92c
 // G_SpotLiteXRotation
-// GLOBAL: SIMCOPTER 0x0001d930
+// GLOBAL: COPTER_D 0x0001d930
 // G_SpotLiteYRotation
-// LOCAL: SIMCOPTER 0x0001d934
+// LOCAL: COPTER_D 0x0001d934
 // S_test_frames
-// LOCAL: SIMCOPTER 0x0001d938
+// LOCAL: COPTER_D 0x0001d938
 // S_avoiding
-// LOCAL: SIMCOPTER 0x0001d93c
+// LOCAL: COPTER_D 0x0001d93c
 // S_targalt
-// GLOBAL: SIMCOPTER 0x0001d940
+// GLOBAL: COPTER_D 0x0001d940
 // G_helis
-// GLOBAL: SIMCOPTER 0x0001d968
+// GLOBAL: COPTER_D 0x0001d968
 // G_uheli
-// GLOBAL: SIMCOPTER 0x0001d96c
+// GLOBAL: COPTER_D 0x0001d96c
 // G_testheli
-// LOCAL: SIMCOPTER 0x0001d970
+// LOCAL: COPTER_D 0x0001d970
 // S_numhelis
-// GLOBAL: SIMCOPTER 0x0001d978
+// GLOBAL: COPTER_D 0x0001d978
 // S_helitype_data
-// LOCAL: SIMCOPTER 0x0001dc90
+// LOCAL: COPTER_D 0x0001dc90
 // S_bracket_loc
-// LOCAL: SIMCOPTER 0x0001dc9c
+// LOCAL: COPTER_D 0x0001dc9c
 // S_shadalt
-// LOCAL: SIMCOPTER 0x0001dca0
+// LOCAL: COPTER_D 0x0001dca0
 // S_spotdist
-// LOCAL: SIMCOPTER 0x0001dca4
+// LOCAL: COPTER_D 0x0001dca4
 // HeliMIFFID
 
 
 // Contribution: 3:0006feb0-000702b7 Module: 176, 8 byte alignment, uninitialized_data, read, write, 
-// LOCAL: SIMCOPTER 0x0006feb0
+// LOCAL: COPTER_D 0x0006feb0
 // lsheli
-// LOCAL: SIMCOPTER 0x000701e0
+// LOCAL: COPTER_D 0x000701e0
 // S_spotvect
-// LOCAL: SIMCOPTER 0x000701ec
+// LOCAL: COPTER_D 0x000701ec
 // S_shadbmp
-// LOCAL: SIMCOPTER 0x000701f0
+// LOCAL: COPTER_D 0x000701f0
 // S_turbyaw
-// LOCAL: SIMCOPTER 0x00070218
+// LOCAL: COPTER_D 0x00070218
 // S_spotmat
-// LOCAL: SIMCOPTER 0x00070258
+// LOCAL: COPTER_D 0x00070258
 // S_sound_loc
-// LOCAL: SIMCOPTER 0x00070268
+// LOCAL: COPTER_D 0x00070268
 // S_turbslide
-// LOCAL: SIMCOPTER 0x00070290
+// LOCAL: COPTER_D 0x00070290
 // S_turbpitch

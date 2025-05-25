@@ -5,13 +5,13 @@
 
 
 // Contribution: 1:00099480-00099d21 Module: 15, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x0049a480
+// FUNCTION: COPTER_D 0x0049a480
 // $E2
 
-// FUNCTION: SIMCOPTER 0x0049a495
+// FUNCTION: COPTER_D 0x0049a495
 // $E1
 
-// FUNCTION: SIMCOPTER 0x0049a4af
+// FUNCTION: COPTER_D 0x0049a4af
 void JoystickManager::JoystickManager() {
 // LINE 24:
 	asm( 
@@ -79,7 +79,7 @@ void JoystickManager::JoystickManager() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049a527
+// FUNCTION: COPTER_D 0x0049a527
 int32_t JoystickManager::Initialize() {
 // LINE 50:
 	asm( 
@@ -219,7 +219,7 @@ int32_t JoystickManager::Initialize() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049a629
+// FUNCTION: COPTER_D 0x0049a629
 int32_t JoystickManager::IsJoystickPresent(char *) {
 // LINE 90:
 	asm( 
@@ -281,7 +281,7 @@ int32_t JoystickManager::IsJoystickPresent(char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049a696
+// FUNCTION: COPTER_D 0x0049a696
 int32_t JoystickManager::GetJoystickName(uint32_t, char *) {
 // LINE 106:
 	asm( 
@@ -347,7 +347,7 @@ int32_t JoystickManager::GetJoystickName(uint32_t, char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049a701
+// FUNCTION: COPTER_D 0x0049a701
 int32_t JoystickManager::GetJoystickIndex(char *, int32_t *) {
 // LINE 124:
 	asm( 
@@ -415,7 +415,7 @@ int32_t JoystickManager::GetJoystickIndex(char *, int32_t *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049a779
+// FUNCTION: COPTER_D 0x0049a779
 int32_t JoystickManager::Normalize(int32_t) {
 // LINE 151:
 	asm( 
@@ -458,7 +458,7 @@ int32_t JoystickManager::Normalize(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049a7bb
+// FUNCTION: COPTER_D 0x0049a7bb
 int32_t JoystickManager::GetPositionQualitative(int32_t, int32_t, int32_t) {
 // LINE 186:
 	asm( 
@@ -532,7 +532,7 @@ int32_t JoystickManager::GetPositionQualitative(int32_t, int32_t, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049a836
+// FUNCTION: COPTER_D 0x0049a836
 int32_t JoystickManager::GetPositionQuantitative(int32_t, int32_t, int32_t) {
 // LINE 217:
 	asm( 
@@ -773,7 +773,7 @@ int32_t JoystickManager::GetPositionQuantitative(int32_t, int32_t, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049a9dd
+// FUNCTION: COPTER_D 0x0049a9dd
 int32_t JoystickManager::GetButtonState(int32_t, int32_t, int32_t) {
 // LINE 297:
 	asm( 
@@ -877,7 +877,7 @@ int32_t JoystickManager::GetButtonState(int32_t, int32_t, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049aa99
+// FUNCTION: COPTER_D 0x0049aa99
 int32_t JoystickManager::GetCompleteState(int32_t) {
 // LINE 336:
 	asm( 
@@ -960,7 +960,7 @@ int32_t JoystickManager::GetCompleteState(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049ab3a
+// FUNCTION: COPTER_D 0x0049ab3a
 int32_t JoystickManager::GetPointOfView(int32_t, int32_t) {
 // LINE 375:
 	asm( 
@@ -1060,7 +1060,7 @@ int32_t JoystickManager::GetPointOfView(int32_t, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049abe2
+// FUNCTION: COPTER_D 0x0049abe2
 int32_t JoystickManager::Calibrate(int32_t) {
 // LINE 415:
 	asm( 
@@ -1104,7 +1104,7 @@ int32_t JoystickManager::Calibrate(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049ac20
+// FUNCTION: COPTER_D 0x0049ac20
 int32_t JoystickManager::GetWindowsThreshold(int32_t, long *) {
 // LINE 448:
 	asm( 
@@ -1163,7 +1163,7 @@ int32_t JoystickManager::GetWindowsThreshold(int32_t, long *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049ac7c
+// FUNCTION: COPTER_D 0x0049ac7c
 int32_t JoystickManager::SetWindowsThreshold(int32_t, long) {
 // LINE 472:
 	asm( 
@@ -1222,7 +1222,7 @@ int32_t JoystickManager::SetWindowsThreshold(int32_t, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049acd8
+// FUNCTION: COPTER_D 0x0049acd8
 void JoystickManager::SetNormalizedMinMax(long, long) {
 // LINE 497:
 	asm( 
@@ -1275,16 +1275,16 @@ void JoystickManager::SetNormalizedMinMax(long, long) {
 
 
 // Contribution: 2:00002228-000022a7 Module: 15, 8 byte alignment, initialized_data, read, 
-// LOCAL: SIMCOPTER 0x00002228
+// LOCAL: COPTER_D 0x00002228
 // dwJoystickButtonConstants
-// GLOBAL: SIMCOPTER 0x000022a8
+// GLOBAL: COPTER_D 0x000022a8
 // ??_7ICommander@@6B@
 
 
 // Contribution: 3:0000008c-0000008f Module: 15, 4 byte alignment, initialized_data, read, write, 
-// LOCAL: SIMCOPTER 0x0000008c
+// LOCAL: COPTER_D 0x0000008c
 // $S3
-// LOCAL: SIMCOPTER 0x00000090
+// LOCAL: COPTER_D 0x00000090
 // $S49
 
 
@@ -1292,5 +1292,5 @@ void JoystickManager::SetNormalizedMinMax(long, long) {
 
 
 // Contribution: 3:0006dc78-0006f95b Module: 15, 8 byte alignment, uninitialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x0006dc78
+// GLOBAL: COPTER_D 0x0006dc78
 // gJoystickManager

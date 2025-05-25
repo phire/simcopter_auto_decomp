@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:000ce090-000cfa4b Module: 88, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x004cf090
+// FUNCTION: COPTER_D 0x004cf090
 short LZACompress() {
 // LINE 646:
 	asm( 
@@ -317,7 +317,7 @@ short LZACompress() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004cf2ed
+// FUNCTION: COPTER_D 0x004cf2ed
 short Encode() {
 // LINE 525:
 	asm( 
@@ -698,7 +698,7 @@ short Encode() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004cf607
+// FUNCTION: COPTER_D 0x004cf607
 void InitTree() {
 // LINE 195:
 	asm( 
@@ -744,7 +744,7 @@ void InitTree() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004cf67e
+// FUNCTION: COPTER_D 0x004cf67e
 void InsertNode() {
 // LINE 217:
 	asm( 
@@ -1038,7 +1038,7 @@ void InsertNode() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004cf96a
+// FUNCTION: COPTER_D 0x004cf96a
 void DeleteNode() {
 // LINE 266:
 	asm( 
@@ -1222,7 +1222,7 @@ void DeleteNode() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004cfb73
+// FUNCTION: COPTER_D 0x004cfb73
 void StartModel() {
 // LINE 300:
 	asm( 
@@ -1333,7 +1333,7 @@ void StartModel() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004cfc72
+// FUNCTION: COPTER_D 0x004cfc72
 short EncodeChar() {
 // LINE 356:
 	asm( 
@@ -1511,7 +1511,7 @@ short EncodeChar() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004cfde2
+// FUNCTION: COPTER_D 0x004cfde2
 void UpdateModel() {
 // LINE 320:
 	asm( 
@@ -1662,7 +1662,7 @@ void UpdateModel() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004cff3b
+// FUNCTION: COPTER_D 0x004cff3b
 short Output() {
 // LINE 346:
 	asm( 
@@ -1730,7 +1730,7 @@ short Output() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004cffb8
+// FUNCTION: COPTER_D 0x004cffb8
 short PutBit() {
 // LINE 124:
 	asm( 
@@ -1813,7 +1813,7 @@ short PutBit() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004d0041
+// FUNCTION: COPTER_D 0x004d0041
 short EncodePosition() {
 // LINE 386:
 	asm( 
@@ -1975,7 +1975,7 @@ short EncodePosition() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004d0194
+// FUNCTION: COPTER_D 0x004d0194
 short EncodeEnd() {
 // LINE 412:
 	asm( 
@@ -2048,7 +2048,7 @@ short EncodeEnd() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004d0216
+// FUNCTION: COPTER_D 0x004d0216
 short FlushBitBuffer() {
 // LINE 145:
 	asm( 
@@ -2106,7 +2106,7 @@ short FlushBitBuffer() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004d0271
+// FUNCTION: COPTER_D 0x004d0271
 short LZAExpand() {
 // LINE 731:
 	asm( 
@@ -2305,7 +2305,7 @@ short LZAExpand() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004d03e6
+// FUNCTION: COPTER_D 0x004d03e6
 short Decode() {
 // LINE 592:
 	asm( 
@@ -2545,7 +2545,7 @@ short Decode() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004d05b8
+// FUNCTION: COPTER_D 0x004d05b8
 void StartDecode() {
 // LINE 455:
 	asm( 
@@ -2588,7 +2588,7 @@ void StartDecode() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004d0604
+// FUNCTION: COPTER_D 0x004d0604
 long GetBit() {
 // LINE 162:
 	asm( 
@@ -2677,7 +2677,7 @@ long GetBit() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004d06a5
+// FUNCTION: COPTER_D 0x004d06a5
 long DecodeChar() {
 // LINE 463:
 	asm( 
@@ -2857,7 +2857,7 @@ long DecodeChar() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004d081c
+// FUNCTION: COPTER_D 0x004d081c
 long BinarySearchSym() {
 // LINE 426:
 	asm( 
@@ -2924,7 +2924,7 @@ long BinarySearchSym() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004d0888
+// FUNCTION: COPTER_D 0x004d0888
 long DecodePosition() {
 // LINE 494:
 	asm( 
@@ -3088,7 +3088,7 @@ long DecodePosition() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004d09df
+// FUNCTION: COPTER_D 0x004d09df
 long BinarySearchPos() {
 // LINE 442:
 	asm( 

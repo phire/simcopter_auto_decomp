@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:00141dc0-00141f77 Module: 153, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00542dc0
+// FUNCTION: COPTER_D 0x00542dc0
 void SpiralScan::SpiralScan(int32_t) {
 // LINE 9:
 	asm( 
@@ -51,7 +51,7 @@ void SpiralScan::SpiralScan(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00542e03
+// FUNCTION: COPTER_D 0x00542e03
 int32_t SpiralScan::Next(struct _GridCoordinates&) {
 // LINE 17:
 	asm( 
@@ -187,7 +187,7 @@ int32_t SpiralScan::Next(struct _GridCoordinates&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00542f05
+// FUNCTION: COPTER_D 0x00542f05
 int32_t SpiralScan::InCityGridLimits(struct _GridCoordinates) {
 // LINE 52:
 	asm( 

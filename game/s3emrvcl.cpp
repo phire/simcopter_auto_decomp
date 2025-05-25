@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:00140530-00141d79 Module: 154, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00541530
+// FUNCTION: COPTER_D 0x00541530
 int32_t EmergencyVehicleClass::S3UpdateCar(int32_t, int32_t) {
 // LINE 70:
 	asm( 
@@ -34,7 +34,7 @@ int32_t EmergencyVehicleClass::S3UpdateCar(int32_t, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00541553
+// FUNCTION: COPTER_D 0x00541553
 int32_t EmergencyVehicleClass::UpdateCar(int32_t) {
 // LINE 76:
 	asm( 
@@ -83,7 +83,7 @@ int32_t EmergencyVehicleClass::UpdateCar(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0054159d
+// FUNCTION: COPTER_D 0x0054159d
 struct _DYOBJ_INST* EmergencyVehicleClass::S3GetCar(int32_t) {
 // LINE 89:
 	asm( 
@@ -122,7 +122,7 @@ struct _DYOBJ_INST* EmergencyVehicleClass::S3GetCar(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005415d5
+// FUNCTION: COPTER_D 0x005415d5
 void EmergencyVehicleClass::EmergencyVehicleClass() {
 // LINE 102:
 	asm( 
@@ -166,7 +166,7 @@ void EmergencyVehicleClass::EmergencyVehicleClass() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0054163a
+// FUNCTION: COPTER_D 0x0054163a
 void EmergencyVehicleClass::~EmergencyVehicleClass() {
 // LINE 108:
 	asm( 
@@ -190,7 +190,7 @@ void EmergencyVehicleClass::~EmergencyVehicleClass() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00541661
+// FUNCTION: COPTER_D 0x00541661
 void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal, struct Goal, struct Goal, struct Goal, struct _GridCoordinates, struct Goal, enum EmergencyType, enum EmergencyLevel) {
 // LINE 246:
 	asm( 
@@ -570,7 +570,7 @@ void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal, stru
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005419ba
+// FUNCTION: COPTER_D 0x005419ba
 void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t, struct Goal, struct Goal, struct _GridCoordinates, struct Goal, struct Goal, struct _GridCoordinates, int32_t, struct Goal, enum EmergencyType, enum EmergencyLevel) {
 // LINE 360:
 	asm( 
@@ -1221,7 +1221,7 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t, struct 
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00541ff4
+// FUNCTION: COPTER_D 0x00541ff4
 void EmergencyVehicleClass::GoBackToStation() {
 // LINE 524:
 	asm( 
@@ -1392,7 +1392,7 @@ void EmergencyVehicleClass::GoBackToStation() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005421bc
+// FUNCTION: COPTER_D 0x005421bc
 void EmergencyVehicleClass::CancelEmergencyDispatch() {
 // LINE 560:
 	asm( 
@@ -1420,7 +1420,7 @@ void EmergencyVehicleClass::CancelEmergencyDispatch() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005421df
+// FUNCTION: COPTER_D 0x005421df
 int32_t EmergencyVehicleClass::AreThereMoreSeats(struct _DYOBJ_INST*) {
 // LINE 567:
 	asm( 
@@ -1448,7 +1448,7 @@ int32_t EmergencyVehicleClass::AreThereMoreSeats(struct _DYOBJ_INST*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00542203
+// FUNCTION: COPTER_D 0x00542203
 void EmergencyVehicleClass::FillSeat(struct _DYOBJ_INST*) {
 // LINE 573:
 	asm( 
@@ -1477,7 +1477,7 @@ void EmergencyVehicleClass::FillSeat(struct _DYOBJ_INST*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0054222e
+// FUNCTION: COPTER_D 0x0054222e
 void EmergencyVehicleClass::AdjustSpeed() {
 // LINE 620:
 	asm( 
@@ -1570,7 +1570,7 @@ void EmergencyVehicleClass::AdjustSpeed() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005422ee
+// FUNCTION: COPTER_D 0x005422ee
 void EmergencyVehicleClass::PositionIcon() {
 // LINE 661:
 	asm( 
@@ -1640,7 +1640,7 @@ void EmergencyVehicleClass::PositionIcon() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00542373
+// FUNCTION: COPTER_D 0x00542373
 enum TurnIndex EmergencyVehicleClass::PickTurnDir(struct Goal*) {
 // LINE 674:
 	asm( 
@@ -1709,7 +1709,7 @@ enum TurnIndex EmergencyVehicleClass::PickTurnDir(struct Goal*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0054241d
+// FUNCTION: COPTER_D 0x0054241d
 void EmergencyVehicleClass::ArriveOnScene() {
 // LINE 920:
 	asm( 
@@ -1751,7 +1751,7 @@ void EmergencyVehicleClass::ArriveOnScene() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00542461
+// FUNCTION: COPTER_D 0x00542461
 void EmergencyVehicleClass::UnLinkIconFromCell(const struct _GridCoordinates) {
 // LINE 943:
 	asm( 
@@ -1867,7 +1867,7 @@ void EmergencyVehicleClass::UnLinkIconFromCell(const struct _GridCoordinates) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00542570
+// FUNCTION: COPTER_D 0x00542570
 void EmergencyVehicleClass::LinkIconToCell(const struct _GridCoordinates) {
 // LINE 984:
 	asm( 
@@ -1951,7 +1951,7 @@ void EmergencyVehicleClass::LinkIconToCell(const struct _GridCoordinates) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00542631
+// FUNCTION: COPTER_D 0x00542631
 void EmergencyVehicleClass::Reset() {
 // LINE 1315:
 	asm( 
@@ -2019,7 +2019,7 @@ void EmergencyVehicleClass::Reset() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005426ab
+// FUNCTION: COPTER_D 0x005426ab
 void DispatchEmergencyVehicle() {
 // LINE 1351:
 	asm( 
@@ -2187,7 +2187,7 @@ void DispatchEmergencyVehicle() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005427f5
+// FUNCTION: COPTER_D 0x005427f5
 void EmergencyVehicleClass::BuildPath(struct _RGIndex, struct _RGIndex) {
 // LINE 1403:
 	asm( 
@@ -2343,7 +2343,7 @@ void EmergencyVehicleClass::BuildPath(struct _RGIndex, struct _RGIndex) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0054293b
+// FUNCTION: COPTER_D 0x0054293b
 void EmergencyVehicleClass::TurnOnStrobe() {
 // LINE 1455:
 	asm( 
@@ -2433,7 +2433,7 @@ void EmergencyVehicleClass::TurnOnStrobe() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005429d6
+// FUNCTION: COPTER_D 0x005429d6
 void EmergencyVehicleClass::TurnOffStrobe() {
 // LINE 1478:
 	asm( 
@@ -2525,7 +2525,7 @@ void EmergencyVehicleClass::TurnOffStrobe() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00542a75
+// FUNCTION: COPTER_D 0x00542a75
 void EmergencyVehicleClass::SetSaveData(struct _AUTO_LOAD_SAVE*) {
 // LINE 1507:
 	asm( 
@@ -2649,7 +2649,7 @@ void EmergencyVehicleClass::SetSaveData(struct _AUTO_LOAD_SAVE*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00542b90
+// FUNCTION: COPTER_D 0x00542b90
 void EmergencyVehicleClass::LoadSaveData(struct _AUTO_LOAD_SAVE*) {
 // LINE 1546:
 	asm( 
@@ -2862,15 +2862,15 @@ void EmergencyVehicleClass::LoadSaveData(struct _AUTO_LOAD_SAVE*) {
 
 
 // Contribution: 1:00141d80-00141db8 Module: 154, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x00542d80
+// FUNCTION: COPTER_D 0x00542d80
 // EmergencyVehicleClass::`scalar deleting destructor'
 
 
 
 // Contribution: 2:00004480-000044bf Module: 154, 8 byte alignment, initialized_data, read, 
-// LOCAL: SIMCOPTER 0x00004480
+// LOCAL: COPTER_D 0x00004480
 // TILUT
-// GLOBAL: SIMCOPTER 0x000044c0
+// GLOBAL: COPTER_D 0x000044c0
 // ??_7EmergencyVehicleClass@@6B@
 
 

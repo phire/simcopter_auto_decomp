@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:0002cf60-00030abe Module: 64, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x0042df60
+// FUNCTION: COPTER_D 0x0042df60
 void SoundSystem::SoundSystem() {
 // LINE 87:
 	asm( 
@@ -78,7 +78,7 @@ void SoundSystem::SoundSystem() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042dfe2
+// FUNCTION: COPTER_D 0x0042dfe2
 void SoundSystem::~SoundSystem() {
 // LINE 107:
 	asm( 
@@ -108,7 +108,7 @@ void SoundSystem::~SoundSystem() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042e009
+// FUNCTION: COPTER_D 0x0042e009
 int32_t SoundSystem::Initialize(void * __ptr32) {
 // LINE 119:
 	asm( 
@@ -441,7 +441,7 @@ int32_t SoundSystem::Initialize(void * __ptr32) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042e2cd
+// FUNCTION: COPTER_D 0x0042e2cd
 void SoundSystem::DeInitialize() {
 // LINE 230:
 	asm( 
@@ -496,7 +496,7 @@ void SoundSystem::DeInitialize() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042e32e
+// FUNCTION: COPTER_D 0x0042e32e
 int32_t SoundSystem::GetVolume(long *) {
 // LINE 252:
 	asm( 
@@ -545,7 +545,7 @@ int32_t SoundSystem::GetVolume(long *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042e374
+// FUNCTION: COPTER_D 0x0042e374
 int32_t SoundSystem::SetVolume(long) {
 // LINE 271:
 	asm( 
@@ -579,7 +579,7 @@ int32_t SoundSystem::SetVolume(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042e3a1
+// FUNCTION: COPTER_D 0x0042e3a1
 void SoundManager::SoundManager() {
 // LINE 283:
 	asm( 
@@ -620,7 +620,7 @@ void SoundManager::SoundManager() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042e3f2
+// FUNCTION: COPTER_D 0x0042e3f2
 void SoundManager::~SoundManager() {
 // LINE 290:
 	asm( 
@@ -650,7 +650,7 @@ void SoundManager::~SoundManager() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042e419
+// FUNCTION: COPTER_D 0x0042e419
 void SoundManager::DeleteAllSounds() {
 // LINE 295:
 	asm( 
@@ -699,7 +699,7 @@ void SoundManager::DeleteAllSounds() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042e47e
+// FUNCTION: COPTER_D 0x0042e47e
 void SoundManager::AddSound(class Sound*, int32_t) {
 // LINE 315:
 	asm( 
@@ -753,7 +753,7 @@ void SoundManager::AddSound(class Sound*, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042e4e2
+// FUNCTION: COPTER_D 0x0042e4e2
 void SoundManager::AddDigitalSound(long, int32_t) {
 // LINE 340:
 	asm( 
@@ -823,7 +823,7 @@ void SoundManager::AddDigitalSound(long, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042e578
+// FUNCTION: COPTER_D 0x0042e578
 void SoundManager::AddDigitalSound(const class basic_string<char>&, int32_t, int32_t) {
 // LINE 347:
 	asm( 
@@ -895,7 +895,7 @@ void SoundManager::AddDigitalSound(const class basic_string<char>&, int32_t, int
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042e612
+// FUNCTION: COPTER_D 0x0042e612
 long SoundManager::PlaySoundA(int32_t, long, int32_t) {
 // LINE 363:
 	asm( 
@@ -945,7 +945,7 @@ long SoundManager::PlaySoundA(int32_t, long, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042e663
+// FUNCTION: COPTER_D 0x0042e663
 void SoundManager::StopSound(int32_t) {
 // LINE 378:
 	asm( 
@@ -986,7 +986,7 @@ void SoundManager::StopSound(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042e6a5
+// FUNCTION: COPTER_D 0x0042e6a5
 void SoundManager::StopAllSounds() {
 // LINE 392:
 	asm( 
@@ -1039,7 +1039,7 @@ void SoundManager::StopAllSounds() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042e706
+// FUNCTION: COPTER_D 0x0042e706
 void Sound::Sound() {
 // LINE 413:
 	asm( 
@@ -1136,7 +1136,7 @@ void Sound::Sound() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042e7ee
+// FUNCTION: COPTER_D 0x0042e7ee
 void Sound::~Sound() {
 // LINE 432:
 	asm( 
@@ -1213,7 +1213,7 @@ void Sound::~Sound() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042e8cb
+// FUNCTION: COPTER_D 0x0042e8cb
 class Sound& Sound::operator=(const class Sound&) {
 // LINE 443:
 	asm( 
@@ -1412,7 +1412,7 @@ class Sound& Sound::operator=(const class Sound&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042eafa
+// FUNCTION: COPTER_D 0x0042eafa
 int32_t operator<() {
 // LINE 467:
 	asm( 
@@ -1444,7 +1444,7 @@ int32_t operator<() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042eb28
+// FUNCTION: COPTER_D 0x0042eb28
 int32_t operator==() {
 // LINE 484:
 	asm( 
@@ -1628,7 +1628,7 @@ int32_t operator==() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042ed67
+// FUNCTION: COPTER_D 0x0042ed67
 void Sound::SetSoundFile(const class basic_string<char>&) {
 // LINE 501:
 	asm( 
@@ -1789,7 +1789,7 @@ void Sound::SetSoundFile(const class basic_string<char>&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042ef5a
+// FUNCTION: COPTER_D 0x0042ef5a
 int32_t Sound::GetSoundType() {
 // LINE 511:
 	asm( 
@@ -1816,7 +1816,7 @@ int32_t Sound::GetSoundType() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042ef72
+// FUNCTION: COPTER_D 0x0042ef72
 unsigned long Sound::GetTotalMemoryUsage() {
 // LINE 519:
 	asm( 
@@ -1841,7 +1841,7 @@ unsigned long Sound::GetTotalMemoryUsage() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042ef87
+// FUNCTION: COPTER_D 0x0042ef87
 void DigitalSound::DigitalSound() {
 // LINE 538:
 	asm( 
@@ -1909,7 +1909,7 @@ void DigitalSound::DigitalSound() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042f00f
+// FUNCTION: COPTER_D 0x0042f00f
 void DigitalSound::DigitalSound(const class basic_string<char>&, int32_t) {
 // LINE 566:
 	asm( 
@@ -2128,7 +2128,7 @@ void DigitalSound::DigitalSound(const class basic_string<char>&, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042f296
+// FUNCTION: COPTER_D 0x0042f296
 void DigitalSound::DigitalSound(long) {
 // LINE 595:
 	asm( 
@@ -2177,7 +2177,7 @@ void DigitalSound::DigitalSound(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042f2e9
+// FUNCTION: COPTER_D 0x0042f2e9
 void DigitalSound::~DigitalSound() {
 // LINE 615:
 	asm( 
@@ -2209,7 +2209,7 @@ void DigitalSound::~DigitalSound() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042f318
+// FUNCTION: COPTER_D 0x0042f318
 void DigitalSound::SetSoundFile(const class basic_string<char>&, int32_t) {
 // LINE 638:
 	asm( 
@@ -2402,7 +2402,7 @@ void DigitalSound::SetSoundFile(const class basic_string<char>&, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042f549
+// FUNCTION: COPTER_D 0x0042f549
 void DigitalSound::Unload() {
 // LINE 654:
 	asm( 
@@ -2484,7 +2484,7 @@ void DigitalSound::Unload() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042f5d5
+// FUNCTION: COPTER_D 0x0042f5d5
 class DigitalSound& DigitalSound::operator=(class DigitalSound&) {
 // LINE 682:
 	asm( 
@@ -2518,7 +2518,7 @@ class DigitalSound& DigitalSound::operator=(class DigitalSound&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042f5fc
+// FUNCTION: COPTER_D 0x0042f5fc
 int32_t DigitalSound::Load() {
 // LINE 702:
 	asm( 
@@ -2585,7 +2585,7 @@ int32_t DigitalSound::Load() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042f66a
+// FUNCTION: COPTER_D 0x0042f66a
 int32_t DigitalSound::LoadFromResource() {
 // LINE 716:
 	asm( 
@@ -2612,7 +2612,7 @@ int32_t DigitalSound::LoadFromResource() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042f682
+// FUNCTION: COPTER_D 0x0042f682
 int32_t DigitalSound::LoadFromFile() {
 // LINE 733:
 	asm( 
@@ -2959,7 +2959,7 @@ int32_t DigitalSound::LoadFromFile() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042f989
+// FUNCTION: COPTER_D 0x0042f989
 int32_t DigitalSound::CreatePrimarySoundBuffer() {
 // LINE 839:
 	asm( 
@@ -3016,7 +3016,7 @@ int32_t DigitalSound::CreatePrimarySoundBuffer() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042f9da
+// FUNCTION: COPTER_D 0x0042f9da
 int32_t DigitalSound::CreateSoundBuffer(struct _DSBUFFERDESC*) {
 // LINE 876:
 	asm( 
@@ -3195,7 +3195,7 @@ int32_t DigitalSound::CreateSoundBuffer(struct _DSBUFFERDESC*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042fb2a
+// FUNCTION: COPTER_D 0x0042fb2a
 int32_t DigitalSound::ReleaseSoundBuffer() {
 // LINE 938:
 	asm( 
@@ -3272,7 +3272,7 @@ int32_t DigitalSound::ReleaseSoundBuffer() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042fbb5
+// FUNCTION: COPTER_D 0x0042fbb5
 int32_t DigitalSound::GetPan(long *) {
 // LINE 976:
 	asm( 
@@ -3337,7 +3337,7 @@ int32_t DigitalSound::GetPan(long *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042fc21
+// FUNCTION: COPTER_D 0x0042fc21
 int32_t DigitalSound::SetPan(long) {
 // LINE 1005:
 	asm( 
@@ -3420,7 +3420,7 @@ int32_t DigitalSound::SetPan(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042fcb5
+// FUNCTION: COPTER_D 0x0042fcb5
 int32_t DigitalSound::GetFrequency(long *) {
 // LINE 1038:
 	asm( 
@@ -3485,7 +3485,7 @@ int32_t DigitalSound::GetFrequency(long *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042fd21
+// FUNCTION: COPTER_D 0x0042fd21
 int32_t DigitalSound::SetFrequency(long) {
 // LINE 1064:
 	asm( 
@@ -3568,7 +3568,7 @@ int32_t DigitalSound::SetFrequency(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042fdb2
+// FUNCTION: COPTER_D 0x0042fdb2
 int32_t DigitalSound::GetVolume(long *) {
 // LINE 1096:
 	asm( 
@@ -3643,7 +3643,7 @@ int32_t DigitalSound::GetVolume(long *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042fe2e
+// FUNCTION: COPTER_D 0x0042fe2e
 int32_t DigitalSound::SetVolume(long) {
 // LINE 1124:
 	asm( 
@@ -3723,7 +3723,7 @@ int32_t DigitalSound::SetVolume(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042feb1
+// FUNCTION: COPTER_D 0x0042feb1
 int32_t DigitalSound::SetPosition(long, long, long) {
 // LINE 1165:
 	asm( 
@@ -3807,7 +3807,7 @@ int32_t DigitalSound::SetPosition(long, long, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042ff51
+// FUNCTION: COPTER_D 0x0042ff51
 long DigitalSound::GetOriginalFrequency() {
 // LINE 1192:
 	asm( 
@@ -3835,7 +3835,7 @@ long DigitalSound::GetOriginalFrequency() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042ff6d
+// FUNCTION: COPTER_D 0x0042ff6d
 long DigitalSound::IsPlaying() {
 // LINE 1219:
 	asm( 
@@ -3866,7 +3866,7 @@ long DigitalSound::IsPlaying() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042ff90
+// FUNCTION: COPTER_D 0x0042ff90
 long DigitalSound::IsPlaying(struct IDirectSoundBuffer**) {
 // LINE 1226:
 	asm( 
@@ -3977,7 +3977,7 @@ long DigitalSound::IsPlaying(struct IDirectSoundBuffer**) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043005a
+// FUNCTION: COPTER_D 0x0043005a
 long DigitalSound::Play(long, int32_t) {
 // LINE 1268:
 	asm( 
@@ -4301,7 +4301,7 @@ long DigitalSound::Play(long, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004302f9
+// FUNCTION: COPTER_D 0x004302f9
 int32_t DigitalSound::GetSoundAliasToPlay(struct IDirectSoundBuffer**) {
 // LINE 1364:
 	asm( 
@@ -4445,7 +4445,7 @@ int32_t DigitalSound::GetSoundAliasToPlay(struct IDirectSoundBuffer**) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043041b
+// FUNCTION: COPTER_D 0x0043041b
 long DigitalSound::Stop() {
 // LINE 1409:
 	asm( 
@@ -4552,7 +4552,7 @@ long DigitalSound::Stop() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004304ec
+// FUNCTION: COPTER_D 0x004304ec
 long DigitalSound::ShouldWeStream() {
 // LINE 1446:
 	asm( 
@@ -4699,7 +4699,7 @@ long DigitalSound::ShouldWeStream() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004306ca
+// FUNCTION: COPTER_D 0x004306ca
 long DigitalSound::InitializeStreamBuffer(long) {
 // LINE 1485:
 	asm( 
@@ -5124,7 +5124,7 @@ long DigitalSound::InitializeStreamBuffer(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00430a74
+// FUNCTION: COPTER_D 0x00430a74
 long DigitalSound::PlayStream() {
 // LINE 1582:
 	asm( 
@@ -5751,7 +5751,7 @@ long DigitalSound::PlayStream() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00430fb6
+// FUNCTION: COPTER_D 0x00430fb6
 long DigitalSound::StopStream() {
 // LINE 1743:
 	asm( 
@@ -5880,7 +5880,7 @@ long DigitalSound::StopStream() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004310a5
+// FUNCTION: COPTER_D 0x004310a5
 void StreamingBufferTimerCallback() {
 // LINE 1797:
 	asm( 
@@ -5914,7 +5914,7 @@ void StreamingBufferTimerCallback() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004310cb
+// FUNCTION: COPTER_D 0x004310cb
 void DigitalSound::ProcessStreamingBufferTimerCallback() {
 // LINE 1806:
 	asm( 
@@ -6794,7 +6794,7 @@ void DigitalSound::ProcessStreamingBufferTimerCallback() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00431821
+// FUNCTION: COPTER_D 0x00431821
 int32_t DigitalSound::SetCompletionNotification(void (*)(long), long) {
 // LINE 2043:
 	asm( 
@@ -6833,7 +6833,7 @@ int32_t DigitalSound::SetCompletionNotification(void (*)(long), long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00431850
+// FUNCTION: COPTER_D 0x00431850
 void DigitalSound::StopCompletionNotification() {
 // LINE 2054:
 	asm( 
@@ -6874,7 +6874,7 @@ void DigitalSound::StopCompletionNotification() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043188b
+// FUNCTION: COPTER_D 0x0043188b
 long DigitalSound::EstimateRemainingPlayTime() {
 // LINE 2071:
 	asm( 
@@ -6971,7 +6971,7 @@ long DigitalSound::EstimateRemainingPlayTime() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00431947
+// FUNCTION: COPTER_D 0x00431947
 void CompletionEstimationTimerCallback() {
 // LINE 2106:
 	asm( 
@@ -7005,7 +7005,7 @@ void CompletionEstimationTimerCallback() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00431970
+// FUNCTION: COPTER_D 0x00431970
 void DigitalSound::ProcessCompletionEstimationTimerCallback() {
 // LINE 2115:
 	asm( 
@@ -7078,7 +7078,7 @@ void DigitalSound::ProcessCompletionEstimationTimerCallback() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004319e5
+// FUNCTION: COPTER_D 0x004319e5
 int32_t DigitalSound::StartCompletionNotificationEstimationTimer() {
 // LINE 2135:
 	asm( 
@@ -7166,7 +7166,7 @@ int32_t DigitalSound::StartCompletionNotificationEstimationTimer() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00431a7d
+// FUNCTION: COPTER_D 0x00431a7d
 void DigitalSound::StopCompletionNotificationEstimationTimer() {
 // LINE 2176:
 	asm( 
@@ -7215,7 +7215,7 @@ void DigitalSound::StopCompletionNotificationEstimationTimer() {
 
 
 // Contribution: 1:00030ac0-00030af8 Module: 64, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x00431ac0
+// FUNCTION: COPTER_D 0x00431ac0
 // Sound::`scalar deleting destructor'
 
 
@@ -7224,20 +7224,20 @@ void DigitalSound::StopCompletionNotificationEstimationTimer() {
 
 
 // Contribution: 1:00030b20-00030b58 Module: 64, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x00431b20
+// FUNCTION: COPTER_D 0x00431b20
 // DigitalSound::`scalar deleting destructor'
 
 
 
 // Contribution: 2:00000440-00000447 Module: 64, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00000440
+// GLOBAL: COPTER_D 0x00000440
 // ??_7SoundSystem@@6B@
 
 
 // Contribution: 2:00000448-00000457 Module: 64, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00000448
+// GLOBAL: COPTER_D 0x00000448
 // ??_7SoundManager@@6B@
-// GLOBAL: SIMCOPTER 0x00000458
+// GLOBAL: COPTER_D 0x00000458
 // ??_7Sound@@6B@
 
 
@@ -7245,14 +7245,14 @@ void DigitalSound::StopCompletionNotificationEstimationTimer() {
 
 
 // Contribution: 2:00000488-00000513 Module: 64, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00000488
+// GLOBAL: COPTER_D 0x00000488
 // ??_7DigitalSound@@6B@
 
 
 // Contribution: 3:00000e58-0000134d Module: 64, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x00000e58
+// GLOBAL: COPTER_D 0x00000e58
 // SoundSystem::dwMaxWaveFormatExSize
-// GLOBAL: SIMCOPTER 0x00000e5c
+// GLOBAL: COPTER_D 0x00000e5c
 // Sound::lTotalMemoryUsage
-// GLOBAL: SIMCOPTER 0x00000e60
+// GLOBAL: COPTER_D 0x00000e60
 // DigitalSound::lpDirectSound

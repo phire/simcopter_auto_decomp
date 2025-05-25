@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:000a7360-000a97bd Module: 8, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x004a8360
+// FUNCTION: COPTER_D 0x004a8360
 void InventoryWindow::InventoryWindow(int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
 // LINE 53:
 	asm( 
@@ -459,7 +459,7 @@ void InventoryWindow::InventoryWindow(int32_t, class GraphicWindow*, class Graph
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a8a50
+// FUNCTION: COPTER_D 0x004a8a50
 void InventoryWindow::~InventoryWindow() {
 // LINE 66:
 	asm( 
@@ -747,7 +747,7 @@ void InventoryWindow::~InventoryWindow() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a8e67
+// FUNCTION: COPTER_D 0x004a8e67
 int32_t InventoryWindow::Initialize() {
 // LINE 76:
 	asm( 
@@ -1368,7 +1368,7 @@ int32_t InventoryWindow::Initialize() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a981d
+// FUNCTION: COPTER_D 0x004a981d
 int32_t InventoryWindow::ReadPalette(struct SparkalColor*) {
 // LINE 112:
 	asm( 
@@ -1481,7 +1481,7 @@ int32_t InventoryWindow::ReadPalette(struct SparkalColor*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a995f
+// FUNCTION: COPTER_D 0x004a995f
 int32_t InventoryWindow::CreateImage(int32_t) {
 // LINE 120:
 	asm( 
@@ -1749,7 +1749,7 @@ int32_t InventoryWindow::CreateImage(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a9c85
+// FUNCTION: COPTER_D 0x004a9c85
 void InventoryWindow::DestroyImage() {
 // LINE 140:
 	asm( 
@@ -1830,7 +1830,7 @@ void InventoryWindow::DestroyImage() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a9d40
+// FUNCTION: COPTER_D 0x004a9d40
 int32_t InventoryWindow::ComposeSelf() {
 // LINE 155:
 	asm( 
@@ -1929,7 +1929,7 @@ int32_t InventoryWindow::ComposeSelf() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a9e08
+// FUNCTION: COPTER_D 0x004a9e08
 void InventoryWindow::DrawTitleText() {
 // LINE 174:
 	asm( 
@@ -2225,7 +2225,7 @@ void InventoryWindow::DrawTitleText() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004aa1d1
+// FUNCTION: COPTER_D 0x004aa1d1
 void InventoryWindow::DrawInventory() {
 // LINE 205:
 	asm( 
@@ -2582,7 +2582,7 @@ void InventoryWindow::DrawInventory() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004aa4ee
+// FUNCTION: COPTER_D 0x004aa4ee
 long InventoryWindow::DoKeyDown(long, char) {
 // LINE 267:
 	asm( 
@@ -2609,7 +2609,7 @@ long InventoryWindow::DoKeyDown(long, char) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004aa508
+// FUNCTION: COPTER_D 0x004aa508
 long InventoryWindow::DoCursorDown(long, long, unsigned long) {
 // LINE 276:
 	asm( 
@@ -2636,7 +2636,7 @@ long InventoryWindow::DoCursorDown(long, long, unsigned long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004aa525
+// FUNCTION: COPTER_D 0x004aa525
 long InventoryWindow::DoCursorUp(long, long, unsigned long) {
 // LINE 285:
 	asm( 
@@ -2663,7 +2663,7 @@ long InventoryWindow::DoCursorUp(long, long, unsigned long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004aa542
+// FUNCTION: COPTER_D 0x004aa542
 long InventoryWindow::DoCursorMove(long, long) {
 // LINE 291:
 	asm( 
@@ -2690,7 +2690,7 @@ long InventoryWindow::DoCursorMove(long, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004aa55f
+// FUNCTION: COPTER_D 0x004aa55f
 int32_t InventoryWindow::GetRectFromID(long, class MRect&) {
 // LINE 302:
 	asm( 
@@ -2789,7 +2789,7 @@ int32_t InventoryWindow::GetRectFromID(long, class MRect&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004aa640
+// FUNCTION: COPTER_D 0x004aa640
 void InventoryWindow::LoadHotSpots() {
 // LINE 317:
 	asm( 
@@ -2812,7 +2812,7 @@ void InventoryWindow::LoadHotSpots() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004aa656
+// FUNCTION: COPTER_D 0x004aa656
 long InventoryWindow::GetColumnStartPixel(long) {
 // LINE 330:
 	asm( 
@@ -2852,7 +2852,7 @@ long InventoryWindow::GetColumnStartPixel(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004aa693
+// FUNCTION: COPTER_D 0x004aa693
 long InventoryWindow::GetRowStartPixel(long) {
 // LINE 344:
 	asm( 
@@ -2892,7 +2892,7 @@ long InventoryWindow::GetRowStartPixel(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004aa6d0
+// FUNCTION: COPTER_D 0x004aa6d0
 void InventoryWindow::GetEquipmentTextPosition(long, class MPoint&) {
 // LINE 359:
 	asm( 
@@ -2940,7 +2940,7 @@ void InventoryWindow::GetEquipmentTextPosition(long, class MPoint&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004aa722
+// FUNCTION: COPTER_D 0x004aa722
 void InventoryWindow::GetTitleAndAddressRects(class MRect&, class MRect&, class MRect&) {
 // LINE 377:
 	asm( 
@@ -3002,7 +3002,7 @@ void InventoryWindow::GetTitleAndAddressRects(class MRect&, class MRect&, class 
 
 
 // Contribution: 1:000a97c0-000a97f8 Module: 8, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x004aa7c0
+// FUNCTION: COPTER_D 0x004aa7c0
 // InventoryWindow::`scalar deleting destructor'
 
 
@@ -3011,16 +3011,16 @@ void InventoryWindow::GetTitleAndAddressRects(class MRect&, class MRect&, class 
 
 
 // Contribution: 2:00002888-0000294b Module: 8, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00002888
+// GLOBAL: COPTER_D 0x00002888
 // ??_7InventoryWindow@@6B@
 
 
 // Contribution: 3:00003984-000039d1 Module: 8, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x00003988
+// GLOBAL: COPTER_D 0x00003988
 // SZ_INVENTORY_CHECKMARK_IMAGE_FILE_NAME
-// GLOBAL: SIMCOPTER 0x0000398c
+// GLOBAL: COPTER_D 0x0000398c
 // SZ_INVENTORY_WINDOW_HELICOPTER_TEXT_NAME
-// GLOBAL: SIMCOPTER 0x00003990
+// GLOBAL: COPTER_D 0x00003990
 // SZ_INVENTORY_WINDOW_TITLE_TEXT_NAME
-// GLOBAL: SIMCOPTER 0x00003994
+// GLOBAL: COPTER_D 0x00003994
 // SZ_INVENTORY_WINDOW_ADDRESS_TEXT_NAME

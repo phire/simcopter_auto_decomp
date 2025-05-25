@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:0001ead0-0001f5cb Module: 72, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x0041fad0
+// FUNCTION: COPTER_D 0x0041fad0
 char * MTimeLocalized::PrintStringLocalized(char *, int32_t) {
 // LINE 25:
 	asm( 
@@ -93,7 +93,7 @@ char * MTimeLocalized::PrintStringLocalized(char *, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0041fb6a
+// FUNCTION: COPTER_D 0x0041fb6a
 class ostream& operator<<() {
 // LINE 49:
 	asm( 
@@ -392,7 +392,7 @@ class ostream& operator<<() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0041fe57
+// FUNCTION: COPTER_D 0x0041fe57
 void MDateLocalized::MDateLocalized() {
 // LINE 121:
 	asm( 
@@ -422,7 +422,7 @@ void MDateLocalized::MDateLocalized() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0041fe8b
+// FUNCTION: COPTER_D 0x0041fe8b
 void MDateLocalized::MDateLocalized(uint32_t, uint32_t) {
 // LINE 129:
 	asm( 
@@ -456,7 +456,7 @@ void MDateLocalized::MDateLocalized(uint32_t, uint32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0041fec9
+// FUNCTION: COPTER_D 0x0041fec9
 void MDateLocalized::MDateLocalized(uint32_t, char *, uint32_t) {
 // LINE 137:
 	asm( 
@@ -509,7 +509,7 @@ void MDateLocalized::MDateLocalized(uint32_t, char *, uint32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0041ff30
+// FUNCTION: COPTER_D 0x0041ff30
 void MDateLocalized::MDateLocalized(uint32_t, uint32_t, uint32_t) {
 // LINE 146:
 	asm( 
@@ -545,7 +545,7 @@ void MDateLocalized::MDateLocalized(uint32_t, uint32_t, uint32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0041ff72
+// FUNCTION: COPTER_D 0x0041ff72
 void MDateLocalized::MDateLocalized(class istream&) {
 // LINE 154:
 	asm( 
@@ -580,7 +580,7 @@ void MDateLocalized::MDateLocalized(class istream&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0041ffba
+// FUNCTION: COPTER_D 0x0041ffba
 void MDateLocalized::MDateLocalized(const class MTime&) {
 // LINE 162:
 	asm( 
@@ -612,7 +612,7 @@ void MDateLocalized::MDateLocalized(const class MTime&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0041fff4
+// FUNCTION: COPTER_D 0x0041fff4
 char * MDateLocalized::NameOfDayLocalized(char *, int32_t) {
 // LINE 170:
 	asm( 
@@ -668,7 +668,7 @@ char * MDateLocalized::NameOfDayLocalized(char *, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042004a
+// FUNCTION: COPTER_D 0x0042004a
 char * MDateLocalized::NameOfMonthLocalized(char *, int32_t) {
 // LINE 183:
 	asm( 
@@ -724,7 +724,7 @@ char * MDateLocalized::NameOfMonthLocalized(char *, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004200a0
+// FUNCTION: COPTER_D 0x004200a0
 char * MDateLocalized::PrintStringLocalized(char *, int32_t) {
 // LINE 197:
 	asm( 
@@ -822,7 +822,7 @@ char * MDateLocalized::PrintStringLocalized(char *, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042014c
+// FUNCTION: COPTER_D 0x0042014c
 class MDate MDateLocalized::PreviousLocalized(char *, int32_t) {
 // LINE 221:
 	asm( 
@@ -898,7 +898,7 @@ class MDate MDateLocalized::PreviousLocalized(char *, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004201c9
+// FUNCTION: COPTER_D 0x004201c9
 uint32_t MDateLocalized::DayOfWeekLocalized(char *, int32_t) {
 // LINE 242:
 	asm( 
@@ -960,7 +960,7 @@ uint32_t MDateLocalized::DayOfWeekLocalized(char *, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00420237
+// FUNCTION: COPTER_D 0x00420237
 uint32_t MDateLocalized::IndexOfMonthLocalized(char *, int32_t) {
 // LINE 263:
 	asm( 
@@ -1022,7 +1022,7 @@ uint32_t MDateLocalized::IndexOfMonthLocalized(char *, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004202a5
+// FUNCTION: COPTER_D 0x004202a5
 char * MDateLocalized::DayNameLocalized(uint32_t, char *, int32_t) {
 // LINE 285:
 	asm( 
@@ -1096,7 +1096,7 @@ char * MDateLocalized::DayNameLocalized(uint32_t, char *, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042033c
+// FUNCTION: COPTER_D 0x0042033c
 char * MDateLocalized::MonthNameLocalized(uint32_t, char *, int32_t) {
 // LINE 305:
 	asm( 
@@ -1170,7 +1170,7 @@ char * MDateLocalized::MonthNameLocalized(uint32_t, char *, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004203d3
+// FUNCTION: COPTER_D 0x004203d3
 class ostream& operator<<() {
 // LINE 325:
 	asm( 
@@ -1404,9 +1404,9 @@ class ostream& operator<<() {
 
 
 // Contribution: 2:000003d0-000003e7 Module: 72, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x000003d0
+// GLOBAL: COPTER_D 0x000003d0
 // ??_7MDateLocalized@@6B@
-// GLOBAL: SIMCOPTER 0x000003e8
+// GLOBAL: COPTER_D 0x000003e8
 // ??_7MDate@@6B@
 
 

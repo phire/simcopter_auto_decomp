@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:0001f5f0-00021277 Module: 71, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x004205f0
+// FUNCTION: COPTER_D 0x004205f0
 void SoundQueueItem::SoundQueueItem() {
 // LINE 17:
 	asm( 
@@ -55,7 +55,7 @@ void SoundQueueItem::SoundQueueItem() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00420675
+// FUNCTION: COPTER_D 0x00420675
 void SoundQueueItem::SoundQueueItem(class Sound*, long, int32_t) {
 // LINE 29:
 	asm( 
@@ -128,7 +128,7 @@ void SoundQueueItem::SoundQueueItem(class Sound*, long, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00420720
+// FUNCTION: COPTER_D 0x00420720
 void SoundQueueItem::SoundQueueItem(class Sound*, long, long, int32_t) {
 // LINE 41:
 	asm( 
@@ -202,7 +202,7 @@ void SoundQueueItem::SoundQueueItem(class Sound*, long, long, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004207ca
+// FUNCTION: COPTER_D 0x004207ca
 void SoundQueueItem::SoundQueueItem(class Sound*, const class basic_string<char>&, long, int32_t) {
 // LINE 53:
 	asm( 
@@ -403,7 +403,7 @@ void SoundQueueItem::SoundQueueItem(class Sound*, const class basic_string<char>
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00420a3c
+// FUNCTION: COPTER_D 0x00420a3c
 void SoundQueueItem::SoundQueueItem(class Sound*, char *, long, int32_t) {
 // LINE 67:
 	asm( 
@@ -641,7 +641,7 @@ void SoundQueueItem::SoundQueueItem(class Sound*, char *, long, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00420d37
+// FUNCTION: COPTER_D 0x00420d37
 void DigitalSoundQueueItem::DigitalSoundQueueItem(const class basic_string<char>&, long) {
 // LINE 89:
 	asm( 
@@ -702,7 +702,7 @@ void DigitalSoundQueueItem::DigitalSoundQueueItem(const class basic_string<char>
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00420daf
+// FUNCTION: COPTER_D 0x00420daf
 void DigitalSoundQueueItem::DigitalSoundQueueItem(char *, long) {
 // LINE 102:
 	asm( 
@@ -872,7 +872,7 @@ void DigitalSoundQueueItem::DigitalSoundQueueItem(char *, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00420fba
+// FUNCTION: COPTER_D 0x00420fba
 void DigitalSoundQueueItem::DigitalSoundQueueItem(long, long) {
 // LINE 116:
 	asm( 
@@ -932,7 +932,7 @@ void DigitalSoundQueueItem::DigitalSoundQueueItem(long, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00421030
+// FUNCTION: COPTER_D 0x00421030
 void SoundQueue::SoundQueue() {
 // LINE 144:
 	asm( 
@@ -1119,7 +1119,7 @@ void SoundQueue::SoundQueue() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004212b9
+// FUNCTION: COPTER_D 0x004212b9
 void SoundQueue::~SoundQueue() {
 // LINE 155:
 	asm( 
@@ -1255,7 +1255,7 @@ void SoundQueue::~SoundQueue() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00421484
+// FUNCTION: COPTER_D 0x00421484
 int32_t SoundQueue::Initialize() {
 // LINE 164:
 	asm( 
@@ -1305,7 +1305,7 @@ int32_t SoundQueue::Initialize() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004214c9
+// FUNCTION: COPTER_D 0x004214c9
 void SoundQueue::DeInitialize(int32_t) {
 // LINE 179:
 	asm( 
@@ -1360,7 +1360,7 @@ void SoundQueue::DeInitialize(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042151a
+// FUNCTION: COPTER_D 0x0042151a
 void SoundQueue::ClearQueue(int32_t) {
 // LINE 196:
 	asm( 
@@ -1621,7 +1621,7 @@ void SoundQueue::ClearQueue(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004217d6
+// FUNCTION: COPTER_D 0x004217d6
 class SoundQueue& SoundQueue::operator+=(class Sound*) {
 // LINE 224:
 	asm( 
@@ -1691,7 +1691,7 @@ class SoundQueue& SoundQueue::operator+=(class Sound*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042185b
+// FUNCTION: COPTER_D 0x0042185b
 class SoundQueue& SoundQueue::operator+=(struct SoundQueueItem*) {
 // LINE 239:
 	asm( 
@@ -1955,7 +1955,7 @@ class SoundQueue& SoundQueue::operator+=(struct SoundQueueItem*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00421b84
+// FUNCTION: COPTER_D 0x00421b84
 int32_t SoundQueue::StartPauseCallback(long) {
 // LINE 260:
 	asm( 
@@ -1996,7 +1996,7 @@ int32_t SoundQueue::StartPauseCallback(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00421bbf
+// FUNCTION: COPTER_D 0x00421bbf
 void SoundQueue::EndPauseCallback() {
 // LINE 276:
 	asm( 
@@ -2037,7 +2037,7 @@ void SoundQueue::EndPauseCallback() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00421bf9
+// FUNCTION: COPTER_D 0x00421bf9
 void SoundQueue::PlayNextSoundInQueue() {
 // LINE 299:
 	asm( 
@@ -2187,7 +2187,7 @@ void SoundQueue::PlayNextSoundInQueue() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00421d19
+// FUNCTION: COPTER_D 0x00421d19
 void SoundQueue::RemoveNextSoundInQueue() {
 // LINE 333:
 	asm( 
@@ -2365,7 +2365,7 @@ void SoundQueue::RemoveNextSoundInQueue() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00421f05
+// FUNCTION: COPTER_D 0x00421f05
 void SoundQueue::WindowsStaticSoundQueueCompletionCallback(uint32_t, uint32_t, unsigned long, unsigned long, unsigned long) {
 // LINE 355:
 	asm( 
@@ -2393,7 +2393,7 @@ void SoundQueue::WindowsStaticSoundQueueCompletionCallback(uint32_t, uint32_t, u
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00421f23
+// FUNCTION: COPTER_D 0x00421f23
 void SoundQueue::WindowsStaticSoundQueueWaitTimeCallback(uint32_t, uint32_t, unsigned long, unsigned long, unsigned long) {
 // LINE 367:
 	asm( 
@@ -2421,7 +2421,7 @@ void SoundQueue::WindowsStaticSoundQueueWaitTimeCallback(uint32_t, uint32_t, uns
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00421f41
+// FUNCTION: COPTER_D 0x00421f41
 void SoundQueue::StaticSoundQueueCompletionCallback(long) {
 // LINE 376:
 	asm( 
@@ -2449,7 +2449,7 @@ void SoundQueue::StaticSoundQueueCompletionCallback(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00421f5c
+// FUNCTION: COPTER_D 0x00421f5c
 void SoundQueue::SoundQueueCompletionCallback() {
 // LINE 384:
 	asm( 
@@ -2536,7 +2536,7 @@ void SoundQueue::SoundQueueCompletionCallback() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00421ffe
+// FUNCTION: COPTER_D 0x00421ffe
 void SoundQueue::StaticSoundQueueWaitTimeCallback(long) {
 // LINE 406:
 	asm( 
@@ -2564,7 +2564,7 @@ void SoundQueue::StaticSoundQueueWaitTimeCallback(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00422019
+// FUNCTION: COPTER_D 0x00422019
 void SoundQueue::SoundQueueWaitTimeCallback() {
 // LINE 414:
 	asm( 
@@ -2606,7 +2606,7 @@ void SoundQueue::SoundQueueWaitTimeCallback() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00422056
+// FUNCTION: COPTER_D 0x00422056
 int32_t SoundQueue::GetMutex(unsigned long) {
 // LINE 428:
 	asm( 
@@ -2777,7 +2777,7 @@ int32_t SoundQueue::GetMutex(unsigned long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00422258
+// FUNCTION: COPTER_D 0x00422258
 void SoundQueue::ReleaseMutex() {
 // LINE 455:
 	asm( 
@@ -2808,7 +2808,7 @@ void SoundQueue::ReleaseMutex() {
 
 
 // Contribution: 2:000003f0-0000041b Module: 71, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x000003f0
+// GLOBAL: COPTER_D 0x000003f0
 // ??_7SoundQueue@@6B@
 
 
@@ -2816,24 +2816,24 @@ void SoundQueue::ReleaseMutex() {
 
 
 // Contribution: 3:00000354-00000357 Module: 71, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00000354
+// GLOBAL: COPTER_D 0x00000354
 // list<SoundQueueItem *>::number_of_lists
 
 
 // Contribution: 3:00000358-0000035b Module: 71, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00000358
+// GLOBAL: COPTER_D 0x00000358
 // list<SoundQueueItem *>::last
-// GLOBAL: SIMCOPTER 0x0000035c
+// GLOBAL: COPTER_D 0x0000035c
 // list<SoundQueueItem *>::next_avail
 
 
 // Contribution: 3:0000035c-0000035f Module: 71, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00000360
+// GLOBAL: COPTER_D 0x00000360
 // list<SoundQueueItem *>::free_list
 
 
 // Contribution: 3:00000360-00000363 Module: 71, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00000364
+// GLOBAL: COPTER_D 0x00000364
 // list<SoundQueueItem *>::buffer_list
 
 

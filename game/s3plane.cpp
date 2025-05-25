@@ -5,19 +5,19 @@
 
 
 // Contribution: 1:0012a0c0-0012cd5c Module: 163, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x0052b0c0
+// FUNCTION: COPTER_D 0x0052b0c0
 // $E8
 
-// FUNCTION: SIMCOPTER 0x0052b0da
+// FUNCTION: COPTER_D 0x0052b0da
 // $E4
 
-// FUNCTION: SIMCOPTER 0x0052b0f9
+// FUNCTION: COPTER_D 0x0052b0f9
 // $E7
 
-// FUNCTION: SIMCOPTER 0x0052b116
+// FUNCTION: COPTER_D 0x0052b116
 // $E5
 
-// FUNCTION: SIMCOPTER 0x0052b14d
+// FUNCTION: COPTER_D 0x0052b14d
 void PlaneClass::PlaneClass(long, long) {
 // LINE 174:
 	asm( 
@@ -128,7 +128,7 @@ void PlaneClass::PlaneClass(long, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052b216
+// FUNCTION: COPTER_D 0x0052b216
 void PlaneClass::~PlaneClass() {
 // LINE 224:
 	asm( 
@@ -182,7 +182,7 @@ void PlaneClass::~PlaneClass() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052b273
+// FUNCTION: COPTER_D 0x0052b273
 class PlaneClass* PlaneClass::GetPlanePointer(long) {
 // LINE 265:
 	asm( 
@@ -218,7 +218,7 @@ class PlaneClass* PlaneClass::GetPlanePointer(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052b29e
+// FUNCTION: COPTER_D 0x0052b29e
 class PlaneClass* PlaneClass::CreateInstance(int32_t) {
 // LINE 289:
 	asm( 
@@ -248,7 +248,7 @@ class PlaneClass* PlaneClass::CreateInstance(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052b2be
+// FUNCTION: COPTER_D 0x0052b2be
 class PlaneClass* PlaneClass::CreateInstance(long, long, int32_t) {
 // LINE 350:
 	asm( 
@@ -330,7 +330,7 @@ class PlaneClass* PlaneClass::CreateInstance(long, long, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052b35e
+// FUNCTION: COPTER_D 0x0052b35e
 int32_t PlaneClass::Initialize(int32_t) {
 // LINE 452:
 	asm( 
@@ -366,7 +366,7 @@ int32_t PlaneClass::Initialize(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052b390
+// FUNCTION: COPTER_D 0x0052b390
 void PlaneClass::ResetAll() {
 // LINE 477:
 	asm( 
@@ -406,7 +406,7 @@ void PlaneClass::ResetAll() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052b3d0
+// FUNCTION: COPTER_D 0x0052b3d0
 void PlaneClass::ItterateAll() {
 // LINE 527:
 	asm( 
@@ -446,7 +446,7 @@ void PlaneClass::ItterateAll() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052b410
+// FUNCTION: COPTER_D 0x0052b410
 int32_t PlaneClass::FindPlaneToCrash(long) {
 // LINE 577:
 	asm( 
@@ -528,7 +528,7 @@ int32_t PlaneClass::FindPlaneToCrash(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052b4d5
+// FUNCTION: COPTER_D 0x0052b4d5
 void PlaneClass::Itterate() {
 // LINE 611:
 	asm( 
@@ -694,7 +694,7 @@ void PlaneClass::Itterate() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052b64a
+// FUNCTION: COPTER_D 0x0052b64a
 void PlaneClass::Reset() {
 // LINE 688:
 	asm( 
@@ -777,7 +777,7 @@ void PlaneClass::Reset() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052b6d0
+// FUNCTION: COPTER_D 0x0052b6d0
 void PlaneClass::PlaneSoundDriver() {
 // LINE 745:
 	asm( 
@@ -1131,7 +1131,7 @@ void PlaneClass::PlaneSoundDriver() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052b9a3
+// FUNCTION: COPTER_D 0x0052b9a3
 void PlaneClass::ItterateFSM() {
 // LINE 871:
 	asm( 
@@ -1299,7 +1299,7 @@ void PlaneClass::ItterateFSM() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052baf5
+// FUNCTION: COPTER_D 0x0052baf5
 void PlaneClass::AdjustSpeed() {
 // LINE 951:
 	asm( 
@@ -1339,7 +1339,7 @@ void PlaneClass::AdjustSpeed() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052bb2e
+// FUNCTION: COPTER_D 0x0052bb2e
 enum PlaneClass::StoppedReasons PlaneClass::IsPathClear() {
 // LINE 980:
 	asm( 
@@ -1366,7 +1366,7 @@ enum PlaneClass::StoppedReasons PlaneClass::IsPathClear() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052bb46
+// FUNCTION: COPTER_D 0x0052bb46
 enum PlaneClass::StoppedReasons PlaneClass::CheckDynamicObjectsAt(const struct Point2d&, const struct Point3d&) {
 // LINE 1020:
 	asm( 
@@ -1393,7 +1393,7 @@ enum PlaneClass::StoppedReasons PlaneClass::CheckDynamicObjectsAt(const struct P
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052bb60
+// FUNCTION: COPTER_D 0x0052bb60
 void PlaneClass::SetCrashWhenReady() {
 // LINE 1178:
 	asm( 
@@ -1667,7 +1667,7 @@ void PlaneClass::SetCrashWhenReady() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052bdad
+// FUNCTION: COPTER_D 0x0052bdad
 int32_t PlaneClass::IsPlaneOutOfCameraRange() {
 // LINE 1277:
 	asm( 
@@ -1804,7 +1804,7 @@ int32_t PlaneClass::IsPlaneOutOfCameraRange() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052be9a
+// FUNCTION: COPTER_D 0x0052be9a
 void PlaneClass::SlowDown() {
 // LINE 1341:
 	asm( 
@@ -1832,7 +1832,7 @@ void PlaneClass::SlowDown() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052beba
+// FUNCTION: COPTER_D 0x0052beba
 void PlaneClass::Stop() {
 // LINE 1362:
 	asm( 
@@ -1860,7 +1860,7 @@ void PlaneClass::Stop() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052beda
+// FUNCTION: COPTER_D 0x0052beda
 void PlaneClass::MoveForward() {
 // LINE 1383:
 	asm( 
@@ -2183,7 +2183,7 @@ void PlaneClass::MoveForward() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052c1a3
+// FUNCTION: COPTER_D 0x0052c1a3
 int32_t PlaneClass::PlaneCollisionCheck(int32_t, struct _CELL_INFO*) {
 // LINE 1475:
 	asm( 
@@ -3077,7 +3077,7 @@ int32_t PlaneClass::PlaneCollisionCheck(int32_t, struct _CELL_INFO*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052ca29
+// FUNCTION: COPTER_D 0x0052ca29
 int32_t PlaneClass::HaveIReachedNextLoc() {
 // LINE 1764:
 	asm( 
@@ -3119,7 +3119,7 @@ int32_t PlaneClass::HaveIReachedNextLoc() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052ca5d
+// FUNCTION: COPTER_D 0x0052ca5d
 int32_t PlaneClass::AmIInANewCell() {
 // LINE 1791:
 	asm( 
@@ -3182,7 +3182,7 @@ int32_t PlaneClass::AmIInANewCell() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052cacb
+// FUNCTION: COPTER_D 0x0052cacb
 void PlaneClass::UnlinkFromCell(const struct Point2d&) {
 // LINE 1827:
 	asm( 
@@ -3300,7 +3300,7 @@ void PlaneClass::UnlinkFromCell(const struct Point2d&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052cbe1
+// FUNCTION: COPTER_D 0x0052cbe1
 void PlaneClass::LinkToCell(const struct Point2d&) {
 // LINE 1875:
 	asm( 
@@ -3376,7 +3376,7 @@ void PlaneClass::LinkToCell(const struct Point2d&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052cc9d
+// FUNCTION: COPTER_D 0x0052cc9d
 void PlaneClass::AdjustCurrentPosition() {
 // LINE 1904:
 	asm( 
@@ -3488,7 +3488,7 @@ void PlaneClass::AdjustCurrentPosition() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052cda1
+// FUNCTION: COPTER_D 0x0052cda1
 void PlaneClass::AdjustNextPosition() {
 // LINE 1943:
 	asm( 
@@ -3628,7 +3628,7 @@ void PlaneClass::AdjustNextPosition() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052cee5
+// FUNCTION: COPTER_D 0x0052cee5
 void PlaneClass::AdjustNextAltitude() {
 // LINE 1986:
 	asm( 
@@ -3816,7 +3816,7 @@ void PlaneClass::AdjustNextAltitude() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052d08b
+// FUNCTION: COPTER_D 0x0052d08b
 void PlaneClass::BeamToWithinCameraRange() {
 // LINE 2054:
 	asm( 
@@ -4286,7 +4286,7 @@ void PlaneClass::BeamToWithinCameraRange() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052d411
+// FUNCTION: COPTER_D 0x0052d411
 void PlaneClass::UnPlacePlane() {
 // LINE 2233:
 	asm( 
@@ -4331,7 +4331,7 @@ void PlaneClass::UnPlacePlane() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052d456
+// FUNCTION: COPTER_D 0x0052d456
 int32_t PlaneClass::InitializeInstance(long, long, int32_t) {
 // LINE 2267:
 	asm( 
@@ -4577,7 +4577,7 @@ int32_t PlaneClass::InitializeInstance(long, long, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052d618
+// FUNCTION: COPTER_D 0x0052d618
 void PlaneClass::HandleUFOStuff() {
 // LINE 2473:
 	asm( 
@@ -4671,7 +4671,7 @@ void PlaneClass::HandleUFOStuff() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052d6bd
+// FUNCTION: COPTER_D 0x0052d6bd
 void CreatePlaneInstance() {
 // LINE 2553:
 	asm( 
@@ -4699,7 +4699,7 @@ void CreatePlaneInstance() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052d6d9
+// FUNCTION: COPTER_D 0x0052d6d9
 int32_t S3PlaneCrashWhenReady() {
 // LINE 2573:
 	asm( 
@@ -4727,7 +4727,7 @@ int32_t S3PlaneCrashWhenReady() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052d6f5
+// FUNCTION: COPTER_D 0x0052d6f5
 void ResetAllPlanes() {
 // LINE 2596:
 	asm( 
@@ -4752,7 +4752,7 @@ void ResetAllPlanes() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052d70a
+// FUNCTION: COPTER_D 0x0052d70a
 void ItterateAllPlanes() {
 // LINE 2619:
 	asm( 
@@ -4777,7 +4777,7 @@ void ItterateAllPlanes() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052d71f
+// FUNCTION: COPTER_D 0x0052d71f
 void PlaneClass::HitDispatch(long, struct _DYOBJ_INST*, struct _DYOBJ_INST*, long, long) {
 // LINE 2632:
 	asm( 
@@ -5040,7 +5040,7 @@ void PlaneClass::HitDispatch(long, struct _DYOBJ_INST*, struct _DYOBJ_INST*, lon
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052d975
+// FUNCTION: COPTER_D 0x0052d975
 void PlaneHitDispatch() {
 // LINE 2707:
 	asm( 
@@ -5076,7 +5076,7 @@ void PlaneHitDispatch() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052d9a1
+// FUNCTION: COPTER_D 0x0052d9a1
 void PlaneClass::TurnOnShields() {
 // LINE 2722:
 	asm( 
@@ -5166,7 +5166,7 @@ void PlaneClass::TurnOnShields() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052da3c
+// FUNCTION: COPTER_D 0x0052da3c
 void PlaneClass::TurnOffShields() {
 // LINE 2744:
 	asm( 
@@ -5258,7 +5258,7 @@ void PlaneClass::TurnOffShields() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052dadb
+// FUNCTION: COPTER_D 0x0052dadb
 int32_t S3PlaneMIFFLoad() {
 // LINE 2772:
 	asm( 
@@ -5286,7 +5286,7 @@ int32_t S3PlaneMIFFLoad() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052daf7
+// FUNCTION: COPTER_D 0x0052daf7
 int32_t S3PlaneMIFFSave() {
 // LINE 2785:
 	asm( 
@@ -5314,7 +5314,7 @@ int32_t S3PlaneMIFFSave() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052db13
+// FUNCTION: COPTER_D 0x0052db13
 int32_t PlaneClass::MIFFLoad(void * __ptr32) {
 // LINE 2797:
 	asm( 
@@ -5551,7 +5551,7 @@ int32_t PlaneClass::MIFFLoad(void * __ptr32) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052dcf2
+// FUNCTION: COPTER_D 0x0052dcf2
 int32_t PlaneClass::MIFFSave(void * __ptr32) {
 // LINE 2856:
 	asm( 
@@ -5615,37 +5615,37 @@ int32_t PlaneClass::MIFFSave(void * __ptr32) {
 
 
 // Contribution: 1:0012cd60-0012cd98 Module: 163, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x0052dd60
+// FUNCTION: COPTER_D 0x0052dd60
 // PlaneClass::`scalar deleting destructor'
 
 
 
 // Contribution: 2:00004220-00004233 Module: 163, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00004220
+// GLOBAL: COPTER_D 0x00004220
 // ??_7PlaneClass@@6B@
 
 
 // Contribution: 3:000000a8-000000ab Module: 163, 4 byte alignment, initialized_data, read, write, 
-// LOCAL: SIMCOPTER 0x000000ac
+// LOCAL: COPTER_D 0x000000ac
 // $S8
 
 
 // Contribution: 3:00020690-0002080a Module: 163, 8 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x00020690
+// GLOBAL: COPTER_D 0x00020690
 // PlaneClass::lastScannedLocation
-// GLOBAL: SIMCOPTER 0x00020698
+// GLOBAL: COPTER_D 0x00020698
 // PlaneClass::sPlaneModelSet
 
 
 // Contribution: 3:0002080c-0002082c Module: 163, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x0002080c
+// GLOBAL: COPTER_D 0x0002080c
 // ??_C@_0CB@DLKO@C?3?2Copter?2Source?2Game?2S3MOBILE?4H@
 
 
 // Contribution: 3:000946e8-000947b0 Module: 163, 8 byte alignment, uninitialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x000946e8
+// GLOBAL: COPTER_D 0x000946e8
 // PlaneClass::lsPlane
-// GLOBAL: SIMCOPTER 0x000947a8
+// GLOBAL: COPTER_D 0x000947a8
 // planes
-// LOCAL: SIMCOPTER 0x000947b0
+// LOCAL: COPTER_D 0x000947b0
 // $S6

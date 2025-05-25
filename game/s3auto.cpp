@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:001005e0-00108fb1 Module: 171, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x005015e0
+// FUNCTION: COPTER_D 0x005015e0
 int32_t S3StartSpeederMission() {
 // LINE 70:
 	asm( 
@@ -97,7 +97,7 @@ int32_t S3StartSpeederMission() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005016c9
+// FUNCTION: COPTER_D 0x005016c9
 int32_t Distance() {
 // LINE 104:
 	asm( 
@@ -204,7 +204,7 @@ int32_t Distance() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0050176e
+// FUNCTION: COPTER_D 0x0050176e
 struct _DYOBJ_INST* AutomobileClass::GetClosestCar(int32_t, int32_t, int32_t) {
 // LINE 135:
 	asm( 
@@ -580,7 +580,7 @@ struct _DYOBJ_INST* AutomobileClass::GetClosestCar(int32_t, int32_t, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00501a89
+// FUNCTION: COPTER_D 0x00501a89
 int32_t AutomobileClass::S3AutoMessage(short, short) {
 // LINE 245:
 	asm( 
@@ -609,7 +609,7 @@ int32_t AutomobileClass::S3AutoMessage(short, short) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00501aad
+// FUNCTION: COPTER_D 0x00501aad
 int32_t AutomobileClass::AutoMessage(short) {
 // LINE 251:
 	asm( 
@@ -659,7 +659,7 @@ int32_t AutomobileClass::AutoMessage(short) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00501af9
+// FUNCTION: COPTER_D 0x00501af9
 int32_t GetTheCurrentNumberOfAutomobiles() {
 // LINE 268:
 	asm( 
@@ -684,7 +684,7 @@ int32_t GetTheCurrentNumberOfAutomobiles() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00501b0e
+// FUNCTION: COPTER_D 0x00501b0e
 int32_t SetTheCurrentNumberOfAutomobiles() {
 // LINE 274:
 	asm( 
@@ -724,7 +724,7 @@ int32_t SetTheCurrentNumberOfAutomobiles() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00501b3c
+// FUNCTION: COPTER_D 0x00501b3c
 int32_t CreateAutomobileInstance() {
 // LINE 303:
 	asm( 
@@ -757,7 +757,7 @@ int32_t CreateAutomobileInstance() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00501b6c
+// FUNCTION: COPTER_D 0x00501b6c
 void AutomobileClass::AutomobileClass() {
 // LINE 326:
 	asm( 
@@ -956,7 +956,7 @@ void AutomobileClass::AutomobileClass() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00501d09
+// FUNCTION: COPTER_D 0x00501d09
 void AutomobileClass::~AutomobileClass() {
 // LINE 411:
 	asm( 
@@ -1006,7 +1006,7 @@ void AutomobileClass::~AutomobileClass() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00501d58
+// FUNCTION: COPTER_D 0x00501d58
 class AutomobileClass* AutomobileClass::GetAutoPointer(long) {
 // LINE 450:
 	asm( 
@@ -1056,7 +1056,7 @@ class AutomobileClass* AutomobileClass::GetAutoPointer(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00501db8
+// FUNCTION: COPTER_D 0x00501db8
 class AutomobileClass* AutomobileClass::CreateInstance(int32_t) {
 // LINE 478:
 	asm( 
@@ -1144,7 +1144,7 @@ class AutomobileClass* AutomobileClass::CreateInstance(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00501e71
+// FUNCTION: COPTER_D 0x00501e71
 void AutomobileClass::ResetAll() {
 // LINE 540:
 	asm( 
@@ -1184,7 +1184,7 @@ void AutomobileClass::ResetAll() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00501eb1
+// FUNCTION: COPTER_D 0x00501eb1
 void AutomobileClass::ItterateAll() {
 // LINE 571:
 	asm( 
@@ -1224,7 +1224,7 @@ void AutomobileClass::ItterateAll() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00501ef1
+// FUNCTION: COPTER_D 0x00501ef1
 void AutomobileClass::Itterate() {
 // LINE 599:
 	asm( 
@@ -1459,7 +1459,7 @@ void AutomobileClass::Itterate() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0050217c
+// FUNCTION: COPTER_D 0x0050217c
 int32_t AutomobileClass::PlacePerson(int32_t, int32_t) {
 // LINE 747:
 	asm( 
@@ -1609,7 +1609,7 @@ int32_t AutomobileClass::PlacePerson(int32_t, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005022b0
+// FUNCTION: COPTER_D 0x005022b0
 void AutomobileClass::ItterateFSM() {
 // LINE 782:
 	asm( 
@@ -2376,7 +2376,7 @@ void AutomobileClass::ItterateFSM() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00502a9b
+// FUNCTION: COPTER_D 0x00502a9b
 void AutomobileClass::UnlinkFromCell(const struct _GridCoordinates&) {
 // LINE 1052:
 	asm( 
@@ -2482,7 +2482,7 @@ void AutomobileClass::UnlinkFromCell(const struct _GridCoordinates&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00502b74
+// FUNCTION: COPTER_D 0x00502b74
 void AutomobileClass::LinkToCell(const struct _GridCoordinates&) {
 // LINE 1084:
 	asm( 
@@ -2617,7 +2617,7 @@ void AutomobileClass::LinkToCell(const struct _GridCoordinates&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00502c92
+// FUNCTION: COPTER_D 0x00502c92
 enum TurnIndex AutomobileClass::PickTurnDir(struct Goal*) {
 // LINE 1123:
 	asm( 
@@ -2851,7 +2851,7 @@ enum TurnIndex AutomobileClass::PickTurnDir(struct Goal*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00502f11
+// FUNCTION: COPTER_D 0x00502f11
 void AutomobileClass::BeamToWithinCameraRange() {
 // LINE 1208:
 	asm( 
@@ -3067,7 +3067,7 @@ void AutomobileClass::BeamToWithinCameraRange() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005030aa
+// FUNCTION: COPTER_D 0x005030aa
 int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates&) {
 // LINE 1282:
 	asm( 
@@ -4154,7 +4154,7 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00503e6e
+// FUNCTION: COPTER_D 0x00503e6e
 void AutomobileClass::UnPlaceCar() {
 // LINE 1659:
 	asm( 
@@ -4224,7 +4224,7 @@ void AutomobileClass::UnPlaceCar() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00503ede
+// FUNCTION: COPTER_D 0x00503ede
 void AutomobileClass::WaterDouse(struct _DYOBJ_INST*) {
 // LINE 1684:
 	asm( 
@@ -4358,7 +4358,7 @@ void AutomobileClass::WaterDouse(struct _DYOBJ_INST*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00503fd0
+// FUNCTION: COPTER_D 0x00503fd0
 void AutomobileClass::IveBeenMegaphoned(long) {
 // LINE 1734:
 	asm( 
@@ -4463,7 +4463,7 @@ void AutomobileClass::IveBeenMegaphoned(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0050409a
+// FUNCTION: COPTER_D 0x0050409a
 void AutomobileClass::AdjustSpeed() {
 // LINE 1772:
 	asm( 
@@ -4518,7 +4518,7 @@ void AutomobileClass::AdjustSpeed() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00504116
+// FUNCTION: COPTER_D 0x00504116
 void AutomobileClass::Reset() {
 // LINE 1790:
 	asm( 
@@ -4551,7 +4551,7 @@ void AutomobileClass::Reset() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0050413e
+// FUNCTION: COPTER_D 0x0050413e
 int32_t AutomobileClass::AmIABadGuy() {
 // LINE 1798:
 	asm( 
@@ -4592,7 +4592,7 @@ int32_t AutomobileClass::AmIABadGuy() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0050417d
+// FUNCTION: COPTER_D 0x0050417d
 void AutomobileClass::PullOverCiviliansInWay() {
 // LINE 1807:
 	asm( 
@@ -4761,7 +4761,7 @@ void AutomobileClass::PullOverCiviliansInWay() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00504337
+// FUNCTION: COPTER_D 0x00504337
 int32_t AutomobileClass::InitializeInstance(int32_t) {
 // LINE 1874:
 	asm( 
@@ -5004,7 +5004,7 @@ int32_t AutomobileClass::InitializeInstance(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00504554
+// FUNCTION: COPTER_D 0x00504554
 int32_t AutomobileClass::Initialize(int32_t) {
 // LINE 1978:
 	asm( 
@@ -5034,7 +5034,7 @@ int32_t AutomobileClass::Initialize(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00504578
+// FUNCTION: COPTER_D 0x00504578
 short GetMaximumNumberOfAutomobiles() {
 // LINE 2000:
 	asm( 
@@ -5059,7 +5059,7 @@ short GetMaximumNumberOfAutomobiles() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0050458c
+// FUNCTION: COPTER_D 0x0050458c
 void ItterateAllAutomobiles() {
 // LINE 2023:
 	asm( 
@@ -5084,7 +5084,7 @@ void ItterateAllAutomobiles() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005045a1
+// FUNCTION: COPTER_D 0x005045a1
 void ResetAllAutomobiles() {
 // LINE 2045:
 	asm( 
@@ -5109,7 +5109,7 @@ void ResetAllAutomobiles() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005045b6
+// FUNCTION: COPTER_D 0x005045b6
 int32_t AutomobileClass::CanIPullOver() {
 // LINE 2094:
 	asm( 
@@ -5408,7 +5408,7 @@ int32_t AutomobileClass::CanIPullOver() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005048cd
+// FUNCTION: COPTER_D 0x005048cd
 void AutomobileClass::PullOver(short) {
 // LINE 2152:
 	asm( 
@@ -5523,7 +5523,7 @@ void AutomobileClass::PullOver(short) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005049fe
+// FUNCTION: COPTER_D 0x005049fe
 int32_t AutomobileClass::CanIPullOut() {
 // LINE 2177:
 	asm( 
@@ -5640,7 +5640,7 @@ int32_t AutomobileClass::CanIPullOut() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00504b0a
+// FUNCTION: COPTER_D 0x00504b0a
 void AutomobileClass::PullOut() {
 // LINE 2208:
 	asm( 
@@ -5684,7 +5684,7 @@ void AutomobileClass::PullOut() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00504b48
+// FUNCTION: COPTER_D 0x00504b48
 void AutomobileClass::TransitionBetweenGoals() {
 // LINE 2229:
 	asm( 
@@ -6170,7 +6170,7 @@ void AutomobileClass::TransitionBetweenGoals() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0050503f
+// FUNCTION: COPTER_D 0x0050503f
 void AutomobileClass::DoDiagonalRoadFixup() {
 // LINE 2352:
 	asm( 
@@ -6358,7 +6358,7 @@ void AutomobileClass::DoDiagonalRoadFixup() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00505234
+// FUNCTION: COPTER_D 0x00505234
 void AutomobileClass::MoveAuto(int32_t) {
 // LINE 2418:
 	asm( 
@@ -6818,7 +6818,7 @@ void AutomobileClass::MoveAuto(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00505706
+// FUNCTION: COPTER_D 0x00505706
 void AutomobileClass::DoAUTurn() {
 // LINE 2513:
 	asm( 
@@ -6938,7 +6938,7 @@ void AutomobileClass::DoAUTurn() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00505820
+// FUNCTION: COPTER_D 0x00505820
 int32_t AutomobileClass::CanIDoAUTurn() {
 // LINE 2551:
 	asm( 
@@ -6965,7 +6965,7 @@ int32_t AutomobileClass::CanIDoAUTurn() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0050583b
+// FUNCTION: COPTER_D 0x0050583b
 void AutomobileClass::DoPullOverStuff(int32_t) {
 // LINE 2560:
 	asm( 
@@ -7131,7 +7131,7 @@ void AutomobileClass::DoPullOverStuff(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0050598c
+// FUNCTION: COPTER_D 0x0050598c
 enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t, struct _DYOBJ_INST**) {
 // LINE 2615:
 	asm( 
@@ -8114,7 +8114,7 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t, st
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005062a7
+// FUNCTION: COPTER_D 0x005062a7
 int32_t AutomobileClass::AreCarsHeadOn(struct Point3d*) {
 // LINE 2944:
 	asm( 
@@ -8185,7 +8185,7 @@ int32_t AutomobileClass::AreCarsHeadOn(struct Point3d*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00506333
+// FUNCTION: COPTER_D 0x00506333
 int32_t AutomobileClass::IsCarOutOfCameraRange() {
 // LINE 2982:
 	asm( 
@@ -8312,7 +8312,7 @@ int32_t AutomobileClass::IsCarOutOfCameraRange() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00506413
+// FUNCTION: COPTER_D 0x00506413
 void AutomobileClass::HitDispatch(long, struct _DYOBJ_INST*, long, long) {
 // LINE 3027:
 	asm( 
@@ -8497,7 +8497,7 @@ void AutomobileClass::HitDispatch(long, struct _DYOBJ_INST*, long, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0050654c
+// FUNCTION: COPTER_D 0x0050654c
 void AutoHitDispatch() {
 // LINE 3085:
 	asm( 
@@ -8533,7 +8533,7 @@ void AutoHitDispatch() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0050657f
+// FUNCTION: COPTER_D 0x0050657f
 int32_t AutoMissionStartFire() {
 // LINE 3097:
 	asm( 
@@ -8563,7 +8563,7 @@ int32_t AutoMissionStartFire() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0050659f
+// FUNCTION: COPTER_D 0x0050659f
 int32_t AutoMissionStartJam() {
 // LINE 3110:
 	asm( 
@@ -8593,7 +8593,7 @@ int32_t AutoMissionStartJam() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005065bf
+// FUNCTION: COPTER_D 0x005065bf
 int32_t AutomobileClass::MissionStartFire(long, struct Point2d*) {
 // LINE 3124:
 	asm( 
@@ -8685,7 +8685,7 @@ int32_t AutomobileClass::MissionStartFire(long, struct Point2d*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00506665
+// FUNCTION: COPTER_D 0x00506665
 int32_t AutomobileClass::MissionStartJam(long, struct Point2d*) {
 // LINE 3157:
 	asm( 
@@ -8777,7 +8777,7 @@ int32_t AutomobileClass::MissionStartJam(long, struct Point2d*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0050670b
+// FUNCTION: COPTER_D 0x0050670b
 void AutomobileClass::StartFire(long) {
 // LINE 3190:
 	asm( 
@@ -8938,7 +8938,7 @@ void AutomobileClass::StartFire(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00506859
+// FUNCTION: COPTER_D 0x00506859
 void AutomobileClass::StartJam(long) {
 // LINE 3244:
 	asm( 
@@ -9074,7 +9074,7 @@ void AutomobileClass::StartJam(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00506971
+// FUNCTION: COPTER_D 0x00506971
 void AutomobileClass::RunFireState() {
 // LINE 3291:
 	asm( 
@@ -9353,7 +9353,7 @@ void AutomobileClass::RunFireState() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00506bcf
+// FUNCTION: COPTER_D 0x00506bcf
 void AutomobileClass::RunJamState() {
 // LINE 3372:
 	asm( 
@@ -9434,7 +9434,7 @@ void AutomobileClass::RunJamState() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00506c61
+// FUNCTION: COPTER_D 0x00506c61
 void AutoMissionCancel() {
 // LINE 3408:
 	asm( 
@@ -9462,7 +9462,7 @@ void AutoMissionCancel() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00506c7d
+// FUNCTION: COPTER_D 0x00506c7d
 void AutomobileClass::IveBeenSpotlighted(struct _DYOBJ_INST*) {
 // LINE 3422:
 	asm( 
@@ -9512,7 +9512,7 @@ void AutomobileClass::IveBeenSpotlighted(struct _DYOBJ_INST*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00506ccd
+// FUNCTION: COPTER_D 0x00506ccd
 void AutomobileClass::MissionCancel(long) {
 // LINE 3460:
 	asm( 
@@ -9578,7 +9578,7 @@ void AutomobileClass::MissionCancel(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00506d4e
+// FUNCTION: COPTER_D 0x00506d4e
 void AutoSetAllHeadlights() {
 // LINE 3493:
 	asm( 
@@ -9606,7 +9606,7 @@ void AutoSetAllHeadlights() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00506d6a
+// FUNCTION: COPTER_D 0x00506d6a
 void AutomobileClass::SetAllHeadlights(int32_t) {
 // LINE 3507:
 	asm( 
@@ -9671,7 +9671,7 @@ void AutomobileClass::SetAllHeadlights(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00506dd4
+// FUNCTION: COPTER_D 0x00506dd4
 void AutomobileClass::TurnOnHeadlight() {
 // LINE 3538:
 	asm( 
@@ -9761,7 +9761,7 @@ void AutomobileClass::TurnOnHeadlight() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00506e6f
+// FUNCTION: COPTER_D 0x00506e6f
 void AutomobileClass::TurnOffHeadlight() {
 // LINE 3561:
 	asm( 
@@ -9853,7 +9853,7 @@ void AutomobileClass::TurnOffHeadlight() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00506f0e
+// FUNCTION: COPTER_D 0x00506f0e
 int32_t AutomobileClass::IsThisAnEmergencyVehicle() {
 // LINE 3585:
 	asm( 
@@ -9903,7 +9903,7 @@ int32_t AutomobileClass::IsThisAnEmergencyVehicle() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00506f6f
+// FUNCTION: COPTER_D 0x00506f6f
 void AutomobileClass::SetHiwayDirection(unsigned short) {
 // LINE 3614:
 	asm( 
@@ -10378,7 +10378,7 @@ void AutomobileClass::SetHiwayDirection(unsigned short) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00507488
+// FUNCTION: COPTER_D 0x00507488
 int32_t AutomobileClass::DoHiwayTilesConnect(unsigned short, unsigned short, enum DirectionTypes) {
 // LINE 3727:
 	asm( 
@@ -10632,7 +10632,7 @@ int32_t AutomobileClass::DoHiwayTilesConnect(unsigned short, unsigned short, enu
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00507782
+// FUNCTION: COPTER_D 0x00507782
 void AutomobileClass::AdjustCurrentHiwayPosition() {
 // LINE 3812:
 	asm( 
@@ -10793,7 +10793,7 @@ void AutomobileClass::AdjustCurrentHiwayPosition() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0050790c
+// FUNCTION: COPTER_D 0x0050790c
 void AutomobileClass::AdjustNextHiwayPosition() {
 // LINE 3868:
 	asm( 
@@ -11518,7 +11518,7 @@ void AutomobileClass::AdjustNextHiwayPosition() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00508180
+// FUNCTION: COPTER_D 0x00508180
 enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _GridCoordinates&) {
 // LINE 4035:
 	asm( 
@@ -12413,7 +12413,7 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00508ad4
+// FUNCTION: COPTER_D 0x00508ad4
 void AutomobileClass::MakeAHiwayTurn(enum AutomobileClass::IntersectionTypes) {
 // LINE 4236:
 	asm( 
@@ -12657,7 +12657,7 @@ void AutomobileClass::MakeAHiwayTurn(enum AutomobileClass::IntersectionTypes) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00508cc3
+// FUNCTION: COPTER_D 0x00508cc3
 void AutomobileClass::GoStraight() {
 // LINE 4344:
 	asm( 
@@ -12749,7 +12749,7 @@ void AutomobileClass::GoStraight() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00508d9e
+// FUNCTION: COPTER_D 0x00508d9e
 void AutomobileClass::TurnLeft() {
 // LINE 4390:
 	asm( 
@@ -12841,7 +12841,7 @@ void AutomobileClass::TurnLeft() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00508e79
+// FUNCTION: COPTER_D 0x00508e79
 void AutomobileClass::TurnRight() {
 // LINE 4437:
 	asm( 
@@ -12933,7 +12933,7 @@ void AutomobileClass::TurnRight() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00508f54
+// FUNCTION: COPTER_D 0x00508f54
 void AutomobileClass::MoveForwardOnHiway() {
 // LINE 4487:
 	asm( 
@@ -13024,7 +13024,7 @@ void AutomobileClass::MoveForwardOnHiway() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00509007
+// FUNCTION: COPTER_D 0x00509007
 int32_t S3AutoMIFFLoad() {
 // LINE 4517:
 	asm( 
@@ -13052,7 +13052,7 @@ int32_t S3AutoMIFFLoad() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00509023
+// FUNCTION: COPTER_D 0x00509023
 int32_t S3AutoMIFFSave() {
 // LINE 4530:
 	asm( 
@@ -13080,7 +13080,7 @@ int32_t S3AutoMIFFSave() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0050903f
+// FUNCTION: COPTER_D 0x0050903f
 int32_t AutomobileClass::MIFFLoad(void * __ptr32) {
 // LINE 4542:
 	asm( 
@@ -13172,7 +13172,7 @@ int32_t AutomobileClass::MIFFLoad(void * __ptr32) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005090fb
+// FUNCTION: COPTER_D 0x005090fb
 int32_t AutomobileClass::MIFFSave(void * __ptr32) {
 // LINE 4577:
 	asm( 
@@ -13241,7 +13241,7 @@ int32_t AutomobileClass::MIFFSave(void * __ptr32) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0050917e
+// FUNCTION: COPTER_D 0x0050917e
 void AutomobileClass::SetSaveData(struct _AUTO_LOAD_SAVE*) {
 // LINE 4604:
 	asm( 
@@ -13565,7 +13565,7 @@ void AutomobileClass::SetSaveData(struct _AUTO_LOAD_SAVE*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00509489
+// FUNCTION: COPTER_D 0x00509489
 void AutomobileClass::LoadSaveData(struct _AUTO_LOAD_SAVE*) {
 // LINE 4666:
 	asm( 
@@ -13984,7 +13984,7 @@ void AutomobileClass::LoadSaveData(struct _AUTO_LOAD_SAVE*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005098b0
+// FUNCTION: COPTER_D 0x005098b0
 void AutomobileClass::HonkHorn() {
 // LINE 4738:
 	asm( 
@@ -14071,7 +14071,7 @@ void AutomobileClass::HonkHorn() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0050994b
+// FUNCTION: COPTER_D 0x0050994b
 void S3AutoSoundDistReset() {
 // LINE 4772:
 	asm( 
@@ -14108,7 +14108,7 @@ void S3AutoSoundDistReset() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00509983
+// FUNCTION: COPTER_D 0x00509983
 void S3AutoSoundDriver() {
 // LINE 4788:
 	asm( 
@@ -14550,7 +14550,7 @@ void S3AutoSoundDriver() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00509cf7
+// FUNCTION: COPTER_D 0x00509cf7
 void AutomobileClass::ChangeAutoColor() {
 // LINE 4925:
 	asm( 
@@ -15002,36 +15002,36 @@ void AutomobileClass::ChangeAutoColor() {
 
 
 // Contribution: 1:00108fc0-00108ff8 Module: 171, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x00509fc0
+// FUNCTION: COPTER_D 0x00509fc0
 // AutomobileClass::`scalar deleting destructor'
 
 
 
 // Contribution: 2:00003cc0-00003d97 Module: 171, 8 byte alignment, initialized_data, read, 
-// LOCAL: SIMCOPTER 0x00003cc0
+// LOCAL: COPTER_D 0x00003cc0
 // TurnTable2
-// LOCAL: SIMCOPTER 0x00003d00
+// LOCAL: COPTER_D 0x00003d00
 // IndexToType
-// LOCAL: SIMCOPTER 0x00003d10
+// LOCAL: COPTER_D 0x00003d10
 // TILUT
-// LOCAL: SIMCOPTER 0x00003d50
+// LOCAL: COPTER_D 0x00003d50
 // OT
 
 
 // Contribution: 2:00003d98-00003dbb Module: 171, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00003d98
+// GLOBAL: COPTER_D 0x00003d98
 // ??_7AutomobileClass@@6B@
 
 
 // Contribution: 3:0001e2c4-0001e7b5 Module: 171, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x0001e2c8
+// GLOBAL: COPTER_D 0x0001e2c8
 // curAutos
 
 
 // Contribution: 3:0001e7b8-0001e7c3 Module: 171, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x0001e7b8
+// GLOBAL: COPTER_D 0x0001e7b8
 // ??_C@_0M@DOIM@cellPointer?$AA@
-// GLOBAL: SIMCOPTER 0x0001e7c4
+// GLOBAL: COPTER_D 0x0001e7c4
 // ??_C@_0CB@DNKM@C?3?2Copter?2source?2game?2S3MOBILE?4H@
 
 
@@ -15039,20 +15039,20 @@ void AutomobileClass::ChangeAutoColor() {
 
 
 // Contribution: 3:0001e7e8-0001e9cf Module: 171, 8 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x0001e7e8
+// GLOBAL: COPTER_D 0x0001e7e8
 // connections
 
 
 // Contribution: 3:00071c28-00072097 Module: 171, 8 byte alignment, uninitialized_data, read, write, 
-// LOCAL: SIMCOPTER 0x00071c28
+// LOCAL: COPTER_D 0x00071c28
 // S_autols
-// GLOBAL: SIMCOPTER 0x00071f6c
+// GLOBAL: COPTER_D 0x00071f6c
 // AutomobileClass::fireHoseDist
-// GLOBAL: SIMCOPTER 0x00071f70
+// GLOBAL: COPTER_D 0x00071f70
 // AutomobileClass::ambSirenDist
-// GLOBAL: SIMCOPTER 0x00071f74
+// GLOBAL: COPTER_D 0x00071f74
 // AutomobileClass::policeSirenDist
-// GLOBAL: SIMCOPTER 0x00071f78
+// GLOBAL: COPTER_D 0x00071f78
 // AutomobileClass::fireSirenDist
-// GLOBAL: SIMCOPTER 0x00071f80
+// GLOBAL: COPTER_D 0x00071f80
 // cars

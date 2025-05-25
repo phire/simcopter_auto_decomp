@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:000a9800-000aa528 Module: 7, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x004aa800
+// FUNCTION: COPTER_D 0x004aa800
 void CRLECompressedImage::CRLECompressedImage(long) {
 // LINE 47:
 	asm( 
@@ -280,7 +280,7 @@ void CRLECompressedImage::CRLECompressedImage(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004aabb7
+// FUNCTION: COPTER_D 0x004aabb7
 void CRLECompressedImage::CRLECompressedImage(const class CFlatImage*, long, long, long, long, int32_t) {
 // LINE 97:
 	asm( 
@@ -308,7 +308,7 @@ void CRLECompressedImage::CRLECompressedImage(const class CFlatImage*, long, lon
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004aabe5
+// FUNCTION: COPTER_D 0x004aabe5
 void CRLECompressedImage::~CRLECompressedImage() {
 // LINE 110:
 	asm( 
@@ -370,7 +370,7 @@ void CRLECompressedImage::~CRLECompressedImage() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004aac7a
+// FUNCTION: COPTER_D 0x004aac7a
 unsigned long CRLECompressedImage::Lock() {
 // LINE 121:
 	asm( 
@@ -459,7 +459,7 @@ unsigned long CRLECompressedImage::Lock() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004aad3a
+// FUNCTION: COPTER_D 0x004aad3a
 unsigned long CRLECompressedImage::Unlock() {
 // LINE 135:
 	asm( 
@@ -549,7 +549,7 @@ unsigned long CRLECompressedImage::Unlock() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004aae02
+// FUNCTION: COPTER_D 0x004aae02
 unsigned long CRLECompressedImage::Compose(class IFlatImage*, long, long, long, long, long, long) {
 // LINE 156:
 	asm( 
@@ -843,7 +843,7 @@ unsigned long CRLECompressedImage::Compose(class IFlatImage*, long, long, long, 
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ab063
+// FUNCTION: COPTER_D 0x004ab063
 void ConvertCompressedByteOrdering() {
 // LINE 232:
 	asm( 
@@ -864,7 +864,7 @@ void ConvertCompressedByteOrdering() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ab073
+// FUNCTION: COPTER_D 0x004ab073
 void RLEDecompressUnclippedX() {
 // LINE 322:
 	asm( 
@@ -1123,7 +1123,7 @@ void RLEDecompressUnclippedX() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ab1f7
+// FUNCTION: COPTER_D 0x004ab1f7
 void RLEDecompressClippedX() {
 // LINE 404:
 	asm( 
@@ -1629,5 +1629,5 @@ void RLEDecompressClippedX() {
 
 
 // Contribution: 3:000039d4-00003b9d Module: 7, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x000039d4
+// GLOBAL: COPTER_D 0x000039d4
 // CRLECompressedImage::RLEGraphicsPool

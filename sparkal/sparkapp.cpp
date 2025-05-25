@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:00025fc0-00026507 Module: 69, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00426fc0
+// FUNCTION: COPTER_D 0x00426fc0
 void CSparkalApp::CSparkalApp() {
 // LINE 14:
 	asm( 
@@ -112,7 +112,7 @@ void CSparkalApp::CSparkalApp() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004270e1
+// FUNCTION: COPTER_D 0x004270e1
 void CSparkalApp::~CSparkalApp() {
 // LINE 45:
 	asm( 
@@ -177,7 +177,7 @@ void CSparkalApp::~CSparkalApp() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004271a3
+// FUNCTION: COPTER_D 0x004271a3
 int32_t CSparkalApp::DecideRuntimePlatform() {
 // LINE 61:
 	asm( 
@@ -281,7 +281,7 @@ int32_t CSparkalApp::DecideRuntimePlatform() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00427257
+// FUNCTION: COPTER_D 0x00427257
 class CSparkalWindow* CSparkalApp::NewWindow(unsigned long, unsigned long, unsigned long, const struct SparkalColor*, char *) {
 // LINE 96:
 	asm( 
@@ -336,7 +336,7 @@ class CSparkalWindow* CSparkalApp::NewWindow(unsigned long, unsigned long, unsig
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004272be
+// FUNCTION: COPTER_D 0x004272be
 class IFlatImage* CSparkalApp::NewImage(char *) {
 // LINE 116:
 	asm( 
@@ -419,7 +419,7 @@ class IFlatImage* CSparkalApp::NewImage(char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00427368
+// FUNCTION: COPTER_D 0x00427368
 class IFlatImage* CSparkalApp::NewImage(long, long, const const struct SparkalColor*) {
 // LINE 141:
 	asm( 
@@ -570,7 +570,7 @@ class IFlatImage* CSparkalApp::NewImage(long, long, const const struct SparkalCo
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004274c0
+// FUNCTION: COPTER_D 0x004274c0
 unsigned long CSparkalApp::PrepareGame() {
 // LINE 174:
 	asm( 
@@ -597,7 +597,7 @@ unsigned long CSparkalApp::PrepareGame() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004274d8
+// FUNCTION: COPTER_D 0x004274d8
 unsigned long CSparkalApp::TickGame() {
 // LINE 179:
 	asm( 
@@ -624,7 +624,7 @@ unsigned long CSparkalApp::TickGame() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004274f0
+// FUNCTION: COPTER_D 0x004274f0
 unsigned long CSparkalApp::FinishGame() {
 // LINE 184:
 	asm( 
@@ -654,13 +654,13 @@ unsigned long CSparkalApp::FinishGame() {
 
 
 // Contribution: 1:00026510-00026548 Module: 69, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x00427510
+// FUNCTION: COPTER_D 0x00427510
 // CSparkalApp::`scalar deleting destructor'
 
 
 
 // Contribution: 2:00000428-0000043b Module: 69, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00000428
+// GLOBAL: COPTER_D 0x00000428
 // ??_7CSparkalApp@@6B@
 
 
@@ -668,14 +668,14 @@ unsigned long CSparkalApp::FinishGame() {
 
 
 // Contribution: 3:00000430-00000442 Module: 69, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00000430
+// GLOBAL: COPTER_D 0x00000430
 // ??_C@_0BD@OKOA@thePointer?5?$CG?$CG?5size?$AA@
 
 
 // Contribution: 3:00000444-00000467 Module: 69, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00000444
+// GLOBAL: COPTER_D 0x00000444
 // ??_C@_0CE@KOME@C?3?2Copter?2source?2sparkal?2memory?4@
-// GLOBAL: SIMCOPTER 0x00000468
+// GLOBAL: COPTER_D 0x00000468
 // ??_C@_09IHHC@?$CIint?$CJPool?$AA@
 
 
@@ -683,5 +683,5 @@ unsigned long CSparkalApp::FinishGame() {
 
 
 // Contribution: 3:00000474-00000483 Module: 69, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00000474
+// GLOBAL: COPTER_D 0x00000474
 // ??_C@_0BA@CGBB@?$CIint?$CJthePointer?$AA@

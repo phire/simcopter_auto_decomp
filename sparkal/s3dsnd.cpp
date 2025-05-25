@@ -5,19 +5,19 @@
 
 
 // Contribution: 1:00040e30-000461ac Module: 52, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00441e30
+// FUNCTION: COPTER_D 0x00441e30
 // $E55
 
-// FUNCTION: SIMCOPTER 0x00441e45
+// FUNCTION: COPTER_D 0x00441e45
 // $E54
 
-// FUNCTION: SIMCOPTER 0x00441e5f
+// FUNCTION: COPTER_D 0x00441e5f
 // $E58
 
-// FUNCTION: SIMCOPTER 0x00441e74
+// FUNCTION: COPTER_D 0x00441e74
 // $E57
 
-// FUNCTION: SIMCOPTER 0x00441ea2
+// FUNCTION: COPTER_D 0x00441ea2
 int32_t SoundChangeNotificationSink::Initialize() {
 // LINE 56:
 	asm( 
@@ -60,7 +60,7 @@ int32_t SoundChangeNotificationSink::Initialize() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00441ee5
+// FUNCTION: COPTER_D 0x00441ee5
 void SoundChangeNotificationSink::DoNotificationChange(long, class PreferenceManager*) {
 // LINE 78:
 	asm( 
@@ -159,7 +159,7 @@ void SoundChangeNotificationSink::DoNotificationChange(long, class PreferenceMan
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00441fb5
+// FUNCTION: COPTER_D 0x00441fb5
 int32_t S3DSInit() {
 // LINE 124:
 	asm( 
@@ -205,7 +205,7 @@ int32_t S3DSInit() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00442002
+// FUNCTION: COPTER_D 0x00442002
 int32_t S3LoadSounds() {
 // LINE 146:
 	asm( 
@@ -4825,7 +4825,7 @@ int32_t S3LoadSounds() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00446a6b
+// FUNCTION: COPTER_D 0x00446a6b
 void S3DSSetFile() {
 // LINE 466:
 	asm( 
@@ -4980,7 +4980,7 @@ void S3DSSetFile() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00446cc2
+// FUNCTION: COPTER_D 0x00446cc2
 int32_t S3DSPlay() {
 // LINE 491:
 	asm( 
@@ -5151,7 +5151,7 @@ int32_t S3DSPlay() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00446e04
+// FUNCTION: COPTER_D 0x00446e04
 void S3DSStopPlay() {
 // LINE 547:
 	asm( 
@@ -5179,7 +5179,7 @@ void S3DSStopPlay() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00446e22
+// FUNCTION: COPTER_D 0x00446e22
 void S3DSStopAllSounds() {
 // LINE 564:
 	asm( 
@@ -5205,7 +5205,7 @@ void S3DSStopAllSounds() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00446e3c
+// FUNCTION: COPTER_D 0x00446e3c
 void S3SoundAdjFreq() {
 // LINE 584:
 	asm( 
@@ -5252,7 +5252,7 @@ void S3SoundAdjFreq() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00446e82
+// FUNCTION: COPTER_D 0x00446e82
 void S3SoundAdjVol() {
 // LINE 607:
 	asm( 
@@ -5317,7 +5317,7 @@ void S3SoundAdjVol() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00446f02
+// FUNCTION: COPTER_D 0x00446f02
 int32_t S3SoundIsPlaying() {
 // LINE 633:
 	asm( 
@@ -5358,7 +5358,7 @@ int32_t S3SoundIsPlaying() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00446f43
+// FUNCTION: COPTER_D 0x00446f43
 void S3SoundSetPosition() {
 // LINE 674:
 	asm( 
@@ -5545,7 +5545,7 @@ void S3SoundSetPosition() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004470fa
+// FUNCTION: COPTER_D 0x004470fa
 void S3SoundAddToQueue() {
 // LINE 736:
 	asm( 
@@ -5630,9 +5630,9 @@ void S3SoundAddToQueue() {
 
 
 // Contribution: 2:000005c0-000005c7 Module: 52, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x000005c0
+// GLOBAL: COPTER_D 0x000005c0
 // ??_7SoundChangeNotificationSink@@6B@
-// GLOBAL: SIMCOPTER 0x000005c8
+// GLOBAL: COPTER_D 0x000005c8
 // ??_7NotificationSink@@6B@
 
 
@@ -5643,9 +5643,9 @@ void S3SoundAddToQueue() {
 
 
 // Contribution: 3:00000034-0000003b Module: 52, 4 byte alignment, initialized_data, read, write, 
-// LOCAL: SIMCOPTER 0x00000034
+// LOCAL: COPTER_D 0x00000034
 // $S56
-// LOCAL: SIMCOPTER 0x00000038
+// LOCAL: COPTER_D 0x00000038
 // $S59
 
 
@@ -5653,9 +5653,9 @@ void S3SoundAddToQueue() {
 
 
 // Contribution: 3:0002c628-0002c7f3 Module: 52, 8 byte alignment, uninitialized_data, read, write, 
-// LOCAL: SIMCOPTER 0x0002c628
+// LOCAL: COPTER_D 0x0002c628
 // lOriginalSoundVolumes
-// GLOBAL: SIMCOPTER 0x0002c7ec
+// GLOBAL: COPTER_D 0x0002c7ec
 // gSoundChangeNotificationSink
-// GLOBAL: SIMCOPTER 0x0002c7f0
+// GLOBAL: COPTER_D 0x0002c7f0
 // glMasterVolume

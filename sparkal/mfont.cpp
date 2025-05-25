@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:0009e780-0009f398 Module: 11, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x0049f780
+// FUNCTION: COPTER_D 0x0049f780
 void MFont::MFont() {
 // LINE 28:
 	asm( 
@@ -101,7 +101,7 @@ void MFont::MFont() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049f89b
+// FUNCTION: COPTER_D 0x0049f89b
 void MFont::MFont(const class MFont&) {
 // LINE 40:
 	asm( 
@@ -160,7 +160,7 @@ void MFont::MFont(const class MFont&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049f937
+// FUNCTION: COPTER_D 0x0049f937
 void MFont::MFont(char *, unsigned long, unsigned long, unsigned long, int32_t) {
 // LINE 54:
 	asm( 
@@ -410,7 +410,7 @@ void MFont::MFont(char *, unsigned long, unsigned long, unsigned long, int32_t) 
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049fc4e
+// FUNCTION: COPTER_D 0x0049fc4e
 void MFont::~MFont() {
 // LINE 72:
 	asm( 
@@ -492,7 +492,7 @@ void MFont::~MFont() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049fd33
+// FUNCTION: COPTER_D 0x0049fd33
 class MFont& MFont::operator=(const class MFont&) {
 // LINE 81:
 	asm( 
@@ -701,7 +701,7 @@ class MFont& MFont::operator=(const class MFont&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049ff74
+// FUNCTION: COPTER_D 0x0049ff74
 int32_t MFont::CreateFontA() {
 // LINE 125:
 	asm( 
@@ -909,7 +909,7 @@ int32_t MFont::CreateFontA() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a015d
+// FUNCTION: COPTER_D 0x004a015d
 void MFont::SetFontCharacteristics(long, long, long) {
 // LINE 163:
 	asm( 
@@ -1000,7 +1000,7 @@ void MFont::SetFontCharacteristics(long, long, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a01e9
+// FUNCTION: COPTER_D 0x004a01e9
 void MFont::DestroyFont() {
 // LINE 190:
 	asm( 
@@ -1041,7 +1041,7 @@ void MFont::DestroyFont() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a0223
+// FUNCTION: COPTER_D 0x004a0223
 int32_t MFont::IsFontAvailable(char *, unsigned long, unsigned long, unsigned long) {
 // LINE 208:
 	asm( 
@@ -1066,7 +1066,7 @@ int32_t MFont::IsFontAvailable(char *, unsigned long, unsigned long, unsigned lo
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a0235
+// FUNCTION: COPTER_D 0x004a0235
 int32_t MFont::LoadFont(char *) {
 // LINE 222:
 	asm( 
@@ -1112,7 +1112,7 @@ int32_t MFont::LoadFont(char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a0273
+// FUNCTION: COPTER_D 0x004a0273
 int32_t MFont::UnloadFont(char *) {
 // LINE 239:
 	asm( 
@@ -1158,7 +1158,7 @@ int32_t MFont::UnloadFont(char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a02b1
+// FUNCTION: COPTER_D 0x004a02b1
 int32_t MFont::GetTextDimensions(char *, long&, long&) {
 // LINE 259:
 	asm( 
@@ -1303,12 +1303,12 @@ int32_t MFont::GetTextDimensions(char *, long&, long&) {
 
 
 // Contribution: 2:00002640-00002647 Module: 11, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00002640
+// GLOBAL: COPTER_D 0x00002640
 // ??_7MFont@@6B@
 
 
 // Contribution: 3:0000394c-0000395d Module: 11, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x0000394c
+// GLOBAL: COPTER_D 0x0000394c
 // SZ_DEFAULT_TEST_STRING
-// GLOBAL: SIMCOPTER 0x00003950
+// GLOBAL: COPTER_D 0x00003950
 // SZ_DEFAULT_FACE_NAME

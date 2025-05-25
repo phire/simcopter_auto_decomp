@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:000314e0-00032110 Module: 60, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x004324e0
+// FUNCTION: COPTER_D 0x004324e0
 public: virtual int __thiscall CGameApp::CanWeSwitchToWindowedMode(void) {
 // LINE 28:
 	asm( 
@@ -43,7 +43,7 @@ public: virtual int __thiscall CGameApp::CanWeSwitchToWindowedMode(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00432538
+// FUNCTION: COPTER_D 0x00432538
 public: virtual int __thiscall CGameApp::CanWeSwitchToFullScreenMode(void) {
 // LINE 39:
 	asm( 
@@ -70,7 +70,7 @@ public: virtual int __thiscall CGameApp::CanWeSwitchToFullScreenMode(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00432553
+// FUNCTION: COPTER_D 0x00432553
 public: virtual int __thiscall CGameApp::SwitchToWindowedMode(void) {
 // LINE 57:
 	asm( 
@@ -277,7 +277,7 @@ public: virtual int __thiscall CGameApp::SwitchToWindowedMode(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004326cb
+// FUNCTION: COPTER_D 0x004326cb
 public: virtual int __thiscall CGameApp::SwitchToFullScreenMode(void) {
 // LINE 112:
 	asm( 
@@ -484,7 +484,7 @@ public: virtual int __thiscall CGameApp::SwitchToFullScreenMode(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00432843
+// FUNCTION: COPTER_D 0x00432843
 public: virtual int __thiscall CGameApp::ConvertMonitorToWindowedMode(void) {
 // LINE 164:
 	asm( 
@@ -520,7 +520,7 @@ public: virtual int __thiscall CGameApp::ConvertMonitorToWindowedMode(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00432871
+// FUNCTION: COPTER_D 0x00432871
 public: virtual int __thiscall CGameApp::ConvertMonitorToFullScreenMode(void) {
 // LINE 179:
 	asm( 
@@ -565,7 +565,7 @@ public: virtual int __thiscall CGameApp::ConvertMonitorToFullScreenMode(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004328bd
+// FUNCTION: COPTER_D 0x004328bd
 public: virtual int __thiscall CGameApp::ToggleScreenMode(void) {
 // LINE 198:
 	asm( 
@@ -613,7 +613,7 @@ public: virtual int __thiscall CGameApp::ToggleScreenMode(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00432900
+// FUNCTION: COPTER_D 0x00432900
 public: virtual int __thiscall CGameApp::CreateDisplaySurfaces(void) {
 // LINE 210:
 	asm( 
@@ -807,7 +807,7 @@ public: virtual int __thiscall CGameApp::CreateDisplaySurfaces(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00432aee
+// FUNCTION: COPTER_D 0x00432aee
 public: virtual int __thiscall CGameApp::DestroyDisplaySurfaces(void) {
 // LINE 246:
 	asm( 
@@ -915,7 +915,7 @@ public: virtual int __thiscall CGameApp::DestroyDisplaySurfaces(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00432bcc
+// FUNCTION: COPTER_D 0x00432bcc
 public: virtual int __thiscall CGameApp::CreateModeSurfaces(void) {
 // LINE 278:
 	asm( 
@@ -1038,7 +1038,7 @@ public: virtual int __thiscall CGameApp::CreateModeSurfaces(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00432ce2
+// FUNCTION: COPTER_D 0x00432ce2
 public: virtual int __thiscall CGameApp::DestroyModeSurfaces(void) {
 // LINE 319:
 	asm( 
@@ -1179,7 +1179,7 @@ public: virtual int __thiscall CGameApp::DestroyModeSurfaces(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00432e37
+// FUNCTION: COPTER_D 0x00432e37
 public: void __thiscall CGameApp::PaletteInitialize(void) {
 // LINE 359:
 	asm( 
@@ -1425,7 +1425,7 @@ public: void __thiscall CGameApp::PaletteInitialize(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004330ea
+// FUNCTION: COPTER_D 0x004330ea
 public: void __thiscall CGameApp::PaletteUninitialize(void) {
 // LINE 396:
 	asm( 

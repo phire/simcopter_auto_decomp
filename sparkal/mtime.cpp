@@ -5,13 +5,13 @@
 
 
 // Contribution: 1:0003b710-0003c389 Module: 58, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x0043c710
+// FUNCTION: COPTER_D 0x0043c710
 // $E14
 
-// FUNCTION: SIMCOPTER 0x0043c725
+// FUNCTION: COPTER_D 0x0043c725
 // $E13
 
-// FUNCTION: SIMCOPTER 0x0043c73f
+// FUNCTION: COPTER_D 0x0043c73f
 void MDate::MDate(const class MTime&) {
 // LINE 55:
 	asm( 
@@ -59,19 +59,19 @@ void MDate::MDate(const class MTime&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043c7b3
+// FUNCTION: COPTER_D 0x0043c7b3
 // $E17
 
-// FUNCTION: SIMCOPTER 0x0043c7c8
+// FUNCTION: COPTER_D 0x0043c7c8
 // $E16
 
-// FUNCTION: SIMCOPTER 0x0043c7e6
+// FUNCTION: COPTER_D 0x0043c7e6
 // $E20
 
-// FUNCTION: SIMCOPTER 0x0043c7fb
+// FUNCTION: COPTER_D 0x0043c7fb
 // $E19
 
-// FUNCTION: SIMCOPTER 0x0043c81c
+// FUNCTION: COPTER_D 0x0043c81c
 protected: static int __cdecl MTime::AssertMDate(class MDate const &) {
 // LINE 76:
 	asm( 
@@ -109,7 +109,7 @@ protected: static int __cdecl MTime::AssertMDate(class MDate const &) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043c867
+// FUNCTION: COPTER_D 0x0043c867
 protected: static class MTime __cdecl MTime::BuildLocal(class MDate const &, unsigned int) {
 // LINE 88:
 	asm( 
@@ -158,7 +158,7 @@ protected: static class MTime __cdecl MTime::BuildLocal(class MDate const &, uns
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043c8ce
+// FUNCTION: COPTER_D 0x0043c8ce
 protected: unsigned long __thiscall MTime::LocalSecs(void) const {
 // LINE 101:
 	asm( 
@@ -207,7 +207,7 @@ protected: unsigned long __thiscall MTime::LocalSecs(void) const {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043c91e
+// FUNCTION: COPTER_D 0x0043c91e
 public: static class MTime __cdecl MTime::BeginDST(unsigned int) {
 // LINE 119:
 	asm( 
@@ -336,7 +336,7 @@ public: static class MTime __cdecl MTime::BeginDST(unsigned int) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043ca36
+// FUNCTION: COPTER_D 0x0043ca36
 public: static class MTime __cdecl MTime::EndDST(unsigned int) {
 // LINE 147:
 	asm( 
@@ -382,7 +382,7 @@ public: static class MTime __cdecl MTime::EndDST(unsigned int) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043ca79
+// FUNCTION: COPTER_D 0x0043ca79
 public: __thiscall MTime::MTime(void) {
 // LINE 163:
 	asm( 
@@ -459,7 +459,7 @@ public: __thiscall MTime::MTime(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043cb02
+// FUNCTION: COPTER_D 0x0043cb02
 public: __thiscall MTime::MTime(unsigned int, unsigned int, unsigned int) {
 // LINE 190:
 	asm( 
@@ -502,7 +502,7 @@ public: __thiscall MTime::MTime(unsigned int, unsigned int, unsigned int) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043cb4b
+// FUNCTION: COPTER_D 0x0043cb4b
 public: __thiscall MTime::MTime(class MDate const &, unsigned int, unsigned int, unsigned int) {
 // LINE 212:
 	asm( 
@@ -631,7 +631,7 @@ public: __thiscall MTime::MTime(class MDate const &, unsigned int, unsigned int,
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043cc5b
+// FUNCTION: COPTER_D 0x0043cc5b
 public: int __thiscall MTime::SetShouldPrinMDate(int) {
 // LINE 241:
 	asm( 
@@ -670,7 +670,7 @@ public: int __thiscall MTime::SetShouldPrinMDate(int) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043cc88
+// FUNCTION: COPTER_D 0x0043cc88
 public: int __thiscall MTime::CompareTo(class MTime const &) const {
 // LINE 253:
 	asm( 
@@ -713,7 +713,7 @@ public: int __thiscall MTime::CompareTo(class MTime const &) const {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043ccd7
+// FUNCTION: COPTER_D 0x0043ccd7
 public: unsigned int __thiscall MTime::Hash(void) const {
 // LINE 264:
 	asm( 
@@ -741,7 +741,7 @@ public: unsigned int __thiscall MTime::Hash(void) const {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043ccf2
+// FUNCTION: COPTER_D 0x0043ccf2
 public: unsigned int __thiscall MTime::Hour(void) const {
 // LINE 277:
 	asm( 
@@ -776,7 +776,7 @@ public: unsigned int __thiscall MTime::Hour(void) const {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043cd24
+// FUNCTION: COPTER_D 0x0043cd24
 public: unsigned int __thiscall MTime::HourGMT(void) const {
 // LINE 290:
 	asm( 
@@ -811,7 +811,7 @@ public: unsigned int __thiscall MTime::HourGMT(void) const {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043cd53
+// FUNCTION: COPTER_D 0x0043cd53
 public: int __thiscall MTime::IsDST(void) const {
 // LINE 304:
 	asm( 
@@ -904,7 +904,7 @@ public: int __thiscall MTime::IsDST(void) const {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043ce2a
+// FUNCTION: COPTER_D 0x0043ce2a
 public: class MTime __thiscall MTime::MaxTime(class MTime const &) const {
 // LINE 325:
 	asm( 
@@ -965,7 +965,7 @@ public: class MTime __thiscall MTime::MaxTime(class MTime const &) const {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043ce9b
+// FUNCTION: COPTER_D 0x0043ce9b
 public: class MTime __thiscall MTime::MinTime(class MTime const &) const {
 // LINE 341:
 	asm( 
@@ -1026,7 +1026,7 @@ public: class MTime __thiscall MTime::MinTime(class MTime const &) const {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043cf0c
+// FUNCTION: COPTER_D 0x0043cf0c
 public: unsigned int __thiscall MTime::Minute(void) const {
 // LINE 357:
 	asm( 
@@ -1065,7 +1065,7 @@ public: unsigned int __thiscall MTime::Minute(void) const {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043cf49
+// FUNCTION: COPTER_D 0x0043cf49
 public: unsigned int __thiscall MTime::MinuteGMT(void) const {
 // LINE 370:
 	asm( 
@@ -1104,7 +1104,7 @@ public: unsigned int __thiscall MTime::MinuteGMT(void) const {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043cf83
+// FUNCTION: COPTER_D 0x0043cf83
 public: unsigned int __thiscall MTime::Second(void) const {
 // LINE 382:
 	asm( 
@@ -1144,7 +1144,7 @@ public: unsigned int __thiscall MTime::Second(void) const {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043cfbf
+// FUNCTION: COPTER_D 0x0043cfbf
 public: char * __thiscall MTime::PrintString(char *) {
 // LINE 396:
 	asm( 
@@ -1203,7 +1203,7 @@ public: char * __thiscall MTime::PrintString(char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043d02b
+// FUNCTION: COPTER_D 0x0043d02b
 class ostream& operator<<() {
 // LINE 407:
 	asm( 
@@ -1433,9 +1433,9 @@ class ostream& operator<<() {
 
 
 // Contribution: 3:00000028-00000033 Module: 58, 4 byte alignment, initialized_data, read, write, 
-// LOCAL: SIMCOPTER 0x0000002c
+// LOCAL: COPTER_D 0x0000002c
 // $S18
-// LOCAL: SIMCOPTER 0x00000030
+// LOCAL: COPTER_D 0x00000030
 // $S21
 
 
@@ -1443,7 +1443,7 @@ class ostream& operator<<() {
 
 
 // Contribution: 3:0002c600-0002c623 Module: 58, 8 byte alignment, uninitialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x0002c608
+// GLOBAL: COPTER_D 0x0002c608
 // MTime::RefDate
-// GLOBAL: SIMCOPTER 0x0002c618
+// GLOBAL: COPTER_D 0x0002c618
 // MTime::MaxDate

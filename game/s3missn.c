@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:000f9090-000fd784 Module: 173, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x004fa090
+// FUNCTION: COPTER_D 0x004fa090
 void S3MissionReset() {
 // LINE 134:
 	asm( 
@@ -111,7 +111,7 @@ void S3MissionReset() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004fa175
+// FUNCTION: COPTER_D 0x004fa175
 void ConvertCitySettingsToSteppedPercentages() {
 // LINE 177:
 	asm( 
@@ -341,7 +341,7 @@ void ConvertCitySettingsToSteppedPercentages() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004fa33b
+// FUNCTION: COPTER_D 0x004fa33b
 void S3MissionGenerator() {
 // LINE 237:
 	asm( 
@@ -817,7 +817,7 @@ void S3MissionGenerator() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004fa71d
+// FUNCTION: COPTER_D 0x004fa71d
 void S3MissionDriver() {
 // LINE 421:
 	asm( 
@@ -1381,7 +1381,7 @@ void S3MissionDriver() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004fac6d
+// FUNCTION: COPTER_D 0x004fac6d
 long S3MissionStart() {
 // LINE 654:
 	asm( 
@@ -3051,7 +3051,7 @@ long S3MissionStart() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004fbb76
+// FUNCTION: COPTER_D 0x004fbb76
 struct Point2d* S3MissionGetMapLoc() {
 // LINE 1073:
 	asm( 
@@ -3107,7 +3107,7 @@ struct Point2d* S3MissionGetMapLoc() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004fbbca
+// FUNCTION: COPTER_D 0x004fbbca
 struct Point2d* S3MissionGetDestMapLoc() {
 // LINE 1100:
 	asm( 
@@ -3174,7 +3174,7 @@ struct Point2d* S3MissionGetDestMapLoc() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004fbc32
+// FUNCTION: COPTER_D 0x004fbc32
 struct Point2d* S3MissionGetPickupLoc() {
 // LINE 1131:
 	asm( 
@@ -3241,7 +3241,7 @@ struct Point2d* S3MissionGetPickupLoc() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004fbc9a
+// FUNCTION: COPTER_D 0x004fbc9a
 struct Point2d* S3MissionGetCurrMapLoc() {
 // LINE 1161:
 	asm( 
@@ -3277,7 +3277,7 @@ struct Point2d* S3MissionGetCurrMapLoc() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004fbcc6
+// FUNCTION: COPTER_D 0x004fbcc6
 struct Point2d* S3MissionGetCurrDestMapLoc() {
 // LINE 1178:
 	asm( 
@@ -3324,7 +3324,7 @@ struct Point2d* S3MissionGetCurrDestMapLoc() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004fbd08
+// FUNCTION: COPTER_D 0x004fbd08
 struct Point2d* S3MissionGetCurrPickupLoc() {
 // LINE 1198:
 	asm( 
@@ -3371,7 +3371,7 @@ struct Point2d* S3MissionGetCurrPickupLoc() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004fbd4a
+// FUNCTION: COPTER_D 0x004fbd4a
 void S3MissionUpdate() {
 // LINE 1216:
 	asm( 
@@ -4029,7 +4029,7 @@ void S3MissionUpdate() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004fc218
+// FUNCTION: COPTER_D 0x004fc218
 void S3MissionEnd() {
 // LINE 1396:
 	asm( 
@@ -4131,7 +4131,7 @@ void S3MissionEnd() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004fc2db
+// FUNCTION: COPTER_D 0x004fc2db
 struct MISSION_DATA* S3MissionGetByID() {
 // LINE 1435:
 	asm( 
@@ -4180,7 +4180,7 @@ struct MISSION_DATA* S3MissionGetByID() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004fc323
+// FUNCTION: COPTER_D 0x004fc323
 long S3MissionGetByType() {
 // LINE 1446:
 	asm( 
@@ -4244,7 +4244,7 @@ long S3MissionGetByType() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004fc39d
+// FUNCTION: COPTER_D 0x004fc39d
 struct MISSION_DATA* S3MissionGetCurr() {
 // LINE 1467:
 	asm( 
@@ -4269,7 +4269,7 @@ struct MISSION_DATA* S3MissionGetCurr() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004fc3b2
+// FUNCTION: COPTER_D 0x004fc3b2
 void S3MissionGenerate() {
 // LINE 1479:
 	asm( 
@@ -4817,7 +4817,7 @@ void S3MissionGenerate() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004fc89b
+// FUNCTION: COPTER_D 0x004fc89b
 void S3MissionSetCurrNext() {
 // LINE 1599:
 	asm( 
@@ -4948,7 +4948,7 @@ void S3MissionSetCurrNext() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004fc9ac
+// FUNCTION: COPTER_D 0x004fc9ac
 void S3MissionSetCurrPrev() {
 // LINE 1634:
 	asm( 
@@ -5079,7 +5079,7 @@ void S3MissionSetCurrPrev() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004fcabd
+// FUNCTION: COPTER_D 0x004fcabd
 int32_t S3MissionIsType() {
 // LINE 1672:
 	asm( 
@@ -5157,7 +5157,7 @@ int32_t S3MissionIsType() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004fcb3a
+// FUNCTION: COPTER_D 0x004fcb3a
 void S3MissionDebugString() {
 // LINE 1802:
 	asm( 
@@ -5255,7 +5255,7 @@ void S3MissionDebugString() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004fcbea
+// FUNCTION: COPTER_D 0x004fcbea
 void S3MissionCancel() {
 // LINE 1843:
 	asm( 
@@ -5384,7 +5384,7 @@ void S3MissionCancel() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004fccd0
+// FUNCTION: COPTER_D 0x004fccd0
 long S3MissionStartDirect() {
 // LINE 1893:
 	asm( 
@@ -5823,7 +5823,7 @@ long S3MissionStartDirect() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004fd0e6
+// FUNCTION: COPTER_D 0x004fd0e6
 void S3MissionScoreUpdate() {
 // LINE 2012:
 	asm( 
@@ -6653,7 +6653,7 @@ void S3MissionScoreUpdate() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004fd755
+// FUNCTION: COPTER_D 0x004fd755
 void S3MissionScoreEnd() {
 // LINE 2225:
 	asm( 
@@ -7216,7 +7216,7 @@ void S3MissionScoreEnd() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004fdc22
+// FUNCTION: COPTER_D 0x004fdc22
 void S3MissionTweakInit() {
 // LINE 2414:
 	asm( 
@@ -7236,7 +7236,7 @@ void S3MissionTweakInit() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004fdc2d
+// FUNCTION: COPTER_D 0x004fdc2d
 long S3MissionGetIDByKey() {
 // LINE 2436:
 	asm( 
@@ -7317,7 +7317,7 @@ long S3MissionGetIDByKey() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004fdcbb
+// FUNCTION: COPTER_D 0x004fdcbb
 struct MISSION_DATA* S3MissionGetDataByIndex() {
 // LINE 2466:
 	asm( 
@@ -7359,7 +7359,7 @@ struct MISSION_DATA* S3MissionGetDataByIndex() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004fdcfb
+// FUNCTION: COPTER_D 0x004fdcfb
 int32_t S3MissionMIFFLoad() {
 // LINE 2487:
 	asm( 
@@ -7452,7 +7452,7 @@ int32_t S3MissionMIFFLoad() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004fddad
+// FUNCTION: COPTER_D 0x004fddad
 int32_t S3MissionMIFFSave() {
 // LINE 2517:
 	asm( 
@@ -7500,7 +7500,7 @@ int32_t S3MissionMIFFSave() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004fddf5
+// FUNCTION: COPTER_D 0x004fddf5
 void S3MissionDispatch() {
 // LINE 2552:
 	asm( 
@@ -8401,7 +8401,7 @@ void S3MissionDispatch() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004fe5fe
+// FUNCTION: COPTER_D 0x004fe5fe
 long S3MissionGetSoundQuadrant() {
 // LINE 2785:
 	asm( 
@@ -8566,143 +8566,143 @@ long S3MissionGetSoundQuadrant() {
 
 
 // Contribution: 2:00003898-00003aaf Module: 173, 8 byte alignment, initialized_data, read, 
-// LOCAL: SIMCOPTER 0x00003898
+// LOCAL: COPTER_D 0x00003898
 // TurnTable3
-// LOCAL: SIMCOPTER 0x00003918
+// LOCAL: COPTER_D 0x00003918
 // TurnTable2
-// LOCAL: SIMCOPTER 0x00003958
+// LOCAL: COPTER_D 0x00003958
 // IndexToType
-// LOCAL: SIMCOPTER 0x00003968
+// LOCAL: COPTER_D 0x00003968
 // TypeToIndex2
-// LOCAL: SIMCOPTER 0x000039a8
+// LOCAL: COPTER_D 0x000039a8
 // TILUT
-// LOCAL: SIMCOPTER 0x000039e8
+// LOCAL: COPTER_D 0x000039e8
 // OT
-// LOCAL: SIMCOPTER 0x00003a28
+// LOCAL: COPTER_D 0x00003a28
 // RRT
-// LOCAL: SIMCOPTER 0x00003a68
+// LOCAL: COPTER_D 0x00003a68
 // LRT
-// LOCAL: SIMCOPTER 0x00003ab0
+// LOCAL: COPTER_D 0x00003ab0
 // TurnTable3
 
 
 // Contribution: 3:0001de18-0001e1fa Module: 173, 8 byte alignment, initialized_data, read, write, 
-// LOCAL: SIMCOPTER 0x0001de18
+// LOCAL: COPTER_D 0x0001de18
 // S_riotcheckctr
-// LOCAL: SIMCOPTER 0x0001de1c
+// LOCAL: COPTER_D 0x0001de1c
 // S_mission_interval_easy
-// LOCAL: SIMCOPTER 0x0001de20
+// LOCAL: COPTER_D 0x0001de20
 // S_max_missions_easy
-// LOCAL: SIMCOPTER 0x0001de24
+// LOCAL: COPTER_D 0x0001de24
 // S_mission_interval
-// LOCAL: SIMCOPTER 0x0001de28
+// LOCAL: COPTER_D 0x0001de28
 // S_mission_interval_adj
-// LOCAL: SIMCOPTER 0x0001de2c
+// LOCAL: COPTER_D 0x0001de2c
 // S_mission_timer
-// LOCAL: SIMCOPTER 0x0001de30
+// LOCAL: COPTER_D 0x0001de30
 // S_max_missions
-// LOCAL: SIMCOPTER 0x0001de34
+// LOCAL: COPTER_D 0x0001de34
 // SpeederMissionActive
-// GLOBAL: SIMCOPTER 0x0001de38
+// GLOBAL: COPTER_D 0x0001de38
 // S_money_mission_riot
-// GLOBAL: SIMCOPTER 0x0001de3c
+// GLOBAL: COPTER_D 0x0001de3c
 // S_pts_mission_riot
-// GLOBAL: SIMCOPTER 0x0001de40
+// GLOBAL: COPTER_D 0x0001de40
 // S_money_mission_riot_penalty
-// GLOBAL: SIMCOPTER 0x0001de44
+// GLOBAL: COPTER_D 0x0001de44
 // S_pts_mission_riot_penalty
-// GLOBAL: SIMCOPTER 0x0001de48
+// GLOBAL: COPTER_D 0x0001de48
 // S_mission_riot_time
-// GLOBAL: SIMCOPTER 0x0001de4c
+// GLOBAL: COPTER_D 0x0001de4c
 // S_money_mission_rescue
-// GLOBAL: SIMCOPTER 0x0001de50
+// GLOBAL: COPTER_D 0x0001de50
 // S_pts_mission_rescue
-// GLOBAL: SIMCOPTER 0x0001de54
+// GLOBAL: COPTER_D 0x0001de54
 // S_money_mission_medevac
-// GLOBAL: SIMCOPTER 0x0001de58
+// GLOBAL: COPTER_D 0x0001de58
 // S_pts_mission_medevac
-// GLOBAL: SIMCOPTER 0x0001de5c
+// GLOBAL: COPTER_D 0x0001de5c
 // S_money_mission_transport
-// GLOBAL: SIMCOPTER 0x0001de60
+// GLOBAL: COPTER_D 0x0001de60
 // S_pts_mission_transport
-// GLOBAL: SIMCOPTER 0x0001de64
+// GLOBAL: COPTER_D 0x0001de64
 // S_money_mission_fire
-// GLOBAL: SIMCOPTER 0x0001de68
+// GLOBAL: COPTER_D 0x0001de68
 // S_pts_mission_fire
-// GLOBAL: SIMCOPTER 0x0001de6c
+// GLOBAL: COPTER_D 0x0001de6c
 // S_money_mission_fire_penalty
-// GLOBAL: SIMCOPTER 0x0001de70
+// GLOBAL: COPTER_D 0x0001de70
 // S_pts_mission_fire_penalty
-// GLOBAL: SIMCOPTER 0x0001de74
+// GLOBAL: COPTER_D 0x0001de74
 // S_money_mission_plane
-// GLOBAL: SIMCOPTER 0x0001de78
+// GLOBAL: COPTER_D 0x0001de78
 // S_pts_mission_plane
-// GLOBAL: SIMCOPTER 0x0001de7c
+// GLOBAL: COPTER_D 0x0001de7c
 // S_money_mission_train
-// GLOBAL: SIMCOPTER 0x0001de80
+// GLOBAL: COPTER_D 0x0001de80
 // S_pts_mission_train
-// GLOBAL: SIMCOPTER 0x0001de84
+// GLOBAL: COPTER_D 0x0001de84
 // S_money_mission_criminal
-// GLOBAL: SIMCOPTER 0x0001de88
+// GLOBAL: COPTER_D 0x0001de88
 // S_pts_mission_criminal
-// GLOBAL: SIMCOPTER 0x0001de8c
+// GLOBAL: COPTER_D 0x0001de8c
 // S_money_mission_speeder
-// GLOBAL: SIMCOPTER 0x0001de90
+// GLOBAL: COPTER_D 0x0001de90
 // S_pts_mission_speeder
-// GLOBAL: SIMCOPTER 0x0001de94
+// GLOBAL: COPTER_D 0x0001de94
 // S_money_mission_jam
-// GLOBAL: SIMCOPTER 0x0001de98
+// GLOBAL: COPTER_D 0x0001de98
 // S_pts_mission_jam
-// GLOBAL: SIMCOPTER 0x0001de9c
+// GLOBAL: COPTER_D 0x0001de9c
 // S_mission_jam_time
-// GLOBAL: SIMCOPTER 0x0001dea0
+// GLOBAL: COPTER_D 0x0001dea0
 // S_money_mission_vehiclefire
-// GLOBAL: SIMCOPTER 0x0001dea4
+// GLOBAL: COPTER_D 0x0001dea4
 // S_pts_mission_vehiclefire
-// GLOBAL: SIMCOPTER 0x0001dea8
+// GLOBAL: COPTER_D 0x0001dea8
 // S_money_mission_debris
-// GLOBAL: SIMCOPTER 0x0001deac
+// GLOBAL: COPTER_D 0x0001deac
 // S_pts_mission_debris
-// GLOBAL: SIMCOPTER 0x0001deb0
+// GLOBAL: COPTER_D 0x0001deb0
 // S_money_mission_ufo
-// GLOBAL: SIMCOPTER 0x0001deb4
+// GLOBAL: COPTER_D 0x0001deb4
 // S_pts_mission_ufo
-// GLOBAL: SIMCOPTER 0x0001deb8
+// GLOBAL: COPTER_D 0x0001deb8
 // S_log
-// GLOBAL: SIMCOPTER 0x0001decc
+// GLOBAL: COPTER_D 0x0001decc
 // S_pts_flame
-// GLOBAL: SIMCOPTER 0x0001ded0
+// GLOBAL: COPTER_D 0x0001ded0
 // S_money_flame
-// GLOBAL: SIMCOPTER 0x0001ded4
+// GLOBAL: COPTER_D 0x0001ded4
 // S_pts_destroyed_building
-// GLOBAL: SIMCOPTER 0x0001ded8
+// GLOBAL: COPTER_D 0x0001ded8
 // S_money_saved_building
-// GLOBAL: SIMCOPTER 0x0001dedc
+// GLOBAL: COPTER_D 0x0001dedc
 // S_pts_new_debris
-// GLOBAL: SIMCOPTER 0x0001dee0
+// GLOBAL: COPTER_D 0x0001dee0
 // S_money_debris_doused
-// GLOBAL: SIMCOPTER 0x0001dee4
+// GLOBAL: COPTER_D 0x0001dee4
 // S_money_person_rescued
-// GLOBAL: SIMCOPTER 0x0001dee8
+// GLOBAL: COPTER_D 0x0001dee8
 // S_money_person_transport
-// GLOBAL: SIMCOPTER 0x0001deec
+// GLOBAL: COPTER_D 0x0001deec
 // S_money_person_medevaced
-// GLOBAL: SIMCOPTER 0x0001def0
+// GLOBAL: COPTER_D 0x0001def0
 // S_money_person_pickup
-// GLOBAL: SIMCOPTER 0x0001def4
+// GLOBAL: COPTER_D 0x0001def4
 // S_money_vehicle_doused
-// GLOBAL: SIMCOPTER 0x0001def8
+// GLOBAL: COPTER_D 0x0001def8
 // S_money_vehicle_unjammed
-// GLOBAL: SIMCOPTER 0x0001defc
+// GLOBAL: COPTER_D 0x0001defc
 // S_pts_vehicle_burned
-// LOCAL: SIMCOPTER 0x0001df00
+// LOCAL: COPTER_D 0x0001df00
 // missionMIFFID
-// GLOBAL: SIMCOPTER 0x0001df08
+// GLOBAL: COPTER_D 0x0001df08
 // S_msg_general
 
 
 // Contribution: 3:000702b8-00071bc7 Module: 173, 8 byte alignment, uninitialized_data, read, write, 
-// LOCAL: SIMCOPTER 0x000702b8
+// LOCAL: COPTER_D 0x000702b8
 // S_mstatics
-// LOCAL: SIMCOPTER 0x00071bc8
+// LOCAL: COPTER_D 0x00071bc8
 // S_dicon_dim

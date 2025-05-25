@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:000670a0-0006a0c9 Module: 42, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x004680a0
+// FUNCTION: COPTER_D 0x004680a0
 void BitmappedFont::BitmappedFont() {
 // LINE 24:
 	asm( 
@@ -116,7 +116,7 @@ void BitmappedFont::BitmappedFont() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046823f
+// FUNCTION: COPTER_D 0x0046823f
 void BitmappedFont::BitmappedFont(class basic_string<char>&, const long) {
 // LINE 37:
 	asm( 
@@ -315,7 +315,7 @@ void BitmappedFont::BitmappedFont(class basic_string<char>&, const long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00468519
+// FUNCTION: COPTER_D 0x00468519
 void BitmappedFont::BitmappedFont(char *, const long) {
 // LINE 49:
 	asm( 
@@ -456,7 +456,7 @@ void BitmappedFont::BitmappedFont(char *, const long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046870c
+// FUNCTION: COPTER_D 0x0046870c
 void BitmappedFont::~BitmappedFont() {
 // LINE 57:
 	asm( 
@@ -643,7 +643,7 @@ void BitmappedFont::~BitmappedFont() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00468976
+// FUNCTION: COPTER_D 0x00468976
 int32_t BitmappedFont::Initialize() {
 // LINE 65:
 	asm( 
@@ -673,7 +673,7 @@ int32_t BitmappedFont::Initialize() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00468997
+// FUNCTION: COPTER_D 0x00468997
 void BitmappedFont::DeInitialize() {
 // LINE 73:
 	asm( 
@@ -703,7 +703,7 @@ void BitmappedFont::DeInitialize() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004689b8
+// FUNCTION: COPTER_D 0x004689b8
 int32_t BitmappedFont::LoadFontInfo() {
 // LINE 82:
 	asm( 
@@ -1442,7 +1442,7 @@ int32_t BitmappedFont::LoadFontInfo() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00469532
+// FUNCTION: COPTER_D 0x00469532
 void BitmappedFont::CalculateCharacterRects() {
 // LINE 138:
 	asm( 
@@ -2047,7 +2047,7 @@ void BitmappedFont::CalculateCharacterRects() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00469d3d
+// FUNCTION: COPTER_D 0x00469d3d
 int32_t BitmappedFont::CreateImage() {
 // LINE 190:
 	asm( 
@@ -2302,7 +2302,7 @@ int32_t BitmappedFont::CreateImage() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046a0f5
+// FUNCTION: COPTER_D 0x0046a0f5
 void BitmappedFont::DestroyImage() {
 // LINE 209:
 	asm( 
@@ -2354,7 +2354,7 @@ void BitmappedFont::DestroyImage() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046a159
+// FUNCTION: COPTER_D 0x0046a159
 long BitmappedFont::GetStringWidth(char *, const unsigned long) {
 // LINE 228:
 	asm( 
@@ -2447,7 +2447,7 @@ long BitmappedFont::GetStringWidth(char *, const unsigned long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046a225
+// FUNCTION: COPTER_D 0x0046a225
 long BitmappedFont::GetStringVisibleWidth(char *, const unsigned long, unsigned long&) {
 // LINE 251:
 	asm( 
@@ -2598,7 +2598,7 @@ long BitmappedFont::GetStringVisibleWidth(char *, const unsigned long, unsigned 
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046a37c
+// FUNCTION: COPTER_D 0x0046a37c
 long BitmappedFont::CalculateNumberOfLines(char *, const unsigned long, const unsigned long) {
 // LINE 278:
 	asm( 
@@ -2664,7 +2664,7 @@ long BitmappedFont::CalculateNumberOfLines(char *, const unsigned long, const un
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046a3d4
+// FUNCTION: COPTER_D 0x0046a3d4
 long BitmappedFont::CalculateWidthOfLines(char *, const unsigned long, const unsigned long) {
 // LINE 307:
 	asm( 
@@ -2730,7 +2730,7 @@ long BitmappedFont::CalculateWidthOfLines(char *, const unsigned long, const uns
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046a44b
+// FUNCTION: COPTER_D 0x0046a44b
 long BitmappedFont::CalculateCharsToFitInWidth(char *, const unsigned long) {
 // LINE 334:
 	asm( 
@@ -2930,7 +2930,7 @@ long BitmappedFont::CalculateCharsToFitInWidth(char *, const unsigned long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046a5e3
+// FUNCTION: COPTER_D 0x0046a5e3
 void BitmappedFont::DrawTextLine(class CBackBuffer*, long, long, char *, const unsigned long) {
 // LINE 392:
 	asm( 
@@ -3111,7 +3111,7 @@ void BitmappedFont::DrawTextLine(class CBackBuffer*, long, long, char *, const u
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046a7dc
+// FUNCTION: COPTER_D 0x0046a7dc
 void BitmappedFont::DrawTextLineNoClip(class CBackBuffer*, long, long, char *, const unsigned long) {
 // LINE 409:
 	asm( 
@@ -3292,7 +3292,7 @@ void BitmappedFont::DrawTextLineNoClip(class CBackBuffer*, long, long, char *, c
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046a9d5
+// FUNCTION: COPTER_D 0x0046a9d5
 void BitmappedFont::DrawTextPara(class CBackBuffer*, class MRect&, char *, const unsigned long) {
 // LINE 428:
 	asm( 
@@ -3397,7 +3397,7 @@ void BitmappedFont::DrawTextPara(class CBackBuffer*, class MRect&, char *, const
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046aa7f
+// FUNCTION: COPTER_D 0x0046aa7f
 void BitmappedFont::DrawTextParaNoClip(class CBackBuffer*, class MRect&, char *, const unsigned long) {
 // LINE 454:
 	asm( 
@@ -3502,7 +3502,7 @@ void BitmappedFont::DrawTextParaNoClip(class CBackBuffer*, class MRect&, char *,
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046ab29
+// FUNCTION: COPTER_D 0x0046ab29
 void BitmappedFont::DrawTextLineFormat(class CBackBuffer*, class MRect&, char *, const unsigned long, const unsigned long) {
 // LINE 482:
 	asm( 
@@ -3654,7 +3654,7 @@ void BitmappedFont::DrawTextLineFormat(class CBackBuffer*, class MRect&, char *,
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046ac46
+// FUNCTION: COPTER_D 0x0046ac46
 void BitmappedFont::DrawTextLineFormatNoClip(class CBackBuffer*, class MRect&, char *, const unsigned long, const unsigned long) {
 // LINE 519:
 	asm( 
@@ -3806,7 +3806,7 @@ void BitmappedFont::DrawTextLineFormatNoClip(class CBackBuffer*, class MRect&, c
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046ad63
+// FUNCTION: COPTER_D 0x0046ad63
 void BitmappedFont::DrawTextParaFormat(class CBackBuffer*, class MRect&, char *, const unsigned long, const unsigned long) {
 // LINE 556:
 	asm( 
@@ -3928,7 +3928,7 @@ void BitmappedFont::DrawTextParaFormat(class CBackBuffer*, class MRect&, char *,
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046ae43
+// FUNCTION: COPTER_D 0x0046ae43
 void BitmappedFont::DrawTextParaFormatNoClip(class CBackBuffer*, class MRect&, char *, const unsigned long, const unsigned long) {
 // LINE 585:
 	asm( 
@@ -4050,7 +4050,7 @@ void BitmappedFont::DrawTextParaFormatNoClip(class CBackBuffer*, class MRect&, c
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046af23
+// FUNCTION: COPTER_D 0x0046af23
 int32_t BitmappedFont::IsCharBreakingChar(const char) {
 // LINE 613:
 	asm( 
@@ -4085,7 +4085,7 @@ int32_t BitmappedFont::IsCharBreakingChar(const char) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046af61
+// FUNCTION: COPTER_D 0x0046af61
 int32_t BitmappedFont::IsCharReturnChar(const char) {
 // LINE 625:
 	asm( 
@@ -4117,7 +4117,7 @@ int32_t BitmappedFont::IsCharReturnChar(const char) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046af92
+// FUNCTION: COPTER_D 0x0046af92
 int32_t BitmappedFont::IsCharWhitespace(const char) {
 // LINE 634:
 	asm( 
@@ -4149,7 +4149,7 @@ int32_t BitmappedFont::IsCharWhitespace(const char) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046afc3
+// FUNCTION: COPTER_D 0x0046afc3
 int32_t BitmappedFont::GetIniFileLong(char *, char *, char *, long *) {
 // LINE 645:
 	asm( 
@@ -4200,7 +4200,7 @@ int32_t BitmappedFont::GetIniFileLong(char *, char *, char *, long *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046b012
+// FUNCTION: COPTER_D 0x0046b012
 int32_t BitmappedFont::GetIniFileString(char *, char *, char *, char *, const long) {
 // LINE 663:
 	asm( 
@@ -4238,7 +4238,7 @@ int32_t BitmappedFont::GetIniFileString(char *, char *, char *, char *, const lo
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046b049
+// FUNCTION: COPTER_D 0x0046b049
 int32_t BitmappedFont::GetPathForBitmapFile(char *, char *, char *) {
 // LINE 677:
 	asm( 
@@ -4319,7 +4319,7 @@ int32_t BitmappedFont::GetPathForBitmapFile(char *, char *, char *) {
 
 
 // Contribution: 2:000014d0-000014f3 Module: 42, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x000014d0
+// GLOBAL: COPTER_D 0x000014d0
 // ??_7BitmappedFont@@6B@
 
 

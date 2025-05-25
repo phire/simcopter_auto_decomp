@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:000d42c0-000d505d Module: 146, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x004d52c0
+// FUNCTION: COPTER_D 0x004d52c0
 void InitResource() {
 // LINE 92:
 	asm( 
@@ -52,7 +52,7 @@ void InitResource() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004d530f
+// FUNCTION: COPTER_D 0x004d530f
 void VRResFreeBarrys() {
 // LINE 112:
 	asm( 
@@ -106,7 +106,7 @@ void VRResFreeBarrys() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004d5356
+// FUNCTION: COPTER_D 0x004d5356
 struct VRResource* VRLoadResource() {
 // LINE 138:
 	asm( 
@@ -684,7 +684,7 @@ struct VRResource* VRLoadResource() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004d5825
+// FUNCTION: COPTER_D 0x004d5825
 int32_t VRUnLoadAllResources() {
 // LINE 275:
 	asm( 
@@ -738,7 +738,7 @@ int32_t VRUnLoadAllResources() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004d5872
+// FUNCTION: COPTER_D 0x004d5872
 int32_t VRUnLoadResource() {
 // LINE 301:
 	asm( 
@@ -843,7 +843,7 @@ int32_t VRUnLoadResource() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004d5926
+// FUNCTION: COPTER_D 0x004d5926
 int32_t GetDir_GEOM() {
 // LINE 358:
 	asm( 
@@ -1132,7 +1132,7 @@ int32_t GetDir_GEOM() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004d5baf
+// FUNCTION: COPTER_D 0x004d5baf
 int32_t GetDir_CMAP() {
 // LINE 635:
 	asm( 
@@ -1327,7 +1327,7 @@ int32_t GetDir_CMAP() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004d5d48
+// FUNCTION: COPTER_D 0x004d5d48
 int32_t GetResourceDir() {
 // LINE 752:
 	asm( 
@@ -1486,7 +1486,7 @@ int32_t GetResourceDir() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004d5e81
+// FUNCTION: COPTER_D 0x004d5e81
 int32_t OpenResourceFile() {
 // LINE 868:
 	asm( 
@@ -1568,7 +1568,7 @@ int32_t OpenResourceFile() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004d5f1e
+// FUNCTION: COPTER_D 0x004d5f1e
 int32_t ReadResource() {
 // LINE 915:
 	asm( 
@@ -1615,7 +1615,7 @@ int32_t ReadResource() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004d5f63
+// FUNCTION: COPTER_D 0x004d5f63
 void VRCloseResourceFile() {
 // LINE 1079:
 	asm( 
@@ -1663,7 +1663,7 @@ void VRCloseResourceFile() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004d5fa9
+// FUNCTION: COPTER_D 0x004d5fa9
 int32_t RegisterResource() {
 // LINE 1117:
 	asm( 
@@ -1715,7 +1715,7 @@ int32_t RegisterResource() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004d5ffd
+// FUNCTION: COPTER_D 0x004d5ffd
 void UnRegisterResource() {
 // LINE 1142:
 	asm( 
@@ -1776,11 +1776,11 @@ void UnRegisterResource() {
 
 
 // Contribution: 3:00005220-00005230 Module: 146, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x00005220
+// GLOBAL: COPTER_D 0x00005220
 // bufferBad
-// GLOBAL: SIMCOPTER 0x00005224
+// GLOBAL: COPTER_D 0x00005224
 // NextResource
-// GLOBAL: SIMCOPTER 0x00005228
+// GLOBAL: COPTER_D 0x00005228
 // ResFileMemPool
-// GLOBAL: SIMCOPTER 0x0000522c
+// GLOBAL: COPTER_D 0x0000522c
 // G_currmempool

@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:0004ef40-0004f04f Module: 46, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x0044ff40
+// FUNCTION: COPTER_D 0x0044ff40
 void GUIReportError() {
 // LINE 21:
 	asm( 
@@ -125,7 +125,7 @@ void GUIReportError() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00450050
+// FUNCTION: COPTER_D 0x00450050
 // $E66
 
 

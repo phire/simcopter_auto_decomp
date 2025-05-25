@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:00141f80-00142684 Module: 152, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00542f80
+// FUNCTION: COPTER_D 0x00542f80
 int32_t Magnitude() {
 // LINE 29:
 	asm( 
@@ -67,7 +67,7 @@ int32_t Magnitude() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00542ff4
+// FUNCTION: COPTER_D 0x00542ff4
 int32_t Distance() {
 // LINE 51:
 	asm( 
@@ -142,7 +142,7 @@ int32_t Distance() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0054308e
+// FUNCTION: COPTER_D 0x0054308e
 int32_t Normalize() {
 // LINE 71:
 	asm( 
@@ -260,7 +260,7 @@ int32_t Normalize() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00543183
+// FUNCTION: COPTER_D 0x00543183
 void CreatePlane() {
 // LINE 102:
 	asm( 
@@ -334,7 +334,7 @@ void CreatePlane() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005431fe
+// FUNCTION: COPTER_D 0x005431fe
 int32_t SideOfPlane() {
 // LINE 128:
 	asm( 
@@ -419,7 +419,7 @@ int32_t SideOfPlane() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00543292
+// FUNCTION: COPTER_D 0x00543292
 void CreateVelocity() {
 // LINE 157:
 	asm( 
@@ -497,7 +497,7 @@ void CreateVelocity() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0054330c
+// FUNCTION: COPTER_D 0x0054330c
 int32_t SameSigns() {
 // LINE 183:
 	asm( 
@@ -525,7 +525,7 @@ int32_t SameSigns() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00543328
+// FUNCTION: COPTER_D 0x00543328
 int32_t VectorBounds() {
 // LINE 201:
 	asm( 
@@ -613,7 +613,7 @@ int32_t VectorBounds() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005433be
+// FUNCTION: COPTER_D 0x005433be
 void Apply_Force() {
 // LINE 227:
 	asm( 
@@ -703,7 +703,7 @@ void Apply_Force() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00543455
+// FUNCTION: COPTER_D 0x00543455
 void Apply_Friction() {
 // LINE 261:
 	asm( 
@@ -830,7 +830,7 @@ void Apply_Friction() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00543535
+// FUNCTION: COPTER_D 0x00543535
 int32_t Apply_Force1D() {
 // LINE 299:
 	asm( 
@@ -895,7 +895,7 @@ int32_t Apply_Force1D() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005435a4
+// FUNCTION: COPTER_D 0x005435a4
 int32_t Apply_Friction1D() {
 // LINE 332:
 	asm( 
@@ -977,7 +977,7 @@ int32_t Apply_Friction1D() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00543629
+// FUNCTION: COPTER_D 0x00543629
 int32_t AngleBounds() {
 // LINE 358:
 	asm( 

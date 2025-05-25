@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:00153ff0-0015b264 Module: 196, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00554ff0
+// FUNCTION: COPTER_D 0x00554ff0
 unsigned short cYObject::InBoundingRect(struct Point3d, int32_t, struct Point3d, int32_t) {
 // LINE 57:
 	asm( 
@@ -114,7 +114,7 @@ unsigned short cYObject::InBoundingRect(struct Point3d, int32_t, struct Point3d,
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005550ac
+// FUNCTION: COPTER_D 0x005550ac
 void PersonHitDispatch() {
 // LINE 77:
 	asm( 
@@ -361,7 +361,7 @@ void PersonHitDispatch() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00555369
+// FUNCTION: COPTER_D 0x00555369
 struct _DYOBJ_INST* cYObject::GetDynObj(struct _DYOBJ_INST*, struct Point3d, int32_t, struct _DYOBJ_INST*, struct _DYOBJ_INST*) {
 // LINE 172:
 	asm( 
@@ -688,7 +688,7 @@ struct _DYOBJ_INST* cYObject::GetDynObj(struct _DYOBJ_INST*, struct Point3d, int
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055565e
+// FUNCTION: COPTER_D 0x0055565e
 struct _STOBJ_INST* cYObject::GetStaticObj(struct Point3d, int32_t) {
 // LINE 264:
 	asm( 
@@ -821,7 +821,7 @@ struct _STOBJ_INST* cYObject::GetStaticObj(struct Point3d, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00555746
+// FUNCTION: COPTER_D 0x00555746
 enum cYObject::LocationType cYObject::GetLocType(short, short) {
 // LINE 318:
 	asm( 
@@ -900,7 +900,7 @@ enum cYObject::LocationType cYObject::GetLocType(short, short) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00555819
+// FUNCTION: COPTER_D 0x00555819
 unsigned short cYObject::IsWater(short, short) {
 // LINE 329:
 	asm( 
@@ -953,7 +953,7 @@ unsigned short cYObject::IsWater(short, short) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00555873
+// FUNCTION: COPTER_D 0x00555873
 char cYObject::GetRoadDir(struct Point3d) {
 // LINE 338:
 	asm( 
@@ -978,7 +978,7 @@ char cYObject::GetRoadDir(struct Point3d) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00555885
+// FUNCTION: COPTER_D 0x00555885
 enum cYObject::MoveErrorCode cYObject::TryTableMove(short, unsigned short, struct cYObject::MoveInfo*) {
 // LINE 349:
 	asm( 
@@ -1129,7 +1129,7 @@ enum cYObject::MoveErrorCode cYObject::TryTableMove(short, unsigned short, struc
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005559b2
+// FUNCTION: COPTER_D 0x005559b2
 enum cYObject::MoveErrorCode cYObject::TryVectorMove(struct Point3d, int32_t, struct cYObject::MoveInfo*) {
 // LINE 380:
 	asm( 
@@ -1224,7 +1224,7 @@ enum cYObject::MoveErrorCode cYObject::TryVectorMove(struct Point3d, int32_t, st
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00555a60
+// FUNCTION: COPTER_D 0x00555a60
 enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short, struct cYObject::MoveInfo*, int32_t, int32_t, int32_t, unsigned short) {
 // LINE 401:
 	asm( 
@@ -2148,7 +2148,7 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short, struct cYObject::
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00556470
+// FUNCTION: COPTER_D 0x00556470
 unsigned short cYObject::CanJumpOffHere() {
 // LINE 605:
 	asm( 
@@ -2273,7 +2273,7 @@ unsigned short cYObject::CanJumpOffHere() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005565b8
+// FUNCTION: COPTER_D 0x005565b8
 unsigned short cYObject::IsWalkable(short, short, enum cYObject::LocationType) {
 // LINE 633:
 	asm( 
@@ -2390,7 +2390,7 @@ unsigned short cYObject::IsWalkable(short, short, enum cYObject::LocationType) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005566af
+// FUNCTION: COPTER_D 0x005566af
 struct Point2d GetRiotCenter() {
 // LINE 656:
 	asm( 
@@ -2423,7 +2423,7 @@ struct Point2d GetRiotCenter() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005566da
+// FUNCTION: COPTER_D 0x005566da
 struct Point2d cYObject::GetRiotCenter(long) {
 // LINE 661:
 	asm( 
@@ -2569,7 +2569,7 @@ struct Point2d cYObject::GetRiotCenter(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00556848
+// FUNCTION: COPTER_D 0x00556848
 void cYObject::GetSurroundingRiotInfo(short, short *, short *, short *) {
 // LINE 682:
 	asm( 
@@ -3023,7 +3023,7 @@ void cYObject::GetSurroundingRiotInfo(short, short *, short *, short *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00556cb9
+// FUNCTION: COPTER_D 0x00556cb9
 unsigned short cYObject::GetNearbyFire(short, short *, short *) {
 // LINE 745:
 	asm( 
@@ -3237,7 +3237,7 @@ unsigned short cYObject::GetNearbyFire(short, short *, short *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00556ec0
+// FUNCTION: COPTER_D 0x00556ec0
 class cYObject* cYObject::GetClosest(enum MissionSupertype, enum MissionType, unsigned short, short *) {
 // LINE 774:
 	asm( 
@@ -3480,7 +3480,7 @@ class cYObject* cYObject::GetClosest(enum MissionSupertype, enum MissionType, un
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055716e
+// FUNCTION: COPTER_D 0x0055716e
 void cYObject::Die() {
 // LINE 803:
 	asm( 
@@ -3561,7 +3561,7 @@ void cYObject::Die() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005571fb
+// FUNCTION: COPTER_D 0x005571fb
 class cYObject* cYObject::GetFirst(short, short) {
 // LINE 821:
 	asm( 
@@ -3683,7 +3683,7 @@ class cYObject* cYObject::GetFirst(short, short) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055734c
+// FUNCTION: COPTER_D 0x0055734c
 class cYObject* cYObject::DropToted() {
 // LINE 836:
 	asm( 
@@ -3764,7 +3764,7 @@ class cYObject* cYObject::DropToted() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005573f5
+// FUNCTION: COPTER_D 0x005573f5
 class cYObject* cYObject::GetToted() {
 // LINE 849:
 	asm( 
@@ -3877,7 +3877,7 @@ class cYObject* cYObject::GetToted() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055752b
+// FUNCTION: COPTER_D 0x0055752b
 enum TreeSim::ReturnCode cYObject::iDoIHaveAMaster(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 875:
 	asm( 
@@ -3926,7 +3926,7 @@ enum TreeSim::ReturnCode cYObject::iDoIHaveAMaster(struct TreeSim::StackElem*, s
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00557570
+// FUNCTION: COPTER_D 0x00557570
 enum TreeSim::ReturnCode cYObject::iPutMyCarInStack(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 885:
 	asm( 
@@ -3992,7 +3992,7 @@ enum TreeSim::ReturnCode cYObject::iPutMyCarInStack(struct TreeSim::StackElem*, 
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005575dc
+// FUNCTION: COPTER_D 0x005575dc
 enum TreeSim::ReturnCode cYObject::iIdle(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 899:
 	asm( 
@@ -4097,7 +4097,7 @@ enum TreeSim::ReturnCode cYObject::iIdle(struct TreeSim::StackElem*, struct Beha
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005576f6
+// FUNCTION: COPTER_D 0x005576f6
 enum TreeSim::ReturnCode cYObject::iSetAnim(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 911:
 	asm( 
@@ -4178,7 +4178,7 @@ enum TreeSim::ReturnCode cYObject::iSetAnim(struct TreeSim::StackElem*, struct B
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005577cd
+// FUNCTION: COPTER_D 0x005577cd
 enum TreeSim::ReturnCode cYObject::iAttr(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 920:
 	asm( 
@@ -4220,7 +4220,7 @@ enum TreeSim::ReturnCode cYObject::iAttr(struct TreeSim::StackElem*, struct Beha
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00557807
+// FUNCTION: COPTER_D 0x00557807
 enum TreeSim::ReturnCode cYObject::iWalk(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 927:
 	asm( 
@@ -4377,7 +4377,7 @@ enum TreeSim::ReturnCode cYObject::iWalk(struct TreeSim::StackElem*, struct Beha
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00557948
+// FUNCTION: COPTER_D 0x00557948
 enum TreeSim::ReturnCode cYObject::iSetBody(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 966:
 	asm( 
@@ -4520,7 +4520,7 @@ enum TreeSim::ReturnCode cYObject::iSetBody(struct TreeSim::StackElem*, struct B
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00557b25
+// FUNCTION: COPTER_D 0x00557b25
 enum TreeSim::ReturnCode cYObject::iRandom(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 976:
 	asm( 
@@ -4625,7 +4625,7 @@ enum TreeSim::ReturnCode cYObject::iRandom(struct TreeSim::StackElem*, struct Be
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00557c20
+// FUNCTION: COPTER_D 0x00557c20
 enum TreeSim::ReturnCode cYObject::iWalkToAndGrabOntoStackObject(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 989:
 	asm( 
@@ -4940,7 +4940,7 @@ enum TreeSim::ReturnCode cYObject::iWalkToAndGrabOntoStackObject(struct TreeSim:
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00557f40
+// FUNCTION: COPTER_D 0x00557f40
 enum TreeSim::ReturnCode cYObject::iUpdateMyMission(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1033:
 	asm( 
@@ -4994,7 +4994,7 @@ enum TreeSim::ReturnCode cYObject::iUpdateMyMission(struct TreeSim::StackElem*, 
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00557f90
+// FUNCTION: COPTER_D 0x00557f90
 enum TreeSim::ReturnCode cYObject::iCheckForTrue(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1043:
 	asm( 
@@ -5313,7 +5313,7 @@ enum TreeSim::ReturnCode cYObject::iCheckForTrue(struct TreeSim::StackElem*, str
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055826f
+// FUNCTION: COPTER_D 0x0055826f
 enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1109:
 	asm( 
@@ -5950,7 +5950,7 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem*,
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005587c8
+// FUNCTION: COPTER_D 0x005587c8
 enum TreeSim::ReturnCode cYObject::iSelfDecommission(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1245:
 	asm( 
@@ -5990,7 +5990,7 @@ enum TreeSim::ReturnCode cYObject::iSelfDecommission(struct TreeSim::StackElem*,
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005587f9
+// FUNCTION: COPTER_D 0x005587f9
 enum TreeSim::ReturnCode cYObject::iGetOffMasterObject(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1254:
 	asm( 
@@ -6083,7 +6083,7 @@ enum TreeSim::ReturnCode cYObject::iGetOffMasterObject(struct TreeSim::StackElem
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005588f3
+// FUNCTION: COPTER_D 0x005588f3
 enum TreeSim::ReturnCode cYObject::iTurnTowardsStackObject(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1265:
 	asm( 
@@ -6156,7 +6156,7 @@ enum TreeSim::ReturnCode cYObject::iTurnTowardsStackObject(struct TreeSim::Stack
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055898a
+// FUNCTION: COPTER_D 0x0055898a
 enum TreeSim::ReturnCode cYObject::iIsThisLocType(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1275:
 	asm( 
@@ -6226,7 +6226,7 @@ enum TreeSim::ReturnCode cYObject::iIsThisLocType(struct TreeSim::StackElem*, st
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00558a02
+// FUNCTION: COPTER_D 0x00558a02
 enum TreeSim::ReturnCode cYObject::iIsThisLocTypeNeutral(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1288:
 	asm( 
@@ -6304,7 +6304,7 @@ enum TreeSim::ReturnCode cYObject::iIsThisLocTypeNeutral(struct TreeSim::StackEl
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00558abb
+// FUNCTION: COPTER_D 0x00558abb
 enum TreeSim::ReturnCode cYObject::iCanJumpOffHere(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1300:
 	asm( 
@@ -6355,7 +6355,7 @@ enum TreeSim::ReturnCode cYObject::iCanJumpOffHere(struct TreeSim::StackElem*, s
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00558b03
+// FUNCTION: COPTER_D 0x00558b03
 enum TreeSim::ReturnCode cYObject::iCheckForSpotlightInMyCell(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1311:
 	asm( 
@@ -6508,7 +6508,7 @@ enum TreeSim::ReturnCode cYObject::iCheckForSpotlightInMyCell(struct TreeSim::St
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00558c9c
+// FUNCTION: COPTER_D 0x00558c9c
 enum TreeSim::ReturnCode cYObject::iIncrementRiotVal(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1328:
 	asm( 
@@ -6579,7 +6579,7 @@ enum TreeSim::ReturnCode cYObject::iIncrementRiotVal(struct TreeSim::StackElem*,
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00558d4d
+// FUNCTION: COPTER_D 0x00558d4d
 enum TreeSim::ReturnCode cYObject::iGetSurroundingRiotVal(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1338:
 	asm( 
@@ -6766,7 +6766,7 @@ enum TreeSim::ReturnCode cYObject::iGetSurroundingRiotVal(struct TreeSim::StackE
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00558f7c
+// FUNCTION: COPTER_D 0x00558f7c
 enum TreeSim::ReturnCode cYObject::iIsThisScurkID(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1354:
 	asm( 
@@ -6874,7 +6874,7 @@ enum TreeSim::ReturnCode cYObject::iIsThisScurkID(struct TreeSim::StackElem*, st
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005590a2
+// FUNCTION: COPTER_D 0x005590a2
 enum TreeSim::ReturnCode cYObject::iGosubToInitbhav(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1367:
 	asm( 
@@ -6968,7 +6968,7 @@ enum TreeSim::ReturnCode cYObject::iGosubToInitbhav(struct TreeSim::StackElem*, 
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055919a
+// FUNCTION: COPTER_D 0x0055919a
 enum TreeSim::ReturnCode cYObject::iAdjustRadiusForRiotVal(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1380:
 	asm( 
@@ -7020,7 +7020,7 @@ enum TreeSim::ReturnCode cYObject::iAdjustRadiusForRiotVal(struct TreeSim::Stack
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00559202
+// FUNCTION: COPTER_D 0x00559202
 enum TreeSim::ReturnCode cYObject::iJoinRiot(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1389:
 	asm( 
@@ -7357,7 +7357,7 @@ enum TreeSim::ReturnCode cYObject::iJoinRiot(struct TreeSim::StackElem*, struct 
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00559787
+// FUNCTION: COPTER_D 0x00559787
 enum TreeSim::ReturnCode cYObject::iSetDirection(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1405:
 	asm( 
@@ -7473,7 +7473,7 @@ enum TreeSim::ReturnCode cYObject::iSetDirection(struct TreeSim::StackElem*, str
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005598ba
+// FUNCTION: COPTER_D 0x005598ba
 enum TreeSim::ReturnCode cYObject::iThrowProjectile(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1420:
 	asm( 
@@ -7701,7 +7701,7 @@ enum TreeSim::ReturnCode cYObject::iThrowProjectile(struct TreeSim::StackElem*, 
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00559b31
+// FUNCTION: COPTER_D 0x00559b31
 enum TreeSim::ReturnCode cYObject::iTurnFromStackObject(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1445:
 	asm( 
@@ -7774,7 +7774,7 @@ enum TreeSim::ReturnCode cYObject::iTurnFromStackObject(struct TreeSim::StackEle
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00559bc8
+// FUNCTION: COPTER_D 0x00559bc8
 enum TreeSim::ReturnCode cYObject::iTurnFromLastHitter(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1455:
 	asm( 
@@ -7847,7 +7847,7 @@ enum TreeSim::ReturnCode cYObject::iTurnFromLastHitter(struct TreeSim::StackElem
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00559c65
+// FUNCTION: COPTER_D 0x00559c65
 enum TreeSim::ReturnCode cYObject::iTurnTowardsLastHitter(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1465:
 	asm( 
@@ -7920,7 +7920,7 @@ enum TreeSim::ReturnCode cYObject::iTurnTowardsLastHitter(struct TreeSim::StackE
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00559d02
+// FUNCTION: COPTER_D 0x00559d02
 enum TreeSim::ReturnCode cYObject::iGetOutOfRoadEtc(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1475:
 	asm( 
@@ -8128,7 +8128,7 @@ enum TreeSim::ReturnCode cYObject::iGetOutOfRoadEtc(struct TreeSim::StackElem*, 
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00559f1e
+// FUNCTION: COPTER_D 0x00559f1e
 enum TreeSim::ReturnCode cYObject::iGenerateMedevacAndSetSelfAsVictim(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1530:
 	asm( 
@@ -8181,7 +8181,7 @@ enum TreeSim::ReturnCode cYObject::iGenerateMedevacAndSetSelfAsVictim(struct Tre
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00559f74
+// FUNCTION: COPTER_D 0x00559f74
 enum TreeSim::ReturnCode cYObject::iTurnToNearbyFire(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1543:
 	asm( 
@@ -8360,7 +8360,7 @@ enum TreeSim::ReturnCode cYObject::iTurnToNearbyFire(struct TreeSim::StackElem*,
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055a15b
+// FUNCTION: COPTER_D 0x0055a15b
 enum TreeSim::ReturnCode cYObject::iDie(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1560:
 	asm( 
@@ -8413,7 +8413,7 @@ enum TreeSim::ReturnCode cYObject::iDie(struct TreeSim::StackElem*, struct Behav
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055a1b1
+// FUNCTION: COPTER_D 0x0055a1b1
 enum TreeSim::ReturnCode cYObject::iWalkToStackObject(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1571:
 	asm( 
@@ -8445,7 +8445,7 @@ enum TreeSim::ReturnCode cYObject::iWalkToStackObject(struct TreeSim::StackElem*
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055a1d9
+// FUNCTION: COPTER_D 0x0055a1d9
 enum TreeSim::ReturnCode cYObject::iPutObjIntoTreeNum(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1576:
 	asm( 
@@ -8548,7 +8548,7 @@ enum TreeSim::ReturnCode cYObject::iPutObjIntoTreeNum(struct TreeSim::StackElem*
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055a2da
+// FUNCTION: COPTER_D 0x0055a2da
 enum TreeSim::ReturnCode cYObject::iVisitOz(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1589:
 	asm( 
@@ -8722,7 +8722,7 @@ enum TreeSim::ReturnCode cYObject::iVisitOz(struct TreeSim::StackElem*, struct B
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055a57f
+// FUNCTION: COPTER_D 0x0055a57f
 enum TreeSim::ReturnCode cYObject::iMakeMyMedevacVictimVisible(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1598:
 	asm( 
@@ -8807,7 +8807,7 @@ enum TreeSim::ReturnCode cYObject::iMakeMyMedevacVictimVisible(struct TreeSim::S
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055a64a
+// FUNCTION: COPTER_D 0x0055a64a
 enum TreeSim::ReturnCode cYObject::iMakeMyMedevacVictimInvisible(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1611:
 	asm( 
@@ -8851,7 +8851,7 @@ enum TreeSim::ReturnCode cYObject::iMakeMyMedevacVictimInvisible(struct TreeSim:
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055a68f
+// FUNCTION: COPTER_D 0x0055a68f
 enum TreeSim::ReturnCode cYObject::iMakeMeMasterOfStackObject(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1621:
 	asm( 
@@ -8973,7 +8973,7 @@ enum TreeSim::ReturnCode cYObject::iMakeMeMasterOfStackObject(struct TreeSim::St
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055a7ca
+// FUNCTION: COPTER_D 0x0055a7ca
 enum TreeSim::ReturnCode cYObject::iMakeMyStackObjectVisitOz(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1634:
 	asm( 
@@ -9179,7 +9179,7 @@ enum TreeSim::ReturnCode cYObject::iMakeMyStackObjectVisitOz(struct TreeSim::Sta
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055aad0
+// FUNCTION: COPTER_D 0x0055aad0
 enum TreeSim::ReturnCode cYObject::iPutTotedMedVicOnStackObject(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1646:
 	asm( 
@@ -9349,7 +9349,7 @@ enum TreeSim::ReturnCode cYObject::iPutTotedMedVicOnStackObject(struct TreeSim::
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055acf9
+// FUNCTION: COPTER_D 0x0055acf9
 enum TreeSim::ReturnCode cYObject::iTakeAnyMedVicOffStackObject(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1660:
 	asm( 
@@ -9458,7 +9458,7 @@ enum TreeSim::ReturnCode cYObject::iTakeAnyMedVicOffStackObject(struct TreeSim::
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055adf0
+// FUNCTION: COPTER_D 0x0055adf0
 enum TreeSim::ReturnCode cYObject::iGetOnStackObject(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1678:
 	asm( 
@@ -9582,7 +9582,7 @@ enum TreeSim::ReturnCode cYObject::iGetOnStackObject(struct TreeSim::StackElem*,
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055af39
+// FUNCTION: COPTER_D 0x0055af39
 enum TreeSim::ReturnCode cYObject::iUpdateStackVictimToted(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1692:
 	asm( 
@@ -9671,7 +9671,7 @@ enum TreeSim::ReturnCode cYObject::iUpdateStackVictimToted(struct TreeSim::Stack
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055b003
+// FUNCTION: COPTER_D 0x0055b003
 enum TreeSim::ReturnCode cYObject::iGetNumSpacesOnStackObject(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1705:
 	asm( 
@@ -9820,7 +9820,7 @@ enum TreeSim::ReturnCode cYObject::iGetNumSpacesOnStackObject(struct TreeSim::St
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055b1a1
+// FUNCTION: COPTER_D 0x0055b1a1
 enum TreeSim::ReturnCode cYObject::iDropToted(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1722:
 	asm( 
@@ -9881,7 +9881,7 @@ enum TreeSim::ReturnCode cYObject::iDropToted(struct TreeSim::StackElem*, struct
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055b1f7
+// FUNCTION: COPTER_D 0x0055b1f7
 enum TreeSim::ReturnCode cYObject::iUpdateStackVictimPickedUp(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1736:
 	asm( 
@@ -9970,7 +9970,7 @@ enum TreeSim::ReturnCode cYObject::iUpdateStackVictimPickedUp(struct TreeSim::St
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055b2c1
+// FUNCTION: COPTER_D 0x0055b2c1
 enum TreeSim::ReturnCode cYObject::iCloseToHeli(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1749:
 	asm( 
@@ -10063,7 +10063,7 @@ enum TreeSim::ReturnCode cYObject::iCloseToHeli(struct TreeSim::StackElem*, stru
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055b3a5
+// FUNCTION: COPTER_D 0x0055b3a5
 enum TreeSim::ReturnCode cYObject::iSetMyExpression(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1762:
 	asm( 
@@ -10128,7 +10128,7 @@ enum TreeSim::ReturnCode cYObject::iSetMyExpression(struct TreeSim::StackElem*, 
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055b417
+// FUNCTION: COPTER_D 0x0055b417
 enum TreeSim::ReturnCode cYObject::iGetHeliSpeedPlusDamage(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1775:
 	asm( 
@@ -10256,7 +10256,7 @@ enum TreeSim::ReturnCode cYObject::iGetHeliSpeedPlusDamage(struct TreeSim::Stack
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055b549
+// FUNCTION: COPTER_D 0x0055b549
 enum TreeSim::ReturnCode cYObject::iIsThisCellSafe(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1792:
 	asm( 
@@ -10322,7 +10322,7 @@ enum TreeSim::ReturnCode cYObject::iIsThisCellSafe(struct TreeSim::StackElem*, s
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055b5ca
+// FUNCTION: COPTER_D 0x0055b5ca
 enum TreeSim::ReturnCode cYObject::iPlaySound(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1805:
 	asm( 
@@ -10387,7 +10387,7 @@ enum TreeSim::ReturnCode cYObject::iPlaySound(struct TreeSim::StackElem*, struct
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055b631
+// FUNCTION: COPTER_D 0x0055b631
 enum TreeSim::ReturnCode cYObject::iGetOnHeliIfHarnessRaised(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1830:
 	asm( 
@@ -10496,7 +10496,7 @@ enum TreeSim::ReturnCode cYObject::iGetOnHeliIfHarnessRaised(struct TreeSim::Sta
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055b739
+// FUNCTION: COPTER_D 0x0055b739
 enum TreeSim::ReturnCode cYObject::iAmIOnHeli(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1851:
 	asm( 
@@ -10547,7 +10547,7 @@ enum TreeSim::ReturnCode cYObject::iAmIOnHeli(struct TreeSim::StackElem*, struct
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055b789
+// FUNCTION: COPTER_D 0x0055b789
 enum TreeSim::ReturnCode cYObject::iThrowFieryProjectile(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1862:
 	asm( 
@@ -10579,7 +10579,7 @@ enum TreeSim::ReturnCode cYObject::iThrowFieryProjectile(struct TreeSim::StackEl
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055b7b1
+// FUNCTION: COPTER_D 0x0055b7b1
 enum TreeSim::ReturnCode cYObject::iTellStartingObjectTrueOrFalse(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1867:
 	asm( 
@@ -10655,7 +10655,7 @@ enum TreeSim::ReturnCode cYObject::iTellStartingObjectTrueOrFalse(struct TreeSim
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055b84d
+// FUNCTION: COPTER_D 0x0055b84d
 enum TreeSim::ReturnCode cYObject::TryElement(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 1880:
 	asm( 
@@ -10742,7 +10742,7 @@ enum TreeSim::ReturnCode cYObject::TryElement(struct TreeSim::StackElem*, struct
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055b920
+// FUNCTION: COPTER_D 0x0055b920
 void cYObject::UpdateMission(enum cYObject::MissionUpdates, long) {
 // LINE 1899:
 	asm( 
@@ -11022,7 +11022,7 @@ void cYObject::UpdateMission(enum cYObject::MissionUpdates, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055bb60
+// FUNCTION: COPTER_D 0x0055bb60
 enum TreeSim::ReturnCode cYObject::TryExpression(struct YObjLang::AttrParam*) {
 // LINE 1991:
 	asm( 
@@ -11550,7 +11550,7 @@ enum TreeSim::ReturnCode cYObject::TryExpression(struct YObjLang::AttrParam*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055bfef
+// FUNCTION: COPTER_D 0x0055bfef
 void cYObject::HandleOverflow() {
 // LINE 2103:
 	asm( 
@@ -11582,7 +11582,7 @@ void cYObject::HandleOverflow() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055c021
+// FUNCTION: COPTER_D 0x0055c021
 short cYObject::InterpValue(short, short, short **) {
 // LINE 2107:
 	asm( 
@@ -11841,22 +11841,22 @@ short cYObject::InterpValue(short, short, short **) {
 
 
 // Contribution: 3:00025634-00026d84 Module: 196, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x00025634
+// GLOBAL: COPTER_D 0x00025634
 // radiusReduction
 
 
 // Contribution: 3:00026d88-00026dba Module: 196, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00026d88
+// GLOBAL: COPTER_D 0x00026d88
 // ??_C@_0DD@OACJ@must?5have?5master?5object?5to?5test?5@
 
 
 // Contribution: 3:00026dbc-00026dd5 Module: 196, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00026dbc
+// GLOBAL: COPTER_D 0x00026dbc
 // ??_C@_0BK@BPAL@local?5number?5out?5of?5range?$AA@
 
 
 // Contribution: 3:000a05a8-000a06a7 Module: 196, 8 byte alignment, uninitialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x000a05a8
+// GLOBAL: COPTER_D 0x000a05a8
 // cYObject::PrimProcs
-// LOCAL: SIMCOPTER 0x000a06a8
+// LOCAL: COPTER_D 0x000a06a8
 // srandSeed

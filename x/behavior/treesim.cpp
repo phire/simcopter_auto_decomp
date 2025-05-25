@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:0015bb10-0015c4b2 Module: 194, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x0055cb10
+// FUNCTION: COPTER_D 0x0055cb10
 void TreeSim::TreeSim(short, short, class Behavior*, short *) {
 // LINE 11:
 	asm( 
@@ -76,7 +76,7 @@ void TreeSim::TreeSim(short, short, class Behavior*, short *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055cba5
+// FUNCTION: COPTER_D 0x0055cba5
 void TreeSim::TreeSim(short, short *) {
 // LINE 25:
 	asm( 
@@ -138,7 +138,7 @@ void TreeSim::TreeSim(short, short *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055cc2a
+// FUNCTION: COPTER_D 0x0055cc2a
 void TreeSim::~TreeSim() {
 // LINE 35:
 	asm( 
@@ -171,7 +171,7 @@ void TreeSim::~TreeSim() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055cc58
+// FUNCTION: COPTER_D 0x0055cc58
 void TreeSim::Reset(class Behavior*, short) {
 // LINE 43:
 	asm( 
@@ -253,7 +253,7 @@ void TreeSim::Reset(class Behavior*, short) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055ccef
+// FUNCTION: COPTER_D 0x0055ccef
 struct TreeSim::StackElem* TreeSim::GetHighLevelAction() {
 // LINE 62:
 	asm( 
@@ -382,7 +382,7 @@ struct TreeSim::StackElem* TreeSim::GetHighLevelAction() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055ce37
+// FUNCTION: COPTER_D 0x0055ce37
 unsigned short TreeSim::Gosub(class Behavior*, short *, short) {
 // LINE 83:
 	asm( 
@@ -518,7 +518,7 @@ unsigned short TreeSim::Gosub(class Behavior*, short *, short) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055cf37
+// FUNCTION: COPTER_D 0x0055cf37
 unsigned short TreeSim::Simulate(long, unsigned short) {
 // LINE 114:
 	asm( 
@@ -809,7 +809,7 @@ unsigned short TreeSim::Simulate(long, unsigned short) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055d1c3
+// FUNCTION: COPTER_D 0x0055d1c3
 char TreeSim::NodeComplete(unsigned short) {
 // LINE 198:
 	asm( 
@@ -971,7 +971,7 @@ char TreeSim::NodeComplete(unsigned short) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055d2fd
+// FUNCTION: COPTER_D 0x0055d2fd
 void TreeSim::GetCurrentNode(short *, short *) {
 // LINE 239:
 	asm( 
@@ -1046,7 +1046,7 @@ void TreeSim::GetCurrentNode(short *, short *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055d3a5
+// FUNCTION: COPTER_D 0x0055d3a5
 enum TreeSim::ReturnCode ExtSim::TryElement(struct TreeSim::StackElem*, struct Behavior::Node*) {
 // LINE 255:
 	asm( 
@@ -1082,7 +1082,7 @@ enum TreeSim::ReturnCode ExtSim::TryElement(struct TreeSim::StackElem*, struct B
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055d3d5
+// FUNCTION: COPTER_D 0x0055d3d5
 void ExtSim::Error(short) {
 // LINE 262:
 	asm( 
@@ -1116,7 +1116,7 @@ void ExtSim::Error(short) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055d402
+// FUNCTION: COPTER_D 0x0055d402
 unsigned short ExtSim::Simulate(long, unsigned short) {
 // LINE 271:
 	asm( 
@@ -1222,13 +1222,13 @@ unsigned short ExtSim::Simulate(long, unsigned short) {
 
 
 // Contribution: 1:0015c4c0-0015c4f8 Module: 194, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x0055d4c0
+// FUNCTION: COPTER_D 0x0055d4c0
 // TreeSim::`scalar deleting destructor'
 
 
 
 // Contribution: 2:00004630-0000463f Module: 194, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00004630
+// GLOBAL: COPTER_D 0x00004630
 // ??_7TreeSim@@6B@
 
 

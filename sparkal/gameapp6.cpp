@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:00070e40-00070f60 Module: 37, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00471e40
+// FUNCTION: COPTER_D 0x00471e40
 public: void __thiscall CGameApp::EnableSoundTrack(void) {
 // LINE 23:
 	asm( 
@@ -34,7 +34,7 @@ public: void __thiscall CGameApp::EnableSoundTrack(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00471e62
+// FUNCTION: COPTER_D 0x00471e62
 public: void __thiscall CGameApp::DisableSoundTrack(void) {
 // LINE 34:
 	asm( 
@@ -63,7 +63,7 @@ public: void __thiscall CGameApp::DisableSoundTrack(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00471e84
+// FUNCTION: COPTER_D 0x00471e84
 public: void __thiscall CGameApp::ToggleMusicSoundTrack(void) {
 // LINE 47:
 	asm( 
@@ -132,7 +132,7 @@ public: void __thiscall CGameApp::ToggleMusicSoundTrack(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00471f41
+// FUNCTION: COPTER_D 0x00471f41
 public: void __thiscall CGameApp::PlayNextSoundTrackIfNeeded(void) {
 // LINE 61:
 	asm( 

@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:0007a640-0007ab67 Module: 33, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x0047b640
+// FUNCTION: COPTER_D 0x0047b640
 unsigned short wincpuidsupport() {
 // LINE 63:
 	asm( 
@@ -79,7 +79,7 @@ unsigned short wincpuidsupport() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047b67a
+// FUNCTION: COPTER_D 0x0047b67a
 unsigned short wincpuid() {
 // LINE 106:
 	asm( 
@@ -180,7 +180,7 @@ unsigned short wincpuid() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047b739
+// FUNCTION: COPTER_D 0x0047b739
 unsigned short wincpuidext() {
 // LINE 162:
 	asm( 
@@ -338,7 +338,7 @@ unsigned short wincpuidext() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047b825
+// FUNCTION: COPTER_D 0x0047b825
 unsigned long wincpufeatures() {
 // LINE 253:
 	asm( 
@@ -476,7 +476,7 @@ unsigned long wincpufeatures() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047b8ec
+// FUNCTION: COPTER_D 0x0047b8ec
 struct TIME_STAMP winrdtsc() {
 // LINE 320:
 	asm( 
@@ -533,7 +533,7 @@ struct TIME_STAMP winrdtsc() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047b92d
+// FUNCTION: COPTER_D 0x0047b92d
 unsigned short getdllversion() {
 // LINE 359:
 	asm( 
@@ -563,7 +563,7 @@ unsigned short getdllversion() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047b94a
+// FUNCTION: COPTER_D 0x0047b94a
 unsigned short check_clone() {
 // LINE 381:
 	asm( 
@@ -651,7 +651,7 @@ unsigned short check_clone() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047b999
+// FUNCTION: COPTER_D 0x0047b999
 unsigned short check_8086() {
 // LINE 422:
 	asm( 
@@ -745,7 +745,7 @@ unsigned short check_8086() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047b9eb
+// FUNCTION: COPTER_D 0x0047b9eb
 unsigned short check_80286() {
 // LINE 465:
 	asm( 
@@ -835,7 +835,7 @@ unsigned short check_80286() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047ba3a
+// FUNCTION: COPTER_D 0x0047ba3a
 unsigned short check_80386() {
 // LINE 511:
 	asm( 
@@ -941,7 +941,7 @@ unsigned short check_80386() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047ba8d
+// FUNCTION: COPTER_D 0x0047ba8d
 unsigned short check_IDProc() {
 // LINE 561:
 	asm( 

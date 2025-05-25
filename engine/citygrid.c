@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:000d5b40-000d62f3 Module: 141, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x004d6b40
+// FUNCTION: COPTER_D 0x004d6b40
 short VRInitGridObj() {
 // LINE 121:
 	asm( 
@@ -774,7 +774,7 @@ short VRInitGridObj() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004d71d7
+// FUNCTION: COPTER_D 0x004d71d7
 void VRFreeGridObj() {
 // LINE 363:
 	asm( 
@@ -801,7 +801,7 @@ void VRFreeGridObj() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004d71f0
+// FUNCTION: COPTER_D 0x004d71f0
 void InitGridPool() {
 // LINE 370:
 	asm( 

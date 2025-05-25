@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:000ed720-000ee1b4 Module: 177, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x004ee720
+// FUNCTION: COPTER_D 0x004ee720
 void S3ViewerInit() {
 // LINE 97:
 	asm( 
@@ -208,7 +208,7 @@ void S3ViewerInit() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ee8f1
+// FUNCTION: COPTER_D 0x004ee8f1
 void S3ViewerControl() {
 // LINE 169:
 	asm( 
@@ -794,7 +794,7 @@ void S3ViewerControl() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004eee12
+// FUNCTION: COPTER_D 0x004eee12
 void S3SetBackPlaneBasedOnValue() {
 // LINE 321:
 	asm( 
@@ -889,7 +889,7 @@ void S3SetBackPlaneBasedOnValue() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004eeeb7
+// FUNCTION: COPTER_D 0x004eeeb7
 long GetRenderBackPlaneValue() {
 // LINE 348:
 	asm( 
@@ -914,7 +914,7 @@ long GetRenderBackPlaneValue() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004eeecc
+// FUNCTION: COPTER_D 0x004eeecc
 long ConvertGUIBackPlaneValueToRender() {
 // LINE 360:
 	asm( 
@@ -966,7 +966,7 @@ long ConvertGUIBackPlaneValueToRender() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004eef09
+// FUNCTION: COPTER_D 0x004eef09
 long ConvertRenderBackPlaneValueToGUI() {
 // LINE 379:
 	asm( 
@@ -1023,7 +1023,7 @@ long ConvertRenderBackPlaneValueToGUI() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004eef4f
+// FUNCTION: COPTER_D 0x004eef4f
 int32_t S3ViewerRotDelta() {
 // LINE 400:
 	asm( 
@@ -1049,7 +1049,7 @@ int32_t S3ViewerRotDelta() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004eef6a
+// FUNCTION: COPTER_D 0x004eef6a
 int32_t S3ViewerPosDelta() {
 // LINE 411:
 	asm( 
@@ -1074,7 +1074,7 @@ int32_t S3ViewerPosDelta() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004eef7f
+// FUNCTION: COPTER_D 0x004eef7f
 void S3ViewerSetView() {
 // LINE 423:
 	asm( 
@@ -1135,7 +1135,7 @@ void S3ViewerSetView() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004eefd9
+// FUNCTION: COPTER_D 0x004eefd9
 void S3ViewerCommand() {
 // LINE 443:
 	asm( 
@@ -1301,7 +1301,7 @@ void S3ViewerCommand() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ef14b
+// FUNCTION: COPTER_D 0x004ef14b
 void S3SetDayNight() {
 // LINE 488:
 	asm( 
@@ -1375,32 +1375,32 @@ void S3SetDayNight() {
 
 
 // Contribution: 3:0001d898-0001d8bb Module: 177, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x0001d898
+// GLOBAL: COPTER_D 0x0001d898
 // thetaspeed
-// GLOBAL: SIMCOPTER 0x0001d89c
+// GLOBAL: COPTER_D 0x0001d89c
 // phispeed
-// GLOBAL: SIMCOPTER 0x0001d8a0
+// GLOBAL: COPTER_D 0x0001d8a0
 // radius
-// GLOBAL: SIMCOPTER 0x0001d8a4
+// GLOBAL: COPTER_D 0x0001d8a4
 // circley
-// GLOBAL: SIMCOPTER 0x0001d8a8
+// GLOBAL: COPTER_D 0x0001d8a8
 // yposcilate
-// GLOBAL: SIMCOPTER 0x0001d8ac
+// GLOBAL: COPTER_D 0x0001d8ac
 // ynoscilate
-// GLOBAL: SIMCOPTER 0x0001d8b0
+// GLOBAL: COPTER_D 0x0001d8b0
 // S_hover_ht
-// GLOBAL: SIMCOPTER 0x0001d8b4
+// GLOBAL: COPTER_D 0x0001d8b4
 // build_insert
-// GLOBAL: SIMCOPTER 0x0001d8b8
+// GLOBAL: COPTER_D 0x0001d8b8
 // G_zoom_level
 
 
 // Contribution: 3:0006fe88-0006feab Module: 177, 8 byte alignment, uninitialized_data, read, write, 
-// LOCAL: SIMCOPTER 0x0006fe88
+// LOCAL: COPTER_D 0x0006fe88
 // S_rotdelta
-// LOCAL: SIMCOPTER 0x0006fe8c
+// LOCAL: COPTER_D 0x0006fe8c
 // S_posdelta
-// LOCAL: SIMCOPTER 0x0006fe90
+// LOCAL: COPTER_D 0x0006fe90
 // S_last_viewvect
-// LOCAL: SIMCOPTER 0x0006fea0
+// LOCAL: COPTER_D 0x0006fea0
 // S_last_viewpos

@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:00060180-00065c19 Module: 44, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00461180
+// FUNCTION: COPTER_D 0x00461180
 void S3SwitchToProperSkyType() {
 // LINE 90:
 	asm( 
@@ -40,7 +40,7 @@ void S3SwitchToProperSkyType() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004611bf
+// FUNCTION: COPTER_D 0x004611bf
 int32_t IsActualTimeDaytime() {
 // LINE 98:
 	asm( 
@@ -87,7 +87,7 @@ int32_t IsActualTimeDaytime() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00461208
+// FUNCTION: COPTER_D 0x00461208
 public: virtual void __thiscall CGameApp::GetPreferences(void) {
 // LINE 111:
 	asm( 
@@ -252,7 +252,7 @@ public: virtual void __thiscall CGameApp::GetPreferences(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004613cb
+// FUNCTION: COPTER_D 0x004613cb
 public: virtual void __thiscall CGameApp::GetSoundPreferences(void) {
 // LINE 143:
 	asm( 
@@ -355,7 +355,7 @@ public: virtual void __thiscall CGameApp::GetSoundPreferences(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00461494
+// FUNCTION: COPTER_D 0x00461494
 public: virtual void __thiscall CGameApp::SetSoundPreferences(struct SoundPreferences &) {
 // LINE 172:
 	asm( 
@@ -400,7 +400,7 @@ public: virtual void __thiscall CGameApp::SetSoundPreferences(struct SoundPrefer
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004614de
+// FUNCTION: COPTER_D 0x004614de
 public: virtual void __thiscall CGameApp::SavePreferences(void) {
 // LINE 187:
 	asm( 
@@ -550,7 +550,7 @@ public: virtual void __thiscall CGameApp::SavePreferences(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00461629
+// FUNCTION: COPTER_D 0x00461629
 public: virtual unsigned long __thiscall CGameApp::TickGame(void) {
 // LINE 218:
 	asm( 
@@ -758,7 +758,7 @@ public: virtual unsigned long __thiscall CGameApp::TickGame(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004618a3
+// FUNCTION: COPTER_D 0x004618a3
 public: virtual void __thiscall CGameApp::ComposeFrame(void) {
 // LINE 269:
 	asm( 
@@ -1269,7 +1269,7 @@ public: virtual void __thiscall CGameApp::ComposeFrame(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00461eb9
+// FUNCTION: COPTER_D 0x00461eb9
 public: virtual void __thiscall CGameApp::ComposePlayFrame(void) {
 // LINE 400:
 	asm( 
@@ -1765,7 +1765,7 @@ public: virtual void __thiscall CGameApp::ComposePlayFrame(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004624de
+// FUNCTION: COPTER_D 0x004624de
 public: virtual void __thiscall CGameApp::DoRecurringTasks(long) {
 // LINE 484:
 	asm( 
@@ -1835,7 +1835,7 @@ public: virtual void __thiscall CGameApp::DoRecurringTasks(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00462582
+// FUNCTION: COPTER_D 0x00462582
 public: virtual int __thiscall CGameApp::EnterMode(int) {
 // LINE 502:
 	asm( 
@@ -3060,7 +3060,7 @@ public: virtual int __thiscall CGameApp::EnterMode(int) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00463608
+// FUNCTION: COPTER_D 0x00463608
 public: virtual int __thiscall CGameApp::ExitMode(int) {
 // LINE 660:
 	asm( 
@@ -3620,7 +3620,7 @@ public: virtual int __thiscall CGameApp::ExitMode(int) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00463bf9
+// FUNCTION: COPTER_D 0x00463bf9
 public: virtual void __thiscall CGameApp::DestroyAllModes(void) {
 // LINE 748:
 	asm( 
@@ -3815,7 +3815,7 @@ public: virtual void __thiscall CGameApp::DestroyAllModes(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00463dcb
+// FUNCTION: COPTER_D 0x00463dcb
 public: virtual void __thiscall CGameApp::ProcessCommand(int) {
 // LINE 790:
 	asm( 
@@ -4507,7 +4507,7 @@ public: virtual void __thiscall CGameApp::ProcessCommand(int) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046444d
+// FUNCTION: COPTER_D 0x0046444d
 public: virtual void __thiscall CGameApp::DoKeyDown(long, char) {
 // LINE 964:
 	asm( 
@@ -4943,7 +4943,7 @@ public: virtual void __thiscall CGameApp::DoKeyDown(long, char) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046487f
+// FUNCTION: COPTER_D 0x0046487f
 public: virtual void __thiscall CGameApp::DoKeyUp(long, char) {
 // LINE 1049:
 	asm( 
@@ -5143,7 +5143,7 @@ public: virtual void __thiscall CGameApp::DoKeyUp(long, char) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00464aa5
+// FUNCTION: COPTER_D 0x00464aa5
 public: virtual void __thiscall CGameApp::DoCharacter(long) {
 // LINE 1071:
 	asm( 
@@ -5176,7 +5176,7 @@ public: virtual void __thiscall CGameApp::DoCharacter(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00464ad0
+// FUNCTION: COPTER_D 0x00464ad0
 public: virtual void __thiscall CGameApp::DoCursorDown(int, int, int) {
 // LINE 1079:
 	asm( 
@@ -5213,7 +5213,7 @@ public: virtual void __thiscall CGameApp::DoCursorDown(int, int, int) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00464b03
+// FUNCTION: COPTER_D 0x00464b03
 public: virtual void __thiscall CGameApp::DoCursorUp(int, int, int) {
 // LINE 1088:
 	asm( 
@@ -5250,7 +5250,7 @@ public: virtual void __thiscall CGameApp::DoCursorUp(int, int, int) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00464b36
+// FUNCTION: COPTER_D 0x00464b36
 public: virtual void __thiscall CGameApp::DoCursorMove(int, int) {
 // LINE 1097:
 	asm( 
@@ -5285,7 +5285,7 @@ public: virtual void __thiscall CGameApp::DoCursorMove(int, int) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00464b65
+// FUNCTION: COPTER_D 0x00464b65
 public: virtual void __thiscall CGameApp::ClearCommands(void) {
 // LINE 1107:
 	asm( 
@@ -5437,7 +5437,7 @@ public: virtual void __thiscall CGameApp::ClearCommands(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00464d1a
+// FUNCTION: COPTER_D 0x00464d1a
 public: void __thiscall CGameApp::ProcessSystemCloseRequest(void) {
 // LINE 1128:
 	asm( 
@@ -5514,7 +5514,7 @@ public: void __thiscall CGameApp::ProcessSystemCloseRequest(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00464db3
+// FUNCTION: COPTER_D 0x00464db3
 public: virtual int __thiscall CGameApp::CheckForWarpToCareerLevel(void) {
 // LINE 1144:
 	asm( 
@@ -5566,7 +5566,7 @@ public: virtual int __thiscall CGameApp::CheckForWarpToCareerLevel(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00464e02
+// FUNCTION: COPTER_D 0x00464e02
 public: virtual int __thiscall CGameApp::WarpToCareerLevel(int) {
 // LINE 1163:
 	asm( 
@@ -5657,7 +5657,7 @@ public: virtual int __thiscall CGameApp::WarpToCareerLevel(int) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00464eb2
+// FUNCTION: COPTER_D 0x00464eb2
 public: virtual int __thiscall CGameApp::GraduateUserToNextCareerLevel(void) {
 // LINE 1181:
 	asm( 
@@ -5785,7 +5785,7 @@ public: virtual int __thiscall CGameApp::GraduateUserToNextCareerLevel(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046501e
+// FUNCTION: COPTER_D 0x0046501e
 public: virtual int __thiscall CGameApp::GraduateUserFromAllCareerLevels(void) {
 // LINE 1206:
 	asm( 
@@ -5836,7 +5836,7 @@ public: virtual int __thiscall CGameApp::GraduateUserFromAllCareerLevels(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00465081
+// FUNCTION: COPTER_D 0x00465081
 public: virtual void __thiscall CGameApp::NotifyUserOfGraduation(void) {
 // LINE 1216:
 	asm( 
@@ -6120,7 +6120,7 @@ public: virtual void __thiscall CGameApp::NotifyUserOfGraduation(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004654a4
+// FUNCTION: COPTER_D 0x004654a4
 public: virtual int __thiscall CGameApp::DoMessage(class GraphicWindow *, long, long, void *) {
 // LINE 1241:
 	asm( 
@@ -7227,7 +7227,7 @@ public: virtual int __thiscall CGameApp::DoMessage(class GraphicWindow *, long, 
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00465edb
+// FUNCTION: COPTER_D 0x00465edb
 public: virtual int __thiscall CGameApp::DoMainMenuMessage(class GraphicWindow *, long, long, void *) {
 // LINE 1461:
 	asm( 
@@ -7652,7 +7652,7 @@ public: virtual int __thiscall CGameApp::DoMainMenuMessage(class GraphicWindow *
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004662fa
+// FUNCTION: COPTER_D 0x004662fa
 public: virtual int __thiscall CGameApp::DoPlayMenuMessage(class GraphicWindow *, long, long, void *) {
 // LINE 1573:
 	asm( 
@@ -7993,7 +7993,7 @@ public: virtual int __thiscall CGameApp::DoPlayMenuMessage(class GraphicWindow *
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004665ad
+// FUNCTION: COPTER_D 0x004665ad
 public: int __thiscall CGameApp::StartVideoForCitySelection(long) {
 // LINE 1658:
 	asm( 
@@ -8208,7 +8208,7 @@ public: int __thiscall CGameApp::StartVideoForCitySelection(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004668ad
+// FUNCTION: COPTER_D 0x004668ad
 public: void __thiscall CGameApp::ComposeCareerCityVideoFrame(void) {
 // LINE 1692:
 	asm( 
@@ -8290,7 +8290,7 @@ public: void __thiscall CGameApp::ComposeCareerCityVideoFrame(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00466968
+// FUNCTION: COPTER_D 0x00466968
 public: int __thiscall CGameApp::StartVideoForMainMenu(void) {
 // LINE 1714:
 	asm( 
@@ -8425,7 +8425,7 @@ public: int __thiscall CGameApp::StartVideoForMainMenu(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00466b32
+// FUNCTION: COPTER_D 0x00466b32
 public: void __thiscall CGameApp::EndVideoForMainMenu(void) {
 // LINE 1737:
 	asm( 
@@ -8481,7 +8481,7 @@ public: void __thiscall CGameApp::EndVideoForMainMenu(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00466b94
+// FUNCTION: COPTER_D 0x00466b94
 public: void __thiscall CGameApp::ComposeMainMenuVideoFrame(void) {
 // LINE 1749:
 	asm( 
@@ -8551,7 +8551,7 @@ public: void __thiscall CGameApp::ComposeMainMenuVideoFrame(void) {
 
 
 // Contribution: 1:00065c20-00065ca9 Module: 44, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x00466c20
+// FUNCTION: COPTER_D 0x00466c20
 // PFile::`scalar deleting destructor'
 
 
@@ -8566,7 +8566,7 @@ public: void __thiscall CGameApp::ComposeMainMenuVideoFrame(void) {
 
 
 // Contribution: 2:00001464-00001467 Module: 44, 4 byte alignment, initialized_data, read, 
-// GLOBAL: SIMCOPTER 0x00001468
+// GLOBAL: COPTER_D 0x00001468
 // ??_7PFile@@6B@
 
 
@@ -8577,28 +8577,28 @@ public: void __thiscall CGameApp::ComposeMainMenuVideoFrame(void) {
 
 
 // Contribution: 3:00002284-00002300 Module: 44, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x00002288
+// GLOBAL: COPTER_D 0x00002288
 // SZ_COPTER_MAIN_PREFERENCES_FILE_NAME
-// GLOBAL: SIMCOPTER 0x0000228c
+// GLOBAL: COPTER_D 0x0000228c
 // SZ_MAIN_MENU_VIDEO_FILE_NAME
-// GLOBAL: SIMCOPTER 0x00002290
+// GLOBAL: COPTER_D 0x00002290
 // SZ_GRADUATION_NOTIFICATION_SOUND_FILE_NAME
 
 
 // Contribution: 3:00002304-00002307 Module: 44, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00002304
+// GLOBAL: COPTER_D 0x00002304
 // list<CopterGameMode>::last
-// GLOBAL: SIMCOPTER 0x00002308
+// GLOBAL: COPTER_D 0x00002308
 // list<CopterGameMode>::next_avail
 
 
 // Contribution: 3:00002308-0000230b Module: 44, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x0000230c
+// GLOBAL: COPTER_D 0x0000230c
 // list<CopterGameMode>::free_list
 
 
 // Contribution: 3:0000230c-0000230f Module: 44, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00002310
+// GLOBAL: COPTER_D 0x00002310
 // list<CopterGameMode>::buffer_list
 
 

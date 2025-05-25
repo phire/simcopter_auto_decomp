@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:001664e0-001683d3 Module: 180, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x005674e0
+// FUNCTION: COPTER_D 0x005674e0
 unsigned short OpenFile() {
 // LINE 16:
 	asm( 
@@ -71,7 +71,7 @@ unsigned short OpenFile() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00567552
+// FUNCTION: COPTER_D 0x00567552
 void _cArray::FromDiskCreate(void * __ptr32, class ResFile*, long, void (*)(void * __ptr32, long)) {
 // LINE 29:
 	asm( 
@@ -416,7 +416,7 @@ void _cArray::FromDiskCreate(void * __ptr32, class ResFile*, long, void (*)(void
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00567900
+// FUNCTION: COPTER_D 0x00567900
 void _cArray::BeginCreate(long, long, long, unsigned char *, class ResFile*, unsigned long) {
 // LINE 116:
 	asm( 
@@ -544,7 +544,7 @@ void _cArray::BeginCreate(long, long, long, unsigned char *, class ResFile*, uns
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005679eb
+// FUNCTION: COPTER_D 0x005679eb
 void _cArray::~_cArray() {
 // LINE 158:
 	asm( 
@@ -665,7 +665,7 @@ void _cArray::~_cArray() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00567b1b
+// FUNCTION: COPTER_D 0x00567b1b
 void _cArray::MakeTable() {
 // LINE 194:
 	asm( 
@@ -728,7 +728,7 @@ void _cArray::MakeTable() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00567ba7
+// FUNCTION: COPTER_D 0x00567ba7
 void _cArray::DeleteTable() {
 // LINE 205:
 	asm( 
@@ -766,7 +766,7 @@ void _cArray::DeleteTable() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00567be1
+// FUNCTION: COPTER_D 0x00567be1
 void _cArray::WriteToDisk() {
 // LINE 214:
 	asm( 
@@ -789,7 +789,7 @@ void _cArray::WriteToDisk() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00567bf7
+// FUNCTION: COPTER_D 0x00567bf7
 void _cArray::CheckIntoTable() {
 // LINE 248:
 	asm( 
@@ -902,7 +902,7 @@ void _cArray::CheckIntoTable() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00567d12
+// FUNCTION: COPTER_D 0x00567d12
 void _cArray::FillHeader() {
 // LINE 303:
 	asm( 
@@ -1023,7 +1023,7 @@ void _cArray::FillHeader() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00567e33
+// FUNCTION: COPTER_D 0x00567e33
 void _cArray::SetSizeAndHeaders(long, long) {
 // LINE 319:
 	asm( 
@@ -1065,7 +1065,7 @@ void _cArray::SetSizeAndHeaders(long, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00567e6b
+// FUNCTION: COPTER_D 0x00567e6b
 void _cArray::ClearBytes(char) {
 // LINE 326:
 	asm( 
@@ -1230,7 +1230,7 @@ void _cArray::ClearBytes(char) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00567fe6
+// FUNCTION: COPTER_D 0x00567fe6
 short _cArray::InsertRow(short) {
 // LINE 358:
 	asm( 
@@ -1380,7 +1380,7 @@ short _cArray::InsertRow(short) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00568128
+// FUNCTION: COPTER_D 0x00568128
 short _cArray::InsertColumn(short) {
 // LINE 386:
 	asm( 
@@ -1545,7 +1545,7 @@ short _cArray::InsertColumn(short) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00568294
+// FUNCTION: COPTER_D 0x00568294
 short _cArray::DeleteRow(short) {
 // LINE 410:
 	asm( 
@@ -1716,7 +1716,7 @@ short _cArray::DeleteRow(short) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00568439
+// FUNCTION: COPTER_D 0x00568439
 short _cArray::DeleteColumn(short) {
 // LINE 433:
 	asm( 
@@ -1966,7 +1966,7 @@ short _cArray::DeleteColumn(short) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005686af
+// FUNCTION: COPTER_D 0x005686af
 unsigned short _cArray::Resize(long, long, char) {
 // LINE 465:
 	asm( 
@@ -2163,7 +2163,7 @@ unsigned short _cArray::Resize(long, long, char) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00568879
+// FUNCTION: COPTER_D 0x00568879
 unsigned short _cArray::SetSize(long, long) {
 // LINE 493:
 	asm( 
@@ -2302,7 +2302,7 @@ unsigned short _cArray::SetSize(long, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005689cc
+// FUNCTION: COPTER_D 0x005689cc
 void _cArray::SetXPointers() {
 // LINE 515:
 	asm( 
@@ -2381,7 +2381,7 @@ void _cArray::SetXPointers() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00568a68
+// FUNCTION: COPTER_D 0x00568a68
 void _cArray::CopyFrom(unsigned char *) {
 // LINE 537:
 	asm( 
@@ -2414,7 +2414,7 @@ void _cArray::CopyFrom(unsigned char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00568a95
+// FUNCTION: COPTER_D 0x00568a95
 void _cArray::CopyFrom(unsigned long) {
 // LINE 542:
 	asm( 
@@ -2453,7 +2453,7 @@ void _cArray::CopyFrom(unsigned long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00568aca
+// FUNCTION: COPTER_D 0x00568aca
 void _cArray::CopyFrom(class _cArray*) {
 // LINE 548:
 	asm( 
@@ -2563,7 +2563,7 @@ void _cArray::CopyFrom(class _cArray*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00568be8
+// FUNCTION: COPTER_D 0x00568be8
 void _cArray::CopyTo(class _cArray*) {
 // LINE 568:
 	asm( 
@@ -2673,7 +2673,7 @@ void _cArray::CopyTo(class _cArray*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00568d06
+// FUNCTION: COPTER_D 0x00568d06
 void _cArray::CopyTo(unsigned long) {
 // LINE 580:
 	asm( 
@@ -2712,7 +2712,7 @@ void _cArray::CopyTo(unsigned long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00568d3b
+// FUNCTION: COPTER_D 0x00568d3b
 void _cArray::CopyTo(unsigned char *) {
 // LINE 586:
 	asm( 
@@ -2745,7 +2745,7 @@ void _cArray::CopyTo(unsigned char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00568d68
+// FUNCTION: COPTER_D 0x00568d68
 void _cArray::GetName(unsigned char *) {
 // LINE 591:
 	asm( 
@@ -2779,7 +2779,7 @@ void _cArray::GetName(unsigned char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00568d95
+// FUNCTION: COPTER_D 0x00568d95
 unsigned long _cArray::GetName() {
 // LINE 596:
 	asm( 
@@ -2807,7 +2807,7 @@ unsigned long _cArray::GetName() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00568db1
+// FUNCTION: COPTER_D 0x00568db1
 class _cArray* _cArray::GetArray(unsigned long, short) {
 // LINE 610:
 	asm( 
@@ -2946,7 +2946,7 @@ class _cArray* _cArray::GetArray(unsigned long, short) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00568f25
+// FUNCTION: COPTER_D 0x00568f25
 class _cArray* _cArray::GetArrayByType(unsigned long, short) {
 // LINE 629:
 	asm( 
@@ -3027,7 +3027,7 @@ class _cArray* _cArray::GetArrayByType(unsigned long, short) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00568fa8
+// FUNCTION: COPTER_D 0x00568fa8
 short _cArray::GetNumArraysByType(unsigned long) {
 // LINE 646:
 	asm( 
@@ -3092,7 +3092,7 @@ short _cArray::GetNumArraysByType(unsigned long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00569010
+// FUNCTION: COPTER_D 0x00569010
 short _cArray::GetArrayIndexInType(class _cArray*) {
 // LINE 658:
 	asm( 
@@ -3173,7 +3173,7 @@ short _cArray::GetArrayIndexInType(class _cArray*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00569095
+// FUNCTION: COPTER_D 0x00569095
 void _cArray::LoadAllArrays(class ResFile*, unsigned long, short, void (*)(void * __ptr32, long)) {
 // LINE 705:
 	asm( 
@@ -3425,7 +3425,7 @@ void _cArray::LoadAllArrays(class ResFile*, unsigned long, short, void (*)(void 
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0056931d
+// FUNCTION: COPTER_D 0x0056931d
 short _cArray::GetLoadedIndex(class ResFile*, unsigned long) {
 // LINE 776:
 	asm( 
@@ -3516,14 +3516,14 @@ short _cArray::GetLoadedIndex(class ResFile*, unsigned long) {
 
 
 // Contribution: 3:0002874c-0002950a Module: 180, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x0002874c
+// GLOBAL: COPTER_D 0x0002874c
 // _cArray::sArrayTable
-// GLOBAL: SIMCOPTER 0x00028750
+// GLOBAL: COPTER_D 0x00028750
 // _cArray::sAllLoaded
 
 
 // Contribution: 3:000a1998-000a1b97 Module: 180, 8 byte alignment, uninitialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x000a1998
+// GLOBAL: COPTER_D 0x000a1998
 // _cArray::fsLoaded
-// LOCAL: SIMCOPTER 0x000a1b98
+// LOCAL: COPTER_D 0x000a1b98
 // __InitCerr

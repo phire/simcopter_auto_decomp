@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:0008a110-0008a2a6 Module: 27, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x0048b110
+// FUNCTION: COPTER_D 0x0048b110
 int32_t GetAllDisplayModes() {
 // LINE 31:
 	asm( 
@@ -42,7 +42,7 @@ int32_t GetAllDisplayModes() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048b140
+// FUNCTION: COPTER_D 0x0048b140
 int32_t IsModeAvailable() {
 // LINE 56:
 	asm( 
@@ -104,7 +104,7 @@ int32_t IsModeAvailable() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048b1c4
+// FUNCTION: COPTER_D 0x0048b1c4
 void GetCurrentScreenMode() {
 // LINE 78:
 	asm( 
@@ -176,7 +176,7 @@ void GetCurrentScreenMode() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048b234
+// FUNCTION: COPTER_D 0x0048b234
 long EnumDisplayModesCallback() {
 // LINE 103:
 	asm( 
@@ -242,7 +242,7 @@ long EnumDisplayModesCallback() {
 
 
 // Contribution: 3:00002d80-00002d83 Module: 27, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x00002d80
+// GLOBAL: COPTER_D 0x00002d80
 // gNumModes
 
 

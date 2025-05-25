@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:0009d450-0009e705 Module: 12, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x0049e450
+// FUNCTION: COPTER_D 0x0049e450
 void ScreenBuffer::ScreenBuffer() {
 // LINE 24:
 	asm( 
@@ -116,7 +116,7 @@ void ScreenBuffer::ScreenBuffer() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049e534
+// FUNCTION: COPTER_D 0x0049e534
 void ScreenBuffer::ScreenBuffer(class CSparkalWindow*, long, long, struct SparkalColor*, int32_t, enum tagModeType, int32_t) {
 // LINE 62:
 	asm( 
@@ -275,7 +275,7 @@ void ScreenBuffer::ScreenBuffer(class CSparkalWindow*, long, long, struct Sparka
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049e667
+// FUNCTION: COPTER_D 0x0049e667
 void ScreenBuffer::~ScreenBuffer() {
 // LINE 110:
 	asm( 
@@ -312,7 +312,7 @@ void ScreenBuffer::~ScreenBuffer() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049e69e
+// FUNCTION: COPTER_D 0x0049e69e
 int32_t ScreenBuffer::CreateSurfaces() {
 // LINE 127:
 	asm( 
@@ -767,7 +767,7 @@ int32_t ScreenBuffer::CreateSurfaces() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049ea6a
+// FUNCTION: COPTER_D 0x0049ea6a
 int32_t ScreenBuffer::DeleteSurfaces() {
 // LINE 238:
 	asm( 
@@ -890,7 +890,7 @@ int32_t ScreenBuffer::DeleteSurfaces() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049eb58
+// FUNCTION: COPTER_D 0x0049eb58
 int32_t ScreenBuffer::ClearSurfaces(int32_t) {
 // LINE 281:
 	asm( 
@@ -1213,7 +1213,7 @@ int32_t ScreenBuffer::ClearSurfaces(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049ee15
+// FUNCTION: COPTER_D 0x0049ee15
 unsigned long ScreenBuffer::Swap(class CSparkalWindow*, long, long) {
 // LINE 361:
 	asm( 
@@ -1450,7 +1450,7 @@ unsigned long ScreenBuffer::Swap(class CSparkalWindow*, long, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049efff
+// FUNCTION: COPTER_D 0x0049efff
 void ScreenBuffer::WaitTillReadyToFlip() {
 // LINE 420:
 	asm( 
@@ -1491,7 +1491,7 @@ void ScreenBuffer::WaitTillReadyToFlip() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049f040
+// FUNCTION: COPTER_D 0x0049f040
 void ScreenBuffer::SetPalette() {
 // LINE 438:
 	asm( 
@@ -1589,7 +1589,7 @@ void ScreenBuffer::SetPalette() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049f0fa
+// FUNCTION: COPTER_D 0x0049f0fa
 int32_t ScreenBuffer::UsePalette(struct SparkalColor*) {
 // LINE 471:
 	asm( 
@@ -1930,7 +1930,7 @@ int32_t ScreenBuffer::UsePalette(struct SparkalColor*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049f42b
+// FUNCTION: COPTER_D 0x0049f42b
 void ScreenBuffer::FreePalette() {
 // LINE 618:
 	asm( 
@@ -1975,7 +1975,7 @@ void ScreenBuffer::FreePalette() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049f472
+// FUNCTION: COPTER_D 0x0049f472
 unsigned long ScreenBuffer::FillRect(long, struct SparkalRect*) {
 // LINE 649:
 	asm( 
@@ -2247,7 +2247,7 @@ unsigned long ScreenBuffer::FillRect(long, struct SparkalRect*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049f690
+// FUNCTION: COPTER_D 0x0049f690
 void ScreenBuffer::SetWindowRect(struct SparkalRect*) {
 // LINE 719:
 	asm( 
@@ -2318,7 +2318,7 @@ void ScreenBuffer::SetWindowRect(struct SparkalRect*) {
 
 
 // Contribution: 1:0009e740-0009e778 Module: 12, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x0049f740
+// FUNCTION: COPTER_D 0x0049f740
 // ScreenBuffer::`scalar deleting destructor'
 
 

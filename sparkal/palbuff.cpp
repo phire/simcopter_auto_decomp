@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:00046240-00046788 Module: 50, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00447240
+// FUNCTION: COPTER_D 0x00447240
 void PaletteBuffer::PaletteBuffer() {
 // LINE 34:
 	asm( 
@@ -104,7 +104,7 @@ void PaletteBuffer::PaletteBuffer() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00447340
+// FUNCTION: COPTER_D 0x00447340
 void PaletteBuffer::PaletteBuffer(struct SparkalColor*) {
 // LINE 52:
 	asm( 
@@ -211,7 +211,7 @@ void PaletteBuffer::PaletteBuffer(struct SparkalColor*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00447456
+// FUNCTION: COPTER_D 0x00447456
 void PaletteBuffer::~PaletteBuffer() {
 // LINE 69:
 	asm( 
@@ -256,7 +256,7 @@ void PaletteBuffer::~PaletteBuffer() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004474ab
+// FUNCTION: COPTER_D 0x004474ab
 int32_t PaletteBuffer::SetPalette(const struct SparkalColor*) {
 // LINE 78:
 	asm( 
@@ -305,7 +305,7 @@ int32_t PaletteBuffer::SetPalette(const struct SparkalColor*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00447501
+// FUNCTION: COPTER_D 0x00447501
 int32_t PaletteBuffer::SetPalette() {
 // LINE 96:
 	asm( 
@@ -416,7 +416,7 @@ int32_t PaletteBuffer::SetPalette() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004475e2
+// FUNCTION: COPTER_D 0x004475e2
 void PaletteBuffer::DrawPalette() {
 // LINE 125:
 	asm( 
@@ -586,7 +586,7 @@ void PaletteBuffer::DrawPalette() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044774b
+// FUNCTION: COPTER_D 0x0044774b
 unsigned long PaletteBuffer::Compose(class IFlatImage*, long, long, long, long, long, long) {
 // LINE 161:
 	asm( 
@@ -634,7 +634,7 @@ unsigned long PaletteBuffer::Compose(class IFlatImage*, long, long, long, long, 
 
 
 // Contribution: 2:000005e0-00000643 Module: 50, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x000005e0
+// GLOBAL: COPTER_D 0x000005e0
 // ??_7PaletteBuffer@@6B@
 
 

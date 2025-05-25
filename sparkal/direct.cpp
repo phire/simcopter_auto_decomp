@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:00080b20-00085dca Module: 29, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00481b20
+// FUNCTION: COPTER_D 0x00481b20
 void DirectoryEntry::DirectoryEntry() {
 // LINE 34:
 	asm( 
@@ -60,7 +60,7 @@ void DirectoryEntry::DirectoryEntry() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00481bae
+// FUNCTION: COPTER_D 0x00481bae
 void DirectoryEntry::DirectoryEntry(class Directory*, class basic_string<char>&, long) {
 // LINE 45:
 	asm( 
@@ -205,7 +205,7 @@ void DirectoryEntry::DirectoryEntry(class Directory*, class basic_string<char>&,
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00481d8a
+// FUNCTION: COPTER_D 0x00481d8a
 int32_t DirectoryEntry::GetEntryExtension(class basic_string<char>&) {
 // LINE 56:
 	asm( 
@@ -645,7 +645,7 @@ int32_t DirectoryEntry::GetEntryExtension(class basic_string<char>&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048237c
+// FUNCTION: COPTER_D 0x0048237c
 int32_t DirectoryEntry::GetEntryMinusExtension(class basic_string<char>&) {
 // LINE 80:
 	asm( 
@@ -994,7 +994,7 @@ int32_t DirectoryEntry::GetEntryMinusExtension(class basic_string<char>&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00482833
+// FUNCTION: COPTER_D 0x00482833
 void DirectoryEntry::GetFullPath(class basic_string<char>&) {
 // LINE 100:
 	asm( 
@@ -1382,7 +1382,7 @@ void DirectoryEntry::GetFullPath(class basic_string<char>&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00482d48
+// FUNCTION: COPTER_D 0x00482d48
 int32_t DirectoryEntry::IsMediaRemovable() {
 // LINE 111:
 	asm( 
@@ -1409,7 +1409,7 @@ int32_t DirectoryEntry::IsMediaRemovable() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00482d60
+// FUNCTION: COPTER_D 0x00482d60
 unsigned long DirectoryEntry::GetSize() {
 // LINE 118:
 	asm( 
@@ -1436,7 +1436,7 @@ unsigned long DirectoryEntry::GetSize() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00482d78
+// FUNCTION: COPTER_D 0x00482d78
 int32_t DirectoryEntry::GetCreationDate() {
 // LINE 136:
 	asm( 
@@ -1463,7 +1463,7 @@ int32_t DirectoryEntry::GetCreationDate() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00482d90
+// FUNCTION: COPTER_D 0x00482d90
 int32_t DirectoryEntry::GetlastModificationDate() {
 // LINE 143:
 	asm( 
@@ -1490,7 +1490,7 @@ int32_t DirectoryEntry::GetlastModificationDate() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00482da8
+// FUNCTION: COPTER_D 0x00482da8
 int32_t DirectoryEntry::GetSerialNumber() {
 // LINE 150:
 	asm( 
@@ -1517,7 +1517,7 @@ int32_t DirectoryEntry::GetSerialNumber() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00482dc0
+// FUNCTION: COPTER_D 0x00482dc0
 int32_t DirectoryEntry::CreatePhysicalEntry() {
 // LINE 157:
 	asm( 
@@ -1888,7 +1888,7 @@ int32_t DirectoryEntry::CreatePhysicalEntry() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004832a3
+// FUNCTION: COPTER_D 0x004832a3
 public: __thiscall Directory::Directory(class basic_string<char> &, int, int, int) {
 // LINE 198:
 	asm( 
@@ -2259,7 +2259,7 @@ public: __thiscall Directory::Directory(class basic_string<char> &, int, int, in
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004837af
+// FUNCTION: COPTER_D 0x004837af
 public: int __thiscall Directory::IsDirectoryRoot(void) {
 // LINE 208:
 	asm( 
@@ -2286,7 +2286,7 @@ public: int __thiscall Directory::IsDirectoryRoot(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004837c7
+// FUNCTION: COPTER_D 0x004837c7
 public: int __thiscall Directory::ReadDirectoryEntries(void) {
 // LINE 220:
 	asm( 
@@ -3395,7 +3395,7 @@ public: int __thiscall Directory::ReadDirectoryEntries(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048494d
+// FUNCTION: COPTER_D 0x0048494d
 public: int __thiscall Directory::ReadDirectorySpecificEntriesIntoStringList(class list<class basic_string<char>> &, long) {
 // LINE 347:
 	asm( 
@@ -4259,7 +4259,7 @@ public: int __thiscall Directory::ReadDirectorySpecificEntriesIntoStringList(cla
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00485735
+// FUNCTION: COPTER_D 0x00485735
 public: static int __cdecl Directory::DoesAnyEntryExistThatMatchesPattern(class basic_string<char> const &) {
 // LINE 431:
 	asm( 
@@ -4428,7 +4428,7 @@ public: static int __cdecl Directory::DoesAnyEntryExistThatMatchesPattern(class 
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004859c2
+// FUNCTION: COPTER_D 0x004859c2
 protected: int __thiscall Directory::DoesDirectoryListContainEntry(class basic_string<char> const &) {
 // LINE 447:
 	asm( 
@@ -4562,7 +4562,7 @@ protected: int __thiscall Directory::DoesDirectoryListContainEntry(class basic_s
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00485b36
+// FUNCTION: COPTER_D 0x00485b36
 public: int __thiscall Directory::ChangeDirectory(class basic_string<char> &, int) {
 // LINE 470:
 	asm( 
@@ -4732,7 +4732,7 @@ public: int __thiscall Directory::ChangeDirectory(class basic_string<char> &, in
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00485d34
+// FUNCTION: COPTER_D 0x00485d34
 public: int __thiscall Directory::CreateNewEntry(class basic_string<char> &, long) {
 // LINE 486:
 	asm( 
@@ -4821,7 +4821,7 @@ public: int __thiscall Directory::CreateNewEntry(class basic_string<char> &, lon
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00485e22
+// FUNCTION: COPTER_D 0x00485e22
 public: class DirectoryEntry * __thiscall Directory::GetNthEntry(int) {
 // LINE 496:
 	asm( 
@@ -4898,7 +4898,7 @@ public: class DirectoryEntry * __thiscall Directory::GetNthEntry(int) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00485ebe
+// FUNCTION: COPTER_D 0x00485ebe
 public: void __thiscall Directory::SetNewDirectoryEntryFilter(class basic_string<char> &, int) {
 // LINE 511:
 	asm( 
@@ -5234,7 +5234,7 @@ public: void __thiscall Directory::SetNewDirectoryEntryFilter(class basic_string
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048631c
+// FUNCTION: COPTER_D 0x0048631c
 protected: void __thiscall Directory::MakeSurePathEndsWithSeparator(void) {
 // LINE 523:
 	asm( 
@@ -5596,7 +5596,7 @@ protected: void __thiscall Directory::MakeSurePathEndsWithSeparator(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004867d2
+// FUNCTION: COPTER_D 0x004867d2
 public: static void __cdecl Directory::SplitDirectoryPath(class basic_string<char> const &, class basic_string<char> &, class basic_string<char> &) {
 // LINE 544:
 	asm( 
@@ -6100,13 +6100,13 @@ public: static void __cdecl Directory::SplitDirectoryPath(class basic_string<cha
 
 
 // Contribution: 3:00002b8c-00002bb9 Module: 29, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x00002b90
+// GLOBAL: COPTER_D 0x00002b90
 // SZ_CURRENT_DIR_NAME
-// GLOBAL: SIMCOPTER 0x00002b94
+// GLOBAL: COPTER_D 0x00002b94
 // SZ_PARENT_DIR_NAME
-// GLOBAL: SIMCOPTER 0x00002b98
+// GLOBAL: COPTER_D 0x00002b98
 // SZ_ROOT_DIR_NAME
-// GLOBAL: SIMCOPTER 0x00002b9c
+// GLOBAL: COPTER_D 0x00002b9c
 // SZ_DIR_SEPARATOR_1
-// GLOBAL: SIMCOPTER 0x00002ba0
+// GLOBAL: COPTER_D 0x00002ba0
 // SZ_DIR_SEPARATOR_2

@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:0015f290-0015f9c8 Module: 191, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00560290
+// FUNCTION: COPTER_D 0x00560290
 void Behavior::Behavior(class Language*, class NResFile*, class NResFile*) {
 // LINE 16:
 	asm( 
@@ -86,7 +86,7 @@ void Behavior::Behavior(class Language*, class NResFile*, class NResFile*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0056032e
+// FUNCTION: COPTER_D 0x0056032e
 void Behavior::~Behavior() {
 // LINE 33:
 	asm( 
@@ -111,7 +111,7 @@ void Behavior::~Behavior() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0056034d
+// FUNCTION: COPTER_D 0x0056034d
 class ResFile* Behavior::GetPrivFile() {
 // LINE 38:
 	asm( 
@@ -139,7 +139,7 @@ class ResFile* Behavior::GetPrivFile() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00560369
+// FUNCTION: COPTER_D 0x00560369
 class ResFile* Behavior::GetGlobFile() {
 // LINE 43:
 	asm( 
@@ -167,7 +167,7 @@ class ResFile* Behavior::GetGlobFile() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00560385
+// FUNCTION: COPTER_D 0x00560385
 void Behavior::StdTreeSwizzle(struct Behavior::Tree*, long, void (*)(short, struct Behavior::NodeParameter*)) {
 // LINE 48:
 	asm( 
@@ -238,7 +238,7 @@ void Behavior::StdTreeSwizzle(struct Behavior::Tree*, long, void (*)(short, stru
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0056040a
+// FUNCTION: COPTER_D 0x0056040a
 const struct Behavior::Node* Behavior::GetNodeRef(short, short) {
 // LINE 57:
 	asm( 
@@ -381,7 +381,7 @@ const struct Behavior::Node* Behavior::GetNodeRef(short, short) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005605ac
+// FUNCTION: COPTER_D 0x005605ac
 void Behavior::GetNodeText(struct Behavior::Node*, unsigned char *) {
 // LINE 91:
 	asm( 
@@ -404,7 +404,7 @@ void Behavior::GetNodeText(struct Behavior::Node*, unsigned char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005605c4
+// FUNCTION: COPTER_D 0x005605c4
 void Behavior::GetNodeText(short, short, unsigned char *) {
 // LINE 131:
 	asm( 
@@ -455,7 +455,7 @@ void Behavior::GetNodeText(short, short, unsigned char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00560616
+// FUNCTION: COPTER_D 0x00560616
 short Behavior::CountPrimitives() {
 // LINE 139:
 	asm( 
@@ -487,7 +487,7 @@ short Behavior::CountPrimitives() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0056063d
+// FUNCTION: COPTER_D 0x0056063d
 void Behavior::GetTreeName(short, unsigned char *) {
 // LINE 145:
 	asm( 
@@ -602,7 +602,7 @@ void Behavior::GetTreeName(short, unsigned char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0056072f
+// FUNCTION: COPTER_D 0x0056072f
 class ResFile* Behavior::GetResFile(short) {
 // LINE 177:
 	asm( 
@@ -653,7 +653,7 @@ class ResFile* Behavior::GetResFile(short) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0056077d
+// FUNCTION: COPTER_D 0x0056077d
 short Behavior::GetBaseID(short) {
 // LINE 189:
 	asm( 
@@ -736,7 +736,7 @@ short Behavior::GetBaseID(short) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005607fb
+// FUNCTION: COPTER_D 0x005607fb
 short Behavior::GetMaxID(short) {
 // LINE 208:
 	asm( 
@@ -820,7 +820,7 @@ short Behavior::GetMaxID(short) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00560879
+// FUNCTION: COPTER_D 0x00560879
 short Behavior::GetTreeClass(short) {
 // LINE 227:
 	asm( 
@@ -901,7 +901,7 @@ short Behavior::GetTreeClass(short) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00560924
+// FUNCTION: COPTER_D 0x00560924
 void Behavior::GetClassNameA(short, unsigned char *) {
 // LINE 239:
 	asm( 
@@ -1006,9 +1006,9 @@ void Behavior::GetClassNameA(short, unsigned char *) {
 
 
 // Contribution: 2:000046d8-000046e7 Module: 191, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x000046d8
+// GLOBAL: COPTER_D 0x000046d8
 // ??_7Behavior@@6B@
-// GLOBAL: SIMCOPTER 0x000046e8
+// GLOBAL: COPTER_D 0x000046e8
 // ??_7YObjLang@@6B@
 
 

@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:00162ea0-00164a36 Module: 186, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00563ea0
+// FUNCTION: COPTER_D 0x00563ea0
 int32_t Check_Pointer() {
 // LINE 93:
 	asm( 
@@ -30,7 +30,7 @@ int32_t Check_Pointer() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00563eb5
+// FUNCTION: COPTER_D 0x00563eb5
 void MyPixel() {
 // LINE 144:
 	asm( 
@@ -170,7 +170,7 @@ void MyPixel() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00563fd1
+// FUNCTION: COPTER_D 0x00563fd1
 void DrawSphere() {
 // LINE 176:
 	asm( 
@@ -856,7 +856,7 @@ void DrawSphere() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00564770
+// FUNCTION: COPTER_D 0x00564770
 void DrawFaceTwo() {
 // LINE 404:
 	asm( 
@@ -1150,7 +1150,7 @@ void DrawFaceTwo() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005649c1
+// FUNCTION: COPTER_D 0x005649c1
 long ComputeViewToFigureOffset() {
 // LINE 489:
 	asm( 
@@ -1175,7 +1175,7 @@ long ComputeViewToFigureOffset() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005649d3
+// FUNCTION: COPTER_D 0x005649d3
 void DrawLineOnFace() {
 // LINE 523:
 	asm( 
@@ -1441,7 +1441,7 @@ void DrawLineOnFace() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00564bb8
+// FUNCTION: COPTER_D 0x00564bb8
 void FindFaceQuadrant() {
 // LINE 583:
 	asm( 
@@ -1500,7 +1500,7 @@ void FindFaceQuadrant() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00564c10
+// FUNCTION: COPTER_D 0x00564c10
 void FindFaceQuadrant2() {
 // LINE 599:
 	asm( 
@@ -1645,7 +1645,7 @@ void FindFaceQuadrant2() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00564d8d
+// FUNCTION: COPTER_D 0x00564d8d
 void DrawTaperedLine() {
 // LINE 637:
 	asm( 
@@ -2250,7 +2250,7 @@ void DrawTaperedLine() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00565225
+// FUNCTION: COPTER_D 0x00565225
 void DrawLine() {
 // LINE 824:
 	asm( 
@@ -2774,7 +2774,7 @@ void DrawLine() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00565641
+// FUNCTION: COPTER_D 0x00565641
 void DrawHorzLinePat() {
 // LINE 972:
 	asm( 
@@ -3060,7 +3060,7 @@ void DrawHorzLinePat() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00565898
+// FUNCTION: COPTER_D 0x00565898
 void DrawHorzLine() {
 // LINE 1056:
 	asm( 
@@ -3273,32 +3273,32 @@ void DrawHorzLine() {
 
 
 // Contribution: 2:000047a0-00004a17 Module: 186, 8 byte alignment, initialized_data, read, 
-// LOCAL: SIMCOPTER 0x000047a0
+// LOCAL: COPTER_D 0x000047a0
 // TurnTable3
-// LOCAL: SIMCOPTER 0x00004820
+// LOCAL: COPTER_D 0x00004820
 // TurnTable2
-// LOCAL: SIMCOPTER 0x00004860
+// LOCAL: COPTER_D 0x00004860
 // IndexToType
-// LOCAL: SIMCOPTER 0x00004870
+// LOCAL: COPTER_D 0x00004870
 // TypeToIndex2
-// LOCAL: SIMCOPTER 0x000048b0
+// LOCAL: COPTER_D 0x000048b0
 // TILUT
-// LOCAL: SIMCOPTER 0x000048f0
+// LOCAL: COPTER_D 0x000048f0
 // OT
-// LOCAL: SIMCOPTER 0x00004930
+// LOCAL: COPTER_D 0x00004930
 // RRT
-// LOCAL: SIMCOPTER 0x00004970
+// LOCAL: COPTER_D 0x00004970
 // LRT
 
 
 // Contribution: 3:00027f28-00028474 Module: 186, 8 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x00027f28
+// GLOBAL: COPTER_D 0x00027f28
 // Pbufwidth
-// GLOBAL: SIMCOPTER 0x00027f2c
+// GLOBAL: COPTER_D 0x00027f2c
 // Pwinwidth
-// GLOBAL: SIMCOPTER 0x00027f30
+// GLOBAL: COPTER_D 0x00027f30
 // Pwinheight
-// GLOBAL: SIMCOPTER 0x00027f38
+// GLOBAL: COPTER_D 0x00027f38
 // G_figureHeadShapeRatio
-// GLOBAL: SIMCOPTER 0x00027f40
+// GLOBAL: COPTER_D 0x00027f40
 // G_figureShadeSpread

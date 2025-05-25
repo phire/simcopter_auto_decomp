@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:0003c3f0-0003c841 Module: 57, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x0043d3f0
+// FUNCTION: COPTER_D 0x0043d3f0
 void CharData::CharData() {
 // LINE 9:
 	asm( 
@@ -34,7 +34,7 @@ void CharData::CharData() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043d40f
+// FUNCTION: COPTER_D 0x0043d40f
 void CharData::CharData(unsigned char) {
 // LINE 14:
 	asm( 
@@ -64,7 +64,7 @@ void CharData::CharData(unsigned char) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043d432
+// FUNCTION: COPTER_D 0x0043d432
 void CharList::CharList() {
 // LINE 24:
 	asm( 
@@ -106,7 +106,7 @@ void CharList::CharList() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043d476
+// FUNCTION: COPTER_D 0x0043d476
 void CharList::~CharList() {
 // LINE 32:
 	asm( 
@@ -175,7 +175,7 @@ void CharList::~CharList() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043d4eb
+// FUNCTION: COPTER_D 0x0043d4eb
 void CharList::AddItem(unsigned char) {
 // LINE 49:
 	asm( 
@@ -221,7 +221,7 @@ void CharList::AddItem(unsigned char) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043d541
+// FUNCTION: COPTER_D 0x0043d541
 void CharList::AddItem(class CharData*) {
 // LINE 59:
 	asm( 
@@ -312,7 +312,7 @@ void CharList::AddItem(class CharData*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043d5c9
+// FUNCTION: COPTER_D 0x0043d5c9
 void CharList::DeleteItem(class CharData*) {
 // LINE 79:
 	asm( 
@@ -420,7 +420,7 @@ void CharList::DeleteItem(class CharData*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043d67f
+// FUNCTION: COPTER_D 0x0043d67f
 void CharList::DeleteItem(unsigned char) {
 // LINE 100:
 	asm( 
@@ -467,7 +467,7 @@ void CharList::DeleteItem(unsigned char) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043d6c1
+// FUNCTION: COPTER_D 0x0043d6c1
 void CharList::DeleteItem(int32_t) {
 // LINE 110:
 	asm( 
@@ -514,7 +514,7 @@ void CharList::DeleteItem(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043d703
+// FUNCTION: COPTER_D 0x0043d703
 void CharList::DeleteAllItems() {
 // LINE 120:
 	asm( 
@@ -560,7 +560,7 @@ void CharList::DeleteAllItems() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043d74d
+// FUNCTION: COPTER_D 0x0043d74d
 class CharData* CharList::FindCharDataByIndex(int32_t) {
 // LINE 128:
 	asm( 
@@ -633,7 +633,7 @@ class CharData* CharList::FindCharDataByIndex(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043d7ce
+// FUNCTION: COPTER_D 0x0043d7ce
 class CharData* CharList::FindCharDataByValue(unsigned char) {
 // LINE 149:
 	asm( 

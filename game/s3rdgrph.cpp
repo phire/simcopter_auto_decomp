@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:0013ad40-0014035d Module: 155, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x0053bd40
+// FUNCTION: COPTER_D 0x0053bd40
 void S3RoadGraphInit() {
 // LINE 67:
 	asm( 
@@ -31,7 +31,7 @@ void S3RoadGraphInit() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0053bd5a
+// FUNCTION: COPTER_D 0x0053bd5a
 void S3RoadGraphDestroy() {
 // LINE 74:
 	asm( 
@@ -52,7 +52,7 @@ void S3RoadGraphDestroy() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0053bd6a
+// FUNCTION: COPTER_D 0x0053bd6a
 void RoadGraph::Init() {
 // LINE 85:
 	asm( 
@@ -588,7 +588,7 @@ void RoadGraph::Init() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0053c331
+// FUNCTION: COPTER_D 0x0053c331
 void RoadGraph::GetNextGoal(struct Goal*) {
 // LINE 197:
 	asm( 
@@ -981,7 +981,7 @@ void RoadGraph::GetNextGoal(struct Goal*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0053c69e
+// FUNCTION: COPTER_D 0x0053c69e
 void RoadGraph::PickPlaceOnRoad(struct Goal*, int32_t, int32_t) {
 // LINE 333:
 	asm( 
@@ -1360,7 +1360,7 @@ void RoadGraph::PickPlaceOnRoad(struct Goal*, int32_t, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0053c998
+// FUNCTION: COPTER_D 0x0053c998
 struct Goal RoadGraph::FindIntersections(struct _GridCoordinates, struct _GridCoordinates, struct Goal&, struct Goal&) {
 // LINE 419:
 	asm( 
@@ -2067,7 +2067,7 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates, struct _GridCo
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0053d02c
+// FUNCTION: COPTER_D 0x0053d02c
 void RoadGraph::SamePlaceOtherDirection(struct Goal*) {
 // LINE 553:
 	asm( 
@@ -2230,7 +2230,7 @@ void RoadGraph::SamePlaceOtherDirection(struct Goal*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0053d167
+// FUNCTION: COPTER_D 0x0053d167
 unsigned char RoadGraph::FindYIndexToVertex(int32_t, int32_t) {
 // LINE 596:
 	asm( 
@@ -2311,7 +2311,7 @@ unsigned char RoadGraph::FindYIndexToVertex(int32_t, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0053d21b
+// FUNCTION: COPTER_D 0x0053d21b
 int32_t RoadGraph::FindIntersection(struct Goal&, unsigned char, unsigned char, struct _GridCoordinates, struct _GridCoordinates, enum DirectionTypes) {
 // LINE 629:
 	asm( 
@@ -2569,7 +2569,7 @@ int32_t RoadGraph::FindIntersection(struct Goal&, unsigned char, unsigned char, 
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0053d400
+// FUNCTION: COPTER_D 0x0053d400
 void RoadGraph::FindDeadEnds() {
 // LINE 708:
 	asm( 
@@ -3002,7 +3002,7 @@ void RoadGraph::FindDeadEnds() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0053d8d5
+// FUNCTION: COPTER_D 0x0053d8d5
 int32_t RoadGraph::IsThisADeadEnd(enum DirIndex2, unsigned char, unsigned char) {
 // LINE 762:
 	asm( 
@@ -3152,7 +3152,7 @@ int32_t RoadGraph::IsThisADeadEnd(enum DirIndex2, unsigned char, unsigned char) 
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0053d9d2
+// FUNCTION: COPTER_D 0x0053d9d2
 void RoadGraph::FindEdges(int32_t, int32_t, struct RGVertex*) {
 // LINE 808:
 	asm( 
@@ -3876,7 +3876,7 @@ void RoadGraph::FindEdges(int32_t, int32_t, struct RGVertex*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0053e305
+// FUNCTION: COPTER_D 0x0053e305
 void RoadGraph::FindNumRoadElements(struct RGVertex*, struct Edge*, enum DirIndex2, unsigned char, unsigned char, int32_t) {
 // LINE 880:
 	asm( 
@@ -4477,7 +4477,7 @@ void RoadGraph::FindNumRoadElements(struct RGVertex*, struct Edge*, enum DirInde
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0053e8b0
+// FUNCTION: COPTER_D 0x0053e8b0
 enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2, enum DirIndex2*, unsigned char, unsigned char) {
 // LINE 1013:
 	asm( 
@@ -5065,7 +5065,7 @@ enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2, enum DirIndex2*,
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0053eed6
+// FUNCTION: COPTER_D 0x0053eed6
 void RoadGraph::ConnectHiwayRamp(int32_t, int32_t, unsigned short) {
 // LINE 1096:
 	asm( 
@@ -6640,7 +6640,7 @@ void RoadGraph::ConnectHiwayRamp(int32_t, int32_t, unsigned short) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0054048d
+// FUNCTION: COPTER_D 0x0054048d
 void RoadGraph::FindRoads(int32_t, int32_t, struct RGVertex*) {
 // LINE 1197:
 	asm( 
@@ -6837,7 +6837,7 @@ void RoadGraph::FindRoads(int32_t, int32_t, struct RGVertex*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00540636
+// FUNCTION: COPTER_D 0x00540636
 void RoadGraph::MakeRoad(struct RGVertex*, unsigned char, unsigned char, enum DirIndex2) {
 // LINE 1254:
 	asm( 
@@ -7805,7 +7805,7 @@ void RoadGraph::MakeRoad(struct RGVertex*, unsigned char, unsigned char, enum Di
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00541130
+// FUNCTION: COPTER_D 0x00541130
 void RoadGraph::FindPlaceOnRoad(struct Goal&, struct _GridCoordinates) {
 // LINE 1413:
 	asm( 
@@ -8008,7 +8008,7 @@ void RoadGraph::FindPlaceOnRoad(struct Goal&, struct _GridCoordinates) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005412d1
+// FUNCTION: COPTER_D 0x005412d1
 int32_t RoadGraph::SetElevation(unsigned short) {
 // LINE 1446:
 	asm( 
@@ -8064,9 +8064,9 @@ int32_t RoadGraph::SetElevation(unsigned short) {
 
 
 // Contribution: 2:00004430-0000447f Module: 155, 8 byte alignment, initialized_data, read, 
-// LOCAL: SIMCOPTER 0x00004430
+// LOCAL: COPTER_D 0x00004430
 // IndexToType
-// LOCAL: SIMCOPTER 0x00004440
+// LOCAL: COPTER_D 0x00004440
 // TypeToIndex2
 
 

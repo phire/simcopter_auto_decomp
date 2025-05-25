@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:0015f9d0-0015fba1 Module: 190, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x005609d0
+// FUNCTION: COPTER_D 0x005609d0
 void YObjLang::YObjLang(unsigned char *) {
 // LINE 42:
 	asm( 
@@ -34,7 +34,7 @@ void YObjLang::YObjLang(unsigned char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00560a02
+// FUNCTION: COPTER_D 0x00560a02
 void YObjLang::SwizzleTreeParam(short, struct Behavior::NodeParameter*) {
 // LINE 52:
 	asm( 
@@ -143,7 +143,7 @@ void YObjLang::SwizzleTreeParam(short, struct Behavior::NodeParameter*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00560abe
+// FUNCTION: COPTER_D 0x00560abe
 void YObjLang::SwizzleTree(void * __ptr32, long) {
 // LINE 75:
 	asm( 
@@ -180,7 +180,7 @@ void YObjLang::SwizzleTree(void * __ptr32, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00560aec
+// FUNCTION: COPTER_D 0x00560aec
 void YObjLang::YObjLang(class YObjLang&) {
 // LINE 82:
 	asm( 
@@ -209,7 +209,7 @@ void YObjLang::YObjLang(class YObjLang&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00560b1e
+// FUNCTION: COPTER_D 0x00560b1e
 void YObjLang::~YObjLang() {
 // LINE 91:
 	asm( 
@@ -234,7 +234,7 @@ void YObjLang::~YObjLang() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00560b3d
+// FUNCTION: COPTER_D 0x00560b3d
 short YObjLang::CountPrimitives() {
 // LINE 98:
 	asm( 
@@ -261,7 +261,7 @@ short YObjLang::CountPrimitives() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00560b57
+// FUNCTION: COPTER_D 0x00560b57
 void YObjLang::GetPrimName(short, unsigned char *) {
 // LINE 108:
 	asm( 
@@ -284,7 +284,7 @@ void YObjLang::GetPrimName(short, unsigned char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00560b6f
+// FUNCTION: COPTER_D 0x00560b6f
 unsigned short YObjLang::IsSingleExit(struct Behavior::Node*) {
 // LINE 115:
 	asm( 
@@ -311,7 +311,7 @@ unsigned short YObjLang::IsSingleExit(struct Behavior::Node*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00560b8a
+// FUNCTION: COPTER_D 0x00560b8a
 void YObjLang::GetNodeText(class Behavior*, struct Behavior::Node*, unsigned char *) {
 // LINE 467:
 	asm( 
@@ -346,5 +346,5 @@ void YObjLang::GetNodeText(class Behavior*, struct Behavior::Node*, unsigned cha
 
 
 // Contribution: 2:00004700-00004713 Module: 190, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00004700
+// GLOBAL: COPTER_D 0x00004700
 // ??_7Language@@6B@

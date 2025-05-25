@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:00165850-00165a00 Module: 183, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00566850
+// FUNCTION: COPTER_D 0x00566850
 void Swizzle16() {
 // LINE 10:
 	asm( 
@@ -65,7 +65,7 @@ void Swizzle16() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0056689d
+// FUNCTION: COPTER_D 0x0056689d
 void Swizzle8() {
 // LINE 22:
 	asm( 
@@ -125,7 +125,7 @@ void Swizzle8() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005668ea
+// FUNCTION: COPTER_D 0x005668ea
 void SwizzleFloat() {
 // LINE 34:
 	asm( 
@@ -153,7 +153,7 @@ void SwizzleFloat() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00566906
+// FUNCTION: COPTER_D 0x00566906
 void Swizzle4() {
 // LINE 39:
 	asm( 
@@ -213,7 +213,7 @@ void Swizzle4() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0056695b
+// FUNCTION: COPTER_D 0x0056695b
 void Swizzle2() {
 // LINE 51:
 	asm( 
@@ -259,7 +259,7 @@ void Swizzle2() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00566990
+// FUNCTION: COPTER_D 0x00566990
 void SwizzleRect() {
 // LINE 62:
 	asm( 

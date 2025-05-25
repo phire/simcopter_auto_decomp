@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:00073960-0007a5d0 Module: 34, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00474960
+// FUNCTION: COPTER_D 0x00474960
 void CatalogWindow::CatalogWindow(int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
 // LINE 65:
 	asm( 
@@ -1237,7 +1237,7 @@ void CatalogWindow::CatalogWindow(int32_t, class GraphicWindow*, class GraphicWi
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00475f4d
+// FUNCTION: COPTER_D 0x00475f4d
 void CatalogWindow::~CatalogWindow() {
 // LINE 122:
 	asm( 
@@ -1577,7 +1577,7 @@ void CatalogWindow::~CatalogWindow() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00476517
+// FUNCTION: COPTER_D 0x00476517
 int32_t CatalogWindow::Initialize() {
 // LINE 132:
 	asm( 
@@ -2092,7 +2092,7 @@ int32_t CatalogWindow::Initialize() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00476c64
+// FUNCTION: COPTER_D 0x00476c64
 void CatalogWindow::SwitchGraphicsForTab(long) {
 // LINE 167:
 	asm( 
@@ -5058,7 +5058,7 @@ void CatalogWindow::SwitchGraphicsForTab(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00479dbb
+// FUNCTION: COPTER_D 0x00479dbb
 void CatalogWindow::DrawCurrentEquipmentSelection() {
 // LINE 394:
 	asm( 
@@ -5293,7 +5293,7 @@ void CatalogWindow::DrawCurrentEquipmentSelection() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047a09f
+// FUNCTION: COPTER_D 0x0047a09f
 void CatalogWindow::SetNewEquipmentSelection(long) {
 // LINE 442:
 	asm( 
@@ -5524,7 +5524,7 @@ void CatalogWindow::SetNewEquipmentSelection(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047a30e
+// FUNCTION: COPTER_D 0x0047a30e
 int32_t CatalogWindow::DoesTabHaveAnyStains(long) {
 // LINE 474:
 	asm( 
@@ -5576,7 +5576,7 @@ int32_t CatalogWindow::DoesTabHaveAnyStains(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047a366
+// FUNCTION: COPTER_D 0x0047a366
 int32_t CatalogWindow::DoesTabHaveAnyPaperClips(long) {
 // LINE 488:
 	asm( 
@@ -5628,7 +5628,7 @@ int32_t CatalogWindow::DoesTabHaveAnyPaperClips(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047a3be
+// FUNCTION: COPTER_D 0x0047a3be
 void CatalogWindow::GetCurrentGraphicsFileNames(class basic_string<char>&, class basic_string<char>&) {
 // LINE 504:
 	asm( 
@@ -6019,7 +6019,7 @@ void CatalogWindow::GetCurrentGraphicsFileNames(class basic_string<char>&, class
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047a9b3
+// FUNCTION: COPTER_D 0x0047a9b3
 int32_t CatalogWindow::ReadPalette(struct SparkalColor*) {
 // LINE 521:
 	asm( 
@@ -6132,7 +6132,7 @@ int32_t CatalogWindow::ReadPalette(struct SparkalColor*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047aaf5
+// FUNCTION: COPTER_D 0x0047aaf5
 int32_t CatalogWindow::CreateImage(int32_t) {
 // LINE 529:
 	asm( 
@@ -6190,7 +6190,7 @@ int32_t CatalogWindow::CreateImage(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047ab4e
+// FUNCTION: COPTER_D 0x0047ab4e
 int32_t CatalogWindow::ComposeSelf() {
 // LINE 543:
 	asm( 
@@ -6233,7 +6233,7 @@ int32_t CatalogWindow::ComposeSelf() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047ab89
+// FUNCTION: COPTER_D 0x0047ab89
 int32_t CatalogWindow::DoesCursorHitEquipmentSelection(long, long, long&) {
 // LINE 557:
 	asm( 
@@ -6358,7 +6358,7 @@ int32_t CatalogWindow::DoesCursorHitEquipmentSelection(long, long, long&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047ad0d
+// FUNCTION: COPTER_D 0x0047ad0d
 int32_t CatalogWindow::DoesCursorHitTab(long, long, long&) {
 // LINE 580:
 	asm( 
@@ -6447,7 +6447,7 @@ int32_t CatalogWindow::DoesCursorHitTab(long, long, long&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047adce
+// FUNCTION: COPTER_D 0x0047adce
 long CatalogWindow::DoKeyDown(long, char) {
 // LINE 596:
 	asm( 
@@ -6489,7 +6489,7 @@ long CatalogWindow::DoKeyDown(long, char) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047ae0e
+// FUNCTION: COPTER_D 0x0047ae0e
 long CatalogWindow::DoCursorDown(long, long, unsigned long) {
 // LINE 615:
 	asm( 
@@ -6572,7 +6572,7 @@ long CatalogWindow::DoCursorDown(long, long, unsigned long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047ae9c
+// FUNCTION: COPTER_D 0x0047ae9c
 long CatalogWindow::DoCursorUp(long, long, unsigned long) {
 // LINE 635:
 	asm( 
@@ -6599,7 +6599,7 @@ long CatalogWindow::DoCursorUp(long, long, unsigned long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047aeb9
+// FUNCTION: COPTER_D 0x0047aeb9
 long CatalogWindow::DoCursorMove(long, long) {
 // LINE 643:
 	asm( 
@@ -6626,7 +6626,7 @@ long CatalogWindow::DoCursorMove(long, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047aed6
+// FUNCTION: COPTER_D 0x0047aed6
 void CatalogWindow::SetButtonStates() {
 // LINE 654:
 	asm( 
@@ -6832,7 +6832,7 @@ void CatalogWindow::SetButtonStates() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047b0d8
+// FUNCTION: COPTER_D 0x0047b0d8
 int32_t CatalogWindow::DoMessage(class GraphicWindow*, long, long, void * __ptr32) {
 // LINE 700:
 	asm( 
@@ -7003,7 +7003,7 @@ int32_t CatalogWindow::DoMessage(class GraphicWindow*, long, long, void * __ptr3
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047b233
+// FUNCTION: COPTER_D 0x0047b233
 long CatalogWindow::GetHelicopterFromTab(long) {
 // LINE 734:
 	asm( 
@@ -7045,7 +7045,7 @@ long CatalogWindow::GetHelicopterFromTab(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047b28a
+// FUNCTION: COPTER_D 0x0047b28a
 long CatalogWindow::GetEquipmentFromSelectionIndex(long) {
 // LINE 745:
 	asm( 
@@ -7084,7 +7084,7 @@ long CatalogWindow::GetEquipmentFromSelectionIndex(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047b2cc
+// FUNCTION: COPTER_D 0x0047b2cc
 int32_t CatalogWindow::CanUserBuy() {
 // LINE 762:
 	asm( 
@@ -7155,7 +7155,7 @@ int32_t CatalogWindow::CanUserBuy() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047b353
+// FUNCTION: COPTER_D 0x0047b353
 int32_t CatalogWindow::CanUserSell() {
 // LINE 783:
 	asm( 
@@ -7222,7 +7222,7 @@ int32_t CatalogWindow::CanUserSell() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047b3d1
+// FUNCTION: COPTER_D 0x0047b3d1
 int32_t CatalogWindow::DoCatalogWindowBuy() {
 // LINE 800:
 	asm( 
@@ -7364,7 +7364,7 @@ int32_t CatalogWindow::DoCatalogWindowBuy() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0047b4d0
+// FUNCTION: COPTER_D 0x0047b4d0
 int32_t CatalogWindow::DoCatalogWindowSell() {
 // LINE 833:
 	asm( 
@@ -7513,26 +7513,26 @@ int32_t CatalogWindow::DoCatalogWindowSell() {
 
 
 // Contribution: 1:0007a600-0007a638 Module: 34, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x0047b600
+// FUNCTION: COPTER_D 0x0047b600
 // CatalogWindow::`scalar deleting destructor'
 
 
 
 // Contribution: 2:00001ce8-00001dab Module: 34, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00001ce8
+// GLOBAL: COPTER_D 0x00001ce8
 // ??_7CatalogWindow@@6B@
 
 
 // Contribution: 3:0000281c-000029cc Module: 34, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x0000281c
+// GLOBAL: COPTER_D 0x0000281c
 // SZ_CATALOG_IMAGE_FILE_NAME
-// GLOBAL: SIMCOPTER 0x00002820
+// GLOBAL: COPTER_D 0x00002820
 // SZ_CATALOG_EQUIPMENT_IMAGE_FILE_NAME
-// GLOBAL: SIMCOPTER 0x00002824
+// GLOBAL: COPTER_D 0x00002824
 // SZ_STAIN_IMAGE_FILE_NAME
-// GLOBAL: SIMCOPTER 0x00002828
+// GLOBAL: COPTER_D 0x00002828
 // SZ_CATALOG_WINDOW_BUTTON_IMAGE_FILE_NAME
-// GLOBAL: SIMCOPTER 0x0000282c
+// GLOBAL: COPTER_D 0x0000282c
 // SZ_CATALOG_WINDOW_PAPER_CLIP_IMAGEFILE_NAME
-// GLOBAL: SIMCOPTER 0x00002830
+// GLOBAL: COPTER_D 0x00002830
 // SZ_CATALOG_WINDOW_TEXT_NAME

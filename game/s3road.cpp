@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:00137470-00138bf2 Module: 157, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00538470
+// FUNCTION: COPTER_D 0x00538470
 void S3RoadDataInit() {
 // LINE 43:
 	asm( 
@@ -1252,7 +1252,7 @@ void S3RoadDataInit() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00539260
+// FUNCTION: COPTER_D 0x00539260
 int32_t IsThisAnIntersection() {
 // LINE 419:
 	asm( 
@@ -1585,7 +1585,7 @@ int32_t IsThisAnIntersection() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0053964a
+// FUNCTION: COPTER_D 0x0053964a
 int32_t DoRoadTilesConnect() {
 // LINE 492:
 	asm( 
@@ -2079,9 +2079,9 @@ int32_t DoRoadTilesConnect() {
 
 
 // Contribution: 2:00004338-0000442f Module: 157, 8 byte alignment, initialized_data, read, 
-// LOCAL: SIMCOPTER 0x00004378
+// LOCAL: COPTER_D 0x00004378
 // RRT
-// LOCAL: SIMCOPTER 0x000043b8
+// LOCAL: COPTER_D 0x000043b8
 // LRT
 
 
@@ -2089,17 +2089,17 @@ int32_t DoRoadTilesConnect() {
 
 
 // Contribution: 3:00094a00-0009e1cf Module: 157, 8 byte alignment, uninitialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x00094a00
+// GLOBAL: COPTER_D 0x00094a00
 // DiagMatrix
-// GLOBAL: SIMCOPTER 0x00094b00
+// GLOBAL: COPTER_D 0x00094b00
 // DiagVector
-// GLOBAL: SIMCOPTER 0x00094b30
+// GLOBAL: COPTER_D 0x00094b30
 // DTT
-// GLOBAL: SIMCOPTER 0x00094d10
+// GLOBAL: COPTER_D 0x00094d10
 // DVT
-// GLOBAL: SIMCOPTER 0x00096390
+// GLOBAL: COPTER_D 0x00096390
 // OTT
-// GLOBAL: SIMCOPTER 0x00096910
+// GLOBAL: COPTER_D 0x00096910
 // RMT
-// GLOBAL: SIMCOPTER 0x0009e110
+// GLOBAL: COPTER_D 0x0009e110
 // DiagOffset

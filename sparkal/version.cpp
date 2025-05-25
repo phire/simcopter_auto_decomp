@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:0003cae0-0003d110 Module: 55, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x0043dae0
+// FUNCTION: COPTER_D 0x0043dae0
 void Version::Version() {
 // LINE 23:
 	asm( 
@@ -121,7 +121,7 @@ void Version::Version() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043dc10
+// FUNCTION: COPTER_D 0x0043dc10
 void Version::~Version() {
 // LINE 57:
 	asm( 
@@ -164,7 +164,7 @@ void Version::~Version() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043dc57
+// FUNCTION: COPTER_D 0x0043dc57
 int32_t Version::GetApplicationName(char *&) {
 // LINE 74:
 	asm( 
@@ -235,7 +235,7 @@ int32_t Version::GetApplicationName(char *&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043dce9
+// FUNCTION: COPTER_D 0x0043dce9
 int32_t Version::GetApplicationVersion(char *&) {
 // LINE 109:
 	asm( 
@@ -306,7 +306,7 @@ int32_t Version::GetApplicationVersion(char *&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043dd7b
+// FUNCTION: COPTER_D 0x0043dd7b
 int32_t Version::GetApplicationCopyright(char *&) {
 // LINE 133:
 	asm( 
@@ -377,7 +377,7 @@ int32_t Version::GetApplicationCopyright(char *&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043de0d
+// FUNCTION: COPTER_D 0x0043de0d
 int32_t Version::GetApplicationDebugVersion(char *&) {
 // LINE 156:
 	asm( 
@@ -448,7 +448,7 @@ int32_t Version::GetApplicationDebugVersion(char *&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043de9f
+// FUNCTION: COPTER_D 0x0043de9f
 long Version::GetApplicationVersion(int32_t) {
 // LINE 187:
 	asm( 
@@ -566,7 +566,7 @@ long Version::GetApplicationVersion(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043df83
+// FUNCTION: COPTER_D 0x0043df83
 int32_t Version::GetSystemVersion(char *) {
 // LINE 230:
 	asm( 
@@ -634,7 +634,7 @@ int32_t Version::GetSystemVersion(char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043dff2
+// FUNCTION: COPTER_D 0x0043dff2
 int32_t Version::GetSystemType() {
 // LINE 267:
 	asm( 
@@ -686,7 +686,7 @@ int32_t Version::GetSystemType() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043e038
+// FUNCTION: COPTER_D 0x0043e038
 long Version::GetSystemVersion(int32_t) {
 // LINE 302:
 	asm( 
@@ -740,7 +740,7 @@ long Version::GetSystemVersion(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043e086
+// FUNCTION: COPTER_D 0x0043e086
 long Version::GetCPUVersion() {
 // LINE 334:
 	asm( 
@@ -781,7 +781,7 @@ long Version::GetCPUVersion() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043e0b8
+// FUNCTION: COPTER_D 0x0043e0b8
 long Version::GetCPUSpeed() {
 // LINE 355:
 	asm( 
@@ -837,13 +837,13 @@ long Version::GetCPUSpeed() {
 
 
 // Contribution: 1:0003d120-0003d158 Module: 55, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x0043e120
+// FUNCTION: COPTER_D 0x0043e120
 // Version::`scalar deleting destructor'
 
 
 
 // Contribution: 2:000005b8-000005bb Module: 55, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x000005b8
+// GLOBAL: COPTER_D 0x000005b8
 // ??_7Version@@6B@
 
 

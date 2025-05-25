@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:00164a40-00164c90 Module: 185, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00565a40
+// FUNCTION: COPTER_D 0x00565a40
 void StringSet::StringSet(class ResFile*, short) {
 // LINE 12:
 	asm( 
@@ -42,7 +42,7 @@ void StringSet::StringSet(class ResFile*, short) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00565a6f
+// FUNCTION: COPTER_D 0x00565a6f
 void StringSet::StringSet(class ResFile*, short, short) {
 // LINE 20:
 	asm( 
@@ -97,7 +97,7 @@ void StringSet::StringSet(class ResFile*, short, short) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00565acc
+// FUNCTION: COPTER_D 0x00565acc
 void StringSet::LoadStrings(short) {
 // LINE 32:
 	asm( 
@@ -197,7 +197,7 @@ void StringSet::LoadStrings(short) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00565ba0
+// FUNCTION: COPTER_D 0x00565ba0
 void StringSet::Swizzle(void * __ptr32, long) {
 // LINE 51:
 	asm( 
@@ -225,7 +225,7 @@ void StringSet::Swizzle(void * __ptr32, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00565bbc
+// FUNCTION: COPTER_D 0x00565bbc
 void StringSet::~StringSet() {
 // LINE 57:
 	asm( 
@@ -271,7 +271,7 @@ void StringSet::~StringSet() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00565bff
+// FUNCTION: COPTER_D 0x00565bff
 unsigned char * StringSet::GetString(short) {
 // LINE 65:
 	asm( 

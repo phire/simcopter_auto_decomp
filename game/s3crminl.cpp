@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:001339c0-0013483c Module: 161, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x005349c0
+// FUNCTION: COPTER_D 0x005349c0
 int32_t CreateCriminalCarInstance() {
 // LINE 81:
 	asm( 
@@ -38,7 +38,7 @@ int32_t CreateCriminalCarInstance() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005349f0
+// FUNCTION: COPTER_D 0x005349f0
 int32_t S3CriminalMissionStart() {
 // LINE 87:
 	asm( 
@@ -72,7 +72,7 @@ int32_t S3CriminalMissionStart() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00534a18
+// FUNCTION: COPTER_D 0x00534a18
 void CriminalEvaderCarClass::CriminalEvaderCarClass() {
 // LINE 97:
 	asm( 
@@ -105,7 +105,7 @@ void CriminalEvaderCarClass::CriminalEvaderCarClass() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00534a4c
+// FUNCTION: COPTER_D 0x00534a4c
 void CriminalEvaderCarClass::~CriminalEvaderCarClass() {
 // LINE 103:
 	asm( 
@@ -129,7 +129,7 @@ void CriminalEvaderCarClass::~CriminalEvaderCarClass() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00534a73
+// FUNCTION: COPTER_D 0x00534a73
 class CriminalEvaderCarClass* CriminalEvaderCarClass::CreateInstance(int32_t) {
 // LINE 123:
 	asm( 
@@ -214,7 +214,7 @@ class CriminalEvaderCarClass* CriminalEvaderCarClass::CreateInstance(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00534b21
+// FUNCTION: COPTER_D 0x00534b21
 int32_t CriminalEvaderCarClass::StartCriminalMission(short, short, long, long) {
 // LINE 156:
 	asm( 
@@ -357,7 +357,7 @@ int32_t CriminalEvaderCarClass::StartCriminalMission(short, short, long, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00534c45
+// FUNCTION: COPTER_D 0x00534c45
 void CriminalEvaderCarClass::ItterateFSM() {
 // LINE 206:
 	asm( 
@@ -901,7 +901,7 @@ void CriminalEvaderCarClass::ItterateFSM() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0053512e
+// FUNCTION: COPTER_D 0x0053512e
 void CriminalEvaderCarClass::PullOver(short) {
 // LINE 391:
 	asm( 
@@ -959,7 +959,7 @@ void CriminalEvaderCarClass::PullOver(short) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005351b3
+// FUNCTION: COPTER_D 0x005351b3
 void CriminalEvaderCarClass::AdjustSpeed() {
 // LINE 417:
 	asm( 
@@ -1005,7 +1005,7 @@ void CriminalEvaderCarClass::AdjustSpeed() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00535202
+// FUNCTION: COPTER_D 0x00535202
 int32_t CriminalEvaderCarClass::NearToBuilding() {
 // LINE 441:
 	asm( 
@@ -1670,7 +1670,7 @@ int32_t CriminalEvaderCarClass::NearToBuilding() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00535709
+// FUNCTION: COPTER_D 0x00535709
 void CriminalEvaderCarClass::ShowWhereWeAre() {
 // LINE 644:
 	asm( 
@@ -1724,7 +1724,7 @@ void CriminalEvaderCarClass::ShowWhereWeAre() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00535754
+// FUNCTION: COPTER_D 0x00535754
 void CriminalEvaderCarClass::SetSaveData(struct _AUTO_LOAD_SAVE*) {
 // LINE 667:
 	asm( 
@@ -1782,7 +1782,7 @@ void CriminalEvaderCarClass::SetSaveData(struct _AUTO_LOAD_SAVE*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005357c0
+// FUNCTION: COPTER_D 0x005357c0
 void CriminalEvaderCarClass::LoadSaveData(struct _AUTO_LOAD_SAVE*) {
 // LINE 687:
 	asm( 
@@ -1856,31 +1856,31 @@ void CriminalEvaderCarClass::LoadSaveData(struct _AUTO_LOAD_SAVE*) {
 
 
 // Contribution: 1:00134860-00134898 Module: 161, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x00535860
+// FUNCTION: COPTER_D 0x00535860
 // CriminalEvaderCarClass::`scalar deleting destructor'
 
 
 
 // Contribution: 2:00004258-0000427b Module: 161, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00004258
+// GLOBAL: COPTER_D 0x00004258
 // ??_7CriminalEvaderCarClass@@6B@
 
 
 // Contribution: 3:00020ca8-00020d15 Module: 161, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x00020ca8
+// GLOBAL: COPTER_D 0x00020ca8
 // CriminalEvaderCarClass::baseTimeBetweenCriminalActivities
-// GLOBAL: SIMCOPTER 0x00020cac
+// GLOBAL: COPTER_D 0x00020cac
 // CriminalEvaderCarClass::maxTimeBetweenCriminalActivities
-// GLOBAL: SIMCOPTER 0x00020cb0
+// GLOBAL: COPTER_D 0x00020cb0
 // CriminalEvaderCarClass::constantTimeToBeOnTheRun
-// GLOBAL: SIMCOPTER 0x00020cb4
+// GLOBAL: COPTER_D 0x00020cb4
 // CriminalEvaderCarClass::evasionSpeedMultiplier
-// GLOBAL: SIMCOPTER 0x00020cb8
+// GLOBAL: COPTER_D 0x00020cb8
 // CriminalEvaderCarClass::maxSearchForBuildingRadius
-// GLOBAL: SIMCOPTER 0x00020cbc
+// GLOBAL: COPTER_D 0x00020cbc
 // CriminalEvaderCarClass::curCriminalCars
 
 
 // Contribution: 3:000949a0-000949b3 Module: 161, 8 byte alignment, uninitialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x000949a0
+// GLOBAL: COPTER_D 0x000949a0
 // CriminalEvaderCarClass::criminalCars

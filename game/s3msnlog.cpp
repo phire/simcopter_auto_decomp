@@ -5,19 +5,19 @@
 
 
 // Contribution: 1:000eabc0-000ed27d Module: 178, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x004ebbc0
+// FUNCTION: COPTER_D 0x004ebbc0
 // $E57
 
-// FUNCTION: SIMCOPTER 0x004ebbda
+// FUNCTION: COPTER_D 0x004ebbda
 // $E54
 
-// FUNCTION: SIMCOPTER 0x004ebbf4
+// FUNCTION: COPTER_D 0x004ebbf4
 // $E56
 
-// FUNCTION: SIMCOPTER 0x004ebc11
+// FUNCTION: COPTER_D 0x004ebc11
 // $E55
 
-// FUNCTION: SIMCOPTER 0x004ebc2b
+// FUNCTION: COPTER_D 0x004ebc2b
 void S3AddLogEntry() {
 // LINE 36:
 	asm( 
@@ -48,7 +48,7 @@ void S3AddLogEntry() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ebc4f
+// FUNCTION: COPTER_D 0x004ebc4f
 void LogManager::LogManager() {
 // LINE 46:
 	asm( 
@@ -243,7 +243,7 @@ void LogManager::LogManager() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ebeed
+// FUNCTION: COPTER_D 0x004ebeed
 void LogManager::~LogManager() {
 // LINE 53:
 	asm( 
@@ -403,7 +403,7 @@ void LogManager::~LogManager() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ec0ed
+// FUNCTION: COPTER_D 0x004ec0ed
 int32_t LogManager::ReadLogFromFile(char *) {
 // LINE 66:
 	asm( 
@@ -459,7 +459,7 @@ int32_t LogManager::ReadLogFromFile(char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ec165
+// FUNCTION: COPTER_D 0x004ec165
 int32_t LogManager::WriteLogToFile(char *) {
 // LINE 81:
 	asm( 
@@ -515,7 +515,7 @@ int32_t LogManager::WriteLogToFile(char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ec1dd
+// FUNCTION: COPTER_D 0x004ec1dd
 int32_t LogManager::ReadFromMIFF(class MIFF*) {
 // LINE 99:
 	asm( 
@@ -619,7 +619,7 @@ int32_t LogManager::ReadFromMIFF(class MIFF*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ec284
+// FUNCTION: COPTER_D 0x004ec284
 int32_t LogManager::WriteToMIFF(class MIFF*) {
 // LINE 122:
 	asm( 
@@ -881,7 +881,7 @@ int32_t LogManager::WriteToMIFF(class MIFF*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ec5f0
+// FUNCTION: COPTER_D 0x004ec5f0
 long LogManager::GetSizeOfLogRecord(struct tagLogBase*) {
 // LINE 157:
 	asm( 
@@ -944,7 +944,7 @@ long LogManager::GetSizeOfLogRecord(struct tagLogBase*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ec65b
+// FUNCTION: COPTER_D 0x004ec65b
 int32_t LogManager::ReadCurrentRecordFromMIFF(class MIFF*) {
 // LINE 176:
 	asm( 
@@ -1040,7 +1040,7 @@ int32_t LogManager::ReadCurrentRecordFromMIFF(class MIFF*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ec70d
+// FUNCTION: COPTER_D 0x004ec70d
 int32_t LogManager::ValidateLogEntry(struct tagLogBase*) {
 // LINE 207:
 	asm( 
@@ -1075,7 +1075,7 @@ int32_t LogManager::ValidateLogEntry(struct tagLogBase*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ec749
+// FUNCTION: COPTER_D 0x004ec749
 int32_t LogManager::AddLogEntry(struct tagLogBase*, int32_t, int32_t) {
 // LINE 219:
 	asm( 
@@ -1550,7 +1550,7 @@ int32_t LogManager::AddLogEntry(struct tagLogBase*, int32_t, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004eccd1
+// FUNCTION: COPTER_D 0x004eccd1
 int32_t LogManager::SortLogEntriesByDate() {
 // LINE 265:
 	asm( 
@@ -1944,7 +1944,7 @@ int32_t LogManager::SortLogEntriesByDate() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ed1fd
+// FUNCTION: COPTER_D 0x004ed1fd
 int32_t LogManager::SortLogEntriesByType() {
 // LINE 291:
 	asm( 
@@ -2338,7 +2338,7 @@ int32_t LogManager::SortLogEntriesByType() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ed729
+// FUNCTION: COPTER_D 0x004ed729
 int32_t LogManager::PurgeAllEntries() {
 // LINE 321:
 	asm( 
@@ -2537,7 +2537,7 @@ int32_t LogManager::PurgeAllEntries() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ed947
+// FUNCTION: COPTER_D 0x004ed947
 int32_t LogManager::PurgeNEntries(long) {
 // LINE 343:
 	asm( 
@@ -2731,7 +2731,7 @@ int32_t LogManager::PurgeNEntries(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004edb4e
+// FUNCTION: COPTER_D 0x004edb4e
 void LogManager::MakeStringFromLogData(struct tagLogBase*, class basic_string<char>&, int32_t) {
 // LINE 365:
 	asm( 
@@ -3297,7 +3297,7 @@ void LogManager::MakeStringFromLogData(struct tagLogBase*, class basic_string<ch
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ee264
+// FUNCTION: COPTER_D 0x004ee264
 long LogManager::GetStringIDFromLogEvent(const struct tagLogMissionEvent*) {
 // LINE 413:
 	asm( 
@@ -3348,9 +3348,9 @@ long LogManager::GetStringIDFromLogEvent(const struct tagLogMissionEvent*) {
 
 
 // Contribution: 3:000000a0-000000a3 Module: 178, 4 byte alignment, initialized_data, read, write, 
-// LOCAL: SIMCOPTER 0x000000a0
+// LOCAL: COPTER_D 0x000000a0
 // $S58
-// LOCAL: SIMCOPTER 0x000000a4
+// LOCAL: COPTER_D 0x000000a4
 // $S8
 
 
@@ -3358,24 +3358,24 @@ long LogManager::GetStringIDFromLogEvent(const struct tagLogMissionEvent*) {
 
 
 // Contribution: 3:0001d884-0001d887 Module: 178, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x0001d884
+// GLOBAL: COPTER_D 0x0001d884
 // list<tagLogBase *>::number_of_lists
 
 
 // Contribution: 3:0001d888-0001d88b Module: 178, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x0001d888
+// GLOBAL: COPTER_D 0x0001d888
 // list<tagLogBase *>::last
-// GLOBAL: SIMCOPTER 0x0001d88c
+// GLOBAL: COPTER_D 0x0001d88c
 // list<tagLogBase *>::next_avail
 
 
 // Contribution: 3:0001d88c-0001d88f Module: 178, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x0001d890
+// GLOBAL: COPTER_D 0x0001d890
 // list<tagLogBase *>::free_list
 
 
 // Contribution: 3:0001d890-0001d893 Module: 178, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x0001d894
+// GLOBAL: COPTER_D 0x0001d894
 // list<tagLogBase *>::buffer_list
 
 

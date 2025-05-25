@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:0006aca0-0006d4f0 Module: 40, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x0046bca0
+// FUNCTION: COPTER_D 0x0046bca0
 void MissionLogWindow::MissionLogWindow(int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
 // LINE 47:
 	asm( 
@@ -247,7 +247,7 @@ void MissionLogWindow::MissionLogWindow(int32_t, class GraphicWindow*, class Gra
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046bfb4
+// FUNCTION: COPTER_D 0x0046bfb4
 void MissionLogWindow::~MissionLogWindow() {
 // LINE 58:
 	asm( 
@@ -279,7 +279,7 @@ void MissionLogWindow::~MissionLogWindow() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046bfe3
+// FUNCTION: COPTER_D 0x0046bfe3
 int32_t MissionLogWindow::Initialize() {
 // LINE 66:
 	asm( 
@@ -955,7 +955,7 @@ int32_t MissionLogWindow::Initialize() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046c90a
+// FUNCTION: COPTER_D 0x0046c90a
 int32_t MissionLogWindow::ReadPalette(struct SparkalColor*) {
 // LINE 118:
 	asm( 
@@ -1068,7 +1068,7 @@ int32_t MissionLogWindow::ReadPalette(struct SparkalColor*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046ca4c
+// FUNCTION: COPTER_D 0x0046ca4c
 int32_t MissionLogWindow::CreateImage(int32_t) {
 // LINE 126:
 	asm( 
@@ -1137,7 +1137,7 @@ int32_t MissionLogWindow::CreateImage(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046caf6
+// FUNCTION: COPTER_D 0x0046caf6
 void MissionLogWindow::DestroyImage() {
 // LINE 142:
 	asm( 
@@ -1194,7 +1194,7 @@ void MissionLogWindow::DestroyImage() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046cb62
+// FUNCTION: COPTER_D 0x0046cb62
 int32_t MissionLogWindow::ComposeSelf() {
 // LINE 159:
 	asm( 
@@ -1313,7 +1313,7 @@ int32_t MissionLogWindow::ComposeSelf() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046cc44
+// FUNCTION: COPTER_D 0x0046cc44
 void MissionLogWindow::DrawBackground() {
 // LINE 186:
 	asm( 
@@ -1374,7 +1374,7 @@ void MissionLogWindow::DrawBackground() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046ccb5
+// FUNCTION: COPTER_D 0x0046ccb5
 int32_t MissionLogWindow::DoMessage(class GraphicWindow*, long, long, void * __ptr32) {
 // LINE 203:
 	asm( 
@@ -1457,7 +1457,7 @@ int32_t MissionLogWindow::DoMessage(class GraphicWindow*, long, long, void * __p
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046cd45
+// FUNCTION: COPTER_D 0x0046cd45
 void MissionLogWindow::SortByTimeDate() {
 // LINE 224:
 	asm( 
@@ -1659,7 +1659,7 @@ void MissionLogWindow::SortByTimeDate() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046cf77
+// FUNCTION: COPTER_D 0x0046cf77
 void MissionLogWindow::SortByType() {
 // LINE 244:
 	asm( 
@@ -1997,7 +1997,7 @@ void MissionLogWindow::SortByType() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046d388
+// FUNCTION: COPTER_D 0x0046d388
 void MessageDisplayManager::MessageDisplayManager() {
 // LINE 291:
 	asm( 
@@ -2087,7 +2087,7 @@ void MessageDisplayManager::MessageDisplayManager() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046d496
+// FUNCTION: COPTER_D 0x0046d496
 void MessageDisplayManager::~MessageDisplayManager() {
 // LINE 299:
 	asm( 
@@ -2216,7 +2216,7 @@ void MessageDisplayManager::~MessageDisplayManager() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046d612
+// FUNCTION: COPTER_D 0x0046d612
 int32_t MessageDisplayManager::Initialize() {
 // LINE 309:
 	asm( 
@@ -2387,7 +2387,7 @@ int32_t MessageDisplayManager::Initialize() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046d802
+// FUNCTION: COPTER_D 0x0046d802
 void MessageDisplayManager::DisplayCurrentMessages(class CBackBuffer*) {
 // LINE 323:
 	asm( 
@@ -2788,7 +2788,7 @@ void MessageDisplayManager::DisplayCurrentMessages(class CBackBuffer*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046dccd
+// FUNCTION: COPTER_D 0x0046dccd
 void MessageDisplayManager::AddNewMessage(char *) {
 // LINE 356:
 	asm( 
@@ -3288,7 +3288,7 @@ void MessageDisplayManager::AddNewMessage(char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0046e3ca
+// FUNCTION: COPTER_D 0x0046e3ca
 void MessageDisplayManager::AddNewMessage(class basic_string<char>&) {
 // LINE 382:
 	asm( 
@@ -3399,13 +3399,13 @@ void MessageDisplayManager::AddNewMessage(class basic_string<char>&) {
 
 
 // Contribution: 1:0006d500-0006d538 Module: 40, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x0046e500
+// FUNCTION: COPTER_D 0x0046e500
 // MissionLogWindow::`scalar deleting destructor'
 
 
 
 // Contribution: 1:0006d540-0006d681 Module: 40, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x0046e540
+// FUNCTION: COPTER_D 0x0046e540
 // basic_string<char>::`vector deleting destructor'
 
 
@@ -3414,18 +3414,18 @@ void MessageDisplayManager::AddNewMessage(class basic_string<char>&) {
 
 
 // Contribution: 2:000017d0-000017df Module: 40, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x000017d0
+// GLOBAL: COPTER_D 0x000017d0
 // ??_7MessageDisplayManager@@6B@
-// GLOBAL: SIMCOPTER 0x000017e0
+// GLOBAL: COPTER_D 0x000017e0
 // ??_7IBackBuffer@@6B@
 
 
 // Contribution: 3:00002448-00002494 Module: 40, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x00002448
+// GLOBAL: COPTER_D 0x00002448
 // SZ_MISSION_LOG_IMAGE_FILE_NAME
-// GLOBAL: SIMCOPTER 0x0000244c
+// GLOBAL: COPTER_D 0x0000244c
 // SZ_MISSION_LOG_WINDOW_BUTTON_IMAGE_FILE_NAME
-// GLOBAL: SIMCOPTER 0x00002450
+// GLOBAL: COPTER_D 0x00002450
 // SZ_MISSION_LOG_WINDOW_SCROLL_BAR_IMAGE_FILE_NAME
-// GLOBAL: SIMCOPTER 0x00002454
+// GLOBAL: COPTER_D 0x00002454
 // SZ_MISSION_LOG_WINDOW_BACKGROUND_IMAGE_FILE_NAME

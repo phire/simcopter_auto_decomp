@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:0003d160-0003d24d Module: 54, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x0043e160
+// FUNCTION: COPTER_D 0x0043e160
 void NotificationItem::NotificationItem() {
 // LINE 9:
 	asm( 
@@ -33,7 +33,7 @@ void NotificationItem::NotificationItem() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043e18c
+// FUNCTION: COPTER_D 0x0043e18c
 void NotificationItem::NotificationItem(const class NotificationItem&) {
 // LINE 12:
 	asm( 
@@ -64,7 +64,7 @@ void NotificationItem::NotificationItem(const class NotificationItem&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043e1b3
+// FUNCTION: COPTER_D 0x0043e1b3
 void NotificationItem::NotificationItem(long, class NotificationSink*) {
 // LINE 19:
 	asm( 
@@ -94,7 +94,7 @@ void NotificationItem::NotificationItem(long, class NotificationSink*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043e1df
+// FUNCTION: COPTER_D 0x0043e1df
 class NotificationItem& NotificationItem::operator=(const class NotificationItem&) {
 // LINE 22:
 	asm( 
@@ -135,7 +135,7 @@ class NotificationItem& NotificationItem::operator=(const class NotificationItem
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043e210
+// FUNCTION: COPTER_D 0x0043e210
 int32_t operator==() {
 // LINE 29:
 	asm( 

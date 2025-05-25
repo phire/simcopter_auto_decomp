@@ -5,19 +5,19 @@
 
 
 // Contribution: 1:0012cda0-00133970 Module: 162, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x0052dda0
+// FUNCTION: COPTER_D 0x0052dda0
 // $E7
 
-// FUNCTION: SIMCOPTER 0x0052ddba
+// FUNCTION: COPTER_D 0x0052ddba
 // $E3
 
-// FUNCTION: SIMCOPTER 0x0052ddd9
+// FUNCTION: COPTER_D 0x0052ddd9
 // $E6
 
-// FUNCTION: SIMCOPTER 0x0052ddf6
+// FUNCTION: COPTER_D 0x0052ddf6
 // $E4
 
-// FUNCTION: SIMCOPTER 0x0052de2d
+// FUNCTION: COPTER_D 0x0052de2d
 void TrainClass::TrainClass(long, long) {
 // LINE 180:
 	asm( 
@@ -240,7 +240,7 @@ void TrainClass::TrainClass(long, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052dfcd
+// FUNCTION: COPTER_D 0x0052dfcd
 void TrainClass::Reset() {
 // LINE 246:
 	asm( 
@@ -373,7 +373,7 @@ void TrainClass::Reset() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052e0a8
+// FUNCTION: COPTER_D 0x0052e0a8
 void TrainClass::~TrainClass() {
 // LINE 291:
 	asm( 
@@ -452,7 +452,7 @@ void TrainClass::~TrainClass() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052e141
+// FUNCTION: COPTER_D 0x0052e141
 class TrainClass* TrainClass::GetTrainPointer(long) {
 // LINE 334:
 	asm( 
@@ -488,7 +488,7 @@ class TrainClass* TrainClass::GetTrainPointer(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052e16c
+// FUNCTION: COPTER_D 0x0052e16c
 class TrainClass* TrainClass::CreateInstance(int32_t) {
 // LINE 361:
 	asm( 
@@ -518,7 +518,7 @@ class TrainClass* TrainClass::CreateInstance(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052e18c
+// FUNCTION: COPTER_D 0x0052e18c
 class TrainClass* TrainClass::CreateInstance(long, long, int32_t) {
 // LINE 444:
 	asm( 
@@ -600,7 +600,7 @@ class TrainClass* TrainClass::CreateInstance(long, long, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052e22c
+// FUNCTION: COPTER_D 0x0052e22c
 int32_t TrainClass::Initialize(int32_t) {
 // LINE 546:
 	asm( 
@@ -636,7 +636,7 @@ int32_t TrainClass::Initialize(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052e25e
+// FUNCTION: COPTER_D 0x0052e25e
 void TrainClass::ResetAll() {
 // LINE 571:
 	asm( 
@@ -676,7 +676,7 @@ void TrainClass::ResetAll() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052e29e
+// FUNCTION: COPTER_D 0x0052e29e
 void TrainClass::ItterateAll() {
 // LINE 620:
 	asm( 
@@ -716,7 +716,7 @@ void TrainClass::ItterateAll() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052e2de
+// FUNCTION: COPTER_D 0x0052e2de
 int32_t TrainClass::FindTrainToCrash(long) {
 // LINE 669:
 	asm( 
@@ -789,7 +789,7 @@ int32_t TrainClass::FindTrainToCrash(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052e373
+// FUNCTION: COPTER_D 0x0052e373
 void TrainClass::Itterate() {
 // LINE 704:
 	asm( 
@@ -991,7 +991,7 @@ void TrainClass::Itterate() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052e534
+// FUNCTION: COPTER_D 0x0052e534
 void TrainClass::TrainSoundDriver() {
 // LINE 777:
 	asm( 
@@ -1140,7 +1140,7 @@ void TrainClass::TrainSoundDriver() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052e671
+// FUNCTION: COPTER_D 0x0052e671
 void TrainClass::ItterateFSM() {
 // LINE 841:
 	asm( 
@@ -1472,7 +1472,7 @@ void TrainClass::ItterateFSM() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052e910
+// FUNCTION: COPTER_D 0x0052e910
 void TrainClass::SetCrashWhenReady() {
 // LINE 1042:
 	asm( 
@@ -1568,7 +1568,7 @@ void TrainClass::SetCrashWhenReady() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052e9a4
+// FUNCTION: COPTER_D 0x0052e9a4
 void TrainClass::TrainCrashMovement() {
 // LINE 1083:
 	asm( 
@@ -2356,7 +2356,7 @@ void TrainClass::TrainCrashMovement() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052f14e
+// FUNCTION: COPTER_D 0x0052f14e
 void TrainClass::MakeUturn() {
 // LINE 1320:
 	asm( 
@@ -2592,7 +2592,7 @@ void TrainClass::MakeUturn() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052f394
+// FUNCTION: COPTER_D 0x0052f394
 int32_t TrainClass::FinishedUturn() {
 // LINE 1388:
 	asm( 
@@ -2670,7 +2670,7 @@ int32_t TrainClass::FinishedUturn() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052f41b
+// FUNCTION: COPTER_D 0x0052f41b
 void TrainClass::AdjustSpeed() {
 // LINE 1421:
 	asm( 
@@ -2710,7 +2710,7 @@ void TrainClass::AdjustSpeed() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052f454
+// FUNCTION: COPTER_D 0x0052f454
 enum TrainClass::StoppedReasons TrainClass::IsPathClear() {
 // LINE 1450:
 	asm( 
@@ -2811,7 +2811,7 @@ enum TrainClass::StoppedReasons TrainClass::IsPathClear() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052f52f
+// FUNCTION: COPTER_D 0x0052f52f
 enum TrainClass::StoppedReasons TrainClass::CheckDynamicObjectsAt(const struct Point2d&, const struct Point3d&) {
 // LINE 1483:
 	asm( 
@@ -3317,7 +3317,7 @@ enum TrainClass::StoppedReasons TrainClass::CheckDynamicObjectsAt(const struct P
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052f998
+// FUNCTION: COPTER_D 0x0052f998
 int32_t TrainClass::IsTrainOutOfCameraRange() {
 // LINE 1657:
 	asm( 
@@ -3454,7 +3454,7 @@ int32_t TrainClass::IsTrainOutOfCameraRange() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052fa85
+// FUNCTION: COPTER_D 0x0052fa85
 void TrainClass::SetTrainDirection(unsigned short) {
 // LINE 1722:
 	asm( 
@@ -6136,7 +6136,7 @@ void TrainClass::SetTrainDirection(unsigned short) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00530e02
+// FUNCTION: COPTER_D 0x00530e02
 void TrainClass::SlowDown() {
 // LINE 2656:
 	asm( 
@@ -6164,7 +6164,7 @@ void TrainClass::SlowDown() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00530e22
+// FUNCTION: COPTER_D 0x00530e22
 void TrainClass::Stop() {
 // LINE 2677:
 	asm( 
@@ -6192,7 +6192,7 @@ void TrainClass::Stop() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00530e42
+// FUNCTION: COPTER_D 0x00530e42
 void TrainClass::MoveForward() {
 // LINE 2698:
 	asm( 
@@ -6384,7 +6384,7 @@ void TrainClass::MoveForward() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0053104d
+// FUNCTION: COPTER_D 0x0053104d
 int32_t TrainClass::HaveIReachedNextLoc() {
 // LINE 2749:
 	asm( 
@@ -6426,7 +6426,7 @@ int32_t TrainClass::HaveIReachedNextLoc() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00531081
+// FUNCTION: COPTER_D 0x00531081
 int32_t TrainClass::AmIInANewCell() {
 // LINE 2776:
 	asm( 
@@ -6561,7 +6561,7 @@ int32_t TrainClass::AmIInANewCell() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0053122b
+// FUNCTION: COPTER_D 0x0053122b
 void TrainClass::UnlinkFromCell(const struct Point2d&, struct _DYOBJ_INST*) {
 // LINE 2814:
 	asm( 
@@ -6678,7 +6678,7 @@ void TrainClass::UnlinkFromCell(const struct Point2d&, struct _DYOBJ_INST*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0053133d
+// FUNCTION: COPTER_D 0x0053133d
 void TrainClass::LinkToCell(const struct Point2d&, struct _DYOBJ_INST*) {
 // LINE 2862:
 	asm( 
@@ -6752,7 +6752,7 @@ void TrainClass::LinkToCell(const struct Point2d&, struct _DYOBJ_INST*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005313f2
+// FUNCTION: COPTER_D 0x005313f2
 enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Point2d&) {
 // LINE 2895:
 	asm( 
@@ -7725,7 +7725,7 @@ enum TrainClass::IntersectionTypes TrainClass::PickTurnDirection(const struct Po
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00531dff
+// FUNCTION: COPTER_D 0x00531dff
 int32_t TrainClass::DoRailTilesConnect(unsigned short, unsigned short, enum DirectionTypes) {
 // LINE 3108:
 	asm( 
@@ -7828,7 +7828,7 @@ int32_t TrainClass::DoRailTilesConnect(unsigned short, unsigned short, enum Dire
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00531f88
+// FUNCTION: COPTER_D 0x00531f88
 void TrainClass::MakeATurn(enum TrainClass::IntersectionTypes) {
 // LINE 3138:
 	asm( 
@@ -8059,7 +8059,7 @@ void TrainClass::MakeATurn(enum TrainClass::IntersectionTypes) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00532149
+// FUNCTION: COPTER_D 0x00532149
 enum TrainClass::StoppedReasons TrainClass::WhyAmIStopped() {
 // LINE 3248:
 	asm( 
@@ -8161,7 +8161,7 @@ enum TrainClass::StoppedReasons TrainClass::WhyAmIStopped() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0053229e
+// FUNCTION: COPTER_D 0x0053229e
 void TrainClass::SetTrailingCars() {
 // LINE 3282:
 	asm( 
@@ -8400,7 +8400,7 @@ void TrainClass::SetTrailingCars() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00532518
+// FUNCTION: COPTER_D 0x00532518
 void TrainClass::AdjustTrailingCars() {
 // LINE 3329:
 	asm( 
@@ -8822,7 +8822,7 @@ void TrainClass::AdjustTrailingCars() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00532903
+// FUNCTION: COPTER_D 0x00532903
 void TrainClass::AdjustCurrentPosition() {
 // LINE 3415:
 	asm( 
@@ -8983,7 +8983,7 @@ void TrainClass::AdjustCurrentPosition() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00532aab
+// FUNCTION: COPTER_D 0x00532aab
 void TrainClass::AdjustNextPosition() {
 // LINE 3469:
 	asm( 
@@ -9604,7 +9604,7 @@ void TrainClass::AdjustNextPosition() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005330a4
+// FUNCTION: COPTER_D 0x005330a4
 void TrainClass::GoStraight() {
 // LINE 3656:
 	asm( 
@@ -9741,7 +9741,7 @@ void TrainClass::GoStraight() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005331ce
+// FUNCTION: COPTER_D 0x005331ce
 void TrainClass::TurnLeft() {
 // LINE 3706:
 	asm( 
@@ -9878,7 +9878,7 @@ void TrainClass::TurnLeft() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005332f8
+// FUNCTION: COPTER_D 0x005332f8
 void TrainClass::TurnRight() {
 // LINE 3757:
 	asm( 
@@ -10015,7 +10015,7 @@ void TrainClass::TurnRight() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00533422
+// FUNCTION: COPTER_D 0x00533422
 void TrainClass::BeamToWithinCameraRange() {
 // LINE 3812:
 	asm( 
@@ -10636,7 +10636,7 @@ void TrainClass::BeamToWithinCameraRange() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005339b0
+// FUNCTION: COPTER_D 0x005339b0
 void TrainClass::UnPlaceTrain() {
 // LINE 3989:
 	asm( 
@@ -10708,7 +10708,7 @@ void TrainClass::UnPlaceTrain() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00533a3b
+// FUNCTION: COPTER_D 0x00533a3b
 int32_t TrainClass::BeamToLocation(long, long) {
 // LINE 4018:
 	asm( 
@@ -11158,7 +11158,7 @@ int32_t TrainClass::BeamToLocation(long, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00533e76
+// FUNCTION: COPTER_D 0x00533e76
 int32_t TrainClass::InitializeInstance(long, long, int32_t) {
 // LINE 4391:
 	asm( 
@@ -11662,7 +11662,7 @@ int32_t TrainClass::InitializeInstance(long, long, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005342db
+// FUNCTION: COPTER_D 0x005342db
 short GetMaximumNumberOfTrains() {
 // LINE 4602:
 	asm( 
@@ -11687,7 +11687,7 @@ short GetMaximumNumberOfTrains() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005342ef
+// FUNCTION: COPTER_D 0x005342ef
 int32_t CreateTrainInstance() {
 // LINE 4625:
 	asm( 
@@ -11720,7 +11720,7 @@ int32_t CreateTrainInstance() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0053431f
+// FUNCTION: COPTER_D 0x0053431f
 void ResetAllTrains() {
 // LINE 4644:
 	asm( 
@@ -11745,7 +11745,7 @@ void ResetAllTrains() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00534334
+// FUNCTION: COPTER_D 0x00534334
 void ItterateAllTrains() {
 // LINE 4667:
 	asm( 
@@ -11770,7 +11770,7 @@ void ItterateAllTrains() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00534349
+// FUNCTION: COPTER_D 0x00534349
 int32_t S3TrainCrashWhenReady() {
 // LINE 4688:
 	asm( 
@@ -11798,7 +11798,7 @@ int32_t S3TrainCrashWhenReady() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00534365
+// FUNCTION: COPTER_D 0x00534365
 int32_t S3TrainStartRescue() {
 // LINE 4709:
 	asm( 
@@ -11828,7 +11828,7 @@ int32_t S3TrainStartRescue() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00534385
+// FUNCTION: COPTER_D 0x00534385
 int32_t TrainClass::FindTrainForRescue(long, int32_t) {
 // LINE 4735:
 	asm( 
@@ -12083,7 +12083,7 @@ int32_t TrainClass::FindTrainForRescue(long, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0053456c
+// FUNCTION: COPTER_D 0x0053456c
 int32_t S3TrainMIFFLoad() {
 // LINE 4825:
 	asm( 
@@ -12111,7 +12111,7 @@ int32_t S3TrainMIFFLoad() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00534588
+// FUNCTION: COPTER_D 0x00534588
 int32_t S3TrainMIFFSave() {
 // LINE 4838:
 	asm( 
@@ -12139,7 +12139,7 @@ int32_t S3TrainMIFFSave() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005345a4
+// FUNCTION: COPTER_D 0x005345a4
 int32_t TrainClass::MIFFLoad(void * __ptr32) {
 // LINE 4850:
 	asm( 
@@ -12534,7 +12534,7 @@ int32_t TrainClass::MIFFLoad(void * __ptr32) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00534906
+// FUNCTION: COPTER_D 0x00534906
 int32_t TrainClass::MIFFSave(void * __ptr32) {
 // LINE 4925:
 	asm( 
@@ -12598,13 +12598,13 @@ int32_t TrainClass::MIFFSave(void * __ptr32) {
 
 
 // Contribution: 1:00133980-001339b8 Module: 162, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x00534980
+// FUNCTION: COPTER_D 0x00534980
 // TrainClass::`scalar deleting destructor'
 
 
 
 // Contribution: 2:00004238-00004253 Module: 162, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00004238
+// GLOBAL: COPTER_D 0x00004238
 // ??_7TrainClass@@6B@
 
 
@@ -12612,19 +12612,19 @@ int32_t TrainClass::MIFFSave(void * __ptr32) {
 
 
 // Contribution: 3:00020830-00020bb3 Module: 162, 8 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x00020830
+// GLOBAL: COPTER_D 0x00020830
 // TrainClass::lastScannedLocation
 
 
 // Contribution: 3:00020bb8-00020ca7 Module: 162, 8 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00020bb8
+// GLOBAL: COPTER_D 0x00020bb8
 // connections
 
 
 // Contribution: 3:000947b8-00094998 Module: 162, 8 byte alignment, uninitialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x000947b8
+// GLOBAL: COPTER_D 0x000947b8
 // TrainClass::lsTrain
-// GLOBAL: SIMCOPTER 0x00094994
+// GLOBAL: COPTER_D 0x00094994
 // trains
-// LOCAL: SIMCOPTER 0x00094998
+// LOCAL: COPTER_D 0x00094998
 // $S5

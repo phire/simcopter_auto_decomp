@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:000aa530-000ab9b5 Module: 6, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x004ab530
+// FUNCTION: COPTER_D 0x004ab530
 int32_t ReadFirstMIFFChunk() {
 // LINE 17:
 	asm( 
@@ -60,7 +60,7 @@ int32_t ReadFirstMIFFChunk() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ab57c
+// FUNCTION: COPTER_D 0x004ab57c
 int32_t ReadNextMIFFChunk() {
 // LINE 29:
 	asm( 
@@ -108,7 +108,7 @@ int32_t ReadNextMIFFChunk() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ab5bd
+// FUNCTION: COPTER_D 0x004ab5bd
 int32_t WriteMIFFChunk() {
 // LINE 40:
 	asm( 
@@ -142,7 +142,7 @@ int32_t WriteMIFFChunk() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ab5e4
+// FUNCTION: COPTER_D 0x004ab5e4
 void MIFF::MIFF() {
 // LINE 56:
 	asm( 
@@ -248,7 +248,7 @@ void MIFF::MIFF() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ab6f5
+// FUNCTION: COPTER_D 0x004ab6f5
 void MIFF::MIFF(char *) {
 // LINE 81:
 	asm( 
@@ -329,7 +329,7 @@ void MIFF::MIFF(char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ab7cf
+// FUNCTION: COPTER_D 0x004ab7cf
 void MIFF::~MIFF() {
 // LINE 97:
 	asm( 
@@ -389,7 +389,7 @@ void MIFF::~MIFF() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ab878
+// FUNCTION: COPTER_D 0x004ab878
 long MIFF::OpenForReading() {
 // LINE 113:
 	asm( 
@@ -476,7 +476,7 @@ long MIFF::OpenForReading() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ab937
+// FUNCTION: COPTER_D 0x004ab937
 long MIFF::OpenForWriting(long, long, long) {
 // LINE 138:
 	asm( 
@@ -590,7 +590,7 @@ long MIFF::OpenForWriting(long, long, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004aba2c
+// FUNCTION: COPTER_D 0x004aba2c
 long MIFF::OpenForAppending() {
 // LINE 168:
 	asm( 
@@ -718,7 +718,7 @@ long MIFF::OpenForAppending() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004abb47
+// FUNCTION: COPTER_D 0x004abb47
 long MIFF::Close() {
 // LINE 193:
 	asm( 
@@ -766,7 +766,7 @@ long MIFF::Close() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004abb95
+// FUNCTION: COPTER_D 0x004abb95
 long MIFF::VerifyFile() {
 // LINE 205:
 	asm( 
@@ -840,7 +840,7 @@ long MIFF::VerifyFile() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004abc32
+// FUNCTION: COPTER_D 0x004abc32
 long MIFF::ReadMIFFHeader() {
 // LINE 222:
 	asm( 
@@ -907,7 +907,7 @@ long MIFF::ReadMIFFHeader() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004abcba
+// FUNCTION: COPTER_D 0x004abcba
 long MIFF::ReadFileCreator() {
 // LINE 236:
 	asm( 
@@ -1000,7 +1000,7 @@ long MIFF::ReadFileCreator() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004abd6e
+// FUNCTION: COPTER_D 0x004abd6e
 long MIFF::ReadFileType() {
 // LINE 258:
 	asm( 
@@ -1093,7 +1093,7 @@ long MIFF::ReadFileType() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004abe22
+// FUNCTION: COPTER_D 0x004abe22
 long MIFF::ReadFileVersion() {
 // LINE 279:
 	asm( 
@@ -1186,7 +1186,7 @@ long MIFF::ReadFileVersion() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004abed6
+// FUNCTION: COPTER_D 0x004abed6
 long MIFF::ReadRecordHeader() {
 // LINE 308:
 	asm( 
@@ -1302,7 +1302,7 @@ long MIFF::ReadRecordHeader() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004abfcc
+// FUNCTION: COPTER_D 0x004abfcc
 long MIFF::CountRecords() {
 // LINE 349:
 	asm( 
@@ -1431,7 +1431,7 @@ long MIFF::CountRecords() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ac0b4
+// FUNCTION: COPTER_D 0x004ac0b4
 long MIFF::GoToFirstRecord() {
 // LINE 390:
 	asm( 
@@ -1505,7 +1505,7 @@ long MIFF::GoToFirstRecord() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ac14f
+// FUNCTION: COPTER_D 0x004ac14f
 long MIFF::GoToNextRecord() {
 // LINE 413:
 	asm( 
@@ -1688,7 +1688,7 @@ long MIFF::GoToNextRecord() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ac2f1
+// FUNCTION: COPTER_D 0x004ac2f1
 long MIFF::GoToPreviousRecord() {
 // LINE 467:
 	asm( 
@@ -1739,7 +1739,7 @@ long MIFF::GoToPreviousRecord() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ac332
+// FUNCTION: COPTER_D 0x004ac332
 long MIFF::GoToFirstRecordOfGivenType(long) {
 // LINE 491:
 	asm( 
@@ -1814,7 +1814,7 @@ long MIFF::GoToFirstRecordOfGivenType(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ac3ab
+// FUNCTION: COPTER_D 0x004ac3ab
 long MIFF::GoToNextRecordOfGivenType(long) {
 // LINE 514:
 	asm( 
@@ -1868,7 +1868,7 @@ long MIFF::GoToNextRecordOfGivenType(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ac3fb
+// FUNCTION: COPTER_D 0x004ac3fb
 long MIFF::GoToNthRecord(long) {
 // LINE 535:
 	asm( 
@@ -1919,7 +1919,7 @@ long MIFF::GoToNthRecord(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ac44e
+// FUNCTION: COPTER_D 0x004ac44e
 long MIFF::ReadPresentRecord(struct MIFFRecord*, long) {
 // LINE 553:
 	asm( 
@@ -2033,7 +2033,7 @@ long MIFF::ReadPresentRecord(struct MIFFRecord*, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ac544
+// FUNCTION: COPTER_D 0x004ac544
 long MIFF::ReadPresentRecordData(char *, long) {
 // LINE 591:
 	asm( 
@@ -2141,7 +2141,7 @@ long MIFF::ReadPresentRecordData(char *, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ac63b
+// FUNCTION: COPTER_D 0x004ac63b
 long MIFF::WriteFileHeader(long, long, long) {
 // LINE 639:
 	asm( 
@@ -2267,7 +2267,7 @@ long MIFF::WriteFileHeader(long, long, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ac758
+// FUNCTION: COPTER_D 0x004ac758
 long MIFF::WriteMIFFRecord(struct MIFFRecord*, long) {
 // LINE 669:
 	asm( 
@@ -2356,7 +2356,7 @@ long MIFF::WriteMIFFRecord(struct MIFFRecord*, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ac811
+// FUNCTION: COPTER_D 0x004ac811
 long MIFF::WriteDataRecord(long, char *, long) {
 // LINE 701:
 	asm( 
@@ -2463,7 +2463,7 @@ long MIFF::WriteDataRecord(long, char *, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ac8fb
+// FUNCTION: COPTER_D 0x004ac8fb
 long MIFF::WriteEnd() {
 // LINE 735:
 	asm( 
@@ -2571,11 +2571,11 @@ long MIFF::WriteEnd() {
 
 
 // Contribution: 1:000aba50-000aba88 Module: 6, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x004aca50
+// FUNCTION: COPTER_D 0x004aca50
 // MIFF::`scalar deleting destructor'
 
 
 
 // Contribution: 2:00002950-000029bf Module: 6, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00002950
+// GLOBAL: COPTER_D 0x00002950
 // ??_7MIFF@@6B@

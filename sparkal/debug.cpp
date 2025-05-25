@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:00021280-000246c8 Module: 70, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00422280
+// FUNCTION: COPTER_D 0x00422280
 void CDebugWindow::HandleDebugCommand(char *) {
 // LINE 23:
 	asm( 
@@ -482,7 +482,7 @@ void CDebugWindow::HandleDebugCommand(char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004228ee
+// FUNCTION: COPTER_D 0x004228ee
 void CDebugWindow::CDebugWindow() {
 // LINE 58:
 	asm( 
@@ -804,10 +804,10 @@ void CDebugWindow::CDebugWindow() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00422dba
+// FUNCTION: COPTER_D 0x00422dba
 // $E20
 
-// FUNCTION: SIMCOPTER 0x00422f4b
+// FUNCTION: COPTER_D 0x00422f4b
 void CDebugWindow::~CDebugWindow() {
 // LINE 67:
 	asm( 
@@ -1015,7 +1015,7 @@ void CDebugWindow::~CDebugWindow() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004231e6
+// FUNCTION: COPTER_D 0x004231e6
 int32_t CDebugWindow::Create(char *) {
 // LINE 75:
 	asm( 
@@ -1204,7 +1204,7 @@ int32_t CDebugWindow::Create(char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00423367
+// FUNCTION: COPTER_D 0x00423367
 void CDebugWindow::ShowWindow() {
 // LINE 134:
 	asm( 
@@ -1235,7 +1235,7 @@ void CDebugWindow::ShowWindow() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042338c
+// FUNCTION: COPTER_D 0x0042338c
 void CDebugWindow::HideWindow() {
 // LINE 140:
 	asm( 
@@ -1266,7 +1266,7 @@ void CDebugWindow::HideWindow() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004233b1
+// FUNCTION: COPTER_D 0x004233b1
 int32_t CDebugWindow::Save(char *) {
 // LINE 146:
 	asm( 
@@ -1550,7 +1550,7 @@ int32_t CDebugWindow::Save(char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004236c6
+// FUNCTION: COPTER_D 0x004236c6
 void CDebugWindow::OnSize(unsigned long, unsigned short, unsigned short) {
 // LINE 178:
 	asm( 
@@ -1621,7 +1621,7 @@ void CDebugWindow::OnSize(unsigned long, unsigned short, unsigned short) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00423739
+// FUNCTION: COPTER_D 0x00423739
 void CDebugWindow::OnPaint() {
 // LINE 191:
 	asm( 
@@ -1939,7 +1939,7 @@ void CDebugWindow::OnPaint() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00423ba5
+// FUNCTION: COPTER_D 0x00423ba5
 void CDebugWindow::OnScroll(int32_t, int32_t) {
 // LINE 221:
 	asm( 
@@ -2074,7 +2074,7 @@ void CDebugWindow::OnScroll(int32_t, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00423c9d
+// FUNCTION: COPTER_D 0x00423c9d
 void CDebugWindow::OutputString(char *) {
 // LINE 249:
 	asm( 
@@ -2453,7 +2453,7 @@ void CDebugWindow::OutputString(char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004241ff
+// FUNCTION: COPTER_D 0x004241ff
 void CDebugWindow::RecalcScrollRange() {
 // LINE 261:
 	asm( 
@@ -2605,7 +2605,7 @@ void CDebugWindow::RecalcScrollRange() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042430d
+// FUNCTION: COPTER_D 0x0042430d
 void CDebugWindow::OnEditChange() {
 // LINE 294:
 	asm( 
@@ -2987,7 +2987,7 @@ void CDebugWindow::OnEditChange() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004248d4
+// FUNCTION: COPTER_D 0x004248d4
 long CDebugWindow::InstanceWindowProcedure(uint32_t, uint32_t, long) {
 // LINE 337:
 	asm( 
@@ -3123,7 +3123,7 @@ long CDebugWindow::InstanceWindowProcedure(uint32_t, uint32_t, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004249ef
+// FUNCTION: COPTER_D 0x004249ef
 long CDebugWindow::WindowProcedure(void * __ptr32, uint32_t, uint32_t, long) {
 // LINE 362:
 	asm( 
@@ -3186,7 +3186,7 @@ long CDebugWindow::WindowProcedure(void * __ptr32, uint32_t, uint32_t, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00424a51
+// FUNCTION: COPTER_D 0x00424a51
 void CreateDebugWindow() {
 // LINE 383:
 	asm( 
@@ -3233,7 +3233,7 @@ void CreateDebugWindow() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00424ab4
+// FUNCTION: COPTER_D 0x00424ab4
 void DestroyDebugWindow() {
 // LINE 392:
 	asm( 
@@ -3281,7 +3281,7 @@ void DestroyDebugWindow() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00424b14
+// FUNCTION: COPTER_D 0x00424b14
 void DebugOutput() {
 // LINE 401:
 	asm( 
@@ -3331,7 +3331,7 @@ void DebugOutput() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00424b6c
+// FUNCTION: COPTER_D 0x00424b6c
 void RegisterDebugCommand() {
 // LINE 411:
 	asm( 
@@ -3622,7 +3622,7 @@ void RegisterDebugCommand() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00424f30
+// FUNCTION: COPTER_D 0x00424f30
 void UnregisterDebugCommand() {
 // LINE 417:
 	asm( 
@@ -3706,7 +3706,7 @@ void UnregisterDebugCommand() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00425015
+// FUNCTION: COPTER_D 0x00425015
 void SaveDebugWindow() {
 // LINE 423:
 	asm( 
@@ -3739,7 +3739,7 @@ void SaveDebugWindow() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00425041
+// FUNCTION: COPTER_D 0x00425041
 int32_t ParseCommandLine() {
 // LINE 430:
 	asm( 
@@ -4270,9 +4270,9 @@ int32_t ParseCommandLine() {
 
 
 // Contribution: 2:0000041c-0000041f Module: 70, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x0000041c
+// GLOBAL: COPTER_D 0x0000041c
 // ??_7?$class_debugger@VCDebugWindow@@$1?CDebugWindowhelp_text@@3PBDB$1?CDebugWindowusage_text@@3PBDB@@6B@
-// GLOBAL: SIMCOPTER 0x00000420
+// GLOBAL: COPTER_D 0x00000420
 // ??_7debug_command@@6B@
 
 
@@ -4280,25 +4280,25 @@ int32_t ParseCommandLine() {
 
 
 // Contribution: 3:00000368-0000041d Module: 70, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x00000368
+// GLOBAL: COPTER_D 0x00000368
 // CDebugWindow::m_className
-// GLOBAL: SIMCOPTER 0x0000036c
+// GLOBAL: COPTER_D 0x0000036c
 // CDebugWindowhelp_text
-// GLOBAL: SIMCOPTER 0x00000370
+// GLOBAL: COPTER_D 0x00000370
 // CDebugWindowusage_text
-// GLOBAL: SIMCOPTER 0x00000374
+// GLOBAL: COPTER_D 0x00000374
 // gDebugWindow
 
 
 // Contribution: 3:00000420-00000423 Module: 70, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00000420
+// GLOBAL: COPTER_D 0x00000420
 // deque<basic_string<char>>::buffer_size
-// GLOBAL: SIMCOPTER 0x00000424
+// GLOBAL: COPTER_D 0x00000424
 // ??_C@_0L@JPFL@?$CIint?$CJpPool?$AA@
 
 
 // Contribution: 3:0002b8d0-0002b917 Module: 70, 8 byte alignment, uninitialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x0002b8d0
+// GLOBAL: COPTER_D 0x0002b8d0
 // CDebugWindow::m_class
-// LOCAL: SIMCOPTER 0x0002b8f8
+// LOCAL: COPTER_D 0x0002b8f8
 // ?$S19@?1???0CDebugWindow@@QAE@XZ@4EA

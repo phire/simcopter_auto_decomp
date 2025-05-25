@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:00047270-0004ec1a Module: 47, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00448270
+// FUNCTION: COPTER_D 0x00448270
 void RadioCompassWindow::RadioCompassWindow(class MRect&, long, class GraphicWindow*, class Radio*, class GraphicWindowOwner*, int32_t) {
 // LINE 75:
 	asm( 
@@ -135,7 +135,7 @@ void RadioCompassWindow::RadioCompassWindow(class MRect&, long, class GraphicWin
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044843f
+// FUNCTION: COPTER_D 0x0044843f
 void RadioCompassWindow::~RadioCompassWindow() {
 // LINE 82:
 	asm( 
@@ -219,7 +219,7 @@ void RadioCompassWindow::~RadioCompassWindow() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044853b
+// FUNCTION: COPTER_D 0x0044853b
 int32_t RadioCompassWindow::Initialize() {
 // LINE 90:
 	asm( 
@@ -306,7 +306,7 @@ int32_t RadioCompassWindow::Initialize() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004485d3
+// FUNCTION: COPTER_D 0x004485d3
 void RadioCompassWindow::InitializeCachedSettings() {
 // LINE 113:
 	asm( 
@@ -344,7 +344,7 @@ void RadioCompassWindow::InitializeCachedSettings() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044860d
+// FUNCTION: COPTER_D 0x0044860d
 void RadioCompassWindow::DestroyImage() {
 // LINE 124:
 	asm( 
@@ -401,7 +401,7 @@ void RadioCompassWindow::DestroyImage() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00448682
+// FUNCTION: COPTER_D 0x00448682
 int32_t RadioCompassWindow::CreateImage(int32_t) {
 // LINE 140:
 	asm( 
@@ -619,7 +619,7 @@ int32_t RadioCompassWindow::CreateImage(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00448928
+// FUNCTION: COPTER_D 0x00448928
 int32_t RadioCompassWindow::ComposeSelf() {
 // LINE 166:
 	asm( 
@@ -761,7 +761,7 @@ int32_t RadioCompassWindow::ComposeSelf() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00448a45
+// FUNCTION: COPTER_D 0x00448a45
 long RadioCompassWindow::DoCursorDown(long, long, unsigned long) {
 // LINE 201:
 	asm( 
@@ -996,7 +996,7 @@ long RadioCompassWindow::DoCursorDown(long, long, unsigned long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00448cb7
+// FUNCTION: COPTER_D 0x00448cb7
 void RadioCompassWindow::SetNewRadioStation(int32_t) {
 // LINE 238:
 	asm( 
@@ -1234,7 +1234,7 @@ void RadioCompassWindow::SetNewRadioStation(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00448eac
+// FUNCTION: COPTER_D 0x00448eac
 void RadioCompassWindow::SetNewRadioStationVolume(long) {
 // LINE 282:
 	asm( 
@@ -1428,7 +1428,7 @@ void RadioCompassWindow::SetNewRadioStationVolume(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00449066
+// FUNCTION: COPTER_D 0x00449066
 void RadioCompassWindow::CheckForRadioChange() {
 // LINE 313:
 	asm( 
@@ -1495,7 +1495,7 @@ void RadioCompassWindow::CheckForRadioChange() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004490d7
+// FUNCTION: COPTER_D 0x004490d7
 void DialWindow::DialWindow(class MRect&, long, struct CommandSystem*, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
 // LINE 366:
 	asm( 
@@ -2128,7 +2128,7 @@ void DialWindow::DialWindow(class MRect&, long, struct CommandSystem*, class Gra
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00449a54
+// FUNCTION: COPTER_D 0x00449a54
 void DialWindow::~DialWindow() {
 // LINE 407:
 	asm( 
@@ -2160,7 +2160,7 @@ void DialWindow::~DialWindow() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00449a83
+// FUNCTION: COPTER_D 0x00449a83
 int32_t DialWindow::Initialize() {
 // LINE 416:
 	asm( 
@@ -2196,7 +2196,7 @@ int32_t DialWindow::Initialize() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00449aae
+// FUNCTION: COPTER_D 0x00449aae
 void DialWindow::InitializeCachedSettings() {
 // LINE 430:
 	asm( 
@@ -2441,7 +2441,7 @@ void DialWindow::InitializeCachedSettings() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00449dca
+// FUNCTION: COPTER_D 0x00449dca
 void DialWindow::DestroyImage() {
 // LINE 461:
 	asm( 
@@ -2740,7 +2740,7 @@ void DialWindow::DestroyImage() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044a0f6
+// FUNCTION: COPTER_D 0x0044a0f6
 void DialWindow::TurnOffSpotlightCommand(int32_t) {
 // LINE 509:
 	asm( 
@@ -2842,7 +2842,7 @@ void DialWindow::TurnOffSpotlightCommand(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044a1d9
+// FUNCTION: COPTER_D 0x0044a1d9
 void DialWindow::TurnOnSpotlightCommand(int32_t) {
 // LINE 525:
 	asm( 
@@ -2944,7 +2944,7 @@ void DialWindow::TurnOnSpotlightCommand(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044a2bc
+// FUNCTION: COPTER_D 0x0044a2bc
 int32_t DialWindow::CreateImage(int32_t) {
 // LINE 542:
 	asm( 
@@ -3317,7 +3317,7 @@ int32_t DialWindow::CreateImage(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044a784
+// FUNCTION: COPTER_D 0x0044a784
 void DialWindow::DrawCurrentDamage() {
 // LINE 610:
 	asm( 
@@ -3426,7 +3426,7 @@ void DialWindow::DrawCurrentDamage() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044a863
+// FUNCTION: COPTER_D 0x0044a863
 long DialWindow::DoCursorDown(long, long, unsigned long) {
 // LINE 637:
 	asm( 
@@ -3537,7 +3537,7 @@ long DialWindow::DoCursorDown(long, long, unsigned long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044a97a
+// FUNCTION: COPTER_D 0x0044a97a
 long DialWindow::DoCursorUp(long, long, unsigned long) {
 // LINE 657:
 	asm( 
@@ -3603,7 +3603,7 @@ long DialWindow::DoCursorUp(long, long, unsigned long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044a9ff
+// FUNCTION: COPTER_D 0x0044a9ff
 long DialWindow::DoCursorMove(long, long) {
 // LINE 672:
 	asm( 
@@ -3720,7 +3720,7 @@ long DialWindow::DoCursorMove(long, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044ab1f
+// FUNCTION: COPTER_D 0x0044ab1f
 int32_t DialWindow::ComposeSelf() {
 // LINE 697:
 	asm( 
@@ -4675,7 +4675,7 @@ int32_t DialWindow::ComposeSelf() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044b9e0
+// FUNCTION: COPTER_D 0x0044b9e0
 int32_t DialWindow::DoesWindowNeedUpdating() {
 // LINE 794:
 	asm( 
@@ -4721,7 +4721,7 @@ int32_t DialWindow::DoesWindowNeedUpdating() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044ba5b
+// FUNCTION: COPTER_D 0x0044ba5b
 void DialWindow::SetNewDialPositions() {
 // LINE 807:
 	asm( 
@@ -5075,7 +5075,7 @@ void DialWindow::SetNewDialPositions() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044be4a
+// FUNCTION: COPTER_D 0x0044be4a
 void PassengerWindow::PassengerWindow(class MRect&, long, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
 // LINE 910:
 	asm( 
@@ -5218,7 +5218,7 @@ void PassengerWindow::PassengerWindow(class MRect&, long, class GraphicWindow*, 
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044c032
+// FUNCTION: COPTER_D 0x0044c032
 void PassengerWindow::~PassengerWindow() {
 // LINE 919:
 	asm( 
@@ -5303,7 +5303,7 @@ void PassengerWindow::~PassengerWindow() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044c133
+// FUNCTION: COPTER_D 0x0044c133
 int32_t PassengerWindow::Initialize() {
 // LINE 928:
 	asm( 
@@ -5339,7 +5339,7 @@ int32_t PassengerWindow::Initialize() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044c15e
+// FUNCTION: COPTER_D 0x0044c15e
 void PassengerWindow::InitializeCachedSettings() {
 // LINE 940:
 	asm( 
@@ -5375,7 +5375,7 @@ void PassengerWindow::InitializeCachedSettings() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044c194
+// FUNCTION: COPTER_D 0x0044c194
 int32_t PassengerWindow::CreateImage(int32_t) {
 // LINE 950:
 	asm( 
@@ -5631,7 +5631,7 @@ int32_t PassengerWindow::CreateImage(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044c48e
+// FUNCTION: COPTER_D 0x0044c48e
 void PassengerWindow::DestroyImage() {
 // LINE 973:
 	asm( 
@@ -5713,7 +5713,7 @@ void PassengerWindow::DestroyImage() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044c549
+// FUNCTION: COPTER_D 0x0044c549
 int32_t PassengerWindow::ComposeSelf() {
 // LINE 990:
 	asm( 
@@ -6131,7 +6131,7 @@ int32_t PassengerWindow::ComposeSelf() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044c967
+// FUNCTION: COPTER_D 0x0044c967
 void PassengerWindow::DrawPassengers() {
 // LINE 1063:
 	asm( 
@@ -6450,7 +6450,7 @@ void PassengerWindow::DrawPassengers() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044cc1f
+// FUNCTION: COPTER_D 0x0044cc1f
 void PassengerWindow::GetRectOfPassengerGraphic(int32_t, int32_t, class MRect&) {
 // LINE 1128:
 	asm( 
@@ -6506,7 +6506,7 @@ void PassengerWindow::GetRectOfPassengerGraphic(int32_t, int32_t, class MRect&) 
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044cc73
+// FUNCTION: COPTER_D 0x0044cc73
 int32_t PassengerWindow::DoesWindowNeedUpdating() {
 // LINE 1140:
 	asm( 
@@ -6552,7 +6552,7 @@ int32_t PassengerWindow::DoesWindowNeedUpdating() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044ccdf
+// FUNCTION: COPTER_D 0x0044ccdf
 void PassengerWindow::MoveToUpPosition() {
 // LINE 1154:
 	asm( 
@@ -6635,7 +6635,7 @@ void PassengerWindow::MoveToUpPosition() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044cdd1
+// FUNCTION: COPTER_D 0x0044cdd1
 void PassengerWindow::MoveToDownPosition() {
 // LINE 1167:
 	asm( 
@@ -6718,7 +6718,7 @@ void PassengerWindow::MoveToDownPosition() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044cec3
+// FUNCTION: COPTER_D 0x0044cec3
 void PassengerWindow::TogglePosition() {
 // LINE 1180:
 	asm( 
@@ -6765,7 +6765,7 @@ void PassengerWindow::TogglePosition() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044cf07
+// FUNCTION: COPTER_D 0x0044cf07
 long PassengerWindow::DoCursorDown(long, long, unsigned long) {
 // LINE 1192:
 	asm( 
@@ -6922,7 +6922,7 @@ long PassengerWindow::DoCursorDown(long, long, unsigned long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044d0c3
+// FUNCTION: COPTER_D 0x0044d0c3
 long PassengerWindow::DoCursorUp(long, long, unsigned long) {
 // LINE 1221:
 	asm( 
@@ -7001,7 +7001,7 @@ long PassengerWindow::DoCursorUp(long, long, unsigned long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044d166
+// FUNCTION: COPTER_D 0x0044d166
 long PassengerWindow::DoCursorMove(long, long) {
 // LINE 1238:
 	asm( 
@@ -7040,7 +7040,7 @@ long PassengerWindow::DoCursorMove(long, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044d19b
+// FUNCTION: COPTER_D 0x0044d19b
 int32_t PassengerWindow::DoesPositionHitPassenger(long, long, long&) {
 // LINE 1249:
 	asm( 
@@ -7182,7 +7182,7 @@ int32_t PassengerWindow::DoesPositionHitPassenger(long, long, long&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044d2c4
+// FUNCTION: COPTER_D 0x0044d2c4
 void MapWindow::MapWindow(class MRect&, long, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
 // LINE 1307:
 	asm( 
@@ -7352,7 +7352,7 @@ void MapWindow::MapWindow(class MRect&, long, class GraphicWindow*, class Graphi
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044d54a
+// FUNCTION: COPTER_D 0x0044d54a
 void MapWindow::~MapWindow() {
 // LINE 1325:
 	asm( 
@@ -7387,7 +7387,7 @@ void MapWindow::~MapWindow() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044d587
+// FUNCTION: COPTER_D 0x0044d587
 int32_t MapWindow::Initialize() {
 // LINE 1335:
 	asm( 
@@ -7423,7 +7423,7 @@ int32_t MapWindow::Initialize() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044d5b2
+// FUNCTION: COPTER_D 0x0044d5b2
 void MapWindow::InitializeCachedSettings() {
 // LINE 1346:
 	asm( 
@@ -7461,7 +7461,7 @@ void MapWindow::InitializeCachedSettings() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044d5e9
+// FUNCTION: COPTER_D 0x0044d5e9
 int32_t MapWindow::CreateImage(int32_t) {
 // LINE 1357:
 	asm( 
@@ -7571,7 +7571,7 @@ int32_t MapWindow::CreateImage(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044d719
+// FUNCTION: COPTER_D 0x0044d719
 void MapWindow::DestroyImage() {
 // LINE 1381:
 	asm( 
@@ -7653,7 +7653,7 @@ void MapWindow::DestroyImage() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044d7cb
+// FUNCTION: COPTER_D 0x0044d7cb
 int32_t MapWindow::ComposeSelf() {
 // LINE 1400:
 	asm( 
@@ -7845,7 +7845,7 @@ int32_t MapWindow::ComposeSelf() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044d94c
+// FUNCTION: COPTER_D 0x0044d94c
 void MapWindow::DrawButton(int32_t, int32_t) {
 // LINE 1440:
 	asm( 
@@ -8073,7 +8073,7 @@ void MapWindow::DrawButton(int32_t, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044dc27
+// FUNCTION: COPTER_D 0x0044dc27
 long MapWindow::DoCursorDown(long, long, unsigned long) {
 // LINE 1486:
 	asm( 
@@ -8341,7 +8341,7 @@ long MapWindow::DoCursorDown(long, long, unsigned long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044df29
+// FUNCTION: COPTER_D 0x0044df29
 long MapWindow::DoCursorUp(long, long, unsigned long) {
 // LINE 1527:
 	asm( 
@@ -8545,7 +8545,7 @@ long MapWindow::DoCursorUp(long, long, unsigned long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044e1b7
+// FUNCTION: COPTER_D 0x0044e1b7
 int32_t MapWindow::DoMessage(class GraphicWindow*, long, long, void * __ptr32) {
 // LINE 1557:
 	asm( 
@@ -8599,7 +8599,7 @@ int32_t MapWindow::DoMessage(class GraphicWindow*, long, long, void * __ptr32) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044e211
+// FUNCTION: COPTER_D 0x0044e211
 void MapWindow::CreateAutoMessageSelectionPopupWindow(int32_t, int32_t, class MPoint&) {
 // LINE 1572:
 	asm( 
@@ -8728,7 +8728,7 @@ void MapWindow::CreateAutoMessageSelectionPopupWindow(int32_t, int32_t, class MP
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044e32d
+// FUNCTION: COPTER_D 0x0044e32d
 int32_t MapWindow::GetStringIDForVehicleName(int32_t) {
 // LINE 1592:
 	asm( 
@@ -8849,7 +8849,7 @@ int32_t MapWindow::GetStringIDForVehicleName(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044e44a
+// FUNCTION: COPTER_D 0x0044e44a
 void EquipmentPanelWindow::EquipmentPanelWindow(char *, class MRect&, long, struct CommandSystem*, class GraphicWindow*, class GraphicWindowOwner*) {
 // LINE 1667:
 	asm( 
@@ -9036,7 +9036,7 @@ void EquipmentPanelWindow::EquipmentPanelWindow(char *, class MRect&, long, stru
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044e6f1
+// FUNCTION: COPTER_D 0x0044e6f1
 void EquipmentPanelWindow::~EquipmentPanelWindow() {
 // LINE 1690:
 	asm( 
@@ -9068,7 +9068,7 @@ void EquipmentPanelWindow::~EquipmentPanelWindow() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044e720
+// FUNCTION: COPTER_D 0x0044e720
 int32_t EquipmentPanelWindow::Initialize() {
 // LINE 1699:
 	asm( 
@@ -9104,7 +9104,7 @@ int32_t EquipmentPanelWindow::Initialize() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044e74b
+// FUNCTION: COPTER_D 0x0044e74b
 void EquipmentPanelWindow::InitializeCachedSettings() {
 // LINE 1707:
 	asm( 
@@ -9137,7 +9137,7 @@ void EquipmentPanelWindow::InitializeCachedSettings() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044e77b
+// FUNCTION: COPTER_D 0x0044e77b
 int32_t EquipmentPanelWindow::CreateImage(int32_t) {
 // LINE 1717:
 	asm( 
@@ -9301,7 +9301,7 @@ int32_t EquipmentPanelWindow::CreateImage(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044e94b
+// FUNCTION: COPTER_D 0x0044e94b
 void EquipmentPanelWindow::DestroyImage() {
 // LINE 1745:
 	asm( 
@@ -9412,7 +9412,7 @@ void EquipmentPanelWindow::DestroyImage() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044ea5d
+// FUNCTION: COPTER_D 0x0044ea5d
 int32_t EquipmentPanelWindow::DrawSelf() {
 // LINE 1765:
 	asm( 
@@ -9462,7 +9462,7 @@ int32_t EquipmentPanelWindow::DrawSelf() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044eaa7
+// FUNCTION: COPTER_D 0x0044eaa7
 int32_t EquipmentPanelWindow::DoesWindowNeedUpdating() {
 // LINE 1777:
 	asm( 
@@ -9546,7 +9546,7 @@ int32_t EquipmentPanelWindow::DoesWindowNeedUpdating() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044eb6a
+// FUNCTION: COPTER_D 0x0044eb6a
 void EquipmentPanelWindow::DrawButton(int32_t, int32_t) {
 // LINE 1796:
 	asm( 
@@ -9889,7 +9889,7 @@ void EquipmentPanelWindow::DrawButton(int32_t, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044ef07
+// FUNCTION: COPTER_D 0x0044ef07
 void EquipmentPanelWindow::DrawBucketWaterGuage() {
 // LINE 1868:
 	asm( 
@@ -10033,7 +10033,7 @@ void EquipmentPanelWindow::DrawBucketWaterGuage() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044f040
+// FUNCTION: COPTER_D 0x0044f040
 void EquipmentPanelWindow::DrawTeargasUsage() {
 // LINE 1893:
 	asm( 
@@ -10204,7 +10204,7 @@ void EquipmentPanelWindow::DrawTeargasUsage() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044f1bd
+// FUNCTION: COPTER_D 0x0044f1bd
 int32_t EquipmentPanelWindow::DoMessage(class GraphicWindow*, long, long, void * __ptr32) {
 // LINE 1922:
 	asm( 
@@ -10246,7 +10246,7 @@ int32_t EquipmentPanelWindow::DoMessage(class GraphicWindow*, long, long, void *
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044f1ff
+// FUNCTION: COPTER_D 0x0044f1ff
 long EquipmentPanelWindow::DoCursorDown(long, long, unsigned long) {
 // LINE 1932:
 	asm( 
@@ -10612,7 +10612,7 @@ long EquipmentPanelWindow::DoCursorDown(long, long, unsigned long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044f64e
+// FUNCTION: COPTER_D 0x0044f64e
 long EquipmentPanelWindow::DoCursorUp(long, long, unsigned long) {
 // LINE 1980:
 	asm( 
@@ -10735,7 +10735,7 @@ long EquipmentPanelWindow::DoCursorUp(long, long, unsigned long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044f77f
+// FUNCTION: COPTER_D 0x0044f77f
 void EquipmentPanelWindow::DoCurrentControlStart() {
 // LINE 2005:
 	asm( 
@@ -10929,7 +10929,7 @@ void EquipmentPanelWindow::DoCurrentControlStart() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044f95a
+// FUNCTION: COPTER_D 0x0044f95a
 void EquipmentPanelWindow::DoCurrentControlEnd() {
 // LINE 2037:
 	asm( 
@@ -11102,7 +11102,7 @@ void EquipmentPanelWindow::DoCurrentControlEnd() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044fb06
+// FUNCTION: COPTER_D 0x0044fb06
 void EquipmentPanelWindow::CreateMegaphoneSelectionPopupWindow() {
 // LINE 2062:
 	asm( 
@@ -11231,7 +11231,7 @@ void EquipmentPanelWindow::CreateMegaphoneSelectionPopupWindow() {
 
 
 // Contribution: 1:0004ec20-0004ec58 Module: 47, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x0044fc20
+// FUNCTION: COPTER_D 0x0044fc20
 // RadioCompassWindow::`scalar deleting destructor'
 
 
@@ -11243,31 +11243,31 @@ void EquipmentPanelWindow::CreateMegaphoneSelectionPopupWindow() {
 
 
 // Contribution: 1:0004ee40-0004ee78 Module: 47, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x0044fe40
+// FUNCTION: COPTER_D 0x0044fe40
 // DialWindow::`scalar deleting destructor'
 
 
 
 // Contribution: 1:0004ee80-0004eeb8 Module: 47, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x0044fe80
+// FUNCTION: COPTER_D 0x0044fe80
 // PassengerWindow::`scalar deleting destructor'
 
 
 
 // Contribution: 1:0004eec0-0004eef8 Module: 47, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x0044fec0
+// FUNCTION: COPTER_D 0x0044fec0
 // MapWindow::`scalar deleting destructor'
 
 
 
 // Contribution: 1:0004ef00-0004ef38 Module: 47, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x0044ff00
+// FUNCTION: COPTER_D 0x0044ff00
 // EquipmentPanelWindow::`scalar deleting destructor'
 
 
 
 // Contribution: 2:00000650-00000717 Module: 47, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00000650
+// GLOBAL: COPTER_D 0x00000650
 // ??_7RadioCompassWindow@@6B@
 
 
@@ -11275,57 +11275,57 @@ void EquipmentPanelWindow::CreateMegaphoneSelectionPopupWindow() {
 
 
 // Contribution: 2:00000738-000007ff Module: 47, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00000738
+// GLOBAL: COPTER_D 0x00000738
 // ??_7DialWindow@@6B@
 
 
 // Contribution: 2:00000800-000008d3 Module: 47, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00000800
+// GLOBAL: COPTER_D 0x00000800
 // ??_7PassengerWindow@@6B@
 
 
 // Contribution: 2:000008d8-000009ab Module: 47, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x000008d8
+// GLOBAL: COPTER_D 0x000008d8
 // ??_7MapWindow@@6B@
 
 
 // Contribution: 2:000009b0-00000a7b Module: 47, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x000009b0
+// GLOBAL: COPTER_D 0x000009b0
 // ??_7EquipmentPanelWindow@@6B@
 
 
 // Contribution: 3:00001f58-000020e0 Module: 47, 8 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x00001f5c
+// GLOBAL: COPTER_D 0x00001f5c
 // SZ_COMPASS_IMAGE_FILE_NAME
-// GLOBAL: SIMCOPTER 0x00001f60
+// GLOBAL: COPTER_D 0x00001f60
 // SZ_DIAL_WINDOW_IMAGE_FILE_NAME
-// GLOBAL: SIMCOPTER 0x00001f64
+// GLOBAL: COPTER_D 0x00001f64
 // SZ_DIAL_WINDOW_DAMAGE_FILE_NAME
-// GLOBAL: SIMCOPTER 0x00001f68
+// GLOBAL: COPTER_D 0x00001f68
 // SZ_DIAL_WINDOW_FUEL_LIGHT_FILE_NAME
-// GLOBAL: SIMCOPTER 0x00001f6c
+// GLOBAL: COPTER_D 0x00001f6c
 // SZ_DIAL_WINDOW_MONEY_FONT_FILE_NAME
-// GLOBAL: SIMCOPTER 0x00001f70
+// GLOBAL: COPTER_D 0x00001f70
 // SZ_DIAL_WINDOW_MANA_FILE_NAME
-// GLOBAL: SIMCOPTER 0x00001f74
+// GLOBAL: COPTER_D 0x00001f74
 // SZ_DIAL_WINDOW_ALTITUDE_NBR_FILE_NAME
-// GLOBAL: SIMCOPTER 0x00001f78
+// GLOBAL: COPTER_D 0x00001f78
 // SZ_DIAL_WINDOW_BOOT_FILE_NAME
-// GLOBAL: SIMCOPTER 0x00001f7c
+// GLOBAL: COPTER_D 0x00001f7c
 // SZ_DIAL_WINDOW_BOOT_BACK_FILE_NAME
-// GLOBAL: SIMCOPTER 0x00001fb8
+// GLOBAL: COPTER_D 0x00001fb8
 // SZ_PASSENGER_WINDOW_IMAGE_FILE_NAME
-// GLOBAL: SIMCOPTER 0x00001fbc
+// GLOBAL: COPTER_D 0x00001fbc
 // SZ_PASSENGER_IMAGE_FILE_NAME
-// GLOBAL: SIMCOPTER 0x00001fc0
+// GLOBAL: COPTER_D 0x00001fc0
 // SZ_MAP_WINDOW_IMAGE_FILE_NAME
-// GLOBAL: SIMCOPTER 0x00001fc4
+// GLOBAL: COPTER_D 0x00001fc4
 // SZ_MAP_WINDOW_BUTTON_FILE_NAME
-// GLOBAL: SIMCOPTER 0x00001fcc
+// GLOBAL: COPTER_D 0x00001fcc
 // SZ_BUCKET_WATER_GUAGE_IMAGE
-// GLOBAL: SIMCOPTER 0x00001fd0
+// GLOBAL: COPTER_D 0x00001fd0
 // SZ_EQUIPMENT_BUTTON_IMAGE_0
-// GLOBAL: SIMCOPTER 0x00001fd4
+// GLOBAL: COPTER_D 0x00001fd4
 // SZ_EQUIPMENT_BUTTON_IMAGE_1
-// GLOBAL: SIMCOPTER 0x00001fd8
+// GLOBAL: COPTER_D 0x00001fd8
 // SZ_EQUIPMENT_BUTTON_IMAGE_2

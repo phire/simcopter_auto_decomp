@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:0002c420-0002cf5b Module: 65, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x0042d420
+// FUNCTION: COPTER_D 0x0042d420
 void DirectDrawError::DisplayError(char *) {
 // LINE 10:
 	asm( 
@@ -45,7 +45,7 @@ void DirectDrawError::DisplayError(char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042d468
+// FUNCTION: COPTER_D 0x0042d468
 void DirectDrawError::MakeErrorString(char *, char *) {
 // LINE 27:
 	asm( 
@@ -836,7 +836,7 @@ void DirectDrawError::MakeErrorString(char *, char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042dc69
+// FUNCTION: COPTER_D 0x0042dc69
 void DirectSoundError::DisplayError(char *) {
 // LINE 190:
 	asm( 
@@ -876,7 +876,7 @@ void DirectSoundError::DisplayError(char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0042dcb1
+// FUNCTION: COPTER_D 0x0042dcb1
 void DirectSoundError::MakeErrorString(char *, char *) {
 // LINE 208:
 	asm( 

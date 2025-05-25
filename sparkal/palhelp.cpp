@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:000953b0-00096b4b Module: 18, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x004963b0
+// FUNCTION: COPTER_D 0x004963b0
 void SparkalPalette::SparkalPalette(struct SparkalColor*, int32_t, unsigned long) {
 // LINE 29:
 	asm( 
@@ -40,7 +40,7 @@ void SparkalPalette::SparkalPalette(struct SparkalColor*, int32_t, unsigned long
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004963ef
+// FUNCTION: COPTER_D 0x004963ef
 void SparkalPalette::SparkalPalette() {
 // LINE 40:
 	asm( 
@@ -72,7 +72,7 @@ void SparkalPalette::SparkalPalette() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049642f
+// FUNCTION: COPTER_D 0x0049642f
 void SparkalPalette::~SparkalPalette() {
 // LINE 47:
 	asm( 
@@ -118,7 +118,7 @@ void SparkalPalette::~SparkalPalette() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00496483
+// FUNCTION: COPTER_D 0x00496483
 void SparkalPalette::GetNearestIndex(struct SparkalColor&, int32_t&) {
 // LINE 64:
 	asm( 
@@ -257,7 +257,7 @@ void SparkalPalette::GetNearestIndex(struct SparkalColor&, int32_t&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004965b0
+// FUNCTION: COPTER_D 0x004965b0
 void SparkalPalette::FadeToWhite(long) {
 // LINE 93:
 	asm( 
@@ -599,7 +599,7 @@ void SparkalPalette::FadeToWhite(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00496a14
+// FUNCTION: COPTER_D 0x00496a14
 void SparkalPalette::FadeToBlack(long) {
 // LINE 180:
 	asm( 
@@ -932,7 +932,7 @@ void SparkalPalette::FadeToBlack(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00496e54
+// FUNCTION: COPTER_D 0x00496e54
 void SparkalPalette::FadeToRGB(struct SparkalColor&, long) {
 // LINE 269:
 	asm( 
@@ -1301,7 +1301,7 @@ void SparkalPalette::FadeToRGB(struct SparkalColor&, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004972e7
+// FUNCTION: COPTER_D 0x004972e7
 void SparkalPalette::FadeToPalette(struct SparkalColor, long, long) {
 // LINE 360:
 	asm( 
@@ -1338,7 +1338,7 @@ void SparkalPalette::FadeToPalette(struct SparkalColor, long, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049731a
+// FUNCTION: COPTER_D 0x0049731a
 void SparkalPalette::FadeToPalette(struct SparkalColor, struct SparkalColor*, long, long) {
 // LINE 377:
 	asm( 
@@ -1857,7 +1857,7 @@ void SparkalPalette::FadeToPalette(struct SparkalColor, struct SparkalColor*, lo
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00497844
+// FUNCTION: COPTER_D 0x00497844
 void SparkalPalette::SetSystemPaletteEntriesToRGB(struct SparkalColor&) {
 // LINE 462:
 	asm( 
@@ -1940,7 +1940,7 @@ void SparkalPalette::SetSystemPaletteEntriesToRGB(struct SparkalColor&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004978e9
+// FUNCTION: COPTER_D 0x004978e9
 void SparkalPalette::ImplementNewPalette(struct SparkalColor*) {
 // LINE 493:
 	asm( 
@@ -2037,7 +2037,7 @@ void SparkalPalette::ImplementNewPalette(struct SparkalColor*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004979cf
+// FUNCTION: COPTER_D 0x004979cf
 void CopterSparkalPalette::CopterSparkalPalette() {
 // LINE 534:
 	asm( 
@@ -2065,7 +2065,7 @@ void CopterSparkalPalette::CopterSparkalPalette() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004979f9
+// FUNCTION: COPTER_D 0x004979f9
 void CopterSparkalPalette::CopterSparkalPalette(struct SparkalColor*, int32_t) {
 // LINE 543:
 	asm( 
@@ -2098,7 +2098,7 @@ void CopterSparkalPalette::CopterSparkalPalette(struct SparkalColor*, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00497a32
+// FUNCTION: COPTER_D 0x00497a32
 void ClearWindowsSystemPalette() {
 // LINE 560:
 	asm( 
@@ -2228,13 +2228,13 @@ void ClearWindowsSystemPalette() {
 
 
 // Contribution: 1:00096b80-00096bb8 Module: 18, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x00497b80
+// FUNCTION: COPTER_D 0x00497b80
 // SparkalPalette::`scalar deleting destructor'
 
 
 
 // Contribution: 1:00096bc0-00096bfd Module: 18, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x00497bc0
+// FUNCTION: COPTER_D 0x00497bc0
 // CopterSparkalPalette::`scalar deleting destructor'
 
 
@@ -2243,7 +2243,7 @@ void ClearWindowsSystemPalette() {
 
 
 // Contribution: 2:00002118-00002133 Module: 18, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00002118
+// GLOBAL: COPTER_D 0x00002118
 // ??_7CopterSparkalPalette@@6B@
 
 

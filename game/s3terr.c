@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:00112d50-00117f8b Module: 169, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00513d50
+// FUNCTION: COPTER_D 0x00513d50
 short GetAltitude() {
 // LINE 93:
 	asm( 
@@ -99,7 +99,7 @@ short GetAltitude() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00513e15
+// FUNCTION: COPTER_D 0x00513e15
 void S3TerrainInit() {
 // LINE 121:
 	asm( 
@@ -158,7 +158,7 @@ void S3TerrainInit() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00513e81
+// FUNCTION: COPTER_D 0x00513e81
 short S3TerrainInitMap() {
 // LINE 155:
 	asm( 
@@ -4626,7 +4626,7 @@ short S3TerrainInitMap() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0051723c
+// FUNCTION: COPTER_D 0x0051723c
 void do_map_square() {
 // LINE 1012:
 	asm( 
@@ -5592,7 +5592,7 @@ void do_map_square() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00517dc6
+// FUNCTION: COPTER_D 0x00517dc6
 unsigned short noise() {
 // LINE 1109:
 	asm( 
@@ -5666,7 +5666,7 @@ unsigned short noise() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00517e5d
+// FUNCTION: COPTER_D 0x00517e5d
 void S3TerrSetGridObj() {
 // LINE 1134:
 	asm( 
@@ -5782,7 +5782,7 @@ void S3TerrSetGridObj() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00517f70
+// FUNCTION: COPTER_D 0x00517f70
 void S3TerrainMorph() {
 // LINE 1190:
 	asm( 
@@ -6267,7 +6267,7 @@ void S3TerrainMorph() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00518499
+// FUNCTION: COPTER_D 0x00518499
 int32_t S3TerrMorphWater() {
 // LINE 1431:
 	asm( 
@@ -6466,7 +6466,7 @@ int32_t S3TerrMorphWater() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0051865b
+// FUNCTION: COPTER_D 0x0051865b
 void AdjustTerrainMap() {
 // LINE 1540:
 	asm( 
@@ -6862,7 +6862,7 @@ void AdjustTerrainMap() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00518a8c
+// FUNCTION: COPTER_D 0x00518a8c
 int32_t S3TerrPrecisionAlt() {
 // LINE 1605:
 	asm( 
@@ -7297,7 +7297,7 @@ int32_t S3TerrPrecisionAlt() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00518e64
+// FUNCTION: COPTER_D 0x00518e64
 unsigned char S3TerrGetShadeIndex() {
 // LINE 1738:
 	asm( 
@@ -7322,7 +7322,7 @@ unsigned char S3TerrGetShadeIndex() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00518e76
+// FUNCTION: COPTER_D 0x00518e76
 int32_t S3ObjectPrecisionAlt() {
 // LINE 1822:
 	asm( 
@@ -7482,50 +7482,50 @@ int32_t S3ObjectPrecisionAlt() {
 
 
 // Contribution: 3:0001ecb8-0001ee74 Module: 169, 8 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x0001ecb8
+// GLOBAL: COPTER_D 0x0001ecb8
 // G_tdim
-// GLOBAL: SIMCOPTER 0x0001ecbc
+// GLOBAL: COPTER_D 0x0001ecbc
 // G_tmask
-// GLOBAL: SIMCOPTER 0x0001ecc0
+// GLOBAL: COPTER_D 0x0001ecc0
 // G_tshift
-// GLOBAL: SIMCOPTER 0x0001ecc4
+// GLOBAL: COPTER_D 0x0001ecc4
 // G_morphno
-// LOCAL: SIMCOPTER 0x0001ecc8
+// LOCAL: COPTER_D 0x0001ecc8
 // S_texcycle
-// LOCAL: SIMCOPTER 0x0001ecd0
+// LOCAL: COPTER_D 0x0001ecd0
 // S_texlast
-// LOCAL: SIMCOPTER 0x0001ecd4
+// LOCAL: COPTER_D 0x0001ecd4
 // S_watercycle1
-// LOCAL: SIMCOPTER 0x0001ecd8
+// LOCAL: COPTER_D 0x0001ecd8
 // S_watercycle2
-// LOCAL: SIMCOPTER 0x0001ecdc
+// LOCAL: COPTER_D 0x0001ecdc
 // S_looptime
-// LOCAL: SIMCOPTER 0x0001ece0
+// LOCAL: COPTER_D 0x0001ece0
 // S_checktime
-// LOCAL: SIMCOPTER 0x0001ece4
+// LOCAL: COPTER_D 0x0001ece4
 // S_cycle
-// LOCAL: SIMCOPTER 0x0001ece8
+// LOCAL: COPTER_D 0x0001ece8
 // S_array1
-// LOCAL: SIMCOPTER 0x0001ed28
+// LOCAL: COPTER_D 0x0001ed28
 // S_array2
 
 
 // Contribution: 3:00093500-00093527 Module: 169, 4 byte alignment, uninitialized_data, read, write, 
-// LOCAL: SIMCOPTER 0x00093504
+// LOCAL: COPTER_D 0x00093504
 // S_h2
-// LOCAL: SIMCOPTER 0x00093508
+// LOCAL: COPTER_D 0x00093508
 // S_h3
-// LOCAL: SIMCOPTER 0x0009350c
+// LOCAL: COPTER_D 0x0009350c
 // S_h4
-// LOCAL: SIMCOPTER 0x00093510
+// LOCAL: COPTER_D 0x00093510
 // S_h5
-// LOCAL: SIMCOPTER 0x00093514
+// LOCAL: COPTER_D 0x00093514
 // S_h6
-// LOCAL: SIMCOPTER 0x00093518
+// LOCAL: COPTER_D 0x00093518
 // S_h7
-// LOCAL: SIMCOPTER 0x0009351c
+// LOCAL: COPTER_D 0x0009351c
 // S_h8
-// LOCAL: SIMCOPTER 0x00093520
+// LOCAL: COPTER_D 0x00093520
 // S_h9
-// LOCAL: SIMCOPTER 0x00093524
+// LOCAL: COPTER_D 0x00093524
 // S_recip_celldim

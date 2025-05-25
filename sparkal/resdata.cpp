@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:000467b0-00046b55 Module: 49, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x004477b0
+// FUNCTION: COPTER_D 0x004477b0
 void ResourceRCData::ResourceRCData() {
 // LINE 26:
 	asm( 
@@ -43,7 +43,7 @@ void ResourceRCData::ResourceRCData() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044780e
+// FUNCTION: COPTER_D 0x0044780e
 void ResourceRCData::ResourceRCData(int32_t, int32_t) {
 // LINE 38:
 	asm( 
@@ -102,7 +102,7 @@ void ResourceRCData::ResourceRCData(int32_t, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00447880
+// FUNCTION: COPTER_D 0x00447880
 void ResourceRCData::ResourceRCData(class ResourceRCData&) {
 // LINE 54:
 	asm( 
@@ -189,7 +189,7 @@ void ResourceRCData::ResourceRCData(class ResourceRCData&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0044791c
+// FUNCTION: COPTER_D 0x0044791c
 void ResourceRCData::~ResourceRCData() {
 // LINE 72:
 	asm( 
@@ -219,7 +219,7 @@ void ResourceRCData::~ResourceRCData() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00447943
+// FUNCTION: COPTER_D 0x00447943
 class ResourceRCData& ResourceRCData::operator=(class ResourceRCData&) {
 // LINE 81:
 	asm( 
@@ -318,7 +318,7 @@ class ResourceRCData& ResourceRCData::operator=(class ResourceRCData&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004479ea
+// FUNCTION: COPTER_D 0x004479ea
 void ResourceRCData::Reset() {
 // LINE 104:
 	asm( 
@@ -397,7 +397,7 @@ void ResourceRCData::Reset() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00447a74
+// FUNCTION: COPTER_D 0x00447a74
 unsigned long ResourceRCData::DataSize() {
 // LINE 130:
 	asm( 
@@ -441,7 +441,7 @@ unsigned long ResourceRCData::DataSize() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00447ab2
+// FUNCTION: COPTER_D 0x00447ab2
 int32_t ResourceRCData::ReadResource() {
 // LINE 143:
 	asm( 
@@ -520,7 +520,7 @@ int32_t ResourceRCData::ReadResource() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00447b3a
+// FUNCTION: COPTER_D 0x00447b3a
 char * ResourceRCData::DataReference() {
 // LINE 161:
 	asm( 
@@ -551,5 +551,5 @@ char * ResourceRCData::DataReference() {
 
 
 // Contribution: 2:00000648-0000064f Module: 49, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00000648
+// GLOBAL: COPTER_D 0x00000648
 // ??_7ResourceRCData@@6B@

@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:00065f70-00067019 Module: 43, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00466f70
+// FUNCTION: COPTER_D 0x00466f70
 void GameWindow::GameWindow(unsigned long, unsigned long, unsigned long, const struct SparkalColor*, char *) {
 // LINE 36:
 	asm( 
@@ -183,7 +183,7 @@ void GameWindow::GameWindow(unsigned long, unsigned long, unsigned long, const s
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004670df
+// FUNCTION: COPTER_D 0x004670df
 unsigned long GameWindow::CreateSparkalWindow() {
 // LINE 78:
 	asm( 
@@ -435,7 +435,7 @@ unsigned long GameWindow::CreateSparkalWindow() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004672cb
+// FUNCTION: COPTER_D 0x004672cb
 void GameWindow::~GameWindow() {
 // LINE 149:
 	asm( 
@@ -474,7 +474,7 @@ void GameWindow::~GameWindow() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00467310
+// FUNCTION: COPTER_D 0x00467310
 int32_t GameWindow::Initialize() {
 // LINE 158:
 	asm( 
@@ -508,7 +508,7 @@ int32_t GameWindow::Initialize() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00467336
+// FUNCTION: COPTER_D 0x00467336
 unsigned long GameWindow::Draw() {
 // LINE 169:
 	asm( 
@@ -565,7 +565,7 @@ unsigned long GameWindow::Draw() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00467390
+// FUNCTION: COPTER_D 0x00467390
 unsigned long GameWindow::SwapBuffer() {
 // LINE 184:
 	asm( 
@@ -622,7 +622,7 @@ unsigned long GameWindow::SwapBuffer() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004673ea
+// FUNCTION: COPTER_D 0x004673ea
 unsigned long GameWindow::MakePalette(const struct SparkalColor*) {
 // LINE 197:
 	asm( 
@@ -950,7 +950,7 @@ unsigned long GameWindow::MakePalette(const struct SparkalColor*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004676a1
+// FUNCTION: COPTER_D 0x004676a1
 void GameWindow::UpdatePalette(long, long, struct SparkalColor*) {
 // LINE 285:
 	asm( 
@@ -985,7 +985,7 @@ void GameWindow::UpdatePalette(long, long, struct SparkalColor*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004676d0
+// FUNCTION: COPTER_D 0x004676d0
 void GameWindow::ProcessWindowMove() {
 // LINE 297:
 	asm( 
@@ -1110,7 +1110,7 @@ void GameWindow::ProcessWindowMove() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004677ae
+// FUNCTION: COPTER_D 0x004677ae
 int32_t GameWindow::PrepareForSwitchToWindowedMode() {
 // LINE 333:
 	asm( 
@@ -1137,7 +1137,7 @@ int32_t GameWindow::PrepareForSwitchToWindowedMode() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004677c9
+// FUNCTION: COPTER_D 0x004677c9
 int32_t GameWindow::CompleteSwitchToWindowedMode() {
 // LINE 346:
 	asm( 
@@ -1307,7 +1307,7 @@ int32_t GameWindow::CompleteSwitchToWindowedMode() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00467918
+// FUNCTION: COPTER_D 0x00467918
 int32_t GameWindow::PrepareForSwitchToFullScreenMode() {
 // LINE 389:
 	asm( 
@@ -1334,7 +1334,7 @@ int32_t GameWindow::PrepareForSwitchToFullScreenMode() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00467933
+// FUNCTION: COPTER_D 0x00467933
 int32_t GameWindow::CompleteSwitchToFullScreenMode() {
 // LINE 402:
 	asm( 
@@ -1468,7 +1468,7 @@ int32_t GameWindow::CompleteSwitchToFullScreenMode() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00467a48
+// FUNCTION: COPTER_D 0x00467a48
 void GameWindow::CenterWindow() {
 // LINE 441:
 	asm( 
@@ -1561,7 +1561,7 @@ void GameWindow::CenterWindow() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00467af9
+// FUNCTION: COPTER_D 0x00467af9
 void GameWindow::PlaceWindowRect(class MRect*) {
 // LINE 469:
 	asm( 
@@ -1652,7 +1652,7 @@ void GameWindow::PlaceWindowRect(class MRect*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00467b9c
+// FUNCTION: COPTER_D 0x00467b9c
 long GameWindow::MySparkalWindowProc(void * __ptr32, uint32_t, uint32_t, long) {
 // LINE 493:
 	asm( 
@@ -2193,13 +2193,13 @@ long GameWindow::MySparkalWindowProc(void * __ptr32, uint32_t, uint32_t, long) {
 
 
 // Contribution: 1:00067060-00067098 Module: 43, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x00468060
+// FUNCTION: COPTER_D 0x00468060
 // GameWindow::`scalar deleting destructor'
 
 
 
 // Contribution: 2:00001470-000014cb Module: 43, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00001470
+// GLOBAL: COPTER_D 0x00001470
 // ??_7GameWindow@@6B@
 
 

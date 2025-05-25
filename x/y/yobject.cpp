@@ -5,31 +5,31 @@
 
 
 // Contribution: 1:00142f70-00150d97 Module: 200, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00543f70
+// FUNCTION: COPTER_D 0x00543f70
 // $E75
 
-// FUNCTION: SIMCOPTER 0x00543f8a
+// FUNCTION: COPTER_D 0x00543f8a
 // $E71
 
-// FUNCTION: SIMCOPTER 0x005440a0
+// FUNCTION: COPTER_D 0x005440a0
 // $E74
 
-// FUNCTION: SIMCOPTER 0x005440bd
+// FUNCTION: COPTER_D 0x005440bd
 // $E72
 
-// FUNCTION: SIMCOPTER 0x005440f4
+// FUNCTION: COPTER_D 0x005440f4
 // $E81
 
-// FUNCTION: SIMCOPTER 0x0054410e
+// FUNCTION: COPTER_D 0x0054410e
 // $E77
 
-// FUNCTION: SIMCOPTER 0x005441c8
+// FUNCTION: COPTER_D 0x005441c8
 // $E80
 
-// FUNCTION: SIMCOPTER 0x005441e5
+// FUNCTION: COPTER_D 0x005441e5
 // $E78
 
-// FUNCTION: SIMCOPTER 0x00544262
+// FUNCTION: COPTER_D 0x00544262
 void RemoveAvatarFromBuilding() {
 // LINE 133:
 	asm( 
@@ -59,19 +59,19 @@ void RemoveAvatarFromBuilding() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00544289
+// FUNCTION: COPTER_D 0x00544289
 // $E86
 
-// FUNCTION: SIMCOPTER 0x005442a3
+// FUNCTION: COPTER_D 0x005442a3
 // $E83
 
-// FUNCTION: SIMCOPTER 0x0054430d
+// FUNCTION: COPTER_D 0x0054430d
 // $E85
 
-// FUNCTION: SIMCOPTER 0x0054432a
+// FUNCTION: COPTER_D 0x0054432a
 // $E84
 
-// FUNCTION: SIMCOPTER 0x0054433f
+// FUNCTION: COPTER_D 0x0054433f
 void JacquesGetDebugData() {
 // LINE 149:
 	asm( 
@@ -233,7 +233,7 @@ void JacquesGetDebugData() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0054454e
+// FUNCTION: COPTER_D 0x0054454e
 unsigned short GetOutOfHeli() {
 // LINE 166:
 	asm( 
@@ -261,7 +261,7 @@ unsigned short GetOutOfHeli() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0054456a
+// FUNCTION: COPTER_D 0x0054456a
 unsigned short cYObject::GetOutOfHeli(long) {
 // LINE 171:
 	asm( 
@@ -418,7 +418,7 @@ unsigned short cYObject::GetOutOfHeli(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00544760
+// FUNCTION: COPTER_D 0x00544760
 void AdjustPersonBeamingSlices() {
 // LINE 191:
 	asm( 
@@ -540,7 +540,7 @@ void AdjustPersonBeamingSlices() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00544874
+// FUNCTION: COPTER_D 0x00544874
 class cYObject* cYObject::GetObjectA(struct _DYOBJ_INST*) {
 // LINE 223:
 	asm( 
@@ -760,7 +760,7 @@ class cYObject* cYObject::GetObjectA(struct _DYOBJ_INST*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00544b3b
+// FUNCTION: COPTER_D 0x00544b3b
 struct _DYOBJ_INST* cYObject::SearchForDynObj(short, short, struct _DYOBJ_INST*) {
 // LINE 248:
 	asm( 
@@ -825,7 +825,7 @@ struct _DYOBJ_INST* cYObject::SearchForDynObj(short, short, struct _DYOBJ_INST*)
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00544bde
+// FUNCTION: COPTER_D 0x00544bde
 unsigned short cYObject::SearchForPersonSpot(struct _DYOBJ_INST*, struct Point3d*) {
 // LINE 258:
 	asm( 
@@ -1193,7 +1193,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _DYOBJ_INST*, struct Point3d
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00544f78
+// FUNCTION: COPTER_D 0x00544f78
 unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO*, struct Point3d*, enum cYObject::SearchType) {
 // LINE 303:
 	asm( 
@@ -1292,7 +1292,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO*, struct Point3d*
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00545049
+// FUNCTION: COPTER_D 0x00545049
 unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO*, int32_t *, int32_t *, enum cYObject::SearchType) {
 // LINE 318:
 	asm( 
@@ -2317,7 +2317,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO*, int32_t *, int3
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00545cc3
+// FUNCTION: COPTER_D 0x00545cc3
 void duh() {
 // LINE 403:
 	asm( 
@@ -2335,7 +2335,7 @@ void duh() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00545cd3
+// FUNCTION: COPTER_D 0x00545cd3
 void S3PersonInit() {
 // LINE 405:
 	asm( 
@@ -2408,7 +2408,7 @@ void S3PersonInit() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00545d74
+// FUNCTION: COPTER_D 0x00545d74
 void S3PersonDelete() {
 // LINE 423:
 	asm( 
@@ -2437,7 +2437,7 @@ void S3PersonDelete() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00545d8e
+// FUNCTION: COPTER_D 0x00545d8e
 void S3PersonNextFrame() {
 // LINE 433:
 	asm( 
@@ -2462,7 +2462,7 @@ void S3PersonNextFrame() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00545da3
+// FUNCTION: COPTER_D 0x00545da3
 void S3PersonUserNextFrame() {
 // LINE 440:
 	asm( 
@@ -2488,7 +2488,7 @@ void S3PersonUserNextFrame() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00545dbe
+// FUNCTION: COPTER_D 0x00545dbe
 void S3PersonReset() {
 // LINE 445:
 	asm( 
@@ -2584,7 +2584,7 @@ void S3PersonReset() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00545ecb
+// FUNCTION: COPTER_D 0x00545ecb
 void S3PersonUserStart() {
 // LINE 455:
 	asm( 
@@ -2782,7 +2782,7 @@ void S3PersonUserStart() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0054617c
+// FUNCTION: COPTER_D 0x0054617c
 void S3PersonUserAppearNew() {
 // LINE 464:
 	asm( 
@@ -2955,7 +2955,7 @@ void S3PersonUserAppearNew() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0054634c
+// FUNCTION: COPTER_D 0x0054634c
 void S3PersonUserAppear() {
 // LINE 490:
 	asm( 
@@ -3052,7 +3052,7 @@ void S3PersonUserAppear() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0054642e
+// FUNCTION: COPTER_D 0x0054642e
 int32_t IsThisABadGuy() {
 // LINE 496:
 	asm( 
@@ -3106,7 +3106,7 @@ int32_t IsThisABadGuy() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00546478
+// FUNCTION: COPTER_D 0x00546478
 unsigned char GetAvatarCellX() {
 // LINE 506:
 	asm( 
@@ -3143,7 +3143,7 @@ unsigned char GetAvatarCellX() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005464bc
+// FUNCTION: COPTER_D 0x005464bc
 unsigned char GetAvatarCellY() {
 // LINE 512:
 	asm( 
@@ -3180,7 +3180,7 @@ unsigned char GetAvatarCellY() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00546500
+// FUNCTION: COPTER_D 0x00546500
 struct _DYOBJ_INST* GetAvatarDYOBJ() {
 // LINE 518:
 	asm( 
@@ -3217,7 +3217,7 @@ struct _DYOBJ_INST* GetAvatarDYOBJ() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00546541
+// FUNCTION: COPTER_D 0x00546541
 struct Point3d* GetAvatarVector() {
 // LINE 524:
 	asm( 
@@ -3254,7 +3254,7 @@ struct Point3d* GetAvatarVector() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00546584
+// FUNCTION: COPTER_D 0x00546584
 void S3DrawPerson() {
 // LINE 530:
 	asm( 
@@ -3371,7 +3371,7 @@ void S3DrawPerson() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005466c5
+// FUNCTION: COPTER_D 0x005466c5
 void cAvatar::GetControlInput() {
 // LINE 554:
 	asm( 
@@ -3778,7 +3778,7 @@ void cAvatar::GetControlInput() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00546ace
+// FUNCTION: COPTER_D 0x00546ace
 void PersonHeliHasLanded() {
 // LINE 623:
 	asm( 
@@ -3834,7 +3834,7 @@ void PersonHeliHasLanded() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00546b56
+// FUNCTION: COPTER_D 0x00546b56
 struct _HELI_DATA* S3PersonGetLandedHeli() {
 // LINE 647:
 	asm( 
@@ -3989,7 +3989,7 @@ struct _HELI_DATA* S3PersonGetLandedHeli() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00546c85
+// FUNCTION: COPTER_D 0x00546c85
 class cYObject* cYObject::GetOnePersonForScurkID(short, short) {
 // LINE 695:
 	asm( 
@@ -4150,7 +4150,7 @@ class cYObject* cYObject::GetOnePersonForScurkID(short, short) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00546e70
+// FUNCTION: COPTER_D 0x00546e70
 unsigned short cYObject::StartScurkAmbientMission(short, short, enum PersonType, short, short, struct _DYOBJ_INST*, int32_t, int32_t) {
 // LINE 710:
 	asm( 
@@ -4242,7 +4242,7 @@ unsigned short cYObject::StartScurkAmbientMission(short, short, enum PersonType,
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00546f45
+// FUNCTION: COPTER_D 0x00546f45
 unsigned short cYObject::StartScurkAmbientMission(short, short, enum PersonType, short, short, struct _DYOBJ_INST*, struct Point3d*) {
 // LINE 717:
 	asm( 
@@ -4341,7 +4341,7 @@ unsigned short cYObject::StartScurkAmbientMission(short, short, enum PersonType,
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00547044
+// FUNCTION: COPTER_D 0x00547044
 void cYObject::StartForScurkID(enum PersonType, enum MissionType, short, short, short, struct _DYOBJ_INST*) {
 // LINE 731:
 	asm( 
@@ -4477,7 +4477,7 @@ void cYObject::StartForScurkID(enum PersonType, enum MissionType, short, short, 
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005471b2
+// FUNCTION: COPTER_D 0x005471b2
 void cYObject::StartForScurkID(enum PersonType, enum MissionType, short, short, short, struct _DYOBJ_INST*, int32_t, int32_t) {
 // LINE 747:
 	asm( 
@@ -4689,7 +4689,7 @@ void cYObject::StartForScurkID(enum PersonType, enum MissionType, short, short, 
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00547440
+// FUNCTION: COPTER_D 0x00547440
 void cYObject::StartScurkPeople(short, short) {
 // LINE 778:
 	asm( 
@@ -5150,7 +5150,7 @@ void cYObject::StartScurkPeople(short, short) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00547937
+// FUNCTION: COPTER_D 0x00547937
 void cYObject::StartScurkPeopleNearAvatar() {
 // LINE 837:
 	asm( 
@@ -5333,7 +5333,7 @@ void cYObject::StartScurkPeopleNearAvatar() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00547ac2
+// FUNCTION: COPTER_D 0x00547ac2
 void cYObject::BeamRemainingAmbients() {
 // LINE 871:
 	asm( 
@@ -5472,7 +5472,7 @@ void cYObject::BeamRemainingAmbients() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00547c6b
+// FUNCTION: COPTER_D 0x00547c6b
 void cYObject::TryStartAllAmbient() {
 // LINE 888:
 	asm( 
@@ -5517,7 +5517,7 @@ void cYObject::TryStartAllAmbient() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00547cc8
+// FUNCTION: COPTER_D 0x00547cc8
 class cYObject* cYObject::GetSleepingPerson() {
 // LINE 898:
 	asm( 
@@ -5623,7 +5623,7 @@ class cYObject* cYObject::GetSleepingPerson() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00547de1
+// FUNCTION: COPTER_D 0x00547de1
 void MakeAllPeople() {
 // LINE 913:
 	asm( 
@@ -5688,7 +5688,7 @@ void MakeAllPeople() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00547e59
+// FUNCTION: COPTER_D 0x00547e59
 void DeleteAllPeople() {
 // LINE 929:
 	asm( 
@@ -5729,7 +5729,7 @@ void DeleteAllPeople() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00547e9b
+// FUNCTION: COPTER_D 0x00547e9b
 void cYObject::MakePlebes() {
 // LINE 944:
 	asm( 
@@ -5870,7 +5870,7 @@ void cYObject::MakePlebes() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00548047
+// FUNCTION: COPTER_D 0x00548047
 void cYObject::InitObjects(char *) {
 // LINE 964:
 	asm( 
@@ -7892,7 +7892,7 @@ void cYObject::InitObjects(char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00549bdd
+// FUNCTION: COPTER_D 0x00549bdd
 unsigned short cYObject::BeamIntoCameraRange() {
 // LINE 1279:
 	asm( 
@@ -8325,7 +8325,7 @@ unsigned short cYObject::BeamIntoCameraRange() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00549f04
+// FUNCTION: COPTER_D 0x00549f04
 unsigned short cYObject::OutOfCameraRange() {
 // LINE 1413:
 	asm( 
@@ -8617,7 +8617,7 @@ unsigned short cYObject::OutOfCameraRange() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0054a1d3
+// FUNCTION: COPTER_D 0x0054a1d3
 short StartPerson() {
 // LINE 1465:
 	asm( 
@@ -8682,7 +8682,7 @@ short StartPerson() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0054a23f
+// FUNCTION: COPTER_D 0x0054a23f
 void LiberateMissionPeople() {
 // LINE 1476:
 	asm( 
@@ -8780,7 +8780,7 @@ void LiberateMissionPeople() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0054a35a
+// FUNCTION: COPTER_D 0x0054a35a
 void KillMissionPeople() {
 // LINE 1487:
 	asm( 
@@ -8997,7 +8997,7 @@ void KillMissionPeople() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0054a5a4
+// FUNCTION: COPTER_D 0x0054a5a4
 void cYObject::SetPersonData(enum PersonType, enum MissionType, long) {
 // LINE 1533:
 	asm( 
@@ -9061,7 +9061,7 @@ void cYObject::SetPersonData(enum PersonType, enum MissionType, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0054a640
+// FUNCTION: COPTER_D 0x0054a640
 unsigned short cYObject::IsSuitableForMission(enum MissionType, short, short) {
 // LINE 1540:
 	asm( 
@@ -9209,7 +9209,7 @@ unsigned short cYObject::IsSuitableForMission(enum MissionType, short, short) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0054a7a5
+// FUNCTION: COPTER_D 0x0054a7a5
 unsigned short cYObject::StartMission(enum PersonType, enum MissionType, short, short, long, struct _DYOBJ_INST*, struct Point3d*) {
 // LINE 1566:
 	asm( 
@@ -10684,7 +10684,7 @@ unsigned short cYObject::StartMission(enum PersonType, enum MissionType, short, 
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0054b820
+// FUNCTION: COPTER_D 0x0054b820
 void cYObject::ResetToAmbient() {
 // LINE 1805:
 	asm( 
@@ -10813,7 +10813,7 @@ void cYObject::ResetToAmbient() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0054b9e6
+// FUNCTION: COPTER_D 0x0054b9e6
 long cYObject::JoinRiot() {
 // LINE 1813:
 	asm( 
@@ -11005,7 +11005,7 @@ long cYObject::JoinRiot() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0054bc3c
+// FUNCTION: COPTER_D 0x0054bc3c
 void cYObject::PhaseAndBeamSoundChannels() {
 // LINE 1839:
 	asm( 
@@ -11237,7 +11237,7 @@ void cYObject::PhaseAndBeamSoundChannels() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0054bf20
+// FUNCTION: COPTER_D 0x0054bf20
 short cYObject::DistributeSoundChannels(short, short) {
 // LINE 1864:
 	asm( 
@@ -11405,7 +11405,7 @@ short cYObject::DistributeSoundChannels(short, short) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0054c0e7
+// FUNCTION: COPTER_D 0x0054c0e7
 void cYObject::SetSoundChannel(short) {
 // LINE 1887:
 	asm( 
@@ -11493,7 +11493,7 @@ void cYObject::SetSoundChannel(short) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0054c1dd
+// FUNCTION: COPTER_D 0x0054c1dd
 unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum, unsigned short) {
 // LINE 1897:
 	asm( 
@@ -11998,7 +11998,7 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum, unsigned short) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0054c671
+// FUNCTION: COPTER_D 0x0054c671
 void cYObject::SimulateAll() {
 // LINE 2034:
 	asm( 
@@ -12463,7 +12463,7 @@ void cYObject::SimulateAll() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0054ccbd
+// FUNCTION: COPTER_D 0x0054ccbd
 unsigned short cYObject::AddToHeli() {
 // LINE 2137:
 	asm( 
@@ -12542,7 +12542,7 @@ unsigned short cYObject::AddToHeli() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0054cd49
+// FUNCTION: COPTER_D 0x0054cd49
 void cYObject::RemoveFromHeli() {
 // LINE 2158:
 	asm( 
@@ -12593,7 +12593,7 @@ void cYObject::RemoveFromHeli() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0054cdb2
+// FUNCTION: COPTER_D 0x0054cdb2
 class cYObject* cYObject::GetPersonWithMaster(struct _DYOBJ_INST*) {
 // LINE 2165:
 	asm( 
@@ -12693,7 +12693,7 @@ class cYObject* cYObject::GetPersonWithMaster(struct _DYOBJ_INST*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0054ceca
+// FUNCTION: COPTER_D 0x0054ceca
 unsigned short cYObject::SetMaster(struct _DYOBJ_INST*) {
 // LINE 2176:
 	asm( 
@@ -12886,7 +12886,7 @@ unsigned short cYObject::SetMaster(struct _DYOBJ_INST*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0054d0e3
+// FUNCTION: COPTER_D 0x0054d0e3
 unsigned short cYObject::AdjoinsRoad(struct Point3d) {
 // LINE 2221:
 	asm( 
@@ -13232,7 +13232,7 @@ unsigned short cYObject::AdjoinsRoad(struct Point3d) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0054d662
+// FUNCTION: COPTER_D 0x0054d662
 unsigned short cYObject::GetNeutralLoc(int32_t *, int32_t *, int32_t *, int32_t *) {
 // LINE 2239:
 	asm( 
@@ -13608,7 +13608,7 @@ unsigned short cYObject::GetNeutralLoc(int32_t *, int32_t *, int32_t *, int32_t 
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0054daf3
+// FUNCTION: COPTER_D 0x0054daf3
 void cYObject::Simulate() {
 // LINE 2277:
 	asm( 
@@ -13759,7 +13759,7 @@ void cYObject::Simulate() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0054dcde
+// FUNCTION: COPTER_D 0x0054dcde
 enum cYObject::MoveErrorCode cAvatar::AvatarMove(struct cYObject::MoveInfo*) {
 // LINE 2289:
 	asm( 
@@ -13897,7 +13897,7 @@ enum cYObject::MoveErrorCode cAvatar::AvatarMove(struct cYObject::MoveInfo*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0054de18
+// FUNCTION: COPTER_D 0x0054de18
 void cAvatar::Simulate() {
 // LINE 2308:
 	asm( 
@@ -14488,7 +14488,7 @@ void cAvatar::Simulate() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0054e579
+// FUNCTION: COPTER_D 0x0054e579
 void cYObject::DynEffects(short, enum cYObject::MoveErrorCode, struct cYObject::MoveInfo*) {
 // LINE 2404:
 	asm( 
@@ -15866,7 +15866,7 @@ void cYObject::DynEffects(short, enum cYObject::MoveErrorCode, struct cYObject::
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0054faee
+// FUNCTION: COPTER_D 0x0054faee
 void cAvatar::ResetView() {
 // LINE 2501:
 	asm( 
@@ -16002,7 +16002,7 @@ void cAvatar::ResetView() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0054fc2e
+// FUNCTION: COPTER_D 0x0054fc2e
 void cYObject::SetCellAndLoc(struct Point3d, unsigned char, unsigned char) {
 // LINE 2535:
 	asm( 
@@ -16122,7 +16122,7 @@ void cYObject::SetCellAndLoc(struct Point3d, unsigned char, unsigned char) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0054fd4d
+// FUNCTION: COPTER_D 0x0054fd4d
 void cYObject::SetCellAndLoc(unsigned char, unsigned char, int32_t, int32_t) {
 // LINE 2560:
 	asm( 
@@ -16227,7 +16227,7 @@ void cYObject::SetCellAndLoc(unsigned char, unsigned char, int32_t, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0054fe42
+// FUNCTION: COPTER_D 0x0054fe42
 void cYObject::SetMissionType(enum MissionType) {
 // LINE 2570:
 	asm( 
@@ -16394,7 +16394,7 @@ void cYObject::SetMissionType(enum MissionType) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0054ffb7
+// FUNCTION: COPTER_D 0x0054ffb7
 void cYObject::SetPersonType(enum PersonType) {
 // LINE 2614:
 	asm( 
@@ -17025,7 +17025,7 @@ void cYObject::SetPersonType(enum PersonType) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00550567
+// FUNCTION: COPTER_D 0x00550567
 void cYObject::DestroyObjects() {
 // LINE 2759:
 	asm( 
@@ -17135,7 +17135,7 @@ void cYObject::DestroyObjects() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055069b
+// FUNCTION: COPTER_D 0x0055069b
 void cYObject::Link() {
 // LINE 2779:
 	asm( 
@@ -17251,7 +17251,7 @@ void cYObject::Link() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005507ec
+// FUNCTION: COPTER_D 0x005507ec
 void cYObject::Unlink() {
 // LINE 2794:
 	asm( 
@@ -17347,7 +17347,7 @@ void cYObject::Unlink() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005508a3
+// FUNCTION: COPTER_D 0x005508a3
 class cAvatar* cAvatar::MakeAvatar() {
 // LINE 2817:
 	asm( 
@@ -17453,7 +17453,7 @@ class cAvatar* cAvatar::MakeAvatar() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005509cb
+// FUNCTION: COPTER_D 0x005509cb
 short cYObject::MakeNewObject(short, struct Point3d, class Behavior*) {
 // LINE 2825:
 	asm( 
@@ -17596,7 +17596,7 @@ short cYObject::MakeNewObject(short, struct Point3d, class Behavior*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00550b30
+// FUNCTION: COPTER_D 0x00550b30
 void cYObject::InitForEngine(short) {
 // LINE 2844:
 	asm( 
@@ -17732,7 +17732,7 @@ void cYObject::InitForEngine(short) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00550c30
+// FUNCTION: COPTER_D 0x00550c30
 void cYObject::KillObject(short) {
 // LINE 2872:
 	asm( 
@@ -17828,7 +17828,7 @@ void cYObject::KillObject(short) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00550d4d
+// FUNCTION: COPTER_D 0x00550d4d
 void cYObject::cYObject(short, class Behavior*, struct Point3d, short) {
 // LINE 2885:
 	asm( 
@@ -17996,7 +17996,7 @@ void cYObject::cYObject(short, class Behavior*, struct Point3d, short) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00550f18
+// FUNCTION: COPTER_D 0x00550f18
 void cAvatar::Reset() {
 // LINE 2915:
 	asm( 
@@ -18066,7 +18066,7 @@ void cAvatar::Reset() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00550f9f
+// FUNCTION: COPTER_D 0x00550f9f
 void cYObject::Reset() {
 // LINE 2931:
 	asm( 
@@ -18356,7 +18356,7 @@ void cYObject::Reset() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00551388
+// FUNCTION: COPTER_D 0x00551388
 void cYObject::Draw(struct VRBlit*) {
 // LINE 2963:
 	asm( 
@@ -18770,7 +18770,7 @@ void cYObject::Draw(struct VRBlit*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055181a
+// FUNCTION: COPTER_D 0x0055181a
 void BodyDrawDebugInfo() {
 // LINE 3050:
 	asm( 
@@ -18846,7 +18846,7 @@ void BodyDrawDebugInfo() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005518ad
+// FUNCTION: COPTER_D 0x005518ad
 void cYObject::~cYObject() {
 // LINE 3062:
 	asm( 
@@ -18953,7 +18953,7 @@ void cYObject::~cYObject() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005519d6
+// FUNCTION: COPTER_D 0x005519d6
 void S3PersonTweakInit() {
 // LINE 3080:
 	asm( 
@@ -19012,7 +19012,7 @@ void S3PersonTweakInit() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00551a2d
+// FUNCTION: COPTER_D 0x00551a2d
 void UpdateFigureVals() {
 // LINE 3095:
 	asm( 
@@ -19033,7 +19033,7 @@ void UpdateFigureVals() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00551a3d
+// FUNCTION: COPTER_D 0x00551a3d
 void cAvatar::RotateMatrixAndYawForEngine() {
 // LINE 3099:
 	asm( 
@@ -19117,7 +19117,7 @@ void cAvatar::RotateMatrixAndYawForEngine() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00551af1
+// FUNCTION: COPTER_D 0x00551af1
 int32_t S3PUtilsGetDir() {
 // LINE 3116:
 	asm( 
@@ -19252,7 +19252,7 @@ int32_t S3PUtilsGetDir() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00551bf7
+// FUNCTION: COPTER_D 0x00551bf7
 int32_t S3PUtilsGetAlt() {
 // LINE 3152:
 	asm( 
@@ -19424,7 +19424,7 @@ int32_t S3PUtilsGetAlt() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00551d36
+// FUNCTION: COPTER_D 0x00551d36
 void FrameInit() {
 // LINE 3196:
 	asm( 
@@ -19491,7 +19491,7 @@ void FrameInit() {
 
 
 // Contribution: 1:00150da0-00150dd8 Module: 200, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x00551da0
+// FUNCTION: COPTER_D 0x00551da0
 // FlatResFile::`scalar deleting destructor'
 
 
@@ -19500,13 +19500,13 @@ void FrameInit() {
 
 
 // Contribution: 1:00150ec0-00150f3f Module: 200, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x00551ec0
+// FUNCTION: COPTER_D 0x00551ec0
 // ResFile::`scalar deleting destructor'
 
 
 
 // Contribution: 1:00150f40-00150f9e Module: 200, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x00551f40
+// FUNCTION: COPTER_D 0x00551f40
 public: virtual __thiscall ResFile::~ResFile(void) {
 }
 
@@ -19516,7 +19516,7 @@ public: virtual __thiscall ResFile::~ResFile(void) {
 
 
 // Contribution: 1:00150fc0-00150ff8 Module: 200, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x00551fc0
+// FUNCTION: COPTER_D 0x00551fc0
 // cYObject::`scalar deleting destructor'
 
 
@@ -19702,7 +19702,7 @@ public: virtual __thiscall ResFile::~ResFile(void) {
 
 
 // Contribution: 1:00151a70-00151a8f Module: 200, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x00552a90
+// FUNCTION: COPTER_D 0x00552a90
 // cAvatar::`scalar deleting destructor'
 
 
@@ -19714,12 +19714,12 @@ public: virtual __thiscall ResFile::~ResFile(void) {
 
 
 // Contribution: 2:00004518-00004527 Module: 200, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00004518
+// GLOBAL: COPTER_D 0x00004518
 // ??_7ResFile@@6B@
 
 
 // Contribution: 2:00004528-0000458f Module: 200, 8 byte alignment, initialized_data, read, 
-// GLOBAL: SIMCOPTER 0x00004590
+// GLOBAL: COPTER_D 0x00004590
 // ??_7cAvatar@@6BYObjLang@@@
 
 
@@ -19727,17 +19727,17 @@ public: virtual __thiscall ResFile::~ResFile(void) {
 
 
 // Contribution: 2:000045a8-000045c3 Module: 200, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x000045a8
+// GLOBAL: COPTER_D 0x000045a8
 // ??_7cAvatar@@6BTreeSim@@@
 
 
 // Contribution: 2:000045c8-000045db Module: 200, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x000045c8
+// GLOBAL: COPTER_D 0x000045c8
 // ??_7cYObject@@6BYObjLang@@@
 
 
 // Contribution: 2:000045e0-000045fb Module: 200, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x000045e0
+// GLOBAL: COPTER_D 0x000045e0
 // ??_7cYObject@@6BTreeSim@@@
 
 
@@ -19754,111 +19754,111 @@ public: virtual __thiscall ResFile::~ResFile(void) {
 
 
 // Contribution: 3:000000b0-000000bb Module: 200, 4 byte alignment, initialized_data, read, write, 
-// LOCAL: SIMCOPTER 0x000000b0
+// LOCAL: COPTER_D 0x000000b0
 // $S76
-// LOCAL: SIMCOPTER 0x000000b4
+// LOCAL: COPTER_D 0x000000b4
 // $S82
-// LOCAL: SIMCOPTER 0x000000b8
+// LOCAL: COPTER_D 0x000000b8
 // $S87
-// GLOBAL: SIMCOPTER 0x000000bc
+// GLOBAL: COPTER_D 0x000000bc
 // __xc_z
 
 
 // Contribution: 3:00021644-00024974 Module: 200, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x00021644
+// GLOBAL: COPTER_D 0x00021644
 // gPersonBeamingSlices
-// GLOBAL: SIMCOPTER 0x00021648
+// GLOBAL: COPTER_D 0x00021648
 // gPersonBeamingForwardWeight
-// GLOBAL: SIMCOPTER 0x0002164c
+// GLOBAL: COPTER_D 0x0002164c
 // gPersonBeamingSlicesSlice
-// GLOBAL: SIMCOPTER 0x00021650
+// GLOBAL: COPTER_D 0x00021650
 // gFarLimit
-// GLOBAL: SIMCOPTER 0x00021654
+// GLOBAL: COPTER_D 0x00021654
 // gFarBoundary
-// GLOBAL: SIMCOPTER 0x00021658
+// GLOBAL: COPTER_D 0x00021658
 // gMidBoundary
-// GLOBAL: SIMCOPTER 0x0002165c
+// GLOBAL: COPTER_D 0x0002165c
 // gNearBoundary
-// GLOBAL: SIMCOPTER 0x00021660
+// GLOBAL: COPTER_D 0x00021660
 // gNearLimit
-// GLOBAL: SIMCOPTER 0x00021664
+// GLOBAL: COPTER_D 0x00021664
 // CopterDir
-// GLOBAL: SIMCOPTER 0x00021668
+// GLOBAL: COPTER_D 0x00021668
 // cYObject::sInited
-// GLOBAL: SIMCOPTER 0x0002166c
+// GLOBAL: COPTER_D 0x0002166c
 // cYObject::sAllAmbientStarted
-// GLOBAL: SIMCOPTER 0x00021670
+// GLOBAL: COPTER_D 0x00021670
 // cYObject::sNumMissionAwake
-// GLOBAL: SIMCOPTER 0x00021674
+// GLOBAL: COPTER_D 0x00021674
 // cYObject::sNumAmbientAwake
-// GLOBAL: SIMCOPTER 0x00021678
+// GLOBAL: COPTER_D 0x00021678
 // cYObject::sAmbientTopOff
-// GLOBAL: SIMCOPTER 0x0002167c
+// GLOBAL: COPTER_D 0x0002167c
 // cYObject::sAmbientAbsoluteMax
-// GLOBAL: SIMCOPTER 0x00021680
+// GLOBAL: COPTER_D 0x00021680
 // gAvatar
-// GLOBAL: SIMCOPTER 0x00021684
+// GLOBAL: COPTER_D 0x00021684
 // cYObject::sList
-// GLOBAL: SIMCOPTER 0x00021688
+// GLOBAL: COPTER_D 0x00021688
 // cYObject::sBeamed
-// GLOBAL: SIMCOPTER 0x0002168c
+// GLOBAL: COPTER_D 0x0002168c
 // cYObject::sDebugNumBeamed
-// GLOBAL: SIMCOPTER 0x00021690
+// GLOBAL: COPTER_D 0x00021690
 // cYObject::sSimTicks
-// GLOBAL: SIMCOPTER 0x00021694
+// GLOBAL: COPTER_D 0x00021694
 // gPersonBeamSlice
-// GLOBAL: SIMCOPTER 0x00021698
+// GLOBAL: COPTER_D 0x00021698
 // gNextTime
-// GLOBAL: SIMCOPTER 0x0002169c
+// GLOBAL: COPTER_D 0x0002169c
 // gCumTime
-// GLOBAL: SIMCOPTER 0x000216a0
+// GLOBAL: COPTER_D 0x000216a0
 // gBodyDebugInfoIndex
-// GLOBAL: SIMCOPTER 0x000216a4
+// GLOBAL: COPTER_D 0x000216a4
 // cYObject::sScurkRectRad
-// LOCAL: SIMCOPTER 0x000216a8
+// LOCAL: COPTER_D 0x000216a8
 // sAvLastCellX
-// LOCAL: SIMCOPTER 0x000216ac
+// LOCAL: COPTER_D 0x000216ac
 // sAvLastCellY
-// LOCAL: SIMCOPTER 0x000216b0
+// LOCAL: COPTER_D 0x000216b0
 // gPersonSoundBeamSlice
-// LOCAL: SIMCOPTER 0x000216b4
+// LOCAL: COPTER_D 0x000216b4
 // sCheckTotedCount
 
 
 // Contribution: 3:00024978-00024997 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00024978
+// GLOBAL: COPTER_D 0x00024978
 // ??_C@_0CA@OCDF@couldn?8t?5set?5master?5object?5to?50?$AA@
 
 
 // Contribution: 3:00024998-000249cc Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00024998
+// GLOBAL: COPTER_D 0x00024998
 // ??_C@_0DF@MDL@trying?5to?5get?5off?5master?5object?5@
 
 
 // Contribution: 3:000249d0-000249f3 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x000249d0
+// GLOBAL: COPTER_D 0x000249d0
 // ??_C@_0CE@BCHG@I?5thought?5all?5people?5were?5alloca@
 
 
 // Contribution: 3:000249f4-00024a12 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x000249f4
+// GLOBAL: COPTER_D 0x000249f4
 // ??_C@_0BP@EABK@can?8t?5find?5person?5with?5that?5id?$AA@
 
 
 // Contribution: 3:00024a14-00024a32 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00024a14
+// GLOBAL: COPTER_D 0x00024a14
 // ??_C@_0BP@GAKH@C?3?2Copter?2Source?2X?2Y?2YObject?4h?$AA@
 
 
 // Contribution: 3:00024a34-00024a53 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00024a34
+// GLOBAL: COPTER_D 0x00024a34
 // ??_C@_0CA@JOHG@out?9of?9range?5scurkID?5for?5a?5tile?$AA@
-// GLOBAL: SIMCOPTER 0x00024a54
+// GLOBAL: COPTER_D 0x00024a54
 // ??_C@_0CI@FJMN@must?5set?5cell?5location?5before?5wa@
 
 
 // Contribution: 3:00024a54-00024a7b Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00024a7c
+// GLOBAL: COPTER_D 0x00024a7c
 // ??_C@_0CA@BGFC@how?8d?5you?5wake?5up?5past?5the?5max?$DP?$AA@
 
 
@@ -19866,9 +19866,9 @@ public: virtual __thiscall ResFile::~ResFile(void) {
 
 
 // Contribution: 3:00024a9c-00024abb Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00024a9c
+// GLOBAL: COPTER_D 0x00024a9c
 // ??_C@_0CA@MKGD@trying?5to?5wake?5up?5already?5awake?$AA@
-// GLOBAL: SIMCOPTER 0x00024abc
+// GLOBAL: COPTER_D 0x00024abc
 // ??_C@_0BF@KBDF@y?5and?5x?5out?5of?5sync?$DP?$AA@
 
 
@@ -19876,14 +19876,14 @@ public: virtual __thiscall ResFile::~ResFile(void) {
 
 
 // Contribution: 3:00024ad4-00024ae8 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00024ad4
+// GLOBAL: COPTER_D 0x00024ad4
 // ??_C@_0BF@ECJK@x?5and?5y?5out?5of?5sync?$DP?$AA@
 
 
 // Contribution: 3:00024aec-00024b17 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00024aec
+// GLOBAL: COPTER_D 0x00024aec
 // ??_C@_0CM@FHJC@why?5positioning?5unlinked?5object?5@
-// GLOBAL: SIMCOPTER 0x00024b18
+// GLOBAL: COPTER_D 0x00024b18
 // ??_C@_0BJ@LCNK@rxn?5tree?5id?5out?5of?5range?$AA@
 
 
@@ -19891,167 +19891,167 @@ public: virtual __thiscall ResFile::~ResFile(void) {
 
 
 // Contribution: 3:00024b34-00024b72 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00024b34
+// GLOBAL: COPTER_D 0x00024b34
 // ??_C@_0DP@CAPD@?91?5missionid?5for?5other?5than?5ambi@
 
 
 // Contribution: 3:00024b74-00024b99 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00024b74
+// GLOBAL: COPTER_D 0x00024b74
 // ??_C@_0CG@LEML@couldn?8t?5get?5private?5anim?5for?5an@
 
 
 // Contribution: 3:00024b9c-00024bb5 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00024b9c
+// GLOBAL: COPTER_D 0x00024b9c
 // ??_C@_0BK@OHDB@must?5set?5body?5before?5anim?$AA@
 
 
 // Contribution: 3:00024bb8-00024bec Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00024bb8
+// GLOBAL: COPTER_D 0x00024bb8
 // ??_C@_0DF@BIBF@you?5must?5unlink?5before?5setting?5c@
 
 
 // Contribution: 3:00024bf0-00024c22 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00024bf0
+// GLOBAL: COPTER_D 0x00024bf0
 // ??_C@_0DD@LLLA@use?5changemission?5only?5when?5pers@
 
 
 // Contribution: 3:00024c24-00024c3b Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00024c24
+// GLOBAL: COPTER_D 0x00024c24
 // ??_C@_0BI@MBEM@how?5did?5that?5happen?$DP?$DP?$DP?$DP?$AA@
 
 
 // Contribution: 3:00024c3c-00024c59 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00024c3c
+// GLOBAL: COPTER_D 0x00024c3c
 // ??_C@_0BO@EKBK@just?5one?5more?5paranoid?5assert?$AA@
 
 
 // Contribution: 3:00024c5c-00024c87 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00024c5c
+// GLOBAL: COPTER_D 0x00024c5c
 // ??_C@_0CM@JKOD@how?5could?5you?5have?5been?5awake?5ye@
 
 
 // Contribution: 3:00024c88-00024ca8 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00024c88
+// GLOBAL: COPTER_D 0x00024c88
 // ??_C@_0CB@NMCE@trying?5to?5sleep?5already?5sleeping@
 
 
 // Contribution: 3:00024cac-00024cc9 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00024cac
+// GLOBAL: COPTER_D 0x00024cac
 // ??_C@_0BO@NCHD@can?8t?5simanim?5without?5an?5anim?$AA@
 
 
 // Contribution: 3:00024ccc-00024cfa Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00024ccc
+// GLOBAL: COPTER_D 0x00024ccc
 // ??_C@_0CP@EHMM@couldn?8t?5move?5with?5the?5dyn?5objec@
 
 
 // Contribution: 3:00024cfc-00024d1e Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00024cfc
+// GLOBAL: COPTER_D 0x00024cfc
 // ??_C@_0CD@GJNN@can?8t?5follow?5master?5with?5no?5mast@
 
 
 // Contribution: 3:00024d20-00024d3a Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00024d20
+// GLOBAL: COPTER_D 0x00024d20
 // ??_C@_0BL@EOGE@following?5master?5unlinked?$DP?$AA@
 
 
 // Contribution: 3:00024d3c-00024d64 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00024d3c
+// GLOBAL: COPTER_D 0x00024d3c
 // ??_C@_0CJ@GJOA@stack?5size?5about?5to?5go?5too?5high?5@
 
 
 // Contribution: 3:00024d68-00024d7b Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00024d68
+// GLOBAL: COPTER_D 0x00024d68
 // ??_C@_0BE@HILD@couldn?8t?5get?5a?5body?$AA@
 
 
 // Contribution: 3:00024d7c-00024da0 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00024d7c
+// GLOBAL: COPTER_D 0x00024d7c
 // ??_C@_0CF@DHKG@weird?5number?5of?5characters?5shift@
 
 
 // Contribution: 3:00024da4-00024dc6 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00024da4
+// GLOBAL: COPTER_D 0x00024da4
 // ??_C@_0CD@NHHN@c?3?2copter?2source?2x?2objects?2bList@
 
 
 // Contribution: 3:00024dc8-00024de1 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00024dc8
+// GLOBAL: COPTER_D 0x00024dc8
 // ??_C@_0BK@HKFL@didn?8t?5make?5obj?5invisible?$AA@
 
 
 // Contribution: 3:00024de4-00024e22 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00024de4
+// GLOBAL: COPTER_D 0x00024de4
 // ??_C@_0DP@HCDA@couldn?8t?5add?5new?5to?5thing?9?9didn?8@
 
 
 // Contribution: 3:00024e24-00024e40 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00024e24
+// GLOBAL: COPTER_D 0x00024e24
 // ??_C@_0BN@MPEK@not?5very?5close?5to?5that?5heli?$CB?$AA@
 
 
 // Contribution: 3:00024e44-00024e6d Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00024e44
+// GLOBAL: COPTER_D 0x00024e44
 // ??_C@_0CK@BLNM@toted?5object?8s?5master?5not?5this?5o@
 
 
 // Contribution: 3:00024e70-00024e8d Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00024e70
+// GLOBAL: COPTER_D 0x00024e70
 // ??_C@_0BO@GDCN@toted?5obj?5not?5medevac?5victim?$CB?$AA@
 
 
 // Contribution: 3:00024e90-00024eba Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00024e90
+// GLOBAL: COPTER_D 0x00024e90
 // ??_C@_0CL@LIPB@must?5have?5thing?5to?5put?5aught?5on?5@
 
 
 // Contribution: 3:00024ebc-00024ed8 Module: 200, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00024ebc
+// GLOBAL: COPTER_D 0x00024ebc
 // ??_C@_0BN@OBNK@getting?5distance?5to?5null?5dyn?$AA@
 
 
 // Contribution: 3:0009e250-000a05a4 Module: 200, 8 byte alignment, uninitialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x0009e250
+// GLOBAL: COPTER_D 0x0009e250
 // cYObject::sLanguage
-// GLOBAL: SIMCOPTER 0x0009e258
+// GLOBAL: COPTER_D 0x0009e258
 // gXTimer
-// GLOBAL: SIMCOPTER 0x0009e268
+// GLOBAL: COPTER_D 0x0009e268
 // cYObject::sLocInfo
-// GLOBAL: SIMCOPTER 0x0009e2d8
+// GLOBAL: COPTER_D 0x0009e2d8
 // cYObject::sHitRxnTree
-// GLOBAL: SIMCOPTER 0x0009e300
+// GLOBAL: COPTER_D 0x0009e300
 // cYObject::sNeutralMissionLocs
-// GLOBAL: SIMCOPTER 0x0009e530
+// GLOBAL: COPTER_D 0x0009e530
 // cYObject::sMoveTable
-// GLOBAL: SIMCOPTER 0x0009e590
+// GLOBAL: COPTER_D 0x0009e590
 // cYObject::sErrorFile
-// GLOBAL: SIMCOPTER 0x0009e6b0
+// GLOBAL: COPTER_D 0x0009e6b0
 // cYObject::sSoundChannels
-// GLOBAL: SIMCOPTER 0x0009e6d0
+// GLOBAL: COPTER_D 0x0009e6d0
 // gBodyDebugInfo
-// GLOBAL: SIMCOPTER 0x0009f1c0
+// GLOBAL: COPTER_D 0x0009f1c0
 // cYObject::sStackSize
-// GLOBAL: SIMCOPTER 0x0009f1c8
+// GLOBAL: COPTER_D 0x0009f1c8
 // g_sqrtTable
-// GLOBAL: SIMCOPTER 0x0009fb8c
+// GLOBAL: COPTER_D 0x0009fb8c
 // cYObject::sBehavior
-// GLOBAL: SIMCOPTER 0x0009fb90
+// GLOBAL: COPTER_D 0x0009fb90
 // LastCameraY
-// GLOBAL: SIMCOPTER 0x0009fb94
+// GLOBAL: COPTER_D 0x0009fb94
 // LastCameraX
-// GLOBAL: SIMCOPTER 0x0009fb98
+// GLOBAL: COPTER_D 0x0009fb98
 // cYObject::sInitBhav
-// GLOBAL: SIMCOPTER 0x0009fbb8
+// GLOBAL: COPTER_D 0x0009fbb8
 // cYObject::sFile
-// GLOBAL: SIMCOPTER 0x0009fce0
+// GLOBAL: COPTER_D 0x0009fce0
 // cYObject::sUnitVectorTable
-// GLOBAL: SIMCOPTER 0x0009fd40
+// GLOBAL: COPTER_D 0x0009fd40
 // cYObject::sObjects
-// GLOBAL: SIMCOPTER 0x0009fed0
+// GLOBAL: COPTER_D 0x0009fed0
 // cYObject::sLocType
-// GLOBAL: SIMCOPTER 0x000a02d0
+// GLOBAL: COPTER_D 0x000a02d0
 // cYObject::sNeutralPersonLocs
-// LOCAL: SIMCOPTER 0x000a05a0
+// LOCAL: COPTER_D 0x000a05a0
 // $S73
-// LOCAL: SIMCOPTER 0x000a05a4
+// LOCAL: COPTER_D 0x000a05a4
 // $S79

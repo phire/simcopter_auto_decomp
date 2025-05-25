@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:00099d30-00099eff Module: 14, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x0049ad30
+// FUNCTION: COPTER_D 0x0049ad30
 void ICommander::ICommander() {
 // LINE 14:
 	asm( 
@@ -36,7 +36,7 @@ void ICommander::ICommander() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049ad5c
+// FUNCTION: COPTER_D 0x0049ad5c
 void ICommander::~ICommander() {
 // LINE 19:
 	asm( 
@@ -61,7 +61,7 @@ void ICommander::~ICommander() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049ad7b
+// FUNCTION: COPTER_D 0x0049ad7b
 class CSparkalWindow* ICommander::SetWindow(class CSparkalWindow*) {
 // LINE 28:
 	asm( 
@@ -115,7 +115,7 @@ class CSparkalWindow* ICommander::SetWindow(class CSparkalWindow*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049adc3
+// FUNCTION: COPTER_D 0x0049adc3
 void CDefaultCommander::CDefaultCommander() {
 // LINE 44:
 	asm( 
@@ -143,7 +143,7 @@ void CDefaultCommander::CDefaultCommander() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049aded
+// FUNCTION: COPTER_D 0x0049aded
 void CDefaultCommander::~CDefaultCommander() {
 // LINE 48:
 	asm( 
@@ -170,7 +170,7 @@ void CDefaultCommander::~CDefaultCommander() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049ae14
+// FUNCTION: COPTER_D 0x0049ae14
 unsigned long CDefaultCommander::Idle() {
 // LINE 55:
 	asm( 
@@ -197,7 +197,7 @@ unsigned long CDefaultCommander::Idle() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049ae2c
+// FUNCTION: COPTER_D 0x0049ae2c
 unsigned long CDefaultCommander::OnCharacter(char, int32_t) {
 // LINE 60:
 	asm( 
@@ -224,7 +224,7 @@ unsigned long CDefaultCommander::OnCharacter(char, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049ae46
+// FUNCTION: COPTER_D 0x0049ae46
 unsigned long CDefaultCommander::OnMouseDown(int32_t, int32_t) {
 // LINE 65:
 	asm( 
@@ -251,7 +251,7 @@ unsigned long CDefaultCommander::OnMouseDown(int32_t, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049ae60
+// FUNCTION: COPTER_D 0x0049ae60
 unsigned long CDefaultCommander::OnMouseUp(int32_t, int32_t) {
 // LINE 70:
 	asm( 
@@ -278,7 +278,7 @@ unsigned long CDefaultCommander::OnMouseUp(int32_t, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049ae7a
+// FUNCTION: COPTER_D 0x0049ae7a
 unsigned long CDefaultCommander::OnMouseMove(int32_t, int32_t) {
 // LINE 75:
 	asm( 
@@ -305,7 +305,7 @@ unsigned long CDefaultCommander::OnMouseMove(int32_t, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049ae94
+// FUNCTION: COPTER_D 0x0049ae94
 unsigned long CDefaultCommander::OnWindowActivate() {
 // LINE 80:
 	asm( 
@@ -351,7 +351,7 @@ unsigned long CDefaultCommander::OnWindowActivate() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049aee8
+// FUNCTION: COPTER_D 0x0049aee8
 unsigned long CDefaultCommander::OnWindowDeactivate() {
 // LINE 86:
 	asm( 
@@ -378,7 +378,7 @@ unsigned long CDefaultCommander::OnWindowDeactivate() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049af00
+// FUNCTION: COPTER_D 0x0049af00
 // ICommander::`scalar deleting destructor'
 
 
@@ -387,7 +387,7 @@ unsigned long CDefaultCommander::OnWindowDeactivate() {
 
 
 // Contribution: 1:00099f40-00099f78 Module: 14, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x0049af40
+// FUNCTION: COPTER_D 0x0049af40
 // CDefaultCommander::`scalar deleting destructor'
 
 
@@ -396,7 +396,7 @@ unsigned long CDefaultCommander::OnWindowDeactivate() {
 
 
 // Contribution: 2:000022d0-000022f3 Module: 14, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x000022d0
+// GLOBAL: COPTER_D 0x000022d0
 // ??_7CDefaultCommander@@6B@
 
 

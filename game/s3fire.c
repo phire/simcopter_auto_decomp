@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:001235f0-00126462 Module: 165, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x005245f0
+// FUNCTION: COPTER_D 0x005245f0
 void S3FireReset() {
 // LINE 100:
 	asm( 
@@ -71,7 +71,7 @@ void S3FireReset() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052467d
+// FUNCTION: COPTER_D 0x0052467d
 void S3FireInit() {
 // LINE 135:
 	asm( 
@@ -271,7 +271,7 @@ void S3FireInit() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00524829
+// FUNCTION: COPTER_D 0x00524829
 int32_t S3FireStart() {
 // LINE 203:
 	asm( 
@@ -634,7 +634,7 @@ int32_t S3FireStart() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00524adf
+// FUNCTION: COPTER_D 0x00524adf
 void S3FireDriver() {
 // LINE 312:
 	asm( 
@@ -1371,7 +1371,7 @@ void S3FireDriver() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005250be
+// FUNCTION: COPTER_D 0x005250be
 void S3FireSpread() {
 // LINE 574:
 	asm( 
@@ -1506,7 +1506,7 @@ void S3FireSpread() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005251d6
+// FUNCTION: COPTER_D 0x005251d6
 struct _CELL_FIRE_DATA* S3FireGetCellData() {
 // LINE 618:
 	asm( 
@@ -1556,7 +1556,7 @@ struct _CELL_FIRE_DATA* S3FireGetCellData() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052522c
+// FUNCTION: COPTER_D 0x0052522c
 void S3FireDouse() {
 // LINE 640:
 	asm( 
@@ -2068,7 +2068,7 @@ void S3FireDouse() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00525624
+// FUNCTION: COPTER_D 0x00525624
 int32_t S3FireStartCell() {
 // LINE 831:
 	asm( 
@@ -3268,7 +3268,7 @@ int32_t S3FireStartCell() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00526128
+// FUNCTION: COPTER_D 0x00526128
 struct _FIRE_DATA* S3FireGetByMission() {
 // LINE 943:
 	asm( 
@@ -3323,7 +3323,7 @@ struct _FIRE_DATA* S3FireGetByMission() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00526192
+// FUNCTION: COPTER_D 0x00526192
 int32_t S3FireGetAltitude() {
 // LINE 965:
 	asm( 
@@ -3460,7 +3460,7 @@ int32_t S3FireGetAltitude() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00526292
+// FUNCTION: COPTER_D 0x00526292
 int32_t S3FireTruckDouse() {
 // LINE 1029:
 	asm( 
@@ -3639,7 +3639,7 @@ int32_t S3FireTruckDouse() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005263ec
+// FUNCTION: COPTER_D 0x005263ec
 int32_t S3FireTruckDouseDyObj() {
 // LINE 1110:
 	asm( 
@@ -3819,7 +3819,7 @@ int32_t S3FireTruckDouseDyObj() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052654a
+// FUNCTION: COPTER_D 0x0052654a
 void S3FireTweakInit() {
 // LINE 1175:
 	asm( 
@@ -3873,7 +3873,7 @@ void S3FireTweakInit() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00526595
+// FUNCTION: COPTER_D 0x00526595
 int32_t S3FireCanCellBurn() {
 // LINE 1197:
 	asm( 
@@ -3950,7 +3950,7 @@ int32_t S3FireCanCellBurn() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00526661
+// FUNCTION: COPTER_D 0x00526661
 void S3FireDestroyCell() {
 // LINE 1231:
 	asm( 
@@ -4527,7 +4527,7 @@ void S3FireDestroyCell() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00526b81
+// FUNCTION: COPTER_D 0x00526b81
 long S3FireGetCount() {
 // LINE 1380:
 	asm( 
@@ -4552,7 +4552,7 @@ long S3FireGetCount() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00526b96
+// FUNCTION: COPTER_D 0x00526b96
 long S3FireAddToNearest() {
 // LINE 1396:
 	asm( 
@@ -4837,7 +4837,7 @@ long S3FireAddToNearest() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00526d7e
+// FUNCTION: COPTER_D 0x00526d7e
 void S3FireDyObjCollisionCheck() {
 // LINE 1504:
 	asm( 
@@ -5099,7 +5099,7 @@ void S3FireDyObjCollisionCheck() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00526fb5
+// FUNCTION: COPTER_D 0x00526fb5
 int32_t S3FireMIFFLoad() {
 // LINE 1618:
 	asm( 
@@ -5501,7 +5501,7 @@ int32_t S3FireMIFFLoad() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052735a
+// FUNCTION: COPTER_D 0x0052735a
 int32_t S3FireMIFFSave() {
 // LINE 1727:
 	asm( 
@@ -5631,49 +5631,49 @@ int32_t S3FireMIFFSave() {
 
 
 // Contribution: 2:00003ff0-000041ff Module: 165, 8 byte alignment, initialized_data, read, 
-// LOCAL: SIMCOPTER 0x00004070
+// LOCAL: COPTER_D 0x00004070
 // TurnTable2
-// LOCAL: SIMCOPTER 0x000040b0
+// LOCAL: COPTER_D 0x000040b0
 // IndexToType
-// LOCAL: SIMCOPTER 0x000040c0
+// LOCAL: COPTER_D 0x000040c0
 // TypeToIndex2
-// LOCAL: SIMCOPTER 0x00004100
+// LOCAL: COPTER_D 0x00004100
 // TILUT
-// LOCAL: SIMCOPTER 0x00004140
+// LOCAL: COPTER_D 0x00004140
 // OT
-// LOCAL: SIMCOPTER 0x00004180
+// LOCAL: COPTER_D 0x00004180
 // RRT
-// LOCAL: SIMCOPTER 0x000041c0
+// LOCAL: COPTER_D 0x000041c0
 // LRT
 
 
 // Contribution: 3:00020388-000203e6 Module: 165, 8 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x0002038c
+// GLOBAL: COPTER_D 0x0002038c
 // S_ftwk_douse_multiplier
-// GLOBAL: SIMCOPTER 0x00020390
+// GLOBAL: COPTER_D 0x00020390
 // S_ftwk_time_to_live
-// GLOBAL: SIMCOPTER 0x00020394
+// GLOBAL: COPTER_D 0x00020394
 // S_ftwk_spread_interval
-// GLOBAL: SIMCOPTER 0x00020398
+// GLOBAL: COPTER_D 0x00020398
 // S_ftwk_spread_probability
-// GLOBAL: SIMCOPTER 0x0002039c
+// GLOBAL: COPTER_D 0x0002039c
 // S_ftwk_fire_radius
-// LOCAL: SIMCOPTER 0x000203a0
+// LOCAL: COPTER_D 0x000203a0
 // S_fire_count
-// GLOBAL: SIMCOPTER 0x000203a8
+// GLOBAL: COPTER_D 0x000203a8
 // S_dirs
-// GLOBAL: SIMCOPTER 0x000203c8
+// GLOBAL: COPTER_D 0x000203c8
 // S_spread_time
-// LOCAL: SIMCOPTER 0x000203cc
+// LOCAL: COPTER_D 0x000203cc
 // S_yval
-// LOCAL: SIMCOPTER 0x000203d0
+// LOCAL: COPTER_D 0x000203d0
 // S_yvaldelta
-// LOCAL: SIMCOPTER 0x000203d4
+// LOCAL: COPTER_D 0x000203d4
 // FireMIFFID
-// LOCAL: SIMCOPTER 0x000203d8
+// LOCAL: COPTER_D 0x000203d8
 // CfdMIFFID
 
 
 // Contribution: 3:00094548-000945ef Module: 165, 8 byte alignment, uninitialized_data, read, write, 
-// LOCAL: SIMCOPTER 0x00094550
+// LOCAL: COPTER_D 0x00094550
 // lsfire

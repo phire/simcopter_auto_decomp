@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:00164ca0-00165846 Module: 184, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00565ca0
+// FUNCTION: COPTER_D 0x00565ca0
 void EmptyPStr() {
 // LINE 54:
 	asm( 
@@ -31,7 +31,7 @@ void EmptyPStr() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00565cb6
+// FUNCTION: COPTER_D 0x00565cb6
 unsigned short Str2Num() {
 // LINE 59:
 	asm( 
@@ -260,7 +260,7 @@ unsigned short Str2Num() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00565e80
+// FUNCTION: COPTER_D 0x00565e80
 void Num2Str() {
 // LINE 99:
 	asm( 
@@ -457,7 +457,7 @@ void Num2Str() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00565fbd
+// FUNCTION: COPTER_D 0x00565fbd
 unsigned short HexStr2Num() {
 // LINE 154:
 	asm( 
@@ -602,7 +602,7 @@ unsigned short HexStr2Num() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005660be
+// FUNCTION: COPTER_D 0x005660be
 void Num2HexStr() {
 // LINE 176:
 	asm( 
@@ -756,7 +756,7 @@ void Num2HexStr() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005661b4
+// FUNCTION: COPTER_D 0x005661b4
 void Long2PStr() {
 // LINE 214:
 	asm( 
@@ -808,7 +808,7 @@ void Long2PStr() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005661f4
+// FUNCTION: COPTER_D 0x005661f4
 unsigned long PStr2Long() {
 // LINE 223:
 	asm( 
@@ -878,7 +878,7 @@ unsigned long PStr2Long() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00566266
+// FUNCTION: COPTER_D 0x00566266
 void CToPString() {
 // LINE 257:
 	asm( 
@@ -930,7 +930,7 @@ void CToPString() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005662c1
+// FUNCTION: COPTER_D 0x005662c1
 short Round() {
 // LINE 268:
 	asm( 
@@ -998,7 +998,7 @@ short Round() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0056633e
+// FUNCTION: COPTER_D 0x0056633e
 void CToPStr() {
 // LINE 365:
 	asm( 
@@ -1050,7 +1050,7 @@ void CToPStr() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0056639c
+// FUNCTION: COPTER_D 0x0056639c
 void ConcatPStr() {
 // LINE 442:
 	asm( 
@@ -1133,7 +1133,7 @@ void ConcatPStr() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00566425
+// FUNCTION: COPTER_D 0x00566425
 void ConcatCPStr() {
 // LINE 454:
 	asm( 
@@ -1183,7 +1183,7 @@ void ConcatCPStr() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00566479
+// FUNCTION: COPTER_D 0x00566479
 void ConcatNum() {
 // LINE 464:
 	asm( 
@@ -1225,7 +1225,7 @@ void ConcatNum() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005664b9
+// FUNCTION: COPTER_D 0x005664b9
 void HexToString() {
 // LINE 499:
 	asm( 
@@ -1361,7 +1361,7 @@ void HexToString() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005665b7
+// FUNCTION: COPTER_D 0x005665b7
 int32_t PStrCompare() {
 // LINE 906:
 	asm( 
@@ -1518,7 +1518,7 @@ int32_t PStrCompare() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00566705
+// FUNCTION: COPTER_D 0x00566705
 void ExtractFileName() {
 // LINE 928:
 	asm( 
@@ -1589,7 +1589,7 @@ void ExtractFileName() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0056677d
+// FUNCTION: COPTER_D 0x0056677d
 void MyTextBox() {
 // LINE 990:
 	asm( 
@@ -1664,7 +1664,7 @@ void MyTextBox() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005667fe
+// FUNCTION: COPTER_D 0x005667fe
 struct Point center() {
 // LINE 1253:
 	asm( 
@@ -1717,7 +1717,7 @@ struct Point center() {
 
 
 // Contribution: 2:00004a18-00004a2f Module: 184, 8 byte alignment, initialized_data, read, 
-// GLOBAL: SIMCOPTER 0x00004a30
+// GLOBAL: COPTER_D 0x00004a30
 // ??_7?$cArray@UPrivAnimPartInfo@@@@6B@
 
 

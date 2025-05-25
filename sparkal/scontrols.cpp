@@ -5,55 +5,55 @@
 
 
 // Contribution: 1:000705e0-00070d19 Module: 38, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x004715e0
+// FUNCTION: COPTER_D 0x004715e0
 // $E65
 
-// FUNCTION: SIMCOPTER 0x004715fa
+// FUNCTION: COPTER_D 0x004715fa
 // $E61
 
-// FUNCTION: SIMCOPTER 0x00471614
+// FUNCTION: COPTER_D 0x00471614
 // $E64
 
-// FUNCTION: SIMCOPTER 0x00471631
+// FUNCTION: COPTER_D 0x00471631
 // $E62
 
-// FUNCTION: SIMCOPTER 0x00471668
+// FUNCTION: COPTER_D 0x00471668
 // $E70
 
-// FUNCTION: SIMCOPTER 0x00471682
+// FUNCTION: COPTER_D 0x00471682
 // $E67
 
-// FUNCTION: SIMCOPTER 0x0047169c
+// FUNCTION: COPTER_D 0x0047169c
 // $E69
 
-// FUNCTION: SIMCOPTER 0x004716b9
+// FUNCTION: COPTER_D 0x004716b9
 // $E68
 
-// FUNCTION: SIMCOPTER 0x004716f0
+// FUNCTION: COPTER_D 0x004716f0
 // $E75
 
-// FUNCTION: SIMCOPTER 0x0047170a
+// FUNCTION: COPTER_D 0x0047170a
 // $E72
 
-// FUNCTION: SIMCOPTER 0x00471724
+// FUNCTION: COPTER_D 0x00471724
 // $E74
 
-// FUNCTION: SIMCOPTER 0x00471741
+// FUNCTION: COPTER_D 0x00471741
 // $E73
 
-// FUNCTION: SIMCOPTER 0x00471778
+// FUNCTION: COPTER_D 0x00471778
 // $E80
 
-// FUNCTION: SIMCOPTER 0x00471792
+// FUNCTION: COPTER_D 0x00471792
 // $E77
 
-// FUNCTION: SIMCOPTER 0x004717ac
+// FUNCTION: COPTER_D 0x004717ac
 // $E79
 
-// FUNCTION: SIMCOPTER 0x004717c9
+// FUNCTION: COPTER_D 0x004717c9
 // $E78
 
-// FUNCTION: SIMCOPTER 0x00471800
+// FUNCTION: COPTER_D 0x00471800
 void SoundButtonWindow::SoundButtonWindow() {
 // LINE 29:
 	asm( 
@@ -95,7 +95,7 @@ void SoundButtonWindow::SoundButtonWindow() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00471847
+// FUNCTION: COPTER_D 0x00471847
 void SoundButtonWindow::SoundButtonWindow(class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t) {
 // LINE 44:
 	asm( 
@@ -149,7 +149,7 @@ void SoundButtonWindow::SoundButtonWindow(class MRect&, int32_t, class GraphicWi
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004718a8
+// FUNCTION: COPTER_D 0x004718a8
 void SoundButtonWindow::~SoundButtonWindow() {
 // LINE 55:
 	asm( 
@@ -190,7 +190,7 @@ void SoundButtonWindow::~SoundButtonWindow() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004718ea
+// FUNCTION: COPTER_D 0x004718ea
 void SoundButtonWindow::SetState(int32_t) {
 // LINE 65:
 	asm( 
@@ -243,7 +243,7 @@ void SoundButtonWindow::SetState(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00471945
+// FUNCTION: COPTER_D 0x00471945
 void SoundRadioButtonWindow::SoundRadioButtonWindow(class ButtonGroup*, class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t) {
 // LINE 82:
 	asm( 
@@ -299,7 +299,7 @@ void SoundRadioButtonWindow::SoundRadioButtonWindow(class ButtonGroup*, class MR
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004719aa
+// FUNCTION: COPTER_D 0x004719aa
 void SoundRadioButtonWindow::~SoundRadioButtonWindow() {
 // LINE 91:
 	asm( 
@@ -339,7 +339,7 @@ void SoundRadioButtonWindow::~SoundRadioButtonWindow() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004719e7
+// FUNCTION: COPTER_D 0x004719e7
 void SoundRadioButtonWindow::SetState(int32_t) {
 // LINE 101:
 	asm( 
@@ -393,7 +393,7 @@ void SoundRadioButtonWindow::SetState(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00471a45
+// FUNCTION: COPTER_D 0x00471a45
 void SoundCheckBoxWindow::SoundCheckBoxWindow() {
 // LINE 112:
 	asm( 
@@ -435,7 +435,7 @@ void SoundCheckBoxWindow::SoundCheckBoxWindow() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00471a8c
+// FUNCTION: COPTER_D 0x00471a8c
 void SoundCheckBoxWindow::SoundCheckBoxWindow(class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t) {
 // LINE 126:
 	asm( 
@@ -489,7 +489,7 @@ void SoundCheckBoxWindow::SoundCheckBoxWindow(class MRect&, int32_t, class Graph
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00471aed
+// FUNCTION: COPTER_D 0x00471aed
 void SoundCheckBoxWindow::~SoundCheckBoxWindow() {
 // LINE 135:
 	asm( 
@@ -531,7 +531,7 @@ void SoundCheckBoxWindow::~SoundCheckBoxWindow() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00471b34
+// FUNCTION: COPTER_D 0x00471b34
 void SoundCheckBoxWindow::SetState(int32_t) {
 // LINE 145:
 	asm( 
@@ -582,7 +582,7 @@ void SoundCheckBoxWindow::SetState(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00471b85
+// FUNCTION: COPTER_D 0x00471b85
 void SoundScrollBarWindow::SoundScrollBarWindow() {
 // LINE 156:
 	asm( 
@@ -624,7 +624,7 @@ void SoundScrollBarWindow::SoundScrollBarWindow() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00471bcc
+// FUNCTION: COPTER_D 0x00471bcc
 void SoundScrollBarWindow::SoundScrollBarWindow(class MRect&, int32_t, enum SliderWindow::SliderWindowDirection, class GraphicWindow*, class GraphicWindowOwner*, int32_t, char *) {
 // LINE 170:
 	asm( 
@@ -680,7 +680,7 @@ void SoundScrollBarWindow::SoundScrollBarWindow(class MRect&, int32_t, enum Slid
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00471c31
+// FUNCTION: COPTER_D 0x00471c31
 void SoundScrollBarWindow::~SoundScrollBarWindow() {
 // LINE 179:
 	asm( 
@@ -722,7 +722,7 @@ void SoundScrollBarWindow::~SoundScrollBarWindow() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00471c78
+// FUNCTION: COPTER_D 0x00471c78
 void SoundScrollBarWindow::MoveLinePrevious() {
 // LINE 190:
 	asm( 
@@ -772,7 +772,7 @@ void SoundScrollBarWindow::MoveLinePrevious() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00471cc9
+// FUNCTION: COPTER_D 0x00471cc9
 void SoundScrollBarWindow::MoveLineNext() {
 // LINE 204:
 	asm( 
@@ -828,79 +828,79 @@ void SoundScrollBarWindow::MoveLineNext() {
 
 
 // Contribution: 1:00070d40-00070d78 Module: 38, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x00471d40
+// FUNCTION: COPTER_D 0x00471d40
 // SoundButtonWindow::`scalar deleting destructor'
 
 
 
 // Contribution: 1:00070d80-00070db8 Module: 38, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x00471d80
+// FUNCTION: COPTER_D 0x00471d80
 // SoundRadioButtonWindow::`scalar deleting destructor'
 
 
 
 // Contribution: 1:00070dc0-00070df8 Module: 38, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x00471dc0
+// FUNCTION: COPTER_D 0x00471dc0
 // SoundCheckBoxWindow::`scalar deleting destructor'
 
 
 
 // Contribution: 1:00070e00-00070e38 Module: 38, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x00471e00
+// FUNCTION: COPTER_D 0x00471e00
 // SoundScrollBarWindow::`scalar deleting destructor'
 
 
 
 // Contribution: 2:00001870-0000194b Module: 38, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00001870
+// GLOBAL: COPTER_D 0x00001870
 // ??_7SoundButtonWindow@@6B@
 
 
 // Contribution: 2:00001950-00001a33 Module: 38, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00001950
+// GLOBAL: COPTER_D 0x00001950
 // ??_7SoundRadioButtonWindow@@6B@
 
 
 // Contribution: 2:00001a38-00001b13 Module: 38, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00001a38
+// GLOBAL: COPTER_D 0x00001a38
 // ??_7SoundCheckBoxWindow@@6B@
 
 
 // Contribution: 2:00001b18-00001c1f Module: 38, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00001b18
+// GLOBAL: COPTER_D 0x00001b18
 // ??_7SoundScrollBarWindow@@6B@
 
 
 // Contribution: 3:00000054-00000063 Module: 38, 4 byte alignment, initialized_data, read, write, 
-// LOCAL: SIMCOPTER 0x00000054
+// LOCAL: COPTER_D 0x00000054
 // $S66
-// LOCAL: SIMCOPTER 0x00000058
+// LOCAL: COPTER_D 0x00000058
 // $S71
-// LOCAL: SIMCOPTER 0x0000005c
+// LOCAL: COPTER_D 0x0000005c
 // $S76
-// LOCAL: SIMCOPTER 0x00000060
+// LOCAL: COPTER_D 0x00000060
 // $S81
 
 
 // Contribution: 3:000027b8-000027c7 Module: 38, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x000027b8
+// GLOBAL: COPTER_D 0x000027b8
 // SoundButtonWindow::lButtonSoundReferenceCount
-// GLOBAL: SIMCOPTER 0x000027bc
+// GLOBAL: COPTER_D 0x000027bc
 // SoundRadioButtonWindow::lRadioSoundReferenceCount
-// GLOBAL: SIMCOPTER 0x000027c0
+// GLOBAL: COPTER_D 0x000027c0
 // SoundCheckBoxWindow::lCheckBoxSoundReferenceCount
-// GLOBAL: SIMCOPTER 0x000027c4
+// GLOBAL: COPTER_D 0x000027c4
 // SoundScrollBarWindow::lScrollBarSoundReferenceCount
 
 
 // Contribution: 3:0006d248-0006d444 Module: 38, 8 byte alignment, uninitialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x0006d248
+// GLOBAL: COPTER_D 0x0006d248
 // SoundScrollBarWindow::scrollBarSound
-// GLOBAL: SIMCOPTER 0x0006d2c8
+// GLOBAL: COPTER_D 0x0006d2c8
 // SoundButtonWindow::buttonSound
-// GLOBAL: SIMCOPTER 0x0006d348
+// GLOBAL: COPTER_D 0x0006d348
 // SoundCheckBoxWindow::checkBoxSound
-// GLOBAL: SIMCOPTER 0x0006d3c8
+// GLOBAL: COPTER_D 0x0006d3c8
 // SoundRadioButtonWindow::radioButtonSound
-// LOCAL: SIMCOPTER 0x0006d444
+// LOCAL: COPTER_D 0x0006d444
 // $S63

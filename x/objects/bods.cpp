@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:0015fbf0-001614f4 Module: 189, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00560bf0
+// FUNCTION: COPTER_D 0x00560bf0
 public: class cCopterAnim * __thiscall cCopterBody::GetPrivateAnim(unsigned long) {
 // LINE 1937:
 	asm( 
@@ -202,7 +202,7 @@ public: class cCopterAnim * __thiscall cCopterBody::GetPrivateAnim(unsigned long
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00560e78
+// FUNCTION: COPTER_D 0x00560e78
 public: void __thiscall cCopterBody::ActivateAllPartPointers(unsigned short) {
 // LINE 2061:
 	asm( 
@@ -360,7 +360,7 @@ public: void __thiscall cCopterBody::ActivateAllPartPointers(unsigned short) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00561005
+// FUNCTION: COPTER_D 0x00561005
 public: static class cCopterBody * __cdecl cCopterBody::GetCopterBody(unsigned char *const) {
 // LINE 2084:
 	asm( 
@@ -474,7 +474,7 @@ public: static class cCopterBody * __cdecl cCopterBody::GetCopterBody(unsigned c
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00561190
+// FUNCTION: COPTER_D 0x00561190
 public: struct cCopterBody::Part * __thiscall cCopterBody::GetPartByName(unsigned long) {
 // LINE 2091:
 	asm( 
@@ -570,7 +570,7 @@ public: struct cCopterBody::Part * __thiscall cCopterBody::GetPartByName(unsigne
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00561281
+// FUNCTION: COPTER_D 0x00561281
 public: void __thiscall cCopterBody::DrawSwitch(float, float, struct cCopterBody::Part *, short, short, float, short) {
 // LINE 2102:
 	asm( 
@@ -964,7 +964,7 @@ public: void __thiscall cCopterBody::DrawSwitch(float, float, struct cCopterBody
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00561611
+// FUNCTION: COPTER_D 0x00561611
 public: void __thiscall cCopterBody::Draw(float, float, class cCopterAnim *, short, short, short, float, short, short) {
 // LINE 2180:
 	asm( 
@@ -1517,7 +1517,7 @@ public: void __thiscall cCopterBody::Draw(float, float, class cCopterAnim *, sho
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00561b74
+// FUNCTION: COPTER_D 0x00561b74
 public: virtual void __thiscall cCopterBody::InstallArrayPointers(unsigned short) {
 // LINE 2285:
 	asm( 
@@ -1867,7 +1867,7 @@ public: virtual void __thiscall cCopterBody::InstallArrayPointers(unsigned short
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005620af
+// FUNCTION: COPTER_D 0x005620af
 public: static void __cdecl cCopterBody::DestroyAll(void) {
 // LINE 2300:
 	asm( 
@@ -2140,7 +2140,7 @@ public: static void __cdecl cCopterBody::DestroyAll(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005623cd
+// FUNCTION: COPTER_D 0x005623cd
 int32_t cCopterBodyCompareDrawOrder() {
 // LINE 2324:
 	asm( 
@@ -2185,7 +2185,7 @@ int32_t cCopterBodyCompareDrawOrder() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0056240b
+// FUNCTION: COPTER_D 0x0056240b
 void SwizzleCopterBodyPart() {
 // LINE 2332:
 	asm( 
@@ -2267,7 +2267,7 @@ void SwizzleCopterBodyPart() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0056249b
+// FUNCTION: COPTER_D 0x0056249b
 void SwizzleAnimLookup() {
 // LINE 2346:
 	asm( 
@@ -2326,14 +2326,14 @@ void SwizzleAnimLookup() {
 
 
 // Contribution: 2:00004730-00004733 Module: 189, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00004730
+// GLOBAL: COPTER_D 0x00004730
 // ??_7?$cArray@UAnimLookup@@@@6B@
-// GLOBAL: SIMCOPTER 0x00004734
+// GLOBAL: COPTER_D 0x00004734
 // ??_7?$cArray@UPart@cCopterBody@@@@6B@
 
 
 // Contribution: 2:00004734-00004737 Module: 189, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00004738
+// GLOBAL: COPTER_D 0x00004738
 // ??_7_cArray@@6B@
 
 
@@ -2344,13 +2344,13 @@ void SwizzleAnimLookup() {
 
 
 // Contribution: 3:00027628-00027ad3 Module: 189, 8 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x00027628
+// GLOBAL: COPTER_D 0x00027628
 // standardAnimRect
-// GLOBAL: SIMCOPTER 0x00027630
+// GLOBAL: COPTER_D 0x00027630
 // cCopterBody::fsList
-// GLOBAL: SIMCOPTER 0x00027634
+// GLOBAL: COPTER_D 0x00027634
 // sTestPersonFrameNum
-// GLOBAL: SIMCOPTER 0x00027ad4
+// GLOBAL: COPTER_D 0x00027ad4
 // ??_C@_0BL@GEOL@couldn?8t?5get?5or?5make?5array?$AA@
 
 
@@ -2358,19 +2358,19 @@ void SwizzleAnimLookup() {
 
 
 // Contribution: 3:00027af0-00027b18 Module: 189, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00027af0
+// GLOBAL: COPTER_D 0x00027af0
 // ??_C@_0CJ@IDHA@about?5to?5create?5a?5very?5unfortuna@
 
 
 // Contribution: 3:00027b1c-00027b57 Module: 189, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00027b1c
+// GLOBAL: COPTER_D 0x00027b1c
 // ??_C@_0DM@LMC@array?5found?5on?5disk?5even?5though?5@
 
 
 // Contribution: 3:00027b58-00027b8b Module: 189, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00027b58
+// GLOBAL: COPTER_D 0x00027b58
 // ??_C@_0DE@OFFD@didn?8t?5find?5array?5on?5disk?9?9will?5@
-// GLOBAL: SIMCOPTER 0x00027b8c
+// GLOBAL: COPTER_D 0x00027b8c
 // ??_C@_0CA@LLAI@bad?5entry?5size?5of?5desired?5array?$AA@
 
 
@@ -2378,7 +2378,7 @@ void SwizzleAnimLookup() {
 
 
 // Contribution: 3:000a06c8-000a1991 Module: 189, 8 byte alignment, uninitialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x000a06d0
+// GLOBAL: COPTER_D 0x000a06d0
 // sTransformedInfo
-// GLOBAL: SIMCOPTER 0x000a1670
+// GLOBAL: COPTER_D 0x000a1670
 // cCopterBody::fsDrawOrderParts

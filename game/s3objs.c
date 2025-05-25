@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:00117f90-0011d769 Module: 168, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00518f90
+// FUNCTION: COPTER_D 0x00518f90
 void S3ObjInit() {
 // LINE 379:
 	asm( 
@@ -730,7 +730,7 @@ void S3ObjInit() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0051957b
+// FUNCTION: COPTER_D 0x0051957b
 void S3ObjLinkLowRes() {
 // LINE 690:
 	asm( 
@@ -1274,7 +1274,7 @@ void S3ObjLinkLowRes() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00519aa4
+// FUNCTION: COPTER_D 0x00519aa4
 void S3DrawBlinkingLight() {
 // LINE 852:
 	asm( 
@@ -1540,7 +1540,7 @@ void S3DrawBlinkingLight() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00519c86
+// FUNCTION: COPTER_D 0x00519c86
 void S3DrawWaterPoint() {
 // LINE 951:
 	asm( 
@@ -12466,7 +12466,7 @@ void S3DrawWaterPoint() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0051da5b
+// FUNCTION: COPTER_D 0x0051da5b
 struct _LZ_INFO* S3ObjGetLandingZone() {
 // LINE 3683:
 	asm( 
@@ -12505,7 +12505,7 @@ struct _LZ_INFO* S3ObjGetLandingZone() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0051da96
+// FUNCTION: COPTER_D 0x0051da96
 void S3ObjHitDispatch() {
 // LINE 3703:
 	asm( 
@@ -14193,7 +14193,7 @@ void S3ObjHitDispatch() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0051e69a
+// FUNCTION: COPTER_D 0x0051e69a
 void S3ObjSetFlatShading() {
 // LINE 4145:
 	asm( 
@@ -14301,22 +14301,22 @@ void S3ObjSetFlatShading() {
 
 
 // Contribution: 3:0001ee78-000202c3 Module: 168, 8 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x0001ee78
+// GLOBAL: COPTER_D 0x0001ee78
 // G_dyobjmempool
-// LOCAL: SIMCOPTER 0x0001ee80
+// LOCAL: COPTER_D 0x0001ee80
 // S_hires_fire
-// LOCAL: SIMCOPTER 0x0001ee88
+// LOCAL: COPTER_D 0x0001ee88
 // S_hires_smoke_day
-// LOCAL: SIMCOPTER 0x0001ee90
+// LOCAL: COPTER_D 0x0001ee90
 // S_hires_smoke_night
-// LOCAL: SIMCOPTER 0x0001ee98
+// LOCAL: COPTER_D 0x0001ee98
 // S_hires_water
-// LOCAL: SIMCOPTER 0x0001eea0
+// LOCAL: COPTER_D 0x0001eea0
 // S_objlzinfo
-// LOCAL: SIMCOPTER 0x000202a0
+// LOCAL: COPTER_D 0x000202a0
 // S_color_no
 
 
 // Contribution: 3:00093528-0009352b Module: 168, 4 byte alignment, uninitialized_data, read, write, 
-// LOCAL: SIMCOPTER 0x00093528
+// LOCAL: COPTER_D 0x00093528
 // S_hires_color

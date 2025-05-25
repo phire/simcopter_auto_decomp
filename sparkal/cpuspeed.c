@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:00046b60-00047268 Module: 48, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00447b60
+// FUNCTION: COPTER_D 0x00447b60
 int32_t DllMain() {
 // LINE 63:
 	asm( 
@@ -30,7 +30,7 @@ int32_t DllMain() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00447b77
+// FUNCTION: COPTER_D 0x00447b77
 struct FREQ_INFO cpuspeed() {
 // LINE 88:
 	asm( 
@@ -626,7 +626,7 @@ struct FREQ_INFO cpuspeed() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00447fce
+// FUNCTION: COPTER_D 0x00447fce
 unsigned long NormFreq() {
 // LINE 428:
 	asm( 
@@ -931,7 +931,7 @@ unsigned long NormFreq() {
 
 
 // Contribution: 3:00001f28-00001f57 Module: 48, 8 byte alignment, initialized_data, read, write, 
-// LOCAL: SIMCOPTER 0x00001f28
+// LOCAL: COPTER_D 0x00001f28
 // processor_cycles
-// GLOBAL: SIMCOPTER 0x00001f58
+// GLOBAL: COPTER_D 0x00001f58
 // SZ_RADIO_COMPASS_WINDOW_IMAGE_FILE_NAME

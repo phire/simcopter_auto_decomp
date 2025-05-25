@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:000b8040-000ba946 Module: 4, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x004b9040
+// FUNCTION: COPTER_D 0x004b9040
 void HotSpot::HotSpot() {
 // LINE 25:
 	asm( 
@@ -40,7 +40,7 @@ void HotSpot::HotSpot() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004b908f
+// FUNCTION: COPTER_D 0x004b908f
 void HotSpot::HotSpot(const class HotSpot&) {
 // LINE 34:
 	asm( 
@@ -346,7 +346,7 @@ void HotSpot::HotSpot(const class HotSpot&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004b948a
+// FUNCTION: COPTER_D 0x004b948a
 void HotSpot::HotSpot(long, long, long, long[17]*) {
 // LINE 47:
 	asm( 
@@ -683,7 +683,7 @@ void HotSpot::HotSpot(long, long, long, long[17]*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004b9973
+// FUNCTION: COPTER_D 0x004b9973
 void HotSpot::HotSpot(struct HotSpotResourceRecord*) {
 // LINE 62:
 	asm( 
@@ -1034,7 +1034,7 @@ void HotSpot::HotSpot(struct HotSpotResourceRecord*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004b9e75
+// FUNCTION: COPTER_D 0x004b9e75
 void HotSpot::HotSpot(long, struct SparkalRect&) {
 // LINE 88:
 	asm( 
@@ -1598,7 +1598,7 @@ void HotSpot::HotSpot(long, struct SparkalRect&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ba78f
+// FUNCTION: COPTER_D 0x004ba78f
 class HotSpot& HotSpot::operator=(const class HotSpot&) {
 // LINE 101:
 	asm( 
@@ -1911,7 +1911,7 @@ class HotSpot& HotSpot::operator=(const class HotSpot&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bab7b
+// FUNCTION: COPTER_D 0x004bab7b
 int32_t operator==() {
 // LINE 116:
 	asm( 
@@ -2050,7 +2050,7 @@ int32_t operator==() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bad05
+// FUNCTION: COPTER_D 0x004bad05
 int32_t HotSpot::IsPointInHotspot(long, long) {
 // LINE 132:
 	asm( 
@@ -2152,7 +2152,7 @@ int32_t HotSpot::IsPointInHotspot(long, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004badf8
+// FUNCTION: COPTER_D 0x004badf8
 int32_t HotSpot::PointInCircle(long, long) {
 // LINE 154:
 	asm( 
@@ -2262,7 +2262,7 @@ int32_t HotSpot::PointInCircle(long, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004baf2a
+// FUNCTION: COPTER_D 0x004baf2a
 int32_t HotSpot::PointInPolygon(long, long) {
 // LINE 180:
 	asm( 
@@ -2406,7 +2406,7 @@ int32_t HotSpot::PointInPolygon(long, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bb0d2
+// FUNCTION: COPTER_D 0x004bb0d2
 void HotSpot::GetBoundingRect(class MRect&) {
 // LINE 207:
 	asm( 
@@ -2797,7 +2797,7 @@ void HotSpot::GetBoundingRect(class MRect&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bb49b
+// FUNCTION: COPTER_D 0x004bb49b
 int32_t LoadListFromResource() {
 // LINE 269:
 	asm( 

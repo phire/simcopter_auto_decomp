@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:00138c00-0013ad38 Module: 156, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00539c00
+// FUNCTION: COPTER_D 0x00539c00
 void S3StationInit() {
 // LINE 27:
 	asm( 
@@ -72,7 +72,7 @@ void S3StationInit() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00539cbb
+// FUNCTION: COPTER_D 0x00539cbb
 void S3StationReset() {
 // LINE 36:
 	asm( 
@@ -142,7 +142,7 @@ void S3StationReset() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00539d67
+// FUNCTION: COPTER_D 0x00539d67
 short S3GetNearestStation() {
 // LINE 48:
 	asm( 
@@ -172,7 +172,7 @@ short S3GetNearestStation() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00539d87
+// FUNCTION: COPTER_D 0x00539d87
 short S3GetNextNearest() {
 // LINE 56:
 	asm( 
@@ -200,7 +200,7 @@ short S3GetNextNearest() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00539da3
+// FUNCTION: COPTER_D 0x00539da3
 int32_t Station::FindNearestRoadToStation(struct _GridCoordinates&) {
 // LINE 65:
 	asm( 
@@ -438,7 +438,7 @@ int32_t Station::FindNearestRoadToStation(struct _GridCoordinates&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0053a01e
+// FUNCTION: COPTER_D 0x0053a01e
 int32_t Station::FindNearestRoadToEmergency(struct _GridCoordinates&) {
 // LINE 109:
 	asm( 
@@ -598,7 +598,7 @@ int32_t Station::FindNearestRoadToEmergency(struct _GridCoordinates&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0053a1fb
+// FUNCTION: COPTER_D 0x0053a1fb
 void Station::SortStationsByDistanceFromDestination(struct _GridCoordinates) {
 // LINE 127:
 	asm( 
@@ -778,7 +778,7 @@ void Station::SortStationsByDistanceFromDestination(struct _GridCoordinates) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0053a358
+// FUNCTION: COPTER_D 0x0053a358
 void Station::SortVehiclesByDistanceFromDestination(struct _GridCoordinates, class EmergencyVehicleClass**, int32_t) {
 // LINE 173:
 	asm( 
@@ -960,7 +960,7 @@ void Station::SortVehiclesByDistanceFromDestination(struct _GridCoordinates, cla
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0053a4a0
+// FUNCTION: COPTER_D 0x0053a4a0
 class EmergencyVehicleClass* Station::FindAvailableVehicle(enum EmergencyLevel, class EmergencyVehicleClass**, int32_t) {
 // LINE 225:
 	asm( 
@@ -1058,7 +1058,7 @@ class EmergencyVehicleClass* Station::FindAvailableVehicle(enum EmergencyLevel, 
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0053a566
+// FUNCTION: COPTER_D 0x0053a566
 void Station::StationHeapInsert(const struct _StationHeapStruct*) {
 // LINE 249:
 	asm( 
@@ -1171,7 +1171,7 @@ void Station::StationHeapInsert(const struct _StationHeapStruct*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0053a637
+// FUNCTION: COPTER_D 0x0053a637
 void Station::StationHeapRemove(struct _StationHeapStruct*) {
 // LINE 272:
 	asm( 
@@ -1349,7 +1349,7 @@ void Station::StationHeapRemove(struct _StationHeapStruct*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0053a798
+// FUNCTION: COPTER_D 0x0053a798
 void Station::VehicleHeapInsert(const struct _VehicleHeapStruct*) {
 // LINE 315:
 	asm( 
@@ -1479,7 +1479,7 @@ void Station::VehicleHeapInsert(const struct _VehicleHeapStruct*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0053a8a0
+// FUNCTION: COPTER_D 0x0053a8a0
 void Station::VehicleHeapRemove(struct _VehicleHeapStruct*) {
 // LINE 338:
 	asm( 
@@ -1685,7 +1685,7 @@ void Station::VehicleHeapRemove(struct _VehicleHeapStruct*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0053aa5f
+// FUNCTION: COPTER_D 0x0053aa5f
 short Station::GetNearestStation(struct _GridCoordinates, struct _GridCoordinates*) {
 // LINE 384:
 	asm( 
@@ -1756,7 +1756,7 @@ short Station::GetNearestStation(struct _GridCoordinates, struct _GridCoordinate
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0053aacd
+// FUNCTION: COPTER_D 0x0053aacd
 short Station::GetNextNearest(struct _GridCoordinates*) {
 // LINE 403:
 	asm( 
@@ -1820,7 +1820,7 @@ short Station::GetNextNearest(struct _GridCoordinates*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0053ab2f
+// FUNCTION: COPTER_D 0x0053ab2f
 void Station::DecrementQuantityOfVehicleDispatched(int32_t) {
 // LINE 421:
 	asm( 
@@ -1869,7 +1869,7 @@ void Station::DecrementQuantityOfVehicleDispatched(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0053ab93
+// FUNCTION: COPTER_D 0x0053ab93
 int32_t Station::DispatchNearestAvailableVehicle(long, long, enum EmergencyType, enum EmergencyLevel, class EmergencyVehicleClass**, int32_t) {
 // LINE 432:
 	asm( 
@@ -2896,10 +2896,10 @@ int32_t Station::DispatchNearestAvailableVehicle(long, long, enum EmergencyType,
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0053b99b
+// FUNCTION: COPTER_D 0x0053b99b
 // $E36
 
-// FUNCTION: SIMCOPTER 0x0053b9b5
+// FUNCTION: COPTER_D 0x0053b9b5
 void Station::Station(unsigned char) {
 // LINE 591:
 	asm( 
@@ -3315,5 +3315,5 @@ void Station::Station(unsigned char) {
 
 
 // Contribution: 3:0009e1d0-0009e24c Module: 156, 8 byte alignment, uninitialized_data, read, write, 
-// LOCAL: SIMCOPTER 0x0009e24c
+// LOCAL: COPTER_D 0x0009e24c
 // ?$S35@?1??DispatchNearestAvailableVehicle@Station@@QAEHJJW4EmergencyType@@W4EmergencyLevel@@PAPAVEmergencyVehicleClass@@H@Z@4EA

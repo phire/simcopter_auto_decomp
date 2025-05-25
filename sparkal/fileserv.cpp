@@ -5,19 +5,19 @@
 
 
 // Contribution: 1:00090180-000943f1 Module: 21, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00491180
+// FUNCTION: COPTER_D 0x00491180
 // $E32
 
-// FUNCTION: SIMCOPTER 0x0049119a
+// FUNCTION: COPTER_D 0x0049119a
 // $E29
 
-// FUNCTION: SIMCOPTER 0x00491548
+// FUNCTION: COPTER_D 0x00491548
 // $E31
 
-// FUNCTION: SIMCOPTER 0x00491565
+// FUNCTION: COPTER_D 0x00491565
 // $E30
 
-// FUNCTION: SIMCOPTER 0x0049172b
+// FUNCTION: COPTER_D 0x0049172b
 int32_t GetPathForFile() {
 // LINE 25:
 	asm( 
@@ -51,7 +51,7 @@ int32_t GetPathForFile() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00491755
+// FUNCTION: COPTER_D 0x00491755
 int32_t FileServices::Initialize() {
 // LINE 38:
 	asm( 
@@ -498,7 +498,7 @@ int32_t FileServices::Initialize() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00491d1c
+// FUNCTION: COPTER_D 0x00491d1c
 int32_t FileServices::FindRemotePath() {
 // LINE 88:
 	asm( 
@@ -1023,7 +1023,7 @@ int32_t FileServices::FindRemotePath() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004923c6
+// FUNCTION: COPTER_D 0x004923c6
 int32_t FileServices::ValidateRemotePath() {
 // LINE 138:
 	asm( 
@@ -1388,7 +1388,7 @@ int32_t FileServices::ValidateRemotePath() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049299a
+// FUNCTION: COPTER_D 0x0049299a
 void FileServices::RefreshLocalPathCache(class basic_string<char>&) {
 // LINE 164:
 	asm( 
@@ -1735,7 +1735,7 @@ void FileServices::RefreshLocalPathCache(class basic_string<char>&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00492e36
+// FUNCTION: COPTER_D 0x00492e36
 int32_t FileServices::CopyFileFromRemoteToLocal(char *) {
 // LINE 195:
 	asm( 
@@ -1762,7 +1762,7 @@ int32_t FileServices::CopyFileFromRemoteToLocal(char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00492e50
+// FUNCTION: COPTER_D 0x00492e50
 int32_t FileServices::GetPathForFile(int32_t, int32_t, char *, char *) {
 // LINE 215:
 	asm( 
@@ -4171,7 +4171,7 @@ int32_t FileServices::GetPathForFile(int32_t, int32_t, char *, char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00494f82
+// FUNCTION: COPTER_D 0x00494f82
 int32_t FileServices::GetPathForFileString(int32_t, int32_t, class basic_string<char>&, class basic_string<char>&) {
 // LINE 391:
 	asm( 
@@ -4467,39 +4467,39 @@ int32_t FileServices::GetPathForFileString(int32_t, int32_t, class basic_string<
 
 
 // Contribution: 3:000030c4-000030ca Module: 21, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x000030c4
+// GLOBAL: COPTER_D 0x000030c4
 // ??_C@_06GHGC@tweak?2?$AA@
 
 
 // Contribution: 3:000030cc-000030ce Module: 21, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x000030cc
+// GLOBAL: COPTER_D 0x000030cc
 // ??_C@_02IHAM@X?2?$AA@
 
 
 // Contribution: 3:000030d0-000030d6 Module: 21, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x000030d0
+// GLOBAL: COPTER_D 0x000030d0
 // ??_C@_06LEOC@fonts?2?$AA@
 
 
 // Contribution: 3:000030d8-000030dc Module: 21, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x000030d8
+// GLOBAL: COPTER_D 0x000030d8
 // ??_C@_04IAOI@geo?2?$AA@
 
 
 // Contribution: 3:000030e0-000030e4 Module: 21, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x000030e0
+// GLOBAL: COPTER_D 0x000030e0
 // ??_C@_04BOOP@bmp?2?$AA@
 
 
 // Contribution: 3:000030e8-000030f6 Module: 21, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x000030e8
+// GLOBAL: COPTER_D 0x000030e8
 // ??_C@_0P@CBA@cities?2career?2?$AA@
 
 
 // Contribution: 3:000030f8-000030ff Module: 21, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x000030f8
+// GLOBAL: COPTER_D 0x000030f8
 // ??_C@_07JPDD@cities?2?$AA@
-// GLOBAL: SIMCOPTER 0x00003100
+// GLOBAL: COPTER_D 0x00003100
 // ??_C@_0N@HBG@sound?2radio?2?$AA@
 
 
@@ -4507,15 +4507,15 @@ int32_t FileServices::GetPathForFileString(int32_t, int32_t, class basic_string<
 
 
 // Contribution: 3:00003110-00003116 Module: 21, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00003110
+// GLOBAL: COPTER_D 0x00003110
 // ??_C@_06CDIJ@sound?2?$AA@
 
 
 // Contribution: 3:00003118-0000311c Module: 21, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00003118
+// GLOBAL: COPTER_D 0x00003118
 // ??_C@_04IKJO@smk?2?$AA@
 
 
 // Contribution: 3:0006dc00-0006dc73 Module: 21, 8 byte alignment, uninitialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x0006dc00
+// GLOBAL: COPTER_D 0x0006dc00
 // gFileServices

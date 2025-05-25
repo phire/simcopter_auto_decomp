@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:000f7af0-000f8bb0 Module: 175, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x004f8af0
+// FUNCTION: COPTER_D 0x004f8af0
 void S3CameraMove() {
 // LINE 100:
 	asm( 
@@ -525,7 +525,7 @@ void S3CameraMove() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f8f69
+// FUNCTION: COPTER_D 0x004f8f69
 void NormalizeGridPoint() {
 // LINE 283:
 	asm( 
@@ -591,7 +591,7 @@ void NormalizeGridPoint() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f8fe2
+// FUNCTION: COPTER_D 0x004f8fe2
 void SetIdealCameraPos() {
 // LINE 306:
 	asm( 
@@ -861,7 +861,7 @@ void SetIdealCameraPos() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f9240
+// FUNCTION: COPTER_D 0x004f9240
 void GetIdealCameraPos() {
 // LINE 403:
 	asm( 
@@ -892,7 +892,7 @@ void GetIdealCameraPos() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f9263
+// FUNCTION: COPTER_D 0x004f9263
 void CalcCameraAngles() {
 // LINE 423:
 	asm( 
@@ -1265,7 +1265,7 @@ void CalcCameraAngles() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f955f
+// FUNCTION: COPTER_D 0x004f955f
 void S3AngleRotMat() {
 // LINE 528:
 	asm( 
@@ -1501,7 +1501,7 @@ void S3AngleRotMat() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f9735
+// FUNCTION: COPTER_D 0x004f9735
 void S3CameraRotate() {
 // LINE 564:
 	asm( 
@@ -1684,7 +1684,7 @@ void S3CameraRotate() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f98dc
+// FUNCTION: COPTER_D 0x004f98dc
 void S3CameraTweakInit() {
 // LINE 711:
 	asm( 
@@ -1726,7 +1726,7 @@ void S3CameraTweakInit() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f9912
+// FUNCTION: COPTER_D 0x004f9912
 void S3CameraChaseAdjust() {
 // LINE 742:
 	asm( 
@@ -1868,7 +1868,7 @@ void S3CameraChaseAdjust() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f9a4e
+// FUNCTION: COPTER_D 0x004f9a4e
 void S3CameraCycleChase() {
 // LINE 781:
 	asm( 
@@ -1901,7 +1901,7 @@ void S3CameraCycleChase() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f9a76
+// FUNCTION: COPTER_D 0x004f9a76
 struct _CHASE_INFO* S3CameraGetChaseInfo() {
 // LINE 794:
 	asm( 
@@ -1926,7 +1926,7 @@ struct _CHASE_INFO* S3CameraGetChaseInfo() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f9a8b
+// FUNCTION: COPTER_D 0x004f9a8b
 void S3CameraSetChaseInfo() {
 // LINE 805:
 	asm( 
@@ -1953,7 +1953,7 @@ void S3CameraSetChaseInfo() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004f9aa5
+// FUNCTION: COPTER_D 0x004f9aa5
 int32_t S3CameraGetBldAlt() {
 // LINE 817:
 	asm( 
@@ -2105,23 +2105,23 @@ int32_t S3CameraGetBldAlt() {
 
 
 // Contribution: 3:0001ddb8-0001de10 Module: 175, 8 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x0001ddb8
+// GLOBAL: COPTER_D 0x0001ddb8
 // G_camera_mode
-// GLOBAL: SIMCOPTER 0x0001ddc0
+// GLOBAL: COPTER_D 0x0001ddc0
 // S_camera_targpos2
-// GLOBAL: SIMCOPTER 0x0001ddd0
+// GLOBAL: COPTER_D 0x0001ddd0
 // S_camera_targpos1
-// GLOBAL: SIMCOPTER 0x0001dde0
+// GLOBAL: COPTER_D 0x0001dde0
 // S_camera_targpos3
-// GLOBAL: SIMCOPTER 0x0001ddec
+// GLOBAL: COPTER_D 0x0001ddec
 // InClose
-// GLOBAL: SIMCOPTER 0x0001ddf0
+// GLOBAL: COPTER_D 0x0001ddf0
 // S_ctwk_min_dist
-// GLOBAL: SIMCOPTER 0x0001ddf4
+// GLOBAL: COPTER_D 0x0001ddf4
 // S_ctwk_max_dist
-// GLOBAL: SIMCOPTER 0x0001ddf8
+// GLOBAL: COPTER_D 0x0001ddf8
 // S_ctwk_height
-// GLOBAL: SIMCOPTER 0x0001ddfc
+// GLOBAL: COPTER_D 0x0001ddfc
 // S_curr_chase
-// GLOBAL: SIMCOPTER 0x0001de00
+// GLOBAL: COPTER_D 0x0001de00
 // S_altdiff

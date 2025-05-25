@@ -5,49 +5,49 @@
 
 
 // Contribution: 1:0009fa00-000a6b52 Module: 9, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x004a0a00
+// FUNCTION: COPTER_D 0x004a0a00
 // $E48
 
-// FUNCTION: SIMCOPTER 0x004a0a1a
+// FUNCTION: COPTER_D 0x004a0a1a
 // $E44
 
-// FUNCTION: SIMCOPTER 0x004a0c73
+// FUNCTION: COPTER_D 0x004a0c73
 // $E47
 
-// FUNCTION: SIMCOPTER 0x004a0c90
+// FUNCTION: COPTER_D 0x004a0c90
 // $E45
 
-// FUNCTION: SIMCOPTER 0x004a0e5f
+// FUNCTION: COPTER_D 0x004a0e5f
 // $E53
 
-// FUNCTION: SIMCOPTER 0x004a0e79
+// FUNCTION: COPTER_D 0x004a0e79
 // $E50
 
-// FUNCTION: SIMCOPTER 0x004a10d2
+// FUNCTION: COPTER_D 0x004a10d2
 // $E52
 
-// FUNCTION: SIMCOPTER 0x004a10ef
+// FUNCTION: COPTER_D 0x004a10ef
 // $E51
 
-// FUNCTION: SIMCOPTER 0x004a12be
+// FUNCTION: COPTER_D 0x004a12be
 // $E58
 
-// FUNCTION: SIMCOPTER 0x004a12d8
+// FUNCTION: COPTER_D 0x004a12d8
 // $E55
 
-// FUNCTION: SIMCOPTER 0x004a1531
+// FUNCTION: COPTER_D 0x004a1531
 // $E57
 
-// FUNCTION: SIMCOPTER 0x004a154e
+// FUNCTION: COPTER_D 0x004a154e
 // $E56
 
-// FUNCTION: SIMCOPTER 0x004a171d
+// FUNCTION: COPTER_D 0x004a171d
 // $E61
 
-// FUNCTION: SIMCOPTER 0x004a1732
+// FUNCTION: COPTER_D 0x004a1732
 // $E60
 
-// FUNCTION: SIMCOPTER 0x004a174c
+// FUNCTION: COPTER_D 0x004a174c
 void GraphicWindowColorConstants::GraphicWindowColorConstants() {
 // LINE 33:
 	asm( 
@@ -116,7 +116,7 @@ void GraphicWindowColorConstants::GraphicWindowColorConstants() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a17be
+// FUNCTION: COPTER_D 0x004a17be
 int32_t GraphicWindowOwner::DoMessage(class GraphicWindow*, long, long, void * __ptr32) {
 // LINE 61:
 	asm( 
@@ -143,7 +143,7 @@ int32_t GraphicWindowOwner::DoMessage(class GraphicWindow*, long, long, void * _
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a17d8
+// FUNCTION: COPTER_D 0x004a17d8
 void GraphicWindowManager::GraphicWindowManager(class GraphicWindow*) {
 // LINE 77:
 	asm( 
@@ -331,7 +331,7 @@ void GraphicWindowManager::GraphicWindowManager(class GraphicWindow*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a1a60
+// FUNCTION: COPTER_D 0x004a1a60
 void GraphicWindowManager::~GraphicWindowManager() {
 // LINE 85:
 	asm( 
@@ -461,7 +461,7 @@ void GraphicWindowManager::~GraphicWindowManager() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a1c21
+// FUNCTION: COPTER_D 0x004a1c21
 void GraphicWindowManager::SetNewBaseWindow(class GraphicWindow*) {
 // LINE 97:
 	asm( 
@@ -490,7 +490,7 @@ void GraphicWindowManager::SetNewBaseWindow(class GraphicWindow*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a1c42
+// FUNCTION: COPTER_D 0x004a1c42
 int32_t GraphicWindowManager::DeleteWindow(class GraphicWindow*) {
 // LINE 113:
 	asm( 
@@ -737,7 +737,7 @@ int32_t GraphicWindowManager::DeleteWindow(class GraphicWindow*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a1f4e
+// FUNCTION: COPTER_D 0x004a1f4e
 int32_t GraphicWindowManager::DeleteWindowAndRemoveItsTraces(class GraphicWindow*) {
 // LINE 138:
 	asm( 
@@ -830,7 +830,7 @@ int32_t GraphicWindowManager::DeleteWindowAndRemoveItsTraces(class GraphicWindow
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a1ff2
+// FUNCTION: COPTER_D 0x004a1ff2
 int32_t GraphicWindowManager::DeleteAllWindowsInDeletionList() {
 // LINE 162:
 	asm( 
@@ -1009,7 +1009,7 @@ int32_t GraphicWindowManager::DeleteAllWindowsInDeletionList() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a21d6
+// FUNCTION: COPTER_D 0x004a21d6
 int32_t GraphicWindowManager::IsWindowOrParentInDeletionList(class GraphicWindow*) {
 // LINE 191:
 	asm( 
@@ -1119,7 +1119,7 @@ int32_t GraphicWindowManager::IsWindowOrParentInDeletionList(class GraphicWindow
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a22c1
+// FUNCTION: COPTER_D 0x004a22c1
 long GraphicWindowManager::DoKeyDown(long, char) {
 // LINE 217:
 	asm( 
@@ -1253,7 +1253,7 @@ long GraphicWindowManager::DoKeyDown(long, char) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a23da
+// FUNCTION: COPTER_D 0x004a23da
 long GraphicWindowManager::DoKeyUp(long, char) {
 // LINE 249:
 	asm( 
@@ -1387,7 +1387,7 @@ long GraphicWindowManager::DoKeyUp(long, char) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a24f3
+// FUNCTION: COPTER_D 0x004a24f3
 long GraphicWindowManager::DoCharacter(long) {
 // LINE 276:
 	asm( 
@@ -1519,7 +1519,7 @@ long GraphicWindowManager::DoCharacter(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a2608
+// FUNCTION: COPTER_D 0x004a2608
 long GraphicWindowManager::DoCursorDown(long, long, unsigned long) {
 // LINE 303:
 	asm( 
@@ -1589,7 +1589,7 @@ long GraphicWindowManager::DoCursorDown(long, long, unsigned long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a268c
+// FUNCTION: COPTER_D 0x004a268c
 long GraphicWindowManager::DoCursorUp(long, long, unsigned long) {
 // LINE 329:
 	asm( 
@@ -1659,7 +1659,7 @@ long GraphicWindowManager::DoCursorUp(long, long, unsigned long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a2710
+// FUNCTION: COPTER_D 0x004a2710
 long GraphicWindowManager::DoCursorMove(long, long) {
 // LINE 343:
 	asm( 
@@ -1726,7 +1726,7 @@ long GraphicWindowManager::DoCursorMove(long, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a278e
+// FUNCTION: COPTER_D 0x004a278e
 int32_t GraphicWindowManager::SendCursorMessageToChildWindow(class GraphicWindow*, int32_t, long, long, unsigned long) {
 // LINE 359:
 	asm( 
@@ -1957,7 +1957,7 @@ int32_t GraphicWindowManager::SendCursorMessageToChildWindow(class GraphicWindow
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a29cd
+// FUNCTION: COPTER_D 0x004a29cd
 int32_t GraphicWindowManager::ComposeAllWindows() {
 // LINE 396:
 	asm( 
@@ -2015,7 +2015,7 @@ int32_t GraphicWindowManager::ComposeAllWindows() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a2a1b
+// FUNCTION: COPTER_D 0x004a2a1b
 int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow*) {
 // LINE 414:
 	asm( 
@@ -2045,7 +2045,7 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a2a3f
+// FUNCTION: COPTER_D 0x004a2a3f
 public: __thiscall GraphicWindow::GraphicWindow(void) {
 // LINE 444:
 	asm( 
@@ -2421,7 +2421,7 @@ public: __thiscall GraphicWindow::GraphicWindow(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a2f5c
+// FUNCTION: COPTER_D 0x004a2f5c
 public: __thiscall GraphicWindow::GraphicWindow(class GraphicWindow const &) {
 // LINE 464:
 	asm( 
@@ -2743,7 +2743,7 @@ public: __thiscall GraphicWindow::GraphicWindow(class GraphicWindow const &) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a33ee
+// FUNCTION: COPTER_D 0x004a33ee
 public: __thiscall GraphicWindow::GraphicWindow(class MRect &, long, class GraphicWindow *, class GraphicWindowOwner *, int) {
 // LINE 480:
 	asm( 
@@ -3149,7 +3149,7 @@ public: __thiscall GraphicWindow::GraphicWindow(class MRect &, long, class Graph
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a393d
+// FUNCTION: COPTER_D 0x004a393d
 public: __thiscall GraphicWindow::GraphicWindow(char const *, class MRect &, long, class GraphicWindow *, class GraphicWindowOwner *, int, int) {
 // LINE 513:
 	asm( 
@@ -3640,7 +3640,7 @@ public: __thiscall GraphicWindow::GraphicWindow(char const *, class MRect &, lon
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a4045
+// FUNCTION: COPTER_D 0x004a4045
 protected: virtual __thiscall GraphicWindow::~GraphicWindow(void) {
 // LINE 537:
 	asm( 
@@ -3960,7 +3960,7 @@ protected: virtual __thiscall GraphicWindow::~GraphicWindow(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a44d4
+// FUNCTION: COPTER_D 0x004a44d4
 public: virtual int __thiscall GraphicWindow::Initialize(void) {
 // LINE 560:
 	asm( 
@@ -3987,7 +3987,7 @@ public: virtual int __thiscall GraphicWindow::Initialize(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a44ef
+// FUNCTION: COPTER_D 0x004a44ef
 public: class GraphicWindow & __thiscall GraphicWindow::operator=(class GraphicWindow const &) {
 // LINE 604:
 	asm( 
@@ -4475,7 +4475,7 @@ public: class GraphicWindow & __thiscall GraphicWindow::operator=(class GraphicW
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a4aa0
+// FUNCTION: COPTER_D 0x004a4aa0
 public: virtual int __thiscall GraphicWindow::CreateImage(int) {
 // LINE 641:
 	asm( 
@@ -4669,7 +4669,7 @@ public: virtual int __thiscall GraphicWindow::CreateImage(int) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a4cab
+// FUNCTION: COPTER_D 0x004a4cab
 public: virtual void __thiscall GraphicWindow::DestroyImage(void) {
 // LINE 663:
 	asm( 
@@ -4724,7 +4724,7 @@ public: virtual void __thiscall GraphicWindow::DestroyImage(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a4d1c
+// FUNCTION: COPTER_D 0x004a4d1c
 public: virtual void __thiscall GraphicWindow::SetTransparentColor(int) {
 // LINE 676:
 	asm( 
@@ -4787,7 +4787,7 @@ public: virtual void __thiscall GraphicWindow::SetTransparentColor(int) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a4d7e
+// FUNCTION: COPTER_D 0x004a4d7e
 public: virtual void __thiscall GraphicWindow::MoveWindow(int, int) {
 // LINE 690:
 	asm( 
@@ -4850,7 +4850,7 @@ public: virtual void __thiscall GraphicWindow::MoveWindow(int, int) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a4df1
+// FUNCTION: COPTER_D 0x004a4df1
 public: virtual void __thiscall GraphicWindow::SetWidthAndHeight(int, int) {
 // LINE 701:
 	asm( 
@@ -4915,7 +4915,7 @@ public: virtual void __thiscall GraphicWindow::SetWidthAndHeight(int, int) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a4e55
+// FUNCTION: COPTER_D 0x004a4e55
 public: virtual void __thiscall GraphicWindow::CenterWindow(class GraphicWindow *) {
 // LINE 714:
 	asm( 
@@ -4963,7 +4963,7 @@ public: virtual void __thiscall GraphicWindow::CenterWindow(class GraphicWindow 
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a4ea8
+// FUNCTION: COPTER_D 0x004a4ea8
 public: virtual void __thiscall GraphicWindow::CenterWindow(int, int) {
 // LINE 729:
 	asm( 
@@ -5062,7 +5062,7 @@ public: virtual void __thiscall GraphicWindow::CenterWindow(int, int) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a4f5c
+// FUNCTION: COPTER_D 0x004a4f5c
 public: int __thiscall GraphicWindow::FitRectToWindow(class MRect &) {
 // LINE 755:
 	asm( 
@@ -5245,7 +5245,7 @@ public: int __thiscall GraphicWindow::FitRectToWindow(class MRect &) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a50e0
+// FUNCTION: COPTER_D 0x004a50e0
 public: virtual void __thiscall GraphicWindow::SetChanged(int, int) {
 // LINE 786:
 	asm( 
@@ -5350,7 +5350,7 @@ public: virtual void __thiscall GraphicWindow::SetChanged(int, int) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a51d0
+// FUNCTION: COPTER_D 0x004a51d0
 public: virtual void __thiscall GraphicWindow::SetWindowTitle(class basic_string<char> &) {
 // LINE 808:
 	asm( 
@@ -5510,7 +5510,7 @@ public: virtual void __thiscall GraphicWindow::SetWindowTitle(class basic_string
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a53be
+// FUNCTION: COPTER_D 0x004a53be
 public: virtual int __thiscall GraphicWindow::AddChild(class GraphicWindow *) {
 // LINE 817:
 	asm( 
@@ -5735,7 +5735,7 @@ public: virtual int __thiscall GraphicWindow::AddChild(class GraphicWindow *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a569a
+// FUNCTION: COPTER_D 0x004a569a
 public: virtual int __thiscall GraphicWindow::DeleteChild(class GraphicWindow *) {
 // LINE 830:
 	asm( 
@@ -5906,7 +5906,7 @@ public: virtual int __thiscall GraphicWindow::DeleteChild(class GraphicWindow *)
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a5837
+// FUNCTION: COPTER_D 0x004a5837
 public: virtual class GraphicWindow * __thiscall GraphicWindow::DeleteChild(long) {
 // LINE 861:
 	asm( 
@@ -6102,7 +6102,7 @@ public: virtual class GraphicWindow * __thiscall GraphicWindow::DeleteChild(long
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a5a11
+// FUNCTION: COPTER_D 0x004a5a11
 public: virtual int __thiscall GraphicWindow::RemoveChild(class GraphicWindow *) {
 // LINE 892:
 	asm( 
@@ -6238,7 +6238,7 @@ public: virtual int __thiscall GraphicWindow::RemoveChild(class GraphicWindow *)
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a5b58
+// FUNCTION: COPTER_D 0x004a5b58
 public: virtual void __thiscall GraphicWindow::DeleteAllChildren(void) {
 // LINE 913:
 	asm( 
@@ -6388,7 +6388,7 @@ public: virtual void __thiscall GraphicWindow::DeleteAllChildren(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a5cd8
+// FUNCTION: COPTER_D 0x004a5cd8
 public: virtual void __thiscall GraphicWindow::RemoveAllChildren(void) {
 // LINE 935:
 	asm( 
@@ -6481,7 +6481,7 @@ public: virtual void __thiscall GraphicWindow::RemoveAllChildren(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a5dd1
+// FUNCTION: COPTER_D 0x004a5dd1
 public: virtual class GraphicWindow * __thiscall GraphicWindow::FindChild(long) {
 // LINE 950:
 	asm( 
@@ -6574,7 +6574,7 @@ public: virtual class GraphicWindow * __thiscall GraphicWindow::FindChild(long) 
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a5ea7
+// FUNCTION: COPTER_D 0x004a5ea7
 public: static class GraphicWindow * __cdecl GraphicWindow::FindWindowA(long) {
 // LINE 968:
 	asm( 
@@ -6664,7 +6664,7 @@ public: static class GraphicWindow * __cdecl GraphicWindow::FindWindowA(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a5f76
+// FUNCTION: COPTER_D 0x004a5f76
 public: static int __cdecl GraphicWindow::FindWindowA(class GraphicWindow *) {
 // LINE 983:
 	asm( 
@@ -6751,7 +6751,7 @@ public: static int __cdecl GraphicWindow::FindWindowA(class GraphicWindow *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a603c
+// FUNCTION: COPTER_D 0x004a603c
 public: virtual int __thiscall GraphicWindow::DeleteSelf(void) {
 // LINE 999:
 	asm( 
@@ -6787,7 +6787,7 @@ public: virtual int __thiscall GraphicWindow::DeleteSelf(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a606b
+// FUNCTION: COPTER_D 0x004a606b
 public: virtual void __thiscall GraphicWindow::RemoveSelf(void) {
 // LINE 1010:
 	asm( 
@@ -6827,7 +6827,7 @@ public: virtual void __thiscall GraphicWindow::RemoveSelf(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a60a3
+// FUNCTION: COPTER_D 0x004a60a3
 public: virtual int __thiscall GraphicWindow::ComposeSelf(void) {
 // LINE 1027:
 	asm( 
@@ -6933,7 +6933,7 @@ public: virtual int __thiscall GraphicWindow::ComposeSelf(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a6168
+// FUNCTION: COPTER_D 0x004a6168
 protected: virtual int __thiscall GraphicWindow::DrawSelf(void) {
 // LINE 1059:
 	asm( 
@@ -6960,7 +6960,7 @@ protected: virtual int __thiscall GraphicWindow::DrawSelf(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a6180
+// FUNCTION: COPTER_D 0x004a6180
 protected: virtual void __thiscall GraphicWindow::DrawChildren(void) {
 // LINE 1075:
 	asm( 
@@ -7057,7 +7057,7 @@ protected: virtual void __thiscall GraphicWindow::DrawChildren(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a6256
+// FUNCTION: COPTER_D 0x004a6256
 public: virtual void __thiscall GraphicWindow::InvalidateAllOverlaps(class list<class GraphicWindow *>::iterator) {
 // LINE 1115:
 	asm( 
@@ -7190,7 +7190,7 @@ public: virtual void __thiscall GraphicWindow::InvalidateAllOverlaps(class list<
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a6399
+// FUNCTION: COPTER_D 0x004a6399
 public: virtual void __thiscall GraphicWindow::InvalidateAllChildren(int) {
 // LINE 1136:
 	asm( 
@@ -7279,7 +7279,7 @@ public: virtual void __thiscall GraphicWindow::InvalidateAllChildren(int) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a646b
+// FUNCTION: COPTER_D 0x004a646b
 protected: virtual int __thiscall GraphicWindow::DoesWindowNeedUpdating(void) {
 // LINE 1161:
 	asm( 
@@ -7388,7 +7388,7 @@ protected: virtual int __thiscall GraphicWindow::DoesWindowNeedUpdating(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a6568
+// FUNCTION: COPTER_D 0x004a6568
 public: virtual long __thiscall GraphicWindow::DoCharacter(long) {
 // LINE 1186:
 	asm( 
@@ -7415,7 +7415,7 @@ public: virtual long __thiscall GraphicWindow::DoCharacter(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a6582
+// FUNCTION: COPTER_D 0x004a6582
 public: virtual long __thiscall GraphicWindow::DoKeyDown(long, char) {
 // LINE 1199:
 	asm( 
@@ -7442,7 +7442,7 @@ public: virtual long __thiscall GraphicWindow::DoKeyDown(long, char) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a659c
+// FUNCTION: COPTER_D 0x004a659c
 public: virtual long __thiscall GraphicWindow::DoKeyUp(long, char) {
 // LINE 1213:
 	asm( 
@@ -7469,7 +7469,7 @@ public: virtual long __thiscall GraphicWindow::DoKeyUp(long, char) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a65b6
+// FUNCTION: COPTER_D 0x004a65b6
 public: virtual long __thiscall GraphicWindow::DoCursorDown(long, long, unsigned long) {
 // LINE 1230:
 	asm( 
@@ -7496,7 +7496,7 @@ public: virtual long __thiscall GraphicWindow::DoCursorDown(long, long, unsigned
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a65d0
+// FUNCTION: COPTER_D 0x004a65d0
 public: virtual long __thiscall GraphicWindow::DoCursorUp(long, long, unsigned long) {
 // LINE 1243:
 	asm( 
@@ -7523,7 +7523,7 @@ public: virtual long __thiscall GraphicWindow::DoCursorUp(long, long, unsigned l
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a65ed
+// FUNCTION: COPTER_D 0x004a65ed
 public: virtual long __thiscall GraphicWindow::DoCursorMove(long, long) {
 // LINE 1256:
 	asm( 
@@ -7550,7 +7550,7 @@ public: virtual long __thiscall GraphicWindow::DoCursorMove(long, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a6607
+// FUNCTION: COPTER_D 0x004a6607
 public: virtual int __thiscall GraphicWindow::CaptureCursorStart(class GraphicWindow *) {
 // LINE 1269:
 	asm( 
@@ -7592,7 +7592,7 @@ public: virtual int __thiscall GraphicWindow::CaptureCursorStart(class GraphicWi
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a6640
+// FUNCTION: COPTER_D 0x004a6640
 public: virtual int __thiscall GraphicWindow::CaptureCursorEnd(class GraphicWindow *) {
 // LINE 1281:
 	asm( 
@@ -7634,7 +7634,7 @@ public: virtual int __thiscall GraphicWindow::CaptureCursorEnd(class GraphicWind
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a667d
+// FUNCTION: COPTER_D 0x004a667d
 public: virtual void __thiscall GraphicWindow::WindowToScreenCoordinates(long &, long &) {
 // LINE 1298:
 	asm( 
@@ -7692,7 +7692,7 @@ public: virtual void __thiscall GraphicWindow::WindowToScreenCoordinates(long &,
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a66cc
+// FUNCTION: COPTER_D 0x004a66cc
 public: virtual void __thiscall GraphicWindow::ScreenToWindowCoordinates(long &, long &) {
 // LINE 1319:
 	asm( 
@@ -7750,7 +7750,7 @@ public: virtual void __thiscall GraphicWindow::ScreenToWindowCoordinates(long &,
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a6720
+// FUNCTION: COPTER_D 0x004a6720
 protected: virtual class CBackBuffer * __thiscall GraphicWindow::GetImage(void) {
 // LINE 1340:
 	asm( 
@@ -7778,7 +7778,7 @@ protected: virtual class CBackBuffer * __thiscall GraphicWindow::GetImage(void) 
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a673c
+// FUNCTION: COPTER_D 0x004a673c
 protected: virtual void __thiscall GraphicWindow::GetImagePath(void) {
 // LINE 1353:
 	asm( 
@@ -8053,7 +8053,7 @@ protected: virtual void __thiscall GraphicWindow::GetImagePath(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a6bcd
+// FUNCTION: COPTER_D 0x004a6bcd
 public: virtual int __thiscall GraphicWindow::SetImageToDrawOnto(void) {
 // LINE 1366:
 	asm( 
@@ -8196,7 +8196,7 @@ public: virtual int __thiscall GraphicWindow::SetImageToDrawOnto(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a6cf0
+// FUNCTION: COPTER_D 0x004a6cf0
 public: virtual void __thiscall GraphicWindow::SetAllImagesToDrawOnto(void) {
 // LINE 1402:
 	asm( 
@@ -8289,7 +8289,7 @@ public: virtual void __thiscall GraphicWindow::SetAllImagesToDrawOnto(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a6dc5
+// FUNCTION: COPTER_D 0x004a6dc5
 public: virtual void __thiscall GraphicWindow::CreateAllImages(void) {
 // LINE 1421:
 	asm( 
@@ -8390,7 +8390,7 @@ public: virtual void __thiscall GraphicWindow::CreateAllImages(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a6ea7
+// FUNCTION: COPTER_D 0x004a6ea7
 public: virtual void __thiscall GraphicWindow::DestroyAllImages(void) {
 // LINE 1441:
 	asm( 
@@ -8483,7 +8483,7 @@ public: virtual void __thiscall GraphicWindow::DestroyAllImages(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a6f7c
+// FUNCTION: COPTER_D 0x004a6f7c
 public: virtual void __thiscall GraphicWindow::DrawBorder(struct SparkalColor *) {
 // LINE 1455:
 	asm( 
@@ -8612,7 +8612,7 @@ public: virtual void __thiscall GraphicWindow::DrawBorder(struct SparkalColor *)
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a7075
+// FUNCTION: COPTER_D 0x004a7075
 public: static int __cdecl GraphicWindow::MakeModal(class GraphicWindow *) {
 // LINE 1484:
 	asm( 
@@ -8826,7 +8826,7 @@ public: static int __cdecl GraphicWindow::MakeModal(class GraphicWindow *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a7340
+// FUNCTION: COPTER_D 0x004a7340
 public: static int __cdecl GraphicWindow::RemoveModal(class GraphicWindow *) {
 // LINE 1499:
 	asm( 
@@ -8946,7 +8946,7 @@ public: static int __cdecl GraphicWindow::RemoveModal(class GraphicWindow *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a7470
+// FUNCTION: COPTER_D 0x004a7470
 public: static int __cdecl GraphicWindow::MakeFocus(class GraphicWindow *) {
 // LINE 1530:
 	asm( 
@@ -9160,7 +9160,7 @@ public: static int __cdecl GraphicWindow::MakeFocus(class GraphicWindow *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a773b
+// FUNCTION: COPTER_D 0x004a773b
 public: static int __cdecl GraphicWindow::RemoveFocus(class GraphicWindow *) {
 // LINE 1544:
 	asm( 
@@ -9280,7 +9280,7 @@ public: static int __cdecl GraphicWindow::RemoveFocus(class GraphicWindow *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a786b
+// FUNCTION: COPTER_D 0x004a786b
 public: virtual int __thiscall GraphicWindow::CanWeRespondToMessage(void) {
 // LINE 1567:
 	asm( 
@@ -9368,7 +9368,7 @@ public: virtual int __thiscall GraphicWindow::CanWeRespondToMessage(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a790f
+// FUNCTION: COPTER_D 0x004a790f
 void ScreenWindow::ScreenWindow() {
 // LINE 1600:
 	asm( 
@@ -9403,7 +9403,7 @@ void ScreenWindow::ScreenWindow() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a794d
+// FUNCTION: COPTER_D 0x004a794d
 void ScreenWindow::ScreenWindow(const class ScreenWindow&) {
 // LINE 1611:
 	asm( 
@@ -9440,7 +9440,7 @@ void ScreenWindow::ScreenWindow(const class ScreenWindow&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a7989
+// FUNCTION: COPTER_D 0x004a7989
 void ScreenWindow::ScreenWindow(class MRect&, int32_t, class CBackBuffer*, class GraphicWindowOwner*, int32_t) {
 // LINE 1624:
 	asm( 
@@ -9499,7 +9499,7 @@ void ScreenWindow::ScreenWindow(class MRect&, int32_t, class CBackBuffer*, class
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a79ed
+// FUNCTION: COPTER_D 0x004a79ed
 void ScreenWindow::~ScreenWindow() {
 // LINE 1636:
 	asm( 
@@ -9531,7 +9531,7 @@ void ScreenWindow::~ScreenWindow() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a7a1e
+// FUNCTION: COPTER_D 0x004a7a1e
 class ScreenWindow& ScreenWindow::operator=(const class ScreenWindow&) {
 // LINE 1645:
 	asm( 
@@ -9572,7 +9572,7 @@ class ScreenWindow& ScreenWindow::operator=(const class ScreenWindow&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a7a51
+// FUNCTION: COPTER_D 0x004a7a51
 int32_t ScreenWindow::ComposeSelf() {
 // LINE 1662:
 	asm( 
@@ -9679,7 +9679,7 @@ int32_t ScreenWindow::ComposeSelf() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a7b38
+// FUNCTION: COPTER_D 0x004a7b38
 int32_t ScreenWindow::DrawSelf() {
 // LINE 1694:
 	asm( 
@@ -9718,7 +9718,7 @@ int32_t ScreenWindow::DrawSelf() {
 
 
 // Contribution: 1:000a6de0-000a6e18 Module: 9, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x004a7de0
+// FUNCTION: COPTER_D 0x004a7de0
 // GraphicWindow::`scalar deleting destructor'
 
 
@@ -9736,7 +9736,7 @@ int32_t ScreenWindow::DrawSelf() {
 
 
 // Contribution: 1:000a6f40-000a6f78 Module: 9, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x004a7f40
+// FUNCTION: COPTER_D 0x004a7f40
 // ScreenWindow::`scalar deleting destructor'
 
 
@@ -9751,9 +9751,9 @@ int32_t ScreenWindow::DrawSelf() {
 
 
 // Contribution: 2:00002648-0000267f Module: 9, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00002648
+// GLOBAL: COPTER_D 0x00002648
 // ??_7GraphicWindowManager@@6B@
-// GLOBAL: SIMCOPTER 0x00002680
+// GLOBAL: COPTER_D 0x00002680
 // ??_7GraphicWindow@@6B@
 
 
@@ -9761,63 +9761,63 @@ int32_t ScreenWindow::DrawSelf() {
 
 
 // Contribution: 2:00002748-0000280b Module: 9, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00002748
+// GLOBAL: COPTER_D 0x00002748
 // ??_7ScreenWindow@@6B@
 
 
 // Contribution: 3:00000090-0000009f Module: 9, 4 byte alignment, initialized_data, read, write, 
-// LOCAL: SIMCOPTER 0x00000094
+// LOCAL: COPTER_D 0x00000094
 // $S54
-// LOCAL: SIMCOPTER 0x00000098
+// LOCAL: COPTER_D 0x00000098
 // $S59
-// LOCAL: SIMCOPTER 0x0000009c
+// LOCAL: COPTER_D 0x0000009c
 // $S62
 
 
 // Contribution: 3:00003960-0000396f Module: 9, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x00003960
+// GLOBAL: COPTER_D 0x00003960
 // GraphicWindow::windowCursorCapture
-// GLOBAL: SIMCOPTER 0x00003964
+// GLOBAL: COPTER_D 0x00003964
 // GraphicWindow::windowManager
-// GLOBAL: SIMCOPTER 0x00003968
+// GLOBAL: COPTER_D 0x00003968
 // GraphicWindow::screenWindow
 
 
 // Contribution: 3:00003970-00003973 Module: 9, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00003970
+// GLOBAL: COPTER_D 0x00003970
 // list<GraphicWindow *>::number_of_lists
-// GLOBAL: SIMCOPTER 0x00003974
+// GLOBAL: COPTER_D 0x00003974
 // list<GraphicWindow *>::last
 
 
 // Contribution: 3:00003974-00003977 Module: 9, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00003978
+// GLOBAL: COPTER_D 0x00003978
 // list<GraphicWindow *>::next_avail
 
 
 // Contribution: 3:00003978-0000397b Module: 9, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x0000397c
+// GLOBAL: COPTER_D 0x0000397c
 // list<GraphicWindow *>::free_list
 
 
 // Contribution: 3:0000397c-0000397f Module: 9, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00003980
+// GLOBAL: COPTER_D 0x00003980
 // list<GraphicWindow *>::buffer_list
 
 
 // Contribution: 3:00003980-00003983 Module: 9, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00003984
+// GLOBAL: COPTER_D 0x00003984
 // SZ_INVENTORY_IMAGE_FILE_NAME
 
 
 // Contribution: 3:0006f960-0006f9a7 Module: 9, 8 byte alignment, uninitialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x0006f960
+// GLOBAL: COPTER_D 0x0006f960
 // GraphicWindow::listFocusWindows
-// GLOBAL: SIMCOPTER 0x0006f968
+// GLOBAL: COPTER_D 0x0006f968
 // GraphicWindow::colorConstants
-// GLOBAL: SIMCOPTER 0x0006f990
+// GLOBAL: COPTER_D 0x0006f990
 // GraphicWindow::listModalWindows
-// LOCAL: SIMCOPTER 0x0006f998
+// LOCAL: COPTER_D 0x0006f998
 // $S46
-// GLOBAL: SIMCOPTER 0x0006f9a0
+// GLOBAL: COPTER_D 0x0006f9a0
 // GraphicWindow::listValidWindows

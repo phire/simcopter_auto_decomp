@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:0015b270-0015bac4 Module: 195, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x0055c270
+// FUNCTION: COPTER_D 0x0055c270
 void FlatFile::FlatFile() {
 // LINE 13:
 	asm( 
@@ -51,7 +51,7 @@ void FlatFile::FlatFile() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055c2bb
+// FUNCTION: COPTER_D 0x0055c2bb
 void FlatFile::~FlatFile() {
 // LINE 26:
 	asm( 
@@ -89,7 +89,7 @@ void FlatFile::~FlatFile() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055c2fa
+// FUNCTION: COPTER_D 0x0055c2fa
 class FlatFile* FlatFile::FindByName(unsigned char *) {
 // LINE 42:
 	asm( 
@@ -149,7 +149,7 @@ class FlatFile* FlatFile::FindByName(unsigned char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055c36a
+// FUNCTION: COPTER_D 0x0055c36a
 long FlatFile::Open(char *) {
 // LINE 52:
 	asm( 
@@ -198,7 +198,7 @@ long FlatFile::Open(char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055c3c7
+// FUNCTION: COPTER_D 0x0055c3c7
 long FlatFile::Open(unsigned char *) {
 // LINE 60:
 	asm( 
@@ -380,7 +380,7 @@ long FlatFile::Open(unsigned char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055c586
+// FUNCTION: COPTER_D 0x0055c586
 void FlatFile::OpenFromOtherFile(class FlatFile*) {
 // LINE 110:
 	asm( 
@@ -419,7 +419,7 @@ void FlatFile::OpenFromOtherFile(class FlatFile*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055c5cb
+// FUNCTION: COPTER_D 0x0055c5cb
 long FlatFile::Close() {
 // LINE 117:
 	asm( 
@@ -518,7 +518,7 @@ long FlatFile::Close() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055c69c
+// FUNCTION: COPTER_D 0x0055c69c
 long FlatFile::ReadBlock(void * __ptr32, long *) {
 // LINE 158:
 	asm( 
@@ -580,7 +580,7 @@ long FlatFile::ReadBlock(void * __ptr32, long *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055c711
+// FUNCTION: COPTER_D 0x0055c711
 long FlatFile::SetPos(long) {
 // LINE 179:
 	asm( 
@@ -633,7 +633,7 @@ long FlatFile::SetPos(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055c777
+// FUNCTION: COPTER_D 0x0055c777
 long FlatFile::Advance(long) {
 // LINE 191:
 	asm( 
@@ -686,7 +686,7 @@ long FlatFile::Advance(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055c7dd
+// FUNCTION: COPTER_D 0x0055c7dd
 unsigned short FlatFile::ValidFile() {
 // LINE 220:
 	asm( 
@@ -722,7 +722,7 @@ unsigned short FlatFile::ValidFile() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055c814
+// FUNCTION: COPTER_D 0x0055c814
 unsigned short FlatFile::SameFile(class FlatFile*) {
 // LINE 234:
 	asm( 
@@ -773,7 +773,7 @@ unsigned short FlatFile::SameFile(class FlatFile*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055c87a
+// FUNCTION: COPTER_D 0x0055c87a
 long FlatFile::Read4(long *) {
 // LINE 243:
 	asm( 
@@ -823,7 +823,7 @@ long FlatFile::Read4(long *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055c8c5
+// FUNCTION: COPTER_D 0x0055c8c5
 long FlatFile::Read2(short *) {
 // LINE 251:
 	asm( 
@@ -873,7 +873,7 @@ long FlatFile::Read2(short *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055c910
+// FUNCTION: COPTER_D 0x0055c910
 long FlatFile::Read1(char *) {
 // LINE 259:
 	asm( 
@@ -914,7 +914,7 @@ long FlatFile::Read1(char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055c945
+// FUNCTION: COPTER_D 0x0055c945
 void FlatFile::Link() {
 // LINE 265:
 	asm( 
@@ -948,7 +948,7 @@ void FlatFile::Link() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055c96e
+// FUNCTION: COPTER_D 0x0055c96e
 void FlatFile::Unlink() {
 // LINE 270:
 	asm( 
@@ -1020,7 +1020,7 @@ void FlatFile::Unlink() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055c9e3
+// FUNCTION: COPTER_D 0x0055c9e3
 unsigned short FlatFile::Exclusive() {
 // LINE 284:
 	asm( 
@@ -1085,7 +1085,7 @@ unsigned short FlatFile::Exclusive() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055ca48
+// FUNCTION: COPTER_D 0x0055ca48
 long FlatFile::GetFileName(unsigned char *) {
 // LINE 295:
 	asm( 
@@ -1127,7 +1127,7 @@ long FlatFile::GetFileName(unsigned char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055ca7f
+// FUNCTION: COPTER_D 0x0055ca7f
 short FlatFile::CheckForLeaks() {
 // LINE 301:
 	asm( 
@@ -1179,18 +1179,18 @@ short FlatFile::CheckForLeaks() {
 
 
 // Contribution: 1:0015bad0-0015bb08 Module: 195, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x0055cad0
+// FUNCTION: COPTER_D 0x0055cad0
 // FlatFile::`scalar deleting destructor'
 
 
 
 // Contribution: 2:00004620-0000462f Module: 195, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00004620
+// GLOBAL: COPTER_D 0x00004620
 // ??_7FlatFile@@6B@
 
 
 // Contribution: 3:00026dd8-00026e98 Module: 195, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x00026dd8
+// GLOBAL: COPTER_D 0x00026dd8
 // FlatFile::sList
-// GLOBAL: SIMCOPTER 0x00026ddc
+// GLOBAL: COPTER_D 0x00026ddc
 // FlatFile::sLastFileID

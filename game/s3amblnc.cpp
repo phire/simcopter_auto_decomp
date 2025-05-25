@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:001348a0-0013509d Module: 160, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x005358a0
+// FUNCTION: COPTER_D 0x005358a0
 int32_t CreateAmbulanceInstance() {
 // LINE 76:
 	asm( 
@@ -38,7 +38,7 @@ int32_t CreateAmbulanceInstance() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005358d0
+// FUNCTION: COPTER_D 0x005358d0
 void AmbulanceClass::AmbulanceClass() {
 // LINE 83:
 	asm( 
@@ -71,7 +71,7 @@ void AmbulanceClass::AmbulanceClass() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00535904
+// FUNCTION: COPTER_D 0x00535904
 void AmbulanceClass::~AmbulanceClass() {
 // LINE 89:
 	asm( 
@@ -95,7 +95,7 @@ void AmbulanceClass::~AmbulanceClass() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0053592b
+// FUNCTION: COPTER_D 0x0053592b
 class AmbulanceClass* AmbulanceClass::CreateInstance(int32_t) {
 // LINE 106:
 	asm( 
@@ -310,7 +310,7 @@ class AmbulanceClass* AmbulanceClass::CreateInstance(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00535b14
+// FUNCTION: COPTER_D 0x00535b14
 unsigned char AmbulanceClass::Dispatch(enum EmergencyType, enum EmergencyLevel, long, long) {
 // LINE 243:
 	asm( 
@@ -346,7 +346,7 @@ unsigned char AmbulanceClass::Dispatch(enum EmergencyType, enum EmergencyLevel, 
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00535b46
+// FUNCTION: COPTER_D 0x00535b46
 int32_t AmbulanceClass::IsThisAHospital(unsigned short) {
 // LINE 257:
 	asm( 
@@ -377,7 +377,7 @@ int32_t AmbulanceClass::IsThisAHospital(unsigned short) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00535b75
+// FUNCTION: COPTER_D 0x00535b75
 int32_t AmbulanceClass::IsThisAHospital(long, long) {
 // LINE 264:
 	asm( 
@@ -437,7 +437,7 @@ int32_t AmbulanceClass::IsThisAHospital(long, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00535c21
+// FUNCTION: COPTER_D 0x00535c21
 void AmbulanceClass::ItterateFSM() {
 // LINE 288:
 	asm( 
@@ -869,7 +869,7 @@ void AmbulanceClass::ItterateFSM() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00535fda
+// FUNCTION: COPTER_D 0x00535fda
 int32_t AmbulanceClass::AtScene() {
 // LINE 409:
 	asm( 
@@ -897,7 +897,7 @@ int32_t AmbulanceClass::AtScene() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00535ff9
+// FUNCTION: COPTER_D 0x00535ff9
 void AmbulanceClass::SetSaveData(struct _AUTO_LOAD_SAVE*) {
 // LINE 422:
 	asm( 
@@ -927,7 +927,7 @@ void AmbulanceClass::SetSaveData(struct _AUTO_LOAD_SAVE*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0053601d
+// FUNCTION: COPTER_D 0x0053601d
 void AmbulanceClass::LoadSaveData(struct _AUTO_LOAD_SAVE*) {
 // LINE 436:
 	asm( 
@@ -1005,21 +1005,21 @@ void AmbulanceClass::LoadSaveData(struct _AUTO_LOAD_SAVE*) {
 
 
 // Contribution: 1:001350c0-001350f8 Module: 160, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x005360c0
+// FUNCTION: COPTER_D 0x005360c0
 // AmbulanceClass::`scalar deleting destructor'
 
 
 
 // Contribution: 2:00004280-000042a7 Module: 160, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00004280
+// GLOBAL: COPTER_D 0x00004280
 // ??_7AmbulanceClass@@6B@
 
 
 // Contribution: 3:00020d18-00020dc5 Module: 160, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x00020d18
+// GLOBAL: COPTER_D 0x00020d18
 // curAmbulances
 
 
 // Contribution: 3:000949b8-000949cb Module: 160, 8 byte alignment, uninitialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x000949b8
+// GLOBAL: COPTER_D 0x000949b8
 // ambulances

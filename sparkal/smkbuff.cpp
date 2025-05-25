@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:00096c00-00098e2e Module: 17, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00497c00
+// FUNCTION: COPTER_D 0x00497c00
 void SmackerBuffer::SmackerBuffer() {
 // LINE 39:
 	asm( 
@@ -115,7 +115,7 @@ void SmackerBuffer::SmackerBuffer() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00497ccf
+// FUNCTION: COPTER_D 0x00497ccf
 void SmackerBuffer::SmackerBuffer(char *, int32_t, int32_t) {
 // LINE 62:
 	asm( 
@@ -233,7 +233,7 @@ void SmackerBuffer::SmackerBuffer(char *, int32_t, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00497da1
+// FUNCTION: COPTER_D 0x00497da1
 void SmackerBuffer::~SmackerBuffer() {
 // LINE 89:
 	asm( 
@@ -263,7 +263,7 @@ void SmackerBuffer::~SmackerBuffer() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00497dc8
+// FUNCTION: COPTER_D 0x00497dc8
 int32_t SmackerBuffer::Initialize() {
 // LINE 105:
 	asm( 
@@ -293,7 +293,7 @@ int32_t SmackerBuffer::Initialize() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00497de9
+// FUNCTION: COPTER_D 0x00497de9
 int32_t SmackerBuffer::SetPalette() {
 // LINE 114:
 	asm( 
@@ -336,7 +336,7 @@ int32_t SmackerBuffer::SetPalette() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00497e25
+// FUNCTION: COPTER_D 0x00497e25
 int32_t SmackerBuffer::CreateSurface() {
 // LINE 131:
 	asm( 
@@ -471,7 +471,7 @@ int32_t SmackerBuffer::CreateSurface() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00497f22
+// FUNCTION: COPTER_D 0x00497f22
 int32_t SmackerBuffer::Open(char *, unsigned long, unsigned long) {
 // LINE 159:
 	asm( 
@@ -540,7 +540,7 @@ int32_t SmackerBuffer::Open(char *, unsigned long, unsigned long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00497f91
+// FUNCTION: COPTER_D 0x00497f91
 void SmackerBuffer::Close() {
 // LINE 178:
 	asm( 
@@ -601,7 +601,7 @@ void SmackerBuffer::Close() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00497ff3
+// FUNCTION: COPTER_D 0x00497ff3
 void SmackerBuffer::Reset() {
 // LINE 194:
 	asm( 
@@ -648,7 +648,7 @@ void SmackerBuffer::Reset() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00498043
+// FUNCTION: COPTER_D 0x00498043
 void SmackerBuffer::ClearBuffer(int32_t) {
 // LINE 211:
 	asm( 
@@ -671,7 +671,7 @@ void SmackerBuffer::ClearBuffer(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049805b
+// FUNCTION: COPTER_D 0x0049805b
 void SmackerBuffer::SetWindow(void * __ptr32) {
 // LINE 228:
 	asm( 
@@ -739,7 +739,7 @@ void SmackerBuffer::SetWindow(void * __ptr32) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004980b3
+// FUNCTION: COPTER_D 0x004980b3
 void SmackerBuffer::SetWindow(class CSparkalWindow*) {
 // LINE 251:
 	asm( 
@@ -771,7 +771,7 @@ void SmackerBuffer::SetWindow(class CSparkalWindow*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004980df
+// FUNCTION: COPTER_D 0x004980df
 void SmackerBuffer::CenterBufferInRect(struct SparkalRect*) {
 // LINE 268:
 	asm( 
@@ -874,7 +874,7 @@ void SmackerBuffer::CenterBufferInRect(struct SparkalRect*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00498188
+// FUNCTION: COPTER_D 0x00498188
 int32_t SmackerBuffer::ComposeToWindow() {
 // LINE 305:
 	asm( 
@@ -1251,7 +1251,7 @@ int32_t SmackerBuffer::ComposeToWindow() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00498489
+// FUNCTION: COPTER_D 0x00498489
 void * __ptr32 VRSmackerInit() {
 // LINE 423:
 	asm( 
@@ -1297,7 +1297,7 @@ void * __ptr32 VRSmackerInit() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004984dc
+// FUNCTION: COPTER_D 0x004984dc
 void VRSmackerDestroy() {
 // LINE 432:
 	asm( 
@@ -1334,7 +1334,7 @@ void VRSmackerDestroy() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00498516
+// FUNCTION: COPTER_D 0x00498516
 int32_t VRSmackerSetBitmap() {
 // LINE 439:
 	asm( 
@@ -1368,7 +1368,7 @@ int32_t VRSmackerSetBitmap() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049853d
+// FUNCTION: COPTER_D 0x0049853d
 int32_t VRSmackerNextFrame() {
 // LINE 445:
 	asm( 
@@ -1394,7 +1394,7 @@ int32_t VRSmackerNextFrame() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00498555
+// FUNCTION: COPTER_D 0x00498555
 void VRSmackerReset() {
 // LINE 449:
 	asm( 
@@ -1420,7 +1420,7 @@ void VRSmackerReset() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049856d
+// FUNCTION: COPTER_D 0x0049856d
 int32_t VRSmackerStatus() {
 // LINE 453:
 	asm( 
@@ -1446,7 +1446,7 @@ int32_t VRSmackerStatus() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00498583
+// FUNCTION: COPTER_D 0x00498583
 struct VRBmpHdr* VRSmackerGetBitmap() {
 // LINE 457:
 	asm( 
@@ -1472,7 +1472,7 @@ struct VRBmpHdr* VRSmackerGetBitmap() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049859c
+// FUNCTION: COPTER_D 0x0049859c
 char * VRSmackerGetBitmapBits() {
 // LINE 461:
 	asm( 
@@ -1498,7 +1498,7 @@ char * VRSmackerGetBitmapBits() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004985b5
+// FUNCTION: COPTER_D 0x004985b5
 void VRBmpSmackerBuffer::VRBmpSmackerBuffer() {
 // LINE 472:
 	asm( 
@@ -1533,7 +1533,7 @@ void VRBmpSmackerBuffer::VRBmpSmackerBuffer() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004985f4
+// FUNCTION: COPTER_D 0x004985f4
 void VRBmpSmackerBuffer::VRBmpSmackerBuffer(char *, int32_t, int32_t, int32_t) {
 // LINE 485:
 	asm( 
@@ -1575,7 +1575,7 @@ void VRBmpSmackerBuffer::VRBmpSmackerBuffer(char *, int32_t, int32_t, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00498640
+// FUNCTION: COPTER_D 0x00498640
 void VRBmpSmackerBuffer::~VRBmpSmackerBuffer() {
 // LINE 494:
 	asm( 
@@ -1639,7 +1639,7 @@ void VRBmpSmackerBuffer::~VRBmpSmackerBuffer() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004986bf
+// FUNCTION: COPTER_D 0x004986bf
 void VRBmpSmackerBuffer::InitializeVRBmpMembers() {
 // LINE 507:
 	asm( 
@@ -1702,7 +1702,7 @@ void VRBmpSmackerBuffer::InitializeVRBmpMembers() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049873d
+// FUNCTION: COPTER_D 0x0049873d
 int32_t VRBmpSmackerBuffer::CreateSurface(int32_t) {
 // LINE 532:
 	asm( 
@@ -1915,7 +1915,7 @@ int32_t VRBmpSmackerBuffer::CreateSurface(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049891f
+// FUNCTION: COPTER_D 0x0049891f
 void VRBmpSmackerBuffer::DeleteSurface() {
 // LINE 580:
 	asm( 
@@ -1971,7 +1971,7 @@ void VRBmpSmackerBuffer::DeleteSurface() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049898a
+// FUNCTION: COPTER_D 0x0049898a
 int32_t VRBmpSmackerBuffer::Open(char *, unsigned long, unsigned long) {
 // LINE 595:
 	asm( 
@@ -2047,7 +2047,7 @@ int32_t VRBmpSmackerBuffer::Open(char *, unsigned long, unsigned long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00498a0b
+// FUNCTION: COPTER_D 0x00498a0b
 void VRBmpSmackerBuffer::ClearBuffer(int32_t) {
 // LINE 620:
 	asm( 
@@ -2113,7 +2113,7 @@ void VRBmpSmackerBuffer::ClearBuffer(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00498a93
+// FUNCTION: COPTER_D 0x00498a93
 int32_t VRBmpSmackerBuffer::Compose() {
 // LINE 649:
 	asm( 
@@ -2296,7 +2296,7 @@ int32_t VRBmpSmackerBuffer::Compose() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00498c00
+// FUNCTION: COPTER_D 0x00498c00
 int32_t VRBmpSmackerBuffer::SetDefaultVRBmp(char *, int32_t, int32_t) {
 // LINE 698:
 	asm( 
@@ -2383,7 +2383,7 @@ int32_t VRBmpSmackerBuffer::SetDefaultVRBmp(char *, int32_t, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00498ca3
+// FUNCTION: COPTER_D 0x00498ca3
 int32_t VRBmpSmackerBuffer::DrawDefaultVRBmp() {
 // LINE 722:
 	asm( 
@@ -2638,7 +2638,7 @@ int32_t VRBmpSmackerBuffer::DrawDefaultVRBmp() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00498ee8
+// FUNCTION: COPTER_D 0x00498ee8
 void SmackerBackBuffer::SmackerBackBuffer() {
 // LINE 805:
 	asm( 
@@ -2691,7 +2691,7 @@ void SmackerBackBuffer::SmackerBackBuffer() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00498f61
+// FUNCTION: COPTER_D 0x00498f61
 void SmackerBackBuffer::SmackerBackBuffer(char *, int32_t, int32_t, int32_t, int32_t, int32_t) {
 // LINE 819:
 	asm( 
@@ -2753,7 +2753,7 @@ void SmackerBackBuffer::SmackerBackBuffer(char *, int32_t, int32_t, int32_t, int
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00498fe5
+// FUNCTION: COPTER_D 0x00498fe5
 void SmackerBackBuffer::~SmackerBackBuffer() {
 // LINE 832:
 	asm( 
@@ -2812,7 +2812,7 @@ void SmackerBackBuffer::~SmackerBackBuffer() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00499074
+// FUNCTION: COPTER_D 0x00499074
 void SmackerBackBuffer::SetDirectBlit() {
 // LINE 848:
 	asm( 
@@ -2840,7 +2840,7 @@ void SmackerBackBuffer::SetDirectBlit() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00499097
+// FUNCTION: COPTER_D 0x00499097
 int32_t SmackerBackBuffer::Initialize() {
 // LINE 865:
 	asm( 
@@ -2881,7 +2881,7 @@ int32_t SmackerBackBuffer::Initialize() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004990d2
+// FUNCTION: COPTER_D 0x004990d2
 void SmackerBackBuffer::SetBackBufferData(char *, int32_t, int32_t, int32_t, int32_t, int32_t) {
 // LINE 883:
 	asm( 
@@ -2958,7 +2958,7 @@ void SmackerBackBuffer::SetBackBufferData(char *, int32_t, int32_t, int32_t, int
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00499149
+// FUNCTION: COPTER_D 0x00499149
 int32_t SmackerBackBuffer::Open(char *, unsigned long, unsigned long) {
 // LINE 901:
 	asm( 
@@ -3065,7 +3065,7 @@ int32_t SmackerBackBuffer::Open(char *, unsigned long, unsigned long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049920a
+// FUNCTION: COPTER_D 0x0049920a
 int32_t SmackerBackBuffer::CreateSurface() {
 // LINE 933:
 	asm( 
@@ -3241,7 +3241,7 @@ int32_t SmackerBackBuffer::CreateSurface() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00499396
+// FUNCTION: COPTER_D 0x00499396
 unsigned long SmackerBackBuffer::Compose(class IFlatImage*, long, long, long, long, long, long) {
 // LINE 1014:
 	asm( 
@@ -3691,7 +3691,7 @@ unsigned long SmackerBackBuffer::Compose(class IFlatImage*, long, long, long, lo
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049976d
+// FUNCTION: COPTER_D 0x0049976d
 unsigned long SmackerBackBuffer::StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long) {
 // LINE 1104:
 	asm( 
@@ -4140,7 +4140,7 @@ unsigned long SmackerBackBuffer::StretchCompose(class IFlatImage*, long, long, l
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00499b35
+// FUNCTION: COPTER_D 0x00499b35
 void SmackerBackBuffer::BltParts(class IFlatImage*, long, long, long, long, long, long) {
 // LINE 1215:
 	asm( 
@@ -4457,7 +4457,7 @@ void SmackerBackBuffer::BltParts(class IFlatImage*, long, long, long, long, long
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00499d5c
+// FUNCTION: COPTER_D 0x00499d5c
 void SmackerBackBuffer::BltAll(class IFlatImage*, long, long, long, long, long, long) {
 // LINE 1328:
 	asm( 
@@ -4591,32 +4591,32 @@ void SmackerBackBuffer::BltAll(class IFlatImage*, long, long, long, long, long, 
 
 
 // Contribution: 1:00098e30-00098e68 Module: 17, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x00499e30
+// FUNCTION: COPTER_D 0x00499e30
 // SmackerBuffer::`scalar deleting destructor'
 
 
 
 // Contribution: 1:00098e70-00098ea8 Module: 17, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x00499e70
+// FUNCTION: COPTER_D 0x00499e70
 // VRBmpSmackerBuffer::`scalar deleting destructor'
 
 
 
 // Contribution: 1:00098eb0-00098ee8 Module: 17, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x00499eb0
+// FUNCTION: COPTER_D 0x00499eb0
 // SmackerBackBuffer::`scalar deleting destructor'
 
 
 
 // Contribution: 2:00002138-00002157 Module: 17, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00002138
+// GLOBAL: COPTER_D 0x00002138
 // ??_7SmackerBuffer@@6B@
 
 
 // Contribution: 2:00002158-00002187 Module: 17, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00002158
+// GLOBAL: COPTER_D 0x00002158
 // ??_7VRBmpSmackerBuffer@@6B@
-// GLOBAL: SIMCOPTER 0x00002188
+// GLOBAL: COPTER_D 0x00002188
 // ??_7SmackerBackBuffer@@6BCBackBuffer@@@
 
 
@@ -4624,7 +4624,7 @@ void SmackerBackBuffer::BltAll(class IFlatImage*, long, long, long, long, long, 
 
 
 // Contribution: 2:000021f0-00002217 Module: 17, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x000021f0
+// GLOBAL: COPTER_D 0x000021f0
 // ??_7SmackerBackBuffer@@6BSmackerBuffer@@@
 
 

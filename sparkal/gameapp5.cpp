@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:00094b40-000953a2 Module: 19, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00495b40
+// FUNCTION: COPTER_D 0x00495b40
 public: void __thiscall CGameApp::GetFullRenderingWindowSize(int *, int *) {
 // LINE 67:
 	asm( 
@@ -91,7 +91,7 @@ public: void __thiscall CGameApp::GetFullRenderingWindowSize(int *, int *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00495be3
+// FUNCTION: COPTER_D 0x00495be3
 public: int __thiscall CGameApp::S3PreRender(void) {
 // LINE 92:
 	asm( 
@@ -449,7 +449,7 @@ public: int __thiscall CGameApp::S3PreRender(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00495ef7
+// FUNCTION: COPTER_D 0x00495ef7
 public: void __thiscall CGameApp::S3PostRender(void) {
 // LINE 197:
 	asm( 
@@ -555,7 +555,7 @@ public: void __thiscall CGameApp::S3PostRender(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00495fc4
+// FUNCTION: COPTER_D 0x00495fc4
 public: void __thiscall CGameApp::DrawCrosshairs(class CBackBuffer *) {
 // LINE 223:
 	asm( 
@@ -697,7 +697,7 @@ public: void __thiscall CGameApp::DrawCrosshairs(class CBackBuffer *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004960c5
+// FUNCTION: COPTER_D 0x004960c5
 public: void __thiscall CGameApp::S3ShowInfo(void) {
 // LINE 265:
 	asm( 

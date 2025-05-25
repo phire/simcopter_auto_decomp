@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:00135100-00135db2 Module: 159, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00536100
+// FUNCTION: COPTER_D 0x00536100
 int32_t CreateFireTruckInstance() {
 // LINE 76:
 	asm( 
@@ -38,7 +38,7 @@ int32_t CreateFireTruckInstance() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00536130
+// FUNCTION: COPTER_D 0x00536130
 void FireEngineClass::FireEngineClass() {
 // LINE 82:
 	asm( 
@@ -71,7 +71,7 @@ void FireEngineClass::FireEngineClass() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00536164
+// FUNCTION: COPTER_D 0x00536164
 void FireEngineClass::~FireEngineClass() {
 // LINE 88:
 	asm( 
@@ -95,7 +95,7 @@ void FireEngineClass::~FireEngineClass() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0053618b
+// FUNCTION: COPTER_D 0x0053618b
 class FireEngineClass* FireEngineClass::CreateInstance(int32_t) {
 // LINE 110:
 	asm( 
@@ -315,7 +315,7 @@ class FireEngineClass* FireEngineClass::CreateInstance(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00536381
+// FUNCTION: COPTER_D 0x00536381
 int32_t FireEngineClass::Dispatch(enum EmergencyType, enum EmergencyLevel, long, long) {
 // LINE 209:
 	asm( 
@@ -351,7 +351,7 @@ int32_t FireEngineClass::Dispatch(enum EmergencyType, enum EmergencyLevel, long,
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005363b3
+// FUNCTION: COPTER_D 0x005363b3
 int32_t FireEngineClass::IsThisAFireStation(unsigned short) {
 // LINE 217:
 	asm( 
@@ -382,7 +382,7 @@ int32_t FireEngineClass::IsThisAFireStation(unsigned short) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005363e2
+// FUNCTION: COPTER_D 0x005363e2
 int32_t FireEngineClass::IsThisAFireStation(long, long) {
 // LINE 224:
 	asm( 
@@ -442,7 +442,7 @@ int32_t FireEngineClass::IsThisAFireStation(long, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0053648e
+// FUNCTION: COPTER_D 0x0053648e
 void FireEngineClass::ItterateFSM() {
 // LINE 249:
 	asm( 
@@ -790,7 +790,7 @@ void FireEngineClass::ItterateFSM() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00536778
+// FUNCTION: COPTER_D 0x00536778
 int32_t FireEngineClass::AtScene() {
 // LINE 353:
 	asm( 
@@ -956,7 +956,7 @@ int32_t FireEngineClass::AtScene() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005368cd
+// FUNCTION: COPTER_D 0x005368cd
 int32_t FireEngineClass::ScanForFire(struct _GridCoordinates) {
 // LINE 420:
 	asm( 
@@ -1214,7 +1214,7 @@ int32_t FireEngineClass::ScanForFire(struct _GridCoordinates) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00536ae2
+// FUNCTION: COPTER_D 0x00536ae2
 void FireEngineClass::PointStreamAtFire() {
 // LINE 517:
 	asm( 
@@ -1353,7 +1353,7 @@ void FireEngineClass::PointStreamAtFire() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00536c3d
+// FUNCTION: COPTER_D 0x00536c3d
 void FireEngineClass::SetSaveData(struct _AUTO_LOAD_SAVE*) {
 // LINE 553:
 	asm( 
@@ -1417,7 +1417,7 @@ void FireEngineClass::SetSaveData(struct _AUTO_LOAD_SAVE*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00536cb8
+// FUNCTION: COPTER_D 0x00536cb8
 void FireEngineClass::LoadSaveData(struct _AUTO_LOAD_SAVE*) {
 // LINE 572:
 	asm( 
@@ -1541,23 +1541,23 @@ void FireEngineClass::LoadSaveData(struct _AUTO_LOAD_SAVE*) {
 
 
 // Contribution: 1:00135dc0-00135df8 Module: 159, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x00536dc0
+// FUNCTION: COPTER_D 0x00536dc0
 // FireEngineClass::`scalar deleting destructor'
 
 
 
 // Contribution: 2:000042a8-000042cf Module: 159, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x000042a8
+// GLOBAL: COPTER_D 0x000042a8
 // ??_7FireEngineClass@@6B@
-// LOCAL: SIMCOPTER 0x000042d0
+// LOCAL: COPTER_D 0x000042d0
 // TILUT
 
 
 // Contribution: 3:00020dc8-00020eac Module: 159, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x00020dc8
+// GLOBAL: COPTER_D 0x00020dc8
 // curFireTrucks
 
 
 // Contribution: 3:000949d0-000949e3 Module: 159, 8 byte alignment, uninitialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x000949d0
+// GLOBAL: COPTER_D 0x000949d0
 // fireTrucks

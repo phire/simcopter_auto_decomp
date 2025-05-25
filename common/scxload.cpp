@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:000ca880-000cc535 Module: 89, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x004cb880
+// FUNCTION: COPTER_D 0x004cb880
 void cLZAPFileBitStream::cLZAPFileBitStream() {
 // LINE 85:
 	asm( 
@@ -44,7 +44,7 @@ void cLZAPFileBitStream::cLZAPFileBitStream() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004cb8c4
+// FUNCTION: COPTER_D 0x004cb8c4
 void cLZAPFileBitStream::~cLZAPFileBitStream() {
 // LINE 90:
 	asm( 
@@ -85,7 +85,7 @@ void cLZAPFileBitStream::~cLZAPFileBitStream() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004cb90d
+// FUNCTION: COPTER_D 0x004cb90d
 int32_t cLZAPFileBitStream::OpenRead(char *) {
 // LINE 95:
 	asm( 
@@ -160,7 +160,7 @@ int32_t cLZAPFileBitStream::OpenRead(char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004cb9d2
+// FUNCTION: COPTER_D 0x004cb9d2
 void cLZAPFileBitStream::Close() {
 // LINE 102:
 	asm( 
@@ -204,7 +204,7 @@ void cLZAPFileBitStream::Close() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004cba1c
+// FUNCTION: COPTER_D 0x004cba1c
 unsigned long cLZAPFileBitStream::Read(unsigned char *, unsigned long) {
 // LINE 108:
 	asm( 
@@ -263,7 +263,7 @@ unsigned long cLZAPFileBitStream::Read(unsigned char *, unsigned long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004cba9c
+// FUNCTION: COPTER_D 0x004cba9c
 unsigned long cLZAPFileBitStream::Write(unsigned char *, unsigned long) {
 // LINE 115:
 	asm( 
@@ -322,7 +322,7 @@ unsigned long cLZAPFileBitStream::Write(unsigned char *, unsigned long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004cbb1c
+// FUNCTION: COPTER_D 0x004cbb1c
 void cLZAPFileBitStream::Rewind() {
 // LINE 122:
 	asm( 
@@ -365,7 +365,7 @@ void cLZAPFileBitStream::Rewind() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004cbb63
+// FUNCTION: COPTER_D 0x004cbb63
 void cLZAPFileBitStream::RewindToMark() {
 // LINE 128:
 	asm( 
@@ -412,7 +412,7 @@ void cLZAPFileBitStream::RewindToMark() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004cbbb5
+// FUNCTION: COPTER_D 0x004cbbb5
 void cLZAPFileBitStream::Mark() {
 // LINE 133:
 	asm( 
@@ -464,7 +464,7 @@ void cLZAPFileBitStream::Mark() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004cbc0d
+// FUNCTION: COPTER_D 0x004cbc0d
 long cLZAPFileBitStream::Size() {
 // LINE 140:
 	asm( 
@@ -504,7 +504,7 @@ long cLZAPFileBitStream::Size() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004cbc42
+// FUNCTION: COPTER_D 0x004cbc42
 void cLZAPFileBitStream::FreeAll() {
 // LINE 146:
 	asm( 
@@ -524,7 +524,7 @@ void cLZAPFileBitStream::FreeAll() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004cbc58
+// FUNCTION: COPTER_D 0x004cbc58
 void SCXReadBudget() {
 // LINE 169:
 	asm( 
@@ -555,7 +555,7 @@ void SCXReadBudget() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004cbc7b
+// FUNCTION: COPTER_D 0x004cbc7b
 void SCXReadGraphData() {
 // LINE 184:
 	asm( 
@@ -586,7 +586,7 @@ void SCXReadGraphData() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004cbc9e
+// FUNCTION: COPTER_D 0x004cbc9e
 void SCXReadPlayer() {
 // LINE 196:
 	asm( 
@@ -685,7 +685,7 @@ void SCXReadPlayer() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004cbd38
+// FUNCTION: COPTER_D 0x004cbd38
 void SCXReadNeighbors() {
 // LINE 221:
 	asm( 
@@ -972,7 +972,7 @@ void SCXReadNeighbors() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004cbfc8
+// FUNCTION: COPTER_D 0x004cbfc8
 void SCXReadContracts() {
 // LINE 279:
 	asm( 
@@ -1017,7 +1017,7 @@ void SCXReadContracts() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004cc003
+// FUNCTION: COPTER_D 0x004cc003
 int32_t ReadSCXFile() {
 // LINE 295:
 	asm( 
@@ -2604,17 +2604,17 @@ int32_t ReadSCXFile() {
 
 
 // Contribution: 2:000033f8-00003413 Module: 89, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x000033f8
+// GLOBAL: COPTER_D 0x000033f8
 // ??_7cGZXBitstream@@6B@
 
 
 // Contribution: 2:00003418-0000343b Module: 89, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00003418
+// GLOBAL: COPTER_D 0x00003418
 // ??_7cLZAPFileBitStream@@6B@
 
 
 // Contribution: 2:00003440-0000345b Module: 89, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00003440
+// GLOBAL: COPTER_D 0x00003440
 // ??_7?$cGZXParamBitstream@Ut_alloc@@Ut_free@@@@6B@
 
 
@@ -2622,5 +2622,5 @@ int32_t ReadSCXFile() {
 
 
 // Contribution: 3:0006fa58-0006fa5b Module: 89, 4 byte alignment, uninitialized_data, read, write, 
-// LOCAL: SIMCOPTER 0x0006fa58
+// LOCAL: COPTER_D 0x0006fa58
 // scxbuf

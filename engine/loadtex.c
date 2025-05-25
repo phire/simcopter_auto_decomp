@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:000d5060-000d560b Module: 145, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x004d6060
+// FUNCTION: COPTER_D 0x004d6060
 struct VRResource* LoadImages() {
 // LINE 70:
 	asm( 
@@ -259,7 +259,7 @@ struct VRResource* LoadImages() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004d6246
+// FUNCTION: COPTER_D 0x004d6246
 struct VRBmpHdr* VRInt2BmpHdr() {
 // LINE 223:
 	asm( 
@@ -323,7 +323,7 @@ struct VRBmpHdr* VRInt2BmpHdr() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004d62a5
+// FUNCTION: COPTER_D 0x004d62a5
 int32_t VRGetResTextureCnt() {
 // LINE 254:
 	asm( 
@@ -355,7 +355,7 @@ int32_t VRGetResTextureCnt() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004d62c4
+// FUNCTION: COPTER_D 0x004d62c4
 int32_t VRSetBmpToTiled() {
 // LINE 282:
 	asm( 
@@ -575,7 +575,7 @@ int32_t VRSetBmpToTiled() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004d6460
+// FUNCTION: COPTER_D 0x004d6460
 int32_t VRLoadAlignedBmp() {
 // LINE 384:
 	asm( 

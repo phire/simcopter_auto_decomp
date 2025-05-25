@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:000c90c0-000ca2a6 Module: 92, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x004ca0c0
+// FUNCTION: COPTER_D 0x004ca0c0
 int32_t MTMagnitude() {
 // LINE 39:
 	asm( 
@@ -71,7 +71,7 @@ int32_t MTMagnitude() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ca140
+// FUNCTION: COPTER_D 0x004ca140
 int32_t MTDistance() {
 // LINE 62:
 	asm( 
@@ -149,7 +149,7 @@ int32_t MTDistance() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ca1e3
+// FUNCTION: COPTER_D 0x004ca1e3
 int32_t MTNormalize() {
 // LINE 83:
 	asm( 
@@ -270,7 +270,7 @@ int32_t MTNormalize() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ca2e1
+// FUNCTION: COPTER_D 0x004ca2e1
 void MTCreatePlane() {
 // LINE 115:
 	asm( 
@@ -344,7 +344,7 @@ void MTCreatePlane() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ca35c
+// FUNCTION: COPTER_D 0x004ca35c
 int32_t MTSideOfPlane() {
 // LINE 142:
 	asm( 
@@ -429,7 +429,7 @@ int32_t MTSideOfPlane() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ca3f0
+// FUNCTION: COPTER_D 0x004ca3f0
 void MTCreateVelocity() {
 // LINE 172:
 	asm( 
@@ -507,7 +507,7 @@ void MTCreateVelocity() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ca46a
+// FUNCTION: COPTER_D 0x004ca46a
 int32_t MTSameSigns() {
 // LINE 199:
 	asm( 
@@ -535,7 +535,7 @@ int32_t MTSameSigns() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ca486
+// FUNCTION: COPTER_D 0x004ca486
 int32_t MTVectorBounds() {
 // LINE 218:
 	asm( 
@@ -623,7 +623,7 @@ int32_t MTVectorBounds() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ca51c
+// FUNCTION: COPTER_D 0x004ca51c
 void MTApply_Force() {
 // LINE 245:
 	asm( 
@@ -713,7 +713,7 @@ void MTApply_Force() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ca5b3
+// FUNCTION: COPTER_D 0x004ca5b3
 void MTApply_Friction() {
 // LINE 280:
 	asm( 
@@ -851,7 +851,7 @@ void MTApply_Friction() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ca6ae
+// FUNCTION: COPTER_D 0x004ca6ae
 int32_t MTApply_Force1D() {
 // LINE 323:
 	asm( 
@@ -916,7 +916,7 @@ int32_t MTApply_Force1D() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ca721
+// FUNCTION: COPTER_D 0x004ca721
 int32_t MTApply_Friction1D() {
 // LINE 357:
 	asm( 
@@ -1000,7 +1000,7 @@ int32_t MTApply_Friction1D() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ca7b4
+// FUNCTION: COPTER_D 0x004ca7b4
 int32_t MTAngleBounds() {
 // LINE 384:
 	asm( 
@@ -1044,7 +1044,7 @@ int32_t MTAngleBounds() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004ca810
+// FUNCTION: COPTER_D 0x004ca810
 void MTArbRotMat() {
 // LINE 401:
 	asm( 
@@ -1310,7 +1310,7 @@ void MTArbRotMat() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004caa19
+// FUNCTION: COPTER_D 0x004caa19
 void MTmat_row_normal() {
 // LINE 463:
 	asm( 
@@ -1571,7 +1571,7 @@ void MTmat_row_normal() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004cac36
+// FUNCTION: COPTER_D 0x004cac36
 void MTmat_col_normal() {
 // LINE 502:
 	asm( 
@@ -1832,7 +1832,7 @@ void MTmat_col_normal() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004cae53
+// FUNCTION: COPTER_D 0x004cae53
 void MTXProduct() {
 // LINE 548:
 	asm( 
@@ -1921,7 +1921,7 @@ void MTXProduct() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004caefb
+// FUNCTION: COPTER_D 0x004caefb
 void MTCreateDOF4x4() {
 // LINE 568:
 	asm( 
@@ -2071,7 +2071,7 @@ void MTCreateDOF4x4() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004caff7
+// FUNCTION: COPTER_D 0x004caff7
 void MTCreateDOF4x4Y() {
 // LINE 628:
 	asm( 
@@ -2221,7 +2221,7 @@ void MTCreateDOF4x4Y() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004cb0f3
+// FUNCTION: COPTER_D 0x004cb0f3
 void MTCreateReflection4x4() {
 // LINE 683:
 	asm( 
@@ -2376,7 +2376,7 @@ void MTCreateReflection4x4() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004cb23c
+// FUNCTION: COPTER_D 0x004cb23c
 int32_t MTCheapDist2D() {
 // LINE 718:
 	asm( 
@@ -2454,11 +2454,11 @@ int32_t MTCheapDist2D() {
 
 
 // Contribution: 3:000044f8-00004523 Module: 92, 8 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x000044f8
+// GLOBAL: COPTER_D 0x000044f8
 // X_axis
-// GLOBAL: SIMCOPTER 0x00004508
+// GLOBAL: COPTER_D 0x00004508
 // Y_axis
-// GLOBAL: SIMCOPTER 0x00004518
+// GLOBAL: COPTER_D 0x00004518
 // Z_axis
-// GLOBAL: SIMCOPTER 0x00004524
+// GLOBAL: COPTER_D 0x00004524
 // G_alloc_curr

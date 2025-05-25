@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:00165a10-001661fc Module: 182, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00566a10
+// FUNCTION: COPTER_D 0x00566a10
 void GlobalToLocal() {
 // LINE 8:
 	asm( 
@@ -59,7 +59,7 @@ void GlobalToLocal() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00566a59
+// FUNCTION: COPTER_D 0x00566a59
 void LocalToGlobal() {
 // LINE 17:
 	asm( 
@@ -113,7 +113,7 @@ void LocalToGlobal() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00566aa2
+// FUNCTION: COPTER_D 0x00566aa2
 long TickCount() {
 // LINE 26:
 	asm( 
@@ -144,7 +144,7 @@ long TickCount() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00566aca
+// FUNCTION: COPTER_D 0x00566aca
 short StringWidth() {
 // LINE 35:
 	asm( 
@@ -196,7 +196,7 @@ short StringWidth() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00566b13
+// FUNCTION: COPTER_D 0x00566b13
 void PtoCstr() {
 // LINE 44:
 	asm( 
@@ -242,7 +242,7 @@ void PtoCstr() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00566b52
+// FUNCTION: COPTER_D 0x00566b52
 void CtoPstr() {
 // LINE 52:
 	asm( 
@@ -297,7 +297,7 @@ void CtoPstr() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00566ba8
+// FUNCTION: COPTER_D 0x00566ba8
 void OffsetRect() {
 // LINE 60:
 	asm( 
@@ -354,7 +354,7 @@ void OffsetRect() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00566c06
+// FUNCTION: COPTER_D 0x00566c06
 unsigned short SectRect() {
 // LINE 74:
 	asm( 
@@ -436,7 +436,7 @@ unsigned short SectRect() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00566ca8
+// FUNCTION: COPTER_D 0x00566ca8
 void SetPortDC() {
 // LINE 103:
 	asm( 
@@ -470,7 +470,7 @@ void SetPortDC() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00566ccf
+// FUNCTION: COPTER_D 0x00566ccf
 void CleanUpPort() {
 // LINE 84:
 	asm( 
@@ -523,7 +523,7 @@ void CleanUpPort() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00566d38
+// FUNCTION: COPTER_D 0x00566d38
 void SetPort() {
 // LINE 111:
 	asm( 
@@ -560,7 +560,7 @@ void SetPort() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00566d66
+// FUNCTION: COPTER_D 0x00566d66
 void SetPort() {
 // LINE 119:
 	asm( 
@@ -605,7 +605,7 @@ void SetPort() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00566da7
+// FUNCTION: COPTER_D 0x00566da7
 void GetPort() {
 // LINE 130:
 	asm( 
@@ -634,7 +634,7 @@ void GetPort() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00566dca
+// FUNCTION: COPTER_D 0x00566dca
 void EraseRect() {
 // LINE 135:
 	asm( 
@@ -712,7 +712,7 @@ void EraseRect() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00566e67
+// FUNCTION: COPTER_D 0x00566e67
 void EraseRect() {
 // LINE 146:
 	asm( 
@@ -756,7 +756,7 @@ void EraseRect() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00566ead
+// FUNCTION: COPTER_D 0x00566ead
 void FrameRect() {
 // LINE 153:
 	asm( 
@@ -831,7 +831,7 @@ void FrameRect() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00566f42
+// FUNCTION: COPTER_D 0x00566f42
 void SetRect() {
 // LINE 164:
 	asm( 
@@ -876,7 +876,7 @@ void SetRect() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00566f7d
+// FUNCTION: COPTER_D 0x00566f7d
 void UnionRect() {
 // LINE 172:
 	asm( 
@@ -1005,7 +1005,7 @@ void UnionRect() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00567063
+// FUNCTION: COPTER_D 0x00567063
 unsigned short EqualRect() {
 // LINE 195:
 	asm( 
@@ -1050,7 +1050,7 @@ unsigned short EqualRect() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005670a9
+// FUNCTION: COPTER_D 0x005670a9
 void InsetRect() {
 // LINE 202:
 	asm( 
@@ -1107,7 +1107,7 @@ void InsetRect() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00567107
+// FUNCTION: COPTER_D 0x00567107
 unsigned short PtInRect() {
 // LINE 210:
 	asm( 
@@ -1158,7 +1158,7 @@ unsigned short PtInRect() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00567173
+// FUNCTION: COPTER_D 0x00567173
 unsigned short EmptyRect() {
 // LINE 216:
 	asm( 
@@ -1200,7 +1200,7 @@ unsigned short EmptyRect() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005671ba
+// FUNCTION: COPTER_D 0x005671ba
 void GetBackColor() {
 // LINE 222:
 	asm( 
@@ -1229,7 +1229,7 @@ void GetBackColor() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005671db
+// FUNCTION: COPTER_D 0x005671db
 void RGBBackColor() {
 // LINE 227:
 	asm( 
@@ -1262,7 +1262,7 @@ void RGBBackColor() {
 
 
 // Contribution: 3:00028638-000286d3 Module: 182, 8 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x00028638
+// GLOBAL: COPTER_D 0x00028638
 // gPort
-// GLOBAL: SIMCOPTER 0x000286d4
+// GLOBAL: COPTER_D 0x000286d4
 // cCopterAnim::fsList

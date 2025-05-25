@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:0018d3e0-0018d42c Module: 95, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x0058e3e0
+// FUNCTION: COPTER_D 0x0058e3e0
 void VREngineInit() {
 // LINE 42:
 	asm( 
@@ -66,5 +66,5 @@ void VREngineInit() {
 
 
 // Contribution: 3:0002b770-0002b78b Module: 95, 8 byte alignment, initialized_data, read, write, 
-// LOCAL: SIMCOPTER 0x0002b770
+// LOCAL: COPTER_D 0x0002b770
 // win

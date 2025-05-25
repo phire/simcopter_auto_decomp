@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:0009f3a0-0009f9f6 Module: 10, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x004a03a0
+// FUNCTION: COPTER_D 0x004a03a0
 int32_t PFile::Open(char *, unsigned short, unsigned short, int32_t) {
 // LINE 34:
 	asm( 
@@ -169,7 +169,7 @@ int32_t PFile::Open(char *, unsigned short, unsigned short, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a04f0
+// FUNCTION: COPTER_D 0x004a04f0
 int32_t PFile::Close() {
 // LINE 75:
 	asm( 
@@ -227,7 +227,7 @@ int32_t PFile::Close() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a0562
+// FUNCTION: COPTER_D 0x004a0562
 long PFile::Length() {
 // LINE 91:
 	asm( 
@@ -299,7 +299,7 @@ long PFile::Length() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a05f3
+// FUNCTION: COPTER_D 0x004a05f3
 long PFile::FileCreate(char *, int32_t) {
 // LINE 112:
 	asm( 
@@ -419,7 +419,7 @@ long PFile::FileCreate(char *, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a06e6
+// FUNCTION: COPTER_D 0x004a06e6
 long PFile::FileExists(char *) {
 // LINE 139:
 	asm( 
@@ -476,7 +476,7 @@ long PFile::FileExists(char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a0759
+// FUNCTION: COPTER_D 0x004a0759
 long PFile::SetPath(char *) {
 // LINE 160:
 	asm( 
@@ -529,7 +529,7 @@ long PFile::SetPath(char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004a07b9
+// FUNCTION: COPTER_D 0x004a07b9
 unsigned long PFile::Checksum(char *) {
 // LINE 172:
 	asm( 

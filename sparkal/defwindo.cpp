@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:00031260-000314d4 Module: 61, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00432260
+// FUNCTION: COPTER_D 0x00432260
 class ICommander* CSparkalWindow::SetCommander(class ICommander*) {
 // LINE 18:
 	asm( 
@@ -84,7 +84,7 @@ class ICommander* CSparkalWindow::SetCommander(class ICommander*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004322d7
+// FUNCTION: COPTER_D 0x004322d7
 class ScreenBuffer* CSparkalWindow::SetBackBuffer(class ScreenBuffer*) {
 // LINE 41:
 	asm( 
@@ -123,7 +123,7 @@ class ScreenBuffer* CSparkalWindow::SetBackBuffer(class ScreenBuffer*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00432304
+// FUNCTION: COPTER_D 0x00432304
 unsigned long CSparkalWindow::Draw() {
 // LINE 53:
 	asm( 
@@ -153,7 +153,7 @@ unsigned long CSparkalWindow::Draw() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00432325
+// FUNCTION: COPTER_D 0x00432325
 unsigned long CSparkalWindow::SwapBuffer() {
 // LINE 63:
 	asm( 
@@ -219,7 +219,7 @@ unsigned long CSparkalWindow::SwapBuffer() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043238c
+// FUNCTION: COPTER_D 0x0043238c
 unsigned long CSparkalWindow::SwapBuffer(long, long, long, long) {
 // LINE 80:
 	asm( 

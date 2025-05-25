@@ -14,31 +14,31 @@
 
 
 // Contribution: 1:00000210-0000023b Module: 75, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x00401210
+// FUNCTION: COPTER_D 0x00401210
 // `vector constructor iterator'
 
 
 
 // Contribution: 1:00000240-00000279 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x00401240
+// FUNCTION: COPTER_D 0x00401240
 // `vector destructor iterator'
 
 
 
 // Contribution: 1:00000280-0000c7d4 Module: 75, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00401280
+// FUNCTION: COPTER_D 0x00401280
 // $E97
 
-// FUNCTION: SIMCOPTER 0x00401295
+// FUNCTION: COPTER_D 0x00401295
 // $E96
 
-// FUNCTION: SIMCOPTER 0x004012bf
+// FUNCTION: COPTER_D 0x004012bf
 // $E100
 
-// FUNCTION: SIMCOPTER 0x004012d4
+// FUNCTION: COPTER_D 0x004012d4
 // $E99
 
-// FUNCTION: SIMCOPTER 0x004012fe
+// FUNCTION: COPTER_D 0x004012fe
 void KeyboardWindow::KeyboardWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
 // LINE 68:
 	asm( 
@@ -495,7 +495,7 @@ void KeyboardWindow::KeyboardWindow(class MRect&, int32_t, class GraphicWindow*,
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00401acc
+// FUNCTION: COPTER_D 0x00401acc
 void KeyboardWindow::~KeyboardWindow() {
 // LINE 76:
 	asm( 
@@ -820,7 +820,7 @@ void KeyboardWindow::~KeyboardWindow() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0040200d
+// FUNCTION: COPTER_D 0x0040200d
 int32_t KeyboardWindow::Initialize() {
 // LINE 89:
 	asm( 
@@ -944,7 +944,7 @@ int32_t KeyboardWindow::Initialize() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00402108
+// FUNCTION: COPTER_D 0x00402108
 int32_t KeyboardWindow::CreateImage(int32_t) {
 // LINE 111:
 	asm( 
@@ -1326,7 +1326,7 @@ int32_t KeyboardWindow::CreateImage(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00402659
+// FUNCTION: COPTER_D 0x00402659
 void KeyboardWindow::DestroyImage() {
 // LINE 137:
 	asm( 
@@ -1412,7 +1412,7 @@ void KeyboardWindow::DestroyImage() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00402725
+// FUNCTION: COPTER_D 0x00402725
 int32_t KeyboardWindow::ConvertKeyToString(int32_t, long, class basic_string<char>&) {
 // LINE 162:
 	asm( 
@@ -1843,7 +1843,7 @@ int32_t KeyboardWindow::ConvertKeyToString(int32_t, long, class basic_string<cha
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00402e31
+// FUNCTION: COPTER_D 0x00402e31
 int32_t KeyboardWindow::DoesKeyExistOnKeyboard(long) {
 // LINE 174:
 	asm( 
@@ -2007,7 +2007,7 @@ int32_t KeyboardWindow::DoesKeyExistOnKeyboard(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00402fcd
+// FUNCTION: COPTER_D 0x00402fcd
 int32_t KeyboardWindow::DoesPositionHitKey(long, long, long&) {
 // LINE 199:
 	asm( 
@@ -2197,7 +2197,7 @@ int32_t KeyboardWindow::DoesPositionHitKey(long, long, long&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004031a1
+// FUNCTION: COPTER_D 0x004031a1
 int32_t KeyboardWindow::DoesKeyRequireTextDraw(long) {
 // LINE 228:
 	asm( 
@@ -2252,7 +2252,7 @@ int32_t KeyboardWindow::DoesKeyRequireTextDraw(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00403247
+// FUNCTION: COPTER_D 0x00403247
 int32_t KeyboardWindow::GetRectOfNonTextImage(long, class MRect&) {
 // LINE 252:
 	asm( 
@@ -2489,7 +2489,7 @@ int32_t KeyboardWindow::GetRectOfNonTextImage(long, class MRect&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00403508
+// FUNCTION: COPTER_D 0x00403508
 int32_t KeyboardWindow::ComposeSelf() {
 // LINE 286:
 	asm( 
@@ -2649,7 +2649,7 @@ int32_t KeyboardWindow::ComposeSelf() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0040364f
+// FUNCTION: COPTER_D 0x0040364f
 void KeyboardWindow::DrawKeyColorsOnKeyboard() {
 // LINE 319:
 	asm( 
@@ -3050,7 +3050,7 @@ void KeyboardWindow::DrawKeyColorsOnKeyboard() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00403a8f
+// FUNCTION: COPTER_D 0x00403a8f
 void KeyboardWindow::DrawCharactersOnKeyboard() {
 // LINE 386:
 	asm( 
@@ -3702,7 +3702,7 @@ void KeyboardWindow::DrawCharactersOnKeyboard() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004042e5
+// FUNCTION: COPTER_D 0x004042e5
 void KeyboardWindow::DrawLightsOnKeyboard() {
 // LINE 458:
 	asm( 
@@ -3842,7 +3842,7 @@ void KeyboardWindow::DrawLightsOnKeyboard() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00404400
+// FUNCTION: COPTER_D 0x00404400
 int32_t KeyboardWindow::DoesWindowNeedUpdating() {
 // LINE 492:
 	asm( 
@@ -3893,7 +3893,7 @@ int32_t KeyboardWindow::DoesWindowNeedUpdating() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00404485
+// FUNCTION: COPTER_D 0x00404485
 long KeyboardWindow::DoKeyDown(long, char) {
 // LINE 504:
 	asm( 
@@ -3954,7 +3954,7 @@ long KeyboardWindow::DoKeyDown(long, char) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004044e7
+// FUNCTION: COPTER_D 0x004044e7
 long KeyboardWindow::DoKeyUp(long, char) {
 // LINE 517:
 	asm( 
@@ -4015,7 +4015,7 @@ long KeyboardWindow::DoKeyUp(long, char) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00404549
+// FUNCTION: COPTER_D 0x00404549
 long KeyboardWindow::DoCursorDown(long, long, unsigned long) {
 // LINE 530:
 	asm( 
@@ -4092,7 +4092,7 @@ long KeyboardWindow::DoCursorDown(long, long, unsigned long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004045cb
+// FUNCTION: COPTER_D 0x004045cb
 long KeyboardWindow::DoCursorUp(long, long, unsigned long) {
 // LINE 549:
 	asm( 
@@ -4162,7 +4162,7 @@ long KeyboardWindow::DoCursorUp(long, long, unsigned long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00404641
+// FUNCTION: COPTER_D 0x00404641
 long KeyboardWindow::DoCursorMove(long, long) {
 // LINE 567:
 	asm( 
@@ -4231,7 +4231,7 @@ long KeyboardWindow::DoCursorMove(long, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004046b8
+// FUNCTION: COPTER_D 0x004046b8
 void JoystickWindow::JoystickWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
 // LINE 612:
 	asm( 
@@ -4545,7 +4545,7 @@ void JoystickWindow::JoystickWindow(class MRect&, int32_t, class GraphicWindow*,
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00404bde
+// FUNCTION: COPTER_D 0x00404bde
 void JoystickWindow::~JoystickWindow() {
 // LINE 646:
 	asm( 
@@ -4577,7 +4577,7 @@ void JoystickWindow::~JoystickWindow() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00404c0d
+// FUNCTION: COPTER_D 0x00404c0d
 int32_t JoystickWindow::Initialize() {
 // LINE 654:
 	asm( 
@@ -4612,7 +4612,7 @@ int32_t JoystickWindow::Initialize() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00404c35
+// FUNCTION: COPTER_D 0x00404c35
 int32_t JoystickWindow::CreateImage(int32_t) {
 // LINE 663:
 	asm( 
@@ -5122,7 +5122,7 @@ int32_t JoystickWindow::CreateImage(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00405383
+// FUNCTION: COPTER_D 0x00405383
 void JoystickWindow::DestroyImage() {
 // LINE 697:
 	asm( 
@@ -5266,7 +5266,7 @@ void JoystickWindow::DestroyImage() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004054fd
+// FUNCTION: COPTER_D 0x004054fd
 int32_t JoystickWindow::ComposeSelf() {
 // LINE 724:
 	asm( 
@@ -5389,7 +5389,7 @@ int32_t JoystickWindow::ComposeSelf() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004055ec
+// FUNCTION: COPTER_D 0x004055ec
 void JoystickWindow::DrawCurrentJoystick() {
 // LINE 761:
 	asm( 
@@ -5485,7 +5485,7 @@ void JoystickWindow::DrawCurrentJoystick() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004056b8
+// FUNCTION: COPTER_D 0x004056b8
 void JoystickWindow::DrawButton(int32_t) {
 // LINE 787:
 	asm( 
@@ -5573,7 +5573,7 @@ void JoystickWindow::DrawButton(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00405781
+// FUNCTION: COPTER_D 0x00405781
 void JoystickWindow::DrawSlider(int32_t) {
 // LINE 810:
 	asm( 
@@ -5676,7 +5676,7 @@ void JoystickWindow::DrawSlider(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00405867
+// FUNCTION: COPTER_D 0x00405867
 void JoystickWindow::DrawHandle() {
 // LINE 833:
 	asm( 
@@ -5838,7 +5838,7 @@ void JoystickWindow::DrawHandle() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004059eb
+// FUNCTION: COPTER_D 0x004059eb
 void JoystickWindow::GetSourceHandleBaseRects(class MRect*) {
 // LINE 870:
 	asm( 
@@ -6043,7 +6043,7 @@ void JoystickWindow::GetSourceHandleBaseRects(class MRect*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00405c7a
+// FUNCTION: COPTER_D 0x00405c7a
 int32_t JoystickWindow::GetHandleImageToUse() {
 // LINE 913:
 	asm( 
@@ -6075,7 +6075,7 @@ int32_t JoystickWindow::GetHandleImageToUse() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00405ca4
+// FUNCTION: COPTER_D 0x00405ca4
 void JoystickWindow::GetNewJoystickControlStates(long *) {
 // LINE 925:
 	asm( 
@@ -6164,7 +6164,7 @@ void JoystickWindow::GetNewJoystickControlStates(long *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00405d58
+// FUNCTION: COPTER_D 0x00405d58
 int32_t JoystickWindow::DoesWindowNeedUpdating() {
 // LINE 942:
 	asm( 
@@ -6191,7 +6191,7 @@ int32_t JoystickWindow::DoesWindowNeedUpdating() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00405d73
+// FUNCTION: COPTER_D 0x00405d73
 void JoystickWindow::SetCurrentJoystick(int32_t) {
 // LINE 954:
 	asm( 
@@ -6239,7 +6239,7 @@ void JoystickWindow::SetCurrentJoystick(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00405db8
+// FUNCTION: COPTER_D 0x00405db8
 long JoystickWindow::DoCursorDown(long, long, unsigned long) {
 // LINE 964:
 	asm( 
@@ -6311,7 +6311,7 @@ long JoystickWindow::DoCursorDown(long, long, unsigned long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00405e34
+// FUNCTION: COPTER_D 0x00405e34
 long JoystickWindow::DoCursorUp(long, long, unsigned long) {
 // LINE 979:
 	asm( 
@@ -6338,7 +6338,7 @@ long JoystickWindow::DoCursorUp(long, long, unsigned long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00405e51
+// FUNCTION: COPTER_D 0x00405e51
 long JoystickWindow::DoCursorMove(long, long) {
 // LINE 987:
 	asm( 
@@ -6365,7 +6365,7 @@ long JoystickWindow::DoCursorMove(long, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00405e6e
+// FUNCTION: COPTER_D 0x00405e6e
 int32_t JoystickWindow::DoesPositionHitKey(long, long, long&) {
 // LINE 995:
 	asm( 
@@ -6620,7 +6620,7 @@ int32_t JoystickWindow::DoesPositionHitKey(long, long, long&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004061a4
+// FUNCTION: COPTER_D 0x004061a4
 void UserInputWindow::UserInputWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
 // LINE 1078:
 	asm( 
@@ -7077,7 +7077,7 @@ void UserInputWindow::UserInputWindow(class MRect&, int32_t, class GraphicWindow
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004069bb
+// FUNCTION: COPTER_D 0x004069bb
 int32_t UserInputWindow::Initialize() {
 // LINE 1087:
 	asm( 
@@ -8415,7 +8415,7 @@ int32_t UserInputWindow::Initialize() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00407d47
+// FUNCTION: COPTER_D 0x00407d47
 long UserInputWindow::DoKeyDown(long, char) {
 // LINE 1178:
 	asm( 
@@ -8480,7 +8480,7 @@ long UserInputWindow::DoKeyDown(long, char) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00407db1
+// FUNCTION: COPTER_D 0x00407db1
 int32_t UserInputWindow::DoMessage(class GraphicWindow*, long, long, void * __ptr32) {
 // LINE 1195:
 	asm( 
@@ -8848,7 +8848,7 @@ int32_t UserInputWindow::DoMessage(class GraphicWindow*, long, long, void * __pt
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00408142
+// FUNCTION: COPTER_D 0x00408142
 int32_t UserInputWindow::DoJoystickWindowMessage(long, void * __ptr32) {
 // LINE 1251:
 	asm( 
@@ -9494,7 +9494,7 @@ int32_t UserInputWindow::DoJoystickWindowMessage(long, void * __ptr32) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004089e6
+// FUNCTION: COPTER_D 0x004089e6
 void UserInputWindow::AddJoystickTwinCommand(long, long, long) {
 // LINE 1342:
 	asm( 
@@ -9738,7 +9738,7 @@ void UserInputWindow::AddJoystickTwinCommand(long, long, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00408d04
+// FUNCTION: COPTER_D 0x00408d04
 void UserInputWindow::RemoveJoystickTwinCommand(long, long, long) {
 // LINE 1365:
 	asm( 
@@ -9785,7 +9785,7 @@ void UserInputWindow::RemoveJoystickTwinCommand(long, long, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00408d49
+// FUNCTION: COPTER_D 0x00408d49
 int32_t UserInputWindow::DoKeyboardWindowMessage(long, void * __ptr32) {
 // LINE 1378:
 	asm( 
@@ -10205,7 +10205,7 @@ int32_t UserInputWindow::DoKeyboardWindowMessage(long, void * __ptr32) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0040920e
+// FUNCTION: COPTER_D 0x0040920e
 enum UserInputWindow::KeyUsageType UserInputWindow::GetKeyUsageType(long, long) {
 // LINE 1443:
 	asm( 
@@ -10456,7 +10456,7 @@ enum UserInputWindow::KeyUsageType UserInputWindow::GetKeyUsageType(long, long) 
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00409494
+// FUNCTION: COPTER_D 0x00409494
 void UserInputWindow::RemoveShortcutFromList(long, long, long) {
 // LINE 1489:
 	asm( 
@@ -10601,7 +10601,7 @@ void UserInputWindow::RemoveShortcutFromList(long, long, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00409609
+// FUNCTION: COPTER_D 0x00409609
 int32_t UserInputWindow::DoInputDeviceListBoxWindowMessage(long, void * __ptr32) {
 // LINE 1512:
 	asm( 
@@ -10644,7 +10644,7 @@ int32_t UserInputWindow::DoInputDeviceListBoxWindowMessage(long, void * __ptr32)
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00409644
+// FUNCTION: COPTER_D 0x00409644
 int32_t UserInputWindow::DoCommandListBoxWindowMessage(long, void * __ptr32) {
 // LINE 1524:
 	asm( 
@@ -10687,7 +10687,7 @@ int32_t UserInputWindow::DoCommandListBoxWindowMessage(long, void * __ptr32) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0040967f
+// FUNCTION: COPTER_D 0x0040967f
 long UserInputWindow::GetCurrentDevice() {
 // LINE 1537:
 	asm( 
@@ -10791,7 +10791,7 @@ long UserInputWindow::GetCurrentDevice() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00409740
+// FUNCTION: COPTER_D 0x00409740
 long UserInputWindow::GetCurrentCommand() {
 // LINE 1559:
 	asm( 
@@ -10895,7 +10895,7 @@ long UserInputWindow::GetCurrentCommand() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00409804
+// FUNCTION: COPTER_D 0x00409804
 void UserInputWindow::UpdateDisplay(int32_t) {
 // LINE 1585:
 	asm( 
@@ -11712,7 +11712,7 @@ void UserInputWindow::UpdateDisplay(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0040a345
+// FUNCTION: COPTER_D 0x0040a345
 int32_t UserInputWindow::DoesTwinCommandExistForShortcut(long, long, long) {
 // LINE 1694:
 	asm( 
@@ -11822,7 +11822,7 @@ int32_t UserInputWindow::DoesTwinCommandExistForShortcut(long, long, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0040a459
+// FUNCTION: COPTER_D 0x0040a459
 void UserInputWindow::ClearDeviceArea() {
 // LINE 1716:
 	asm( 
@@ -11892,7 +11892,7 @@ void UserInputWindow::ClearDeviceArea() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0040a508
+// FUNCTION: COPTER_D 0x0040a508
 void UserInputWindow::SetupAllInputDevices() {
 // LINE 1732:
 	asm( 
@@ -12261,7 +12261,7 @@ void UserInputWindow::SetupAllInputDevices() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0040aa51
+// FUNCTION: COPTER_D 0x0040aa51
 void UserInputWindow::SetupAllCommands() {
 // LINE 1767:
 	asm( 
@@ -12571,7 +12571,7 @@ void UserInputWindow::SetupAllCommands() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0040ae7c
+// FUNCTION: COPTER_D 0x0040ae7c
 void UserInputWindow::ReadShortcuts(class list<Shortcut>&) {
 // LINE 1785:
 	asm( 
@@ -12962,7 +12962,7 @@ void UserInputWindow::ReadShortcuts(class list<Shortcut>&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0040b471
+// FUNCTION: COPTER_D 0x0040b471
 void UserInputWindow::WriteShortcutsToPreferenceFile() {
 // LINE 1804:
 	asm( 
@@ -12993,7 +12993,7 @@ void UserInputWindow::WriteShortcutsToPreferenceFile() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0040b498
+// FUNCTION: COPTER_D 0x0040b498
 void UserInputWindow::DisplayError(int32_t) {
 // LINE 1813:
 	asm( 
@@ -13016,7 +13016,7 @@ void UserInputWindow::DisplayError(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0040b4b0
+// FUNCTION: COPTER_D 0x0040b4b0
 void ControlDisplayWindow::ControlDisplayWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
 // LINE 1853:
 	asm( 
@@ -13064,7 +13064,7 @@ void ControlDisplayWindow::ControlDisplayWindow(class MRect&, int32_t, class Gra
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0040b51a
+// FUNCTION: COPTER_D 0x0040b51a
 int32_t ControlDisplayWindow::Initialize() {
 // LINE 1862:
 	asm( 
@@ -14089,7 +14089,7 @@ int32_t ControlDisplayWindow::Initialize() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0040c352
+// FUNCTION: COPTER_D 0x0040c352
 int32_t ControlDisplayWindow::DoMessage(class GraphicWindow*, long, long, void * __ptr32) {
 // LINE 1931:
 	asm( 
@@ -14346,7 +14346,7 @@ int32_t ControlDisplayWindow::DoMessage(class GraphicWindow*, long, long, void *
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0040c5b1
+// FUNCTION: COPTER_D 0x0040c5b1
 void ControlDisplayWindow::ReadShortcuts(class list<Shortcut>*) {
 // LINE 1982:
 	asm( 
@@ -14792,7 +14792,7 @@ void ControlDisplayWindow::ReadShortcuts(class list<Shortcut>*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0040cb52
+// FUNCTION: COPTER_D 0x0040cb52
 void ControlDisplayWindow::GetCommandString(class basic_string<char>&, long) {
 // LINE 2043:
 	asm( 
@@ -15219,7 +15219,7 @@ void ControlDisplayWindow::GetCommandString(class basic_string<char>&, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0040d24a
+// FUNCTION: COPTER_D 0x0040d24a
 void ControlDisplayWindow::AppendKeysString(class basic_string<char>&, long, long, int32_t) {
 // LINE 2054:
 	asm( 
@@ -15727,7 +15727,7 @@ void ControlDisplayWindow::AppendKeysString(class basic_string<char>&, long, lon
 
 
 // Contribution: 1:0000cad0-0000cb08 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x0040dad0
+// FUNCTION: COPTER_D 0x0040dad0
 // KeyboardWindow::`scalar deleting destructor'
 
 
@@ -15745,7 +15745,7 @@ void ControlDisplayWindow::AppendKeysString(class basic_string<char>&, long, lon
 
 
 // Contribution: 1:0000cca0-0000ccd8 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x0040dca0
+// FUNCTION: COPTER_D 0x0040dca0
 // JoystickWindow::`scalar deleting destructor'
 
 
@@ -15754,7 +15754,7 @@ void ControlDisplayWindow::AppendKeysString(class basic_string<char>&, long, lon
 
 
 // Contribution: 1:0000ce90-0000d37a Module: 75, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x0040de90
+// FUNCTION: COPTER_D 0x0040de90
 // UserInputWindow::`scalar deleting destructor'
 
 
@@ -15778,7 +15778,7 @@ void ControlDisplayWindow::AppendKeysString(class basic_string<char>&, long, lon
 
 
 // Contribution: 1:0000dc20-0000dc5d Module: 75, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x0040ec20
+// FUNCTION: COPTER_D 0x0040ec20
 // ControlDisplayWindow::`scalar deleting destructor'
 
 
@@ -16111,19 +16111,19 @@ void ControlDisplayWindow::AppendKeysString(class basic_string<char>&, long, lon
 
 
 // Contribution: 1:0001cd70-0001cde4 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x0041dd70
+// FUNCTION: COPTER_D 0x0041dd70
 // basic_string_ref<char>::`scalar deleting destructor'
 
 
 
 // Contribution: 1:0001cdf0-0001cee1 Module: 75, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x0041ddf0
+// FUNCTION: COPTER_D 0x0041ddf0
 // StringIDAssociation::`scalar deleting destructor'
 
 
 
 // Contribution: 1:0001cef0-0001cfdc Module: 75, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x0041def0
+// FUNCTION: COPTER_D 0x0041def0
 // basic_string<char>::`scalar deleting destructor'
 
 
@@ -16159,14 +16159,14 @@ void ControlDisplayWindow::AppendKeysString(class basic_string<char>&, long, lon
 
 
 // Contribution: 2:00000058-0000013b Module: 75, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00000058
+// GLOBAL: COPTER_D 0x00000058
 // ??_7KeyboardWindow@@6B@
 
 
 // Contribution: 2:00000140-00000227 Module: 75, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00000140
+// GLOBAL: COPTER_D 0x00000140
 // ??_7JoystickWindow@@6B@
-// GLOBAL: SIMCOPTER 0x00000228
+// GLOBAL: COPTER_D 0x00000228
 // ??_7UserInputWindow@@6B@
 
 
@@ -16174,61 +16174,61 @@ void ControlDisplayWindow::AppendKeysString(class basic_string<char>&, long, lon
 
 
 // Contribution: 2:00000300-000003c7 Module: 75, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00000300
+// GLOBAL: COPTER_D 0x00000300
 // ??_7ControlDisplayWindow@@6B@
 
 
 // Contribution: 3:00000018-0000001f Module: 75, 4 byte alignment, initialized_data, read, write, 
-// LOCAL: SIMCOPTER 0x00000018
+// LOCAL: COPTER_D 0x00000018
 // $S98
-// LOCAL: SIMCOPTER 0x0000001c
+// LOCAL: COPTER_D 0x0000001c
 // $S101
 
 
 // Contribution: 3:000000f0-000001a9 Module: 75, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x000000f0
+// GLOBAL: COPTER_D 0x000000f0
 // SZ_KEYBOARD_IMAGE_FILE_NAME
-// GLOBAL: SIMCOPTER 0x000000f4
+// GLOBAL: COPTER_D 0x000000f4
 // SZ_KEYBOARD_LIGHT_IMAGE_FILE_NAME
-// GLOBAL: SIMCOPTER 0x000000f8
+// GLOBAL: COPTER_D 0x000000f8
 // SZ_KEYBOARD_NON_TEXT_IMAGE_FILE_NAME
-// GLOBAL: SIMCOPTER 0x000000fc
+// GLOBAL: COPTER_D 0x000000fc
 // SZ_JOYSTICK_IMAGE_FILE_NAME
-// GLOBAL: SIMCOPTER 0x00000100
+// GLOBAL: COPTER_D 0x00000100
 // SZ_JOYSTICK_BUTTON_IMAGE_FILE_NAME
-// GLOBAL: SIMCOPTER 0x00000104
+// GLOBAL: COPTER_D 0x00000104
 // SZ_JOYSTICK_SLIDER_IMAGE_FILE_NAME
-// GLOBAL: SIMCOPTER 0x00000108
+// GLOBAL: COPTER_D 0x00000108
 // SZ_JOYSTICK_HANDLE_IMAGE_FILE_NAME
-// GLOBAL: SIMCOPTER 0x0000010c
+// GLOBAL: COPTER_D 0x0000010c
 // SZ_JOYSTICK_HANDLE_BASE_IMAGE_FILE_NAME
-// GLOBAL: SIMCOPTER 0x00000110
+// GLOBAL: COPTER_D 0x00000110
 // SZ_USER_INPUT_WINDOW_IMAGE_FILE_NAME
-// GLOBAL: SIMCOPTER 0x00000114
+// GLOBAL: COPTER_D 0x00000114
 // SZ_USER_INPUT_WINDOW_BACKGROUND_FILE_NAME
-// GLOBAL: SIMCOPTER 0x00000118
+// GLOBAL: COPTER_D 0x00000118
 // SZ_CONTROL_DISPLAY_WINDOW_IMAGE_FILE_NAME
 
 
 // Contribution: 3:000001ac-000001b9 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x000001ac
+// GLOBAL: COPTER_D 0x000001ac
 // ??_C@_0O@OAFC@out?5of?5memory?$AA@
 
 
 // Contribution: 3:000001bc-000001bf Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x000001bc
+// GLOBAL: COPTER_D 0x000001bc
 // list<KeyColors>::number_of_lists
-// GLOBAL: SIMCOPTER 0x000001c0
+// GLOBAL: COPTER_D 0x000001c0
 // list<KeyColors>::last
 
 
 // Contribution: 3:000001c0-000001c3 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x000001c4
+// GLOBAL: COPTER_D 0x000001c4
 // list<KeyColors>::next_avail
 
 
 // Contribution: 3:000001c4-000001c7 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x000001c8
+// GLOBAL: COPTER_D 0x000001c8
 // list<KeyColors>::free_list
 
 
@@ -16236,29 +16236,29 @@ void ControlDisplayWindow::AppendKeysString(class basic_string<char>&, long, lon
 
 
 // Contribution: 3:000001cc-000001cf Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x000001cc
+// GLOBAL: COPTER_D 0x000001cc
 // list<HotSpot>::number_of_lists
-// GLOBAL: SIMCOPTER 0x000001d0
+// GLOBAL: COPTER_D 0x000001d0
 // list<HotSpot>::last
 
 
 // Contribution: 3:000001d0-000001d3 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x000001d4
+// GLOBAL: COPTER_D 0x000001d4
 // list<HotSpot>::next_avail
 
 
 // Contribution: 3:000001d4-000001d7 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x000001d8
+// GLOBAL: COPTER_D 0x000001d8
 // list<HotSpot>::free_list
 
 
 // Contribution: 3:000001d8-000001db Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x000001dc
+// GLOBAL: COPTER_D 0x000001dc
 // list<HotSpot>::buffer_list
 
 
 // Contribution: 3:000001dc-000001df Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x000001e0
+// GLOBAL: COPTER_D 0x000001e0
 // list<KeyColors>::buffer_list
 
 
@@ -16266,24 +16266,24 @@ void ControlDisplayWindow::AppendKeysString(class basic_string<char>&, long, lon
 
 
 // Contribution: 3:000001e4-000001fd Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x000001e4
+// GLOBAL: COPTER_D 0x000001e4
 // ??_C@_0BK@CLOL@Length?5exception?5occurred?$AA@
 
 
 // Contribution: 3:00000200-00000203 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00000200
+// GLOBAL: COPTER_D 0x00000200
 // ??_C@_03LNFH@?$CI?$CB?$CJ?$AA@
-// GLOBAL: SIMCOPTER 0x00000204
+// GLOBAL: COPTER_D 0x00000204
 // list<StringIDAssociation>::number_of_lists
 
 
 // Contribution: 3:00000204-00000207 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00000208
+// GLOBAL: COPTER_D 0x00000208
 // list<StringIDAssociation>::last
 
 
 // Contribution: 3:00000208-0000020b Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x0000020c
+// GLOBAL: COPTER_D 0x0000020c
 // list<StringIDAssociation>::next_avail
 
 
@@ -16291,24 +16291,24 @@ void ControlDisplayWindow::AppendKeysString(class basic_string<char>&, long, lon
 
 
 // Contribution: 3:00000210-00000213 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00000210
+// GLOBAL: COPTER_D 0x00000210
 // list<StringIDAssociation>::free_list
-// GLOBAL: SIMCOPTER 0x00000214
+// GLOBAL: COPTER_D 0x00000214
 // list<StringIDAssociation>::buffer_list
 
 
 // Contribution: 3:00000214-00000217 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00000218
+// GLOBAL: COPTER_D 0x00000218
 // list<Shortcut>::number_of_lists
 
 
 // Contribution: 3:00000218-0000021b Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x0000021c
+// GLOBAL: COPTER_D 0x0000021c
 // list<Shortcut>::last
 
 
 // Contribution: 3:0000021c-0000021f Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00000220
+// GLOBAL: COPTER_D 0x00000220
 // list<Shortcut>::next_avail
 
 
@@ -16316,19 +16316,19 @@ void ControlDisplayWindow::AppendKeysString(class basic_string<char>&, long, lon
 
 
 // Contribution: 3:00000224-00000227 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00000224
+// GLOBAL: COPTER_D 0x00000224
 // list<Shortcut>::free_list
 
 
 // Contribution: 3:00000228-0000022b Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00000228
+// GLOBAL: COPTER_D 0x00000228
 // list<Shortcut>::buffer_list
-// GLOBAL: SIMCOPTER 0x0000022c
+// GLOBAL: COPTER_D 0x0000022c
 // ??_C@_0CA@KCID@Out?5of?5range?5exception?5occurred?$AA@
 
 
 // Contribution: 3:0000022c-0000024b Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x0000024c
+// GLOBAL: COPTER_D 0x0000024c
 // rb_tree<long,long,ident<long,long>,less<long>>::NIL
 
 
@@ -16336,9 +16336,9 @@ void ControlDisplayWindow::AppendKeysString(class basic_string<char>&, long, lon
 
 
 // Contribution: 3:00000250-00000253 Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00000250
+// GLOBAL: COPTER_D 0x00000250
 // rb_tree<long,long,ident<long,long>,less<long>>::number_of_trees
-// GLOBAL: SIMCOPTER 0x00000254
+// GLOBAL: COPTER_D 0x00000254
 // rb_tree<long,long,ident<long,long>,less<long>>::last
 
 
@@ -16346,14 +16346,14 @@ void ControlDisplayWindow::AppendKeysString(class basic_string<char>&, long, lon
 
 
 // Contribution: 3:00000258-0000025b Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00000258
+// GLOBAL: COPTER_D 0x00000258
 // rb_tree<long,long,ident<long,long>,less<long>>::next_avail
-// GLOBAL: SIMCOPTER 0x0000025c
+// GLOBAL: COPTER_D 0x0000025c
 // rb_tree<long,long,ident<long,long>,less<long>>::free_list
 
 
 // Contribution: 3:0000025c-0000025f Module: 75, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00000260
+// GLOBAL: COPTER_D 0x00000260
 // rb_tree<long,long,ident<long,long>,less<long>>::buffer_list
 
 
@@ -16361,9 +16361,9 @@ void ControlDisplayWindow::AppendKeysString(class basic_string<char>&, long, lon
 
 
 // Contribution: 3:0002b790-0002b797 Module: 75, 4 byte alignment, uninitialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x0002b790
+// GLOBAL: COPTER_D 0x0002b790
 // colorTextGamePaletteNormal
-// GLOBAL: SIMCOPTER 0x0002b794
+// GLOBAL: COPTER_D 0x0002b794
 // colorTextGamePaletteHighlighted
-// GLOBAL: SIMCOPTER 0x0002b798
+// GLOBAL: COPTER_D 0x0002b798
 // ddCaps

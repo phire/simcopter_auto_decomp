@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:00032120-000389b8 Module: 59, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00433120
+// FUNCTION: COPTER_D 0x00433120
 void RadioStation::RadioStation() {
 // LINE 62:
 	asm( 
@@ -361,7 +361,7 @@ void RadioStation::RadioStation() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00433605
+// FUNCTION: COPTER_D 0x00433605
 void RadioStation::RadioStation(const class RadioStation&) {
 // LINE 80:
 	asm( 
@@ -856,7 +856,7 @@ void RadioStation::RadioStation(const class RadioStation&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00433c3e
+// FUNCTION: COPTER_D 0x00433c3e
 class RadioStation& RadioStation::operator=(const class RadioStation&) {
 // LINE 106:
 	asm( 
@@ -1333,7 +1333,7 @@ class RadioStation& RadioStation::operator=(const class RadioStation&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004341c6
+// FUNCTION: COPTER_D 0x004341c6
 void RadioStation::~RadioStation() {
 // LINE 136:
 	asm( 
@@ -1608,7 +1608,7 @@ void RadioStation::~RadioStation() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00434581
+// FUNCTION: COPTER_D 0x00434581
 int32_t RadioStation::Initialize() {
 // LINE 146:
 	asm( 
@@ -1635,7 +1635,7 @@ int32_t RadioStation::Initialize() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043459c
+// FUNCTION: COPTER_D 0x0043459c
 void RadioStation::SetPlayStatus(int32_t) {
 // LINE 155:
 	asm( 
@@ -1664,7 +1664,7 @@ void RadioStation::SetPlayStatus(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004345bd
+// FUNCTION: COPTER_D 0x004345bd
 void RadioStation::StationSet() {
 // LINE 165:
 	asm( 
@@ -1701,7 +1701,7 @@ void RadioStation::StationSet() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004345e9
+// FUNCTION: COPTER_D 0x004345e9
 int32_t RadioStation::IsPlaying() {
 // LINE 175:
 	asm( 
@@ -1729,7 +1729,7 @@ int32_t RadioStation::IsPlaying() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00434605
+// FUNCTION: COPTER_D 0x00434605
 int32_t RadioStation::DoState() {
 // LINE 184:
 	asm( 
@@ -2155,7 +2155,7 @@ int32_t RadioStation::DoState() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00434a46
+// FUNCTION: COPTER_D 0x00434a46
 int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycleType) {
 // LINE 271:
 	asm( 
@@ -2834,7 +2834,7 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004353e2
+// FUNCTION: COPTER_D 0x004353e2
 void RadioStation::LoadAllPlaylists() {
 // LINE 317:
 	asm( 
@@ -3239,7 +3239,7 @@ void RadioStation::LoadAllPlaylists() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004359e2
+// FUNCTION: COPTER_D 0x004359e2
 void RadioStation::ShufflePlaylist() {
 // LINE 349:
 	asm( 
@@ -4148,7 +4148,7 @@ void RadioStation::ShufflePlaylist() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043678e
+// FUNCTION: COPTER_D 0x0043678e
 void RadioStation::RandomizeStringList(class list<basic_string<char>>&) {
 // LINE 411:
 	asm( 
@@ -4479,7 +4479,7 @@ void RadioStation::RandomizeStringList(class list<basic_string<char>>&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00436bcd
+// FUNCTION: COPTER_D 0x00436bcd
 void RadioStation::ShuffleCycle() {
 // LINE 445:
 	asm( 
@@ -4633,7 +4633,7 @@ void RadioStation::ShuffleCycle() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00436d80
+// FUNCTION: COPTER_D 0x00436d80
 void RadioStation::GetStationCallSign(class basic_string<char>&) {
 // LINE 469:
 	asm( 
@@ -4784,7 +4784,7 @@ void RadioStation::GetStationCallSign(class basic_string<char>&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00436f5f
+// FUNCTION: COPTER_D 0x00436f5f
 enum RadioStationType RadioStation::GetRadioStationType() {
 // LINE 478:
 	asm( 
@@ -4812,7 +4812,7 @@ enum RadioStationType RadioStation::GetRadioStationType() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00436f7b
+// FUNCTION: COPTER_D 0x00436f7b
 int32_t RadioStation::IsCycleTypePresent(enum RadioStationCycleType) {
 // LINE 487:
 	asm( 
@@ -4926,7 +4926,7 @@ int32_t RadioStation::IsCycleTypePresent(enum RadioStationCycleType) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00437054
+// FUNCTION: COPTER_D 0x00437054
 void RadioStation::MoveToNextPlaylistItem(enum RadioStationCycleType) {
 // LINE 514:
 	asm( 
@@ -5176,7 +5176,7 @@ void RadioStation::MoveToNextPlaylistItem(enum RadioStationCycleType) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00437337
+// FUNCTION: COPTER_D 0x00437337
 int32_t RadioStation::ReadCallSignFromDisk() {
 // LINE 542:
 	asm( 
@@ -5460,7 +5460,7 @@ int32_t RadioStation::ReadCallSignFromDisk() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004376dc
+// FUNCTION: COPTER_D 0x004376dc
 int32_t RadioStation::DetectRadioStationType() {
 // LINE 562:
 	asm( 
@@ -5760,7 +5760,7 @@ int32_t RadioStation::DetectRadioStationType() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00437b10
+// FUNCTION: COPTER_D 0x00437b10
 public: __thiscall Radio::Radio(void) {
 // LINE 603:
 	asm( 
@@ -5814,7 +5814,7 @@ public: __thiscall Radio::Radio(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00437bba
+// FUNCTION: COPTER_D 0x00437bba
 public: virtual __thiscall Radio::~Radio(void) {
 // LINE 610:
 	asm( 
@@ -5878,7 +5878,7 @@ public: virtual __thiscall Radio::~Radio(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00437c57
+// FUNCTION: COPTER_D 0x00437c57
 public: virtual int __thiscall Radio::Initialize(void) {
 // LINE 619:
 	asm( 
@@ -5919,7 +5919,7 @@ public: virtual int __thiscall Radio::Initialize(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00437c88
+// FUNCTION: COPTER_D 0x00437c88
 public: virtual int __thiscall Radio::DeInitialize(void) {
 // LINE 630:
 	asm( 
@@ -5961,7 +5961,7 @@ public: virtual int __thiscall Radio::DeInitialize(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00437cbd
+// FUNCTION: COPTER_D 0x00437cbd
 public: virtual void __thiscall Radio::SetPreferences(struct RadioPreferences &) {
 // LINE 641:
 	asm( 
@@ -6053,7 +6053,7 @@ public: virtual void __thiscall Radio::SetPreferences(struct RadioPreferences &)
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00437d4c
+// FUNCTION: COPTER_D 0x00437d4c
 public: virtual void __thiscall Radio::GetPreferences(struct RadioPreferences &) {
 // LINE 660:
 	asm( 
@@ -6125,7 +6125,7 @@ public: virtual void __thiscall Radio::GetPreferences(struct RadioPreferences &)
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00437db7
+// FUNCTION: COPTER_D 0x00437db7
 public: virtual int __thiscall Radio::GetPreferences(void) {
 // LINE 675:
 	asm( 
@@ -6217,7 +6217,7 @@ public: virtual int __thiscall Radio::GetPreferences(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00437e67
+// FUNCTION: COPTER_D 0x00437e67
 public: virtual int __thiscall Radio::SavePreferences(void) {
 // LINE 703:
 	asm( 
@@ -6301,7 +6301,7 @@ public: virtual int __thiscall Radio::SavePreferences(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00437ee7
+// FUNCTION: COPTER_D 0x00437ee7
 public: virtual int __thiscall Radio::SetOn(int) {
 // LINE 727:
 	asm( 
@@ -6435,7 +6435,7 @@ public: virtual int __thiscall Radio::SetOn(int) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00438005
+// FUNCTION: COPTER_D 0x00438005
 public: virtual void __thiscall Radio::SetMute(int) {
 // LINE 758:
 	asm( 
@@ -6518,7 +6518,7 @@ public: virtual void __thiscall Radio::SetMute(int) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004380a0
+// FUNCTION: COPTER_D 0x004380a0
 public: virtual void __thiscall Radio::SetOption(int, enum RadioOption) {
 // LINE 780:
 	asm( 
@@ -6576,7 +6576,7 @@ public: virtual void __thiscall Radio::SetOption(int, enum RadioOption) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004380fb
+// FUNCTION: COPTER_D 0x004380fb
 public: virtual int __thiscall Radio::GetOption(enum RadioOption) {
 // LINE 793:
 	asm( 
@@ -6638,7 +6638,7 @@ public: virtual int __thiscall Radio::GetOption(enum RadioOption) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043815e
+// FUNCTION: COPTER_D 0x0043815e
 public: virtual int __thiscall Radio::SetVolume(long) {
 // LINE 811:
 	asm( 
@@ -6706,7 +6706,7 @@ public: virtual int __thiscall Radio::SetVolume(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004381cc
+// FUNCTION: COPTER_D 0x004381cc
 public: virtual int __thiscall Radio::SetStation(int) {
 // LINE 826:
 	asm( 
@@ -6829,7 +6829,7 @@ public: virtual int __thiscall Radio::SetStation(int) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004382ca
+// FUNCTION: COPTER_D 0x004382ca
 public: virtual int __thiscall Radio::SetStation(enum RadioStationType) {
 // LINE 846:
 	asm( 
@@ -6911,7 +6911,7 @@ public: virtual int __thiscall Radio::SetStation(enum RadioStationType) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00438379
+// FUNCTION: COPTER_D 0x00438379
 public: virtual int __thiscall Radio::IsStationTypeAvailable(enum RadioStationType) {
 // LINE 860:
 	asm( 
@@ -6988,7 +6988,7 @@ public: virtual int __thiscall Radio::IsStationTypeAvailable(enum RadioStationTy
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043841e
+// FUNCTION: COPTER_D 0x0043841e
 public: virtual int __thiscall Radio::GetStationCount(void) {
 // LINE 875:
 	asm( 
@@ -7024,7 +7024,7 @@ public: virtual int __thiscall Radio::GetStationCount(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00438457
+// FUNCTION: COPTER_D 0x00438457
 public: virtual int __thiscall Radio::DoState(void) {
 // LINE 884:
 	asm( 
@@ -7078,7 +7078,7 @@ public: virtual int __thiscall Radio::DoState(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004384b6
+// FUNCTION: COPTER_D 0x004384b6
 protected: virtual int __thiscall Radio::StationDirectoryNameIsValid(class basic_string<char> &) {
 // LINE 895:
 	asm( 
@@ -7225,7 +7225,7 @@ protected: virtual int __thiscall Radio::StationDirectoryNameIsValid(class basic
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043867d
+// FUNCTION: COPTER_D 0x0043867d
 protected: virtual int __thiscall Radio::SetupStations(void) {
 // LINE 914:
 	asm( 
@@ -8328,7 +8328,7 @@ protected: virtual int __thiscall Radio::SetupStations(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00439663
+// FUNCTION: COPTER_D 0x00439663
 protected: virtual int __thiscall Radio::DoesAtLeastOneSoundEntryExistForTheGivenDirectory(class basic_string<char> const &) {
 // LINE 1013:
 	asm( 
@@ -8598,7 +8598,7 @@ protected: virtual int __thiscall Radio::DoesAtLeastOneSoundEntryExistForTheGive
 
 
 // Contribution: 1:00039040-00039078 Module: 59, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x0043a040
+// FUNCTION: COPTER_D 0x0043a040
 // RadioStation::`scalar deleting destructor'
 
 
@@ -8616,7 +8616,7 @@ protected: virtual int __thiscall Radio::DoesAtLeastOneSoundEntryExistForTheGive
 
 
 // Contribution: 1:00039450-00039488 Module: 59, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x0043a450
+// FUNCTION: COPTER_D 0x0043a450
 // Radio::`scalar deleting destructor'
 
 
@@ -8667,55 +8667,55 @@ protected: virtual int __thiscall Radio::DoesAtLeastOneSoundEntryExistForTheGive
 
 
 // Contribution: 2:00000518-0000055b Module: 59, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00000518
+// GLOBAL: COPTER_D 0x00000518
 // ??_7RadioStation@@6B@
 
 
 // Contribution: 2:00000560-000005af Module: 59, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00000560
+// GLOBAL: COPTER_D 0x00000560
 // ??_7Radio@@6B@
 
 
 // Contribution: 3:00001488-0000155c Module: 59, 8 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x00001488
+// GLOBAL: COPTER_D 0x00001488
 // StationDirectoryNameArray
-// GLOBAL: SIMCOPTER 0x000014ac
+// GLOBAL: COPTER_D 0x000014ac
 // SZ_RADIO_DIRECTORY_NAME
-// GLOBAL: SIMCOPTER 0x000014b0
+// GLOBAL: COPTER_D 0x000014b0
 // SZ_RADIO_COMMERCIAL_DIRECTORY_NAME
-// GLOBAL: SIMCOPTER 0x000014b4
+// GLOBAL: COPTER_D 0x000014b4
 // SZ_RADIO_STATIONS_DIRECTORY_NAME
-// GLOBAL: SIMCOPTER 0x000014b8
+// GLOBAL: COPTER_D 0x000014b8
 // SZ_RADIO_STATIONS_MUSIC_DIRECTORY_NAME
-// GLOBAL: SIMCOPTER 0x000014bc
+// GLOBAL: COPTER_D 0x000014bc
 // SZ_RADIO_STATIONS_DJ_DIRECTORY_NAME
-// GLOBAL: SIMCOPTER 0x000014c0
+// GLOBAL: COPTER_D 0x000014c0
 // SZ_RADIO_STATIONS_JINGLE_DIRECTORY_NAME
-// GLOBAL: SIMCOPTER 0x000014c4
+// GLOBAL: COPTER_D 0x000014c4
 // SZ_SOUND_FILE_FILTER
-// GLOBAL: SIMCOPTER 0x000014c8
+// GLOBAL: COPTER_D 0x000014c8
 // SZ_CALL_ID_FILTER
 
 
 // Contribution: 3:00001560-00001563 Module: 59, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00001560
+// GLOBAL: COPTER_D 0x00001560
 // list<basic_string<char>>::number_of_lists
-// GLOBAL: SIMCOPTER 0x00001564
+// GLOBAL: COPTER_D 0x00001564
 // list<basic_string<char>>::last
 
 
 // Contribution: 3:00001564-00001567 Module: 59, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00001568
+// GLOBAL: COPTER_D 0x00001568
 // list<basic_string<char>>::next_avail
 
 
 // Contribution: 3:00001568-0000156b Module: 59, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x0000156c
+// GLOBAL: COPTER_D 0x0000156c
 // list<basic_string<char>>::free_list
 
 
 // Contribution: 3:0000156c-0000156f Module: 59, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00001570
+// GLOBAL: COPTER_D 0x00001570
 // list<basic_string<char>>::buffer_list
 
 

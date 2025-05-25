@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:0008a2b0-0008d894 Module: 26, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x0048b2b0
+// FUNCTION: COPTER_D 0x0048b2b0
 void CommandSystem::CommandSystem() {
 // LINE 31:
 	asm( 
@@ -187,7 +187,7 @@ void CommandSystem::CommandSystem() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048b534
+// FUNCTION: COPTER_D 0x0048b534
 void CommandSystem::Initialize() {
 // LINE 43:
 	asm( 
@@ -296,7 +296,7 @@ void CommandSystem::Initialize() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048b631
+// FUNCTION: COPTER_D 0x0048b631
 void CommandSystem::ClearAllCommands() {
 // LINE 71:
 	asm( 
@@ -341,7 +341,7 @@ void CommandSystem::ClearAllCommands() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048b682
+// FUNCTION: COPTER_D 0x0048b682
 void CommandSystem::ClearAllCommandsDevice(long) {
 // LINE 86:
 	asm( 
@@ -395,7 +395,7 @@ void CommandSystem::ClearAllCommandsDevice(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048b6ed
+// FUNCTION: COPTER_D 0x0048b6ed
 void CommandSystem::SetUpCommandArraysFromShortcuts() {
 // LINE 124:
 	asm( 
@@ -705,7 +705,7 @@ void CommandSystem::SetUpCommandArraysFromShortcuts() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048b9a9
+// FUNCTION: COPTER_D 0x0048b9a9
 void CommandSystem::PollJoysticksForCommands() {
 // LINE 190:
 	asm( 
@@ -913,7 +913,7 @@ void CommandSystem::PollJoysticksForCommands() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048bb88
+// FUNCTION: COPTER_D 0x0048bb88
 void CGameCommander::CGameCommander() {
 // LINE 248:
 	asm( 
@@ -946,7 +946,7 @@ void CGameCommander::CGameCommander() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048bbbc
+// FUNCTION: COPTER_D 0x0048bbbc
 void CGameCommander::~CGameCommander() {
 // LINE 255:
 	asm( 
@@ -973,7 +973,7 @@ void CGameCommander::~CGameCommander() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048bbe3
+// FUNCTION: COPTER_D 0x0048bbe3
 unsigned long CGameCommander::Idle() {
 // LINE 263:
 	asm( 
@@ -1000,7 +1000,7 @@ unsigned long CGameCommander::Idle() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048bbfb
+// FUNCTION: COPTER_D 0x0048bbfb
 unsigned long CGameCommander::OnLMouseDown(int32_t, int32_t) {
 // LINE 273:
 	asm( 
@@ -1041,7 +1041,7 @@ unsigned long CGameCommander::OnLMouseDown(int32_t, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048bc33
+// FUNCTION: COPTER_D 0x0048bc33
 unsigned long CGameCommander::OnLMouseUp(int32_t, int32_t) {
 // LINE 283:
 	asm( 
@@ -1082,7 +1082,7 @@ unsigned long CGameCommander::OnLMouseUp(int32_t, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048bc6b
+// FUNCTION: COPTER_D 0x0048bc6b
 unsigned long CGameCommander::OnRMouseDown(int32_t, int32_t) {
 // LINE 292:
 	asm( 
@@ -1123,7 +1123,7 @@ unsigned long CGameCommander::OnRMouseDown(int32_t, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048bca3
+// FUNCTION: COPTER_D 0x0048bca3
 unsigned long CGameCommander::OnRMouseUp(int32_t, int32_t) {
 // LINE 302:
 	asm( 
@@ -1164,7 +1164,7 @@ unsigned long CGameCommander::OnRMouseUp(int32_t, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048bcdb
+// FUNCTION: COPTER_D 0x0048bcdb
 unsigned long CGameCommander::OnMouseMove(int32_t, int32_t) {
 // LINE 312:
 	asm( 
@@ -1204,7 +1204,7 @@ unsigned long CGameCommander::OnMouseMove(int32_t, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048bd11
+// FUNCTION: COPTER_D 0x0048bd11
 unsigned long CGameCommander::OnWindowActivate() {
 // LINE 322:
 	asm( 
@@ -1240,7 +1240,7 @@ unsigned long CGameCommander::OnWindowActivate() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048bd44
+// FUNCTION: COPTER_D 0x0048bd44
 unsigned long CGameCommander::OnWindowDeactivate() {
 // LINE 332:
 	asm( 
@@ -1276,7 +1276,7 @@ unsigned long CGameCommander::OnWindowDeactivate() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048bd77
+// FUNCTION: COPTER_D 0x0048bd77
 void CGameCommander::ProcessSetFocus() {
 // LINE 351:
 	asm( 
@@ -1313,7 +1313,7 @@ void CGameCommander::ProcessSetFocus() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048bdab
+// FUNCTION: COPTER_D 0x0048bdab
 unsigned long CGameCommander::OnCharacter(long) {
 // LINE 363:
 	asm( 
@@ -1351,7 +1351,7 @@ unsigned long CGameCommander::OnCharacter(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048bddd
+// FUNCTION: COPTER_D 0x0048bddd
 void CGameCommander::ProcessKeyDown(long) {
 // LINE 373:
 	asm( 
@@ -1395,7 +1395,7 @@ void CGameCommander::ProcessKeyDown(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048be26
+// FUNCTION: COPTER_D 0x0048be26
 void CGameCommander::ProcessKeyUp(long) {
 // LINE 385:
 	asm( 
@@ -1439,7 +1439,7 @@ void CGameCommander::ProcessKeyUp(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048be6f
+// FUNCTION: COPTER_D 0x0048be6f
 void CGameCommander::ProcessKeyDown(long, struct CommandSystem&, int32_t&, int32_t&) {
 // LINE 402:
 	asm( 
@@ -1685,7 +1685,7 @@ void CGameCommander::ProcessKeyDown(long, struct CommandSystem&, int32_t&, int32
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048c064
+// FUNCTION: COPTER_D 0x0048c064
 void CGameCommander::ProcessKeyUp(long, struct CommandSystem&) {
 // LINE 478:
 	asm( 
@@ -1895,7 +1895,7 @@ void CGameCommander::ProcessKeyUp(long, struct CommandSystem&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048c213
+// FUNCTION: COPTER_D 0x0048c213
 void CGameCommander::ProcessSystemCloseRequest() {
 // LINE 527:
 	asm( 
@@ -1924,7 +1924,7 @@ void CGameCommander::ProcessSystemCloseRequest() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048c234
+// FUNCTION: COPTER_D 0x0048c234
 int32_t ReadShortcutPrefsFile() {
 // LINE 552:
 	asm( 
@@ -2227,7 +2227,7 @@ int32_t ReadShortcutPrefsFile() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048c6f1
+// FUNCTION: COPTER_D 0x0048c6f1
 int32_t WriteShortcutPrefsFile() {
 // LINE 586:
 	asm( 
@@ -2385,7 +2385,7 @@ int32_t WriteShortcutPrefsFile() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048c8bd
+// FUNCTION: COPTER_D 0x0048c8bd
 void MakeDefaultConfigurableShortcuts() {
 // LINE 611:
 	asm( 
@@ -4687,7 +4687,7 @@ void MakeDefaultConfigurableShortcuts() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048e3b4
+// FUNCTION: COPTER_D 0x0048e3b4
 int32_t GetPushAndIgnoreSettingsForCommand() {
 // LINE 928:
 	asm( 
@@ -4784,7 +4784,7 @@ int32_t GetPushAndIgnoreSettingsForCommand() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048e4b5
+// FUNCTION: COPTER_D 0x0048e4b5
 void DeleteShortcutPrefsFile() {
 // LINE 968:
 	asm( 
@@ -4836,7 +4836,7 @@ void DeleteShortcutPrefsFile() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048e515
+// FUNCTION: COPTER_D 0x0048e515
 int32_t ValidateConfigurableShortcut() {
 // LINE 979:
 	asm( 
@@ -4953,7 +4953,7 @@ int32_t ValidateConfigurableShortcut() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048e5fa
+// FUNCTION: COPTER_D 0x0048e5fa
 int32_t IsKeyReserved() {
 // LINE 1013:
 	asm( 
@@ -4990,7 +4990,7 @@ int32_t IsKeyReserved() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048e64b
+// FUNCTION: COPTER_D 0x0048e64b
 void GetReservedKeyArray() {
 // LINE 1029:
 	asm( 
@@ -5041,7 +5041,7 @@ void GetReservedKeyArray() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048e696
+// FUNCTION: COPTER_D 0x0048e696
 int32_t IsCommandConfigurable() {
 // LINE 1043:
 	asm( 
@@ -5072,7 +5072,7 @@ int32_t IsCommandConfigurable() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048e6c6
+// FUNCTION: COPTER_D 0x0048e6c6
 long GetJoystickCommandTwin() {
 // LINE 1056:
 	asm( 
@@ -5300,7 +5300,7 @@ long GetJoystickCommandTwin() {
 
 
 // Contribution: 1:0008d8d0-0008d908 Module: 26, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x0048e8d0
+// FUNCTION: COPTER_D 0x0048e8d0
 // CGameCommander::`scalar deleting destructor'
 
 
@@ -5309,10 +5309,10 @@ long GetJoystickCommandTwin() {
 
 
 // Contribution: 2:00001ff8-0000204b Module: 26, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00001ff8
+// GLOBAL: COPTER_D 0x00001ff8
 // ??_7CGameCommander@@6B@
 
 
 // Contribution: 3:00002d84-00002d9c Module: 26, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x00002d84
+// GLOBAL: COPTER_D 0x00002d84
 // SZ_SHORTCUT_PREFS_FILE_NAME

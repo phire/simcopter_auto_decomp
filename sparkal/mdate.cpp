@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:000bb460-000bc660 Module: 2, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x004bc460
+// FUNCTION: COPTER_D 0x004bc460
 void MDate::MDate() {
 // LINE 75:
 	asm( 
@@ -66,7 +66,7 @@ void MDate::MDate() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bc4d1
+// FUNCTION: COPTER_D 0x004bc4d1
 void MDate::MDate(uint32_t, uint32_t) {
 // LINE 94:
 	asm( 
@@ -124,7 +124,7 @@ void MDate::MDate(uint32_t, uint32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bc538
+// FUNCTION: COPTER_D 0x004bc538
 void MDate::MDate(uint32_t, char *, uint32_t) {
 // LINE 112:
 	asm( 
@@ -168,7 +168,7 @@ void MDate::MDate(uint32_t, char *, uint32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bc589
+// FUNCTION: COPTER_D 0x004bc589
 void MDate::MDate(uint32_t, uint32_t, uint32_t) {
 // LINE 127:
 	asm( 
@@ -209,7 +209,7 @@ void MDate::MDate(uint32_t, uint32_t, uint32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bc5d1
+// FUNCTION: COPTER_D 0x004bc5d1
 enum MDate::HowToPrint MDate::SetPrintOption(enum MDate::HowToPrint) {
 // LINE 136:
 	asm( 
@@ -248,7 +248,7 @@ enum MDate::HowToPrint MDate::SetPrintOption(enum MDate::HowToPrint) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bc5fe
+// FUNCTION: COPTER_D 0x004bc5fe
 char * MDate::DayName(uint32_t) {
 // LINE 152:
 	asm( 
@@ -286,7 +286,7 @@ char * MDate::DayName(uint32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bc64f
+// FUNCTION: COPTER_D 0x004bc64f
 uint32_t MDate::DayOfWeek(char *) {
 // LINE 167:
 	asm( 
@@ -317,7 +317,7 @@ uint32_t MDate::DayOfWeek(char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bc673
+// FUNCTION: COPTER_D 0x004bc673
 int32_t FindMatch() {
 // LINE 55:
 	asm( 
@@ -382,7 +382,7 @@ int32_t FindMatch() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bc6d7
+// FUNCTION: COPTER_D 0x004bc6d7
 int32_t MDate::DayWithinMonth(uint32_t, uint32_t, uint32_t) {
 // LINE 181:
 	asm( 
@@ -454,7 +454,7 @@ int32_t MDate::DayWithinMonth(uint32_t, uint32_t, uint32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bc76f
+// FUNCTION: COPTER_D 0x004bc76f
 uint32_t MDate::DaysInYear(uint32_t) {
 // LINE 200:
 	asm( 
@@ -487,7 +487,7 @@ uint32_t MDate::DaysInYear(uint32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bc7a2
+// FUNCTION: COPTER_D 0x004bc7a2
 uint32_t MDate::IndexOfMonth(char *) {
 // LINE 215:
 	asm( 
@@ -518,7 +518,7 @@ uint32_t MDate::IndexOfMonth(char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bc7c6
+// FUNCTION: COPTER_D 0x004bc7c6
 unsigned long MDate::Jday(uint32_t, uint32_t, uint32_t) {
 // LINE 233:
 	asm( 
@@ -638,7 +638,7 @@ unsigned long MDate::Jday(uint32_t, uint32_t, uint32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bc89f
+// FUNCTION: COPTER_D 0x004bc89f
 int32_t MDate::LeapYear(uint32_t) {
 // LINE 262:
 	asm( 
@@ -679,7 +679,7 @@ int32_t MDate::LeapYear(uint32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bc8ed
+// FUNCTION: COPTER_D 0x004bc8ed
 char * MDate::MonthName(uint32_t) {
 // LINE 277:
 	asm( 
@@ -717,7 +717,7 @@ char * MDate::MonthName(uint32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bc93e
+// FUNCTION: COPTER_D 0x004bc93e
 int32_t MDate::CompareTo(const class MDate&) {
 // LINE 292:
 	asm( 
@@ -775,7 +775,7 @@ int32_t MDate::CompareTo(const class MDate&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bc99a
+// FUNCTION: COPTER_D 0x004bc99a
 uint32_t MDate::Day() {
 // LINE 307:
 	asm( 
@@ -813,7 +813,7 @@ uint32_t MDate::Day() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bc9d0
+// FUNCTION: COPTER_D 0x004bc9d0
 uint32_t MDate::DayOfMonth() {
 // LINE 320:
 	asm( 
@@ -851,7 +851,7 @@ uint32_t MDate::DayOfMonth() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bc9fd
+// FUNCTION: COPTER_D 0x004bc9fd
 uint32_t MDate::FirstDayOfMonth(uint32_t) {
 // LINE 336:
 	asm( 
@@ -918,7 +918,7 @@ uint32_t MDate::FirstDayOfMonth(uint32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bca84
+// FUNCTION: COPTER_D 0x004bca84
 uint32_t MDate::Hash() {
 // LINE 351:
 	asm( 
@@ -946,7 +946,7 @@ uint32_t MDate::Hash() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bcaa0
+// FUNCTION: COPTER_D 0x004bcaa0
 void MDate::Mdy(uint32_t&, uint32_t&, uint32_t&) {
 // LINE 368:
 	asm( 
@@ -1110,7 +1110,7 @@ void MDate::Mdy(uint32_t&, uint32_t&, uint32_t&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bcbcd
+// FUNCTION: COPTER_D 0x004bcbcd
 class MDate MDate::MaxDate(const class MDate&) {
 // LINE 396:
 	asm( 
@@ -1160,7 +1160,7 @@ class MDate MDate::MaxDate(const class MDate&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bcc37
+// FUNCTION: COPTER_D 0x004bcc37
 class MDate MDate::MinDate(const class MDate&) {
 // LINE 406:
 	asm( 
@@ -1210,7 +1210,7 @@ class MDate MDate::MinDate(const class MDate&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bcca1
+// FUNCTION: COPTER_D 0x004bcca1
 uint32_t MDate::Month() {
 // LINE 419:
 	asm( 
@@ -1248,7 +1248,7 @@ uint32_t MDate::Month() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bccce
+// FUNCTION: COPTER_D 0x004bccce
 class MDate MDate::Previous(char *) {
 // LINE 435:
 	asm( 
@@ -1284,7 +1284,7 @@ class MDate MDate::Previous(char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bcd02
+// FUNCTION: COPTER_D 0x004bcd02
 class MDate MDate::Previous(uint32_t) {
 // LINE 448:
 	asm( 
@@ -1364,7 +1364,7 @@ class MDate MDate::Previous(uint32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bcd7c
+// FUNCTION: COPTER_D 0x004bcd7c
 uint32_t MDate::WeekDay() {
 // LINE 472:
 	asm( 
@@ -1401,7 +1401,7 @@ uint32_t MDate::WeekDay() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bcdb1
+// FUNCTION: COPTER_D 0x004bcdb1
 uint32_t MDate::Year() {
 // LINE 484:
 	asm( 
@@ -1439,7 +1439,7 @@ uint32_t MDate::Year() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bcdde
+// FUNCTION: COPTER_D 0x004bcdde
 uint32_t MDate::YearLastTwoDigits() {
 // LINE 498:
 	asm( 
@@ -1471,7 +1471,7 @@ uint32_t MDate::YearLastTwoDigits() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bce07
+// FUNCTION: COPTER_D 0x004bce07
 char * MDate::PrintString(char *) {
 // LINE 510:
 	asm( 
@@ -1530,7 +1530,7 @@ char * MDate::PrintString(char *) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bce73
+// FUNCTION: COPTER_D 0x004bce73
 void MDate::ParseFrom(class istream&) {
 // LINE 577:
 	asm( 
@@ -1830,7 +1830,7 @@ void MDate::ParseFrom(class istream&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bd175
+// FUNCTION: COPTER_D 0x004bd175
 void SkipDelim() {
 // LINE 525:
 	asm( 
@@ -1929,7 +1929,7 @@ void SkipDelim() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bd27c
+// FUNCTION: COPTER_D 0x004bd27c
 char * ParseMonth() {
 // LINE 547:
 	asm( 
@@ -2052,7 +2052,7 @@ char * ParseMonth() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bd39a
+// FUNCTION: COPTER_D 0x004bd39a
 class ostream& operator<<() {
 // LINE 617:
 	asm( 
@@ -2313,22 +2313,22 @@ class ostream& operator<<() {
 
 
 // Contribution: 2:00003380-000033bf Module: 2, 8 byte alignment, initialized_data, read, 
-// LOCAL: SIMCOPTER 0x00003380
+// LOCAL: COPTER_D 0x00003380
 // DaysInMonth
-// LOCAL: SIMCOPTER 0x00003390
+// LOCAL: COPTER_D 0x00003390
 // FirstDayOfEachMonth
-// GLOBAL: SIMCOPTER 0x000033c0
+// GLOBAL: COPTER_D 0x000033c0
 // ??_7GameModeCoreData@@6B@
 
 
 // Contribution: 3:00003c98-00003ec1 Module: 2, 8 byte alignment, initialized_data, read, write, 
-// LOCAL: SIMCOPTER 0x00003c98
+// LOCAL: COPTER_D 0x00003c98
 // MonthNames
-// LOCAL: SIMCOPTER 0x00003cc8
+// LOCAL: COPTER_D 0x00003cc8
 // UCMonthNames
-// LOCAL: SIMCOPTER 0x00003cf8
+// LOCAL: COPTER_D 0x00003cf8
 // WeekDayNames
-// LOCAL: SIMCOPTER 0x00003d18
+// LOCAL: COPTER_D 0x00003d18
 // UCWeekDayNames
 
 

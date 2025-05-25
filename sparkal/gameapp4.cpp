@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:000baa30-000bb457 Module: 3, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x004bba30
+// FUNCTION: COPTER_D 0x004bba30
 public: virtual unsigned long __thiscall CGameApp::FinishGame(void) {
 // LINE 48:
 	asm( 
@@ -128,7 +128,7 @@ public: virtual unsigned long __thiscall CGameApp::FinishGame(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bbb17
+// FUNCTION: COPTER_D 0x004bbb17
 public: int __thiscall CGameApp::BackgroundVRAppInit(void) {
 // LINE 92:
 	asm( 
@@ -723,7 +723,7 @@ public: int __thiscall CGameApp::BackgroundVRAppInit(void) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004bc3db
+// FUNCTION: COPTER_D 0x004bc3db
 void AppInitThreadStartRoutine() {
 // LINE 157:
 	asm( 

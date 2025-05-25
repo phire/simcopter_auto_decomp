@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:0008e120-0008ee82 Module: 24, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x0048f120
+// FUNCTION: COPTER_D 0x0048f120
 void IFlatImage::IFlatImage() {
 // LINE 26:
 	asm( 
@@ -41,7 +41,7 @@ void IFlatImage::IFlatImage() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048f174
+// FUNCTION: COPTER_D 0x0048f174
 unsigned long IFlatImage::StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long) {
 // LINE 38:
 	asm( 
@@ -294,7 +294,7 @@ unsigned long IFlatImage::StretchCompose(class IFlatImage*, long, long, long, lo
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048f32e
+// FUNCTION: COPTER_D 0x0048f32e
 unsigned long IFlatImage::StretchCompose(class IFlatImage*, struct SparkalRect, struct SparkalRect) {
 // LINE 110:
 	asm( 
@@ -386,7 +386,7 @@ unsigned long IFlatImage::StretchCompose(class IFlatImage*, struct SparkalRect, 
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048f3b1
+// FUNCTION: COPTER_D 0x0048f3b1
 unsigned long IFlatImage::Compose(class IFlatImage*, long, long, long, long, long, long) {
 // LINE 133:
 	asm( 
@@ -627,7 +627,7 @@ unsigned long IFlatImage::Compose(class IFlatImage*, long, long, long, long, lon
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048f56b
+// FUNCTION: COPTER_D 0x0048f56b
 unsigned long IFlatImage::FillRect(long, struct SparkalRect*) {
 // LINE 197:
 	asm( 
@@ -811,7 +811,7 @@ unsigned long IFlatImage::FillRect(long, struct SparkalRect*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048f69e
+// FUNCTION: COPTER_D 0x0048f69e
 void CFlatImage::CFlatImage(long, long, unsigned char) {
 // LINE 253:
 	asm( 
@@ -982,7 +982,7 @@ void CFlatImage::CFlatImage(long, long, unsigned char) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048f86d
+// FUNCTION: COPTER_D 0x0048f86d
 void CFlatImage::CFlatImage(class IFlatImage*, long, long, long, long) {
 // LINE 278:
 	asm( 
@@ -1334,7 +1334,7 @@ void CFlatImage::CFlatImage(class IFlatImage*, long, long, long, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048fc23
+// FUNCTION: COPTER_D 0x0048fc23
 void CFlatImage::~CFlatImage() {
 // LINE 336:
 	asm( 
@@ -1398,7 +1398,7 @@ void CFlatImage::~CFlatImage() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048fcc6
+// FUNCTION: COPTER_D 0x0048fcc6
 unsigned long CFlatImage::Lock() {
 // LINE 348:
 	asm( 
@@ -1485,7 +1485,7 @@ unsigned long CFlatImage::Lock() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0048fd88
+// FUNCTION: COPTER_D 0x0048fd88
 unsigned long CFlatImage::Unlock() {
 // LINE 363:
 	asm( 
@@ -1593,38 +1593,38 @@ unsigned long CFlatImage::Unlock() {
 
 
 // Contribution: 1:0008ee90-0008eec8 Module: 24, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x0048fe90
+// FUNCTION: COPTER_D 0x0048fe90
 // CFlatImage::`scalar deleting destructor'
 
 
 
 // Contribution: 2:00002050-0000206b Module: 24, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00002050
+// GLOBAL: COPTER_D 0x00002050
 // ??_7IFlatImage@@6B@
 
 
 // Contribution: 2:00002070-0000208f Module: 24, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00002070
+// GLOBAL: COPTER_D 0x00002070
 // ??_7CFlatImage@@6B@
 
 
 // Contribution: 3:00002da0-00003066 Module: 24, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x00002da0
+// GLOBAL: COPTER_D 0x00002da0
 // IFlatImage::lTotalMemoryUsage
-// GLOBAL: SIMCOPTER 0x00002da4
+// GLOBAL: COPTER_D 0x00002da4
 // IFlatImage::lTotalLockCount
 
 
 // Contribution: 3:00003068-0000307f Module: 24, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00003068
+// GLOBAL: COPTER_D 0x00003068
 // ??_C@_0BI@MJPB@theHandle?5?$CG?$CG?5lockedData?$AA@
 
 
 // Contribution: 3:00003080-0000308e Module: 24, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00003080
+// GLOBAL: COPTER_D 0x00003080
 // ??_C@_0P@EIPH@?$CIint?$CJtheHandle?$AA@
 
 
 // Contribution: 3:00003090-000030a1 Module: 24, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00003090
+// GLOBAL: COPTER_D 0x00003090
 // ??_C@_0BC@NODK@theHandle?5?$CG?$CG?5size?$AA@

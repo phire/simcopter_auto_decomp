@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:0003c850-0003cad2 Module: 56, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x0043d850
+// FUNCTION: COPTER_D 0x0043d850
 float GetMillisecondTime() {
 // LINE 27:
 	asm( 
@@ -70,7 +70,7 @@ float GetMillisecondTime() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043d8c6
+// FUNCTION: COPTER_D 0x0043d8c6
 long GetMillisecondTimeLong() {
 // LINE 54:
 	asm( 
@@ -95,7 +95,7 @@ long GetMillisecondTimeLong() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043d8dc
+// FUNCTION: COPTER_D 0x0043d8dc
 long ConvertRange() {
 // LINE 73:
 	asm( 
@@ -150,7 +150,7 @@ long ConvertRange() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0043d91f
+// FUNCTION: COPTER_D 0x0043d91f
 void SparkalDelay() {
 // LINE 99:
 	asm( 
@@ -290,5 +290,5 @@ void SparkalDelay() {
 
 
 // Contribution: 3:00001580-00001583 Module: 56, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x00001580
+// GLOBAL: COPTER_D 0x00001580
 // _gSparkalApp

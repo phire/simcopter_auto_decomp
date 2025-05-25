@@ -5,19 +5,19 @@
 
 
 // Contribution: 1:00126470-0012a074 Module: 164, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00527470
+// FUNCTION: COPTER_D 0x00527470
 // $E7
 
-// FUNCTION: SIMCOPTER 0x0052748a
+// FUNCTION: COPTER_D 0x0052748a
 // $E3
 
-// FUNCTION: SIMCOPTER 0x005274a9
+// FUNCTION: COPTER_D 0x005274a9
 // $E6
 
-// FUNCTION: SIMCOPTER 0x005274c6
+// FUNCTION: COPTER_D 0x005274c6
 // $E4
 
-// FUNCTION: SIMCOPTER 0x005274fd
+// FUNCTION: COPTER_D 0x005274fd
 void BoatClass::BoatClass(long, long, int32_t) {
 // LINE 153:
 	asm( 
@@ -181,7 +181,7 @@ void BoatClass::BoatClass(long, long, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052762d
+// FUNCTION: COPTER_D 0x0052762d
 void BoatClass::~BoatClass() {
 // LINE 213:
 	asm( 
@@ -235,7 +235,7 @@ void BoatClass::~BoatClass() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052768a
+// FUNCTION: COPTER_D 0x0052768a
 class BoatClass* BoatClass::GetBoatPointer(long) {
 // LINE 254:
 	asm( 
@@ -271,7 +271,7 @@ class BoatClass* BoatClass::GetBoatPointer(long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005276b5
+// FUNCTION: COPTER_D 0x005276b5
 class BoatClass* BoatClass::CreateInstance(int32_t) {
 // LINE 281:
 	asm( 
@@ -301,7 +301,7 @@ class BoatClass* BoatClass::CreateInstance(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005276d5
+// FUNCTION: COPTER_D 0x005276d5
 class BoatClass* BoatClass::CreateInstance(long, long, int32_t) {
 // LINE 341:
 	asm( 
@@ -385,7 +385,7 @@ class BoatClass* BoatClass::CreateInstance(long, long, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00527779
+// FUNCTION: COPTER_D 0x00527779
 int32_t BoatClass::Initialize(int32_t) {
 // LINE 443:
 	asm( 
@@ -421,7 +421,7 @@ int32_t BoatClass::Initialize(int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005277ab
+// FUNCTION: COPTER_D 0x005277ab
 void BoatClass::ResetAll() {
 // LINE 468:
 	asm( 
@@ -461,7 +461,7 @@ void BoatClass::ResetAll() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005277eb
+// FUNCTION: COPTER_D 0x005277eb
 void BoatClass::ItterateAll() {
 // LINE 516:
 	asm( 
@@ -501,7 +501,7 @@ void BoatClass::ItterateAll() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052782b
+// FUNCTION: COPTER_D 0x0052782b
 void BoatClass::Itterate() {
 // LINE 563:
 	asm( 
@@ -634,7 +634,7 @@ void BoatClass::Itterate() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00527954
+// FUNCTION: COPTER_D 0x00527954
 void BoatClass::Reset() {
 // LINE 628:
 	asm( 
@@ -732,7 +732,7 @@ void BoatClass::Reset() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005279ef
+// FUNCTION: COPTER_D 0x005279ef
 void BoatClass::ItterateFSM() {
 // LINE 686:
 	asm( 
@@ -1041,7 +1041,7 @@ void BoatClass::ItterateFSM() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00527c7a
+// FUNCTION: COPTER_D 0x00527c7a
 void BoatClass::AdjustSpeed() {
 // LINE 858:
 	asm( 
@@ -1081,7 +1081,7 @@ void BoatClass::AdjustSpeed() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00527cb3
+// FUNCTION: COPTER_D 0x00527cb3
 enum BoatClass::StoppedReasons BoatClass::IsWaterPathClear() {
 // LINE 887:
 	asm( 
@@ -1174,7 +1174,7 @@ enum BoatClass::StoppedReasons BoatClass::IsWaterPathClear() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00527d76
+// FUNCTION: COPTER_D 0x00527d76
 enum BoatClass::StoppedReasons BoatClass::CheckWaterDynamicObjectsAt(const struct Point2d&, const struct Point3d&) {
 // LINE 920:
 	asm( 
@@ -1568,7 +1568,7 @@ enum BoatClass::StoppedReasons BoatClass::CheckWaterDynamicObjectsAt(const struc
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005280bb
+// FUNCTION: COPTER_D 0x005280bb
 int32_t BoatClass::IsBoatOutOfCameraRange() {
 // LINE 1074:
 	asm( 
@@ -1705,7 +1705,7 @@ int32_t BoatClass::IsBoatOutOfCameraRange() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005281a8
+// FUNCTION: COPTER_D 0x005281a8
 void BoatClass::SetBoatDirection(unsigned short) {
 // LINE 1139:
 	asm( 
@@ -1989,7 +1989,7 @@ void BoatClass::SetBoatDirection(unsigned short) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052847a
+// FUNCTION: COPTER_D 0x0052847a
 void BoatClass::SlowDown() {
 // LINE 1214:
 	asm( 
@@ -2017,7 +2017,7 @@ void BoatClass::SlowDown() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052849a
+// FUNCTION: COPTER_D 0x0052849a
 void BoatClass::Stop() {
 // LINE 1235:
 	asm( 
@@ -2045,7 +2045,7 @@ void BoatClass::Stop() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005284ba
+// FUNCTION: COPTER_D 0x005284ba
 void BoatClass::MoveForward() {
 // LINE 1256:
 	asm( 
@@ -2192,7 +2192,7 @@ void BoatClass::MoveForward() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00528628
+// FUNCTION: COPTER_D 0x00528628
 int32_t BoatClass::HaveIReachedNextLoc() {
 // LINE 1305:
 	asm( 
@@ -2234,7 +2234,7 @@ int32_t BoatClass::HaveIReachedNextLoc() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052865c
+// FUNCTION: COPTER_D 0x0052865c
 int32_t BoatClass::AmIInANewCell() {
 // LINE 1332:
 	asm( 
@@ -2328,7 +2328,7 @@ int32_t BoatClass::AmIInANewCell() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00528746
+// FUNCTION: COPTER_D 0x00528746
 void BoatClass::UnlinkFromCell(const struct Point2d&) {
 // LINE 1370:
 	asm( 
@@ -2446,7 +2446,7 @@ void BoatClass::UnlinkFromCell(const struct Point2d&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052885c
+// FUNCTION: COPTER_D 0x0052885c
 void BoatClass::LinkToCell(const struct Point2d&) {
 // LINE 1418:
 	asm( 
@@ -2522,7 +2522,7 @@ void BoatClass::LinkToCell(const struct Point2d&) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00528918
+// FUNCTION: COPTER_D 0x00528918
 enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const struct Point2d&) {
 // LINE 1450:
 	asm( 
@@ -3302,7 +3302,7 @@ enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const struct Poin
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005290e5
+// FUNCTION: COPTER_D 0x005290e5
 int32_t BoatClass::DoWaterTilesConnect(unsigned short, unsigned short, enum DirectionTypes) {
 // LINE 1644:
 	asm( 
@@ -3389,7 +3389,7 @@ int32_t BoatClass::DoWaterTilesConnect(unsigned short, unsigned short, enum Dire
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00529232
+// FUNCTION: COPTER_D 0x00529232
 void BoatClass::MakeATurn(enum BoatClass::IntersectionTypes) {
 // LINE 1674:
 	asm( 
@@ -3619,7 +3619,7 @@ void BoatClass::MakeATurn(enum BoatClass::IntersectionTypes) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005293f3
+// FUNCTION: COPTER_D 0x005293f3
 enum BoatClass::StoppedReasons BoatClass::WhyAmIStopped() {
 // LINE 1784:
 	asm( 
@@ -3682,7 +3682,7 @@ enum BoatClass::StoppedReasons BoatClass::WhyAmIStopped() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052948e
+// FUNCTION: COPTER_D 0x0052948e
 void BoatClass::AdjustCurrentPosition() {
 // LINE 1818:
 	asm( 
@@ -3761,7 +3761,7 @@ void BoatClass::AdjustCurrentPosition() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00529543
+// FUNCTION: COPTER_D 0x00529543
 void BoatClass::AdjustNextPosition() {
 // LINE 1853:
 	asm( 
@@ -3888,7 +3888,7 @@ void BoatClass::AdjustNextPosition() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052965f
+// FUNCTION: COPTER_D 0x0052965f
 void BoatClass::GoStraight() {
 // LINE 1892:
 	asm( 
@@ -4025,7 +4025,7 @@ void BoatClass::GoStraight() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00529788
+// FUNCTION: COPTER_D 0x00529788
 void BoatClass::TurnLeft() {
 // LINE 1942:
 	asm( 
@@ -4162,7 +4162,7 @@ void BoatClass::TurnLeft() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005298b1
+// FUNCTION: COPTER_D 0x005298b1
 void BoatClass::TurnRight() {
 // LINE 1993:
 	asm( 
@@ -4299,7 +4299,7 @@ void BoatClass::TurnRight() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005299da
+// FUNCTION: COPTER_D 0x005299da
 void BoatClass::MakeUturn() {
 // LINE 2050:
 	asm( 
@@ -4348,7 +4348,7 @@ void BoatClass::MakeUturn() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00529a36
+// FUNCTION: COPTER_D 0x00529a36
 int32_t BoatClass::FinishedUturn() {
 // LINE 2156:
 	asm( 
@@ -4375,7 +4375,7 @@ int32_t BoatClass::FinishedUturn() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00529a51
+// FUNCTION: COPTER_D 0x00529a51
 void BoatClass::BeamBoatToWithinCameraRange() {
 // LINE 2189:
 	asm( 
@@ -4927,7 +4927,7 @@ void BoatClass::BeamBoatToWithinCameraRange() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00529ee6
+// FUNCTION: COPTER_D 0x00529ee6
 void BoatClass::UnPlaceBoat() {
 // LINE 2367:
 	asm( 
@@ -4972,7 +4972,7 @@ void BoatClass::UnPlaceBoat() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00529f2b
+// FUNCTION: COPTER_D 0x00529f2b
 int32_t BoatClass::BeamBoatToLocation(long, long) {
 // LINE 2394:
 	asm( 
@@ -5701,7 +5701,7 @@ int32_t BoatClass::BeamBoatToLocation(long, long) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052a81c
+// FUNCTION: COPTER_D 0x0052a81c
 int32_t BoatClass::InitializeInstance(long, long, int32_t) {
 // LINE 2811:
 	asm( 
@@ -6074,7 +6074,7 @@ int32_t BoatClass::InitializeInstance(long, long, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052ab24
+// FUNCTION: COPTER_D 0x0052ab24
 int32_t CreateBoatInstance() {
 // LINE 3000:
 	asm( 
@@ -6107,7 +6107,7 @@ int32_t CreateBoatInstance() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052ab54
+// FUNCTION: COPTER_D 0x0052ab54
 void ItterateAllBoats() {
 // LINE 3023:
 	asm( 
@@ -6132,7 +6132,7 @@ void ItterateAllBoats() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052ab69
+// FUNCTION: COPTER_D 0x0052ab69
 void ResetAllBoats() {
 // LINE 3046:
 	asm( 
@@ -6157,7 +6157,7 @@ void ResetAllBoats() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052ab7e
+// FUNCTION: COPTER_D 0x0052ab7e
 struct _DYOBJ_INST* BoatClass::StartCapsizedBoat(long, int32_t) {
 // LINE 3059:
 	asm( 
@@ -6373,7 +6373,7 @@ struct _DYOBJ_INST* BoatClass::StartCapsizedBoat(long, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052acfb
+// FUNCTION: COPTER_D 0x0052acfb
 struct _DYOBJ_INST* BoatClass::GetCapsizedBoat() {
 // LINE 3127:
 	asm( 
@@ -6418,7 +6418,7 @@ struct _DYOBJ_INST* BoatClass::GetCapsizedBoat() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052ad37
+// FUNCTION: COPTER_D 0x0052ad37
 struct _DYOBJ_INST* StartCapsizedBoat() {
 // LINE 3147:
 	asm( 
@@ -6448,7 +6448,7 @@ struct _DYOBJ_INST* StartCapsizedBoat() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052ad57
+// FUNCTION: COPTER_D 0x0052ad57
 struct _DYOBJ_INST* GetCapsizedBoat() {
 // LINE 3161:
 	asm( 
@@ -6473,7 +6473,7 @@ struct _DYOBJ_INST* GetCapsizedBoat() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052ad6c
+// FUNCTION: COPTER_D 0x0052ad6c
 int32_t S3BoatMIFFLoad() {
 // LINE 3174:
 	asm( 
@@ -6501,7 +6501,7 @@ int32_t S3BoatMIFFLoad() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052ad88
+// FUNCTION: COPTER_D 0x0052ad88
 int32_t S3BoatMIFFSave() {
 // LINE 3187:
 	asm( 
@@ -6529,7 +6529,7 @@ int32_t S3BoatMIFFSave() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052ada4
+// FUNCTION: COPTER_D 0x0052ada4
 int32_t BoatClass::MIFFLoad(void * __ptr32) {
 // LINE 3199:
 	asm( 
@@ -6823,7 +6823,7 @@ int32_t BoatClass::MIFFLoad(void * __ptr32) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052b00a
+// FUNCTION: COPTER_D 0x0052b00a
 int32_t BoatClass::MIFFSave(void * __ptr32) {
 // LINE 3263:
 	asm( 
@@ -6887,35 +6887,35 @@ int32_t BoatClass::MIFFSave(void * __ptr32) {
 
 
 // Contribution: 1:0012a080-0012a0b8 Module: 164, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x0052b080
+// FUNCTION: COPTER_D 0x0052b080
 // BoatClass::`scalar deleting destructor'
 
 
 
 // Contribution: 2:00004200-0000421b Module: 164, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00004200
+// GLOBAL: COPTER_D 0x00004200
 // ??_7BoatClass@@6B@
 
 
 // Contribution: 3:000000a4-000000a7 Module: 164, 4 byte alignment, initialized_data, read, write, 
-// LOCAL: SIMCOPTER 0x000000a8
+// LOCAL: COPTER_D 0x000000a8
 // $S9
 
 
 // Contribution: 3:000203e8-00020664 Module: 164, 8 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x000203e8
+// GLOBAL: COPTER_D 0x000203e8
 // BoatClass::lastScannedLocation
 
 
 // Contribution: 3:00020668-00020688 Module: 164, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00020668
+// GLOBAL: COPTER_D 0x00020668
 // ??_C@_0CB@MIJI@C?3?2Copter?2Source?2Game?2S3WMOBIL?4H@
 
 
 // Contribution: 3:000945f0-000946e4 Module: 164, 8 byte alignment, uninitialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x000945f0
+// GLOBAL: COPTER_D 0x000945f0
 // BoatClass::lsBoat
-// GLOBAL: SIMCOPTER 0x000946d8
+// GLOBAL: COPTER_D 0x000946d8
 // boats
-// LOCAL: SIMCOPTER 0x000946e4
+// LOCAL: COPTER_D 0x000946e4
 // $S5

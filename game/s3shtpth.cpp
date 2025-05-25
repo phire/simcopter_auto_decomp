@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:00142690-00142f6c Module: 151, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00543690
+// FUNCTION: COPTER_D 0x00543690
 int32_t ShortestPath::FindDistanceFromDestination(struct _GridCoordinates, struct _GridCoordinates) {
 // LINE 13:
 	asm( 
@@ -85,7 +85,7 @@ int32_t ShortestPath::FindDistanceFromDestination(struct _GridCoordinates, struc
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00543704
+// FUNCTION: COPTER_D 0x00543704
 int32_t ShortestPath::BreadthFirstSearch(struct _RGIndex, struct _RGIndex) {
 // LINE 36:
 	asm( 
@@ -449,7 +449,7 @@ int32_t ShortestPath::BreadthFirstSearch(struct _RGIndex, struct _RGIndex) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005439bb
+// FUNCTION: COPTER_D 0x005439bb
 int32_t ShortestPath::DepthFirstSearch(struct _RGIndex, struct _RGIndex) {
 // LINE 138:
 	asm( 
@@ -877,7 +877,7 @@ int32_t ShortestPath::DepthFirstSearch(struct _RGIndex, struct _RGIndex) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00543cdd
+// FUNCTION: COPTER_D 0x00543cdd
 void ShortestPath::PriorityHeapInsert(const struct _FringeHeapNode*) {
 // LINE 252:
 	asm( 
@@ -1002,7 +1002,7 @@ void ShortestPath::PriorityHeapInsert(const struct _FringeHeapNode*) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00543dcb
+// FUNCTION: COPTER_D 0x00543dcb
 void ShortestPath::PriorityHeapRemove(struct _FringeHeapNode*) {
 // LINE 275:
 	asm( 
@@ -1211,7 +1211,7 @@ void ShortestPath::PriorityHeapRemove(struct _FringeHeapNode*) {
 
 
 // Contribution: 2:000044f8-00004507 Module: 151, 8 byte alignment, initialized_data, read, 
-// LOCAL: SIMCOPTER 0x000044f8
+// LOCAL: COPTER_D 0x000044f8
 // IndexToType
-// GLOBAL: SIMCOPTER 0x00004508
+// GLOBAL: COPTER_D 0x00004508
 // ??_7FlatResFile@@6B@

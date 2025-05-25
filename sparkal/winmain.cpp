@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:0001e870-0001eac1 Module: 73, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x0041f870
+// FUNCTION: COPTER_D 0x0041f870
 int32_t WinMain() {
 // LINE 28:
 	asm( 
@@ -284,9 +284,9 @@ int32_t WinMain() {
 
 
 // Contribution: 3:0002b848-0002b8cf Module: 73, 8 byte alignment, uninitialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x0002b848
+// GLOBAL: COPTER_D 0x0002b848
 // gszCommandLine
-// GLOBAL: SIMCOPTER 0x0002b8c8
+// GLOBAL: COPTER_D 0x0002b8c8
 // _ghWindowsInstance
-// GLOBAL: SIMCOPTER 0x0002b8cc
+// GLOBAL: COPTER_D 0x0002b8cc
 // _gTimerFrequency

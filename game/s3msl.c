@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:0011d770-0012290d Module: 167, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x0051e770
+// FUNCTION: COPTER_D 0x0051e770
 void S3MissileReset() {
 // LINE 112:
 	asm( 
@@ -164,7 +164,7 @@ void S3MissileReset() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0051e8e0
+// FUNCTION: COPTER_D 0x0051e8e0
 void S3MissileInit() {
 // LINE 193:
 	asm( 
@@ -889,7 +889,7 @@ void S3MissileInit() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0051eee5
+// FUNCTION: COPTER_D 0x0051eee5
 struct _MISSILE_DATA* S3MissileStart() {
 // LINE 403:
 	asm( 
@@ -2676,7 +2676,7 @@ struct _MISSILE_DATA* S3MissileStart() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0051fe8a
+// FUNCTION: COPTER_D 0x0051fe8a
 void S3MissileDriver() {
 // LINE 913:
 	asm( 
@@ -6339,7 +6339,7 @@ void S3MissileDriver() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00522096
+// FUNCTION: COPTER_D 0x00522096
 int32_t S3MissileCollisionCheck() {
 // LINE 1791:
 	asm( 
@@ -7863,7 +7863,7 @@ int32_t S3MissileCollisionCheck() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00522dbc
+// FUNCTION: COPTER_D 0x00522dbc
 int32_t S3MissileGroundHit() {
 // LINE 2253:
 	asm( 
@@ -7994,7 +7994,7 @@ int32_t S3MissileGroundHit() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00522eb3
+// FUNCTION: COPTER_D 0x00522eb3
 int32_t S3MissileSphereHit() {
 // LINE 2509:
 	asm( 
@@ -8283,7 +8283,7 @@ int32_t S3MissileSphereHit() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005231c2
+// FUNCTION: COPTER_D 0x005231c2
 void S3DrawPoint() {
 // LINE 2608:
 	asm( 
@@ -8395,7 +8395,7 @@ void S3DrawPoint() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00523270
+// FUNCTION: COPTER_D 0x00523270
 struct _MISSILE_DATA* S3DebrisGetByMission() {
 // LINE 2663:
 	asm( 
@@ -8450,7 +8450,7 @@ struct _MISSILE_DATA* S3DebrisGetByMission() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005232d1
+// FUNCTION: COPTER_D 0x005232d1
 void S3MissileDebrisDouse() {
 // LINE 2686:
 	asm( 
@@ -8617,7 +8617,7 @@ void S3MissileDebrisDouse() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005233ff
+// FUNCTION: COPTER_D 0x005233ff
 void S3MissileDebrisFire() {
 // LINE 2748:
 	asm( 
@@ -8679,7 +8679,7 @@ void S3MissileDebrisFire() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0052345a
+// FUNCTION: COPTER_D 0x0052345a
 int32_t S3MissileMIFFLoad() {
 // LINE 2776:
 	asm( 
@@ -9123,7 +9123,7 @@ int32_t S3MissileMIFFLoad() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x005237ee
+// FUNCTION: COPTER_D 0x005237ee
 int32_t S3MissileMIFFSave() {
 // LINE 2877:
 	asm( 
@@ -9264,43 +9264,43 @@ int32_t S3MissileMIFFSave() {
 
 
 // Contribution: 2:00003fd8-00003fef Module: 167, 8 byte alignment, initialized_data, read, 
-// LOCAL: SIMCOPTER 0x00003ff0
+// LOCAL: COPTER_D 0x00003ff0
 // TurnTable3
 
 
 // Contribution: 3:000202c8-0002037c Module: 167, 8 byte alignment, initialized_data, read, write, 
-// LOCAL: SIMCOPTER 0x000202c8
+// LOCAL: COPTER_D 0x000202c8
 // S_num_active_missiles
-// LOCAL: SIMCOPTER 0x000202cc
+// LOCAL: COPTER_D 0x000202cc
 // S_num_active_bullets
-// LOCAL: SIMCOPTER 0x000202d0
+// LOCAL: COPTER_D 0x000202d0
 // S_num_active_teargas
-// LOCAL: SIMCOPTER 0x000202d4
+// LOCAL: COPTER_D 0x000202d4
 // S_num_active_debris
-// LOCAL: SIMCOPTER 0x000202d8
+// LOCAL: COPTER_D 0x000202d8
 // S_num_active_traj
-// LOCAL: SIMCOPTER 0x000202dc
+// LOCAL: COPTER_D 0x000202dc
 // S_num_active_lasers
-// LOCAL: SIMCOPTER 0x000202e0
+// LOCAL: COPTER_D 0x000202e0
 // S_debris_fireseq
-// LOCAL: SIMCOPTER 0x00020300
+// LOCAL: COPTER_D 0x00020300
 // S_debris_firealt
-// LOCAL: SIMCOPTER 0x00020320
+// LOCAL: COPTER_D 0x00020320
 // S_tracer
-// GLOBAL: SIMCOPTER 0x00020328
+// GLOBAL: COPTER_D 0x00020328
 // S_debris_types
-// GLOBAL: SIMCOPTER 0x00020334
+// GLOBAL: COPTER_D 0x00020334
 // S_num_debris_types
-// LOCAL: SIMCOPTER 0x00020338
+// LOCAL: COPTER_D 0x00020338
 // S_msl_fire_delay
-// LOCAL: SIMCOPTER 0x0002033c
+// LOCAL: COPTER_D 0x0002033c
 // tgMIFFID
-// LOCAL: SIMCOPTER 0x00020340
+// LOCAL: COPTER_D 0x00020340
 // dbMIFFID
 
 
 // Contribution: 3:00093530-00093577 Module: 167, 8 byte alignment, uninitialized_data, read, write, 
-// LOCAL: SIMCOPTER 0x00093530
+// LOCAL: COPTER_D 0x00093530
 // lsmsl
-// LOCAL: SIMCOPTER 0x00093578
+// LOCAL: COPTER_D 0x00093578
 // S_explosions

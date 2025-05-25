@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:0015c950-0015d654 Module: 192, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x0055d950
+// FUNCTION: COPTER_D 0x0055d950
 void SwizzlePrivAnimPartInfo() {
 // LINE 109:
 	asm( 
@@ -43,7 +43,7 @@ void SwizzlePrivAnimPartInfo() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055d98c
+// FUNCTION: COPTER_D 0x0055d98c
 struct TinyXZY DXZY_2_TinyXZY() {
 // LINE 128:
 	asm( 
@@ -93,7 +93,7 @@ struct TinyXZY DXZY_2_TinyXZY() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055d9cf
+// FUNCTION: COPTER_D 0x0055d9cf
 struct DXZY TinyXZY_2_DXZY() {
 // LINE 137:
 	asm( 
@@ -153,7 +153,7 @@ struct DXZY TinyXZY_2_DXZY() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055da2e
+// FUNCTION: COPTER_D 0x0055da2e
 float Byte_2_Float() {
 // LINE 151:
 	asm( 
@@ -181,7 +181,7 @@ float Byte_2_Float() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055da4b
+// FUNCTION: COPTER_D 0x0055da4b
 char Float_2_Byte() {
 // LINE 156:
 	asm( 
@@ -226,7 +226,7 @@ char Float_2_Byte() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055daa7
+// FUNCTION: COPTER_D 0x0055daa7
 void SwizzlePoint() {
 // LINE 165:
 	asm( 
@@ -279,7 +279,7 @@ void SwizzlePoint() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055db01
+// FUNCTION: COPTER_D 0x0055db01
 void InitBodiesAndAnimations() {
 // LINE 175:
 	asm( 
@@ -752,7 +752,7 @@ void InitBodiesAndAnimations() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0055e29e
+// FUNCTION: COPTER_D 0x0055e29e
 void DeleteBodiesAndAnimations() {
 // LINE 229:
 	asm( 
@@ -1075,7 +1075,7 @@ void DeleteBodiesAndAnimations() {
 
 
 // Contribution: 1:0015e540-0015e5a9 Module: 192, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x0055f540
+// FUNCTION: COPTER_D 0x0055f540
 // cBBase::`scalar deleting destructor'
 
 
@@ -1102,7 +1102,7 @@ void DeleteBodiesAndAnimations() {
 
 
 // Contribution: 1:0015e830-0015e918 Module: 192, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x0055f830
+// FUNCTION: COPTER_D 0x0055f830
 // cCopterAnim::`scalar deleting destructor'
 
 
@@ -1129,13 +1129,13 @@ void DeleteBodiesAndAnimations() {
 
 
 // Contribution: 1:0015f120-0015f282 Module: 192, 16 byte alignment, code, (comdat), execute, read, 
-// FUNCTION: SIMCOPTER 0x00560120
+// FUNCTION: COPTER_D 0x00560120
 // cCopterBody::`scalar deleting destructor'
 
 
 
 // Contribution: 2:00004640-0000464f Module: 192, 8 byte alignment, initialized_data, read, 
-// GLOBAL: SIMCOPTER 0x00004650
+// GLOBAL: COPTER_D 0x00004650
 // ??_7?$cBList@VcCopterBody@@@@6B@
 
 
@@ -1143,9 +1143,9 @@ void DeleteBodiesAndAnimations() {
 
 
 // Contribution: 2:00004654-00004657 Module: 192, 4 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00004654
+// GLOBAL: COPTER_D 0x00004654
 // ??_7?$cBList@VcCopterAnim@@@@6B@
-// GLOBAL: SIMCOPTER 0x00004658
+// GLOBAL: COPTER_D 0x00004658
 // ??_7cCopterAnim@@6B@
 
 
@@ -1153,12 +1153,12 @@ void DeleteBodiesAndAnimations() {
 
 
 // Contribution: 2:00004688-000046ab Module: 192, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00004688
+// GLOBAL: COPTER_D 0x00004688
 // ??_7cBBase@@6B@
 
 
 // Contribution: 2:000046b0-000046d3 Module: 192, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x000046b0
+// GLOBAL: COPTER_D 0x000046b0
 // ??_7cCopterBody@@6B@
 
 
@@ -1193,29 +1193,29 @@ void DeleteBodiesAndAnimations() {
 
 
 // Contribution: 3:00027148-00027165 Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00027148
+// GLOBAL: COPTER_D 0x00027148
 // ??_C@_0BO@NBMC@couldn?8t?5load?5an?5indexed?5body?$AA@
 
 
 // Contribution: 3:00027168-00027184 Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00027168
+// GLOBAL: COPTER_D 0x00027168
 // ??_C@_0BN@NCLL@must?5set?5type?5before?5loading?$AA@
 
 
 // Contribution: 3:00027188-000271a5 Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00027188
+// GLOBAL: COPTER_D 0x00027188
 // ??_C@_0BO@DKFM@must?5load?5bodies?5from?5a?5file?$DP?$AA@
 
 
 // Contribution: 3:000271a8-000271ba Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x000271a8
+// GLOBAL: COPTER_D 0x000271a8
 // ??_C@_0BD@JOEE@couldn?8t?5open?5file?$AA@
 
 
 // Contribution: 3:000271bc-000271eb Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x000271bc
+// GLOBAL: COPTER_D 0x000271bc
 // ??_C@_0DA@MJOK@make?5a?5new?5resfile?5and?5then?5it?8s@
-// GLOBAL: SIMCOPTER 0x000271ec
+// GLOBAL: COPTER_D 0x000271ec
 // ??_C@_0CD@JLCJ@C?3?2Copter?2Source?2X?2Objects?2bList@
 
 
@@ -1223,79 +1223,79 @@ void DeleteBodiesAndAnimations() {
 
 
 // Contribution: 3:00027210-0002722d Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00027210
+// GLOBAL: COPTER_D 0x00027210
 // ??_C@_0BO@ELJL@count?5not?50?5in?5cBList?5delete?$CB?$AA@
 
 
 // Contribution: 3:00027230-00027255 Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00027230
+// GLOBAL: COPTER_D 0x00027230
 // ??_C@_0CG@OOAA@bad?5size?5passed?5to?5SwizzleBBaseH@
 
 
 // Contribution: 3:00027258-0002727a Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00027258
+// GLOBAL: COPTER_D 0x00027258
 // ??_C@_0CD@DJLO@C?3?2Copter?2Source?2X?2Objects?2bBase@
 
 
 // Contribution: 3:0002727c-0002729d Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x0002727c
+// GLOBAL: COPTER_D 0x0002727c
 // ??_C@_0CC@HJGL@count?5not?50?5in?5cBList?5destructor@
 
 
 // Contribution: 3:000272a0-000272d3 Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x000272a0
+// GLOBAL: COPTER_D 0x000272a0
 // ??_C@_0DE@JMMG@the?5first?53?5letters?5of?5a?5body?8s?5@
 
 
 // Contribution: 3:000272d4-000272f8 Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x000272d4
+// GLOBAL: COPTER_D 0x000272d4
 // ??_C@_0CF@OINM@somehow?0?5blank?5name?5on?5disk?5in?5b@
 
 
 // Contribution: 3:000272fc-0002730c Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x000272fc
+// GLOBAL: COPTER_D 0x000272fc
 // ??_C@_0BB@FDOF@whoops?0?5bad?5type?$AA@
 
 
 // Contribution: 3:00027310-0002731e Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00027310
+// GLOBAL: COPTER_D 0x00027310
 // ??_C@_0P@PBGB@file?5not?5newed?$AA@
 
 
 // Contribution: 3:00027320-0002732e Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00027320
+// GLOBAL: COPTER_D 0x00027320
 // ??_C@_0P@JNMJ@must?5have?5list?$AA@
 
 
 // Contribution: 3:00027330-00027354 Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00027330
+// GLOBAL: COPTER_D 0x00027330
 // ??_C@_0CF@MIO@GetBodyType?5undefined?5for?5this?5c@
 
 
 // Contribution: 3:00027358-0002737a Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00027358
+// GLOBAL: COPTER_D 0x00027358
 // ??_C@_0CD@ENGP@got?5down?5to?5base?5list?5in?5basecla@
 
 
 // Contribution: 3:0002737c-000273aa Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x0002737c
+// GLOBAL: COPTER_D 0x0002737c
 // ??_C@_0CP@JKCB@got?5down?5to?5base?5class?5in?5Instal@
 
 
 // Contribution: 3:000273ac-000273d6 Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x000273ac
+// GLOBAL: COPTER_D 0x000273ac
 // ??_C@_0CL@KPEF@resID?5in?5anim?5but?5no?5resource?5of@
 
 
 // Contribution: 3:000273d8-000273f9 Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x000273d8
+// GLOBAL: COPTER_D 0x000273d8
 // ??_C@_0CC@KAHE@C?3?2Copter?2Source?2X?2Objects?2Anim?4@
 
 
 // Contribution: 3:000273fc-0002744b Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x000273fc
+// GLOBAL: COPTER_D 0x000273fc
 // ??_C@_0FA@GBAP@shouldn?8t?5destroy?5privanims?5one?5@
-// GLOBAL: SIMCOPTER 0x0002744c
+// GLOBAL: COPTER_D 0x0002744c
 // ??_C@_0CB@EMHA@don?8t?5call?5IsDirty?5for?5privanims@
 
 
@@ -1303,25 +1303,25 @@ void DeleteBodiesAndAnimations() {
 
 
 // Contribution: 3:00027470-00027499 Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x00027470
+// GLOBAL: COPTER_D 0x00027470
 // ??_C@_0CK@JLOF@can?8t?5ask?5for?5body?5type?5of?5a?5pri@
 
 
 // Contribution: 3:0002749c-000274b4 Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x0002749c
+// GLOBAL: COPTER_D 0x0002749c
 // ??_C@_0BJ@BNBN@array?5read?5out?5of?5bounds?$AA@
 
 
 // Contribution: 3:000274b8-000274ee Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x000274b8
+// GLOBAL: COPTER_D 0x000274b8
 // ??_C@_0DH@OICG@fData?5is?5no?5longer?5pointing?5to?5o@
 
 
 // Contribution: 3:000274f0-0002750c Module: 192, 4 byte alignment, initialized_data, (comdat), read, write, 
-// GLOBAL: SIMCOPTER 0x000274f0
+// GLOBAL: COPTER_D 0x000274f0
 // ??_C@_0BN@MICO@c?3?2copter?2source?2x?2Array2d?4h?$AA@
 
 
 // Contribution: 3:000a06b0-000a06c5 Module: 192, 8 byte alignment, uninitialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x000a06b0
+// GLOBAL: COPTER_D 0x000a06b0
 // PersonFaceNums

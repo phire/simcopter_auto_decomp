@@ -5,7 +5,7 @@
 
 
 // Contribution: 1:00094400-00094b31 Module: 20, 16 byte alignment, code, execute, read, 
-// FUNCTION: SIMCOPTER 0x00495400
+// FUNCTION: COPTER_D 0x00495400
 void SkyImage::SkyImage(int32_t, int32_t, int32_t) {
 // LINE 30:
 	asm( 
@@ -96,7 +96,7 @@ void SkyImage::SkyImage(int32_t, int32_t, int32_t) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004954ce
+// FUNCTION: COPTER_D 0x004954ce
 void SkyImage::SwitchToSkyType(enum SkyImage::SkyType) {
 // LINE 59:
 	asm( 
@@ -137,7 +137,7 @@ void SkyImage::SwitchToSkyType(enum SkyImage::SkyType) {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x0049550c
+// FUNCTION: COPTER_D 0x0049550c
 void SkyImage::SwitchToProperSkyType() {
 // LINE 70:
 	asm( 
@@ -189,7 +189,7 @@ void SkyImage::SwitchToProperSkyType() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x00495575
+// FUNCTION: COPTER_D 0x00495575
 int32_t SkyImage::LoadImageA() {
 // LINE 93:
 	asm( 
@@ -600,7 +600,7 @@ int32_t SkyImage::LoadImageA() {
 );
 }
 
-// FUNCTION: SIMCOPTER 0x004958e7
+// FUNCTION: COPTER_D 0x004958e7
 unsigned long SkyImage::Compose(class CBackBuffer*, int32_t) {
 // LINE 213:
 	asm( 
@@ -921,14 +921,14 @@ unsigned long SkyImage::Compose(class CBackBuffer*, int32_t) {
 
 
 // Contribution: 2:00002090-000020f7 Module: 20, 8 byte alignment, initialized_data, (comdat), read, 
-// GLOBAL: SIMCOPTER 0x00002090
+// GLOBAL: COPTER_D 0x00002090
 // ??_7SkyImage@@6B@
-// GLOBAL: SIMCOPTER 0x000020f8
+// GLOBAL: COPTER_D 0x000020f8
 // ??_7SparkalPalette@@6B@
 
 
 // Contribution: 3:00003120-0000313c Module: 20, 4 byte alignment, initialized_data, read, write, 
-// GLOBAL: SIMCOPTER 0x00003120
+// GLOBAL: COPTER_D 0x00003120
 // SZ_SKY_DAY_IMAGE_FILE_NAME
-// GLOBAL: SIMCOPTER 0x00003124
+// GLOBAL: COPTER_D 0x00003124
 // SZ_SKY_NIGHT_IMAGE_FILE_NAME
