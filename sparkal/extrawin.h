@@ -1,6 +1,6 @@
 // Function in module: Extrawin.obj
 // FUNCTION: COPTER_D 0x00460de0
-void MessageBoxWindowEdit::GetEditText(class basic_string<char>&) {
+void MessageBoxWindowEdit::GetEditText(class basic_string<char>& sText) {
 // LINE 403:
 	asm( 
 "	      00460de0    push ebp"
@@ -29,7 +29,7 @@ void MessageBoxWindowEdit::GetEditText(class basic_string<char>&) {
 
 // Function in module: Extrawin.obj
 // FUNCTION: COPTER_D 0x00460e20
-void MessageBoxWindowEdit::GetEditText(char *, unsigned long) {
+void MessageBoxWindowEdit::GetEditText(char * szText, unsigned long lLength) {
 // LINE 404:
 	asm( 
 "	      00460e20    push ebp"

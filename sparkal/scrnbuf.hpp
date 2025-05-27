@@ -1,6 +1,6 @@
 // Function in module: scrnbuf.obj
 // FUNCTION: COPTER_D 0x0049f710
-void ScreenBuffer::SetNewModeType(enum tagModeType) {
+void ScreenBuffer::SetNewModeType(enum tagModeType nNewCurrentModeType) {
 // LINE 42:
 	asm( 
 "	      0049f710    push ebp"

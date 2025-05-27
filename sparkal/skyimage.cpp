@@ -6,7 +6,7 @@
 
 // Contribution: 1:00094400-00094b31 Module: 20, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00495400
-void SkyImage::SkyImage(int32_t, int32_t, int32_t) {
+void SkyImage::SkyImage(int32_t nNewSkyType, int32_t nNewBitmapWidth, int32_t nNewBitmapHeight) {
 // LINE 30:
 	asm( 
 "	      00495400    push ebp"
@@ -97,7 +97,7 @@ void SkyImage::SkyImage(int32_t, int32_t, int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x004954ce
-void SkyImage::SwitchToSkyType(enum SkyImage::SkyType) {
+void SkyImage::SwitchToSkyType(enum SkyImage::SkyType nNewSkyType) {
 // LINE 59:
 	asm( 
 "	      004954ce    push ebp"
@@ -601,7 +601,7 @@ int32_t SkyImage::LoadImageA() {
 }
 
 // FUNCTION: COPTER_D 0x004958e7
-unsigned long SkyImage::Compose(class CBackBuffer*, int32_t) {
+unsigned long SkyImage::Compose(class CBackBuffer* pDestImage, int32_t nDestinationWidth) {
 // LINE 213:
 	asm( 
 "	      004958e7    push ebp"

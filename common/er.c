@@ -6,7 +6,7 @@
 
 // Contribution: 1:0018d320-0018d36d Module: 87, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0058e320
-void ERexit(char *) {
+void ERexit(char * p) {
 // LINE 47:
 	asm( 
 "	      0058e320    push ebp"

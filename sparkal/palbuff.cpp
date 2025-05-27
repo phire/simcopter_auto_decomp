@@ -105,7 +105,7 @@ void PaletteBuffer::PaletteBuffer() {
 }
 
 // FUNCTION: COPTER_D 0x00447340
-void PaletteBuffer::PaletteBuffer(struct SparkalColor*) {
+void PaletteBuffer::PaletteBuffer(struct SparkalColor* newSparkalColors) {
 // LINE 52:
 	asm( 
 "	      00447340    push ebp"
@@ -257,7 +257,7 @@ void PaletteBuffer::~PaletteBuffer() {
 }
 
 // FUNCTION: COPTER_D 0x004474ab
-int32_t PaletteBuffer::SetPalette(const struct SparkalColor*) {
+int32_t PaletteBuffer::SetPalette(const struct SparkalColor* pColors) {
 // LINE 78:
 	asm( 
 "	      004474ab    push ebp"
@@ -587,7 +587,7 @@ void PaletteBuffer::DrawPalette() {
 }
 
 // FUNCTION: COPTER_D 0x0044774b
-unsigned long PaletteBuffer::Compose(class IFlatImage*, long, long, long, long, long, long) {
+unsigned long PaletteBuffer::Compose(class IFlatImage* pDestImage, long DestLeft, long DestTop, long SrcLeft, long SrcTop, long SrcRight, long SrcBottom) {
 // LINE 161:
 	asm( 
 "	      0044774b    push ebp"

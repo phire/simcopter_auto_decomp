@@ -6,7 +6,7 @@
 
 // Contribution: 1:001348a0-0013509d Module: 160, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x005358a0
-int32_t CreateAmbulanceInstance(int32_t) {
+int32_t CreateAmbulanceInstance(int32_t instanceID) {
 // LINE 76:
 	asm( 
 "	      005358a0    push ebp"
@@ -96,7 +96,7 @@ void AmbulanceClass::~AmbulanceClass() {
 }
 
 // FUNCTION: COPTER_D 0x0053592b
-class AmbulanceClass* AmbulanceClass::CreateInstance(int32_t) {
+class AmbulanceClass* AmbulanceClass::CreateInstance(int32_t instanceID) {
 // LINE 106:
 	asm( 
 "	      0053592b    push ebp"
@@ -311,7 +311,7 @@ class AmbulanceClass* AmbulanceClass::CreateInstance(int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x00535b14
-unsigned char AmbulanceClass::Dispatch(enum EmergencyType, enum EmergencyLevel, long, long) {
+unsigned char AmbulanceClass::Dispatch(enum EmergencyType responseType, enum EmergencyLevel responseLevel, long mapx, long mapy) {
 // LINE 243:
 	asm( 
 "	      00535b14    push ebp"
@@ -347,7 +347,7 @@ unsigned char AmbulanceClass::Dispatch(enum EmergencyType, enum EmergencyLevel, 
 }
 
 // FUNCTION: COPTER_D 0x00535b46
-int32_t AmbulanceClass::IsThisAHospital(unsigned short) {
+int32_t AmbulanceClass::IsThisAHospital(unsigned short tileType) {
 // LINE 257:
 	asm( 
 "	      00535b46    push ebp"
@@ -378,7 +378,7 @@ int32_t AmbulanceClass::IsThisAHospital(unsigned short) {
 }
 
 // FUNCTION: COPTER_D 0x00535b75
-int32_t AmbulanceClass::IsThisAHospital(long, long) {
+int32_t AmbulanceClass::IsThisAHospital(long mapX, long mapY) {
 // LINE 264:
 	asm( 
 "	      00535b75    push ebp"
@@ -898,7 +898,7 @@ int32_t AmbulanceClass::AtScene() {
 }
 
 // FUNCTION: COPTER_D 0x00535ff9
-void AmbulanceClass::SetSaveData(struct _AUTO_LOAD_SAVE*) {
+void AmbulanceClass::SetSaveData(struct _AUTO_LOAD_SAVE* sd) {
 // LINE 422:
 	asm( 
 "	      00535ff9    push ebp"
@@ -928,7 +928,7 @@ void AmbulanceClass::SetSaveData(struct _AUTO_LOAD_SAVE*) {
 }
 
 // FUNCTION: COPTER_D 0x0053601d
-void AmbulanceClass::LoadSaveData(struct _AUTO_LOAD_SAVE*) {
+void AmbulanceClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 // LINE 436:
 	asm( 
 "	      0053601d    push ebp"

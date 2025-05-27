@@ -6,7 +6,7 @@
 
 // Contribution: 1:0003d250-00040e21 Module: 53, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0043e250
-void SoundCompletionDeletionFunction(long) {
+void SoundCompletionDeletionFunction(long lSoundPointer) {
 // LINE 76:
 	asm( 
 "	      0043e250    push ebp"
@@ -43,7 +43,7 @@ void SoundCompletionDeletionFunction(long) {
 }
 
 // FUNCTION: COPTER_D 0x0043e28a
-void SoundCompletionUnloadFunction(long) {
+void SoundCompletionUnloadFunction(long lSoundPointer) {
 // LINE 86:
 	asm( 
 "	      0043e28a    push ebp"

@@ -998,7 +998,7 @@ int32_t VRAppInit() {
 }
 
 // FUNCTION: COPTER_D 0x004eb5ca
-int32_t VRAppCityInit(int32_t) {
+int32_t VRAppCityInit(int32_t reload) {
 // LINE 548:
 	asm( 
 "	      004eb5ca    push ebp"
@@ -1337,7 +1337,7 @@ int32_t VRAppCityInit(int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x004eb877
-int32_t VRAppGameInit(void * __ptr32) {
+int32_t VRAppGameInit(void * __ptr32 miffReader) {
 // LINE 705:
 	asm( 
 "	      004eb877    push ebp"
@@ -1434,7 +1434,7 @@ int32_t VRAppGameInit(void * __ptr32) {
 }
 
 // FUNCTION: COPTER_D 0x004eb909
-int32_t VRAppGameSave(void * __ptr32) {
+int32_t VRAppGameSave(void * __ptr32 miffWriter) {
 // LINE 739:
 	asm( 
 "	      004eb909    push ebp"
@@ -1759,7 +1759,7 @@ void VRAppNewTextures() {
 }
 
 // FUNCTION: COPTER_D 0x004ebaec
-void SetUserVars(int32_t *) {
+void SetUserVars(int32_t * user) {
 // LINE 939:
 	asm( 
 "	      004ebaec    push ebp"

@@ -6,7 +6,7 @@
 
 // Contribution: 1:00046b60-00047268 Module: 48, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00447b60
-int32_t DllMain(void * __ptr32, unsigned long, void * __ptr32) {
+int32_t DllMain(void * __ptr32 hDLL, unsigned long dwReason, void * __ptr32 lpReserved) {
 // LINE 63:
 	asm( 
 "	      00447b60    push ebp"
@@ -31,7 +31,7 @@ int32_t DllMain(void * __ptr32, unsigned long, void * __ptr32) {
 }
 
 // FUNCTION: COPTER_D 0x00447b77
-struct FREQ_INFO cpuspeed(int32_t) {
+struct FREQ_INFO cpuspeed(int32_t clocks) {
 // LINE 88:
 	asm( 
 "	      00447b77    push ebp"
@@ -627,7 +627,7 @@ struct FREQ_INFO cpuspeed(int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x00447fce
-unsigned long NormFreq(unsigned short, unsigned long) {
+unsigned long NormFreq(unsigned short processor, unsigned long freq) {
 // LINE 428:
 	asm( 
 "	      00447fce    push ebp"

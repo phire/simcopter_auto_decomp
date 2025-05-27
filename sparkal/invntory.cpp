@@ -6,7 +6,7 @@
 
 // Contribution: 1:000a7360-000a97bd Module: 8, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004a8360
-void InventoryWindow::InventoryWindow(int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
+void InventoryWindow::InventoryWindow(int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
 // LINE 53:
 	asm( 
 "	      004a8360    push ebp"
@@ -1369,7 +1369,7 @@ int32_t InventoryWindow::Initialize() {
 }
 
 // FUNCTION: COPTER_D 0x004a981d
-int32_t InventoryWindow::ReadPalette(struct SparkalColor*) {
+int32_t InventoryWindow::ReadPalette(struct SparkalColor* pColorTable) {
 // LINE 112:
 	asm( 
 "	      004a981d    push ebp"
@@ -1482,7 +1482,7 @@ int32_t InventoryWindow::ReadPalette(struct SparkalColor*) {
 }
 
 // FUNCTION: COPTER_D 0x004a995f
-int32_t InventoryWindow::CreateImage(int32_t) {
+int32_t InventoryWindow::CreateImage(int32_t __formal) {
 // LINE 120:
 	asm( 
 "	      004a995f    push ebp"
@@ -2583,7 +2583,7 @@ void InventoryWindow::DrawInventory() {
 }
 
 // FUNCTION: COPTER_D 0x004aa4ee
-long InventoryWindow::DoKeyDown(long, char) {
+long InventoryWindow::DoKeyDown(long lKey, char chModifiers) {
 // LINE 267:
 	asm( 
 "	      004aa4ee    push ebp"
@@ -2610,7 +2610,7 @@ long InventoryWindow::DoKeyDown(long, char) {
 }
 
 // FUNCTION: COPTER_D 0x004aa508
-long InventoryWindow::DoCursorDown(long, long, unsigned long) {
+long InventoryWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButton) {
 // LINE 276:
 	asm( 
 "	      004aa508    push ebp"
@@ -2637,7 +2637,7 @@ long InventoryWindow::DoCursorDown(long, long, unsigned long) {
 }
 
 // FUNCTION: COPTER_D 0x004aa525
-long InventoryWindow::DoCursorUp(long, long, unsigned long) {
+long InventoryWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nButton) {
 // LINE 285:
 	asm( 
 "	      004aa525    push ebp"
@@ -2664,7 +2664,7 @@ long InventoryWindow::DoCursorUp(long, long, unsigned long) {
 }
 
 // FUNCTION: COPTER_D 0x004aa542
-long InventoryWindow::DoCursorMove(long, long) {
+long InventoryWindow::DoCursorMove(long nCursorX, long nCursorY) {
 // LINE 291:
 	asm( 
 "	      004aa542    push ebp"
@@ -2691,7 +2691,7 @@ long InventoryWindow::DoCursorMove(long, long) {
 }
 
 // FUNCTION: COPTER_D 0x004aa55f
-int32_t InventoryWindow::GetRectFromID(long, class MRect&) {
+int32_t InventoryWindow::GetRectFromID(long lID, class MRect& rectHotSpot) {
 // LINE 302:
 	asm( 
 "	      004aa55f    push ebp"
@@ -2813,7 +2813,7 @@ void InventoryWindow::LoadHotSpots() {
 }
 
 // FUNCTION: COPTER_D 0x004aa656
-long InventoryWindow::GetColumnStartPixel(long) {
+long InventoryWindow::GetColumnStartPixel(long lColumn) {
 // LINE 330:
 	asm( 
 "	      004aa656    push ebp"
@@ -2853,7 +2853,7 @@ long InventoryWindow::GetColumnStartPixel(long) {
 }
 
 // FUNCTION: COPTER_D 0x004aa693
-long InventoryWindow::GetRowStartPixel(long) {
+long InventoryWindow::GetRowStartPixel(long lRow) {
 // LINE 344:
 	asm( 
 "	      004aa693    push ebp"
@@ -2893,7 +2893,7 @@ long InventoryWindow::GetRowStartPixel(long) {
 }
 
 // FUNCTION: COPTER_D 0x004aa6d0
-void InventoryWindow::GetEquipmentTextPosition(long, class MPoint&) {
+void InventoryWindow::GetEquipmentTextPosition(long lEquipmentIndex, class MPoint& ptEquipment) {
 // LINE 359:
 	asm( 
 "	      004aa6d0    push ebp"
@@ -2941,7 +2941,7 @@ void InventoryWindow::GetEquipmentTextPosition(long, class MPoint&) {
 }
 
 // FUNCTION: COPTER_D 0x004aa722
-void InventoryWindow::GetTitleAndAddressRects(class MRect&, class MRect&, class MRect&) {
+void InventoryWindow::GetTitleAndAddressRects(class MRect& rectTitle, class MRect& rectAddress1, class MRect& rectAddress2) {
 // LINE 377:
 	asm( 
 "	      004aa722    push ebp"

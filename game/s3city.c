@@ -508,7 +508,7 @@ void S3CityDeInit() {
 }
 
 // FUNCTION: COPTER_D 0x0050a478
-void VRSetBackPlane(int32_t) {
+void VRSetBackPlane(int32_t farZ) {
 // LINE 363:
 	asm( 
 "	      0050a478    push ebp"
@@ -10659,7 +10659,7 @@ void S3CityGrid() {
 }
 
 // FUNCTION: COPTER_D 0x0050f67e
-void S3CityGetCells(struct Point3d*, struct Point2d*, struct Point2d**, struct Point3d*, struct Point2d*) {
+void S3CityGetCells(struct Point3d* vec, struct Point2d* cell_array, struct Point2d** cell_last, struct Point3d* spos, struct Point2d* startcell) {
 // LINE 2916:
 	asm( 
 "	      0050f67e    push ebp"
@@ -12635,7 +12635,7 @@ void city_fovscan_vertedge() {
 }
 
 // FUNCTION: COPTER_D 0x00510776
-void city_subscan_horiz(long, long, long, struct Point2d*, struct Point2d*, struct Point2d**) {
+void city_subscan_horiz(long cellpos, long x_dir, long y_dir, struct Point2d* edge, struct Point2d* endedge, struct Point2d** curr_fovcell) {
 // LINE 3520:
 	asm( 
 "	      00510776    push ebp"
@@ -13131,7 +13131,7 @@ void city_subscan_horiz(long, long, long, struct Point2d*, struct Point2d*, stru
 }
 
 // FUNCTION: COPTER_D 0x00510beb
-void city_subscan_vert(long, long, long, struct Point2d*, struct Point2d*, struct Point2d**) {
+void city_subscan_vert(long cellpos, long x_dir, long y_dir, struct Point2d* edge, struct Point2d* endedge, struct Point2d** curr_fovcell) {
 // LINE 3637:
 	asm( 
 "	      00510beb    push ebp"
@@ -14145,7 +14145,7 @@ void S3CityDrawGrid() {
 }
 
 // FUNCTION: COPTER_D 0x0051147c
-void S3CityDyObjFixup(struct _CELL_INFO**, struct _CELL_INFO***) {
+void S3CityDyObjFixup(struct _CELL_INFO** endcptrptr, struct _CELL_INFO*** endcaddr) {
 // LINE 3931:
 	asm( 
 "	      0051147c    push ebp"
@@ -15681,7 +15681,7 @@ void S3CityDyObjFixup(struct _CELL_INFO**, struct _CELL_INFO***) {
 }
 
 // FUNCTION: COPTER_D 0x0051215e
-int32_t S3CityCellInFront(struct _CELL_INFO***, struct _CELL_INFO***, struct _CELL_INFO**, struct _CELL_INFO**) {
+int32_t S3CityCellInFront(struct _CELL_INFO*** caddr2, struct _CELL_INFO*** caddr1, struct _CELL_INFO** caddrtest, struct _CELL_INFO** cptrreplace) {
 // LINE 4314:
 	asm( 
 "	      0051215e    push ebp"
@@ -16110,7 +16110,7 @@ void S3CityCheckGridPos() {
 }
 
 // FUNCTION: COPTER_D 0x005124fe
-void S3CitySpiralScan(long, long, long) {
+void S3CitySpiralScan(long x, long y, long spiral_dist) {
 // LINE 4453:
 	asm( 
 "	      005124fe    push ebp"
@@ -16333,7 +16333,7 @@ void S3CitySpiralScan(long, long, long) {
 }
 
 // FUNCTION: COPTER_D 0x00512670
-int32_t S3CityCellViewReject(struct _CELL_INFO*) {
+int32_t S3CityCellViewReject(struct _CELL_INFO* cptr) {
 // LINE 4733:
 	asm( 
 "	      00512670    push ebp"
@@ -16829,7 +16829,7 @@ void S3CityDrawOverHeadGrid() {
 }
 
 // FUNCTION: COPTER_D 0x00512a46
-short S3CityLowestTerrAlt(long, long, long) {
+short S3CityLowestTerrAlt(long startx, long starty, long size) {
 // LINE 4939:
 	asm( 
 "	      00512a46    push ebp"
@@ -16914,7 +16914,7 @@ short S3CityLowestTerrAlt(long, long, long) {
 }
 
 // FUNCTION: COPTER_D 0x00512af5
-int32_t S3CityIsCellFlat(long, long) {
+int32_t S3CityIsCellFlat(long x, long y) {
 // LINE 4965:
 	asm( 
 "	      00512af5    push ebp"
@@ -17023,7 +17023,7 @@ int32_t S3CityIsCellFlat(long, long) {
 }
 
 // FUNCTION: COPTER_D 0x00512c2b
-int32_t S3CityGetBase(long, long, long) {
+int32_t S3CityGetBase(long x, long y, long size) {
 // LINE 4984:
 	asm( 
 "	      00512c2b    push ebp"
@@ -17249,7 +17249,7 @@ int32_t S3CityGetBase(long, long, long) {
 }
 
 // FUNCTION: COPTER_D 0x00512e3a
-void S3CityCreateHeliBase(long, long) {
+void S3CityCreateHeliBase(long x, long y) {
 // LINE 5051:
 	asm( 
 "	      00512e3a    push ebp"

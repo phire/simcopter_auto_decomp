@@ -6,7 +6,7 @@
 
 // Contribution: 1:00153720-00153f24 Module: 198, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00554720
-void * __ptr32 Memory::DetachPlatformHandle(void * __ptr32) {
+void * __ptr32 Memory::DetachPlatformHandle(void * __ptr32 mh) {
 // LINE 103:
 	asm( 
 "	      00554720    push ebp"
@@ -31,7 +31,7 @@ void * __ptr32 Memory::DetachPlatformHandle(void * __ptr32) {
 }
 
 // FUNCTION: COPTER_D 0x00554733
-void * __ptr32 Memory::GetPlatformHandle(void * __ptr32) {
+void * __ptr32 Memory::GetPlatformHandle(void * __ptr32 mh) {
 // LINE 107:
 	asm( 
 "	      00554733    push ebp"
@@ -56,7 +56,7 @@ void * __ptr32 Memory::GetPlatformHandle(void * __ptr32) {
 }
 
 // FUNCTION: COPTER_D 0x00554746
-void * __ptr32 Memory::AdoptPlatformHandle(void * __ptr32) {
+void * __ptr32 Memory::AdoptPlatformHandle(void * __ptr32 mem) {
 // LINE 114:
 	asm( 
 "	      00554746    push ebp"
@@ -81,7 +81,7 @@ void * __ptr32 Memory::AdoptPlatformHandle(void * __ptr32) {
 }
 
 // FUNCTION: COPTER_D 0x00554759
-void * __ptr32 Memory::HAlloc(long, long) {
+void * __ptr32 Memory::HAlloc(long size, long state) {
 // LINE 150:
 	asm( 
 "	      00554759    push ebp"
@@ -201,7 +201,7 @@ void * __ptr32 Memory::HAlloc(long, long) {
 }
 
 // FUNCTION: COPTER_D 0x00554848
-void Memory::HUnpurge(void * __ptr32, long) {
+void Memory::HUnpurge(void * __ptr32 purged, long oldSize) {
 // LINE 190:
 	asm( 
 "	      00554848    push ebp"
@@ -236,7 +236,7 @@ void Memory::HUnpurge(void * __ptr32, long) {
 }
 
 // FUNCTION: COPTER_D 0x00554870
-unsigned char * Memory::PAlloc(long *, long) {
+unsigned char * Memory::PAlloc(long * pool, long size) {
 // LINE 202:
 	asm( 
 "	      00554870    push ebp"
@@ -286,7 +286,7 @@ unsigned char * Memory::PAlloc(long *, long) {
 }
 
 // FUNCTION: COPTER_D 0x005548c3
-void Memory::HFree(void * __ptr32) {
+void Memory::HFree(void * __ptr32 mem) {
 // LINE 219:
 	asm( 
 "	      005548c3    push ebp"
@@ -377,7 +377,7 @@ void Memory::HFree(void * __ptr32) {
 }
 
 // FUNCTION: COPTER_D 0x00554976
-void Memory::PFree(unsigned char *) {
+void Memory::PFree(unsigned char * mem) {
 // LINE 248:
 	asm( 
 "	      00554976    push ebp"
@@ -434,7 +434,7 @@ void Memory::PFree(unsigned char *) {
 }
 
 // FUNCTION: COPTER_D 0x005549e0
-unsigned char * Memory::HLock(void * __ptr32) {
+unsigned char * Memory::HLock(void * __ptr32 mem) {
 // LINE 265:
 	asm( 
 "	      005549e0    push ebp"
@@ -490,7 +490,7 @@ unsigned char * Memory::HLock(void * __ptr32) {
 }
 
 // FUNCTION: COPTER_D 0x00554a3d
-void Memory::HUnlock(void * __ptr32) {
+void Memory::HUnlock(void * __ptr32 mem) {
 // LINE 295:
 	asm( 
 "	      00554a3d    push ebp"
@@ -540,7 +540,7 @@ void Memory::HUnlock(void * __ptr32) {
 }
 
 // FUNCTION: COPTER_D 0x00554a94
-void Memory::HMoveHi(void * __ptr32) {
+void Memory::HMoveHi(void * __ptr32 h) {
 // LINE 312:
 	asm( 
 "	      00554a94    push ebp"
@@ -566,7 +566,7 @@ void Memory::HMoveHi(void * __ptr32) {
 }
 
 // FUNCTION: COPTER_D 0x00554aac
-void Memory::HPurge(void * __ptr32) {
+void Memory::HPurge(void * __ptr32 h) {
 // LINE 327:
 	asm( 
 "	      00554aac    push ebp"
@@ -596,7 +596,7 @@ void Memory::HPurge(void * __ptr32) {
 }
 
 // FUNCTION: COPTER_D 0x00554ad8
-void Memory::HNoPurge(void * __ptr32) {
+void Memory::HNoPurge(void * __ptr32 h) {
 // LINE 339:
 	asm( 
 "	      00554ad8    push ebp"
@@ -626,7 +626,7 @@ void Memory::HNoPurge(void * __ptr32) {
 }
 
 // FUNCTION: COPTER_D 0x00554b04
-unsigned char * Memory::Stash(void * __ptr32) {
+unsigned char * Memory::Stash(void * __ptr32 h) {
 // LINE 350:
 	asm( 
 "	      00554b04    push ebp"
@@ -692,7 +692,7 @@ unsigned char * Memory::Stash(void * __ptr32) {
 }
 
 // FUNCTION: COPTER_D 0x00554b76
-void Memory::BlockMove(void * __ptr32, void * __ptr32, unsigned long) {
+void Memory::BlockMove(void * __ptr32 from, void * __ptr32 to, unsigned long size) {
 // LINE 370:
 	asm( 
 "	      00554b76    push ebp"
@@ -735,7 +735,7 @@ void Memory::BlockMove(void * __ptr32, void * __ptr32, unsigned long) {
 }
 
 // FUNCTION: COPTER_D 0x00554bc3
-void Memory::BlockCopy(void * __ptr32, void * __ptr32, unsigned long) {
+void Memory::BlockCopy(void * __ptr32 from, void * __ptr32 to, unsigned long size) {
 // LINE 380:
 	asm( 
 "	      00554bc3    push ebp"
@@ -778,7 +778,7 @@ void Memory::BlockCopy(void * __ptr32, void * __ptr32, unsigned long) {
 }
 
 // FUNCTION: COPTER_D 0x00554c10
-void Memory::BlockFill(void * __ptr32, unsigned char, unsigned long) {
+void Memory::BlockFill(void * __ptr32 mem, unsigned char byteVal, unsigned long size) {
 // LINE 392:
 	asm( 
 "	      00554c10    push ebp"
@@ -834,7 +834,7 @@ void Memory::BlockFill(void * __ptr32, unsigned char, unsigned long) {
 }
 
 // FUNCTION: COPTER_D 0x00554c73
-unsigned short Memory::BlockCompare(void * __ptr32, void * __ptr32, unsigned long) {
+unsigned short Memory::BlockCompare(void * __ptr32 first, void * __ptr32 second, unsigned long size) {
 // LINE 401:
 	asm( 
 "	      00554c73    push ebp"
@@ -871,7 +871,7 @@ unsigned short Memory::BlockCompare(void * __ptr32, void * __ptr32, unsigned lon
 }
 
 // FUNCTION: COPTER_D 0x00554cab
-long * Memory::PoolAlloc(long, enum Memory::PoolType) {
+long * Memory::PoolAlloc(long totalSize, enum Memory::PoolType poolType) {
 // LINE 408:
 	asm( 
 "	      00554cab    push ebp"
@@ -905,7 +905,7 @@ long * Memory::PoolAlloc(long, enum Memory::PoolType) {
 }
 
 // FUNCTION: COPTER_D 0x00554cd9
-void Memory::PoolFree(long *) {
+void Memory::PoolFree(long * pool) {
 // LINE 416:
 	asm( 
 "	      00554cd9    push ebp"
@@ -935,7 +935,7 @@ void Memory::PoolFree(long *) {
 }
 
 // FUNCTION: COPTER_D 0x00554d05
-unsigned long Memory::HGetSize(void * __ptr32) {
+unsigned long Memory::HGetSize(void * __ptr32 mem) {
 // LINE 423:
 	asm( 
 "	      00554d05    push ebp"
@@ -985,7 +985,7 @@ unsigned long Memory::HGetSize(void * __ptr32) {
 }
 
 // FUNCTION: COPTER_D 0x00554d5a
-unsigned long Memory::PGetSize(unsigned char *) {
+unsigned long Memory::PGetSize(unsigned char * mem) {
 // LINE 438:
 	asm( 
 "	      00554d5a    push ebp"
@@ -1035,7 +1035,7 @@ unsigned long Memory::PGetSize(unsigned char *) {
 }
 
 // FUNCTION: COPTER_D 0x00554daf
-unsigned short Memory::HIsLocked(void * __ptr32) {
+unsigned short Memory::HIsLocked(void * __ptr32 h) {
 // LINE 453:
 	asm( 
 "	      00554daf    push ebp"
@@ -1073,7 +1073,7 @@ unsigned short Memory::HIsLocked(void * __ptr32) {
 }
 
 // FUNCTION: COPTER_D 0x00554de7
-long Memory::HGetState(void * __ptr32) {
+long Memory::HGetState(void * __ptr32 h) {
 // LINE 462:
 	asm( 
 "	      00554de7    push ebp"
@@ -1139,7 +1139,7 @@ long Memory::HGetState(void * __ptr32) {
 }
 
 // FUNCTION: COPTER_D 0x00554e62
-void Memory::HSetState(void * __ptr32, long) {
+void Memory::HSetState(void * __ptr32 h, long newState) {
 // LINE 480:
 	asm( 
 "	      00554e62    push ebp"
@@ -1177,7 +1177,7 @@ void Memory::HSetState(void * __ptr32, long) {
 }
 
 // FUNCTION: COPTER_D 0x00554e99
-long Memory::HSetSize(void * __ptr32, unsigned long) {
+long Memory::HSetSize(void * __ptr32 mem, unsigned long newSize) {
 // LINE 494:
 	asm( 
 "	      00554e99    push ebp"

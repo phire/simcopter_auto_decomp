@@ -6,7 +6,7 @@
 
 // Contribution: 1:0015c950-0015d654 Module: 192, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0055d950
-void SwizzlePrivAnimPartInfo(void * __ptr32, long) {
+void SwizzlePrivAnimPartInfo(void * __ptr32 val, long size) {
 // LINE 109:
 	asm( 
 "	      0055d950    push ebp"
@@ -44,7 +44,7 @@ void SwizzlePrivAnimPartInfo(void * __ptr32, long) {
 }
 
 // FUNCTION: COPTER_D 0x0055d98c
-struct TinyXZY DXZY_2_TinyXZY(struct DXZY) {
+struct TinyXZY DXZY_2_TinyXZY(struct DXZY dxzy) {
 // LINE 128:
 	asm( 
 "	      0055d98c    push ebp"
@@ -94,7 +94,7 @@ struct TinyXZY DXZY_2_TinyXZY(struct DXZY) {
 }
 
 // FUNCTION: COPTER_D 0x0055d9cf
-struct DXZY TinyXZY_2_DXZY(struct TinyXZY) {
+struct DXZY TinyXZY_2_DXZY(struct TinyXZY txzy) {
 // LINE 137:
 	asm( 
 "	      0055d9cf    push ebp"
@@ -154,7 +154,7 @@ struct DXZY TinyXZY_2_DXZY(struct TinyXZY) {
 }
 
 // FUNCTION: COPTER_D 0x0055da2e
-float Byte_2_Float(char) {
+float Byte_2_Float(char byte) {
 // LINE 151:
 	asm( 
 "	      0055da2e    push ebp"
@@ -182,7 +182,7 @@ float Byte_2_Float(char) {
 }
 
 // FUNCTION: COPTER_D 0x0055da4b
-char Float_2_Byte(float) {
+char Float_2_Byte(float flt) {
 // LINE 156:
 	asm( 
 "	      0055da4b    push ebp"
@@ -227,7 +227,7 @@ char Float_2_Byte(float) {
 }
 
 // FUNCTION: COPTER_D 0x0055daa7
-void SwizzlePoint(void * __ptr32, long) {
+void SwizzlePoint(void * __ptr32 val, long size) {
 // LINE 165:
 	asm( 
 "	      0055daa7    push ebp"

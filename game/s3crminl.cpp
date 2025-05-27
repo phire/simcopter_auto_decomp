@@ -6,7 +6,7 @@
 
 // Contribution: 1:001339c0-0013483c Module: 161, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x005349c0
-int32_t CreateCriminalCarInstance(int32_t) {
+int32_t CreateCriminalCarInstance(int32_t instanceID) {
 // LINE 81:
 	asm( 
 "	      005349c0    push ebp"
@@ -39,7 +39,7 @@ int32_t CreateCriminalCarInstance(int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x005349f0
-int32_t S3CriminalMissionStart(short, short, long, long) {
+int32_t S3CriminalMissionStart(short mID, short mType, long x, long y) {
 // LINE 87:
 	asm( 
 "	      005349f0    push ebp"
@@ -130,7 +130,7 @@ void CriminalEvaderCarClass::~CriminalEvaderCarClass() {
 }
 
 // FUNCTION: COPTER_D 0x00534a73
-class CriminalEvaderCarClass* CriminalEvaderCarClass::CreateInstance(int32_t) {
+class CriminalEvaderCarClass* CriminalEvaderCarClass::CreateInstance(int32_t instanceID) {
 // LINE 123:
 	asm( 
 "	      00534a73    push ebp"
@@ -215,7 +215,7 @@ class CriminalEvaderCarClass* CriminalEvaderCarClass::CreateInstance(int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x00534b21
-int32_t CriminalEvaderCarClass::StartCriminalMission(short, short, long, long) {
+int32_t CriminalEvaderCarClass::StartCriminalMission(short mID, short mType, long x, long y) {
 // LINE 156:
 	asm( 
 "	      00534b21    push ebp"
@@ -902,7 +902,7 @@ void CriminalEvaderCarClass::ItterateFSM() {
 }
 
 // FUNCTION: COPTER_D 0x0053512e
-void CriminalEvaderCarClass::PullOver(short) {
+void CriminalEvaderCarClass::PullOver(short carModel) {
 // LINE 391:
 	asm( 
 "	      0053512e    push ebp"
@@ -1725,7 +1725,7 @@ void CriminalEvaderCarClass::ShowWhereWeAre() {
 }
 
 // FUNCTION: COPTER_D 0x00535754
-void CriminalEvaderCarClass::SetSaveData(struct _AUTO_LOAD_SAVE*) {
+void CriminalEvaderCarClass::SetSaveData(struct _AUTO_LOAD_SAVE* sd) {
 // LINE 667:
 	asm( 
 "	      00535754    push ebp"
@@ -1783,7 +1783,7 @@ void CriminalEvaderCarClass::SetSaveData(struct _AUTO_LOAD_SAVE*) {
 }
 
 // FUNCTION: COPTER_D 0x005357c0
-void CriminalEvaderCarClass::LoadSaveData(struct _AUTO_LOAD_SAVE*) {
+void CriminalEvaderCarClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 // LINE 687:
 	asm( 
 "	      005357c0    push ebp"

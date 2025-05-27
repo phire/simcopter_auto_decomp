@@ -6,7 +6,7 @@
 
 // Contribution: 1:0004ef40-0004f04f Module: 46, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0044ff40
-void GUIReportError(unsigned long, unsigned char) {
+void GUIReportError(unsigned long Error, unsigned char Terminate) {
 // LINE 21:
 	asm( 
 "	      0044ff40    push ebp"

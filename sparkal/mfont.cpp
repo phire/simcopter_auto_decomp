@@ -102,7 +102,7 @@ void MFont::MFont() {
 }
 
 // FUNCTION: COPTER_D 0x0049f89b
-void MFont::MFont(const class MFont&) {
+void MFont::MFont(const class MFont& copyMFont) {
 // LINE 40:
 	asm( 
 "	      0049f89b    push ebp"
@@ -161,7 +161,7 @@ void MFont::MFont(const class MFont&) {
 }
 
 // FUNCTION: COPTER_D 0x0049f937
-void MFont::MFont(char *, unsigned long, unsigned long, unsigned long, int32_t) {
+void MFont::MFont(char * szFaceName, unsigned long lNewHeight, unsigned long lNewWidth, unsigned long lNewAttributes, int32_t bCreateNow) {
 // LINE 54:
 	asm( 
 "	      0049f937    push ebp"
@@ -493,7 +493,7 @@ void MFont::~MFont() {
 }
 
 // FUNCTION: COPTER_D 0x0049fd33
-class MFont& MFont::operator=(const class MFont&) {
+class MFont& MFont::operator=(const class MFont& copyMFont) {
 // LINE 81:
 	asm( 
 "	      0049fd33    push ebp"
@@ -910,7 +910,7 @@ int32_t MFont::CreateFontA() {
 }
 
 // FUNCTION: COPTER_D 0x004a015d
-void MFont::SetFontCharacteristics(long, long, long) {
+void MFont::SetFontCharacteristics(long lNewHeight, long lNewWidth, long lNewAttributes) {
 // LINE 163:
 	asm( 
 "	      004a015d    push ebp"
@@ -1042,7 +1042,7 @@ void MFont::DestroyFont() {
 }
 
 // FUNCTION: COPTER_D 0x004a0223
-int32_t MFont::IsFontAvailable(char *, unsigned long, unsigned long, unsigned long) {
+int32_t MFont::IsFontAvailable(char * szFaceName, unsigned long lNewHeight, unsigned long lNewWidth, unsigned long lNewAttributes) {
 // LINE 208:
 	asm( 
 "	      004a0223    push ebp"
@@ -1067,7 +1067,7 @@ int32_t MFont::IsFontAvailable(char *, unsigned long, unsigned long, unsigned lo
 }
 
 // FUNCTION: COPTER_D 0x004a0235
-int32_t MFont::LoadFont(char *) {
+int32_t MFont::LoadFont(char * szPath) {
 // LINE 222:
 	asm( 
 "	      004a0235    push ebp"
@@ -1113,7 +1113,7 @@ int32_t MFont::LoadFont(char *) {
 }
 
 // FUNCTION: COPTER_D 0x004a0273
-int32_t MFont::UnloadFont(char *) {
+int32_t MFont::UnloadFont(char * szPath) {
 // LINE 239:
 	asm( 
 "	      004a0273    push ebp"
@@ -1159,7 +1159,7 @@ int32_t MFont::UnloadFont(char *) {
 }
 
 // FUNCTION: COPTER_D 0x004a02b1
-int32_t MFont::GetTextDimensions(char *, long&, long&) {
+int32_t MFont::GetTextDimensions(char * szString, long& lWidth, long& lHeight) {
 // LINE 259:
 	asm( 
 "	      004a02b1    push ebp"

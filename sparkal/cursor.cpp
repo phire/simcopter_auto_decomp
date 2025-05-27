@@ -53,7 +53,7 @@ void Cursor::~Cursor() {
 }
 
 // FUNCTION: COPTER_D 0x0047481f
-int32_t Cursor::IsButtonDown(unsigned long, unsigned long) {
+int32_t Cursor::IsButtonDown(unsigned long nCursor, unsigned long nModifiers) {
 // LINE 35:
 	asm( 
 "	      0047481f    push ebp"
@@ -189,7 +189,7 @@ int32_t Cursor::IsButtonDown(unsigned long, unsigned long) {
 }
 
 // FUNCTION: COPTER_D 0x00474921
-int32_t Cursor::WhereIsCursor(unsigned long *, unsigned long *) {
+int32_t Cursor::WhereIsCursor(unsigned long * nXPosition, unsigned long * nYPosition) {
 // LINE 89:
 	asm( 
 "	      00474921    push ebp"

@@ -148,7 +148,7 @@ class cBList<cBBase>* cCopterAnim::GetList() {
 
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055f6c0
-struct PrivAnimPartInfo* cCopterAnim::GetPartInfo(short, short) {
+struct PrivAnimPartInfo* cCopterAnim::GetPartInfo(short framenum, short partnum) {
 // LINE 239:
 	asm( 
 "	      0055f6c0    push ebp"
@@ -211,7 +211,7 @@ struct PrivAnimPartInfo* cCopterAnim::GetPartInfo(short, short) {
 
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055f780
-struct PrivAnimPartInfo* cCopterAnim::GetPartInfoBasePtr(short) {
+struct PrivAnimPartInfo* cCopterAnim::GetPartInfoBasePtr(short framenum) {
 // LINE 240:
 	asm( 
 "	      0055f780    push ebp"

@@ -342,7 +342,7 @@ void CommandSystem::ClearAllCommands() {
 }
 
 // FUNCTION: COPTER_D 0x0048b682
-void CommandSystem::ClearAllCommandsDevice(long) {
+void CommandSystem::ClearAllCommandsDevice(long lDevice) {
 // LINE 86:
 	asm( 
 "	      0048b682    push ebp"
@@ -1001,7 +1001,7 @@ unsigned long CGameCommander::Idle() {
 }
 
 // FUNCTION: COPTER_D 0x0048bbfb
-unsigned long CGameCommander::OnLMouseDown(int32_t, int32_t) {
+unsigned long CGameCommander::OnLMouseDown(int32_t x, int32_t y) {
 // LINE 273:
 	asm( 
 "	      0048bbfb    push ebp"
@@ -1042,7 +1042,7 @@ unsigned long CGameCommander::OnLMouseDown(int32_t, int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x0048bc33
-unsigned long CGameCommander::OnLMouseUp(int32_t, int32_t) {
+unsigned long CGameCommander::OnLMouseUp(int32_t x, int32_t y) {
 // LINE 283:
 	asm( 
 "	      0048bc33    push ebp"
@@ -1083,7 +1083,7 @@ unsigned long CGameCommander::OnLMouseUp(int32_t, int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x0048bc6b
-unsigned long CGameCommander::OnRMouseDown(int32_t, int32_t) {
+unsigned long CGameCommander::OnRMouseDown(int32_t x, int32_t y) {
 // LINE 292:
 	asm( 
 "	      0048bc6b    push ebp"
@@ -1124,7 +1124,7 @@ unsigned long CGameCommander::OnRMouseDown(int32_t, int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x0048bca3
-unsigned long CGameCommander::OnRMouseUp(int32_t, int32_t) {
+unsigned long CGameCommander::OnRMouseUp(int32_t x, int32_t y) {
 // LINE 302:
 	asm( 
 "	      0048bca3    push ebp"
@@ -1165,7 +1165,7 @@ unsigned long CGameCommander::OnRMouseUp(int32_t, int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x0048bcdb
-unsigned long CGameCommander::OnMouseMove(int32_t, int32_t) {
+unsigned long CGameCommander::OnMouseMove(int32_t x, int32_t y) {
 // LINE 312:
 	asm( 
 "	      0048bcdb    push ebp"
@@ -1314,7 +1314,7 @@ void CGameCommander::ProcessSetFocus() {
 }
 
 // FUNCTION: COPTER_D 0x0048bdab
-unsigned long CGameCommander::OnCharacter(long) {
+unsigned long CGameCommander::OnCharacter(long lCharacter) {
 // LINE 363:
 	asm( 
 "	      0048bdab    push ebp"
@@ -1352,7 +1352,7 @@ unsigned long CGameCommander::OnCharacter(long) {
 }
 
 // FUNCTION: COPTER_D 0x0048bddd
-void CGameCommander::ProcessKeyDown(long) {
+void CGameCommander::ProcessKeyDown(long lKey) {
 // LINE 373:
 	asm( 
 "	      0048bddd    push ebp"
@@ -1396,7 +1396,7 @@ void CGameCommander::ProcessKeyDown(long) {
 }
 
 // FUNCTION: COPTER_D 0x0048be26
-void CGameCommander::ProcessKeyUp(long) {
+void CGameCommander::ProcessKeyUp(long lKey) {
 // LINE 385:
 	asm( 
 "	      0048be26    push ebp"
@@ -1440,7 +1440,7 @@ void CGameCommander::ProcessKeyUp(long) {
 }
 
 // FUNCTION: COPTER_D 0x0048be6f
-void CGameCommander::ProcessKeyDown(long, struct CommandSystem&, int32_t&, int32_t&) {
+void CGameCommander::ProcessKeyDown(long lKey, struct CommandSystem& commandSystem, int32_t& nCommand, int32_t& bPushCommand) {
 // LINE 402:
 	asm( 
 "	      0048be6f    push ebp"
@@ -1686,7 +1686,7 @@ void CGameCommander::ProcessKeyDown(long, struct CommandSystem&, int32_t&, int32
 }
 
 // FUNCTION: COPTER_D 0x0048c064
-void CGameCommander::ProcessKeyUp(long, struct CommandSystem&) {
+void CGameCommander::ProcessKeyUp(long lKey, struct CommandSystem& commandSystem) {
 // LINE 478:
 	asm( 
 "	      0048c064    push ebp"
@@ -1925,7 +1925,7 @@ void CGameCommander::ProcessSystemCloseRequest() {
 }
 
 // FUNCTION: COPTER_D 0x0048c234
-int32_t ReadShortcutPrefsFile(class list<Shortcut>&) {
+int32_t ReadShortcutPrefsFile(class list<Shortcut>& shortcutList) {
 // LINE 552:
 	asm( 
 "	      0048c234    push ebp"
@@ -2228,7 +2228,7 @@ int32_t ReadShortcutPrefsFile(class list<Shortcut>&) {
 }
 
 // FUNCTION: COPTER_D 0x0048c6f1
-int32_t WriteShortcutPrefsFile(class list<Shortcut>&) {
+int32_t WriteShortcutPrefsFile(class list<Shortcut>& shortcutList) {
 // LINE 586:
 	asm( 
 "	      0048c6f1    push ebp"
@@ -2386,7 +2386,7 @@ int32_t WriteShortcutPrefsFile(class list<Shortcut>&) {
 }
 
 // FUNCTION: COPTER_D 0x0048c8bd
-void MakeDefaultConfigurableShortcuts(class list<Shortcut>&) {
+void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
 // LINE 611:
 	asm( 
 "	      0048c8bd    push ebp"
@@ -4688,7 +4688,7 @@ void MakeDefaultConfigurableShortcuts(class list<Shortcut>&) {
 }
 
 // FUNCTION: COPTER_D 0x0048e3b4
-int32_t GetPushAndIgnoreSettingsForCommand(long, long&, long&) {
+int32_t GetPushAndIgnoreSettingsForCommand(long lCommand, long& lPush, long& lIgnoreModifiers) {
 // LINE 928:
 	asm( 
 "	      0048e3b4    push ebp"
@@ -4837,7 +4837,7 @@ void DeleteShortcutPrefsFile() {
 }
 
 // FUNCTION: COPTER_D 0x0048e515
-int32_t ValidateConfigurableShortcut(struct Shortcut&) {
+int32_t ValidateConfigurableShortcut(struct Shortcut& shortcutToValidate) {
 // LINE 979:
 	asm( 
 "	      0048e515    push ebp"
@@ -4954,7 +4954,7 @@ int32_t ValidateConfigurableShortcut(struct Shortcut&) {
 }
 
 // FUNCTION: COPTER_D 0x0048e5fa
-int32_t IsKeyReserved(long) {
+int32_t IsKeyReserved(long lKey) {
 // LINE 1013:
 	asm( 
 "	      0048e5fa    push ebp"
@@ -4991,7 +4991,7 @@ int32_t IsKeyReserved(long) {
 }
 
 // FUNCTION: COPTER_D 0x0048e64b
-void GetReservedKeyArray(long *) {
+void GetReservedKeyArray(long * lKeys) {
 // LINE 1029:
 	asm( 
 "	      0048e64b    push ebp"
@@ -5042,7 +5042,7 @@ void GetReservedKeyArray(long *) {
 }
 
 // FUNCTION: COPTER_D 0x0048e696
-int32_t IsCommandConfigurable(long) {
+int32_t IsCommandConfigurable(long lCommand) {
 // LINE 1043:
 	asm( 
 "	      0048e696    push ebp"
@@ -5073,7 +5073,7 @@ int32_t IsCommandConfigurable(long) {
 }
 
 // FUNCTION: COPTER_D 0x0048e6c6
-long GetJoystickCommandTwin(long) {
+long GetJoystickCommandTwin(long lCommand) {
 // LINE 1056:
 	asm( 
 "	      0048e6c6    push ebp"

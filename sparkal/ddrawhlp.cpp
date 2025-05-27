@@ -140,7 +140,7 @@ void DDDisable() {
 }
 
 // FUNCTION: COPTER_D 0x0041f5f1
-unsigned long DDColorMatch(struct IDirectDrawSurface*, unsigned long) {
+unsigned long DDColorMatch(struct IDirectDrawSurface* pdds, unsigned long rgb) {
 // LINE 84:
 	asm( 
 "	      0041f5f1    push ebp"
@@ -289,7 +289,7 @@ unsigned long DDColorMatch(struct IDirectDrawSurface*, unsigned long) {
 }
 
 // FUNCTION: COPTER_D 0x0041f6e4
-struct IDirectDrawPalette* ReadPalFile(char *) {
+struct IDirectDrawPalette* ReadPalFile(char * fname) {
 // LINE 126:
 	asm( 
 "	      0041f6e4    push ebp"

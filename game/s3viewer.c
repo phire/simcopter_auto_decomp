@@ -795,7 +795,7 @@ void S3ViewerControl() {
 }
 
 // FUNCTION: COPTER_D 0x004eee12
-void S3SetBackPlaneBasedOnValue(long) {
+void S3SetBackPlaneBasedOnValue(long lValue) {
 // LINE 321:
 	asm( 
 "	      004eee12    push ebp"
@@ -915,7 +915,7 @@ long GetRenderBackPlaneValue() {
 }
 
 // FUNCTION: COPTER_D 0x004eeecc
-long ConvertGUIBackPlaneValueToRender(long) {
+long ConvertGUIBackPlaneValueToRender(long lValue) {
 // LINE 360:
 	asm( 
 "	      004eeecc    push ebp"
@@ -967,7 +967,7 @@ long ConvertGUIBackPlaneValueToRender(long) {
 }
 
 // FUNCTION: COPTER_D 0x004eef09
-long ConvertRenderBackPlaneValueToGUI(long) {
+long ConvertRenderBackPlaneValueToGUI(long lValue) {
 // LINE 379:
 	asm( 
 "	      004eef09    push ebp"
@@ -1136,7 +1136,7 @@ void S3ViewerSetView() {
 }
 
 // FUNCTION: COPTER_D 0x004eefd9
-void S3ViewerCommand(int32_t) {
+void S3ViewerCommand(int32_t nCommand) {
 // LINE 443:
 	asm( 
 "	      004eefd9    push ebp"
@@ -1302,7 +1302,7 @@ void S3ViewerCommand(int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x004ef14b
-void S3SetDayNight(int32_t) {
+void S3SetDayNight(int32_t nDayOrNight) {
 // LINE 488:
 	asm( 
 "	      004ef14b    push ebp"

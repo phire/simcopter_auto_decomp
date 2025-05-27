@@ -12,7 +12,7 @@
 // $E1
 
 // FUNCTION: COPTER_D 0x00490fd3
-unsigned long __long_random(unsigned long) {
+unsigned long __long_random(unsigned long limit) {
 // LINE 26:
 	asm( 
 "	      00490fd3    push ebp"
@@ -40,7 +40,7 @@ unsigned long __long_random(unsigned long) {
 }
 
 // FUNCTION: COPTER_D 0x00490ff1
-void Random::seed(unsigned long) {
+void Random::seed(unsigned long j) {
 // LINE 34:
 	asm( 
 "	      00490ff1    push ebp"
@@ -162,7 +162,7 @@ void Random::seed(unsigned long) {
 }
 
 // FUNCTION: COPTER_D 0x004910ea
-unsigned long Random::operator()(unsigned long) {
+unsigned long Random::operator()(unsigned long limit) {
 // LINE 58:
 	asm( 
 "	      004910ea    push ebp"

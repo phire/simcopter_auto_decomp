@@ -6,7 +6,7 @@
 
 // Contribution: 1:000ca2b0-000ca878 Module: 91, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004cb2b0
-struct alloc_handle_t* S2AllocInit(int32_t, unsigned long) {
+struct alloc_handle_t* S2AllocInit(int32_t index, unsigned long poolsize) {
 // LINE 267:
 	asm( 
 "	      004cb2b0    push ebp"
@@ -81,7 +81,7 @@ struct alloc_handle_t* S2AllocInit(int32_t, unsigned long) {
 }
 
 // FUNCTION: COPTER_D 0x004cb34d
-struct alloc_hdr_s* S2AllocHdr(unsigned long) {
+struct alloc_hdr_s* S2AllocHdr(unsigned long size) {
 // LINE 234:
 	asm( 
 "	      004cb34d    push ebp"
@@ -179,7 +179,7 @@ struct alloc_hdr_s* S2AllocHdr(unsigned long) {
 }
 
 // FUNCTION: COPTER_D 0x004cb401
-int32_t S2AllocPool(unsigned long) {
+int32_t S2AllocPool(unsigned long poolsize) {
 // LINE 291:
 	asm( 
 "	      004cb401    push ebp"
@@ -273,7 +273,7 @@ int32_t S2AllocPool(unsigned long) {
 }
 
 // FUNCTION: COPTER_D 0x004cb4ac
-char * S2Alloc(int32_t, int32_t) {
+char * S2Alloc(int32_t index, int32_t size) {
 // LINE 330:
 	asm( 
 "	      004cb4ac    push ebp"
@@ -415,7 +415,7 @@ char * S2Alloc(int32_t, int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x004cb5ab
-char * S2AllocMem1(int32_t, char *, int32_t, unsigned short) {
+char * S2AllocMem1(int32_t index, char * name, int32_t size, unsigned short protMem) {
 // LINE 393:
 	asm( 
 "	      004cb5ab    push ebp"
@@ -447,7 +447,7 @@ char * S2AllocMem1(int32_t, char *, int32_t, unsigned short) {
 }
 
 // FUNCTION: COPTER_D 0x004cb5cf
-char * S2AllocMem(int32_t, char *, int32_t) {
+char * S2AllocMem(int32_t index, char * name, int32_t size) {
 // LINE 408:
 	asm( 
 "	      004cb5cf    push ebp"
@@ -483,7 +483,7 @@ char * S2AllocMem(int32_t, char *, int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x004cb5f8
-struct alloc_handle_t* S2AllocSetPool(int32_t, struct alloc_handle_t*) {
+struct alloc_handle_t* S2AllocSetPool(int32_t index, struct alloc_handle_t* newPtr) {
 // LINE 437:
 	asm( 
 "	      004cb5f8    push ebp"
@@ -521,7 +521,7 @@ struct alloc_handle_t* S2AllocSetPool(int32_t, struct alloc_handle_t*) {
 }
 
 // FUNCTION: COPTER_D 0x004cb628
-void S2AllocReset(int32_t) {
+void S2AllocReset(int32_t index) {
 // LINE 456:
 	asm( 
 "	      004cb628    push ebp"
@@ -605,7 +605,7 @@ void S2AllocReset(int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x004cb6c3
-void S2AllocFreePool(int32_t) {
+void S2AllocFreePool(int32_t index) {
 // LINE 489:
 	asm( 
 "	      004cb6c3    push ebp"
@@ -834,7 +834,7 @@ void * __ptr32 DOSAllocAlignedHack() {
 }
 
 // FUNCTION: COPTER_D 0x004cb83f
-void S2FreeAligned(void * __ptr32) {
+void S2FreeAligned(void * __ptr32 mem) {
 // LINE 785:
 	asm( 
 "	      004cb83f    push ebp"

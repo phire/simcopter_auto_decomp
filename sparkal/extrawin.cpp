@@ -18,7 +18,7 @@
 // $E68
 
 // FUNCTION: COPTER_D 0x004500ce
-void MessageBoxWindow::MessageBoxWindow(class MPoint&, unsigned long, unsigned long, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, int32_t, char *, char *, char *) {
+void MessageBoxWindow::MessageBoxWindow(class MPoint& ptNewPosition, unsigned long lNewType, unsigned long lNewMessageID, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList, int32_t bNewSelfDeleting, char * szImageFileName, char * szButtonImageFileName, char * szAnimationImageFileName) {
 // LINE 47:
 	asm( 
 "	      004500ce    push ebp"
@@ -351,7 +351,7 @@ void MessageBoxWindow::MessageBoxWindow(class MPoint&, unsigned long, unsigned l
 }
 
 // FUNCTION: COPTER_D 0x00450573
-void MessageBoxWindow::MessageBoxWindow(class MPoint&, unsigned long, class basic_string<char>&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, int32_t, char *, char *, char *) {
+void MessageBoxWindow::MessageBoxWindow(class MPoint& ptNewPosition, unsigned long lNewType, class basic_string<char>& sNewMessage, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList, int32_t bNewSelfDeleting, char * szImageFileName, char * szButtonImageFileName, char * szAnimationImageFileName) {
 // LINE 70:
 	asm( 
 "	      00450573    push ebp"
@@ -1551,7 +1551,7 @@ int32_t MessageBoxWindow::Initialize() {
 }
 
 // FUNCTION: COPTER_D 0x0045165b
-long MessageBoxWindow::DoKeyDown(long, char) {
+long MessageBoxWindow::DoKeyDown(long lKey, char chModifiers) {
 // LINE 165:
 	asm( 
 "	      0045165b    push ebp"
@@ -1650,7 +1650,7 @@ long MessageBoxWindow::DoKeyDown(long, char) {
 }
 
 // FUNCTION: COPTER_D 0x0045171a
-int32_t MessageBoxWindow::DoMessage(class GraphicWindow*, long, long, void * __ptr32) {
+int32_t MessageBoxWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
 // LINE 186:
 	asm( 
 "	      0045171a    push ebp"
@@ -1715,7 +1715,7 @@ int32_t MessageBoxWindow::DoMessage(class GraphicWindow*, long, long, void * __p
 }
 
 // FUNCTION: COPTER_D 0x00451785
-int32_t MessageBoxWindow::ConvertTypeToStringID(long) {
+int32_t MessageBoxWindow::ConvertTypeToStringID(long lType) {
 // LINE 207:
 	asm( 
 "	      00451785    push ebp"
@@ -2229,7 +2229,7 @@ void MessageBoxWindow::DrawTextOntoBox() {
 }
 
 // FUNCTION: COPTER_D 0x00451ea4
-void MessageBoxWindow::SetTextColor(const struct SparkalColor&) {
+void MessageBoxWindow::SetTextColor(const struct SparkalColor& colorNewFont) {
 // LINE 254:
 	asm( 
 "	      00451ea4    push ebp"
@@ -2268,7 +2268,7 @@ void MessageBoxWindow::SetTextColor(const struct SparkalColor&) {
 }
 
 // FUNCTION: COPTER_D 0x00451ed9
-void MessageBoxWindow::SetButtonTextColor(const struct SparkalColor*, const struct SparkalColor*) {
+void MessageBoxWindow::SetButtonTextColor(const struct SparkalColor* colorNewFont, const struct SparkalColor* colorNewFontHighlighted) {
 // LINE 263:
 	asm( 
 "	      00451ed9    push ebp"
@@ -2403,7 +2403,7 @@ void AnimationWindow::AnimationWindow() {
 }
 
 // FUNCTION: COPTER_D 0x00451fde
-void AnimationWindow::AnimationWindow(char *, class MRect&, long, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, long, enum AnimationWindow::AnimationLoopType) {
+void AnimationWindow::AnimationWindow(char * szImageFileName, class MRect& rectNewWindow, long lNewWidthOfSingleFrame, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList, long lNewTransparentIndex, enum AnimationWindow::AnimationLoopType nNewAnimationLoopType) {
 // LINE 311:
 	asm( 
 "	      00451fde    push ebp"
@@ -2953,7 +2953,7 @@ void AnimationWindow::ResetFramePosition() {
 }
 
 // FUNCTION: COPTER_D 0x004524ad
-void RenderSettingsWindow::RenderSettingsWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
+void RenderSettingsWindow::RenderSettingsWindow(class MRect& rectNewPosition, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
 // LINE 503:
 	asm( 
 "	      004524ad    push ebp"
@@ -4832,7 +4832,7 @@ int32_t RenderSettingsWindow::Initialize() {
 }
 
 // FUNCTION: COPTER_D 0x00454163
-int32_t RenderSettingsWindow::CreateImage(int32_t) {
+int32_t RenderSettingsWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 // LINE 659:
 	asm( 
 "	      00454163    push ebp"
@@ -5175,7 +5175,7 @@ int32_t RenderSettingsWindow::DrawSelf() {
 }
 
 // FUNCTION: COPTER_D 0x00454527
-long RenderSettingsWindow::DoKeyDown(long, char) {
+long RenderSettingsWindow::DoKeyDown(long lKey, char chModifiers) {
 // LINE 715:
 	asm( 
 "	      00454527    push ebp"
@@ -5229,7 +5229,7 @@ long RenderSettingsWindow::DoKeyDown(long, char) {
 }
 
 // FUNCTION: COPTER_D 0x0045457d
-int32_t RenderSettingsWindow::SetCurrentSettings(long, long, long, long, long) {
+int32_t RenderSettingsWindow::SetCurrentSettings(long bNewShowBuildingTextures, long bNewShowGroundTextures, long bNewShowSkyAndClouds, long lNewQuadPixelType, long lNewFogCloseness) {
 // LINE 737:
 	asm( 
 "	      0045457d    push ebp"
@@ -5296,7 +5296,7 @@ int32_t RenderSettingsWindow::SetCurrentSettings(long, long, long, long, long) {
 }
 
 // FUNCTION: COPTER_D 0x004545dd
-void RenderSettingsWindow::GetCurrentSettings(long&, long&, long&, long&, long&) {
+void RenderSettingsWindow::GetCurrentSettings(long& bGetShowBuildingTextures, long& bGetShowGroundTextures, long& bGetShowSkyAndClouds, long& lGetQuadPixelType, long& lGetFogCloseness) {
 // LINE 762:
 	asm( 
 "	      004545dd    push ebp"
@@ -6082,7 +6082,7 @@ void RenderSettingsWindow::DrawPreviewBasedOnCurrentSettings() {
 }
 
 // FUNCTION: COPTER_D 0x004550cf
-void RenderSettingsWindow::GetPreviewFileNames(class basic_string<char>&, class basic_string<char>&, class basic_string<char>&) {
+void RenderSettingsWindow::GetPreviewFileNames(class basic_string<char>& sSkyPreviewFileName, class basic_string<char>& sGroundPreviewFileName, class basic_string<char>& sBuildingPreviewFileName) {
 // LINE 857:
 	asm( 
 "	      004550cf    push ebp"
@@ -6795,7 +6795,7 @@ void RenderSettingsWindow::GetPreviewFileNames(class basic_string<char>&, class 
 }
 
 // FUNCTION: COPTER_D 0x00455a06
-int32_t RenderSettingsWindow::DoMessage(class GraphicWindow*, long, long, void * __ptr32) {
+int32_t RenderSettingsWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
 // LINE 889:
 	asm( 
 "	      00455a06    push ebp"
@@ -7025,7 +7025,7 @@ int32_t RenderSettingsWindow::DoMessage(class GraphicWindow*, long, long, void *
 }
 
 // FUNCTION: COPTER_D 0x00455bfb
-void SoundSettingsWindow::SoundSettingsWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
+void SoundSettingsWindow::SoundSettingsWindow(class MRect& rectNewPosition, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
 // LINE 990:
 	asm( 
 "	      00455bfb    push ebp"
@@ -8308,7 +8308,7 @@ int32_t SoundSettingsWindow::Initialize() {
 }
 
 // FUNCTION: COPTER_D 0x00456f10
-long SoundSettingsWindow::DoKeyDown(long, char) {
+long SoundSettingsWindow::DoKeyDown(long lKey, char chModifiers) {
 // LINE 1123:
 	asm( 
 "	      00456f10    push ebp"
@@ -8362,7 +8362,7 @@ long SoundSettingsWindow::DoKeyDown(long, char) {
 }
 
 // FUNCTION: COPTER_D 0x00456f66
-int32_t SoundSettingsWindow::SetCurrentVolumeSettings(struct SoundPreferences&) {
+int32_t SoundSettingsWindow::SetCurrentVolumeSettings(struct SoundPreferences& newSoundPreferences) {
 // LINE 1136:
 	asm( 
 "	      00456f66    push ebp"
@@ -8401,7 +8401,7 @@ int32_t SoundSettingsWindow::SetCurrentVolumeSettings(struct SoundPreferences&) 
 }
 
 // FUNCTION: COPTER_D 0x00456f9d
-int32_t SoundSettingsWindow::SetCurrentRadioSettings(struct RadioPreferences&, long) {
+int32_t SoundSettingsWindow::SetCurrentRadioSettings(struct RadioPreferences& newRadioPreferences, long lCurrentStations) {
 // LINE 1149:
 	asm( 
 "	      00456f9d    push ebp"
@@ -8531,7 +8531,7 @@ int32_t SoundSettingsWindow::SetCurrentRadioSettings(struct RadioPreferences&, l
 }
 
 // FUNCTION: COPTER_D 0x004570a4
-void SoundSettingsWindow::GetCurrentVolumeSettings(struct SoundPreferences&) {
+void SoundSettingsWindow::GetCurrentVolumeSettings(struct SoundPreferences& currentSoundPreferences) {
 // LINE 1186:
 	asm( 
 "	      004570a4    push ebp"
@@ -8572,7 +8572,7 @@ void SoundSettingsWindow::GetCurrentVolumeSettings(struct SoundPreferences&) {
 }
 
 // FUNCTION: COPTER_D 0x004570df
-void SoundSettingsWindow::GetCurrentRadioSettings(struct RadioPreferences&) {
+void SoundSettingsWindow::GetCurrentRadioSettings(struct RadioPreferences& currentRadioPreferences) {
 // LINE 1199:
 	asm( 
 "	      004570df    push ebp"
@@ -8680,7 +8680,7 @@ void SoundSettingsWindow::GetCurrentRadioSettings(struct RadioPreferences&) {
 }
 
 // FUNCTION: COPTER_D 0x004571ed
-int32_t SoundSettingsWindow::DoMessage(class GraphicWindow*, long, long, void * __ptr32) {
+int32_t SoundSettingsWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
 // LINE 1219:
 	asm( 
 "	      004571ed    push ebp"
@@ -8776,7 +8776,7 @@ int32_t SoundSettingsWindow::DoMessage(class GraphicWindow*, long, long, void * 
 }
 
 // FUNCTION: COPTER_D 0x004572a2
-long SoundSettingsWindow::ConvertSoundValueToSliderValue(long) {
+long SoundSettingsWindow::ConvertSoundValueToSliderValue(long lSoundValue) {
 // LINE 1243:
 	asm( 
 "	      004572a2    push ebp"
@@ -8814,7 +8814,7 @@ long SoundSettingsWindow::ConvertSoundValueToSliderValue(long) {
 }
 
 // FUNCTION: COPTER_D 0x004572ea
-long SoundSettingsWindow::ConvertSliderValueToSoundValue(long) {
+long SoundSettingsWindow::ConvertSliderValueToSoundValue(long lSliderValue) {
 // LINE 1272:
 	asm( 
 "	      004572ea    push ebp"
@@ -8851,7 +8851,7 @@ long SoundSettingsWindow::ConvertSliderValueToSoundValue(long) {
 }
 
 // FUNCTION: COPTER_D 0x00457331
-void CitySettingsWindow::CitySettingsWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
+void CitySettingsWindow::CitySettingsWindow(class MRect& rectNewPosition, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
 // LINE 1321:
 	asm( 
 "	      00457331    push ebp"
@@ -10874,7 +10874,7 @@ int32_t CitySettingsWindow::Initialize() {
 }
 
 // FUNCTION: COPTER_D 0x004591f5
-void CitySettingsWindow::SetCurrentCitySettings(struct tagCitySettings*) {
+void CitySettingsWindow::SetCurrentCitySettings(struct tagCitySettings* newCitySettings) {
 // LINE 1469:
 	asm( 
 "	      004591f5    push ebp"
@@ -10969,7 +10969,7 @@ void CitySettingsWindow::SetCurrentCitySettings(struct tagCitySettings*) {
 }
 
 // FUNCTION: COPTER_D 0x004592ab
-void CitySettingsWindow::GetCurrentCitySettings(struct tagCitySettings*) {
+void CitySettingsWindow::GetCurrentCitySettings(struct tagCitySettings* currentCitySettings) {
 // LINE 1485:
 	asm( 
 "	      004592ab    push ebp"
@@ -11056,7 +11056,7 @@ void CitySettingsWindow::GetCurrentCitySettings(struct tagCitySettings*) {
 }
 
 // FUNCTION: COPTER_D 0x00459359
-int32_t CitySettingsWindow::DoMessage(class GraphicWindow*, long, long, void * __ptr32) {
+int32_t CitySettingsWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
 // LINE 1503:
 	asm( 
 "	      00459359    push ebp"
@@ -11152,7 +11152,7 @@ int32_t CitySettingsWindow::DoMessage(class GraphicWindow*, long, long, void * _
 }
 
 // FUNCTION: COPTER_D 0x0045940e
-long CitySettingsWindow::DoKeyDown(long, char) {
+long CitySettingsWindow::DoKeyDown(long lKey, char chModifiers) {
 // LINE 1522:
 	asm( 
 "	      0045940e    push ebp"
@@ -11206,7 +11206,7 @@ long CitySettingsWindow::DoKeyDown(long, char) {
 }
 
 // FUNCTION: COPTER_D 0x00459464
-void PopupMenuExtra::PopupMenuExtra(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, char *) {
+void PopupMenuExtra::PopupMenuExtra(class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList, char * szNewBackgroundImageFileName) {
 // LINE 1550:
 	asm( 
 "	      00459464    push ebp"
@@ -13090,7 +13090,7 @@ void PopupMenuExtra::ResizeWindowToFitMenuItems() {
 }
 
 // FUNCTION: COPTER_D 0x0045aab4
-void TooltipWindow::TooltipWindow(class MRect&, int32_t, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, char *) {
+void TooltipWindow::TooltipWindow(class MRect& rectNewWindow, int32_t nNewID, int32_t nNewWindowTitleTextID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList, char * szNewBackgroundImageFileName) {
 // LINE 1798:
 	asm( 
 "	      0045aab4    push ebp"
@@ -13377,7 +13377,7 @@ void TooltipWindow::TooltipWindow(class MRect&, int32_t, int32_t, class GraphicW
 }
 
 // FUNCTION: COPTER_D 0x0045ae9b
-void TooltipWindow::TooltipWindow(class MRect&, int32_t, class basic_string<char>&, class GraphicWindow*, class GraphicWindowOwner*, int32_t, char *) {
+void TooltipWindow::TooltipWindow(class MRect& rectNewWindow, int32_t nNewID, class basic_string<char>& sNewWindowTitle, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList, char * szNewBackgroundImageFileName) {
 // LINE 1815:
 	asm( 
 "	      0045ae9b    push ebp"
@@ -13782,7 +13782,7 @@ int32_t TooltipWindow::Initialize() {
 }
 
 // FUNCTION: COPTER_D 0x0045b3a5
-void TooltipWindow::SetWindowTitle(int32_t) {
+void TooltipWindow::SetWindowTitle(int32_t nNewWindowTitleTextID) {
 // LINE 1845:
 	asm( 
 "	      0045b3a5    push ebp"
@@ -13819,7 +13819,7 @@ void TooltipWindow::SetWindowTitle(int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x0045b3d7
-void TooltipWindow::SetWindowTitle(class basic_string<char>&) {
+void TooltipWindow::SetWindowTitle(class basic_string<char>& sNewWindowTitle) {
 // LINE 1855:
 	asm( 
 "	      0045b3d7    push ebp"
@@ -14429,7 +14429,7 @@ void TooltipWindow::DestroyImage() {
 }
 
 // FUNCTION: COPTER_D 0x0045b9f6
-void TooltipWindow::SetTextAndShow(class MPoint&, class basic_string<char>&) {
+void TooltipWindow::SetTextAndShow(class MPoint& ptNewPosition, class basic_string<char>& sNewText) {
 // LINE 1926:
 	asm( 
 "	      0045b9f6    push ebp"
@@ -14480,7 +14480,7 @@ void TooltipWindow::SetTextAndShow(class MPoint&, class basic_string<char>&) {
 }
 
 // FUNCTION: COPTER_D 0x0045ba44
-void TooltipWindow::SetTextAndShow(class MPoint&, int32_t) {
+void TooltipWindow::SetTextAndShow(class MPoint& ptNewPosition, int32_t nNewWindowTitleTextID) {
 // LINE 1936:
 	asm( 
 "	      0045ba44    push ebp"
@@ -14586,7 +14586,7 @@ void BoneheadTextEditWindow::BoneheadTextEditWindow() {
 }
 
 // FUNCTION: COPTER_D 0x0045bb50
-void BoneheadTextEditWindow::BoneheadTextEditWindow(class MRect&, int32_t, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, char *) {
+void BoneheadTextEditWindow::BoneheadTextEditWindow(class MRect& rectNewWindow, int32_t nNewID, int32_t nNewWindowTitleTextID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList, char * szNewImageFileName) {
 // LINE 1977:
 	asm( 
 "	      0045bb50    push ebp"
@@ -14830,7 +14830,7 @@ void BoneheadTextEditWindow::BoneheadTextEditWindow(class MRect&, int32_t, int32
 }
 
 // FUNCTION: COPTER_D 0x0045be96
-void BoneheadTextEditWindow::BoneheadTextEditWindow(class MRect&, int32_t, const class basic_string<char>&, class GraphicWindow*, class GraphicWindowOwner*, int32_t, char *) {
+void BoneheadTextEditWindow::BoneheadTextEditWindow(class MRect& rectNewWindow, int32_t nNewID, const class basic_string<char>& sNewWindowTitle, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList, char * szNewImageFileName) {
 // LINE 1997:
 	asm( 
 "	      0045be96    push ebp"
@@ -15743,7 +15743,7 @@ int32_t BoneheadTextEditWindow::DrawSelf() {
 }
 
 // FUNCTION: COPTER_D 0x0045c98b
-long BoneheadTextEditWindow::DoCharacter(long) {
+long BoneheadTextEditWindow::DoCharacter(long lCharacter) {
 // LINE 2095:
 	asm( 
 "	      0045c98b    push ebp"
@@ -16029,7 +16029,7 @@ long BoneheadTextEditWindow::DoCharacter(long) {
 }
 
 // FUNCTION: COPTER_D 0x0045ccfd
-long BoneheadTextEditWindow::DoKeyDown(long, char) {
+long BoneheadTextEditWindow::DoKeyDown(long lKey, char chModifiers) {
 // LINE 2117:
 	asm( 
 "	      0045ccfd    push ebp"
@@ -16092,7 +16092,7 @@ long BoneheadTextEditWindow::DoKeyDown(long, char) {
 }
 
 // FUNCTION: COPTER_D 0x0045cd68
-long BoneheadTextEditWindow::DoCursorDown(long, long, unsigned long) {
+long BoneheadTextEditWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButton) {
 // LINE 2131:
 	asm( 
 "	      0045cd68    push ebp"
@@ -16229,7 +16229,7 @@ int32_t BoneheadTextEditWindow::DoesWindowNeedUpdating() {
 }
 
 // FUNCTION: COPTER_D 0x0045cf0b
-int32_t BoneheadTextEditWindow::SetCaretPeriod(unsigned long) {
+int32_t BoneheadTextEditWindow::SetCaretPeriod(unsigned long lMicrosecondsBetweenCaretChanges) {
 // LINE 2149:
 	asm( 
 "	      0045cf0b    push ebp"
@@ -16262,7 +16262,7 @@ int32_t BoneheadTextEditWindow::SetCaretPeriod(unsigned long) {
 }
 
 // FUNCTION: COPTER_D 0x0045cf34
-void BoneheadTextEditWindow::SetCharacterCountLimit(unsigned long) {
+void BoneheadTextEditWindow::SetCharacterCountLimit(unsigned long lNewCharacterCountLimit) {
 // LINE 2159:
 	asm( 
 "	      0045cf34    push ebp"
@@ -16684,7 +16684,7 @@ int32_t BoneheadTextEditWindow::ProcessReturn() {
 }
 
 // FUNCTION: COPTER_D 0x0045d414
-void BoneheadTextEditWindow::GetEditText(class basic_string<char>&) {
+void BoneheadTextEditWindow::GetEditText(class basic_string<char>& sText) {
 // LINE 2195:
 	asm( 
 "	      0045d414    push ebp"
@@ -17037,7 +17037,7 @@ void BoneheadTextEditWindow::GetEditText(class basic_string<char>&) {
 }
 
 // FUNCTION: COPTER_D 0x0045d8c1
-void BoneheadTextEditWindow::GetEditText(char *, unsigned long) {
+void BoneheadTextEditWindow::GetEditText(char * szText, unsigned long lLength) {
 // LINE 2204:
 	asm( 
 "	      0045d8c1    push ebp"
@@ -17107,7 +17107,7 @@ void BoneheadTextEditWindow::GetEditText(char *, unsigned long) {
 }
 
 // FUNCTION: COPTER_D 0x0045d955
-void MessageBoxWindowEdit::MessageBoxWindowEdit(class MPoint&, unsigned long, unsigned long, const class basic_string<char>&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, int32_t, char *, char *, char *, char *) {
+void MessageBoxWindowEdit::MessageBoxWindowEdit(class MPoint& ptNewPosition, unsigned long lNewType, unsigned long lNewMessageID, const class basic_string<char>& sNewInitialEditText, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList, int32_t bNewSelfDeleting, char * szTextEditBackgroundImageFileName, char * szImageFileName, char * szButtonImageFileName, char * szAnimationImageFileName) {
 // LINE 2244:
 	asm( 
 "	      0045d955    push ebp"
@@ -17205,7 +17205,7 @@ void MessageBoxWindowEdit::MessageBoxWindowEdit(class MPoint&, unsigned long, un
 }
 
 // FUNCTION: COPTER_D 0x0045da55
-void MessageBoxWindowEdit::MessageBoxWindowEdit(class MPoint&, unsigned long, class basic_string<char>&, const class basic_string<char>&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t, int32_t, char *, char *, char *, char *) {
+void MessageBoxWindowEdit::MessageBoxWindowEdit(class MPoint& ptNewPosition, unsigned long lNewType, class basic_string<char>& sNewMessage, const class basic_string<char>& sNewInitialEditText, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList, int32_t bNewSelfDeleting, char * szTextEditBackgroundImageFileName, char * szImageFileName, char * szButtonImageFileName, char * szAnimationImageFileName) {
 // LINE 2273:
 	asm( 
 "	      0045da55    push ebp"
@@ -17354,7 +17354,7 @@ int32_t MessageBoxWindowEdit::Initialize() {
 }
 
 // FUNCTION: COPTER_D 0x0045dbae
-void ScrollingCreditWindow::ScrollingCreditWindow(int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
+void ScrollingCreditWindow::ScrollingCreditWindow(int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
 // LINE 2318:
 	asm( 
 "	      0045dbae    push ebp"
@@ -17838,7 +17838,7 @@ int32_t ScrollingCreditWindow::Scroll() {
 }
 
 // FUNCTION: COPTER_D 0x0045e10c
-int32_t ScrollingCreditWindow::DoMessage(class GraphicWindow*, long, long, void * __ptr32) {
+int32_t ScrollingCreditWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
 // LINE 2380:
 	asm( 
 "	      0045e10c    push ebp"
@@ -17877,7 +17877,7 @@ int32_t ScrollingCreditWindow::DoMessage(class GraphicWindow*, long, long, void 
 // $E74
 
 // FUNCTION: COPTER_D 0x0045e1a4
-void CheckupWindow::CheckupWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
+void CheckupWindow::CheckupWindow(class MRect& rectNewPosition, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
 // LINE 2418:
 	asm( 
 "	      0045e1a4    push ebp"
@@ -19742,7 +19742,7 @@ int32_t CheckupWindow::Initialize() {
 }
 
 // FUNCTION: COPTER_D 0x0045fe23
-void CheckupWindow::SetCurrentSettings(long *) {
+void CheckupWindow::SetCurrentSettings(long * lNewSettings) {
 // LINE 2550:
 	asm( 
 "	      0045fe23    push ebp"
@@ -19797,7 +19797,7 @@ void CheckupWindow::SetCurrentSettings(long *) {
 }
 
 // FUNCTION: COPTER_D 0x0045fe78
-void CheckupWindow::GetCurrentSettings(long *) {
+void CheckupWindow::GetCurrentSettings(long * lCurrentSettings) {
 // LINE 2562:
 	asm( 
 "	      0045fe78    push ebp"
@@ -20656,7 +20656,7 @@ void CheckupWindow::SetTextControlsBasedOnCurrentSliderValues() {
 }
 
 // FUNCTION: COPTER_D 0x00460848
-int32_t CheckupWindow::DoMessage(class GraphicWindow*, long, long, void * __ptr32) {
+int32_t CheckupWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
 // LINE 2679:
 	asm( 
 "	      00460848    push ebp"
@@ -20770,7 +20770,7 @@ int32_t CheckupWindow::DoMessage(class GraphicWindow*, long, long, void * __ptr3
 }
 
 // FUNCTION: COPTER_D 0x00460924
-long CheckupWindow::DoKeyDown(long, char) {
+long CheckupWindow::DoKeyDown(long lKey, char chModifiers) {
 // LINE 2708:
 	asm( 
 "	      00460924    push ebp"

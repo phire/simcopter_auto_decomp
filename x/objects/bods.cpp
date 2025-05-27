@@ -2141,7 +2141,7 @@ public: static void __cdecl cCopterBody::DestroyAll(void) {
 }
 
 // FUNCTION: COPTER_D 0x005623cd
-int32_t cCopterBodyCompareDrawOrder(void * __ptr32, void * __ptr32) {
+int32_t cCopterBodyCompareDrawOrder(void * __ptr32 p1, void * __ptr32 p2) {
 // LINE 2324:
 	asm( 
 "	      005623cd    push ebp"
@@ -2186,7 +2186,7 @@ int32_t cCopterBodyCompareDrawOrder(void * __ptr32, void * __ptr32) {
 }
 
 // FUNCTION: COPTER_D 0x0056240b
-void SwizzleCopterBodyPart(void * __ptr32, long) {
+void SwizzleCopterBodyPart(void * __ptr32 val, long size) {
 // LINE 2332:
 	asm( 
 "	      0056240b    push ebp"
@@ -2268,7 +2268,7 @@ void SwizzleCopterBodyPart(void * __ptr32, long) {
 }
 
 // FUNCTION: COPTER_D 0x0056249b
-void SwizzleAnimLookup(void * __ptr32, long) {
+void SwizzleAnimLookup(void * __ptr32 val, long size) {
 // LINE 2346:
 	asm( 
 "	      0056249b    push ebp"

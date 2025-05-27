@@ -117,7 +117,7 @@ void GraphicWindowColorConstants::GraphicWindowColorConstants() {
 }
 
 // FUNCTION: COPTER_D 0x004a17be
-int32_t GraphicWindowOwner::DoMessage(class GraphicWindow*, long, long, void * __ptr32) {
+int32_t GraphicWindowOwner::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
 // LINE 61:
 	asm( 
 "	      004a17be    push ebp"
@@ -144,7 +144,7 @@ int32_t GraphicWindowOwner::DoMessage(class GraphicWindow*, long, long, void * _
 }
 
 // FUNCTION: COPTER_D 0x004a17d8
-void GraphicWindowManager::GraphicWindowManager(class GraphicWindow*) {
+void GraphicWindowManager::GraphicWindowManager(class GraphicWindow* newBaseWindow) {
 // LINE 77:
 	asm( 
 "	      004a17d8    push ebp"
@@ -462,7 +462,7 @@ void GraphicWindowManager::~GraphicWindowManager() {
 }
 
 // FUNCTION: COPTER_D 0x004a1c21
-void GraphicWindowManager::SetNewBaseWindow(class GraphicWindow*) {
+void GraphicWindowManager::SetNewBaseWindow(class GraphicWindow* newBaseWindow) {
 // LINE 97:
 	asm( 
 "	      004a1c21    push ebp"
@@ -491,7 +491,7 @@ void GraphicWindowManager::SetNewBaseWindow(class GraphicWindow*) {
 }
 
 // FUNCTION: COPTER_D 0x004a1c42
-int32_t GraphicWindowManager::DeleteWindow(class GraphicWindow*) {
+int32_t GraphicWindowManager::DeleteWindow(class GraphicWindow* windowToDelete) {
 // LINE 113:
 	asm( 
 "	      004a1c42    push ebp"
@@ -738,7 +738,7 @@ int32_t GraphicWindowManager::DeleteWindow(class GraphicWindow*) {
 }
 
 // FUNCTION: COPTER_D 0x004a1f4e
-int32_t GraphicWindowManager::DeleteWindowAndRemoveItsTraces(class GraphicWindow*) {
+int32_t GraphicWindowManager::DeleteWindowAndRemoveItsTraces(class GraphicWindow* windowToDelete) {
 // LINE 138:
 	asm( 
 "	      004a1f4e    push ebp"
@@ -1010,7 +1010,7 @@ int32_t GraphicWindowManager::DeleteAllWindowsInDeletionList() {
 }
 
 // FUNCTION: COPTER_D 0x004a21d6
-int32_t GraphicWindowManager::IsWindowOrParentInDeletionList(class GraphicWindow*) {
+int32_t GraphicWindowManager::IsWindowOrParentInDeletionList(class GraphicWindow* windowToCheck) {
 // LINE 191:
 	asm( 
 "	      004a21d6    push ebp"
@@ -1120,7 +1120,7 @@ int32_t GraphicWindowManager::IsWindowOrParentInDeletionList(class GraphicWindow
 }
 
 // FUNCTION: COPTER_D 0x004a22c1
-long GraphicWindowManager::DoKeyDown(long, char) {
+long GraphicWindowManager::DoKeyDown(long lKey, char chModifiers) {
 // LINE 217:
 	asm( 
 "	      004a22c1    push ebp"
@@ -1254,7 +1254,7 @@ long GraphicWindowManager::DoKeyDown(long, char) {
 }
 
 // FUNCTION: COPTER_D 0x004a23da
-long GraphicWindowManager::DoKeyUp(long, char) {
+long GraphicWindowManager::DoKeyUp(long lKey, char chModifiers) {
 // LINE 249:
 	asm( 
 "	      004a23da    push ebp"
@@ -1388,7 +1388,7 @@ long GraphicWindowManager::DoKeyUp(long, char) {
 }
 
 // FUNCTION: COPTER_D 0x004a24f3
-long GraphicWindowManager::DoCharacter(long) {
+long GraphicWindowManager::DoCharacter(long lCharacter) {
 // LINE 276:
 	asm( 
 "	      004a24f3    push ebp"
@@ -1520,7 +1520,7 @@ long GraphicWindowManager::DoCharacter(long) {
 }
 
 // FUNCTION: COPTER_D 0x004a2608
-long GraphicWindowManager::DoCursorDown(long, long, unsigned long) {
+long GraphicWindowManager::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButton) {
 // LINE 303:
 	asm( 
 "	      004a2608    push ebp"
@@ -1590,7 +1590,7 @@ long GraphicWindowManager::DoCursorDown(long, long, unsigned long) {
 }
 
 // FUNCTION: COPTER_D 0x004a268c
-long GraphicWindowManager::DoCursorUp(long, long, unsigned long) {
+long GraphicWindowManager::DoCursorUp(long nCursorX, long nCursorY, unsigned long nButton) {
 // LINE 329:
 	asm( 
 "	      004a268c    push ebp"
@@ -1660,7 +1660,7 @@ long GraphicWindowManager::DoCursorUp(long, long, unsigned long) {
 }
 
 // FUNCTION: COPTER_D 0x004a2710
-long GraphicWindowManager::DoCursorMove(long, long) {
+long GraphicWindowManager::DoCursorMove(long nCursorX, long nCursorY) {
 // LINE 343:
 	asm( 
 "	      004a2710    push ebp"
@@ -1727,7 +1727,7 @@ long GraphicWindowManager::DoCursorMove(long, long) {
 }
 
 // FUNCTION: COPTER_D 0x004a278e
-int32_t GraphicWindowManager::SendCursorMessageToChildWindow(class GraphicWindow*, int32_t, long, long, unsigned long) {
+int32_t GraphicWindowManager::SendCursorMessageToChildWindow(class GraphicWindow* childWindow, int32_t nMessage, long nCursorX, long nCursorY, unsigned long nButton) {
 // LINE 359:
 	asm( 
 "	      004a278e    push ebp"
@@ -2016,7 +2016,7 @@ int32_t GraphicWindowManager::ComposeAllWindows() {
 }
 
 // FUNCTION: COPTER_D 0x004a2a1b
-int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow*) {
+int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestForValidity) {
 // LINE 414:
 	asm( 
 "	      004a2a1b    push ebp"
@@ -9404,7 +9404,7 @@ void ScreenWindow::ScreenWindow() {
 }
 
 // FUNCTION: COPTER_D 0x004a794d
-void ScreenWindow::ScreenWindow(const class ScreenWindow&) {
+void ScreenWindow::ScreenWindow(const class ScreenWindow& copyScreenWindow) {
 // LINE 1611:
 	asm( 
 "	      004a794d    push ebp"
@@ -9441,7 +9441,7 @@ void ScreenWindow::ScreenWindow(const class ScreenWindow&) {
 }
 
 // FUNCTION: COPTER_D 0x004a7989
-void ScreenWindow::ScreenWindow(class MRect&, int32_t, class CBackBuffer*, class GraphicWindowOwner*, int32_t) {
+void ScreenWindow::ScreenWindow(class MRect& rectNewWindow, int32_t nNewID, class CBackBuffer* bufferNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
 // LINE 1624:
 	asm( 
 "	      004a7989    push ebp"
@@ -9532,7 +9532,7 @@ void ScreenWindow::~ScreenWindow() {
 }
 
 // FUNCTION: COPTER_D 0x004a7a1e
-class ScreenWindow& ScreenWindow::operator=(const class ScreenWindow&) {
+class ScreenWindow& ScreenWindow::operator=(const class ScreenWindow& copyScreenWindow) {
 // LINE 1645:
 	asm( 
 "	      004a7a1e    push ebp"

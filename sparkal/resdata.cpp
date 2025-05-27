@@ -44,7 +44,7 @@ void ResourceRCData::ResourceRCData() {
 }
 
 // FUNCTION: COPTER_D 0x0044780e
-void ResourceRCData::ResourceRCData(int32_t, int32_t) {
+void ResourceRCData::ResourceRCData(int32_t nTheResource, int32_t bLoadNow) {
 // LINE 38:
 	asm( 
 "	      0044780e    push ebp"
@@ -103,7 +103,7 @@ void ResourceRCData::ResourceRCData(int32_t, int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x00447880
-void ResourceRCData::ResourceRCData(class ResourceRCData&) {
+void ResourceRCData::ResourceRCData(class ResourceRCData& resData) {
 // LINE 54:
 	asm( 
 "	      00447880    push ebp"
@@ -220,7 +220,7 @@ void ResourceRCData::~ResourceRCData() {
 }
 
 // FUNCTION: COPTER_D 0x00447943
-class ResourceRCData& ResourceRCData::operator=(class ResourceRCData&) {
+class ResourceRCData& ResourceRCData::operator=(class ResourceRCData& resData) {
 // LINE 81:
 	asm( 
 "	      00447943    push ebp"

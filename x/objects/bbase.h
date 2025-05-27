@@ -1,6 +1,6 @@
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055e6f0
-void cBBase::SwizzleBBaseHeader(void * __ptr32, long) {
+void cBBase::SwizzleBBaseHeader(void * __ptr32 val, long size) {
 // LINE 225:
 	asm( 
 "	      0055e6f0    push ebp"
@@ -124,7 +124,7 @@ unsigned short cBBase::CanDestroy() {
 
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055f280
-void cBBase::InstallArrayPointers(unsigned short) {
+void cBBase::InstallArrayPointers(unsigned short fromdisk) {
 // LINE 28:
 	asm( 
 "	      0055f280    push ebp"

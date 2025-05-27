@@ -35,7 +35,7 @@ void CharData::CharData() {
 }
 
 // FUNCTION: COPTER_D 0x0043d40f
-void CharData::CharData(unsigned char) {
+void CharData::CharData(unsigned char chNewValue) {
 // LINE 14:
 	asm( 
 "	      0043d40f    push ebp"
@@ -176,7 +176,7 @@ void CharList::~CharList() {
 }
 
 // FUNCTION: COPTER_D 0x0043d4eb
-void CharList::AddItem(unsigned char) {
+void CharList::AddItem(unsigned char chNewValue) {
 // LINE 49:
 	asm( 
 "	      0043d4eb    push ebp"
@@ -222,7 +222,7 @@ void CharList::AddItem(unsigned char) {
 }
 
 // FUNCTION: COPTER_D 0x0043d541
-void CharList::AddItem(class CharData*) {
+void CharList::AddItem(class CharData* charDataToAdd) {
 // LINE 59:
 	asm( 
 "	      0043d541    push ebp"
@@ -313,7 +313,7 @@ void CharList::AddItem(class CharData*) {
 }
 
 // FUNCTION: COPTER_D 0x0043d5c9
-void CharList::DeleteItem(class CharData*) {
+void CharList::DeleteItem(class CharData* charDataToDelete) {
 // LINE 79:
 	asm( 
 "	      0043d5c9    push ebp"
@@ -421,7 +421,7 @@ void CharList::DeleteItem(class CharData*) {
 }
 
 // FUNCTION: COPTER_D 0x0043d67f
-void CharList::DeleteItem(unsigned char) {
+void CharList::DeleteItem(unsigned char chValue) {
 // LINE 100:
 	asm( 
 "	      0043d67f    push ebp"
@@ -468,7 +468,7 @@ void CharList::DeleteItem(unsigned char) {
 }
 
 // FUNCTION: COPTER_D 0x0043d6c1
-void CharList::DeleteItem(int32_t) {
+void CharList::DeleteItem(int32_t nIndex) {
 // LINE 110:
 	asm( 
 "	      0043d6c1    push ebp"
@@ -561,7 +561,7 @@ void CharList::DeleteAllItems() {
 }
 
 // FUNCTION: COPTER_D 0x0043d74d
-class CharData* CharList::FindCharDataByIndex(int32_t) {
+class CharData* CharList::FindCharDataByIndex(int32_t nIndex) {
 // LINE 128:
 	asm( 
 "	      0043d74d    push ebp"
@@ -634,7 +634,7 @@ class CharData* CharList::FindCharDataByIndex(int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x0043d7ce
-class CharData* CharList::FindCharDataByValue(unsigned char) {
+class CharData* CharList::FindCharDataByValue(unsigned char chValue) {
 // LINE 149:
 	asm( 
 "	      0043d7ce    push ebp"

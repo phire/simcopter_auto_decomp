@@ -1,6 +1,6 @@
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055e740
-void PtrList<cBBase>::Remove(class cBBase*) {
+void PtrList<cBBase>::Remove(class cBBase* data) {
 // LINE 42:
 	asm( 
 "	      0055e740    push ebp"

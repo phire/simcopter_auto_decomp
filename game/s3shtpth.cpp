@@ -6,7 +6,7 @@
 
 // Contribution: 1:00142690-00142f6c Module: 151, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00543690
-int32_t ShortestPath::FindDistanceFromDestination(struct _GridCoordinates, struct _GridCoordinates) {
+int32_t ShortestPath::FindDistanceFromDestination(struct _GridCoordinates here, struct _GridCoordinates destination) {
 // LINE 13:
 	asm( 
 "	      00543690    push ebp"
@@ -86,7 +86,7 @@ int32_t ShortestPath::FindDistanceFromDestination(struct _GridCoordinates, struc
 }
 
 // FUNCTION: COPTER_D 0x00543704
-int32_t ShortestPath::BreadthFirstSearch(struct _RGIndex, struct _RGIndex) {
+int32_t ShortestPath::BreadthFirstSearch(struct _RGIndex startVertex, struct _RGIndex destVertex) {
 // LINE 36:
 	asm( 
 "	      00543704    push ebp"
@@ -450,7 +450,7 @@ int32_t ShortestPath::BreadthFirstSearch(struct _RGIndex, struct _RGIndex) {
 }
 
 // FUNCTION: COPTER_D 0x005439bb
-int32_t ShortestPath::DepthFirstSearch(struct _RGIndex, struct _RGIndex) {
+int32_t ShortestPath::DepthFirstSearch(struct _RGIndex startVertex, struct _RGIndex destVertex) {
 // LINE 138:
 	asm( 
 "	      005439bb    push ebp"
@@ -878,7 +878,7 @@ int32_t ShortestPath::DepthFirstSearch(struct _RGIndex, struct _RGIndex) {
 }
 
 // FUNCTION: COPTER_D 0x00543cdd
-void ShortestPath::PriorityHeapInsert(const struct _FringeHeapNode*) {
+void ShortestPath::PriorityHeapInsert(const struct _FringeHeapNode* pInsertNode) {
 // LINE 252:
 	asm( 
 "	      00543cdd    push ebp"
@@ -1003,7 +1003,7 @@ void ShortestPath::PriorityHeapInsert(const struct _FringeHeapNode*) {
 }
 
 // FUNCTION: COPTER_D 0x00543dcb
-void ShortestPath::PriorityHeapRemove(struct _FringeHeapNode*) {
+void ShortestPath::PriorityHeapRemove(struct _FringeHeapNode* pRemovedNode) {
 // LINE 275:
 	asm( 
 "	      00543dcb    push ebp"

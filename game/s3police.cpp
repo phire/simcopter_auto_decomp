@@ -6,7 +6,7 @@
 
 // Contribution: 1:00135e00-00137427 Module: 158, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00536e00
-int32_t CreatePoliceCarInstance(int32_t) {
+int32_t CreatePoliceCarInstance(int32_t instanceID) {
 // LINE 89:
 	asm( 
 "	      00536e00    push ebp"
@@ -101,7 +101,7 @@ void PoliceCarClass::~PoliceCarClass() {
 }
 
 // FUNCTION: COPTER_D 0x00536e98
-class PoliceCarClass* PoliceCarClass::CreateInstance(int32_t) {
+class PoliceCarClass* PoliceCarClass::CreateInstance(int32_t instanceID) {
 // LINE 118:
 	asm( 
 "	      00536e98    push ebp"
@@ -316,7 +316,7 @@ class PoliceCarClass* PoliceCarClass::CreateInstance(int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x00537081
-unsigned char PoliceCarClass::Dispatch(enum EmergencyType, enum EmergencyLevel, long, long) {
+unsigned char PoliceCarClass::Dispatch(enum EmergencyType responseType, enum EmergencyLevel responseLevel, long mapx, long mapy) {
 // LINE 215:
 	asm( 
 "	      00537081    push ebp"
@@ -1413,7 +1413,7 @@ void PoliceCarClass::ItterateFSM() {
 }
 
 // FUNCTION: COPTER_D 0x00537a2c
-enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal*) {
+enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal* pGoal) {
 // LINE 540:
 	asm( 
 "	      00537a2c    push ebp"
@@ -1985,7 +1985,7 @@ int32_t PoliceCarClass::AtScene() {
 }
 
 // FUNCTION: COPTER_D 0x00537fd9
-struct _DYOBJ_INST* PoliceCarClass::ScanForBadGuys(struct _GridCoordinates&) {
+struct _DYOBJ_INST* PoliceCarClass::ScanForBadGuys(struct _GridCoordinates& scanLoc) {
 // LINE 686:
 	asm( 
 "	      00537fd9    push ebp"
@@ -2126,7 +2126,7 @@ struct _DYOBJ_INST* PoliceCarClass::ScanForBadGuys(struct _GridCoordinates&) {
 }
 
 // FUNCTION: COPTER_D 0x0053811f
-void PoliceCarClass::SetSaveData(struct _AUTO_LOAD_SAVE*) {
+void PoliceCarClass::SetSaveData(struct _AUTO_LOAD_SAVE* sd) {
 // LINE 728:
 	asm( 
 "	      0053811f    push ebp"
@@ -2247,7 +2247,7 @@ void PoliceCarClass::SetSaveData(struct _AUTO_LOAD_SAVE*) {
 }
 
 // FUNCTION: COPTER_D 0x0053822e
-void PoliceCarClass::LoadSaveData(struct _AUTO_LOAD_SAVE*) {
+void PoliceCarClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 // LINE 760:
 	asm( 
 "	      0053822e    push ebp"

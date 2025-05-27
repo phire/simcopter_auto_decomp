@@ -6,7 +6,7 @@
 
 // Contribution: 1:0015c500-0015c948 Module: 193, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0055d500
-void SetRRandSeed(unsigned long) {
+void SetRRandSeed(unsigned long n) {
 // LINE 33:
 	asm( 
 "	      0055d500    push ebp"
@@ -45,7 +45,7 @@ unsigned long GetSRandSeed() {
 }
 
 // FUNCTION: COPTER_D 0x0055d52d
-void SetSRandSeed(unsigned long) {
+void SetSRandSeed(unsigned long theSeed) {
 // LINE 48:
 	asm( 
 "	      0055d52d    push ebp"
@@ -65,7 +65,7 @@ void SetSRandSeed(unsigned long) {
 }
 
 // FUNCTION: COPTER_D 0x0055d545
-unsigned short RRand(unsigned short) {
+unsigned short RRand(unsigned short lim) {
 // LINE 55:
 	asm( 
 "	      0055d545    push ebp"
@@ -305,7 +305,7 @@ unsigned short GetNextRandomNumber() {
 }
 
 // FUNCTION: COPTER_D 0x0055d717
-unsigned short SRand(unsigned short) {
+unsigned short SRand(unsigned short lim) {
 // LINE 118:
 	asm( 
 "	      0055d717    push ebp"
@@ -501,7 +501,7 @@ unsigned short SRand256() {
 }
 
 // FUNCTION: COPTER_D 0x0055d824
-unsigned short SGIRand(unsigned short) {
+unsigned short SGIRand(unsigned short limit) {
 // LINE 132:
 	asm( 
 "	      0055d824    push ebp"
@@ -561,7 +561,7 @@ unsigned short SGIRand(unsigned short) {
 }
 
 // FUNCTION: COPTER_D 0x0055d882
-unsigned short SGRand(unsigned short) {
+unsigned short SGRand(unsigned short limit) {
 // LINE 147:
 	asm( 
 "	      0055d882    push ebp"
@@ -621,7 +621,7 @@ unsigned short SGRand(unsigned short) {
 }
 
 // FUNCTION: COPTER_D 0x0055d8e0
-short SGSRand(unsigned short) {
+short SGSRand(unsigned short limit) {
 // LINE 162:
 	asm( 
 "	      0055d8e0    push ebp"

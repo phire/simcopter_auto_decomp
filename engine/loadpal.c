@@ -86,7 +86,7 @@ struct VRResource* LoadPalette() {
 }
 
 // FUNCTION: COPTER_D 0x004d2157
-char * VRGetPalFromResource(struct VRResource*) {
+char * VRGetPalFromResource(struct VRResource* res) {
 // LINE 110:
 	asm( 
 "	      004d2157    push ebp"

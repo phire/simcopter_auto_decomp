@@ -6,7 +6,7 @@
 
 // Contribution: 1:00070f70-00073776 Module: 36, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00471f70
-void HangarWindow::HangarWindow(int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
+void HangarWindow::HangarWindow(int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
 // LINE 53:
 	asm( 
 "	      00471f70    push ebp"
@@ -1162,7 +1162,7 @@ int32_t HangarWindow::Initialize() {
 }
 
 // FUNCTION: COPTER_D 0x00472f61
-int32_t HangarWindow::ReadPalette(struct SparkalColor*) {
+int32_t HangarWindow::ReadPalette(struct SparkalColor* pColorTable) {
 // LINE 121:
 	asm( 
 "	      00472f61    push ebp"
@@ -1275,7 +1275,7 @@ int32_t HangarWindow::ReadPalette(struct SparkalColor*) {
 }
 
 // FUNCTION: COPTER_D 0x004730a3
-int32_t HangarWindow::CreateImage(int32_t) {
+int32_t HangarWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 // LINE 129:
 	asm( 
 "	      004730a3    push ebp"
@@ -1672,7 +1672,7 @@ int32_t HangarWindow::ComposeSelf() {
 }
 
 // FUNCTION: COPTER_D 0x004734ed
-int32_t HangarWindow::DoMessage(class GraphicWindow*, long, long, void * __ptr32) {
+int32_t HangarWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
 // LINE 183:
 	asm( 
 "	      004734ed    push ebp"
@@ -1806,7 +1806,7 @@ int32_t HangarWindow::DoMessage(class GraphicWindow*, long, long, void * __ptr32
 }
 
 // FUNCTION: COPTER_D 0x004735e1
-long HangarWindow::DoKeyDown(long, char) {
+long HangarWindow::DoKeyDown(long lKey, char chModifiers) {
 // LINE 210:
 	asm( 
 "	      004735e1    push ebp"
@@ -1866,7 +1866,7 @@ long HangarWindow::DoKeyDown(long, char) {
 }
 
 // FUNCTION: COPTER_D 0x0047363c
-long HangarWindow::DoCursorDown(long, long, unsigned long) {
+long HangarWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButton) {
 // LINE 232:
 	asm( 
 "	      0047363c    push ebp"
@@ -1927,7 +1927,7 @@ long HangarWindow::DoCursorDown(long, long, unsigned long) {
 }
 
 // FUNCTION: COPTER_D 0x004736a8
-long HangarWindow::DoCursorUp(long, long, unsigned long) {
+long HangarWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nButton) {
 // LINE 249:
 	asm( 
 "	      004736a8    push ebp"
@@ -1954,7 +1954,7 @@ long HangarWindow::DoCursorUp(long, long, unsigned long) {
 }
 
 // FUNCTION: COPTER_D 0x004736c5
-long HangarWindow::DoCursorMove(long, long) {
+long HangarWindow::DoCursorMove(long nCursorX, long nCursorY) {
 // LINE 259:
 	asm( 
 "	      004736c5    push ebp"
@@ -2334,7 +2334,7 @@ void HangarWindow::GetImagePath() {
 }
 
 // FUNCTION: COPTER_D 0x00473b5c
-int32_t HangarWindow::GetHotspotFromPosition(long&, class MPoint&) {
+int32_t HangarWindow::GetHotspotFromPosition(long& lHelpID, class MPoint& ptPosition) {
 // LINE 292:
 	asm( 
 "	      00473b5c    push ebp"
@@ -2454,7 +2454,7 @@ int32_t HangarWindow::GetHotspotFromPosition(long&, class MPoint&) {
 }
 
 // FUNCTION: COPTER_D 0x00473c6c
-void HangarWindow::ScrollHangarView(long) {
+void HangarWindow::ScrollHangarView(long lDistance) {
 // LINE 313:
 	asm( 
 "	      00473c6c    push ebp"
@@ -2586,7 +2586,7 @@ void HangarWindow::ScrollHangarView(long) {
 }
 
 // FUNCTION: COPTER_D 0x00473de1
-int32_t HangarWindow::IsHangarRectVisibleInWindow(class MRect&) {
+int32_t HangarWindow::IsHangarRectVisibleInWindow(class MRect& rectHangar) {
 // LINE 364:
 	asm( 
 "	      00473de1    push ebp"
@@ -2690,7 +2690,7 @@ int32_t HangarWindow::IsHangarRectVisibleInWindow(class MRect&) {
 }
 
 // FUNCTION: COPTER_D 0x00473ec5
-void HangarWindow::ClipRectToWindow(class MRect&) {
+void HangarWindow::ClipRectToWindow(class MRect& rectToClip) {
 // LINE 383:
 	asm( 
 "	      00473ec5    push ebp"
@@ -2773,7 +2773,7 @@ void HangarWindow::ClipRectToWindow(class MRect&) {
 }
 
 // FUNCTION: COPTER_D 0x00473f53
-void HangarWindow::DisplayHelp(int32_t, class MPoint&) {
+void HangarWindow::DisplayHelp(int32_t nHelp, class MPoint& ptHelp) {
 // LINE 438:
 	asm( 
 "	      00473f53    push ebp"
@@ -3308,7 +3308,7 @@ void HangarWindow::HideHelp() {
 }
 
 // FUNCTION: COPTER_D 0x004745a5
-int32_t HangarWindow::GetSoundFileNameFromHelpID(long, class basic_string<char>&) {
+int32_t HangarWindow::GetSoundFileNameFromHelpID(long __formal, class basic_string<char>& sSoundFileName) {
 // LINE 494:
 	asm( 
 "	      004745a5    push ebp"

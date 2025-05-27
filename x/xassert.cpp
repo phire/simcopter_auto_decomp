@@ -6,7 +6,7 @@
 
 // Contribution: 1:00153f30-00153fea Module: 197, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00554f30
-void doAssert(char *, const long, char *, long) {
+void doAssert(char * fileName, const long lineNum, char * failureDescription, long tackonNumber) {
 // LINE 36:
 	asm( 
 "	      00554f30    push ebp"

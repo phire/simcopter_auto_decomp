@@ -56,7 +56,7 @@ void SoundQueueItem::SoundQueueItem() {
 }
 
 // FUNCTION: COPTER_D 0x00420675
-void SoundQueueItem::SoundQueueItem(class Sound*, long, int32_t) {
+void SoundQueueItem::SoundQueueItem(class Sound* sound, long lNewTimeToWaitBeforePlaying, int32_t bNewDeleteSoundWhenFinished) {
 // LINE 29:
 	asm( 
 "	      00420675    push ebp"
@@ -129,7 +129,7 @@ void SoundQueueItem::SoundQueueItem(class Sound*, long, int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x00420720
-void SoundQueueItem::SoundQueueItem(class Sound*, long, long, int32_t) {
+void SoundQueueItem::SoundQueueItem(class Sound* sound, long lNewSoundResourceID, long lNewTimeToWaitBeforePlaying, int32_t bNewDeleteSoundWhenFinished) {
 // LINE 41:
 	asm( 
 "	      00420720    push ebp"
@@ -203,7 +203,7 @@ void SoundQueueItem::SoundQueueItem(class Sound*, long, long, int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x004207ca
-void SoundQueueItem::SoundQueueItem(class Sound*, const class basic_string<char>&, long, int32_t) {
+void SoundQueueItem::SoundQueueItem(class Sound* sound, const class basic_string<char>& sNewSoundFile, long lNewTimeToWaitBeforePlaying, int32_t bNewDeleteSoundWhenFinished) {
 // LINE 53:
 	asm( 
 "	      004207ca    push ebp"
@@ -404,7 +404,7 @@ void SoundQueueItem::SoundQueueItem(class Sound*, const class basic_string<char>
 }
 
 // FUNCTION: COPTER_D 0x00420a3c
-void SoundQueueItem::SoundQueueItem(class Sound*, char *, long, int32_t) {
+void SoundQueueItem::SoundQueueItem(class Sound* sound, char * szNewSoundFile, long lNewTimeToWaitBeforePlaying, int32_t bNewDeleteSoundWhenFinished) {
 // LINE 67:
 	asm( 
 "	      00420a3c    push ebp"
@@ -642,7 +642,7 @@ void SoundQueueItem::SoundQueueItem(class Sound*, char *, long, int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x00420d37
-void DigitalSoundQueueItem::DigitalSoundQueueItem(const class basic_string<char>&, long) {
+void DigitalSoundQueueItem::DigitalSoundQueueItem(const class basic_string<char>& sNewDigitalSoundFile, long lNewTimeToWaitBeforePlaying) {
 // LINE 89:
 	asm( 
 "	      00420d37    push ebp"
@@ -703,7 +703,7 @@ void DigitalSoundQueueItem::DigitalSoundQueueItem(const class basic_string<char>
 }
 
 // FUNCTION: COPTER_D 0x00420daf
-void DigitalSoundQueueItem::DigitalSoundQueueItem(char *, long) {
+void DigitalSoundQueueItem::DigitalSoundQueueItem(char * szNewSoundFile, long lNewTimeToWaitBeforePlaying) {
 // LINE 102:
 	asm( 
 "	      00420daf    push ebp"
@@ -873,7 +873,7 @@ void DigitalSoundQueueItem::DigitalSoundQueueItem(char *, long) {
 }
 
 // FUNCTION: COPTER_D 0x00420fba
-void DigitalSoundQueueItem::DigitalSoundQueueItem(long, long) {
+void DigitalSoundQueueItem::DigitalSoundQueueItem(long lNewDigitalSoundResourceID, long lNewTimeToWaitBeforePlaying) {
 // LINE 116:
 	asm( 
 "	      00420fba    push ebp"
@@ -1306,7 +1306,7 @@ int32_t SoundQueue::Initialize() {
 }
 
 // FUNCTION: COPTER_D 0x004214c9
-void SoundQueue::DeInitialize(int32_t) {
+void SoundQueue::DeInitialize(int32_t bStopCurrentlyPlayingSound) {
 // LINE 179:
 	asm( 
 "	      004214c9    push ebp"
@@ -1361,7 +1361,7 @@ void SoundQueue::DeInitialize(int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x0042151a
-void SoundQueue::ClearQueue(int32_t) {
+void SoundQueue::ClearQueue(int32_t bStopCurrentlyPlayingSound) {
 // LINE 196:
 	asm( 
 "	      0042151a    push ebp"
@@ -1622,7 +1622,7 @@ void SoundQueue::ClearQueue(int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x004217d6
-class SoundQueue& SoundQueue::operator+=(class Sound*) {
+class SoundQueue& SoundQueue::operator+=(class Sound* newSoundItem) {
 // LINE 224:
 	asm( 
 "	      004217d6    push ebp"
@@ -1692,7 +1692,7 @@ class SoundQueue& SoundQueue::operator+=(class Sound*) {
 }
 
 // FUNCTION: COPTER_D 0x0042185b
-class SoundQueue& SoundQueue::operator+=(struct SoundQueueItem*) {
+class SoundQueue& SoundQueue::operator+=(struct SoundQueueItem* newSoundQueueItem) {
 // LINE 239:
 	asm( 
 "	      0042185b    push ebp"
@@ -1956,7 +1956,7 @@ class SoundQueue& SoundQueue::operator+=(struct SoundQueueItem*) {
 }
 
 // FUNCTION: COPTER_D 0x00421b84
-int32_t SoundQueue::StartPauseCallback(long) {
+int32_t SoundQueue::StartPauseCallback(long lMillisecondsToPause) {
 // LINE 260:
 	asm( 
 "	      00421b84    push ebp"
@@ -2366,7 +2366,7 @@ void SoundQueue::RemoveNextSoundInQueue() {
 }
 
 // FUNCTION: COPTER_D 0x00421f05
-void SoundQueue::WindowsStaticSoundQueueCompletionCallback(uint32_t, uint32_t, unsigned long, unsigned long, unsigned long) {
+void SoundQueue::WindowsStaticSoundQueueCompletionCallback(uint32_t nTimerID, uint32_t __formal, unsigned long dwUser, unsigned long __formal, unsigned long __formal) {
 // LINE 355:
 	asm( 
 "	      00421f05    push ebp"
@@ -2394,7 +2394,7 @@ void SoundQueue::WindowsStaticSoundQueueCompletionCallback(uint32_t, uint32_t, u
 }
 
 // FUNCTION: COPTER_D 0x00421f23
-void SoundQueue::WindowsStaticSoundQueueWaitTimeCallback(uint32_t, uint32_t, unsigned long, unsigned long, unsigned long) {
+void SoundQueue::WindowsStaticSoundQueueWaitTimeCallback(uint32_t nTimerID, uint32_t __formal, unsigned long dwUser, unsigned long __formal, unsigned long __formal) {
 // LINE 367:
 	asm( 
 "	      00421f23    push ebp"
@@ -2422,7 +2422,7 @@ void SoundQueue::WindowsStaticSoundQueueWaitTimeCallback(uint32_t, uint32_t, uns
 }
 
 // FUNCTION: COPTER_D 0x00421f41
-void SoundQueue::StaticSoundQueueCompletionCallback(long) {
+void SoundQueue::StaticSoundQueueCompletionCallback(long lData) {
 // LINE 376:
 	asm( 
 "	      00421f41    push ebp"
@@ -2537,7 +2537,7 @@ void SoundQueue::SoundQueueCompletionCallback() {
 }
 
 // FUNCTION: COPTER_D 0x00421ffe
-void SoundQueue::StaticSoundQueueWaitTimeCallback(long) {
+void SoundQueue::StaticSoundQueueWaitTimeCallback(long lData) {
 // LINE 406:
 	asm( 
 "	      00421ffe    push ebp"
@@ -2607,7 +2607,7 @@ void SoundQueue::SoundQueueWaitTimeCallback() {
 }
 
 // FUNCTION: COPTER_D 0x00422056
-int32_t SoundQueue::GetMutex(unsigned long) {
+int32_t SoundQueue::GetMutex(unsigned long lTimeoutValue) {
 // LINE 428:
 	asm( 
 "	      00422056    push ebp"

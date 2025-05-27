@@ -55,7 +55,7 @@ void BoxWindow::BoxWindow() {
 }
 
 // FUNCTION: COPTER_D 0x004acb00
-void BoxWindow::BoxWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
+void BoxWindow::BoxWindow(class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
 // LINE 41:
 	asm( 
 "	      004acb00    push ebp"
@@ -176,7 +176,7 @@ int32_t BoxWindow::DrawSelf() {
 }
 
 // FUNCTION: COPTER_D 0x004acbea
-void BoxWindow::SetColors(struct SparkalColor&, int32_t) {
+void BoxWindow::SetColors(struct SparkalColor& colorNewOutline, int32_t nNewPaletteIndexFill) {
 // LINE 63:
 	asm( 
 "	      004acbea    push ebp"
@@ -212,7 +212,7 @@ void BoxWindow::SetColors(struct SparkalColor&, int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x004acc19
-void BoxWindow::SetOutlineAndFillDrawing(int32_t, int32_t) {
+void BoxWindow::SetOutlineAndFillDrawing(int32_t bNewDrawOutline, int32_t bNewDrawFill) {
 // LINE 72:
 	asm( 
 "	      004acc19    push ebp"
@@ -322,7 +322,7 @@ void TextWindow::TextWindow() {
 }
 
 // FUNCTION: COPTER_D 0x004acce6
-void TextWindow::TextWindow(class MRect&, int32_t, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
+void TextWindow::TextWindow(class MRect& rectNewWindow, int32_t nNewID, int32_t nNewWindowTitleTextID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
 // LINE 113:
 	asm( 
 "	      004acce6    push ebp"
@@ -409,7 +409,7 @@ void TextWindow::TextWindow(class MRect&, int32_t, int32_t, class GraphicWindow*
 }
 
 // FUNCTION: COPTER_D 0x004acda2
-void TextWindow::TextWindow(class MRect&, int32_t, const class basic_string<char>&, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
+void TextWindow::TextWindow(class MRect& rectNewWindow, int32_t nNewID, const class basic_string<char>& sNewWindowTitle, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
 // LINE 131:
 	asm( 
 "	      004acda2    push ebp"
@@ -1048,7 +1048,7 @@ void TextWindow::LoadStrings() {
 }
 
 // FUNCTION: COPTER_D 0x004ad775
-void TextWindow::SetWindowTitle(int32_t) {
+void TextWindow::SetWindowTitle(int32_t nNewWindowTitleTextID) {
 // LINE 159:
 	asm( 
 "	      004ad775    push ebp"
@@ -1093,7 +1093,7 @@ void TextWindow::SetWindowTitle(int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x004ad7b6
-void TextWindow::SetWindowTitle(const class basic_string<char>&) {
+void TextWindow::SetWindowTitle(const class basic_string<char>& sNewWindowTitle) {
 // LINE 168:
 	asm( 
 "	      004ad7b6    push ebp"
@@ -1449,7 +1449,7 @@ int32_t TextWindow::DrawSelf() {
 }
 
 // FUNCTION: COPTER_D 0x004adb83
-void TextWindow::SetBackgroundDrawing(int32_t) {
+void TextWindow::SetBackgroundDrawing(int32_t bNewDrawOpaqueBackground) {
 // LINE 198:
 	asm( 
 "	      004adb83    push ebp"
@@ -1478,7 +1478,7 @@ void TextWindow::SetBackgroundDrawing(int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x004adba4
-void TextWindow::SetFontCharacteristics(long, long, long) {
+void TextWindow::SetFontCharacteristics(long lNewHeight, long lNewWidth, long lNewAttributes) {
 // LINE 206:
 	asm( 
 "	      004adba4    push ebp"
@@ -1522,7 +1522,7 @@ void TextWindow::SetFontCharacteristics(long, long, long) {
 }
 
 // FUNCTION: COPTER_D 0x004adbe5
-void TextWindow::SetTextDrawStyle(unsigned long) {
+void TextWindow::SetTextDrawStyle(unsigned long nNewTextDrawStyle) {
 // LINE 215:
 	asm( 
 "	      004adbe5    push ebp"
@@ -1686,7 +1686,7 @@ void TextWindow::FitWindowToText() {
 }
 
 // FUNCTION: COPTER_D 0x004add6f
-void TextWindow::SetTextColor(const struct SparkalColor&) {
+void TextWindow::SetTextColor(const struct SparkalColor& colorNewFont) {
 // LINE 236:
 	asm( 
 "	      004add6f    push ebp"
@@ -1977,7 +1977,7 @@ void ButtonWindow::ButtonWindow() {
 }
 
 // FUNCTION: COPTER_D 0x004ae05d
-void ButtonWindow::ButtonWindow(class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t) {
+void ButtonWindow::ButtonWindow(class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow* windowNewParent, char * szImageFileName, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
 // LINE 306:
 	asm( 
 "	      004ae05d    push ebp"
@@ -2253,7 +2253,7 @@ int32_t ButtonWindow::Initialize() {
 }
 
 // FUNCTION: COPTER_D 0x004ae3b3
-void ButtonWindow::SetTextColor(const struct SparkalColor*, const struct SparkalColor*) {
+void ButtonWindow::SetTextColor(const struct SparkalColor* colorNewFont, const struct SparkalColor* colorNewFontHighlighted) {
 // LINE 328:
 	asm( 
 "	      004ae3b3    push ebp"
@@ -2327,7 +2327,7 @@ int32_t ButtonWindow::GetImageCount() {
 }
 
 // FUNCTION: COPTER_D 0x004ae416
-int32_t ButtonWindow::CreateImage(int32_t) {
+int32_t ButtonWindow::CreateImage(int32_t __formal) {
 // LINE 348:
 	asm( 
 "	      004ae416    push ebp"
@@ -2852,7 +2852,7 @@ int32_t ButtonWindow::CreateImage(int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x004aeace
-void ButtonWindow::SetState(int32_t) {
+void ButtonWindow::SetState(int32_t nNewButtonState) {
 // LINE 408:
 	asm( 
 "	      004aeace    push ebp"
@@ -3090,7 +3090,7 @@ int32_t ButtonWindow::ComposeSelf() {
 }
 
 // FUNCTION: COPTER_D 0x004aec47
-long ButtonWindow::DoCursorDown(long, long, unsigned long) {
+long ButtonWindow::DoCursorDown(long __formal, long __formal, unsigned long __formal) {
 // LINE 465:
 	asm( 
 "	      004aec47    push ebp"
@@ -3145,7 +3145,7 @@ long ButtonWindow::DoCursorDown(long, long, unsigned long) {
 }
 
 // FUNCTION: COPTER_D 0x004aec9a
-long ButtonWindow::DoCursorUp(long, long, unsigned long) {
+long ButtonWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long __formal) {
 // LINE 480:
 	asm( 
 "	      004aec9a    push ebp"
@@ -3232,7 +3232,7 @@ long ButtonWindow::DoCursorUp(long, long, unsigned long) {
 }
 
 // FUNCTION: COPTER_D 0x004aed4d
-long ButtonWindow::DoCursorMove(long, long) {
+long ButtonWindow::DoCursorMove(long nCursorX, long nCursorY) {
 // LINE 495:
 	asm( 
 "	      004aed4d    push ebp"
@@ -3557,7 +3557,7 @@ void CheckBoxWindow::CheckBoxWindow() {
 }
 
 // FUNCTION: COPTER_D 0x004af0ab
-void CheckBoxWindow::CheckBoxWindow(class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t) {
+void CheckBoxWindow::CheckBoxWindow(class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow* windowNewParent, char * szImageFileName, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
 // LINE 552:
 	asm( 
 "	      004af0ab    push ebp"
@@ -4091,7 +4091,7 @@ int32_t CheckBoxWindow::ComposeSelf() {
 }
 
 // FUNCTION: COPTER_D 0x004af6ab
-void CheckBoxWindow::SetState(int32_t) {
+void CheckBoxWindow::SetState(int32_t nNewButtonState) {
 // LINE 601:
 	asm( 
 "	      004af6ab    push ebp"
@@ -4180,7 +4180,7 @@ void CheckBoxWindow::SetState(int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x004af74d
-long CheckBoxWindow::DoCursorDown(long, long, unsigned long) {
+long CheckBoxWindow::DoCursorDown(long __formal, long __formal, unsigned long __formal) {
 // LINE 621:
 	asm( 
 "	      004af74d    push ebp"
@@ -4247,7 +4247,7 @@ long CheckBoxWindow::DoCursorDown(long, long, unsigned long) {
 }
 
 // FUNCTION: COPTER_D 0x004af7bd
-long CheckBoxWindow::DoCursorUp(long, long, unsigned long) {
+long CheckBoxWindow::DoCursorUp(long __formal, long __formal, unsigned long __formal) {
 // LINE 638:
 	asm( 
 "	      004af7bd    push ebp"
@@ -4274,7 +4274,7 @@ long CheckBoxWindow::DoCursorUp(long, long, unsigned long) {
 }
 
 // FUNCTION: COPTER_D 0x004af7da
-long CheckBoxWindow::DoCursorMove(long, long) {
+long CheckBoxWindow::DoCursorMove(long __formal, long __formal) {
 // LINE 647:
 	asm( 
 "	      004af7da    push ebp"
@@ -4301,7 +4301,7 @@ long CheckBoxWindow::DoCursorMove(long, long) {
 }
 
 // FUNCTION: COPTER_D 0x004af7f7
-void RadioButtonWindow::RadioButtonWindow(class ButtonGroup*, class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t) {
+void RadioButtonWindow::RadioButtonWindow(class ButtonGroup* myNewRadioButtonGroup, class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow* windowNewParent, char * szImageFileName, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
 // LINE 676:
 	asm( 
 "	      004af7f7    push ebp"
@@ -4908,7 +4908,7 @@ int32_t RadioButtonWindow::GetImageCount() {
 }
 
 // FUNCTION: COPTER_D 0x004afe6f
-void RadioButtonWindow::AddToGroup(class ButtonGroup*) {
+void RadioButtonWindow::AddToGroup(class ButtonGroup* myNewRadioButtonGroup) {
 // LINE 759:
 	asm( 
 "	      004afe6f    push ebp"
@@ -4990,7 +4990,7 @@ int32_t RadioButtonWindow::RemoveFromGroup() {
 }
 
 // FUNCTION: COPTER_D 0x004afee3
-void RadioButtonWindow::SetState(int32_t) {
+void RadioButtonWindow::SetState(int32_t nNewButtonState) {
 // LINE 781:
 	asm( 
 "	      004afee3    push ebp"
@@ -5110,7 +5110,7 @@ void RadioButtonWindow::SetState(int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x004affd4
-long RadioButtonWindow::DoCursorDown(long, long, unsigned long) {
+long RadioButtonWindow::DoCursorDown(long __formal, long __formal, unsigned long __formal) {
 // LINE 805:
 	asm( 
 "	      004affd4    push ebp"
@@ -5180,7 +5180,7 @@ long RadioButtonWindow::DoCursorDown(long, long, unsigned long) {
 }
 
 // FUNCTION: COPTER_D 0x004b0049
-long RadioButtonWindow::DoCursorUp(long, long, unsigned long) {
+long RadioButtonWindow::DoCursorUp(long __formal, long __formal, unsigned long __formal) {
 // LINE 830:
 	asm( 
 "	      004b0049    push ebp"
@@ -5207,7 +5207,7 @@ long RadioButtonWindow::DoCursorUp(long, long, unsigned long) {
 }
 
 // FUNCTION: COPTER_D 0x004b0066
-long RadioButtonWindow::DoCursorMove(long, long) {
+long RadioButtonWindow::DoCursorMove(long __formal, long __formal) {
 // LINE 837:
 	asm( 
 "	      004b0066    push ebp"
@@ -6865,7 +6865,7 @@ void SliderWindow::SliderWindow() {
 }
 
 // FUNCTION: COPTER_D 0x004b1256
-void SliderWindow::SliderWindow(class MRect&, int32_t, enum SliderWindow::SliderWindowDirection, class GraphicWindow*, class GraphicWindowOwner*, int32_t, char *, char *, long) {
+void SliderWindow::SliderWindow(class MRect& rectNewWindow, int32_t nNewID, enum SliderWindow::SliderWindowDirection newSliderWindowDirection, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList, char * szThumbImageFileName, char * szBackgroundImageFileName, long lNewThumbLimitIndentation) {
 // LINE 1133:
 	asm( 
 "	      004b1256    push ebp"
@@ -7580,7 +7580,7 @@ int32_t SliderWindow::Initialize() {
 }
 
 // FUNCTION: COPTER_D 0x004b1b65
-int32_t SliderWindow::CreateImage(int32_t) {
+int32_t SliderWindow::CreateImage(int32_t __formal) {
 // LINE 1183:
 	asm( 
 "	      004b1b65    push ebp"
@@ -7890,7 +7890,7 @@ void SliderWindow::DestroyImage() {
 }
 
 // FUNCTION: COPTER_D 0x004b1ed9
-void SliderWindow::MoveWindow(int32_t, int32_t) {
+void SliderWindow::MoveWindow(int32_t nXPosition, int32_t nYPosition) {
 // LINE 1219:
 	asm( 
 "	      004b1ed9    push ebp"
@@ -7929,7 +7929,7 @@ void SliderWindow::MoveWindow(int32_t, int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x004b1f0f
-void SliderWindow::SetWidthAndHeight(int32_t, int32_t) {
+void SliderWindow::SetWidthAndHeight(int32_t nNewWidth, int32_t nNewHeight) {
 // LINE 1228:
 	asm( 
 "	      004b1f0f    push ebp"
@@ -8289,7 +8289,7 @@ int32_t SliderWindow::ComposeSelf() {
 }
 
 // FUNCTION: COPTER_D 0x004b2202
-long SliderWindow::DoCursorDown(long, long, unsigned long) {
+long SliderWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButton) {
 // LINE 1292:
 	asm( 
 "	      004b2202    push ebp"
@@ -8354,7 +8354,7 @@ long SliderWindow::DoCursorDown(long, long, unsigned long) {
 }
 
 // FUNCTION: COPTER_D 0x004b226b
-long SliderWindow::DoCursorUp(long, long, unsigned long) {
+long SliderWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nButton) {
 // LINE 1307:
 	asm( 
 "	      004b226b    push ebp"
@@ -8423,7 +8423,7 @@ long SliderWindow::DoCursorUp(long, long, unsigned long) {
 }
 
 // FUNCTION: COPTER_D 0x004b22ef
-long SliderWindow::DoCursorMove(long, long) {
+long SliderWindow::DoCursorMove(long nCursorX, long nCursorY) {
 // LINE 1323:
 	asm( 
 "	      004b22ef    push ebp"
@@ -8483,7 +8483,7 @@ long SliderWindow::DoCursorMove(long, long) {
 }
 
 // FUNCTION: COPTER_D 0x004b2361
-int32_t SliderWindow::ConvertCursorPositionToValue(long&, long, long) {
+int32_t SliderWindow::ConvertCursorPositionToValue(long& lNewValue, long nCursorX, long nCursorY) {
 // LINE 1346:
 	asm( 
 "	      004b2361    push ebp"
@@ -8942,7 +8942,7 @@ long SliderWindow::GetValue() {
 }
 
 // FUNCTION: COPTER_D 0x004b273a
-void SliderWindow::SetValue(long) {
+void SliderWindow::SetValue(long lNewSliderValue) {
 // LINE 1447:
 	asm( 
 "	      004b273a    push ebp"
@@ -9073,7 +9073,7 @@ void SliderWindow::SetValue(long) {
 }
 
 // FUNCTION: COPTER_D 0x004b2834
-void SliderWindow::SetMinimumValue(long) {
+void SliderWindow::SetMinimumValue(long lNewSliderMinimumValue) {
 // LINE 1472:
 	asm( 
 "	      004b2834    push ebp"
@@ -9118,7 +9118,7 @@ void SliderWindow::SetMinimumValue(long) {
 }
 
 // FUNCTION: COPTER_D 0x004b2872
-void SliderWindow::SetMaximumValue(long) {
+void SliderWindow::SetMaximumValue(long lNewSliderMaximumValue) {
 // LINE 1481:
 	asm( 
 "	      004b2872    push ebp"
@@ -9459,7 +9459,7 @@ void ScrollBarWindow::ScrollBarWindow() {
 }
 
 // FUNCTION: COPTER_D 0x004b2c25
-void ScrollBarWindow::ScrollBarWindow(class MRect&, int32_t, enum SliderWindow::SliderWindowDirection, class GraphicWindow*, class GraphicWindowOwner*, int32_t, char *) {
+void ScrollBarWindow::ScrollBarWindow(class MRect& rectNewWindow, int32_t nNewID, enum SliderWindow::SliderWindowDirection newSliderWindowDirection, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList, char * szImageFileName) {
 // LINE 1565:
 	asm( 
 "	      004b2c25    push ebp"
@@ -10406,7 +10406,7 @@ int32_t ScrollBarWindow::ComposeSelf() {
 }
 
 // FUNCTION: COPTER_D 0x004b35dd
-long ScrollBarWindow::DoCursorDown(long, long, unsigned long) {
+long ScrollBarWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButton) {
 // LINE 1716:
 	asm( 
 "	      004b35dd    push ebp"
@@ -10632,7 +10632,7 @@ long ScrollBarWindow::DoCursorDown(long, long, unsigned long) {
 }
 
 // FUNCTION: COPTER_D 0x004b3850
-long ScrollBarWindow::DoCursorUp(long, long, unsigned long) {
+long ScrollBarWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nButton) {
 // LINE 1757:
 	asm( 
 "	      004b3850    push ebp"
@@ -10707,7 +10707,7 @@ long ScrollBarWindow::DoCursorUp(long, long, unsigned long) {
 }
 
 // FUNCTION: COPTER_D 0x004b38e4
-long ScrollBarWindow::DoCursorMove(long, long) {
+long ScrollBarWindow::DoCursorMove(long nCursorX, long nCursorY) {
 // LINE 1775:
 	asm( 
 "	      004b38e4    push ebp"
@@ -11091,7 +11091,7 @@ void ScrollBarWindow::MovePageNext() {
 }
 
 // FUNCTION: COPTER_D 0x004b3bac
-void ScrollBarWindow::SetLineAndPageCount(long, long) {
+void ScrollBarWindow::SetLineAndPageCount(long lNewLineCount, long lNewPageCount) {
 // LINE 1872:
 	asm( 
 "	      004b3bac    push ebp"
@@ -11233,7 +11233,7 @@ long ScrollBarWindow::GetCurrentLine() {
 }
 
 // FUNCTION: COPTER_D 0x004b3ca4
-long ScrollBarWindow::GetValueOfGivenLine(long) {
+long ScrollBarWindow::GetValueOfGivenLine(long lLine) {
 // LINE 1905:
 	asm( 
 "	      004b3ca4    push ebp"
@@ -11343,7 +11343,7 @@ long ScrollBarWindow::GetCurrentPage() {
 }
 
 // FUNCTION: COPTER_D 0x004b3d5c
-long ScrollBarWindow::GetValueOfGivenPage(long) {
+long ScrollBarWindow::GetValueOfGivenPage(long lPage) {
 // LINE 1932:
 	asm( 
 "	      004b3d5c    push ebp"
@@ -11398,7 +11398,7 @@ long ScrollBarWindow::GetValueOfGivenPage(long) {
 }
 
 // FUNCTION: COPTER_D 0x004b3db8
-int32_t ScrollBarWindow::DoCursorPositionHitTest(enum ScrollBarWindow::ScrollHitTestResult&, long, long) {
+int32_t ScrollBarWindow::DoCursorPositionHitTest(enum ScrollBarWindow::ScrollHitTestResult& nNewScrollHitTestResult, long nCursorX, long nCursorY) {
 // LINE 1964:
 	asm( 
 "	      004b3db8    push ebp"
@@ -12110,7 +12110,7 @@ void ListBoxWindow::ListBoxWindow() {
 }
 
 // FUNCTION: COPTER_D 0x004b4462
-void ListBoxWindow::ListBoxWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
+void ListBoxWindow::ListBoxWindow(class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
 // LINE 2105:
 	asm( 
 "	      004b4462    push ebp"
@@ -12435,7 +12435,7 @@ int32_t ListBoxWindow::Initialize() {
 }
 
 // FUNCTION: COPTER_D 0x004b4822
-int32_t ListBoxWindow::DoMessage(class GraphicWindow*, long, long, void * __ptr32) {
+int32_t ListBoxWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
 // LINE 2141:
 	asm( 
 "	      004b4822    push ebp"
@@ -12541,7 +12541,7 @@ void ListBoxWindow::CalculateAllMetrics() {
 }
 
 // FUNCTION: COPTER_D 0x004b48d2
-void ListBoxWindow::SetFontCharacteristics(long, long, long) {
+void ListBoxWindow::SetFontCharacteristics(long lNewHeight, long lNewWidth, long lNewAttributes) {
 // LINE 2172:
 	asm( 
 "	      004b48d2    push ebp"
@@ -12681,7 +12681,7 @@ int32_t ListBoxWindow::ResizeWindowForExactLineHeights() {
 }
 
 // FUNCTION: COPTER_D 0x004b49b6
-void ListBoxWindow::SetBackgroundDrawing(int32_t) {
+void ListBoxWindow::SetBackgroundDrawing(int32_t bNewBackgroundDrawing) {
 // LINE 2210:
 	asm( 
 "	      004b49b6    push ebp"
@@ -12733,7 +12733,7 @@ void ListBoxWindow::SetBackgroundDrawing(int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x004b4a11
-void ListBoxWindow::SetBackgroundPaletteIndex(int32_t, int32_t) {
+void ListBoxWindow::SetBackgroundPaletteIndex(int32_t nNewBackgroundIndex, int32_t nNewBackgroundIndexHighlighted) {
 // LINE 2227:
 	asm( 
 "	      004b4a11    push ebp"
@@ -12778,7 +12778,7 @@ void ListBoxWindow::SetBackgroundPaletteIndex(int32_t, int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x004b4a55
-void ListBoxWindow::SetTextColor(const struct SparkalColor*, const struct SparkalColor*) {
+void ListBoxWindow::SetTextColor(const struct SparkalColor* colorNewFont, const struct SparkalColor* colorNewFontHighlighted) {
 // LINE 2241:
 	asm( 
 "	      004b4a55    push ebp"
@@ -13438,7 +13438,7 @@ int32_t ListBoxWindow::DrawSelf() {
 }
 
 // FUNCTION: COPTER_D 0x004b520e
-int32_t ListBoxWindow::RemoveString(class basic_string<char>&) {
+int32_t ListBoxWindow::RemoveString(class basic_string<char>& sToRemove) {
 // LINE 2338:
 	asm( 
 "	      004b520e    push ebp"
@@ -13492,7 +13492,7 @@ int32_t ListBoxWindow::RemoveString(class basic_string<char>&) {
 }
 
 // FUNCTION: COPTER_D 0x004b5262
-int32_t ListBoxWindow::RemoveString(long) {
+int32_t ListBoxWindow::RemoveString(long lIndex) {
 // LINE 2354:
 	asm( 
 "	      004b5262    push ebp"
@@ -13769,7 +13769,7 @@ void ListBoxWindow::RemoveAllStrings() {
 }
 
 // FUNCTION: COPTER_D 0x004b550e
-int32_t ListBoxWindow::InsertString(class basic_string<char>&, long) {
+int32_t ListBoxWindow::InsertString(class basic_string<char>& sToAdd, long lIndex) {
 // LINE 2396:
 	asm( 
 "	      004b550e    push ebp"
@@ -13893,7 +13893,7 @@ int32_t ListBoxWindow::InsertString(class basic_string<char>&, long) {
 }
 
 // FUNCTION: COPTER_D 0x004b55ee
-int32_t ListBoxWindow::InsertString(long, long) {
+int32_t ListBoxWindow::InsertString(long lResourceIndex, long lInsertPosition) {
 // LINE 2430:
 	asm( 
 "	      004b55ee    push ebp"
@@ -14283,7 +14283,7 @@ int32_t ListBoxWindow::InsertString(long, long) {
 }
 
 // FUNCTION: COPTER_D 0x004b5c06
-int32_t ListBoxWindow::ModifyString(long, class basic_string<char>&) {
+int32_t ListBoxWindow::ModifyString(long lIndex, class basic_string<char>& sNew) {
 // LINE 2445:
 	asm( 
 "	      004b5c06    push ebp"
@@ -14466,7 +14466,7 @@ int32_t ListBoxWindow::ModifyString(long, class basic_string<char>&) {
 }
 
 // FUNCTION: COPTER_D 0x004b5e21
-int32_t ListBoxWindow::GetStringAddressFromIndex(long, class basic_string<char>*&) {
+int32_t ListBoxWindow::GetStringAddressFromIndex(long lIndex, class basic_string<char>*& sFound) {
 // LINE 2464:
 	asm( 
 "	      004b5e21    push ebp"
@@ -14567,7 +14567,7 @@ int32_t ListBoxWindow::GetStringAddressFromIndex(long, class basic_string<char>*
 }
 
 // FUNCTION: COPTER_D 0x004b5edc
-int32_t ListBoxWindow::GetStringFromIndex(long, class basic_string<char>&) {
+int32_t ListBoxWindow::GetStringFromIndex(long lIndex, class basic_string<char>& sFound) {
 // LINE 2495:
 	asm( 
 "	      004b5edc    push ebp"
@@ -14736,7 +14736,7 @@ int32_t ListBoxWindow::GetStringFromIndex(long, class basic_string<char>&) {
 }
 
 // FUNCTION: COPTER_D 0x004b60de
-int32_t ListBoxWindow::GetIndexFromString(long&, class basic_string<char>&) {
+int32_t ListBoxWindow::GetIndexFromString(long& lIndex, class basic_string<char>& sFound) {
 // LINE 2510:
 	asm( 
 "	      004b60de    push ebp"
@@ -14884,7 +14884,7 @@ int32_t ListBoxWindow::GetIndexFromString(long&, class basic_string<char>&) {
 }
 
 // FUNCTION: COPTER_D 0x004b6266
-int32_t ListBoxWindow::RemoveStringAtIndex(long) {
+int32_t ListBoxWindow::RemoveStringAtIndex(long lIndex) {
 // LINE 2535:
 	asm( 
 "	      004b6266    push ebp"
@@ -15175,7 +15175,7 @@ int32_t ListBoxWindow::RemoveStringAtIndex(long) {
 }
 
 // FUNCTION: COPTER_D 0x004b6585
-int32_t ListBoxWindow::InsertStringAtIndex(long, class basic_string<char>&) {
+int32_t ListBoxWindow::InsertStringAtIndex(long lIndex, class basic_string<char>& sToInsert) {
 // LINE 2580:
 	asm( 
 "	      004b6585    push ebp"
@@ -15560,7 +15560,7 @@ int32_t ListBoxWindow::InsertStringAtIndex(long, class basic_string<char>&) {
 }
 
 // FUNCTION: COPTER_D 0x004b6aaf
-long ListBoxWindow::DoCharacter(long) {
+long ListBoxWindow::DoCharacter(long lCharacter) {
 // LINE 2617:
 	asm( 
 "	      004b6aaf    push ebp"
@@ -15587,7 +15587,7 @@ long ListBoxWindow::DoCharacter(long) {
 }
 
 // FUNCTION: COPTER_D 0x004b6ac9
-long ListBoxWindow::DoKeyDown(long, char) {
+long ListBoxWindow::DoKeyDown(long lKey, char chModifiers) {
 // LINE 2629:
 	asm( 
 "	      004b6ac9    push ebp"
@@ -15696,7 +15696,7 @@ long ListBoxWindow::DoKeyDown(long, char) {
 }
 
 // FUNCTION: COPTER_D 0x004b6b8e
-long ListBoxWindow::DoCursorDown(long, long, unsigned long) {
+long ListBoxWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButton) {
 // LINE 2656:
 	asm( 
 "	      004b6b8e    push ebp"
@@ -15767,7 +15767,7 @@ long ListBoxWindow::DoCursorDown(long, long, unsigned long) {
 }
 
 // FUNCTION: COPTER_D 0x004b6c11
-int32_t ListBoxWindow::SetSelection(long) {
+int32_t ListBoxWindow::SetSelection(long lIndex) {
 // LINE 2681:
 	asm( 
 "	      004b6c11    push ebp"
@@ -15947,7 +15947,7 @@ long ListBoxWindow::GetSelection() {
 }
 
 // FUNCTION: COPTER_D 0x004b6d6d
-int32_t ListBoxWindow::IsIndexInView(long) {
+int32_t ListBoxWindow::IsIndexInView(long lIndex) {
 // LINE 2721:
 	asm( 
 "	      004b6d6d    push ebp"
@@ -15986,7 +15986,7 @@ int32_t ListBoxWindow::IsIndexInView(long) {
 }
 
 // FUNCTION: COPTER_D 0x004b6dbe
-void ListBoxWindow::PutIndexInView(long) {
+void ListBoxWindow::PutIndexInView(long lIndex) {
 // LINE 2729:
 	asm( 
 "	      004b6dbe    push ebp"
@@ -16065,7 +16065,7 @@ void ListBoxWindow::PutIndexInView(long) {
 }
 
 // FUNCTION: COPTER_D 0x004b6e56
-void ListBoxWindow::SetIndexOfTopLine(long) {
+void ListBoxWindow::SetIndexOfTopLine(long lIndex) {
 // LINE 2750:
 	asm( 
 "	      004b6e56    push ebp"
@@ -16589,7 +16589,7 @@ int32_t ListBoxWindow::ScrollPageDown() {
 }
 
 // FUNCTION: COPTER_D 0x004b71f4
-int32_t ListBoxWindow::ScrollToFirstLetter(char) {
+int32_t ListBoxWindow::ScrollToFirstLetter(char chValue) {
 // LINE 2901:
 	asm( 
 "	      004b71f4    push ebp"
@@ -17172,7 +17172,7 @@ long ListBoxWindow::GetIndexOfTopLine() {
 }
 
 // FUNCTION: COPTER_D 0x004b7925
-int32_t ListBoxWindow::AddScrollBar(int32_t, int32_t, char *) {
+int32_t ListBoxWindow::AddScrollBar(int32_t bVertical, int32_t __formal, char * szImageFileName) {
 // LINE 2974:
 	asm( 
 "	      004b7925    push ebp"
@@ -17294,7 +17294,7 @@ int32_t ListBoxWindow::AddScrollBar(int32_t, int32_t, char *) {
 }
 
 // FUNCTION: COPTER_D 0x004b7a29
-void ListBoxWindow::RemoveScrollBar(int32_t, int32_t) {
+void ListBoxWindow::RemoveScrollBar(int32_t bVertical, int32_t bHorizontal) {
 // LINE 2999:
 	asm( 
 "	      004b7a29    push ebp"
@@ -17536,7 +17536,7 @@ void ListBoxWindow::SetScrollBarSizes() {
 }
 
 // FUNCTION: COPTER_D 0x004b7c25
-void PopupMenuWindow::PopupMenuWindow(class MRect&, int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
+void PopupMenuWindow::PopupMenuWindow(class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
 // LINE 3059:
 	asm( 
 "	      004b7c25    push ebp"
@@ -17637,7 +17637,7 @@ int32_t PopupMenuWindow::Initialize() {
 }
 
 // FUNCTION: COPTER_D 0x004b7cc1
-long PopupMenuWindow::DoKeyDown(long, char) {
+long PopupMenuWindow::DoKeyDown(long lKey, char chModifiers) {
 // LINE 3080:
 	asm( 
 "	      004b7cc1    push ebp"
@@ -17748,7 +17748,7 @@ long PopupMenuWindow::DoKeyDown(long, char) {
 }
 
 // FUNCTION: COPTER_D 0x004b7d92
-long PopupMenuWindow::DoCursorDown(long, long, unsigned long) {
+long PopupMenuWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButton) {
 // LINE 3104:
 	asm( 
 "	      004b7d92    push ebp"
@@ -17848,7 +17848,7 @@ long PopupMenuWindow::DoCursorDown(long, long, unsigned long) {
 }
 
 // FUNCTION: COPTER_D 0x004b7e63
-long PopupMenuWindow::DoCursorUp(long, long, unsigned long) {
+long PopupMenuWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nButton) {
 // LINE 3120:
 	asm( 
 "	      004b7e63    push ebp"
@@ -17916,7 +17916,7 @@ long PopupMenuWindow::DoCursorUp(long, long, unsigned long) {
 }
 
 // FUNCTION: COPTER_D 0x004b7edf
-long PopupMenuWindow::DoCursorMove(long, long) {
+long PopupMenuWindow::DoCursorMove(long nCursorX, long nCursorY) {
 // LINE 3138:
 	asm( 
 "	      004b7edf    push ebp"
@@ -17955,7 +17955,7 @@ long PopupMenuWindow::DoCursorMove(long, long) {
 }
 
 // FUNCTION: COPTER_D 0x004b7f18
-int32_t PopupMenuWindow::RemoveStringAtIndex(long) {
+int32_t PopupMenuWindow::RemoveStringAtIndex(long lIndex) {
 // LINE 3147:
 	asm( 
 "	      004b7f18    push ebp"
@@ -18002,7 +18002,7 @@ int32_t PopupMenuWindow::RemoveStringAtIndex(long) {
 }
 
 // FUNCTION: COPTER_D 0x004b7f59
-int32_t PopupMenuWindow::InsertStringAtIndex(long, class basic_string<char>&) {
+int32_t PopupMenuWindow::InsertStringAtIndex(long lIndex, class basic_string<char>& sToInsert) {
 // LINE 3160:
 	asm( 
 "	      004b7f59    push ebp"

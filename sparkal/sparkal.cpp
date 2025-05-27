@@ -96,7 +96,7 @@ long GetMillisecondTimeLong() {
 }
 
 // FUNCTION: COPTER_D 0x0043d8dc
-long ConvertRange(long, long, long, long, long) {
+long ConvertRange(long lPositionSource, long lMinSource, long lMaxSource, long lMinDestination, long lMaxDestination) {
 // LINE 73:
 	asm( 
 "	      0043d8dc    push ebp"
@@ -151,7 +151,7 @@ long ConvertRange(long, long, long, long, long) {
 }
 
 // FUNCTION: COPTER_D 0x0043d91f
-void SparkalDelay(unsigned long) {
+void SparkalDelay(unsigned long lMilliseconds) {
 // LINE 99:
 	asm( 
 "	      0043d91f    push ebp"

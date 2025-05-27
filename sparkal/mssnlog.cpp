@@ -6,7 +6,7 @@
 
 // Contribution: 1:0006aca0-0006d4f0 Module: 40, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0046bca0
-void MissionLogWindow::MissionLogWindow(int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
+void MissionLogWindow::MissionLogWindow(int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
 // LINE 47:
 	asm( 
 "	      0046bca0    push ebp"
@@ -956,7 +956,7 @@ int32_t MissionLogWindow::Initialize() {
 }
 
 // FUNCTION: COPTER_D 0x0046c90a
-int32_t MissionLogWindow::ReadPalette(struct SparkalColor*) {
+int32_t MissionLogWindow::ReadPalette(struct SparkalColor* pColorTable) {
 // LINE 118:
 	asm( 
 "	      0046c90a    push ebp"
@@ -1069,7 +1069,7 @@ int32_t MissionLogWindow::ReadPalette(struct SparkalColor*) {
 }
 
 // FUNCTION: COPTER_D 0x0046ca4c
-int32_t MissionLogWindow::CreateImage(int32_t) {
+int32_t MissionLogWindow::CreateImage(int32_t __formal) {
 // LINE 126:
 	asm( 
 "	      0046ca4c    push ebp"
@@ -1375,7 +1375,7 @@ void MissionLogWindow::DrawBackground() {
 }
 
 // FUNCTION: COPTER_D 0x0046ccb5
-int32_t MissionLogWindow::DoMessage(class GraphicWindow*, long, long, void * __ptr32) {
+int32_t MissionLogWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
 // LINE 203:
 	asm( 
 "	      0046ccb5    push ebp"
@@ -2388,7 +2388,7 @@ int32_t MessageDisplayManager::Initialize() {
 }
 
 // FUNCTION: COPTER_D 0x0046d802
-void MessageDisplayManager::DisplayCurrentMessages(class CBackBuffer*) {
+void MessageDisplayManager::DisplayCurrentMessages(class CBackBuffer* bufferDestination) {
 // LINE 323:
 	asm( 
 "	      0046d802    push ebp"
@@ -2789,7 +2789,7 @@ void MessageDisplayManager::DisplayCurrentMessages(class CBackBuffer*) {
 }
 
 // FUNCTION: COPTER_D 0x0046dccd
-void MessageDisplayManager::AddNewMessage(char *) {
+void MessageDisplayManager::AddNewMessage(char * szNewMessage) {
 // LINE 356:
 	asm( 
 "	      0046dccd    push ebp"
@@ -3289,7 +3289,7 @@ void MessageDisplayManager::AddNewMessage(char *) {
 }
 
 // FUNCTION: COPTER_D 0x0046e3ca
-void MessageDisplayManager::AddNewMessage(class basic_string<char>&) {
+void MessageDisplayManager::AddNewMessage(class basic_string<char>& sNewMessage) {
 // LINE 382:
 	asm( 
 "	      0046e3ca    push ebp"

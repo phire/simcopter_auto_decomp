@@ -6,7 +6,7 @@
 
 // Contribution: 1:00073960-0007a5d0 Module: 34, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00474960
-void CatalogWindow::CatalogWindow(int32_t, class GraphicWindow*, class GraphicWindowOwner*, int32_t) {
+void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
 // LINE 65:
 	asm( 
 "	      00474960    push ebp"
@@ -2093,7 +2093,7 @@ int32_t CatalogWindow::Initialize() {
 }
 
 // FUNCTION: COPTER_D 0x00476c64
-void CatalogWindow::SwitchGraphicsForTab(long) {
+void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 // LINE 167:
 	asm( 
 "	      00476c64    push ebp"
@@ -5294,7 +5294,7 @@ void CatalogWindow::DrawCurrentEquipmentSelection() {
 }
 
 // FUNCTION: COPTER_D 0x0047a09f
-void CatalogWindow::SetNewEquipmentSelection(long) {
+void CatalogWindow::SetNewEquipmentSelection(long lNewEquipmentSelection) {
 // LINE 442:
 	asm( 
 "	      0047a09f    push ebp"
@@ -5525,7 +5525,7 @@ void CatalogWindow::SetNewEquipmentSelection(long) {
 }
 
 // FUNCTION: COPTER_D 0x0047a30e
-int32_t CatalogWindow::DoesTabHaveAnyStains(long) {
+int32_t CatalogWindow::DoesTabHaveAnyStains(long lTab) {
 // LINE 474:
 	asm( 
 "	      0047a30e    push ebp"
@@ -5577,7 +5577,7 @@ int32_t CatalogWindow::DoesTabHaveAnyStains(long) {
 }
 
 // FUNCTION: COPTER_D 0x0047a366
-int32_t CatalogWindow::DoesTabHaveAnyPaperClips(long) {
+int32_t CatalogWindow::DoesTabHaveAnyPaperClips(long lTab) {
 // LINE 488:
 	asm( 
 "	      0047a366    push ebp"
@@ -5629,7 +5629,7 @@ int32_t CatalogWindow::DoesTabHaveAnyPaperClips(long) {
 }
 
 // FUNCTION: COPTER_D 0x0047a3be
-void CatalogWindow::GetCurrentGraphicsFileNames(class basic_string<char>&, class basic_string<char>&) {
+void CatalogWindow::GetCurrentGraphicsFileNames(class basic_string<char>& sMainGraphicFileName, class basic_string<char>& sTabFileName) {
 // LINE 504:
 	asm( 
 "	      0047a3be    push ebp"
@@ -6020,7 +6020,7 @@ void CatalogWindow::GetCurrentGraphicsFileNames(class basic_string<char>&, class
 }
 
 // FUNCTION: COPTER_D 0x0047a9b3
-int32_t CatalogWindow::ReadPalette(struct SparkalColor*) {
+int32_t CatalogWindow::ReadPalette(struct SparkalColor* pColorTable) {
 // LINE 521:
 	asm( 
 "	      0047a9b3    push ebp"
@@ -6133,7 +6133,7 @@ int32_t CatalogWindow::ReadPalette(struct SparkalColor*) {
 }
 
 // FUNCTION: COPTER_D 0x0047aaf5
-int32_t CatalogWindow::CreateImage(int32_t) {
+int32_t CatalogWindow::CreateImage(int32_t __formal) {
 // LINE 529:
 	asm( 
 "	      0047aaf5    push ebp"
@@ -6234,7 +6234,7 @@ int32_t CatalogWindow::ComposeSelf() {
 }
 
 // FUNCTION: COPTER_D 0x0047ab89
-int32_t CatalogWindow::DoesCursorHitEquipmentSelection(long, long, long&) {
+int32_t CatalogWindow::DoesCursorHitEquipmentSelection(long lXPosition, long lYPosition, long& lEquipment) {
 // LINE 557:
 	asm( 
 "	      0047ab89    push ebp"
@@ -6359,7 +6359,7 @@ int32_t CatalogWindow::DoesCursorHitEquipmentSelection(long, long, long&) {
 }
 
 // FUNCTION: COPTER_D 0x0047ad0d
-int32_t CatalogWindow::DoesCursorHitTab(long, long, long&) {
+int32_t CatalogWindow::DoesCursorHitTab(long lXPosition, long lYPosition, long& lTab) {
 // LINE 580:
 	asm( 
 "	      0047ad0d    push ebp"
@@ -6448,7 +6448,7 @@ int32_t CatalogWindow::DoesCursorHitTab(long, long, long&) {
 }
 
 // FUNCTION: COPTER_D 0x0047adce
-long CatalogWindow::DoKeyDown(long, char) {
+long CatalogWindow::DoKeyDown(long lKey, char chModifiers) {
 // LINE 596:
 	asm( 
 "	      0047adce    push ebp"
@@ -6490,7 +6490,7 @@ long CatalogWindow::DoKeyDown(long, char) {
 }
 
 // FUNCTION: COPTER_D 0x0047ae0e
-long CatalogWindow::DoCursorDown(long, long, unsigned long) {
+long CatalogWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButton) {
 // LINE 615:
 	asm( 
 "	      0047ae0e    push ebp"
@@ -6573,7 +6573,7 @@ long CatalogWindow::DoCursorDown(long, long, unsigned long) {
 }
 
 // FUNCTION: COPTER_D 0x0047ae9c
-long CatalogWindow::DoCursorUp(long, long, unsigned long) {
+long CatalogWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nButton) {
 // LINE 635:
 	asm( 
 "	      0047ae9c    push ebp"
@@ -6600,7 +6600,7 @@ long CatalogWindow::DoCursorUp(long, long, unsigned long) {
 }
 
 // FUNCTION: COPTER_D 0x0047aeb9
-long CatalogWindow::DoCursorMove(long, long) {
+long CatalogWindow::DoCursorMove(long nCursorX, long nCursorY) {
 // LINE 643:
 	asm( 
 "	      0047aeb9    push ebp"
@@ -6833,7 +6833,7 @@ void CatalogWindow::SetButtonStates() {
 }
 
 // FUNCTION: COPTER_D 0x0047b0d8
-int32_t CatalogWindow::DoMessage(class GraphicWindow*, long, long, void * __ptr32) {
+int32_t CatalogWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
 // LINE 700:
 	asm( 
 "	      0047b0d8    push ebp"
@@ -7004,7 +7004,7 @@ int32_t CatalogWindow::DoMessage(class GraphicWindow*, long, long, void * __ptr3
 }
 
 // FUNCTION: COPTER_D 0x0047b233
-long CatalogWindow::GetHelicopterFromTab(long) {
+long CatalogWindow::GetHelicopterFromTab(long lTab) {
 // LINE 734:
 	asm( 
 "	      0047b233    push ebp"
@@ -7046,7 +7046,7 @@ long CatalogWindow::GetHelicopterFromTab(long) {
 }
 
 // FUNCTION: COPTER_D 0x0047b28a
-long CatalogWindow::GetEquipmentFromSelectionIndex(long) {
+long CatalogWindow::GetEquipmentFromSelectionIndex(long lSelectionIndex) {
 // LINE 745:
 	asm( 
 "	      0047b28a    push ebp"

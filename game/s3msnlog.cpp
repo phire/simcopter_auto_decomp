@@ -18,7 +18,7 @@
 // $E55
 
 // FUNCTION: COPTER_D 0x004ebc2b
-void S3AddLogEntry(struct tagLogBase*, int32_t) {
+void S3AddLogEntry(struct tagLogBase* logData, int32_t bShowUserMessage) {
 // LINE 36:
 	asm( 
 "	      004ebc2b    push ebp"
@@ -404,7 +404,7 @@ void LogManager::~LogManager() {
 }
 
 // FUNCTION: COPTER_D 0x004ec0ed
-int32_t LogManager::ReadLogFromFile(char *) {
+int32_t LogManager::ReadLogFromFile(char * szFilePath) {
 // LINE 66:
 	asm( 
 "	      004ec0ed    push ebp"
@@ -460,7 +460,7 @@ int32_t LogManager::ReadLogFromFile(char *) {
 }
 
 // FUNCTION: COPTER_D 0x004ec165
-int32_t LogManager::WriteLogToFile(char *) {
+int32_t LogManager::WriteLogToFile(char * szFilePath) {
 // LINE 81:
 	asm( 
 "	      004ec165    push ebp"
@@ -516,7 +516,7 @@ int32_t LogManager::WriteLogToFile(char *) {
 }
 
 // FUNCTION: COPTER_D 0x004ec1dd
-int32_t LogManager::ReadFromMIFF(class MIFF*) {
+int32_t LogManager::ReadFromMIFF(class MIFF* miffReader) {
 // LINE 99:
 	asm( 
 "	      004ec1dd    push ebp"
@@ -620,7 +620,7 @@ int32_t LogManager::ReadFromMIFF(class MIFF*) {
 }
 
 // FUNCTION: COPTER_D 0x004ec284
-int32_t LogManager::WriteToMIFF(class MIFF*) {
+int32_t LogManager::WriteToMIFF(class MIFF* miffWriter) {
 // LINE 122:
 	asm( 
 "	      004ec284    push ebp"
@@ -882,7 +882,7 @@ int32_t LogManager::WriteToMIFF(class MIFF*) {
 }
 
 // FUNCTION: COPTER_D 0x004ec5f0
-long LogManager::GetSizeOfLogRecord(struct tagLogBase*) {
+long LogManager::GetSizeOfLogRecord(struct tagLogBase* logRecord) {
 // LINE 157:
 	asm( 
 "	      004ec5f0    push ebp"
@@ -945,7 +945,7 @@ long LogManager::GetSizeOfLogRecord(struct tagLogBase*) {
 }
 
 // FUNCTION: COPTER_D 0x004ec65b
-int32_t LogManager::ReadCurrentRecordFromMIFF(class MIFF*) {
+int32_t LogManager::ReadCurrentRecordFromMIFF(class MIFF* miffReader) {
 // LINE 176:
 	asm( 
 "	      004ec65b    push ebp"
@@ -1041,7 +1041,7 @@ int32_t LogManager::ReadCurrentRecordFromMIFF(class MIFF*) {
 }
 
 // FUNCTION: COPTER_D 0x004ec70d
-int32_t LogManager::ValidateLogEntry(struct tagLogBase*) {
+int32_t LogManager::ValidateLogEntry(struct tagLogBase* logData) {
 // LINE 207:
 	asm( 
 "	      004ec70d    push ebp"
@@ -1076,7 +1076,7 @@ int32_t LogManager::ValidateLogEntry(struct tagLogBase*) {
 }
 
 // FUNCTION: COPTER_D 0x004ec749
-int32_t LogManager::AddLogEntry(struct tagLogBase*, int32_t, int32_t) {
+int32_t LogManager::AddLogEntry(struct tagLogBase* logData, int32_t bShowUserMessage, int32_t bSetTime) {
 // LINE 219:
 	asm( 
 "	      004ec749    push ebp"
@@ -2538,7 +2538,7 @@ int32_t LogManager::PurgeAllEntries() {
 }
 
 // FUNCTION: COPTER_D 0x004ed947
-int32_t LogManager::PurgeNEntries(long) {
+int32_t LogManager::PurgeNEntries(long lEntryCountToPurge) {
 // LINE 343:
 	asm( 
 "	      004ed947    push ebp"
@@ -2732,7 +2732,7 @@ int32_t LogManager::PurgeNEntries(long) {
 }
 
 // FUNCTION: COPTER_D 0x004edb4e
-void LogManager::MakeStringFromLogData(struct tagLogBase*, class basic_string<char>&, int32_t) {
+void LogManager::MakeStringFromLogData(struct tagLogBase* logData, class basic_string<char>& sCurrentText, int32_t bPrintTime) {
 // LINE 365:
 	asm( 
 "	      004edb4e    push ebp"
@@ -3298,7 +3298,7 @@ void LogManager::MakeStringFromLogData(struct tagLogBase*, class basic_string<ch
 }
 
 // FUNCTION: COPTER_D 0x004ee264
-long LogManager::GetStringIDFromLogEvent(const struct tagLogMissionEvent*) {
+long LogManager::GetStringIDFromLogEvent(const struct tagLogMissionEvent* lME) {
 // LINE 413:
 	asm( 
 "	      004ee264    push ebp"

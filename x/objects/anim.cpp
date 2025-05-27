@@ -6,7 +6,7 @@
 
 // Contribution: 1:00166200-001664d4 Module: 181, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00567200
-void cCopterAnim::InstallArrayPointers(unsigned short) {
+void cCopterAnim::InstallArrayPointers(unsigned short expectondisk) {
 // LINE 37:
 	asm( 
 "	      00567200    push ebp"

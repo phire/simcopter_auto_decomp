@@ -6,7 +6,7 @@
 
 // Contribution: 1:000a9800-000aa528 Module: 7, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004aa800
-void CRLECompressedImage::CRLECompressedImage(long) {
+void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 // LINE 47:
 	asm( 
 "	      004aa800    push ebp"
@@ -281,7 +281,7 @@ void CRLECompressedImage::CRLECompressedImage(long) {
 }
 
 // FUNCTION: COPTER_D 0x004aabb7
-void CRLECompressedImage::CRLECompressedImage(const class CFlatImage*, long, long, long, long, int32_t) {
+void CRLECompressedImage::CRLECompressedImage(const class CFlatImage* pImage, long SrcLeft, long SrcTop, long SrcRight, long SrcBottom, int32_t TransparentIndex) {
 // LINE 97:
 	asm( 
 "	      004aabb7    push ebp"
@@ -550,7 +550,7 @@ unsigned long CRLECompressedImage::Unlock() {
 }
 
 // FUNCTION: COPTER_D 0x004aae02
-unsigned long CRLECompressedImage::Compose(class IFlatImage*, long, long, long, long, long, long) {
+unsigned long CRLECompressedImage::Compose(class IFlatImage* pDest, long DestLeft, long DestTop, long ClipLeft, long ClipTop, long ClipRight, long ClipBottom) {
 // LINE 156:
 	asm( 
 "	      004aae02    push ebp"
@@ -844,7 +844,7 @@ unsigned long CRLECompressedImage::Compose(class IFlatImage*, long, long, long, 
 }
 
 // FUNCTION: COPTER_D 0x004ab063
-void ConvertCompressedByteOrdering(struct RLEHeader*) {
+void ConvertCompressedByteOrdering(struct RLEHeader* pCompressedImage) {
 // LINE 232:
 	asm( 
 "	      004ab063    push ebp"
@@ -865,7 +865,7 @@ void ConvertCompressedByteOrdering(struct RLEHeader*) {
 }
 
 // FUNCTION: COPTER_D 0x004ab073
-void RLEDecompressUnclippedX(unsigned char *, long, unsigned char *, short, unsigned char) {
+void RLEDecompressUnclippedX(unsigned char * pDestBuffer, long DestStride, unsigned char * pSource, short Height, unsigned char TransparentColor) {
 // LINE 322:
 	asm( 
 "	      004ab073    push ebp"
@@ -1124,7 +1124,7 @@ void RLEDecompressUnclippedX(unsigned char *, long, unsigned char *, short, unsi
 }
 
 // FUNCTION: COPTER_D 0x004ab1f7
-void RLEDecompressClippedX(unsigned char *, long, unsigned char *, short, short, short, unsigned char) {
+void RLEDecompressClippedX(unsigned char * pDestBuffer, long DestStride, unsigned char * pSource, short LeftClip, short Width, short Height, unsigned char TransparentColor) {
 // LINE 404:
 	asm( 
 "	      004ab1f7    push ebp"

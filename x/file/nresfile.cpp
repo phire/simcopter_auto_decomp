@@ -6,7 +6,7 @@
 
 // Contribution: 1:00098ef0-0009943b Module: 16, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00499ef0
-class StdResLoader* NResFile::GetLoader(unsigned long, void (*)(void * __ptr32, long)) {
+class StdResLoader* NResFile::GetLoader(unsigned long type, void (*)(void * __ptr32, long) swizzler) {
 // LINE 11:
 	asm( 
 "	      00499ef0    push ebp"

@@ -6,7 +6,7 @@
 
 // Contribution: 1:0002c420-0002cf5b Module: 65, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0042d420
-void DirectDrawError::DisplayError(char *) {
+void DirectDrawError::DisplayError(char * szErrorDescription) {
 // LINE 10:
 	asm( 
 "	      0042d420    push ebp"
@@ -46,7 +46,7 @@ void DirectDrawError::DisplayError(char *) {
 }
 
 // FUNCTION: COPTER_D 0x0042d468
-void DirectDrawError::MakeErrorString(char *, char *) {
+void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szErrorDescription) {
 // LINE 27:
 	asm( 
 "	      0042d468    push ebp"
@@ -837,7 +837,7 @@ void DirectDrawError::MakeErrorString(char *, char *) {
 }
 
 // FUNCTION: COPTER_D 0x0042dc69
-void DirectSoundError::DisplayError(char *) {
+void DirectSoundError::DisplayError(char * szErrorDescription) {
 // LINE 190:
 	asm( 
 "	      0042dc69    push ebp"
@@ -877,7 +877,7 @@ void DirectSoundError::DisplayError(char *) {
 }
 
 // FUNCTION: COPTER_D 0x0042dcb1
-void DirectSoundError::MakeErrorString(char *, char *) {
+void DirectSoundError::MakeErrorString(char * szFullErrorDescription, char * szErrorDescription) {
 // LINE 208:
 	asm( 
 "	      0042dcb1    push ebp"

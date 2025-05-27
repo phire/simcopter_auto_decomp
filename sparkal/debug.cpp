@@ -6,7 +6,7 @@
 
 // Contribution: 1:00021280-000246c8 Module: 70, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00422280
-void CDebugWindow::HandleDebugCommand(char *) {
+void CDebugWindow::HandleDebugCommand(char * data) {
 // LINE 23:
 	asm( 
 "	      00422280    push ebp"
@@ -1016,7 +1016,7 @@ void CDebugWindow::~CDebugWindow() {
 }
 
 // FUNCTION: COPTER_D 0x004231e6
-int32_t CDebugWindow::Create(char *) {
+int32_t CDebugWindow::Create(char * windowName) {
 // LINE 75:
 	asm( 
 "	      004231e6    push ebp"
@@ -1267,7 +1267,7 @@ void CDebugWindow::HideWindow() {
 }
 
 // FUNCTION: COPTER_D 0x004233b1
-int32_t CDebugWindow::Save(char *) {
+int32_t CDebugWindow::Save(char * filePath) {
 // LINE 146:
 	asm( 
 "	      004233b1    push ebp"
@@ -1551,7 +1551,7 @@ int32_t CDebugWindow::Save(char *) {
 }
 
 // FUNCTION: COPTER_D 0x004236c6
-void CDebugWindow::OnSize(unsigned long, unsigned short, unsigned short) {
+void CDebugWindow::OnSize(unsigned long sizeType, unsigned short width, unsigned short height) {
 // LINE 178:
 	asm( 
 "	      004236c6    push ebp"
@@ -1940,7 +1940,7 @@ void CDebugWindow::OnPaint() {
 }
 
 // FUNCTION: COPTER_D 0x00423ba5
-void CDebugWindow::OnScroll(int32_t, int32_t) {
+void CDebugWindow::OnScroll(int32_t scrollCode, int32_t pos) {
 // LINE 221:
 	asm( 
 "	      00423ba5    push ebp"
@@ -2075,7 +2075,7 @@ void CDebugWindow::OnScroll(int32_t, int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x00423c9d
-void CDebugWindow::OutputString(char *) {
+void CDebugWindow::OutputString(char * buf) {
 // LINE 249:
 	asm( 
 "	      00423c9d    push ebp"
@@ -2988,7 +2988,7 @@ void CDebugWindow::OnEditChange() {
 }
 
 // FUNCTION: COPTER_D 0x004248d4
-long CDebugWindow::InstanceWindowProcedure(uint32_t, uint32_t, long) {
+long CDebugWindow::InstanceWindowProcedure(uint32_t Message, uint32_t WParam, long LParam) {
 // LINE 337:
 	asm( 
 "	      004248d4    push ebp"
@@ -3124,7 +3124,7 @@ long CDebugWindow::InstanceWindowProcedure(uint32_t, uint32_t, long) {
 }
 
 // FUNCTION: COPTER_D 0x004249ef
-long CDebugWindow::WindowProcedure(void * __ptr32, uint32_t, uint32_t, long) {
+long CDebugWindow::WindowProcedure(void * __ptr32 hWindow, uint32_t Message, uint32_t WParam, long LParam) {
 // LINE 362:
 	asm( 
 "	      004249ef    push ebp"
@@ -3282,7 +3282,7 @@ void DestroyDebugWindow() {
 }
 
 // FUNCTION: COPTER_D 0x00424b14
-void DebugOutput(char *, <NoType>) {
+void DebugOutput(char * text, ...) {
 // LINE 401:
 	asm( 
 "	      00424b14    push ebp"
@@ -3332,7 +3332,7 @@ void DebugOutput(char *, <NoType>) {
 }
 
 // FUNCTION: COPTER_D 0x00424b6c
-void RegisterDebugCommand(struct debug_command*) {
+void RegisterDebugCommand(struct debug_command* aCommand) {
 // LINE 411:
 	asm( 
 "	      00424b6c    push ebp"
@@ -3623,7 +3623,7 @@ void RegisterDebugCommand(struct debug_command*) {
 }
 
 // FUNCTION: COPTER_D 0x00424f30
-void UnregisterDebugCommand(struct debug_command*) {
+void UnregisterDebugCommand(struct debug_command* aCommand) {
 // LINE 417:
 	asm( 
 "	      00424f30    push ebp"
@@ -3707,7 +3707,7 @@ void UnregisterDebugCommand(struct debug_command*) {
 }
 
 // FUNCTION: COPTER_D 0x00425015
-void SaveDebugWindow(char *) {
+void SaveDebugWindow(char * fileName) {
 // LINE 423:
 	asm( 
 "	      00425015    push ebp"
@@ -3740,7 +3740,7 @@ void SaveDebugWindow(char *) {
 }
 
 // FUNCTION: COPTER_D 0x00425041
-int32_t ParseCommandLine(class basic_string<char>, class vector<basic_string<char>>&) {
+int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string<char>>& commands) {
 // LINE 430:
 	asm( 
 "	      00425041    push ebp"

@@ -6,7 +6,7 @@
 
 // Contribution: 1:00162ea0-00164a36 Module: 186, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00563ea0
-int32_t Check_Pointer(char *, short, char *) {
+int32_t Check_Pointer(char * ptr, short numchars, char * text) {
 // LINE 93:
 	asm( 
 "	      00563ea0    push ebp"
@@ -31,7 +31,7 @@ int32_t Check_Pointer(char *, short, char *) {
 }
 
 // FUNCTION: COPTER_D 0x00563eb5
-void MyPixel(int32_t, int32_t, unsigned char) {
+void MyPixel(int32_t x, int32_t y, unsigned char color) {
 // LINE 144:
 	asm( 
 "	      00563eb5    push ebp"
@@ -171,7 +171,7 @@ void MyPixel(int32_t, int32_t, unsigned char) {
 }
 
 // FUNCTION: COPTER_D 0x00563fd1
-void DrawSphere(struct Point3d, long, unsigned char, int32_t) {
+void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int32_t shadeFlag) {
 // LINE 176:
 	asm( 
 "	      00563fd1    push ebp"
@@ -857,7 +857,7 @@ void DrawSphere(struct Point3d, long, unsigned char, int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x00564770
-void DrawFaceTwo(struct Point3d, long, float, double, short) {
+void DrawFaceTwo(struct Point3d centerPt, long vertRad, float psi, double scaleFactor, short facenum) {
 // LINE 404:
 	asm( 
 "	      00564770    push ebp"
@@ -1151,7 +1151,7 @@ void DrawFaceTwo(struct Point3d, long, float, double, short) {
 }
 
 // FUNCTION: COPTER_D 0x005649c1
-long ComputeViewToFigureOffset(struct Point3D, int32_t) {
+long ComputeViewToFigureOffset(struct Point3D view, int32_t index) {
 // LINE 489:
 	asm( 
 "	      005649c1    push ebp"
@@ -1176,7 +1176,7 @@ long ComputeViewToFigureOffset(struct Point3D, int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x005649d3
-void DrawLineOnFace(long, long, long, struct Point3d, struct Point3d, struct BmpLineInfo*) {
+void DrawLineOnFace(long startX, long endX, long yLine, struct Point3d offset, struct Point3d faceCenter, struct BmpLineInfo* pixLine) {
 // LINE 523:
 	asm( 
 "	      005649d3    push ebp"
@@ -1442,7 +1442,7 @@ void DrawLineOnFace(long, long, long, struct Point3d, struct Point3d, struct Bmp
 }
 
 // FUNCTION: COPTER_D 0x00564bb8
-void FindFaceQuadrant(struct VRBmpHdr*, long, struct Point3D, struct Point3d*) {
+void FindFaceQuadrant(struct VRBmpHdr* bhdr, long dir, struct Point3D viewPos, struct Point3d* faceCenter) {
 // LINE 583:
 	asm( 
 "	      00564bb8    push ebp"
@@ -1501,7 +1501,7 @@ void FindFaceQuadrant(struct VRBmpHdr*, long, struct Point3D, struct Point3d*) {
 }
 
 // FUNCTION: COPTER_D 0x00564c10
-void FindFaceQuadrant2(struct VRBmpHdr*, float, struct Point3d*) {
+void FindFaceQuadrant2(struct VRBmpHdr* bhdr, float psi, struct Point3d* faceCenter) {
 // LINE 599:
 	asm( 
 "	      00564c10    push ebp"
@@ -1646,7 +1646,7 @@ void FindFaceQuadrant2(struct VRBmpHdr*, float, struct Point3d*) {
 }
 
 // FUNCTION: COPTER_D 0x00564d8d
-void DrawTaperedLine(struct Point3d, struct Point3d, long, unsigned char, long) {
+void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, unsigned char color, long width) {
 // LINE 637:
 	asm( 
 "	      00564d8d    push ebp"
@@ -2251,7 +2251,7 @@ void DrawTaperedLine(struct Point3d, struct Point3d, long, unsigned char, long) 
 }
 
 // FUNCTION: COPTER_D 0x00565225
-void DrawLine(struct Point3d, struct Point3d, unsigned char, long) {
+void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color, long width) {
 // LINE 824:
 	asm( 
 "	      00565225    push ebp"
@@ -2775,7 +2775,7 @@ void DrawLine(struct Point3d, struct Point3d, unsigned char, long) {
 }
 
 // FUNCTION: COPTER_D 0x00565641
-void DrawHorzLinePat(long, long, long, unsigned char *, unsigned char, double) {
+void DrawHorzLinePat(long startX, long endX, long yPos, unsigned char * pixPtr, unsigned char colorShift, double xStride) {
 // LINE 972:
 	asm( 
 "	      00565641    push ebp"
@@ -3061,7 +3061,7 @@ void DrawHorzLinePat(long, long, long, unsigned char *, unsigned char, double) {
 }
 
 // FUNCTION: COPTER_D 0x00565898
-void DrawHorzLine(long, long, long, unsigned char) {
+void DrawHorzLine(long startX, long endX, long yPos, unsigned char color) {
 // LINE 1056:
 	asm( 
 "	      00565898    push ebp"

@@ -117,7 +117,7 @@ void ScreenBuffer::ScreenBuffer() {
 }
 
 // FUNCTION: COPTER_D 0x0049e534
-void ScreenBuffer::ScreenBuffer(class CSparkalWindow*, long, long, struct SparkalColor*, int32_t, enum tagModeType, int32_t) {
+void ScreenBuffer::ScreenBuffer(class CSparkalWindow* pNewWindow, long nNewWidth, long nNewHeight, struct SparkalColor* pColors, int32_t nNewBackBuffers, enum tagModeType nNewCurrentModeType, int32_t bNewUsingFlipping) {
 // LINE 62:
 	asm( 
 "	      0049e534    push ebp"
@@ -891,7 +891,7 @@ int32_t ScreenBuffer::DeleteSurfaces() {
 }
 
 // FUNCTION: COPTER_D 0x0049eb58
-int32_t ScreenBuffer::ClearSurfaces(int32_t) {
+int32_t ScreenBuffer::ClearSurfaces(int32_t nClearPaletteIndex) {
 // LINE 281:
 	asm( 
 "	      0049eb58    push ebp"
@@ -1214,7 +1214,7 @@ int32_t ScreenBuffer::ClearSurfaces(int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x0049ee15
-unsigned long ScreenBuffer::Swap(class CSparkalWindow*, long, long) {
+unsigned long ScreenBuffer::Swap(class CSparkalWindow* __formal, long __formal, long __formal) {
 // LINE 361:
 	asm( 
 "	      0049ee15    push ebp"
@@ -1590,7 +1590,7 @@ void ScreenBuffer::SetPalette() {
 }
 
 // FUNCTION: COPTER_D 0x0049f0fa
-int32_t ScreenBuffer::UsePalette(struct SparkalColor*) {
+int32_t ScreenBuffer::UsePalette(struct SparkalColor* pColors) {
 // LINE 471:
 	asm( 
 "	      0049f0fa    push ebp"
@@ -1976,7 +1976,7 @@ void ScreenBuffer::FreePalette() {
 }
 
 // FUNCTION: COPTER_D 0x0049f472
-unsigned long ScreenBuffer::FillRect(long, struct SparkalRect*) {
+unsigned long ScreenBuffer::FillRect(long nPaletteIndex, struct SparkalRect* rectFill) {
 // LINE 649:
 	asm( 
 "	      0049f472    push ebp"
@@ -2248,7 +2248,7 @@ unsigned long ScreenBuffer::FillRect(long, struct SparkalRect*) {
 }
 
 // FUNCTION: COPTER_D 0x0049f690
-void ScreenBuffer::SetWindowRect(struct SparkalRect*) {
+void ScreenBuffer::SetWindowRect(struct SparkalRect* rectWindow) {
 // LINE 719:
 	asm( 
 "	      0049f690    push ebp"

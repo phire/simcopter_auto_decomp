@@ -6,7 +6,7 @@
 
 // Contribution: 1:00030b60-00030c4c Module: 63, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00431b60
-int32_t IsEventSet(int32_t) {
+int32_t IsEventSet(int32_t nEvent) {
 // LINE 22:
 	asm( 
 "	      00431b60    push ebp"
@@ -36,7 +36,7 @@ int32_t IsEventSet(int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x00431b89
-int32_t IsEventRangeSet(int32_t, int32_t) {
+int32_t IsEventRangeSet(int32_t nEventStart, int32_t nEventEnd) {
 // LINE 32:
 	asm( 
 "	      00431b89    push ebp"
@@ -90,7 +90,7 @@ int32_t IsEventRangeSet(int32_t, int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x00431bd6
-long GetJoystickValue(int32_t) {
+long GetJoystickValue(int32_t nCommand) {
 // LINE 46:
 	asm( 
 "	      00431bd6    push ebp"
@@ -118,7 +118,7 @@ long GetJoystickValue(int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x00431bfb
-long GetJoystickValueEither(int32_t, int32_t) {
+long GetJoystickValueEither(int32_t nCommand1, int32_t nCommand2) {
 // LINE 55:
 	asm( 
 "	      00431bfb    push ebp"

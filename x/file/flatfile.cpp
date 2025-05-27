@@ -90,7 +90,7 @@ void FlatFile::~FlatFile() {
 }
 
 // FUNCTION: COPTER_D 0x0055c2fa
-class FlatFile* FlatFile::FindByName(unsigned char *) {
+class FlatFile* FlatFile::FindByName(unsigned char * name) {
 // LINE 42:
 	asm( 
 "	      0055c2fa    push ebp"
@@ -150,7 +150,7 @@ class FlatFile* FlatFile::FindByName(unsigned char *) {
 }
 
 // FUNCTION: COPTER_D 0x0055c36a
-long FlatFile::Open(char *) {
+long FlatFile::Open(char * name) {
 // LINE 52:
 	asm( 
 "	      0055c36a    push ebp"
@@ -199,7 +199,7 @@ long FlatFile::Open(char *) {
 }
 
 // FUNCTION: COPTER_D 0x0055c3c7
-long FlatFile::Open(unsigned char *) {
+long FlatFile::Open(unsigned char * name) {
 // LINE 60:
 	asm( 
 "	      0055c3c7    push ebp"
@@ -381,7 +381,7 @@ long FlatFile::Open(unsigned char *) {
 }
 
 // FUNCTION: COPTER_D 0x0055c586
-void FlatFile::OpenFromOtherFile(class FlatFile*) {
+void FlatFile::OpenFromOtherFile(class FlatFile* other) {
 // LINE 110:
 	asm( 
 "	      0055c586    push ebp"
@@ -519,7 +519,7 @@ long FlatFile::Close() {
 }
 
 // FUNCTION: COPTER_D 0x0055c69c
-long FlatFile::ReadBlock(void * __ptr32, long *) {
+long FlatFile::ReadBlock(void * __ptr32 buffer, long * blockSize) {
 // LINE 158:
 	asm( 
 "	      0055c69c    push ebp"
@@ -581,7 +581,7 @@ long FlatFile::ReadBlock(void * __ptr32, long *) {
 }
 
 // FUNCTION: COPTER_D 0x0055c711
-long FlatFile::SetPos(long) {
+long FlatFile::SetPos(long fromStart) {
 // LINE 179:
 	asm( 
 "	      0055c711    push ebp"
@@ -634,7 +634,7 @@ long FlatFile::SetPos(long) {
 }
 
 // FUNCTION: COPTER_D 0x0055c777
-long FlatFile::Advance(long) {
+long FlatFile::Advance(long skipAmt) {
 // LINE 191:
 	asm( 
 "	      0055c777    push ebp"
@@ -723,7 +723,7 @@ unsigned short FlatFile::ValidFile() {
 }
 
 // FUNCTION: COPTER_D 0x0055c814
-unsigned short FlatFile::SameFile(class FlatFile*) {
+unsigned short FlatFile::SameFile(class FlatFile* other) {
 // LINE 234:
 	asm( 
 "	      0055c814    push ebp"
@@ -774,7 +774,7 @@ unsigned short FlatFile::SameFile(class FlatFile*) {
 }
 
 // FUNCTION: COPTER_D 0x0055c87a
-long FlatFile::Read4(long *) {
+long FlatFile::Read4(long * val) {
 // LINE 243:
 	asm( 
 "	      0055c87a    push ebp"
@@ -824,7 +824,7 @@ long FlatFile::Read4(long *) {
 }
 
 // FUNCTION: COPTER_D 0x0055c8c5
-long FlatFile::Read2(short *) {
+long FlatFile::Read2(short * val) {
 // LINE 251:
 	asm( 
 "	      0055c8c5    push ebp"
@@ -874,7 +874,7 @@ long FlatFile::Read2(short *) {
 }
 
 // FUNCTION: COPTER_D 0x0055c910
-long FlatFile::Read1(char *) {
+long FlatFile::Read1(char * val) {
 // LINE 259:
 	asm( 
 "	      0055c910    push ebp"
@@ -1086,7 +1086,7 @@ unsigned short FlatFile::Exclusive() {
 }
 
 // FUNCTION: COPTER_D 0x0055ca48
-long FlatFile::GetFileName(unsigned char *) {
+long FlatFile::GetFileName(unsigned char * name) {
 // LINE 295:
 	asm( 
 "	      0055ca48    push ebp"

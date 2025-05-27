@@ -724,7 +724,7 @@ public: int __thiscall CGameApp::BackgroundVRAppInit(void) {
 }
 
 // FUNCTION: COPTER_D 0x004bc3db
-void AppInitThreadStartRoutine(void * __ptr32) {
+void AppInitThreadStartRoutine(void * __ptr32 pVRAppInitThreadStruct) {
 // LINE 157:
 	asm( 
 "	      004bc3db    push ebp"

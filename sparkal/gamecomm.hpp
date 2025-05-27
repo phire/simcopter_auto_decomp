@@ -1,6 +1,6 @@
 // Function in module: Gamecomm.obj
 // FUNCTION: COPTER_D 0x0048e8a0
-void CGameCommander::SetNewGameApp(class CGameApp*) {
+void CGameCommander::SetNewGameApp(class CGameApp* newGameApp) {
 // LINE 197:
 	asm( 
 "	      0048e8a0    push ebp"

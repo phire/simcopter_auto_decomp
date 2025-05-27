@@ -6,7 +6,7 @@
 
 // Contribution: 1:00135100-00135db2 Module: 159, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00536100
-int32_t CreateFireTruckInstance(int32_t) {
+int32_t CreateFireTruckInstance(int32_t instanceID) {
 // LINE 76:
 	asm( 
 "	      00536100    push ebp"
@@ -96,7 +96,7 @@ void FireEngineClass::~FireEngineClass() {
 }
 
 // FUNCTION: COPTER_D 0x0053618b
-class FireEngineClass* FireEngineClass::CreateInstance(int32_t) {
+class FireEngineClass* FireEngineClass::CreateInstance(int32_t instanceID) {
 // LINE 110:
 	asm( 
 "	      0053618b    push ebp"
@@ -316,7 +316,7 @@ class FireEngineClass* FireEngineClass::CreateInstance(int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x00536381
-int32_t FireEngineClass::Dispatch(enum EmergencyType, enum EmergencyLevel, long, long) {
+int32_t FireEngineClass::Dispatch(enum EmergencyType responseType, enum EmergencyLevel responseLevel, long mapx, long mapy) {
 // LINE 209:
 	asm( 
 "	      00536381    push ebp"
@@ -352,7 +352,7 @@ int32_t FireEngineClass::Dispatch(enum EmergencyType, enum EmergencyLevel, long,
 }
 
 // FUNCTION: COPTER_D 0x005363b3
-int32_t FireEngineClass::IsThisAFireStation(unsigned short) {
+int32_t FireEngineClass::IsThisAFireStation(unsigned short tileType) {
 // LINE 217:
 	asm( 
 "	      005363b3    push ebp"
@@ -383,7 +383,7 @@ int32_t FireEngineClass::IsThisAFireStation(unsigned short) {
 }
 
 // FUNCTION: COPTER_D 0x005363e2
-int32_t FireEngineClass::IsThisAFireStation(long, long) {
+int32_t FireEngineClass::IsThisAFireStation(long mapX, long mapY) {
 // LINE 224:
 	asm( 
 "	      005363e2    push ebp"
@@ -957,7 +957,7 @@ int32_t FireEngineClass::AtScene() {
 }
 
 // FUNCTION: COPTER_D 0x005368cd
-int32_t FireEngineClass::ScanForFire(struct _GridCoordinates) {
+int32_t FireEngineClass::ScanForFire(struct _GridCoordinates fireloc) {
 // LINE 420:
 	asm( 
 "	      005368cd    push ebp"
@@ -1354,7 +1354,7 @@ void FireEngineClass::PointStreamAtFire() {
 }
 
 // FUNCTION: COPTER_D 0x00536c3d
-void FireEngineClass::SetSaveData(struct _AUTO_LOAD_SAVE*) {
+void FireEngineClass::SetSaveData(struct _AUTO_LOAD_SAVE* sd) {
 // LINE 553:
 	asm( 
 "	      00536c3d    push ebp"
@@ -1418,7 +1418,7 @@ void FireEngineClass::SetSaveData(struct _AUTO_LOAD_SAVE*) {
 }
 
 // FUNCTION: COPTER_D 0x00536cb8
-void FireEngineClass::LoadSaveData(struct _AUTO_LOAD_SAVE*) {
+void FireEngineClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 // LINE 572:
 	asm( 
 "	      00536cb8    push ebp"

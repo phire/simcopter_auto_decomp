@@ -1253,7 +1253,7 @@ void S3RoadDataInit() {
 }
 
 // FUNCTION: COPTER_D 0x00539260
-int32_t IsThisAnIntersection(long, long) {
+int32_t IsThisAnIntersection(long x, long y) {
 // LINE 419:
 	asm( 
 "	      00539260    push ebp"
@@ -1586,7 +1586,7 @@ int32_t IsThisAnIntersection(long, long) {
 }
 
 // FUNCTION: COPTER_D 0x0053964a
-int32_t DoRoadTilesConnect(unsigned short, unsigned short, enum DirectionTypes, enum DirectionTypes) {
+int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum DirectionTypes CurDir, enum DirectionTypes TestDir) {
 // LINE 492:
 	asm( 
 "	      0053964a    push ebp"

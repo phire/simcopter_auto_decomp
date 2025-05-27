@@ -143,7 +143,7 @@ void S3StationReset() {
 }
 
 // FUNCTION: COPTER_D 0x00539d67
-short S3GetNearestStation(class Station*, struct _GridCoordinates, struct _GridCoordinates*) {
+short S3GetNearestStation(class Station* station, struct _GridCoordinates gc, struct _GridCoordinates* result) {
 // LINE 48:
 	asm( 
 "	      00539d67    push ebp"
@@ -173,7 +173,7 @@ short S3GetNearestStation(class Station*, struct _GridCoordinates, struct _GridC
 }
 
 // FUNCTION: COPTER_D 0x00539d87
-short S3GetNextNearest(class Station*, struct _GridCoordinates*) {
+short S3GetNextNearest(class Station* station, struct _GridCoordinates* result) {
 // LINE 56:
 	asm( 
 "	      00539d87    push ebp"
@@ -201,7 +201,7 @@ short S3GetNextNearest(class Station*, struct _GridCoordinates*) {
 }
 
 // FUNCTION: COPTER_D 0x00539da3
-int32_t Station::FindNearestRoadToStation(struct _GridCoordinates&) {
+int32_t Station::FindNearestRoadToStation(struct _GridCoordinates& loc) {
 // LINE 65:
 	asm( 
 "	      00539da3    push ebp"
@@ -439,7 +439,7 @@ int32_t Station::FindNearestRoadToStation(struct _GridCoordinates&) {
 }
 
 // FUNCTION: COPTER_D 0x0053a01e
-int32_t Station::FindNearestRoadToEmergency(struct _GridCoordinates&) {
+int32_t Station::FindNearestRoadToEmergency(struct _GridCoordinates& loc) {
 // LINE 109:
 	asm( 
 "	      0053a01e    push ebp"
@@ -599,7 +599,7 @@ int32_t Station::FindNearestRoadToEmergency(struct _GridCoordinates&) {
 }
 
 // FUNCTION: COPTER_D 0x0053a1fb
-void Station::SortStationsByDistanceFromDestination(struct _GridCoordinates) {
+void Station::SortStationsByDistanceFromDestination(struct _GridCoordinates loc) {
 // LINE 127:
 	asm( 
 "	      0053a1fb    push ebp"
@@ -779,7 +779,7 @@ void Station::SortStationsByDistanceFromDestination(struct _GridCoordinates) {
 }
 
 // FUNCTION: COPTER_D 0x0053a358
-void Station::SortVehiclesByDistanceFromDestination(struct _GridCoordinates, class EmergencyVehicleClass**, int32_t) {
+void Station::SortVehiclesByDistanceFromDestination(struct _GridCoordinates destLoc, class EmergencyVehicleClass** vehicleList, int32_t vehicleListLength) {
 // LINE 173:
 	asm( 
 "	      0053a358    push ebp"
@@ -961,7 +961,7 @@ void Station::SortVehiclesByDistanceFromDestination(struct _GridCoordinates, cla
 }
 
 // FUNCTION: COPTER_D 0x0053a4a0
-class EmergencyVehicleClass* Station::FindAvailableVehicle(enum EmergencyLevel, class EmergencyVehicleClass**, int32_t) {
+class EmergencyVehicleClass* Station::FindAvailableVehicle(enum EmergencyLevel responseLevel, class EmergencyVehicleClass** vehicleList, int32_t vehicleListLength) {
 // LINE 225:
 	asm( 
 "	      0053a4a0    push ebp"
@@ -1059,7 +1059,7 @@ class EmergencyVehicleClass* Station::FindAvailableVehicle(enum EmergencyLevel, 
 }
 
 // FUNCTION: COPTER_D 0x0053a566
-void Station::StationHeapInsert(const struct _StationHeapStruct*) {
+void Station::StationHeapInsert(const struct _StationHeapStruct* pInsertStruct) {
 // LINE 249:
 	asm( 
 "	      0053a566    push ebp"
@@ -1172,7 +1172,7 @@ void Station::StationHeapInsert(const struct _StationHeapStruct*) {
 }
 
 // FUNCTION: COPTER_D 0x0053a637
-void Station::StationHeapRemove(struct _StationHeapStruct*) {
+void Station::StationHeapRemove(struct _StationHeapStruct* pRemovedStruct) {
 // LINE 272:
 	asm( 
 "	      0053a637    push ebp"
@@ -1350,7 +1350,7 @@ void Station::StationHeapRemove(struct _StationHeapStruct*) {
 }
 
 // FUNCTION: COPTER_D 0x0053a798
-void Station::VehicleHeapInsert(const struct _VehicleHeapStruct*) {
+void Station::VehicleHeapInsert(const struct _VehicleHeapStruct* pInsertStruct) {
 // LINE 315:
 	asm( 
 "	      0053a798    push ebp"
@@ -1480,7 +1480,7 @@ void Station::VehicleHeapInsert(const struct _VehicleHeapStruct*) {
 }
 
 // FUNCTION: COPTER_D 0x0053a8a0
-void Station::VehicleHeapRemove(struct _VehicleHeapStruct*) {
+void Station::VehicleHeapRemove(struct _VehicleHeapStruct* pRemovedStruct) {
 // LINE 338:
 	asm( 
 "	      0053a8a0    push ebp"
@@ -1686,7 +1686,7 @@ void Station::VehicleHeapRemove(struct _VehicleHeapStruct*) {
 }
 
 // FUNCTION: COPTER_D 0x0053aa5f
-short Station::GetNearestStation(struct _GridCoordinates, struct _GridCoordinates*) {
+short Station::GetNearestStation(struct _GridCoordinates gc, struct _GridCoordinates* result) {
 // LINE 384:
 	asm( 
 "	      0053aa5f    push ebp"
@@ -1757,7 +1757,7 @@ short Station::GetNearestStation(struct _GridCoordinates, struct _GridCoordinate
 }
 
 // FUNCTION: COPTER_D 0x0053aacd
-short Station::GetNextNearest(struct _GridCoordinates*) {
+short Station::GetNextNearest(struct _GridCoordinates* result) {
 // LINE 403:
 	asm( 
 "	      0053aacd    push ebp"
@@ -1821,7 +1821,7 @@ short Station::GetNextNearest(struct _GridCoordinates*) {
 }
 
 // FUNCTION: COPTER_D 0x0053ab2f
-void Station::DecrementQuantityOfVehicleDispatched(int32_t) {
+void Station::DecrementQuantityOfVehicleDispatched(int32_t stationID) {
 // LINE 421:
 	asm( 
 "	      0053ab2f    push ebp"
@@ -1870,7 +1870,7 @@ void Station::DecrementQuantityOfVehicleDispatched(int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x0053ab93
-int32_t Station::DispatchNearestAvailableVehicle(long, long, enum EmergencyType, enum EmergencyLevel, class EmergencyVehicleClass**, int32_t) {
+int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum EmergencyType responseType, enum EmergencyLevel responseLevel, class EmergencyVehicleClass** vehicleList, int32_t vehicleListLength) {
 // LINE 432:
 	asm( 
 "	      0053ab93    push ebp"
@@ -2900,7 +2900,7 @@ int32_t Station::DispatchNearestAvailableVehicle(long, long, enum EmergencyType,
 // $E36
 
 // FUNCTION: COPTER_D 0x0053b9b5
-void Station::Station(unsigned char) {
+void Station::Station(unsigned char stationScurkID) {
 // LINE 591:
 	asm( 
 "	      0053b9b5    push ebp"

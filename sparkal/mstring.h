@@ -1,6 +1,6 @@
 // Function in module: Inputwin.obj
 // FUNCTION: COPTER_D 0x0040f710
-int32_t SetStringFromStringResource(class basic_string<char>&, unsigned long) {
+int32_t SetStringFromStringResource(class basic_string<char>& stringToSet, unsigned long lResourceID) {
 // LINE 120:
 	asm( 
 "	      0040f710    push ebp"

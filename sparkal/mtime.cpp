@@ -12,7 +12,7 @@
 // $E13
 
 // FUNCTION: COPTER_D 0x0043c73f
-void MDate::MDate(const class MTime&) {
+void MDate::MDate(const class MTime& t) {
 // LINE 55:
 	asm( 
 "	      0043c73f    push ebp"
@@ -1204,7 +1204,7 @@ public: char * __thiscall MTime::PrintString(char *) {
 }
 
 // FUNCTION: COPTER_D 0x0043d02b
-class ostream& operator<<(class ostream&, const class MTime&) {
+class ostream& operator<<(class ostream& s, const class MTime& t) {
 // LINE 407:
 	asm( 
 "	      0043d02b    push ebp"

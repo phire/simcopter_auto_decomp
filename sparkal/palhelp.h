@@ -1,6 +1,6 @@
 // Function in module: palhelp.obj
 // FUNCTION: COPTER_D 0x00497b50
-void SparkalPalette::GetRGBValue(int32_t, struct SparkalColor&) {
+void SparkalPalette::GetRGBValue(int32_t nIndex, struct SparkalColor& colorValue) {
 // LINE 107:
 	asm( 
 "	      00497b50    push ebp"

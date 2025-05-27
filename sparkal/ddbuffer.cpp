@@ -45,7 +45,7 @@ void CBackBuffer::CBackBuffer() {
 }
 
 // FUNCTION: COPTER_D 0x0046e6df
-void CBackBuffer::CBackBuffer(char *) {
+void CBackBuffer::CBackBuffer(char * imageFileName) {
 // LINE 60:
 	asm( 
 "	      0046e6df    push ebp"
@@ -386,7 +386,7 @@ void CBackBuffer::CBackBuffer(char *) {
 }
 
 // FUNCTION: COPTER_D 0x0046ea06
-void CBackBuffer::CBackBuffer(long, long, const struct SparkalColor*) {
+void CBackBuffer::CBackBuffer(long Width, long Height, const struct SparkalColor* __formal) {
 // LINE 157:
 	asm( 
 "	      0046ea06    push ebp"
@@ -1221,7 +1221,7 @@ unsigned long CBackBuffer::Load() {
 }
 
 // FUNCTION: COPTER_D 0x0046f1bd
-unsigned long CBackBuffer::DrawBufferText(char *, unsigned long, long *, long *, long *, long *, class MFont*) {
+unsigned long CBackBuffer::DrawBufferText(char * pText, unsigned long Style, long * pRectLeft, long * pRectTop, long * pRectRight, long * pRectBottom, class MFont* mfontToUse) {
 // LINE 378:
 	asm( 
 "	      0046f1bd    push ebp"
@@ -1550,7 +1550,7 @@ unsigned long CBackBuffer::DrawBufferText(char *, unsigned long, long *, long *,
 }
 
 // FUNCTION: COPTER_D 0x0046f403
-unsigned long CBackBuffer::DrawBufferText(char *, long, unsigned long, const class MRect&, class MFont*) {
+unsigned long CBackBuffer::DrawBufferText(char * pText, long nTextLength, unsigned long Style, const class MRect& rectText, class MFont* mfontToUse) {
 // LINE 458:
 	asm( 
 "	      0046f403    push ebp"
@@ -1793,7 +1793,7 @@ unsigned long CBackBuffer::DrawBufferText(char *, long, unsigned long, const cla
 }
 
 // FUNCTION: COPTER_D 0x0046f5c6
-unsigned long CBackBuffer::DrawLine(long, long, long, long, long) {
+unsigned long CBackBuffer::DrawLine(long nStartX, long nStartY, long nEndX, long nEndY, long nThickness) {
 // LINE 522:
 	asm( 
 "	      0046f5c6    push ebp"
@@ -2028,7 +2028,7 @@ unsigned long CBackBuffer::DrawLine(long, long, long, long, long) {
 }
 
 // FUNCTION: COPTER_D 0x0046f7bb
-unsigned long CBackBuffer::Swap(class CSparkalWindow*, long, long) {
+unsigned long CBackBuffer::Swap(class CSparkalWindow* pDest, long DestLeft, long DestTop) {
 // LINE 598:
 	asm( 
 "	      0046f7bb    push ebp"
@@ -2093,7 +2093,7 @@ unsigned long CBackBuffer::Swap(class CSparkalWindow*, long, long) {
 }
 
 // FUNCTION: COPTER_D 0x0046f828
-unsigned long CBackBuffer::SwapRect(class CSparkalWindow*, long, long, long, long, long, long) {
+unsigned long CBackBuffer::SwapRect(class CSparkalWindow* pDest, long SrcLeft, long SrcTop, long SrcRight, long SrcBottom, long DestLeft, long DestTop) {
 // LINE 627:
 	asm( 
 "	      0046f828    push ebp"
@@ -2227,7 +2227,7 @@ unsigned long CBackBuffer::SwapRect(class CSparkalWindow*, long, long, long, lon
 }
 
 // FUNCTION: COPTER_D 0x0046f948
-unsigned long CBackBuffer::Compose(class IFlatImage*, long, long, long, long, long, long) {
+unsigned long CBackBuffer::Compose(class IFlatImage* pDestImage, long DestLeft, long DestTop, long SrcLeft, long SrcTop, long SrcRight, long SrcBottom) {
 // LINE 673:
 	asm( 
 "	      0046f948    push ebp"
@@ -2513,7 +2513,7 @@ unsigned long CBackBuffer::Compose(class IFlatImage*, long, long, long, long, lo
 }
 
 // FUNCTION: COPTER_D 0x0046fbb1
-unsigned long CBackBuffer::ComposeNoClip(class IFlatImage*, long, long, long, long, long, long) {
+unsigned long CBackBuffer::ComposeNoClip(class IFlatImage* pDestImage, long DestLeft, long DestTop, long SrcLeft, long SrcTop, long SrcRight, long SrcBottom) {
 // LINE 796:
 	asm( 
 "	      0046fbb1    push ebp"
@@ -2641,7 +2641,7 @@ unsigned long CBackBuffer::ComposeNoClip(class IFlatImage*, long, long, long, lo
 }
 
 // FUNCTION: COPTER_D 0x0046fce4
-unsigned long CBackBuffer::ComposeNoClip(class IFlatImage*, const struct SparkalPoint&, const struct SparkalRect&) {
+unsigned long CBackBuffer::ComposeNoClip(class IFlatImage* pDestImage, const struct SparkalPoint& ptDestination, const struct SparkalRect& rectSource) {
 // LINE 834:
 	asm( 
 "	      0046fce4    push ebp"
@@ -2691,7 +2691,7 @@ unsigned long CBackBuffer::ComposeNoClip(class IFlatImage*, const struct Sparkal
 }
 
 // FUNCTION: COPTER_D 0x0046fd33
-unsigned long CBackBuffer::Compose(class IFlatImage*, const struct SparkalPoint&, const struct SparkalRect&) {
+unsigned long CBackBuffer::Compose(class IFlatImage* pDestImage, const struct SparkalPoint& ptDestination, const struct SparkalRect& rectSource) {
 // LINE 846:
 	asm( 
 "	      0046fd33    push ebp"
@@ -2741,7 +2741,7 @@ unsigned long CBackBuffer::Compose(class IFlatImage*, const struct SparkalPoint&
 }
 
 // FUNCTION: COPTER_D 0x0046fd82
-unsigned long CBackBuffer::StretchCompose(class IFlatImage*, const struct SparkalRect&, const struct SparkalRect&) {
+unsigned long CBackBuffer::StretchCompose(class IFlatImage* pDestImage, const struct SparkalRect& destRect, const struct SparkalRect& srcRect) {
 // LINE 866:
 	asm( 
 "	      0046fd82    push ebp"
@@ -2830,7 +2830,7 @@ unsigned long CBackBuffer::StretchCompose(class IFlatImage*, const struct Sparka
 }
 
 // FUNCTION: COPTER_D 0x0046fe13
-unsigned long CBackBuffer::StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long) {
+unsigned long CBackBuffer::StretchCompose(class IFlatImage* pDestImage, long DestLeft, long DestTop, long DestRight, long DestBottom, long SrcLeft, long SrcTop, long SrcRight, long SrcBottom) {
 // LINE 903:
 	asm( 
 "	      0046fe13    push ebp"
@@ -2911,7 +2911,7 @@ unsigned long CBackBuffer::StretchCompose(class IFlatImage*, long, long, long, l
 }
 
 // FUNCTION: COPTER_D 0x0046fe7c
-unsigned long CBackBuffer::Duplicate(class CBackBuffer*, int32_t) {
+unsigned long CBackBuffer::Duplicate(class CBackBuffer* pDestImage, int32_t bAllowTransparent) {
 // LINE 931:
 	asm( 
 "	      0046fe7c    push ebp"
@@ -3051,7 +3051,7 @@ unsigned long CBackBuffer::Duplicate(class CBackBuffer*, int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x0046ffcc
-unsigned long CBackBuffer::StretchRect(class CSparkalWindow*, long, long, long, long, long, long, long, long) {
+unsigned long CBackBuffer::StretchRect(class CSparkalWindow* pDest, long __formal, long __formal, long __formal, long __formal, long __formal, long __formal, long __formal, long __formal) {
 // LINE 980:
 	asm( 
 "	      0046ffcc    push ebp"
@@ -3078,7 +3078,7 @@ unsigned long CBackBuffer::StretchRect(class CSparkalWindow*, long, long, long, 
 }
 
 // FUNCTION: COPTER_D 0x0046ffe6
-void CBackBuffer::SetTransparentColor(int32_t, long) {
+void CBackBuffer::SetTransparentColor(int32_t bEnable, long nPaletteIndex) {
 // LINE 991:
 	asm( 
 "	      0046ffe6    push ebp"
@@ -3425,7 +3425,7 @@ unsigned long CBackBuffer::Unlock() {
 }
 
 // FUNCTION: COPTER_D 0x00470221
-void CBackBuffer::UpdatePalette(long, long, const struct SparkalColor*) {
+void CBackBuffer::UpdatePalette(long start, long count, const struct SparkalColor* pColor) {
 // LINE 1127:
 	asm( 
 "	      00470221    push ebp"
@@ -3517,7 +3517,7 @@ void CBackBuffer::UpdatePalette(long, long, const struct SparkalColor*) {
 }
 
 // FUNCTION: COPTER_D 0x004702f1
-unsigned long CBackBuffer::FillRect(long, const struct SparkalRect*) {
+unsigned long CBackBuffer::FillRect(long nPaletteIndex, const struct SparkalRect* rectFill) {
 // LINE 1169:
 	asm( 
 "	      004702f1    push ebp"
@@ -3705,7 +3705,7 @@ unsigned long CBackBuffer::FillRect(long, const struct SparkalRect*) {
 }
 
 // FUNCTION: COPTER_D 0x00470440
-unsigned long CBackBuffer::SetFont(class MFont*) {
+unsigned long CBackBuffer::SetFont(class MFont* mNewFont) {
 // LINE 1224:
 	asm( 
 "	      00470440    push ebp"
@@ -3802,7 +3802,7 @@ struct IDirectDrawSurface* CBackBuffer::GetDDSurface() {
 }
 
 // FUNCTION: COPTER_D 0x004704db
-int32_t CBackBuffer::GetPaletteFromImage(char *, struct SparkalColor*) {
+int32_t CBackBuffer::GetPaletteFromImage(char * imageFileName, struct SparkalColor* pColors) {
 // LINE 1255:
 	asm( 
 "	      004704db    push ebp"
@@ -4010,7 +4010,7 @@ int32_t CBackBuffer::GetPaletteFromImage(char *, struct SparkalColor*) {
 }
 
 // FUNCTION: COPTER_D 0x004706e4
-unsigned long CBackBuffer::DrawRectangleOutline(const struct SparkalRect&, long) {
+unsigned long CBackBuffer::DrawRectangleOutline(const struct SparkalRect& rectOutline, long nThickness) {
 // LINE 1297:
 	asm( 
 "	      004706e4    push ebp"
@@ -4117,7 +4117,7 @@ unsigned long CBackBuffer::DrawRectangleOutline(const struct SparkalRect&, long)
 }
 
 // FUNCTION: COPTER_D 0x004707a4
-unsigned long CBackBuffer::DrawRectangleOutlineUnclipped(const struct SparkalRect&, long) {
+unsigned long CBackBuffer::DrawRectangleOutlineUnclipped(const struct SparkalRect& rectOutline, long nThickness) {
 // LINE 1321:
 	asm( 
 "	      004707a4    push ebp"
@@ -4224,7 +4224,7 @@ unsigned long CBackBuffer::DrawRectangleOutlineUnclipped(const struct SparkalRec
 }
 
 // FUNCTION: COPTER_D 0x00470864
-unsigned long CBackBuffer::DrawLineUnclipped(long, long, long, long, long) {
+unsigned long CBackBuffer::DrawLineUnclipped(long nStartX, long nStartY, long nEndX, long nEndY, long nThickness) {
 // LINE 1455:
 	asm( 
 "	      00470864    push ebp"
@@ -4787,7 +4787,7 @@ unsigned long CBackBuffer::DrawLineUnclipped(long, long, long, long, long) {
 }
 
 // FUNCTION: COPTER_D 0x00470c22
-unsigned long CBackBuffer::DrawLineClipped(long, long, long, long, long) {
+unsigned long CBackBuffer::DrawLineClipped(long nStartX, long nStartY, long nEndX, long nEndY, long nThickness) {
 // LINE 1625:
 	asm( 
 "	      00470c22    push ebp"

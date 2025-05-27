@@ -6,7 +6,7 @@
 
 // Contribution: 1:0009f3a0-0009f9f6 Module: 10, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004a03a0
-int32_t PFile::Open(char *, unsigned short, unsigned short, int32_t) {
+int32_t PFile::Open(char * name, unsigned short access, unsigned short __formal, int32_t bCreateIfNotFound) {
 // LINE 34:
 	asm( 
 "	      004a03a0    push ebp"
@@ -300,7 +300,7 @@ long PFile::Length() {
 }
 
 // FUNCTION: COPTER_D 0x004a05f3
-long PFile::FileCreate(char *, int32_t) {
+long PFile::FileCreate(char * name, int32_t nAccessMode) {
 // LINE 112:
 	asm( 
 "	      004a05f3    push ebp"
@@ -420,7 +420,7 @@ long PFile::FileCreate(char *, int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x004a06e6
-long PFile::FileExists(char *) {
+long PFile::FileExists(char * name) {
 // LINE 139:
 	asm( 
 "	      004a06e6    push ebp"
@@ -477,7 +477,7 @@ long PFile::FileExists(char *) {
 }
 
 // FUNCTION: COPTER_D 0x004a0759
-long PFile::SetPath(char *) {
+long PFile::SetPath(char * szPath) {
 // LINE 160:
 	asm( 
 "	      004a0759    push ebp"
@@ -530,7 +530,7 @@ long PFile::SetPath(char *) {
 }
 
 // FUNCTION: COPTER_D 0x004a07b9
-unsigned long PFile::Checksum(char *) {
+unsigned long PFile::Checksum(char * name) {
 // LINE 172:
 	asm( 
 "	      004a07b9    push ebp"

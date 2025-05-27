@@ -18,7 +18,7 @@
 // $E4
 
 // FUNCTION: COPTER_D 0x005274fd
-void BoatClass::BoatClass(long, long, int32_t) {
+void BoatClass::BoatClass(long mapx, long mapy, int32_t instanceID) {
 // LINE 153:
 	asm( 
 "	      005274fd    push ebp"
@@ -236,7 +236,7 @@ void BoatClass::~BoatClass() {
 }
 
 // FUNCTION: COPTER_D 0x0052768a
-class BoatClass* BoatClass::GetBoatPointer(long) {
+class BoatClass* BoatClass::GetBoatPointer(long index) {
 // LINE 254:
 	asm( 
 "	      0052768a    push ebp"
@@ -272,7 +272,7 @@ class BoatClass* BoatClass::GetBoatPointer(long) {
 }
 
 // FUNCTION: COPTER_D 0x005276b5
-class BoatClass* BoatClass::CreateInstance(int32_t) {
+class BoatClass* BoatClass::CreateInstance(int32_t instanceID) {
 // LINE 281:
 	asm( 
 "	      005276b5    push ebp"
@@ -302,7 +302,7 @@ class BoatClass* BoatClass::CreateInstance(int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x005276d5
-class BoatClass* BoatClass::CreateInstance(long, long, int32_t) {
+class BoatClass* BoatClass::CreateInstance(long mapx, long mapy, int32_t instanceID) {
 // LINE 341:
 	asm( 
 "	      005276d5    push ebp"
@@ -386,7 +386,7 @@ class BoatClass* BoatClass::CreateInstance(long, long, int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x00527779
-int32_t BoatClass::Initialize(int32_t) {
+int32_t BoatClass::Initialize(int32_t instanceID) {
 // LINE 443:
 	asm( 
 "	      00527779    push ebp"
@@ -1175,7 +1175,7 @@ enum BoatClass::StoppedReasons BoatClass::IsWaterPathClear() {
 }
 
 // FUNCTION: COPTER_D 0x00527d76
-enum BoatClass::StoppedReasons BoatClass::CheckWaterDynamicObjectsAt(const struct Point2d&, const struct Point3d&) {
+enum BoatClass::StoppedReasons BoatClass::CheckWaterDynamicObjectsAt(const struct Point2d& __formal, const struct Point3d& collisionPoint) {
 // LINE 920:
 	asm( 
 "	      00527d76    push ebp"
@@ -1706,7 +1706,7 @@ int32_t BoatClass::IsBoatOutOfCameraRange() {
 }
 
 // FUNCTION: COPTER_D 0x005281a8
-void BoatClass::SetBoatDirection(unsigned short) {
+void BoatClass::SetBoatDirection(unsigned short tileType) {
 // LINE 1139:
 	asm( 
 "	      005281a8    push ebp"
@@ -2329,7 +2329,7 @@ int32_t BoatClass::AmIInANewCell() {
 }
 
 // FUNCTION: COPTER_D 0x00528746
-void BoatClass::UnlinkFromCell(const struct Point2d&) {
+void BoatClass::UnlinkFromCell(const struct Point2d& point) {
 // LINE 1370:
 	asm( 
 "	      00528746    push ebp"
@@ -2447,7 +2447,7 @@ void BoatClass::UnlinkFromCell(const struct Point2d&) {
 }
 
 // FUNCTION: COPTER_D 0x0052885c
-void BoatClass::LinkToCell(const struct Point2d&) {
+void BoatClass::LinkToCell(const struct Point2d& point) {
 // LINE 1418:
 	asm( 
 "	      0052885c    push ebp"
@@ -2523,7 +2523,7 @@ void BoatClass::LinkToCell(const struct Point2d&) {
 }
 
 // FUNCTION: COPTER_D 0x00528918
-enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const struct Point2d&) {
+enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const struct Point2d& point) {
 // LINE 1450:
 	asm( 
 "	      00528918    push ebp"
@@ -3303,7 +3303,7 @@ enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const struct Poin
 }
 
 // FUNCTION: COPTER_D 0x005290e5
-int32_t BoatClass::DoWaterTilesConnect(unsigned short, unsigned short, enum DirectionTypes) {
+int32_t BoatClass::DoWaterTilesConnect(unsigned short fromTile, unsigned short toTile, enum DirectionTypes direction) {
 // LINE 1644:
 	asm( 
 "	      005290e5    push ebp"
@@ -3390,7 +3390,7 @@ int32_t BoatClass::DoWaterTilesConnect(unsigned short, unsigned short, enum Dire
 }
 
 // FUNCTION: COPTER_D 0x00529232
-void BoatClass::MakeATurn(enum BoatClass::IntersectionTypes) {
+void BoatClass::MakeATurn(enum BoatClass::IntersectionTypes intersectionType) {
 // LINE 1674:
 	asm( 
 "	      00529232    push ebp"
@@ -4973,7 +4973,7 @@ void BoatClass::UnPlaceBoat() {
 }
 
 // FUNCTION: COPTER_D 0x00529f2b
-int32_t BoatClass::BeamBoatToLocation(long, long) {
+int32_t BoatClass::BeamBoatToLocation(long mapx, long mapy) {
 // LINE 2394:
 	asm( 
 "	      00529f2b    push ebp"
@@ -5702,7 +5702,7 @@ int32_t BoatClass::BeamBoatToLocation(long, long) {
 }
 
 // FUNCTION: COPTER_D 0x0052a81c
-int32_t BoatClass::InitializeInstance(long, long, int32_t) {
+int32_t BoatClass::InitializeInstance(long mapx, long mapy, int32_t instanceID) {
 // LINE 2811:
 	asm( 
 "	      0052a81c    push ebp"
@@ -6075,7 +6075,7 @@ int32_t BoatClass::InitializeInstance(long, long, int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x0052ab24
-int32_t CreateBoatInstance(int32_t) {
+int32_t CreateBoatInstance(int32_t instanceID) {
 // LINE 3000:
 	asm( 
 "	      0052ab24    push ebp"
@@ -6158,7 +6158,7 @@ void ResetAllBoats() {
 }
 
 // FUNCTION: COPTER_D 0x0052ab7e
-struct _DYOBJ_INST* BoatClass::StartCapsizedBoat(long, int32_t) {
+struct _DYOBJ_INST* BoatClass::StartCapsizedBoat(long mission_id, int32_t timetolive) {
 // LINE 3059:
 	asm( 
 "	      0052ab7e    push ebp"
@@ -6419,7 +6419,7 @@ struct _DYOBJ_INST* BoatClass::GetCapsizedBoat() {
 }
 
 // FUNCTION: COPTER_D 0x0052ad37
-struct _DYOBJ_INST* StartCapsizedBoat(long, int32_t) {
+struct _DYOBJ_INST* StartCapsizedBoat(long mission_id, int32_t timetolive) {
 // LINE 3147:
 	asm( 
 "	      0052ad37    push ebp"
@@ -6474,7 +6474,7 @@ struct _DYOBJ_INST* GetCapsizedBoat() {
 }
 
 // FUNCTION: COPTER_D 0x0052ad6c
-int32_t S3BoatMIFFLoad(void * __ptr32) {
+int32_t S3BoatMIFFLoad(void * __ptr32 miffReader) {
 // LINE 3174:
 	asm( 
 "	      0052ad6c    push ebp"
@@ -6502,7 +6502,7 @@ int32_t S3BoatMIFFLoad(void * __ptr32) {
 }
 
 // FUNCTION: COPTER_D 0x0052ad88
-int32_t S3BoatMIFFSave(void * __ptr32) {
+int32_t S3BoatMIFFSave(void * __ptr32 miffWriter) {
 // LINE 3187:
 	asm( 
 "	      0052ad88    push ebp"
@@ -6530,7 +6530,7 @@ int32_t S3BoatMIFFSave(void * __ptr32) {
 }
 
 // FUNCTION: COPTER_D 0x0052ada4
-int32_t BoatClass::MIFFLoad(void * __ptr32) {
+int32_t BoatClass::MIFFLoad(void * __ptr32 miffReader) {
 // LINE 3199:
 	asm( 
 "	      0052ada4    push ebp"
@@ -6824,7 +6824,7 @@ int32_t BoatClass::MIFFLoad(void * __ptr32) {
 }
 
 // FUNCTION: COPTER_D 0x0052b00a
-int32_t BoatClass::MIFFSave(void * __ptr32) {
+int32_t BoatClass::MIFFSave(void * __ptr32 miffWriter) {
 // LINE 3263:
 	asm( 
 "	      0052b00a    push ebp"

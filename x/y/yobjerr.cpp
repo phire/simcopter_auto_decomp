@@ -6,7 +6,7 @@
 
 // Contribution: 1:00161500-0016160a Module: 188, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00562500
-void cYObject::Error(short) {
+void cYObject::Error(short errNum) {
 // LINE 13:
 	asm( 
 "	      00562500    push ebp"

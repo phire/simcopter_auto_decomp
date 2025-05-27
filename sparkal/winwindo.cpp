@@ -92,7 +92,7 @@ void CSparkalWindow::CSparkalWindow() {
 }
 
 // FUNCTION: COPTER_D 0x00480738
-void CSparkalWindow::CSparkalWindow(unsigned long, unsigned long, unsigned long, const struct SparkalColor*, char *) {
+void CSparkalWindow::CSparkalWindow(unsigned long Width, unsigned long Height, unsigned long Style, const struct SparkalColor* pColors, char * Caption) {
 // LINE 76:
 	asm( 
 "	      00480738    push ebp"
@@ -885,7 +885,7 @@ void CSparkalWindow::~CSparkalWindow() {
 }
 
 // FUNCTION: COPTER_D 0x00480dca
-unsigned long CSparkalWindow::GetClientSize(long *, long *) {
+unsigned long CSparkalWindow::GetClientSize(long * pWidth, long * pHeight) {
 // LINE 276:
 	asm( 
 "	      00480dca    push ebp"
@@ -976,7 +976,7 @@ unsigned long CSparkalWindow::GetClientSize(long *, long *) {
 }
 
 // FUNCTION: COPTER_D 0x00480e74
-unsigned long CSparkalWindow::SetCursor(unsigned long) {
+unsigned long CSparkalWindow::SetCursor(unsigned long CursorID) {
 // LINE 308:
 	asm( 
 "	      00480e74    push ebp"
@@ -1085,7 +1085,7 @@ unsigned long CSparkalWindow::SetCursor(unsigned long) {
 }
 
 // FUNCTION: COPTER_D 0x00480f32
-unsigned long CSparkalWindow::SetCursorFromIndex(int32_t) {
+unsigned long CSparkalWindow::SetCursorFromIndex(int32_t nIndex) {
 // LINE 337:
 	asm( 
 "	      00480f32    push ebp"
@@ -1187,7 +1187,7 @@ void CSparkalWindow::FreeGameCursors() {
 }
 
 // FUNCTION: COPTER_D 0x00480fb1
-unsigned long CSparkalWindow::DrawBufferText(const const char*, unsigned long, long, long, long *, long *, long *, long *) {
+unsigned long CSparkalWindow::DrawBufferText(const const char* pText, unsigned long Style, long Left, long Top, long * pRectLeft, long * pRectTop, long * pRectRight, long * pRectBottom) {
 // LINE 372:
 	asm( 
 "	      00480fb1    push ebp"
@@ -1475,7 +1475,7 @@ unsigned long CSparkalWindow::DrawBufferText(const const char*, unsigned long, l
 }
 
 // FUNCTION: COPTER_D 0x004811bb
-unsigned long CSparkalWindow::ScreenScroll(long, long, long, long, long, long) {
+unsigned long CSparkalWindow::ScreenScroll(long Left, long Top, long Right, long Bottom, long ScrollRightAmount, long ScrollDownAmount) {
 // LINE 462:
 	asm( 
 "	      004811bb    push ebp"
@@ -1562,7 +1562,7 @@ unsigned long CSparkalWindow::ScreenScroll(long, long, long, long, long, long) {
 }
 
 // FUNCTION: COPTER_D 0x00481265
-void CSparkalWindow::UpdatePalette(long, long, struct SparkalColor*) {
+void CSparkalWindow::UpdatePalette(long start, long count, struct SparkalColor* pColor) {
 // LINE 482:
 	asm( 
 "	      00481265    push ebp"
@@ -1650,7 +1650,7 @@ void CSparkalWindow::UpdatePalette(long, long, struct SparkalColor*) {
 }
 
 // FUNCTION: COPTER_D 0x0048132b
-int32_t CheckIdentityPalette(void * __ptr32, void * __ptr32, struct tagPALETTEENTRY*) {
+int32_t CheckIdentityPalette(void * __ptr32 hdc, void * __ptr32 hPalette, struct tagPALETTEENTRY* pColors) {
 // LINE 505:
 	asm( 
 "	      0048132b    push ebp"
@@ -1911,7 +1911,7 @@ int32_t CheckIdentityPalette(void * __ptr32, void * __ptr32, struct tagPALETTEEN
 }
 
 // FUNCTION: COPTER_D 0x004815dd
-long SparkalWindowProc(void * __ptr32, uint32_t, uint32_t, long) {
+long SparkalWindowProc(void * __ptr32 Window, uint32_t Message, uint32_t wParam, long lParam) {
 // LINE 584:
 	asm( 
 "	      004815dd    push ebp"
@@ -1976,7 +1976,7 @@ long SparkalWindowProc(void * __ptr32, uint32_t, uint32_t, long) {
 }
 
 // FUNCTION: COPTER_D 0x00481647
-long CSparkalWindow::MySparkalWindowProc(void * __ptr32, uint32_t, uint32_t, long) {
+long CSparkalWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, uint32_t wParam, long lParam) {
 // LINE 602:
 	asm( 
 "	      00481647    push ebp"

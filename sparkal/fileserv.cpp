@@ -18,7 +18,7 @@
 // $E30
 
 // FUNCTION: COPTER_D 0x0049172b
-int32_t GetPathForFile(int32_t, int32_t, char *, char *) {
+int32_t GetPathForFile(int32_t nType, int32_t nLanguage, char * szFile, char * szPath) {
 // LINE 25:
 	asm( 
 "	      0049172b    push ebp"
@@ -1389,7 +1389,7 @@ int32_t FileServices::ValidateRemotePath() {
 }
 
 // FUNCTION: COPTER_D 0x0049299a
-void FileServices::RefreshLocalPathCache(class basic_string<char>&) {
+void FileServices::RefreshLocalPathCache(class basic_string<char>& sDirectoryBase) {
 // LINE 164:
 	asm( 
 "	      0049299a    push ebp"
@@ -1736,7 +1736,7 @@ void FileServices::RefreshLocalPathCache(class basic_string<char>&) {
 }
 
 // FUNCTION: COPTER_D 0x00492e36
-int32_t FileServices::CopyFileFromRemoteToLocal(char *) {
+int32_t FileServices::CopyFileFromRemoteToLocal(char * szPartialPath) {
 // LINE 195:
 	asm( 
 "	      00492e36    push ebp"
@@ -1763,7 +1763,7 @@ int32_t FileServices::CopyFileFromRemoteToLocal(char *) {
 }
 
 // FUNCTION: COPTER_D 0x00492e50
-int32_t FileServices::GetPathForFile(int32_t, int32_t, char *, char *) {
+int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * szFile, char * szPath) {
 // LINE 215:
 	asm( 
 "	      00492e50    push ebp"
@@ -4172,7 +4172,7 @@ int32_t FileServices::GetPathForFile(int32_t, int32_t, char *, char *) {
 }
 
 // FUNCTION: COPTER_D 0x00494f82
-int32_t FileServices::GetPathForFileString(int32_t, int32_t, class basic_string<char>&, class basic_string<char>&) {
+int32_t FileServices::GetPathForFileString(int32_t nType, int32_t nLanguage, class basic_string<char>& sFile, class basic_string<char>& sPath) {
 // LINE 391:
 	asm( 
 "	      00494f82    push ebp"

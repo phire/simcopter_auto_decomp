@@ -18,7 +18,7 @@
 // $E66
 
 // FUNCTION: COPTER_D 0x0047defe
-void CareerWindow::CareerWindow(class MRect&, int32_t, void * __ptr32, long *, class GraphicWindow*, class GraphicWindowOwner*, int32_t, int32_t) {
+void CareerWindow::CareerWindow(class MRect& rectNewPosition, int32_t nNewID, void * __ptr32 myNewPlatformWindow, long * lNewCities, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList, int32_t bNewAllowCancel) {
 // LINE 63:
 	asm( 
 "	      0047defe    push ebp"
@@ -1454,7 +1454,7 @@ int32_t CareerWindow::Initialize() {
 }
 
 // FUNCTION: COPTER_D 0x0047f391
-int32_t CareerWindow::CreateImage(int32_t) {
+int32_t CareerWindow::CreateImage(int32_t __formal) {
 // LINE 201:
 	asm( 
 "	      0047f391    push ebp"
@@ -2038,7 +2038,7 @@ void CareerWindow::DrawCitySelection() {
 }
 
 // FUNCTION: COPTER_D 0x0047fa75
-long CareerWindow::DoKeyDown(long, char) {
+long CareerWindow::DoKeyDown(long lKey, char chModifiers) {
 // LINE 279:
 	asm( 
 "	      0047fa75    push ebp"
@@ -2122,7 +2122,7 @@ long CareerWindow::DoKeyDown(long, char) {
 }
 
 // FUNCTION: COPTER_D 0x0047fb14
-long CareerWindow::DoCursorDown(long, long, unsigned long) {
+long CareerWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButton) {
 // LINE 296:
 	asm( 
 "	      0047fb14    push ebp"
@@ -2251,7 +2251,7 @@ long CareerWindow::DoCursorDown(long, long, unsigned long) {
 }
 
 // FUNCTION: COPTER_D 0x0047fc47
-long CareerWindow::DoCursorMove(long, long) {
+long CareerWindow::DoCursorMove(long nCursorX, long nCursorY) {
 // LINE 321:
 	asm( 
 "	      0047fc47    push ebp"
@@ -2342,7 +2342,7 @@ long CareerWindow::DoCursorMove(long, long) {
 }
 
 // FUNCTION: COPTER_D 0x0047fd2d
-int32_t CareerWindow::DoMessage(class GraphicWindow*, long, long, void * __ptr32) {
+int32_t CareerWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
 // LINE 338:
 	asm( 
 "	      0047fd2d    push ebp"
@@ -2441,7 +2441,7 @@ int32_t CareerWindow::DoMessage(class GraphicWindow*, long, long, void * __ptr32
 }
 
 // FUNCTION: COPTER_D 0x0047fdf2
-long CareerWindow::SetCurrentCitySelection(long) {
+long CareerWindow::SetCurrentCitySelection(long lNewCitySelection) {
 // LINE 358:
 	asm( 
 "	      0047fdf2    push ebp"
@@ -2565,7 +2565,7 @@ long CareerWindow::SetCurrentCitySelection(long) {
 }
 
 // FUNCTION: COPTER_D 0x0047ff29
-void CareerWindow::GetCoordinatesForCitySelections(class MPoint[4]*, class MRect[4]*) {
+void CareerWindow::GetCoordinatesForCitySelections(class MPoint[4]* ptDestinations, class MRect[4]* rectSources) {
 // LINE 383:
 	asm( 
 "	      0047ff29    push ebp"
@@ -2680,7 +2680,7 @@ void CareerWindow::GetCoordinatesForCitySelections(class MPoint[4]*, class MRect
 }
 
 // FUNCTION: COPTER_D 0x00480032
-void CareerWindow::CitySelectionFrame::CitySelectionFrame(int32_t, int32_t, int32_t) {
+void CareerWindow::CitySelectionFrame::CitySelectionFrame(int32_t b_Left, int32_t b_Top, int32_t b_Selected) {
 // LINE 401:
 	asm( 
 "	      00480032    push ebp"
@@ -2986,7 +2986,7 @@ void CareerWindow::CitySelectionFrame::CitySelectionFrame(int32_t, int32_t, int3
 }
 
 // FUNCTION: COPTER_D 0x0048049d
-void CareerWindow::CitySelectionFrame::FillDestinationPoints(class MPoint*) {
+void CareerWindow::CitySelectionFrame::FillDestinationPoints(class MPoint* ptDest) {
 // LINE 426:
 	asm( 
 "	      0048049d    push ebp"
@@ -3036,7 +3036,7 @@ void CareerWindow::CitySelectionFrame::FillDestinationPoints(class MPoint*) {
 }
 
 // FUNCTION: COPTER_D 0x004804f7
-void CareerWindow::CitySelectionFrame::FillSourceRects(class MRect*) {
+void CareerWindow::CitySelectionFrame::FillSourceRects(class MRect* rectSrc) {
 // LINE 434:
 	asm( 
 "	      004804f7    push ebp"

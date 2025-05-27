@@ -768,7 +768,7 @@ void cBList<cCopterBody>::~cBList<cCopterBody>() {
 
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055fee0
-void cBList<cCopterBody>::Add(class cCopterBody*) {
+void cBList<cCopterBody>::Add(class cCopterBody* thing) {
 // LINE 118:
 	asm( 
 "	      0055fee0    push ebp"

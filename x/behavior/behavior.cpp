@@ -6,7 +6,7 @@
 
 // Contribution: 1:0015f290-0015f9c8 Module: 191, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00560290
-void Behavior::Behavior(class Language*, class NResFile*, class NResFile*) {
+void Behavior::Behavior(class Language* lang, class NResFile* globFile, class NResFile* privFile) {
 // LINE 16:
 	asm( 
 "	      00560290    push ebp"
@@ -168,7 +168,7 @@ class ResFile* Behavior::GetGlobFile() {
 }
 
 // FUNCTION: COPTER_D 0x00560385
-void Behavior::StdTreeSwizzle(struct Behavior::Tree*, long, void (*)(short, struct Behavior::NodeParameter*)) {
+void Behavior::StdTreeSwizzle(struct Behavior::Tree* tree, long size, void (*)(short, struct Behavior::NodeParameter*) paramswizzler) {
 // LINE 48:
 	asm( 
 "	      00560385    push ebp"
@@ -239,7 +239,7 @@ void Behavior::StdTreeSwizzle(struct Behavior::Tree*, long, void (*)(short, stru
 }
 
 // FUNCTION: COPTER_D 0x0056040a
-const struct Behavior::Node* Behavior::GetNodeRef(short, short) {
+const struct Behavior::Node* Behavior::GetNodeRef(short treeID, short nodeNum) {
 // LINE 57:
 	asm( 
 "	      0056040a    push ebp"
@@ -382,7 +382,7 @@ const struct Behavior::Node* Behavior::GetNodeRef(short, short) {
 }
 
 // FUNCTION: COPTER_D 0x005605ac
-void Behavior::GetNodeText(struct Behavior::Node*, unsigned char *) {
+void Behavior::GetNodeText(struct Behavior::Node* node, unsigned char * str) {
 // LINE 91:
 	asm( 
 "	      005605ac    push ebp"
@@ -405,7 +405,7 @@ void Behavior::GetNodeText(struct Behavior::Node*, unsigned char *) {
 }
 
 // FUNCTION: COPTER_D 0x005605c4
-void Behavior::GetNodeText(short, short, unsigned char *) {
+void Behavior::GetNodeText(short treeID, short nodeNum, unsigned char * TheStr) {
 // LINE 131:
 	asm( 
 "	      005605c4    push ebp"
@@ -488,7 +488,7 @@ short Behavior::CountPrimitives() {
 }
 
 // FUNCTION: COPTER_D 0x0056063d
-void Behavior::GetTreeName(short, unsigned char *) {
+void Behavior::GetTreeName(short treeID, unsigned char * name) {
 // LINE 145:
 	asm( 
 "	      0056063d    push ebp"
@@ -603,7 +603,7 @@ void Behavior::GetTreeName(short, unsigned char *) {
 }
 
 // FUNCTION: COPTER_D 0x0056072f
-class ResFile* Behavior::GetResFile(short) {
+class ResFile* Behavior::GetResFile(short treeID) {
 // LINE 177:
 	asm( 
 "	      0056072f    push ebp"
@@ -654,7 +654,7 @@ class ResFile* Behavior::GetResFile(short) {
 }
 
 // FUNCTION: COPTER_D 0x0056077d
-short Behavior::GetBaseID(short) {
+short Behavior::GetBaseID(short treeclass) {
 // LINE 189:
 	asm( 
 "	      0056077d    push ebp"
@@ -737,7 +737,7 @@ short Behavior::GetBaseID(short) {
 }
 
 // FUNCTION: COPTER_D 0x005607fb
-short Behavior::GetMaxID(short) {
+short Behavior::GetMaxID(short treeclass) {
 // LINE 208:
 	asm( 
 "	      005607fb    push ebp"
@@ -821,7 +821,7 @@ short Behavior::GetMaxID(short) {
 }
 
 // FUNCTION: COPTER_D 0x00560879
-short Behavior::GetTreeClass(short) {
+short Behavior::GetTreeClass(short treeID) {
 // LINE 227:
 	asm( 
 "	      00560879    push ebp"
@@ -902,7 +902,7 @@ short Behavior::GetTreeClass(short) {
 }
 
 // FUNCTION: COPTER_D 0x00560924
-void Behavior::GetClassNameA(short, unsigned char *) {
+void Behavior::GetClassNameA(short cl, unsigned char * name) {
 // LINE 239:
 	asm( 
 "	      00560924    push ebp"

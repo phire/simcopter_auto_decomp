@@ -62,7 +62,7 @@ void ICommander::~ICommander() {
 }
 
 // FUNCTION: COPTER_D 0x0049ad7b
-class CSparkalWindow* ICommander::SetWindow(class CSparkalWindow*) {
+class CSparkalWindow* ICommander::SetWindow(class CSparkalWindow* pWindow) {
 // LINE 28:
 	asm( 
 "	      0049ad7b    push ebp"
@@ -198,7 +198,7 @@ unsigned long CDefaultCommander::Idle() {
 }
 
 // FUNCTION: COPTER_D 0x0049ae2c
-unsigned long CDefaultCommander::OnCharacter(char, int32_t) {
+unsigned long CDefaultCommander::OnCharacter(char Character, int32_t RepeatCount) {
 // LINE 60:
 	asm( 
 "	      0049ae2c    push ebp"
@@ -225,7 +225,7 @@ unsigned long CDefaultCommander::OnCharacter(char, int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x0049ae46
-unsigned long CDefaultCommander::OnMouseDown(int32_t, int32_t) {
+unsigned long CDefaultCommander::OnMouseDown(int32_t x, int32_t y) {
 // LINE 65:
 	asm( 
 "	      0049ae46    push ebp"
@@ -252,7 +252,7 @@ unsigned long CDefaultCommander::OnMouseDown(int32_t, int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x0049ae60
-unsigned long CDefaultCommander::OnMouseUp(int32_t, int32_t) {
+unsigned long CDefaultCommander::OnMouseUp(int32_t x, int32_t y) {
 // LINE 70:
 	asm( 
 "	      0049ae60    push ebp"
@@ -279,7 +279,7 @@ unsigned long CDefaultCommander::OnMouseUp(int32_t, int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x0049ae7a
-unsigned long CDefaultCommander::OnMouseMove(int32_t, int32_t) {
+unsigned long CDefaultCommander::OnMouseMove(int32_t x, int32_t y) {
 // LINE 75:
 	asm( 
 "	      0049ae7a    push ebp"

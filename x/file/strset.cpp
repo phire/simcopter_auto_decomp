@@ -6,7 +6,7 @@
 
 // Contribution: 1:00164a40-00164c90 Module: 185, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00565a40
-void StringSet::StringSet(class ResFile*, short) {
+void StringSet::StringSet(class ResFile* file, short resID) {
 // LINE 12:
 	asm( 
 "	      00565a40    push ebp"
@@ -43,7 +43,7 @@ void StringSet::StringSet(class ResFile*, short) {
 }
 
 // FUNCTION: COPTER_D 0x00565a6f
-void StringSet::StringSet(class ResFile*, short, short) {
+void StringSet::StringSet(class ResFile* file, short resID, short numStrings) {
 // LINE 20:
 	asm( 
 "	      00565a6f    push ebp"
@@ -98,7 +98,7 @@ void StringSet::StringSet(class ResFile*, short, short) {
 }
 
 // FUNCTION: COPTER_D 0x00565acc
-void StringSet::LoadStrings(short) {
+void StringSet::LoadStrings(short resID) {
 // LINE 32:
 	asm( 
 "	      00565acc    push ebp"
@@ -198,7 +198,7 @@ void StringSet::LoadStrings(short) {
 }
 
 // FUNCTION: COPTER_D 0x00565ba0
-void StringSet::Swizzle(void * __ptr32, long) {
+void StringSet::Swizzle(void * __ptr32 data, long size) {
 // LINE 51:
 	asm( 
 "	      00565ba0    push ebp"
@@ -272,7 +272,7 @@ void StringSet::~StringSet() {
 }
 
 // FUNCTION: COPTER_D 0x00565bff
-unsigned char * StringSet::GetString(short) {
+unsigned char * StringSet::GetString(short which) {
 // LINE 65:
 	asm( 
 "	      00565bff    push ebp"

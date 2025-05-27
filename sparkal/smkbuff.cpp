@@ -116,7 +116,7 @@ void SmackerBuffer::SmackerBuffer() {
 }
 
 // FUNCTION: COPTER_D 0x00497ccf
-void SmackerBuffer::SmackerBuffer(char *, int32_t, int32_t) {
+void SmackerBuffer::SmackerBuffer(char * szNewFilePath, int32_t nNewDestWidth, int32_t nNewDestHeight) {
 // LINE 62:
 	asm( 
 "	      00497ccf    push ebp"
@@ -472,7 +472,7 @@ int32_t SmackerBuffer::CreateSurface() {
 }
 
 // FUNCTION: COPTER_D 0x00497f22
-int32_t SmackerBuffer::Open(char *, unsigned long, unsigned long) {
+int32_t SmackerBuffer::Open(char * szNewFilePath, unsigned long nFlags, unsigned long nExraBuffering) {
 // LINE 159:
 	asm( 
 "	      00497f22    push ebp"
@@ -649,7 +649,7 @@ void SmackerBuffer::Reset() {
 }
 
 // FUNCTION: COPTER_D 0x00498043
-void SmackerBuffer::ClearBuffer(int32_t) {
+void SmackerBuffer::ClearBuffer(int32_t nPaletteIndex) {
 // LINE 211:
 	asm( 
 "	      00498043    push ebp"
@@ -672,7 +672,7 @@ void SmackerBuffer::ClearBuffer(int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x0049805b
-void SmackerBuffer::SetWindow(void * __ptr32) {
+void SmackerBuffer::SetWindow(void * __ptr32 myNewWindow) {
 // LINE 228:
 	asm( 
 "	      0049805b    push ebp"
@@ -740,7 +740,7 @@ void SmackerBuffer::SetWindow(void * __ptr32) {
 }
 
 // FUNCTION: COPTER_D 0x004980b3
-void SmackerBuffer::SetWindow(class CSparkalWindow*) {
+void SmackerBuffer::SetWindow(class CSparkalWindow* myNewWindow) {
 // LINE 251:
 	asm( 
 "	      004980b3    push ebp"
@@ -772,7 +772,7 @@ void SmackerBuffer::SetWindow(class CSparkalWindow*) {
 }
 
 // FUNCTION: COPTER_D 0x004980df
-void SmackerBuffer::CenterBufferInRect(struct SparkalRect*) {
+void SmackerBuffer::CenterBufferInRect(struct SparkalRect* rectParent) {
 // LINE 268:
 	asm( 
 "	      004980df    push ebp"
@@ -1252,7 +1252,7 @@ int32_t SmackerBuffer::ComposeToWindow() {
 }
 
 // FUNCTION: COPTER_D 0x00498489
-void * __ptr32 VRSmackerInit(char *, int32_t) {
+void * __ptr32 VRSmackerInit(char * szSmackerFilePath, int32_t bPreserveBufferMemory) {
 // LINE 423:
 	asm( 
 "	      00498489    push ebp"
@@ -1298,7 +1298,7 @@ void * __ptr32 VRSmackerInit(char *, int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x004984dc
-void VRSmackerDestroy(void * __ptr32) {
+void VRSmackerDestroy(void * __ptr32 pVRSmacker) {
 // LINE 432:
 	asm( 
 "	      004984dc    push ebp"
@@ -1335,7 +1335,7 @@ void VRSmackerDestroy(void * __ptr32) {
 }
 
 // FUNCTION: COPTER_D 0x00498516
-int32_t VRSmackerSetBitmap(void * __ptr32, char *, int32_t, int32_t) {
+int32_t VRSmackerSetBitmap(void * __ptr32 pVRSmacker, char * szVRBitmap, int32_t nFlags, int32_t bPreserveBitmapMemory) {
 // LINE 439:
 	asm( 
 "	      00498516    push ebp"
@@ -1369,7 +1369,7 @@ int32_t VRSmackerSetBitmap(void * __ptr32, char *, int32_t, int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x0049853d
-int32_t VRSmackerNextFrame(void * __ptr32) {
+int32_t VRSmackerNextFrame(void * __ptr32 pVRSmacker) {
 // LINE 445:
 	asm( 
 "	      0049853d    push ebp"
@@ -1395,7 +1395,7 @@ int32_t VRSmackerNextFrame(void * __ptr32) {
 }
 
 // FUNCTION: COPTER_D 0x00498555
-void VRSmackerReset(void * __ptr32) {
+void VRSmackerReset(void * __ptr32 pVRSmacker) {
 // LINE 449:
 	asm( 
 "	      00498555    push ebp"
@@ -1421,7 +1421,7 @@ void VRSmackerReset(void * __ptr32) {
 }
 
 // FUNCTION: COPTER_D 0x0049856d
-int32_t VRSmackerStatus(void * __ptr32) {
+int32_t VRSmackerStatus(void * __ptr32 pVRSmacker) {
 // LINE 453:
 	asm( 
 "	      0049856d    push ebp"
@@ -1447,7 +1447,7 @@ int32_t VRSmackerStatus(void * __ptr32) {
 }
 
 // FUNCTION: COPTER_D 0x00498583
-struct VRBmpHdr* VRSmackerGetBitmap(void * __ptr32) {
+struct VRBmpHdr* VRSmackerGetBitmap(void * __ptr32 pVRSmacker) {
 // LINE 457:
 	asm( 
 "	      00498583    push ebp"
@@ -1473,7 +1473,7 @@ struct VRBmpHdr* VRSmackerGetBitmap(void * __ptr32) {
 }
 
 // FUNCTION: COPTER_D 0x0049859c
-char * VRSmackerGetBitmapBits(void * __ptr32) {
+char * VRSmackerGetBitmapBits(void * __ptr32 pVRSmacker) {
 // LINE 461:
 	asm( 
 "	      0049859c    push ebp"
@@ -1534,7 +1534,7 @@ void VRBmpSmackerBuffer::VRBmpSmackerBuffer() {
 }
 
 // FUNCTION: COPTER_D 0x004985f4
-void VRBmpSmackerBuffer::VRBmpSmackerBuffer(char *, int32_t, int32_t, int32_t) {
+void VRBmpSmackerBuffer::VRBmpSmackerBuffer(char * szNewFilePath, int32_t nNewDestWidth, int32_t nNewDestHeight, int32_t bNewPreserveSmackerBuffer) {
 // LINE 485:
 	asm( 
 "	      004985f4    push ebp"
@@ -1703,7 +1703,7 @@ void VRBmpSmackerBuffer::InitializeVRBmpMembers() {
 }
 
 // FUNCTION: COPTER_D 0x0049873d
-int32_t VRBmpSmackerBuffer::CreateSurface(int32_t) {
+int32_t VRBmpSmackerBuffer::CreateSurface(int32_t bCopyOriginalBitmap) {
 // LINE 532:
 	asm( 
 "	      0049873d    push ebp"
@@ -1972,7 +1972,7 @@ void VRBmpSmackerBuffer::DeleteSurface() {
 }
 
 // FUNCTION: COPTER_D 0x0049898a
-int32_t VRBmpSmackerBuffer::Open(char *, unsigned long, unsigned long) {
+int32_t VRBmpSmackerBuffer::Open(char * szNewFilePath, unsigned long nFlags, unsigned long nExraBuffering) {
 // LINE 595:
 	asm( 
 "	      0049898a    push ebp"
@@ -2048,7 +2048,7 @@ int32_t VRBmpSmackerBuffer::Open(char *, unsigned long, unsigned long) {
 }
 
 // FUNCTION: COPTER_D 0x00498a0b
-void VRBmpSmackerBuffer::ClearBuffer(int32_t) {
+void VRBmpSmackerBuffer::ClearBuffer(int32_t nPaletteIndex) {
 // LINE 620:
 	asm( 
 "	      00498a0b    push ebp"
@@ -2297,7 +2297,7 @@ int32_t VRBmpSmackerBuffer::Compose() {
 }
 
 // FUNCTION: COPTER_D 0x00498c00
-int32_t VRBmpSmackerBuffer::SetDefaultVRBmp(char *, int32_t, int32_t) {
+int32_t VRBmpSmackerBuffer::SetDefaultVRBmp(char * szNewVRBmpName, int32_t nNewVRBmpFlags, int32_t bNewPreserveBmp) {
 // LINE 698:
 	asm( 
 "	      00498c00    push ebp"
@@ -2692,7 +2692,7 @@ void SmackerBackBuffer::SmackerBackBuffer() {
 }
 
 // FUNCTION: COPTER_D 0x00498f61
-void SmackerBackBuffer::SmackerBackBuffer(char *, int32_t, int32_t, int32_t, int32_t, int32_t) {
+void SmackerBackBuffer::SmackerBackBuffer(char * szNewFilePath, int32_t bNewUseSmackBuf, int32_t nNewWidth, int32_t nNewHeight, int32_t nNewDestWidth, int32_t nNewDestHeight) {
 // LINE 819:
 	asm( 
 "	      00498f61    push ebp"
@@ -2882,7 +2882,7 @@ int32_t SmackerBackBuffer::Initialize() {
 }
 
 // FUNCTION: COPTER_D 0x004990d2
-void SmackerBackBuffer::SetBackBufferData(char *, int32_t, int32_t, int32_t, int32_t, int32_t) {
+void SmackerBackBuffer::SetBackBufferData(char * szNewFilePath, int32_t bNewUseSmackBuf, int32_t nNewWidth, int32_t nNewHeight, int32_t nNewDestinationWidth, int32_t nNewDestinationHeight) {
 // LINE 883:
 	asm( 
 "	      004990d2    push ebp"
@@ -2959,7 +2959,7 @@ void SmackerBackBuffer::SetBackBufferData(char *, int32_t, int32_t, int32_t, int
 }
 
 // FUNCTION: COPTER_D 0x00499149
-int32_t SmackerBackBuffer::Open(char *, unsigned long, unsigned long) {
+int32_t SmackerBackBuffer::Open(char * szNewFilePath, unsigned long nFlags, unsigned long nExraBuffering) {
 // LINE 901:
 	asm( 
 "	      00499149    push ebp"
@@ -3242,7 +3242,7 @@ int32_t SmackerBackBuffer::CreateSurface() {
 }
 
 // FUNCTION: COPTER_D 0x00499396
-unsigned long SmackerBackBuffer::Compose(class IFlatImage*, long, long, long, long, long, long) {
+unsigned long SmackerBackBuffer::Compose(class IFlatImage* pDestImage, long DestLeft, long DestTop, long SrcLeft, long SrcTop, long SrcRight, long SrcBottom) {
 // LINE 1014:
 	asm( 
 "	      00499396    push ebp"
@@ -3692,7 +3692,7 @@ unsigned long SmackerBackBuffer::Compose(class IFlatImage*, long, long, long, lo
 }
 
 // FUNCTION: COPTER_D 0x0049976d
-unsigned long SmackerBackBuffer::StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long) {
+unsigned long SmackerBackBuffer::StretchCompose(class IFlatImage* pDestImage, long DestLeft, long DestTop, long DestRight, long DestBottom, long SrcLeft, long SrcTop, long SrcRight, long SrcBottom) {
 // LINE 1104:
 	asm( 
 "	      0049976d    push ebp"
@@ -4141,7 +4141,7 @@ unsigned long SmackerBackBuffer::StretchCompose(class IFlatImage*, long, long, l
 }
 
 // FUNCTION: COPTER_D 0x00499b35
-void SmackerBackBuffer::BltParts(class IFlatImage*, long, long, long, long, long, long) {
+void SmackerBackBuffer::BltParts(class IFlatImage* pDestImage, long DestLeft, long DestTop, long SrcLeft, long SrcTop, long SrcRight, long SrcBottom) {
 // LINE 1215:
 	asm( 
 "	      00499b35    push ebp"
@@ -4458,7 +4458,7 @@ void SmackerBackBuffer::BltParts(class IFlatImage*, long, long, long, long, long
 }
 
 // FUNCTION: COPTER_D 0x00499d5c
-void SmackerBackBuffer::BltAll(class IFlatImage*, long, long, long, long, long, long) {
+void SmackerBackBuffer::BltAll(class IFlatImage* pDestImage, long DestLeft, long DestTop, long SrcLeft, long SrcTop, long SrcRight, long SrcBottom) {
 // LINE 1328:
 	asm( 
 "	      00499d5c    push ebp"

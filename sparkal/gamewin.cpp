@@ -6,7 +6,7 @@
 
 // Contribution: 1:00065f70-00067019 Module: 43, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00466f70
-void GameWindow::GameWindow(unsigned long, unsigned long, unsigned long, const struct SparkalColor*, char *) {
+void GameWindow::GameWindow(unsigned long Width, unsigned long Height, unsigned long Style, const struct SparkalColor* pColors, char * Caption) {
 // LINE 36:
 	asm( 
 "	      00466f70    push ebp"
@@ -623,7 +623,7 @@ unsigned long GameWindow::SwapBuffer() {
 }
 
 // FUNCTION: COPTER_D 0x004673ea
-unsigned long GameWindow::MakePalette(const struct SparkalColor*) {
+unsigned long GameWindow::MakePalette(const struct SparkalColor* pColors) {
 // LINE 197:
 	asm( 
 "	      004673ea    push ebp"
@@ -951,7 +951,7 @@ unsigned long GameWindow::MakePalette(const struct SparkalColor*) {
 }
 
 // FUNCTION: COPTER_D 0x004676a1
-void GameWindow::UpdatePalette(long, long, struct SparkalColor*) {
+void GameWindow::UpdatePalette(long start, long count, struct SparkalColor* pColor) {
 // LINE 285:
 	asm( 
 "	      004676a1    push ebp"
@@ -1562,7 +1562,7 @@ void GameWindow::CenterWindow() {
 }
 
 // FUNCTION: COPTER_D 0x00467af9
-void GameWindow::PlaceWindowRect(class MRect*) {
+void GameWindow::PlaceWindowRect(class MRect* rectWindowToPlace) {
 // LINE 469:
 	asm( 
 "	      00467af9    push ebp"
@@ -1653,7 +1653,7 @@ void GameWindow::PlaceWindowRect(class MRect*) {
 }
 
 // FUNCTION: COPTER_D 0x00467b9c
-long GameWindow::MySparkalWindowProc(void * __ptr32, uint32_t, uint32_t, long) {
+long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, uint32_t wParam, long lParam) {
 // LINE 493:
 	asm( 
 "	      00467b9c    push ebp"

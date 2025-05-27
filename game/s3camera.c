@@ -6,7 +6,7 @@
 
 // Contribution: 1:000f7af0-000f8bb0 Module: 175, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004f8af0
-void S3CameraMove(struct Point3d*) {
+void S3CameraMove(struct Point3d* P) {
 // LINE 100:
 	asm( 
 "	      004f8af0    push ebp"
@@ -526,7 +526,7 @@ void S3CameraMove(struct Point3d*) {
 }
 
 // FUNCTION: COPTER_D 0x004f8f69
-void NormalizeGridPoint(struct Point3d*) {
+void NormalizeGridPoint(struct Point3d* P) {
 // LINE 283:
 	asm( 
 "	      004f8f69    push ebp"
@@ -862,7 +862,7 @@ void SetIdealCameraPos() {
 }
 
 // FUNCTION: COPTER_D 0x004f9240
-void GetIdealCameraPos(struct Point3d*) {
+void GetIdealCameraPos(struct Point3d* P) {
 // LINE 403:
 	asm( 
 "	      004f9240    push ebp"
@@ -893,7 +893,7 @@ void GetIdealCameraPos(struct Point3d*) {
 }
 
 // FUNCTION: COPTER_D 0x004f9263
-void CalcCameraAngles(struct Point3d*) {
+void CalcCameraAngles(struct Point3d* Vector) {
 // LINE 423:
 	asm( 
 "	      004f9263    push ebp"
@@ -1266,7 +1266,7 @@ void CalcCameraAngles(struct Point3d*) {
 }
 
 // FUNCTION: COPTER_D 0x004f955f
-void S3AngleRotMat(int32_t[4]*, int32_t, int32_t, int32_t) {
+void S3AngleRotMat(int32_t[4]* matrix, int32_t Yaw, int32_t Pitch, int32_t Roll) {
 // LINE 528:
 	asm( 
 "	      004f955f    push ebp"
@@ -1727,7 +1727,7 @@ void S3CameraTweakInit() {
 }
 
 // FUNCTION: COPTER_D 0x004f9912
-void S3CameraChaseAdjust(int32_t) {
+void S3CameraChaseAdjust(int32_t camevent) {
 // LINE 742:
 	asm( 
 "	      004f9912    push ebp"
@@ -1927,7 +1927,7 @@ struct _CHASE_INFO* S3CameraGetChaseInfo() {
 }
 
 // FUNCTION: COPTER_D 0x004f9a8b
-void S3CameraSetChaseInfo(struct _CHASE_INFO*) {
+void S3CameraSetChaseInfo(struct _CHASE_INFO* cinfo) {
 // LINE 805:
 	asm( 
 "	      004f9a8b    push ebp"
@@ -1954,7 +1954,7 @@ void S3CameraSetChaseInfo(struct _CHASE_INFO*) {
 }
 
 // FUNCTION: COPTER_D 0x004f9aa5
-int32_t S3CameraGetBldAlt(struct Point3d*) {
+int32_t S3CameraGetBldAlt(struct Point3d* loc) {
 // LINE 817:
 	asm( 
 "	      004f9aa5    push ebp"

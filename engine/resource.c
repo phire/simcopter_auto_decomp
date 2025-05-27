@@ -53,7 +53,7 @@ void InitResource() {
 }
 
 // FUNCTION: COPTER_D 0x004d530f
-void VRResFreeBarrys(struct VRResource*) {
+void VRResFreeBarrys(struct VRResource* res) {
 // LINE 112:
 	asm( 
 "	      004d530f    push ebp"
@@ -107,7 +107,7 @@ void VRResFreeBarrys(struct VRResource*) {
 }
 
 // FUNCTION: COPTER_D 0x004d5356
-struct VRResource* VRLoadResource(char *, int32_t, void * __ptr32) {
+struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 misc) {
 // LINE 138:
 	asm( 
 "	      004d5356    push ebp"
@@ -739,7 +739,7 @@ int32_t VRUnLoadAllResources() {
 }
 
 // FUNCTION: COPTER_D 0x004d5872
-int32_t VRUnLoadResource(struct VRResource*) {
+int32_t VRUnLoadResource(struct VRResource* res) {
 // LINE 301:
 	asm( 
 "	      004d5872    push ebp"
@@ -844,7 +844,7 @@ int32_t VRUnLoadResource(struct VRResource*) {
 }
 
 // FUNCTION: COPTER_D 0x004d5926
-int32_t GetDir_GEOM(char *) {
+int32_t GetDir_GEOM(char * name) {
 // LINE 358:
 	asm( 
 "	      004d5926    push ebp"
@@ -1133,7 +1133,7 @@ int32_t GetDir_GEOM(char *) {
 }
 
 // FUNCTION: COPTER_D 0x004d5baf
-int32_t GetDir_CMAP(char *) {
+int32_t GetDir_CMAP(char * name) {
 // LINE 635:
 	asm( 
 "	      004d5baf    push ebp"
@@ -1328,7 +1328,7 @@ int32_t GetDir_CMAP(char *) {
 }
 
 // FUNCTION: COPTER_D 0x004d5d48
-int32_t GetResourceDir(char *) {
+int32_t GetResourceDir(char * name) {
 // LINE 752:
 	asm( 
 "	      004d5d48    push ebp"
@@ -1487,7 +1487,7 @@ int32_t GetResourceDir(char *) {
 }
 
 // FUNCTION: COPTER_D 0x004d5e81
-int32_t OpenResourceFile(char *) {
+int32_t OpenResourceFile(char * name) {
 // LINE 868:
 	asm( 
 "	      004d5e81    push ebp"
@@ -1569,7 +1569,7 @@ int32_t OpenResourceFile(char *) {
 }
 
 // FUNCTION: COPTER_D 0x004d5f1e
-int32_t ReadResource(void * __ptr32, int32_t) {
+int32_t ReadResource(void * __ptr32 buf, int32_t s) {
 // LINE 915:
 	asm( 
 "	      004d5f1e    push ebp"
@@ -1664,7 +1664,7 @@ void VRCloseResourceFile() {
 }
 
 // FUNCTION: COPTER_D 0x004d5fa9
-int32_t RegisterResource(struct VRResource*) {
+int32_t RegisterResource(struct VRResource* res) {
 // LINE 1117:
 	asm( 
 "	      004d5fa9    push ebp"
@@ -1716,7 +1716,7 @@ int32_t RegisterResource(struct VRResource*) {
 }
 
 // FUNCTION: COPTER_D 0x004d5ffd
-void UnRegisterResource(struct VRResource*) {
+void UnRegisterResource(struct VRResource* res) {
 // LINE 1142:
 	asm( 
 "	      004d5ffd    push ebp"

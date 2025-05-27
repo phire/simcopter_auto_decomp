@@ -6,7 +6,7 @@
 
 // Contribution: 1:00165a10-001661fc Module: 182, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00566a10
-void GlobalToLocal(struct Point*) {
+void GlobalToLocal(struct Point* pt) {
 // LINE 8:
 	asm( 
 "	      00566a10    push ebp"
@@ -60,7 +60,7 @@ void GlobalToLocal(struct Point*) {
 }
 
 // FUNCTION: COPTER_D 0x00566a59
-void LocalToGlobal(struct Point*) {
+void LocalToGlobal(struct Point* pt) {
 // LINE 17:
 	asm( 
 "	      00566a59    push ebp"
@@ -145,7 +145,7 @@ long TickCount() {
 }
 
 // FUNCTION: COPTER_D 0x00566aca
-short StringWidth(unsigned char *) {
+short StringWidth(unsigned char * str) {
 // LINE 35:
 	asm( 
 "	      00566aca    push ebp"
@@ -197,7 +197,7 @@ short StringWidth(unsigned char *) {
 }
 
 // FUNCTION: COPTER_D 0x00566b13
-void PtoCstr(unsigned char *) {
+void PtoCstr(unsigned char * pstr) {
 // LINE 44:
 	asm( 
 "	      00566b13    push ebp"
@@ -243,7 +243,7 @@ void PtoCstr(unsigned char *) {
 }
 
 // FUNCTION: COPTER_D 0x00566b52
-void CtoPstr(char *) {
+void CtoPstr(char * cstr) {
 // LINE 52:
 	asm( 
 "	      00566b52    push ebp"
@@ -298,7 +298,7 @@ void CtoPstr(char *) {
 }
 
 // FUNCTION: COPTER_D 0x00566ba8
-void OffsetRect(struct Rect*, short, short) {
+void OffsetRect(struct Rect* rect, short hoff, short voff) {
 // LINE 60:
 	asm( 
 "	      00566ba8    push ebp"
@@ -355,7 +355,7 @@ void OffsetRect(struct Rect*, short, short) {
 }
 
 // FUNCTION: COPTER_D 0x00566c06
-unsigned short SectRect(struct Rect*, struct Rect*, struct Rect*) {
+unsigned short SectRect(struct Rect* rect1, struct Rect* rect2, struct Rect* result) {
 // LINE 74:
 	asm( 
 "	      00566c06    push ebp"
@@ -437,7 +437,7 @@ unsigned short SectRect(struct Rect*, struct Rect*, struct Rect*) {
 }
 
 // FUNCTION: COPTER_D 0x00566ca8
-void SetPortDC(void * __ptr32) {
+void SetPortDC(void * __ptr32 dc) {
 // LINE 103:
 	asm( 
 "	      00566ca8    push ebp"
@@ -524,7 +524,7 @@ void CleanUpPort() {
 }
 
 // FUNCTION: COPTER_D 0x00566d38
-void SetPort(void * __ptr32) {
+void SetPort(void * __ptr32 newHWND) {
 // LINE 111:
 	asm( 
 "	      00566d38    push ebp"
@@ -561,7 +561,7 @@ void SetPort(void * __ptr32) {
 }
 
 // FUNCTION: COPTER_D 0x00566d66
-void SetPort(struct GrafPtr) {
+void SetPort(struct GrafPtr newPort) {
 // LINE 119:
 	asm( 
 "	      00566d66    push ebp"
@@ -606,7 +606,7 @@ void SetPort(struct GrafPtr) {
 }
 
 // FUNCTION: COPTER_D 0x00566da7
-void GetPort(struct GrafPtr*) {
+void GetPort(struct GrafPtr* pPort) {
 // LINE 130:
 	asm( 
 "	      00566da7    push ebp"
@@ -635,7 +635,7 @@ void GetPort(struct GrafPtr*) {
 }
 
 // FUNCTION: COPTER_D 0x00566dca
-void EraseRect(struct tagRECT*) {
+void EraseRect(struct tagRECT* rect) {
 // LINE 135:
 	asm( 
 "	      00566dca    push ebp"
@@ -713,7 +713,7 @@ void EraseRect(struct tagRECT*) {
 }
 
 // FUNCTION: COPTER_D 0x00566e67
-void EraseRect(struct Rect*) {
+void EraseRect(struct Rect* r) {
 // LINE 146:
 	asm( 
 "	      00566e67    push ebp"
@@ -757,7 +757,7 @@ void EraseRect(struct Rect*) {
 }
 
 // FUNCTION: COPTER_D 0x00566ead
-void FrameRect(struct Rect*) {
+void FrameRect(struct Rect* rect) {
 // LINE 153:
 	asm( 
 "	      00566ead    push ebp"
@@ -832,7 +832,7 @@ void FrameRect(struct Rect*) {
 }
 
 // FUNCTION: COPTER_D 0x00566f42
-void SetRect(struct Rect*, short, short, short, short) {
+void SetRect(struct Rect* rect, short left, short top, short right, short bottom) {
 // LINE 164:
 	asm( 
 "	      00566f42    push ebp"
@@ -877,7 +877,7 @@ void SetRect(struct Rect*, short, short, short, short) {
 }
 
 // FUNCTION: COPTER_D 0x00566f7d
-void UnionRect(struct Rect*, struct Rect*, struct Rect*) {
+void UnionRect(struct Rect* rect1, struct Rect* rect2, struct Rect* result) {
 // LINE 172:
 	asm( 
 "	      00566f7d    push ebp"
@@ -1006,7 +1006,7 @@ void UnionRect(struct Rect*, struct Rect*, struct Rect*) {
 }
 
 // FUNCTION: COPTER_D 0x00567063
-unsigned short EqualRect(struct Rect*, struct Rect*) {
+unsigned short EqualRect(struct Rect* rect1, struct Rect* rect2) {
 // LINE 195:
 	asm( 
 "	      00567063    push ebp"
@@ -1051,7 +1051,7 @@ unsigned short EqualRect(struct Rect*, struct Rect*) {
 }
 
 // FUNCTION: COPTER_D 0x005670a9
-void InsetRect(struct Rect*, short, short) {
+void InsetRect(struct Rect* r, short hdelta, short vdelta) {
 // LINE 202:
 	asm( 
 "	      005670a9    push ebp"
@@ -1108,7 +1108,7 @@ void InsetRect(struct Rect*, short, short) {
 }
 
 // FUNCTION: COPTER_D 0x00567107
-unsigned short PtInRect(struct Point, struct Rect*) {
+unsigned short PtInRect(struct Point p, struct Rect* r) {
 // LINE 210:
 	asm( 
 "	      00567107    push ebp"
@@ -1159,7 +1159,7 @@ unsigned short PtInRect(struct Point, struct Rect*) {
 }
 
 // FUNCTION: COPTER_D 0x00567173
-unsigned short EmptyRect(struct Rect*) {
+unsigned short EmptyRect(struct Rect* r) {
 // LINE 216:
 	asm( 
 "	      00567173    push ebp"
@@ -1201,7 +1201,7 @@ unsigned short EmptyRect(struct Rect*) {
 }
 
 // FUNCTION: COPTER_D 0x005671ba
-void GetBackColor(unsigned long *) {
+void GetBackColor(unsigned long * color) {
 // LINE 222:
 	asm( 
 "	      005671ba    push ebp"
@@ -1230,7 +1230,7 @@ void GetBackColor(unsigned long *) {
 }
 
 // FUNCTION: COPTER_D 0x005671db
-void RGBBackColor(unsigned long *) {
+void RGBBackColor(unsigned long * color) {
 // LINE 227:
 	asm( 
 "	      005671db    push ebp"

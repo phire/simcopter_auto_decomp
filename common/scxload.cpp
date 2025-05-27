@@ -86,7 +86,7 @@ void cLZAPFileBitStream::~cLZAPFileBitStream() {
 }
 
 // FUNCTION: COPTER_D 0x004cb90d
-int32_t cLZAPFileBitStream::OpenRead(char *) {
+int32_t cLZAPFileBitStream::OpenRead(char * filePath) {
 // LINE 95:
 	asm( 
 "	      004cb90d    push ebp"
@@ -205,7 +205,7 @@ void cLZAPFileBitStream::Close() {
 }
 
 // FUNCTION: COPTER_D 0x004cba1c
-unsigned long cLZAPFileBitStream::Read(unsigned char *, unsigned long) {
+unsigned long cLZAPFileBitStream::Read(unsigned char * buffer, unsigned long nBytes) {
 // LINE 108:
 	asm( 
 "	      004cba1c    push ebp"
@@ -264,7 +264,7 @@ unsigned long cLZAPFileBitStream::Read(unsigned char *, unsigned long) {
 }
 
 // FUNCTION: COPTER_D 0x004cba9c
-unsigned long cLZAPFileBitStream::Write(unsigned char *, unsigned long) {
+unsigned long cLZAPFileBitStream::Write(unsigned char * buffer, unsigned long nBytes) {
 // LINE 115:
 	asm( 
 "	      004cba9c    push ebp"
@@ -525,7 +525,7 @@ void cLZAPFileBitStream::FreeAll() {
 }
 
 // FUNCTION: COPTER_D 0x004cbc58
-void SCXReadBudget(class cGZXBitstream*, unsigned char *) {
+void SCXReadBudget(class cGZXBitstream* AStream, unsigned char * data) {
 // LINE 169:
 	asm( 
 "	      004cbc58    push ebp"
@@ -556,7 +556,7 @@ void SCXReadBudget(class cGZXBitstream*, unsigned char *) {
 }
 
 // FUNCTION: COPTER_D 0x004cbc7b
-void SCXReadGraphData(class cGZXBitstream*, unsigned char *) {
+void SCXReadGraphData(class cGZXBitstream* AStream, unsigned char * data) {
 // LINE 184:
 	asm( 
 "	      004cbc7b    push ebp"
@@ -587,7 +587,7 @@ void SCXReadGraphData(class cGZXBitstream*, unsigned char *) {
 }
 
 // FUNCTION: COPTER_D 0x004cbc9e
-void SCXReadPlayer(class cGZXBitstream*, unsigned char *) {
+void SCXReadPlayer(class cGZXBitstream* AStream, unsigned char * data) {
 // LINE 196:
 	asm( 
 "	      004cbc9e    push ebp"
@@ -686,7 +686,7 @@ void SCXReadPlayer(class cGZXBitstream*, unsigned char *) {
 }
 
 // FUNCTION: COPTER_D 0x004cbd38
-void SCXReadNeighbors(class cGZXBitstream*, unsigned char *) {
+void SCXReadNeighbors(class cGZXBitstream* AStream, unsigned char * data) {
 // LINE 221:
 	asm( 
 "	      004cbd38    push ebp"
@@ -973,7 +973,7 @@ void SCXReadNeighbors(class cGZXBitstream*, unsigned char *) {
 }
 
 // FUNCTION: COPTER_D 0x004cbfc8
-void SCXReadContracts(class cGZXBitstream*, unsigned char *) {
+void SCXReadContracts(class cGZXBitstream* AStream, unsigned char * data) {
 // LINE 279:
 	asm( 
 "	      004cbfc8    push ebp"
@@ -1018,7 +1018,7 @@ void SCXReadContracts(class cGZXBitstream*, unsigned char *) {
 }
 
 // FUNCTION: COPTER_D 0x004cc003
-int32_t ReadSCXFile(char *) {
+int32_t ReadSCXFile(char * filePath) {
 // LINE 295:
 	asm( 
 "	      004cc003    push ebp"

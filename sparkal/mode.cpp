@@ -43,7 +43,7 @@ int32_t GetAllDisplayModes() {
 }
 
 // FUNCTION: COPTER_D 0x0048b140
-int32_t IsModeAvailable(long, long, long) {
+int32_t IsModeAvailable(long lWidth, long lHeight, long lBPP) {
 // LINE 56:
 	asm( 
 "	      0048b140    push ebp"
@@ -105,7 +105,7 @@ int32_t IsModeAvailable(long, long, long) {
 }
 
 // FUNCTION: COPTER_D 0x0048b1c4
-void GetCurrentScreenMode(struct tagMode*, int32_t) {
+void GetCurrentScreenMode(struct tagMode* modeCurrent, int32_t __formal) {
 // LINE 78:
 	asm( 
 "	      0048b1c4    push ebp"
@@ -177,7 +177,7 @@ void GetCurrentScreenMode(struct tagMode*, int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x0048b234
-long EnumDisplayModesCallback(struct _DDSURFACEDESC*, void * __ptr32) {
+long EnumDisplayModesCallback(struct _DDSURFACEDESC* pddsd, void * __ptr32 Context) {
 // LINE 103:
 	asm( 
 "	      0048b234    push ebp"

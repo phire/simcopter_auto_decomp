@@ -6,7 +6,7 @@
 
 // Contribution: 1:0001ead0-0001f5cb Module: 72, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0041fad0
-char * MTimeLocalized::PrintStringLocalized(char *, int32_t) {
+char * MTimeLocalized::PrintStringLocalized(char * szTime, int32_t nLanguageToUse) {
 // LINE 25:
 	asm( 
 "	      0041fad0    push ebp"
@@ -94,7 +94,7 @@ char * MTimeLocalized::PrintStringLocalized(char *, int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x0041fb6a
-class ostream& operator<<(class ostream&, const class MTimeLocalized&) {
+class ostream& operator<<(class ostream& s, const class MTimeLocalized& t) {
 // LINE 49:
 	asm( 
 "	      0041fb6a    push ebp"
@@ -423,7 +423,7 @@ void MDateLocalized::MDateLocalized() {
 }
 
 // FUNCTION: COPTER_D 0x0041fe8b
-void MDateLocalized::MDateLocalized(uint32_t, uint32_t) {
+void MDateLocalized::MDateLocalized(uint32_t day, uint32_t year) {
 // LINE 129:
 	asm( 
 "	      0041fe8b    push ebp"
@@ -457,7 +457,7 @@ void MDateLocalized::MDateLocalized(uint32_t, uint32_t) {
 }
 
 // FUNCTION: COPTER_D 0x0041fec9
-void MDateLocalized::MDateLocalized(uint32_t, char *, uint32_t) {
+void MDateLocalized::MDateLocalized(uint32_t day, char * monthName, uint32_t year) {
 // LINE 137:
 	asm( 
 "	      0041fec9    push ebp"
@@ -510,7 +510,7 @@ void MDateLocalized::MDateLocalized(uint32_t, char *, uint32_t) {
 }
 
 // FUNCTION: COPTER_D 0x0041ff30
-void MDateLocalized::MDateLocalized(uint32_t, uint32_t, uint32_t) {
+void MDateLocalized::MDateLocalized(uint32_t day, uint32_t month, uint32_t year) {
 // LINE 146:
 	asm( 
 "	      0041ff30    push ebp"
@@ -546,7 +546,7 @@ void MDateLocalized::MDateLocalized(uint32_t, uint32_t, uint32_t) {
 }
 
 // FUNCTION: COPTER_D 0x0041ff72
-void MDateLocalized::MDateLocalized(class istream&) {
+void MDateLocalized::MDateLocalized(class istream& s) {
 // LINE 154:
 	asm( 
 "	      0041ff72    push ebp"
@@ -581,7 +581,7 @@ void MDateLocalized::MDateLocalized(class istream&) {
 }
 
 // FUNCTION: COPTER_D 0x0041ffba
-void MDateLocalized::MDateLocalized(const class MTime&) {
+void MDateLocalized::MDateLocalized(const class MTime& time) {
 // LINE 162:
 	asm( 
 "	      0041ffba    push ebp"
@@ -613,7 +613,7 @@ void MDateLocalized::MDateLocalized(const class MTime&) {
 }
 
 // FUNCTION: COPTER_D 0x0041fff4
-char * MDateLocalized::NameOfDayLocalized(char *, int32_t) {
+char * MDateLocalized::NameOfDayLocalized(char * szDayName, int32_t nLanguageToUse) {
 // LINE 170:
 	asm( 
 "	      0041fff4    push ebp"
@@ -669,7 +669,7 @@ char * MDateLocalized::NameOfDayLocalized(char *, int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x0042004a
-char * MDateLocalized::NameOfMonthLocalized(char *, int32_t) {
+char * MDateLocalized::NameOfMonthLocalized(char * szMonthName, int32_t nLanguageToUse) {
 // LINE 183:
 	asm( 
 "	      0042004a    push ebp"
@@ -725,7 +725,7 @@ char * MDateLocalized::NameOfMonthLocalized(char *, int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x004200a0
-char * MDateLocalized::PrintStringLocalized(char *, int32_t) {
+char * MDateLocalized::PrintStringLocalized(char * szDate, int32_t nLanguageToUse) {
 // LINE 197:
 	asm( 
 "	      004200a0    push ebp"
@@ -823,7 +823,7 @@ char * MDateLocalized::PrintStringLocalized(char *, int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x0042014c
-class MDate MDateLocalized::PreviousLocalized(char *, int32_t) {
+class MDate MDateLocalized::PreviousLocalized(char * dayName, int32_t nLanguageToUse) {
 // LINE 221:
 	asm( 
 "	      0042014c    push ebp"
@@ -899,7 +899,7 @@ class MDate MDateLocalized::PreviousLocalized(char *, int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x004201c9
-uint32_t MDateLocalized::DayOfWeekLocalized(char *, int32_t) {
+uint32_t MDateLocalized::DayOfWeekLocalized(char * dayName, int32_t nLanguageToUse) {
 // LINE 242:
 	asm( 
 "	      004201c9    push ebp"
@@ -961,7 +961,7 @@ uint32_t MDateLocalized::DayOfWeekLocalized(char *, int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x00420237
-uint32_t MDateLocalized::IndexOfMonthLocalized(char *, int32_t) {
+uint32_t MDateLocalized::IndexOfMonthLocalized(char * monthName, int32_t nLanguageToUse) {
 // LINE 263:
 	asm( 
 "	      00420237    push ebp"
@@ -1023,7 +1023,7 @@ uint32_t MDateLocalized::IndexOfMonthLocalized(char *, int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x004202a5
-char * MDateLocalized::DayNameLocalized(uint32_t, char *, int32_t) {
+char * MDateLocalized::DayNameLocalized(uint32_t weekDayNumber, char * szDayName, int32_t nLanguageToUse) {
 // LINE 285:
 	asm( 
 "	      004202a5    push ebp"
@@ -1097,7 +1097,7 @@ char * MDateLocalized::DayNameLocalized(uint32_t, char *, int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x0042033c
-char * MDateLocalized::MonthNameLocalized(uint32_t, char *, int32_t) {
+char * MDateLocalized::MonthNameLocalized(uint32_t monthNumber, char * szMonthName, int32_t nLanguageToUse) {
 // LINE 305:
 	asm( 
 "	      0042033c    push ebp"
@@ -1171,7 +1171,7 @@ char * MDateLocalized::MonthNameLocalized(uint32_t, char *, int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x004203d3
-class ostream& operator<<(class ostream&, const class MDateLocalized&) {
+class ostream& operator<<(class ostream& s, const class MDateLocalized& d) {
 // LINE 325:
 	asm( 
 "	      004203d3    push ebp"

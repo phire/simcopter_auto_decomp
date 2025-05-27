@@ -117,7 +117,7 @@ void BitmappedFont::BitmappedFont() {
 }
 
 // FUNCTION: COPTER_D 0x0046823f
-void BitmappedFont::BitmappedFont(class basic_string<char>&, const long) {
+void BitmappedFont::BitmappedFont(class basic_string<char>& sNewFontInfoPath, const long lNewLanguage) {
 // LINE 37:
 	asm( 
 "	      0046823f    push ebp"
@@ -316,7 +316,7 @@ void BitmappedFont::BitmappedFont(class basic_string<char>&, const long) {
 }
 
 // FUNCTION: COPTER_D 0x00468519
-void BitmappedFont::BitmappedFont(char *, const long) {
+void BitmappedFont::BitmappedFont(char * szNewFontInfoPath, const long lNewLanguage) {
 // LINE 49:
 	asm( 
 "	      00468519    push ebp"
@@ -2355,7 +2355,7 @@ void BitmappedFont::DestroyImage() {
 }
 
 // FUNCTION: COPTER_D 0x0046a159
-long BitmappedFont::GetStringWidth(char *, const unsigned long) {
+long BitmappedFont::GetStringWidth(char * chText, const unsigned long nStringLength) {
 // LINE 228:
 	asm( 
 "	      0046a159    push ebp"
@@ -2448,7 +2448,7 @@ long BitmappedFont::GetStringWidth(char *, const unsigned long) {
 }
 
 // FUNCTION: COPTER_D 0x0046a225
-long BitmappedFont::GetStringVisibleWidth(char *, const unsigned long, unsigned long&) {
+long BitmappedFont::GetStringVisibleWidth(char * chText, const unsigned long nStringLength, unsigned long& nVisibleStringLength) {
 // LINE 251:
 	asm( 
 "	      0046a225    push ebp"
@@ -2599,7 +2599,7 @@ long BitmappedFont::GetStringVisibleWidth(char *, const unsigned long, unsigned 
 }
 
 // FUNCTION: COPTER_D 0x0046a37c
-long BitmappedFont::CalculateNumberOfLines(char *, const unsigned long, const unsigned long) {
+long BitmappedFont::CalculateNumberOfLines(char * chText, const unsigned long nStringLength, const unsigned long nWidth) {
 // LINE 278:
 	asm( 
 "	      0046a37c    push ebp"
@@ -2665,7 +2665,7 @@ long BitmappedFont::CalculateNumberOfLines(char *, const unsigned long, const un
 }
 
 // FUNCTION: COPTER_D 0x0046a3d4
-long BitmappedFont::CalculateWidthOfLines(char *, const unsigned long, const unsigned long) {
+long BitmappedFont::CalculateWidthOfLines(char * chText, const unsigned long nStringLength, const unsigned long nHeight) {
 // LINE 307:
 	asm( 
 "	      0046a3d4    push ebp"
@@ -2731,7 +2731,7 @@ long BitmappedFont::CalculateWidthOfLines(char *, const unsigned long, const uns
 }
 
 // FUNCTION: COPTER_D 0x0046a44b
-long BitmappedFont::CalculateCharsToFitInWidth(char *, const unsigned long) {
+long BitmappedFont::CalculateCharsToFitInWidth(char * chText, const unsigned long nWidth) {
 // LINE 334:
 	asm( 
 "	      0046a44b    push ebp"
@@ -2931,7 +2931,7 @@ long BitmappedFont::CalculateCharsToFitInWidth(char *, const unsigned long) {
 }
 
 // FUNCTION: COPTER_D 0x0046a5e3
-void BitmappedFont::DrawTextLine(class CBackBuffer*, long, long, char *, const unsigned long) {
+void BitmappedFont::DrawTextLine(class CBackBuffer* destination, long x, long y, char * chText, const unsigned long nStringLength) {
 // LINE 392:
 	asm( 
 "	      0046a5e3    push ebp"
@@ -3112,7 +3112,7 @@ void BitmappedFont::DrawTextLine(class CBackBuffer*, long, long, char *, const u
 }
 
 // FUNCTION: COPTER_D 0x0046a7dc
-void BitmappedFont::DrawTextLineNoClip(class CBackBuffer*, long, long, char *, const unsigned long) {
+void BitmappedFont::DrawTextLineNoClip(class CBackBuffer* destination, long x, long y, char * chText, const unsigned long nStringLength) {
 // LINE 409:
 	asm( 
 "	      0046a7dc    push ebp"
@@ -3293,7 +3293,7 @@ void BitmappedFont::DrawTextLineNoClip(class CBackBuffer*, long, long, char *, c
 }
 
 // FUNCTION: COPTER_D 0x0046a9d5
-void BitmappedFont::DrawTextPara(class CBackBuffer*, class MRect&, char *, const unsigned long) {
+void BitmappedFont::DrawTextPara(class CBackBuffer* destination, class MRect& rectPara, char * chText, const unsigned long nStringLength) {
 // LINE 428:
 	asm( 
 "	      0046a9d5    push ebp"
@@ -3398,7 +3398,7 @@ void BitmappedFont::DrawTextPara(class CBackBuffer*, class MRect&, char *, const
 }
 
 // FUNCTION: COPTER_D 0x0046aa7f
-void BitmappedFont::DrawTextParaNoClip(class CBackBuffer*, class MRect&, char *, const unsigned long) {
+void BitmappedFont::DrawTextParaNoClip(class CBackBuffer* destination, class MRect& rectPara, char * chText, const unsigned long nStringLength) {
 // LINE 454:
 	asm( 
 "	      0046aa7f    push ebp"
@@ -3503,7 +3503,7 @@ void BitmappedFont::DrawTextParaNoClip(class CBackBuffer*, class MRect&, char *,
 }
 
 // FUNCTION: COPTER_D 0x0046ab29
-void BitmappedFont::DrawTextLineFormat(class CBackBuffer*, class MRect&, char *, const unsigned long, const unsigned long) {
+void BitmappedFont::DrawTextLineFormat(class CBackBuffer* destination, class MRect& rectLine, char * chText, const unsigned long nStringLength, const unsigned long nFormat) {
 // LINE 482:
 	asm( 
 "	      0046ab29    push ebp"
@@ -3655,7 +3655,7 @@ void BitmappedFont::DrawTextLineFormat(class CBackBuffer*, class MRect&, char *,
 }
 
 // FUNCTION: COPTER_D 0x0046ac46
-void BitmappedFont::DrawTextLineFormatNoClip(class CBackBuffer*, class MRect&, char *, const unsigned long, const unsigned long) {
+void BitmappedFont::DrawTextLineFormatNoClip(class CBackBuffer* destination, class MRect& rectLine, char * chText, const unsigned long nStringLength, const unsigned long nFormat) {
 // LINE 519:
 	asm( 
 "	      0046ac46    push ebp"
@@ -3807,7 +3807,7 @@ void BitmappedFont::DrawTextLineFormatNoClip(class CBackBuffer*, class MRect&, c
 }
 
 // FUNCTION: COPTER_D 0x0046ad63
-void BitmappedFont::DrawTextParaFormat(class CBackBuffer*, class MRect&, char *, const unsigned long, const unsigned long) {
+void BitmappedFont::DrawTextParaFormat(class CBackBuffer* destination, class MRect& rectPara, char * chText, const unsigned long nStringLength, const unsigned long nFormat) {
 // LINE 556:
 	asm( 
 "	      0046ad63    push ebp"
@@ -3929,7 +3929,7 @@ void BitmappedFont::DrawTextParaFormat(class CBackBuffer*, class MRect&, char *,
 }
 
 // FUNCTION: COPTER_D 0x0046ae43
-void BitmappedFont::DrawTextParaFormatNoClip(class CBackBuffer*, class MRect&, char *, const unsigned long, const unsigned long) {
+void BitmappedFont::DrawTextParaFormatNoClip(class CBackBuffer* destination, class MRect& rectPara, char * chText, const unsigned long nStringLength, const unsigned long nFormat) {
 // LINE 585:
 	asm( 
 "	      0046ae43    push ebp"
@@ -4051,7 +4051,7 @@ void BitmappedFont::DrawTextParaFormatNoClip(class CBackBuffer*, class MRect&, c
 }
 
 // FUNCTION: COPTER_D 0x0046af23
-int32_t BitmappedFont::IsCharBreakingChar(const char) {
+int32_t BitmappedFont::IsCharBreakingChar(const char chText) {
 // LINE 613:
 	asm( 
 "	      0046af23    push ebp"
@@ -4086,7 +4086,7 @@ int32_t BitmappedFont::IsCharBreakingChar(const char) {
 }
 
 // FUNCTION: COPTER_D 0x0046af61
-int32_t BitmappedFont::IsCharReturnChar(const char) {
+int32_t BitmappedFont::IsCharReturnChar(const char chText) {
 // LINE 625:
 	asm( 
 "	      0046af61    push ebp"
@@ -4118,7 +4118,7 @@ int32_t BitmappedFont::IsCharReturnChar(const char) {
 }
 
 // FUNCTION: COPTER_D 0x0046af92
-int32_t BitmappedFont::IsCharWhitespace(const char) {
+int32_t BitmappedFont::IsCharWhitespace(const char chText) {
 // LINE 634:
 	asm( 
 "	      0046af92    push ebp"
@@ -4150,7 +4150,7 @@ int32_t BitmappedFont::IsCharWhitespace(const char) {
 }
 
 // FUNCTION: COPTER_D 0x0046afc3
-int32_t BitmappedFont::GetIniFileLong(char *, char *, char *, long *) {
+int32_t BitmappedFont::GetIniFileLong(char * chHeader, char * chSection, char * chPath, long * lResult) {
 // LINE 645:
 	asm( 
 "	      0046afc3    push ebp"
@@ -4201,7 +4201,7 @@ int32_t BitmappedFont::GetIniFileLong(char *, char *, char *, long *) {
 }
 
 // FUNCTION: COPTER_D 0x0046b012
-int32_t BitmappedFont::GetIniFileString(char *, char *, char *, char *, const long) {
+int32_t BitmappedFont::GetIniFileString(char * chHeader, char * chSection, char * chPath, char * chResult, const long lStringLength) {
 // LINE 663:
 	asm( 
 "	      0046b012    push ebp"
@@ -4239,7 +4239,7 @@ int32_t BitmappedFont::GetIniFileString(char *, char *, char *, char *, const lo
 }
 
 // FUNCTION: COPTER_D 0x0046b049
-int32_t BitmappedFont::GetPathForBitmapFile(char *, char *, char *) {
+int32_t BitmappedFont::GetPathForBitmapFile(char * chFontInfoPath, char * chBitmapFile, char * chBitmapPath) {
 // LINE 677:
 	asm( 
 "	      0046b049    push ebp"

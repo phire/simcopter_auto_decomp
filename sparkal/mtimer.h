@@ -1,6 +1,6 @@
 // Function in module: Simradio.obj
 // FUNCTION: COPTER_D 0x00439bd0
-void MTimer::MTimer(enum MTimer::TimerResolution) {
+void MTimer::MTimer(enum MTimer::TimerResolution nNewTimerResolution) {
 // LINE 56:
 	asm( 
 "	      00439bd0    push ebp"
@@ -61,7 +61,7 @@ void MTimer::MTimer(enum MTimer::TimerResolution) {
 
 // Function in module: Simradio.obj
 // FUNCTION: COPTER_D 0x00439c40
-void MTimer::SetResolution(enum MTimer::TimerResolution) {
+void MTimer::SetResolution(enum MTimer::TimerResolution nNewTimerResolution) {
 // LINE 87:
 	asm( 
 "	      00439c40    push ebp"

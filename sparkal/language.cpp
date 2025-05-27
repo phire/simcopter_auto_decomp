@@ -63,7 +63,7 @@ int32_t LanguageManager::Uninitialize() {
 }
 
 // FUNCTION: COPTER_D 0x0042a528
-int32_t LanguageManager::SetDefaultLanguage(int32_t) {
+int32_t LanguageManager::SetDefaultLanguage(int32_t nLanguage) {
 // LINE 64:
 	asm( 
 "	      0042a528    push ebp"
@@ -393,7 +393,7 @@ int32_t LanguageManager::SetDefaultLanguage(int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x0042a92c
-int32_t LanguageManager::ConvertIDToName(int32_t, char *) {
+int32_t LanguageManager::ConvertIDToName(int32_t nLanguage, char * szLanguageName) {
 // LINE 95:
 	asm( 
 "	      0042a92c    push ebp"
@@ -721,7 +721,7 @@ int32_t LanguageManager::ConvertIDToName(int32_t, char *) {
 }
 
 // FUNCTION: COPTER_D 0x0042ad95
-int32_t LanguageManager::ConvertNameToID(char *, int32_t *) {
+int32_t LanguageManager::ConvertNameToID(char * szLanguageName, int32_t * nLanguage) {
 // LINE 128:
 	asm( 
 "	      0042ad95    push ebp"
@@ -1025,7 +1025,7 @@ int32_t LanguageManager::ConvertNameToID(char *, int32_t *) {
 }
 
 // FUNCTION: COPTER_D 0x0042b15f
-int32_t LanguageManager::GetFullStringID(int32_t, int32_t) {
+int32_t LanguageManager::GetFullStringID(int32_t nStringID, int32_t nLanguage) {
 // LINE 155:
 	asm( 
 "	      0042b15f    push ebp"
@@ -1077,7 +1077,7 @@ int32_t LanguageManager::GetFullStringID(int32_t, int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x0042b1af
-int32_t LanguageManager::CanWeSwitchToGivenLanguage(int32_t) {
+int32_t LanguageManager::CanWeSwitchToGivenLanguage(int32_t nLanguageToSwitchTo) {
 // LINE 173:
 	asm( 
 "	      0042b1af    push ebp"
@@ -1461,7 +1461,7 @@ int32_t LanguageManager::CanWeSwitchToGivenLanguage(int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x0042b7ae
-int32_t LanguageManager::GetNextLanguage(int32_t) {
+int32_t LanguageManager::GetNextLanguage(int32_t nCurrentLanguage) {
 // LINE 192:
 	asm( 
 "	      0042b7ae    push ebp"
@@ -1529,7 +1529,7 @@ int32_t LanguageManager::GetNextLanguage(int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x0042b819
-int32_t LanguageManager::GetLanguageIDAlias(int32_t) {
+int32_t LanguageManager::GetLanguageIDAlias(int32_t nLanguage) {
 // LINE 229:
 	asm( 
 "	      0042b819    push ebp"
@@ -1668,7 +1668,7 @@ int32_t LanguageManager::GetLanguageIDAlias(int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x0042b91a
-int32_t LanguageManager::DoesLanguageUseLatinCharacters(int32_t) {
+int32_t LanguageManager::DoesLanguageUseLatinCharacters(int32_t nLanguage) {
 // LINE 275:
 	asm( 
 "	      0042b91a    push ebp"
@@ -1743,7 +1743,7 @@ int32_t LanguageManager::DoesLanguageUseLatinCharacters(int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x0042ba26
-int32_t LanguageManager::GetLanguageDirectoryName(class basic_string<char>&, int32_t) {
+int32_t LanguageManager::GetLanguageDirectoryName(class basic_string<char>& sLanguage, int32_t nLanguage) {
 // LINE 313:
 	asm( 
 "	      0042ba26    push ebp"
@@ -1773,7 +1773,7 @@ int32_t LanguageManager::GetLanguageDirectoryName(class basic_string<char>&, int
 }
 
 // FUNCTION: COPTER_D 0x0042ba46
-int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>&, int32_t) {
+int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>& sLanguage, int32_t nLanguage) {
 // LINE 325:
 	asm( 
 "	      0042ba46    push ebp"
@@ -2227,7 +2227,7 @@ int32_t LanguageManager::GetLanguageEnglishName(class basic_string<char>&, int32
 }
 
 // FUNCTION: COPTER_D 0x0042c0de
-int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>&, int32_t) {
+int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>& sLanguage, int32_t nLanguage) {
 // LINE 347:
 	asm( 
 "	      0042c0de    push ebp"
@@ -2681,7 +2681,7 @@ int32_t LanguageManager::GetLanguageLocalName(class basic_string<char>&, int32_t
 }
 
 // FUNCTION: COPTER_D 0x0042c776
-int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>&, int32_t) {
+int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>& sLanguage, int32_t nLanguage) {
 // LINE 369:
 	asm( 
 "	      0042c776    push ebp"
@@ -3135,7 +3135,7 @@ int32_t LanguageManager::GetLanguageRuntimeLibraryName(class basic_string<char>&
 }
 
 // FUNCTION: COPTER_D 0x0042ce0e
-int32_t LanguageManager::GetTypefaceForLanguage(int32_t, int32_t, char *) {
+int32_t LanguageManager::GetTypefaceForLanguage(int32_t nLanguage, int32_t nType, char * szFaceName) {
 // LINE 392:
 	asm( 
 "	      0042ce0e    push ebp"
@@ -3218,7 +3218,7 @@ int32_t LanguageManager::GetTypefaceForLanguage(int32_t, int32_t, char *) {
 }
 
 // FUNCTION: COPTER_D 0x0042ce9f
-int32_t LanguageManager::GetFontFilePathForLanguage(int32_t, int32_t, char *) {
+int32_t LanguageManager::GetFontFilePathForLanguage(int32_t nLanguage, int32_t nType, char * szFontFilePath) {
 // LINE 426:
 	asm( 
 "	      0042ce9f    push ebp"
@@ -3263,7 +3263,7 @@ int32_t LanguageManager::GetFontFilePathForLanguage(int32_t, int32_t, char *) {
 }
 
 // FUNCTION: COPTER_D 0x0042ceda
-int32_t LanguageManager::LoadLanguageSystemFonts(int32_t) {
+int32_t LanguageManager::LoadLanguageSystemFonts(int32_t nLanguage) {
 // LINE 448:
 	asm( 
 "	      0042ceda    push ebp"
@@ -3363,7 +3363,7 @@ int32_t LanguageManager::LoadLanguageSystemFonts(int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x0042cf8e
-int32_t LanguageManager::UnloadLanguageSystemFonts(int32_t) {
+int32_t LanguageManager::UnloadLanguageSystemFonts(int32_t nLanguage) {
 // LINE 488:
 	asm( 
 "	      0042cf8e    push ebp"
@@ -3450,7 +3450,7 @@ int32_t LanguageManager::UnloadLanguageSystemFonts(int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x0042d023
-int32_t LanguageManager::IsTypefaceLoaded(char *) {
+int32_t LanguageManager::IsTypefaceLoaded(char * szFaceName) {
 // LINE 524:
 	asm( 
 "	      0042d023    push ebp"
@@ -3843,7 +3843,7 @@ int32_t LanguageManager::GetCurrentSystemLocale() {
 }
 
 // FUNCTION: COPTER_D 0x0042d387
-int32_t LanguageManager::GetLanguageRoadDrivingSide(int32_t) {
+int32_t LanguageManager::GetLanguageRoadDrivingSide(int32_t nLanguage) {
 // LINE 603:
 	asm( 
 "	      0042d387    push ebp"
@@ -3890,7 +3890,7 @@ int32_t LanguageManager::GetLanguageRoadDrivingSide(int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x0042d3c9
-int32_t EnumFontFamilyProcecure(struct tagENUMLOGFONTA*, struct tagNEWTEXTMETRICA*, int32_t, long) {
+int32_t EnumFontFamilyProcecure(struct tagENUMLOGFONTA* lpelf, struct tagNEWTEXTMETRICA* lpntm, int32_t FontType, long lParam) {
 // LINE 626:
 	asm( 
 "	      0042d3c9    push ebp"

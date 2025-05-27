@@ -53,7 +53,7 @@ struct tagUserPersonalInfo* GetCurrentUserPersonalInfo() {
 }
 
 // FUNCTION: COPTER_D 0x00428f78
-void SetCurrentUserPersonalInfo(struct tagUserPersonalInfo*) {
+void SetCurrentUserPersonalInfo(struct tagUserPersonalInfo* newUserPersonalInfo) {
 // LINE 92:
 	asm( 
 "	      00428f78    push ebp"
@@ -119,7 +119,7 @@ long GetUserMoney() {
 }
 
 // FUNCTION: COPTER_D 0x00428fcd
-void SetUserMoney(long) {
+void SetUserMoney(long lNewMoney) {
 // LINE 108:
 	asm( 
 "	      00428fcd    push ebp"
@@ -149,7 +149,7 @@ void SetUserMoney(long) {
 }
 
 // FUNCTION: COPTER_D 0x00428ff1
-void ChangeUserMoney(long) {
+void ChangeUserMoney(long lNewMoneyDelta) {
 // LINE 115:
 	asm( 
 "	      00428ff1    push ebp"
@@ -205,7 +205,7 @@ long GetUserPoints() {
 }
 
 // FUNCTION: COPTER_D 0x0042902d
-void SetUserPoints(long) {
+void SetUserPoints(long lNewPoints) {
 // LINE 131:
 	asm( 
 "	      0042902d    push ebp"
@@ -235,7 +235,7 @@ void SetUserPoints(long) {
 }
 
 // FUNCTION: COPTER_D 0x00429051
-void ChangeUserPoints(long) {
+void ChangeUserPoints(long lNewPointsDelta) {
 // LINE 138:
 	asm( 
 "	      00429051    push ebp"
@@ -302,7 +302,7 @@ struct tagCitySettings* GetCurrentCitySettings() {
 }
 
 // FUNCTION: COPTER_D 0x004290ab
-void SetCurrentCitySettings(struct tagCitySettings*) {
+void SetCurrentCitySettings(struct tagCitySettings* newCitySettings) {
 // LINE 156:
 	asm( 
 "	      004290ab    push ebp"
@@ -361,7 +361,7 @@ char * GetCurrentCityPath() {
 }
 
 // FUNCTION: COPTER_D 0x004290e8
-void SetCurrentCityPath(char *) {
+void SetCurrentCityPath(char * szNewCurrentCityPath) {
 // LINE 177:
 	asm( 
 "	      004290e8    push ebp"
@@ -467,7 +467,7 @@ int32_t GetUserHasSavedCurrentCity() {
 }
 
 // FUNCTION: COPTER_D 0x00429170
-void MakeCityFileName(int32_t, char *, char *) {
+void MakeCityFileName(int32_t nCityFileType, char * szCityFileNameBase, char * szCityFileName) {
 // LINE 214:
 	asm( 
 "	      00429170    push ebp"
@@ -773,7 +773,7 @@ void CareerCityTweakInit() {
 }
 
 // FUNCTION: COPTER_D 0x0042939b
-void SetUpNewCareerCity(long) {
+void SetUpNewCareerCity(long lNewCareerCityIndex) {
 // LINE 300:
 	asm( 
 "	      0042939b    push ebp"
@@ -944,7 +944,7 @@ void SetUpNewCareerCity(long) {
 }
 
 // FUNCTION: COPTER_D 0x00429582
-void SetUpNewUserCity(char *) {
+void SetUpNewUserCity(char * szUserCityPath) {
 // LINE 345:
 	asm( 
 "	      00429582    push ebp"
@@ -1117,7 +1117,7 @@ void SetUpNewUserCity(char *) {
 }
 
 // FUNCTION: COPTER_D 0x00429760
-void MoveToNextCareerCity(long) {
+void MoveToNextCareerCity(long lNewCareerCityIndex) {
 // LINE 391:
 	asm( 
 "	      00429760    push ebp"

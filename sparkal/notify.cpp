@@ -34,7 +34,7 @@ void NotificationItem::NotificationItem() {
 }
 
 // FUNCTION: COPTER_D 0x0043e18c
-void NotificationItem::NotificationItem(const class NotificationItem&) {
+void NotificationItem::NotificationItem(const class NotificationItem& newNotificationSink) {
 // LINE 12:
 	asm( 
 "	      0043e18c    push ebp"
@@ -65,7 +65,7 @@ void NotificationItem::NotificationItem(const class NotificationItem&) {
 }
 
 // FUNCTION: COPTER_D 0x0043e1b3
-void NotificationItem::NotificationItem(long, class NotificationSink*) {
+void NotificationItem::NotificationItem(long lNewPreferenceType, class NotificationSink* newNotificationSink) {
 // LINE 19:
 	asm( 
 "	      0043e1b3    push ebp"
@@ -95,7 +95,7 @@ void NotificationItem::NotificationItem(long, class NotificationSink*) {
 }
 
 // FUNCTION: COPTER_D 0x0043e1df
-class NotificationItem& NotificationItem::operator=(const class NotificationItem&) {
+class NotificationItem& NotificationItem::operator=(const class NotificationItem& P2) {
 // LINE 22:
 	asm( 
 "	      0043e1df    push ebp"
@@ -136,7 +136,7 @@ class NotificationItem& NotificationItem::operator=(const class NotificationItem
 }
 
 // FUNCTION: COPTER_D 0x0043e210
-int32_t operator==(const class NotificationItem&, const class NotificationItem&) {
+int32_t operator==(const class NotificationItem& P1, const class NotificationItem& P2) {
 // LINE 29:
 	asm( 
 "	      0043e210    push ebp"

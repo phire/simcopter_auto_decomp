@@ -96,7 +96,7 @@ void SoundButtonWindow::SoundButtonWindow() {
 }
 
 // FUNCTION: COPTER_D 0x00471847
-void SoundButtonWindow::SoundButtonWindow(class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t) {
+void SoundButtonWindow::SoundButtonWindow(class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow* windowNewParent, char * szImageFileName, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
 // LINE 44:
 	asm( 
 "	      00471847    push ebp"
@@ -191,7 +191,7 @@ void SoundButtonWindow::~SoundButtonWindow() {
 }
 
 // FUNCTION: COPTER_D 0x004718ea
-void SoundButtonWindow::SetState(int32_t) {
+void SoundButtonWindow::SetState(int32_t nNewButtonState) {
 // LINE 65:
 	asm( 
 "	      004718ea    push ebp"
@@ -244,7 +244,7 @@ void SoundButtonWindow::SetState(int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x00471945
-void SoundRadioButtonWindow::SoundRadioButtonWindow(class ButtonGroup*, class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t) {
+void SoundRadioButtonWindow::SoundRadioButtonWindow(class ButtonGroup* myNewRadioButtonGroup, class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow* windowNewParent, char * szImageFileName, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
 // LINE 82:
 	asm( 
 "	      00471945    push ebp"
@@ -340,7 +340,7 @@ void SoundRadioButtonWindow::~SoundRadioButtonWindow() {
 }
 
 // FUNCTION: COPTER_D 0x004719e7
-void SoundRadioButtonWindow::SetState(int32_t) {
+void SoundRadioButtonWindow::SetState(int32_t nNewButtonState) {
 // LINE 101:
 	asm( 
 "	      004719e7    push ebp"
@@ -436,7 +436,7 @@ void SoundCheckBoxWindow::SoundCheckBoxWindow() {
 }
 
 // FUNCTION: COPTER_D 0x00471a8c
-void SoundCheckBoxWindow::SoundCheckBoxWindow(class MRect&, int32_t, class GraphicWindow*, char *, class GraphicWindowOwner*, int32_t) {
+void SoundCheckBoxWindow::SoundCheckBoxWindow(class MRect& rectNewWindow, int32_t nNewID, class GraphicWindow* windowNewParent, char * szImageFileName, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
 // LINE 126:
 	asm( 
 "	      00471a8c    push ebp"
@@ -532,7 +532,7 @@ void SoundCheckBoxWindow::~SoundCheckBoxWindow() {
 }
 
 // FUNCTION: COPTER_D 0x00471b34
-void SoundCheckBoxWindow::SetState(int32_t) {
+void SoundCheckBoxWindow::SetState(int32_t nNewButtonState) {
 // LINE 145:
 	asm( 
 "	      00471b34    push ebp"
@@ -625,7 +625,7 @@ void SoundScrollBarWindow::SoundScrollBarWindow() {
 }
 
 // FUNCTION: COPTER_D 0x00471bcc
-void SoundScrollBarWindow::SoundScrollBarWindow(class MRect&, int32_t, enum SliderWindow::SliderWindowDirection, class GraphicWindow*, class GraphicWindowOwner*, int32_t, char *) {
+void SoundScrollBarWindow::SoundScrollBarWindow(class MRect& rectNewWindow, int32_t nNewID, enum SliderWindow::SliderWindowDirection newSliderWindowDirection, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList, char * szImageFileName) {
 // LINE 170:
 	asm( 
 "	      00471bcc    push ebp"

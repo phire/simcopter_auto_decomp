@@ -165,7 +165,7 @@ void Version::~Version() {
 }
 
 // FUNCTION: COPTER_D 0x0043dc57
-int32_t Version::GetApplicationName(char *&) {
+int32_t Version::GetApplicationName(char *& szName) {
 // LINE 74:
 	asm( 
 "	      0043dc57    push ebp"
@@ -236,7 +236,7 @@ int32_t Version::GetApplicationName(char *&) {
 }
 
 // FUNCTION: COPTER_D 0x0043dce9
-int32_t Version::GetApplicationVersion(char *&) {
+int32_t Version::GetApplicationVersion(char *& szVersion) {
 // LINE 109:
 	asm( 
 "	      0043dce9    push ebp"
@@ -307,7 +307,7 @@ int32_t Version::GetApplicationVersion(char *&) {
 }
 
 // FUNCTION: COPTER_D 0x0043dd7b
-int32_t Version::GetApplicationCopyright(char *&) {
+int32_t Version::GetApplicationCopyright(char *& szCopyright) {
 // LINE 133:
 	asm( 
 "	      0043dd7b    push ebp"
@@ -378,7 +378,7 @@ int32_t Version::GetApplicationCopyright(char *&) {
 }
 
 // FUNCTION: COPTER_D 0x0043de0d
-int32_t Version::GetApplicationDebugVersion(char *&) {
+int32_t Version::GetApplicationDebugVersion(char *& szVersion) {
 // LINE 156:
 	asm( 
 "	      0043de0d    push ebp"
@@ -449,7 +449,7 @@ int32_t Version::GetApplicationDebugVersion(char *&) {
 }
 
 // FUNCTION: COPTER_D 0x0043de9f
-long Version::GetApplicationVersion(int32_t) {
+long Version::GetApplicationVersion(int32_t nVersionComponent) {
 // LINE 187:
 	asm( 
 "	      0043de9f    push ebp"
@@ -567,7 +567,7 @@ long Version::GetApplicationVersion(int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x0043df83
-int32_t Version::GetSystemVersion(char *) {
+int32_t Version::GetSystemVersion(char * szSystemVersion) {
 // LINE 230:
 	asm( 
 "	      0043df83    push ebp"
@@ -687,7 +687,7 @@ int32_t Version::GetSystemType() {
 }
 
 // FUNCTION: COPTER_D 0x0043e038
-long Version::GetSystemVersion(int32_t) {
+long Version::GetSystemVersion(int32_t nVersionComponent) {
 // LINE 302:
 	asm( 
 "	      0043e038    push ebp"

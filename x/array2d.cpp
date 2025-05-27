@@ -6,7 +6,7 @@
 
 // Contribution: 1:001664e0-001683d3 Module: 180, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x005674e0
-unsigned short OpenFile(class ResFile*) {
+unsigned short OpenFile(class ResFile* pFile) {
 // LINE 16:
 	asm( 
 "	      005674e0    push ebp"
@@ -72,7 +72,7 @@ unsigned short OpenFile(class ResFile*) {
 }
 
 // FUNCTION: COPTER_D 0x00567552
-void _cArray::FromDiskCreate(void * __ptr32, class ResFile*, long, void (*)(void * __ptr32, long)) {
+void _cArray::FromDiskCreate(void * __ptr32 hArray, class ResFile* pFile, long entrySize, void (*)(void * __ptr32, long) Swizzler) {
 // LINE 29:
 	asm( 
 "	      00567552    push ebp"
@@ -417,7 +417,7 @@ void _cArray::FromDiskCreate(void * __ptr32, class ResFile*, long, void (*)(void
 }
 
 // FUNCTION: COPTER_D 0x00567900
-void _cArray::BeginCreate(long, long, long, unsigned char *, class ResFile*, unsigned long) {
+void _cArray::BeginCreate(long entrySize, long xSize, long ySize, unsigned char * name, class ResFile* pFile, unsigned long rType) {
 // LINE 116:
 	asm( 
 "	      00567900    push ebp"
@@ -1024,7 +1024,7 @@ void _cArray::FillHeader() {
 }
 
 // FUNCTION: COPTER_D 0x00567e33
-void _cArray::SetSizeAndHeaders(long, long) {
+void _cArray::SetSizeAndHeaders(long newxSize, long newySize) {
 // LINE 319:
 	asm( 
 "	      00567e33    push ebp"
@@ -1066,7 +1066,7 @@ void _cArray::SetSizeAndHeaders(long, long) {
 }
 
 // FUNCTION: COPTER_D 0x00567e6b
-void _cArray::ClearBytes(char) {
+void _cArray::ClearBytes(char zeropad) {
 // LINE 326:
 	asm( 
 "	      00567e6b    push ebp"
@@ -1231,7 +1231,7 @@ void _cArray::ClearBytes(char) {
 }
 
 // FUNCTION: COPTER_D 0x00567fe6
-short _cArray::InsertRow(short) {
+short _cArray::InsertRow(short afterwhich) {
 // LINE 358:
 	asm( 
 "	      00567fe6    push ebp"
@@ -1381,7 +1381,7 @@ short _cArray::InsertRow(short) {
 }
 
 // FUNCTION: COPTER_D 0x00568128
-short _cArray::InsertColumn(short) {
+short _cArray::InsertColumn(short afterwhich) {
 // LINE 386:
 	asm( 
 "	      00568128    push ebp"
@@ -1546,7 +1546,7 @@ short _cArray::InsertColumn(short) {
 }
 
 // FUNCTION: COPTER_D 0x00568294
-short _cArray::DeleteRow(short) {
+short _cArray::DeleteRow(short which) {
 // LINE 410:
 	asm( 
 "	      00568294    push ebp"
@@ -1717,7 +1717,7 @@ short _cArray::DeleteRow(short) {
 }
 
 // FUNCTION: COPTER_D 0x00568439
-short _cArray::DeleteColumn(short) {
+short _cArray::DeleteColumn(short which) {
 // LINE 433:
 	asm( 
 "	      00568439    push ebp"
@@ -1967,7 +1967,7 @@ short _cArray::DeleteColumn(short) {
 }
 
 // FUNCTION: COPTER_D 0x005686af
-unsigned short _cArray::Resize(long, long, char) {
+unsigned short _cArray::Resize(long newxSize, long newySize, char zeropad) {
 // LINE 465:
 	asm( 
 "	      005686af    push ebp"
@@ -2164,7 +2164,7 @@ unsigned short _cArray::Resize(long, long, char) {
 }
 
 // FUNCTION: COPTER_D 0x00568879
-unsigned short _cArray::SetSize(long, long) {
+unsigned short _cArray::SetSize(long newxSize, long newySize) {
 // LINE 493:
 	asm( 
 "	      00568879    push ebp"
@@ -2382,7 +2382,7 @@ void _cArray::SetXPointers() {
 }
 
 // FUNCTION: COPTER_D 0x00568a68
-void _cArray::CopyFrom(unsigned char *) {
+void _cArray::CopyFrom(unsigned char * fromName) {
 // LINE 537:
 	asm( 
 "	      00568a68    push ebp"
@@ -2415,7 +2415,7 @@ void _cArray::CopyFrom(unsigned char *) {
 }
 
 // FUNCTION: COPTER_D 0x00568a95
-void _cArray::CopyFrom(unsigned long) {
+void _cArray::CopyFrom(unsigned long oldname) {
 // LINE 542:
 	asm( 
 "	      00568a95    push ebp"
@@ -2454,7 +2454,7 @@ void _cArray::CopyFrom(unsigned long) {
 }
 
 // FUNCTION: COPTER_D 0x00568aca
-void _cArray::CopyFrom(class _cArray*) {
+void _cArray::CopyFrom(class _cArray* src) {
 // LINE 548:
 	asm( 
 "	      00568aca    push ebp"
@@ -2564,7 +2564,7 @@ void _cArray::CopyFrom(class _cArray*) {
 }
 
 // FUNCTION: COPTER_D 0x00568be8
-void _cArray::CopyTo(class _cArray*) {
+void _cArray::CopyTo(class _cArray* dest) {
 // LINE 568:
 	asm( 
 "	      00568be8    push ebp"
@@ -2674,7 +2674,7 @@ void _cArray::CopyTo(class _cArray*) {
 }
 
 // FUNCTION: COPTER_D 0x00568d06
-void _cArray::CopyTo(unsigned long) {
+void _cArray::CopyTo(unsigned long oldname) {
 // LINE 580:
 	asm( 
 "	      00568d06    push ebp"
@@ -2713,7 +2713,7 @@ void _cArray::CopyTo(unsigned long) {
 }
 
 // FUNCTION: COPTER_D 0x00568d3b
-void _cArray::CopyTo(unsigned char *) {
+void _cArray::CopyTo(unsigned char * toName) {
 // LINE 586:
 	asm( 
 "	      00568d3b    push ebp"
@@ -2746,7 +2746,7 @@ void _cArray::CopyTo(unsigned char *) {
 }
 
 // FUNCTION: COPTER_D 0x00568d68
-void _cArray::GetName(unsigned char *) {
+void _cArray::GetName(unsigned char * name) {
 // LINE 591:
 	asm( 
 "	      00568d68    push ebp"
@@ -2808,7 +2808,7 @@ unsigned long _cArray::GetName() {
 }
 
 // FUNCTION: COPTER_D 0x00568db1
-class _cArray* _cArray::GetArray(unsigned long, short) {
+class _cArray* _cArray::GetArray(unsigned long tinyname, short numChars) {
 // LINE 610:
 	asm( 
 "	      00568db1    push ebp"
@@ -2947,7 +2947,7 @@ class _cArray* _cArray::GetArray(unsigned long, short) {
 }
 
 // FUNCTION: COPTER_D 0x00568f25
-class _cArray* _cArray::GetArrayByType(unsigned long, short) {
+class _cArray* _cArray::GetArrayByType(unsigned long rType, short which) {
 // LINE 629:
 	asm( 
 "	      00568f25    push ebp"
@@ -3028,7 +3028,7 @@ class _cArray* _cArray::GetArrayByType(unsigned long, short) {
 }
 
 // FUNCTION: COPTER_D 0x00568fa8
-short _cArray::GetNumArraysByType(unsigned long) {
+short _cArray::GetNumArraysByType(unsigned long rType) {
 // LINE 646:
 	asm( 
 "	      00568fa8    push ebp"
@@ -3093,7 +3093,7 @@ short _cArray::GetNumArraysByType(unsigned long) {
 }
 
 // FUNCTION: COPTER_D 0x00569010
-short _cArray::GetArrayIndexInType(class _cArray*) {
+short _cArray::GetArrayIndexInType(class _cArray* findarr) {
 // LINE 658:
 	asm( 
 "	      00569010    push ebp"
@@ -3174,7 +3174,7 @@ short _cArray::GetArrayIndexInType(class _cArray*) {
 }
 
 // FUNCTION: COPTER_D 0x00569095
-void _cArray::LoadAllArrays(class ResFile*, unsigned long, short, void (*)(void * __ptr32, long)) {
+void _cArray::LoadAllArrays(class ResFile* pFile, unsigned long rType, short entrySize, void (*)(void * __ptr32, long) Swizzler) {
 // LINE 705:
 	asm( 
 "	      00569095    push ebp"
@@ -3426,7 +3426,7 @@ void _cArray::LoadAllArrays(class ResFile*, unsigned long, short, void (*)(void 
 }
 
 // FUNCTION: COPTER_D 0x0056931d
-short _cArray::GetLoadedIndex(class ResFile*, unsigned long) {
+short _cArray::GetLoadedIndex(class ResFile* pFile, unsigned long rType) {
 // LINE 776:
 	asm( 
 "	      0056931d    push ebp"

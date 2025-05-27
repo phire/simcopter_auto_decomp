@@ -6,7 +6,7 @@
 
 // Contribution: 1:00151b10-0015371d Module: 199, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00552b10
-void FlatResFile::LoadResMap(void * __ptr32*, short *, long *) {
+void FlatResFile::LoadResMap(void * __ptr32* newMap, short * numTypes, long * dataLoc) {
 // LINE 97:
 	asm( 
 "	      00552b10    push ebp"
@@ -324,7 +324,7 @@ void FlatResFile::LoadResMap(void * __ptr32*, short *, long *) {
 }
 
 // FUNCTION: COPTER_D 0x00552e51
-long FlatResFile::Open(char *) {
+long FlatResFile::Open(char * name) {
 // LINE 157:
 	asm( 
 "	      00552e51    push ebp"
@@ -390,7 +390,7 @@ long FlatResFile::Open(char *) {
 }
 
 // FUNCTION: COPTER_D 0x00552ec5
-long FlatResFile::Open(unsigned char *) {
+long FlatResFile::Open(unsigned char * name) {
 // LINE 178:
 	asm( 
 "	      00552ec5    push ebp"
@@ -456,7 +456,7 @@ long FlatResFile::Open(unsigned char *) {
 }
 
 // FUNCTION: COPTER_D 0x00552f39
-long ResFile::OpenFromOtherFile(class ResFile*) {
+long ResFile::OpenFromOtherFile(class ResFile* otherFile) {
 // LINE 197:
 	asm( 
 "	      00552f39    push ebp"
@@ -709,7 +709,7 @@ short FlatResFile::CountTypes() {
 }
 
 // FUNCTION: COPTER_D 0x0055310d
-unsigned long FlatResFile::GetIndType(short) {
+unsigned long FlatResFile::GetIndType(short index) {
 // LINE 311:
 	asm( 
 "	      0055310d    push ebp"
@@ -768,7 +768,7 @@ unsigned long FlatResFile::GetIndType(short) {
 }
 
 // FUNCTION: COPTER_D 0x0055319a
-short FlatResFile::Count(unsigned long) {
+short FlatResFile::Count(unsigned long type) {
 // LINE 325:
 	asm( 
 "	      0055319a    push ebp"
@@ -815,7 +815,7 @@ short FlatResFile::Count(unsigned long) {
 }
 
 // FUNCTION: COPTER_D 0x0055320b
-void * __ptr32 FlatResFile::GetByID(unsigned long, short, void (*)(void * __ptr32, long)) {
+void * __ptr32 FlatResFile::GetByID(unsigned long type, short id, void (*)(void * __ptr32, long) Swizzler) {
 // LINE 336:
 	asm( 
 "	      0055320b    push ebp"
@@ -934,7 +934,7 @@ void * __ptr32 FlatResFile::GetByID(unsigned long, short, void (*)(void * __ptr3
 }
 
 // FUNCTION: COPTER_D 0x0055331d
-void * __ptr32 FlatResFile::GetByName(unsigned long, unsigned char *, void (*)(void * __ptr32, long)) {
+void * __ptr32 FlatResFile::GetByName(unsigned long type, unsigned char * name, void (*)(void * __ptr32, long) Swizzler) {
 // LINE 363:
 	asm( 
 "	      0055331d    push ebp"
@@ -1065,7 +1065,7 @@ void * __ptr32 FlatResFile::GetByName(unsigned long, unsigned char *, void (*)(v
 }
 
 // FUNCTION: COPTER_D 0x00553452
-void * __ptr32 FlatResFile::GetByIndex(unsigned long, short, void (*)(void * __ptr32, long)) {
+void * __ptr32 FlatResFile::GetByIndex(unsigned long type, short index, void (*)(void * __ptr32, long) Swizzler) {
 // LINE 392:
 	asm( 
 "	      00553452    push ebp"
@@ -1184,7 +1184,7 @@ void * __ptr32 FlatResFile::GetByIndex(unsigned long, short, void (*)(void * __p
 }
 
 // FUNCTION: COPTER_D 0x00553564
-void FlatResFile::GetName(void * __ptr32, unsigned char *) {
+void FlatResFile::GetName(void * __ptr32 res, unsigned char * name) {
 // LINE 419:
 	asm( 
 "	      00553564    push ebp"
@@ -1254,7 +1254,7 @@ void FlatResFile::GetName(void * __ptr32, unsigned char *) {
 }
 
 // FUNCTION: COPTER_D 0x0055360d
-void FlatResFile::GetID(void * __ptr32, short *) {
+void FlatResFile::GetID(void * __ptr32 res, short * id) {
 // LINE 436:
 	asm( 
 "	      0055360d    push ebp"
@@ -1321,7 +1321,7 @@ void FlatResFile::GetID(void * __ptr32, short *) {
 }
 
 // FUNCTION: COPTER_D 0x005536ae
-unsigned long FlatResFile::GetResType(void * __ptr32) {
+unsigned long FlatResFile::GetResType(void * __ptr32 res) {
 // LINE 449:
 	asm( 
 "	      005536ae    push ebp"
@@ -1409,7 +1409,7 @@ unsigned long FlatResFile::GetResType(void * __ptr32) {
 }
 
 // FUNCTION: COPTER_D 0x00553794
-void FlatResFile::Release(void * __ptr32) {
+void FlatResFile::Release(void * __ptr32 res) {
 // LINE 468:
 	asm( 
 "	      00553794    push ebp"
@@ -1478,7 +1478,7 @@ void FlatResFile::Release(void * __ptr32) {
 }
 
 // FUNCTION: COPTER_D 0x0055383a
-void FlatResFile::Detach(void * __ptr32) {
+void FlatResFile::Detach(void * __ptr32 res) {
 // LINE 496:
 	asm( 
 "	      0055383a    push ebp"
@@ -1538,7 +1538,7 @@ void FlatResFile::Detach(void * __ptr32) {
 }
 
 // FUNCTION: COPTER_D 0x005538d1
-void FlatResFile::Load(void * __ptr32) {
+void FlatResFile::Load(void * __ptr32 res) {
 // LINE 522:
 	asm( 
 "	      005538d1    push ebp"
@@ -1642,7 +1642,7 @@ void FlatResFile::Load(void * __ptr32) {
 }
 
 // FUNCTION: COPTER_D 0x005539be
-void FlatResFile::GetString(unsigned char *, short, short) {
+void FlatResFile::GetString(unsigned char * str, short resID, short index) {
 // LINE 595:
 	asm( 
 "	      005539be    push ebp"

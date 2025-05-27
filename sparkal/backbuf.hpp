@@ -1,6 +1,6 @@
 // Function in module: ddbuffer.obj
 // FUNCTION: COPTER_D 0x00471590
-unsigned long IBackBuffer::Swap(class CSparkalWindow*, long, long) {
+unsigned long IBackBuffer::Swap(class CSparkalWindow* pDest, long DestLeft, long DestTop) {
 // LINE 66:
 	asm( 
 "	      00471590    push ebp"

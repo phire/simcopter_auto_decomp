@@ -35,7 +35,7 @@ void CopterGameMode::CopterGameMode() {
 }
 
 // FUNCTION: COPTER_D 0x004bd692
-void CopterGameMode::CopterGameMode(int32_t) {
+void CopterGameMode::CopterGameMode(int32_t nNewModeID) {
 // LINE 56:
 	asm( 
 "	      004bd692    push ebp"
@@ -62,7 +62,7 @@ void CopterGameMode::CopterGameMode(int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x004bd6b5
-void CopterGameMode::CopterGameMode(const class CopterGameMode&) {
+void CopterGameMode::CopterGameMode(const class CopterGameMode& newGameMode) {
 // LINE 59:
 	asm( 
 "	      004bd6b5    push ebp"
@@ -93,7 +93,7 @@ void CopterGameMode::CopterGameMode(const class CopterGameMode&) {
 }
 
 // FUNCTION: COPTER_D 0x004bd6dc
-class CopterGameMode& CopterGameMode::operator=(const class CopterGameMode&) {
+class CopterGameMode& CopterGameMode::operator=(const class CopterGameMode& newGameMode) {
 // LINE 64:
 	asm( 
 "	      004bd6dc    push ebp"
@@ -127,7 +127,7 @@ class CopterGameMode& CopterGameMode::operator=(const class CopterGameMode&) {
 }
 
 // FUNCTION: COPTER_D 0x004bd701
-int32_t operator==(const class CopterGameMode&, const class CopterGameMode&) {
+int32_t operator==(const class CopterGameMode& gameMode1, const class CopterGameMode& gameMode2) {
 // LINE 69:
 	asm( 
 "	      004bd701    push ebp"

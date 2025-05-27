@@ -6,7 +6,7 @@
 
 // Contribution: 1:00164ca0-00165846 Module: 184, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00565ca0
-void EmptyPStr(unsigned char *) {
+void EmptyPStr(unsigned char * str) {
 // LINE 54:
 	asm( 
 "	      00565ca0    push ebp"
@@ -32,7 +32,7 @@ void EmptyPStr(unsigned char *) {
 }
 
 // FUNCTION: COPTER_D 0x00565cb6
-unsigned short Str2Num(unsigned char *, long *) {
+unsigned short Str2Num(unsigned char * str, long * num) {
 // LINE 59:
 	asm( 
 "	      00565cb6    push ebp"
@@ -261,7 +261,7 @@ unsigned short Str2Num(unsigned char *, long *) {
 }
 
 // FUNCTION: COPTER_D 0x00565e80
-void Num2Str(long, unsigned char *) {
+void Num2Str(long num, unsigned char * str) {
 // LINE 99:
 	asm( 
 "	      00565e80    push ebp"
@@ -458,7 +458,7 @@ void Num2Str(long, unsigned char *) {
 }
 
 // FUNCTION: COPTER_D 0x00565fbd
-unsigned short HexStr2Num(unsigned char *, unsigned long *) {
+unsigned short HexStr2Num(unsigned char * str, unsigned long * num) {
 // LINE 154:
 	asm( 
 "	      00565fbd    push ebp"
@@ -603,7 +603,7 @@ unsigned short HexStr2Num(unsigned char *, unsigned long *) {
 }
 
 // FUNCTION: COPTER_D 0x005660be
-void Num2HexStr(unsigned long, unsigned char *) {
+void Num2HexStr(unsigned long num, unsigned char * str) {
 // LINE 176:
 	asm( 
 "	      005660be    push ebp"
@@ -757,7 +757,7 @@ void Num2HexStr(unsigned long, unsigned char *) {
 }
 
 // FUNCTION: COPTER_D 0x005661b4
-void Long2PStr(unsigned long, unsigned char *) {
+void Long2PStr(unsigned long namelet, unsigned char * name) {
 // LINE 214:
 	asm( 
 "	      005661b4    push ebp"
@@ -809,7 +809,7 @@ void Long2PStr(unsigned long, unsigned char *) {
 }
 
 // FUNCTION: COPTER_D 0x005661f4
-unsigned long PStr2Long(unsigned char *) {
+unsigned long PStr2Long(unsigned char * name) {
 // LINE 223:
 	asm( 
 "	      005661f4    push ebp"
@@ -879,7 +879,7 @@ unsigned long PStr2Long(unsigned char *) {
 }
 
 // FUNCTION: COPTER_D 0x00566266
-void CToPString(char *, unsigned char *) {
+void CToPString(char * cstr, unsigned char * pstr) {
 // LINE 257:
 	asm( 
 "	      00566266    push ebp"
@@ -931,7 +931,7 @@ void CToPString(char *, unsigned char *) {
 }
 
 // FUNCTION: COPTER_D 0x005662c1
-short Round(float) {
+short Round(float val) {
 // LINE 268:
 	asm( 
 "	      005662c1    push ebp"
@@ -999,7 +999,7 @@ short Round(float) {
 }
 
 // FUNCTION: COPTER_D 0x0056633e
-void CToPStr(char *, unsigned char *) {
+void CToPStr(char * cstr, unsigned char * pstr) {
 // LINE 365:
 	asm( 
 "	      0056633e    push ebp"
@@ -1051,7 +1051,7 @@ void CToPStr(char *, unsigned char *) {
 }
 
 // FUNCTION: COPTER_D 0x0056639c
-void ConcatPStr(unsigned char *, unsigned char *, short) {
+void ConcatPStr(unsigned char * str1, unsigned char * str2, short destSize) {
 // LINE 442:
 	asm( 
 "	      0056639c    push ebp"
@@ -1134,7 +1134,7 @@ void ConcatPStr(unsigned char *, unsigned char *, short) {
 }
 
 // FUNCTION: COPTER_D 0x00566425
-void ConcatCPStr(char *, unsigned char *, short) {
+void ConcatCPStr(char * src, unsigned char * dest, short destSize) {
 // LINE 454:
 	asm( 
 "	      00566425    push ebp"
@@ -1184,7 +1184,7 @@ void ConcatCPStr(char *, unsigned char *, short) {
 }
 
 // FUNCTION: COPTER_D 0x00566479
-void ConcatNum(long, unsigned char *, short) {
+void ConcatNum(long number, unsigned char * str, short destSize) {
 // LINE 464:
 	asm( 
 "	      00566479    push ebp"
@@ -1226,7 +1226,7 @@ void ConcatNum(long, unsigned char *, short) {
 }
 
 // FUNCTION: COPTER_D 0x005664b9
-void HexToString(unsigned long, unsigned char *) {
+void HexToString(unsigned long num, unsigned char * str) {
 // LINE 499:
 	asm( 
 "	      005664b9    push ebp"
@@ -1362,7 +1362,7 @@ void HexToString(unsigned long, unsigned char *) {
 }
 
 // FUNCTION: COPTER_D 0x005665b7
-int32_t PStrCompare(void * __ptr32, void * __ptr32) {
+int32_t PStrCompare(void * __ptr32 voidFirst, void * __ptr32 voidSecond) {
 // LINE 906:
 	asm( 
 "	      005665b7    push ebp"
@@ -1519,7 +1519,7 @@ int32_t PStrCompare(void * __ptr32, void * __ptr32) {
 }
 
 // FUNCTION: COPTER_D 0x00566705
-void ExtractFileName(unsigned char *, unsigned char *) {
+void ExtractFileName(unsigned char * path, unsigned char * name) {
 // LINE 928:
 	asm( 
 "	      00566705    push ebp"
@@ -1590,7 +1590,7 @@ void ExtractFileName(unsigned char *, unsigned char *) {
 }
 
 // FUNCTION: COPTER_D 0x0056677d
-void MyTextBox(char *, long, struct Rect*, short) {
+void MyTextBox(char * cString, long strLen, struct Rect* rect, short justType) {
 // LINE 990:
 	asm( 
 "	      0056677d    push ebp"
@@ -1665,7 +1665,7 @@ void MyTextBox(char *, long, struct Rect*, short) {
 }
 
 // FUNCTION: COPTER_D 0x005667fe
-struct Point center(struct Rect*) {
+struct Point center(struct Rect* pRect) {
 // LINE 1253:
 	asm( 
 "	      005667fe    push ebp"

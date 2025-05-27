@@ -6,7 +6,7 @@
 
 // Contribution: 1:0015f9d0-0015fba1 Module: 190, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x005609d0
-void YObjLang::YObjLang(unsigned char *) {
+void YObjLang::YObjLang(unsigned char * fileName) {
 // LINE 42:
 	asm( 
 "	      005609d0    push ebp"
@@ -35,7 +35,7 @@ void YObjLang::YObjLang(unsigned char *) {
 }
 
 // FUNCTION: COPTER_D 0x00560a02
-void YObjLang::SwizzleTreeParam(short, struct Behavior::NodeParameter*) {
+void YObjLang::SwizzleTreeParam(short id, struct Behavior::NodeParameter* param) {
 // LINE 52:
 	asm( 
 "	      00560a02    push ebp"
@@ -144,7 +144,7 @@ void YObjLang::SwizzleTreeParam(short, struct Behavior::NodeParameter*) {
 }
 
 // FUNCTION: COPTER_D 0x00560abe
-void YObjLang::SwizzleTree(void * __ptr32, long) {
+void YObjLang::SwizzleTree(void * __ptr32 treevoid, long size) {
 // LINE 75:
 	asm( 
 "	      00560abe    push ebp"
@@ -181,7 +181,7 @@ void YObjLang::SwizzleTree(void * __ptr32, long) {
 }
 
 // FUNCTION: COPTER_D 0x00560aec
-void YObjLang::YObjLang(class YObjLang&) {
+void YObjLang::YObjLang(class YObjLang& otherLanguage) {
 // LINE 82:
 	asm( 
 "	      00560aec    push ebp"
@@ -262,7 +262,7 @@ short YObjLang::CountPrimitives() {
 }
 
 // FUNCTION: COPTER_D 0x00560b57
-void YObjLang::GetPrimName(short, unsigned char *) {
+void YObjLang::GetPrimName(short primCode, unsigned char * str) {
 // LINE 108:
 	asm( 
 "	      00560b57    push ebp"
@@ -285,7 +285,7 @@ void YObjLang::GetPrimName(short, unsigned char *) {
 }
 
 // FUNCTION: COPTER_D 0x00560b6f
-unsigned short YObjLang::IsSingleExit(struct Behavior::Node*) {
+unsigned short YObjLang::IsSingleExit(struct Behavior::Node* node) {
 // LINE 115:
 	asm( 
 "	      00560b6f    push ebp"
@@ -312,7 +312,7 @@ unsigned short YObjLang::IsSingleExit(struct Behavior::Node*) {
 }
 
 // FUNCTION: COPTER_D 0x00560b8a
-void YObjLang::GetNodeText(class Behavior*, struct Behavior::Node*, unsigned char *) {
+void YObjLang::GetNodeText(class Behavior* bhav, struct Behavior::Node* node, unsigned char * str) {
 // LINE 467:
 	asm( 
 "	      00560b8a    push ebp"

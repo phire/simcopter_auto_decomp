@@ -6,7 +6,7 @@
 
 // Contribution: 1:00140530-00141d79 Module: 154, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00541530
-int32_t EmergencyVehicleClass::S3UpdateCar(int32_t, int32_t) {
+int32_t EmergencyVehicleClass::S3UpdateCar(int32_t id, int32_t status) {
 // LINE 70:
 	asm( 
 "	      00541530    push ebp"
@@ -35,7 +35,7 @@ int32_t EmergencyVehicleClass::S3UpdateCar(int32_t, int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x00541553
-int32_t EmergencyVehicleClass::UpdateCar(int32_t) {
+int32_t EmergencyVehicleClass::UpdateCar(int32_t status) {
 // LINE 76:
 	asm( 
 "	      00541553    push ebp"
@@ -84,7 +84,7 @@ int32_t EmergencyVehicleClass::UpdateCar(int32_t) {
 }
 
 // FUNCTION: COPTER_D 0x0054159d
-struct _DYOBJ_INST* EmergencyVehicleClass::S3GetCar(int32_t) {
+struct _DYOBJ_INST* EmergencyVehicleClass::S3GetCar(int32_t id) {
 // LINE 89:
 	asm( 
 "	      0054159d    push ebp"
@@ -191,7 +191,7 @@ void EmergencyVehicleClass::~EmergencyVehicleClass() {
 }
 
 // FUNCTION: COPTER_D 0x00541661
-void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal, struct Goal, struct Goal, struct Goal, struct _GridCoordinates, struct Goal, enum EmergencyType, enum EmergencyLevel) {
+void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal startGoal1, struct Goal startGoal2, struct Goal destGoal1, struct Goal destGoal2, struct _GridCoordinates destLoc, struct Goal result, enum EmergencyType responceType, enum EmergencyLevel eState) {
 // LINE 246:
 	asm( 
 "	      00541661    push ebp"
@@ -571,7 +571,7 @@ void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal, stru
 }
 
 // FUNCTION: COPTER_D 0x005419ba
-void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t, struct Goal, struct Goal, struct _GridCoordinates, struct Goal, struct Goal, struct _GridCoordinates, int32_t, struct Goal, enum EmergencyType, enum EmergencyLevel) {
+void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, struct Goal stationGoal1, struct Goal stationGoal2, struct _GridCoordinates stationLoc, struct Goal destGoal1, struct Goal destGoal2, struct _GridCoordinates destLoc, int32_t startDir, struct Goal result, enum EmergencyType responceType, enum EmergencyLevel eState) {
 // LINE 360:
 	asm( 
 "	      005419ba    push ebp"
@@ -1421,7 +1421,7 @@ void EmergencyVehicleClass::CancelEmergencyDispatch() {
 }
 
 // FUNCTION: COPTER_D 0x005421df
-int32_t EmergencyVehicleClass::AreThereMoreSeats(struct _DYOBJ_INST*) {
+int32_t EmergencyVehicleClass::AreThereMoreSeats(struct _DYOBJ_INST* carInst) {
 // LINE 567:
 	asm( 
 "	      005421df    push ebp"
@@ -1449,7 +1449,7 @@ int32_t EmergencyVehicleClass::AreThereMoreSeats(struct _DYOBJ_INST*) {
 }
 
 // FUNCTION: COPTER_D 0x00542203
-void EmergencyVehicleClass::FillSeat(struct _DYOBJ_INST*) {
+void EmergencyVehicleClass::FillSeat(struct _DYOBJ_INST* carInst) {
 // LINE 573:
 	asm( 
 "	      00542203    push ebp"
@@ -1641,7 +1641,7 @@ void EmergencyVehicleClass::PositionIcon() {
 }
 
 // FUNCTION: COPTER_D 0x00542373
-enum TurnIndex EmergencyVehicleClass::PickTurnDir(struct Goal*) {
+enum TurnIndex EmergencyVehicleClass::PickTurnDir(struct Goal* pGoal) {
 // LINE 674:
 	asm( 
 "	      00542373    push ebp"
@@ -1752,7 +1752,7 @@ void EmergencyVehicleClass::ArriveOnScene() {
 }
 
 // FUNCTION: COPTER_D 0x00542461
-void EmergencyVehicleClass::UnLinkIconFromCell(const struct _GridCoordinates) {
+void EmergencyVehicleClass::UnLinkIconFromCell(struct _GridCoordinates point) {
 // LINE 943:
 	asm( 
 "	      00542461    push ebp"
@@ -1868,7 +1868,7 @@ void EmergencyVehicleClass::UnLinkIconFromCell(const struct _GridCoordinates) {
 }
 
 // FUNCTION: COPTER_D 0x00542570
-void EmergencyVehicleClass::LinkIconToCell(const struct _GridCoordinates) {
+void EmergencyVehicleClass::LinkIconToCell(struct _GridCoordinates point) {
 // LINE 984:
 	asm( 
 "	      00542570    push ebp"
@@ -2020,7 +2020,7 @@ void EmergencyVehicleClass::Reset() {
 }
 
 // FUNCTION: COPTER_D 0x005426ab
-void DispatchEmergencyVehicle(int32_t, int32_t, long, long) {
+void DispatchEmergencyVehicle(int32_t responseType, int32_t responseLevel, long mapx, long mapy) {
 // LINE 1351:
 	asm( 
 "	      005426ab    push ebp"
@@ -2188,7 +2188,7 @@ void DispatchEmergencyVehicle(int32_t, int32_t, long, long) {
 }
 
 // FUNCTION: COPTER_D 0x005427f5
-void EmergencyVehicleClass::BuildPath(struct _RGIndex, struct _RGIndex) {
+void EmergencyVehicleClass::BuildPath(struct _RGIndex startVertex, struct _RGIndex destVertex) {
 // LINE 1403:
 	asm( 
 "	      005427f5    push ebp"
@@ -2526,7 +2526,7 @@ void EmergencyVehicleClass::TurnOffStrobe() {
 }
 
 // FUNCTION: COPTER_D 0x00542a75
-void EmergencyVehicleClass::SetSaveData(struct _AUTO_LOAD_SAVE*) {
+void EmergencyVehicleClass::SetSaveData(struct _AUTO_LOAD_SAVE* sd) {
 // LINE 1507:
 	asm( 
 "	      00542a75    push ebp"
@@ -2650,7 +2650,7 @@ void EmergencyVehicleClass::SetSaveData(struct _AUTO_LOAD_SAVE*) {
 }
 
 // FUNCTION: COPTER_D 0x00542b90
-void EmergencyVehicleClass::LoadSaveData(struct _AUTO_LOAD_SAVE*) {
+void EmergencyVehicleClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
 // LINE 1546:
 	asm( 
 "	      00542b90    push ebp"

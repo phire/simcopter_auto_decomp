@@ -362,7 +362,7 @@ void RadioStation::RadioStation() {
 }
 
 // FUNCTION: COPTER_D 0x00433605
-void RadioStation::RadioStation(const class RadioStation&) {
+void RadioStation::RadioStation(const class RadioStation& copyRadioStation) {
 // LINE 80:
 	asm( 
 "	      00433605    push ebp"
@@ -857,7 +857,7 @@ void RadioStation::RadioStation(const class RadioStation&) {
 }
 
 // FUNCTION: COPTER_D 0x00433c3e
-class RadioStation& RadioStation::operator=(const class RadioStation&) {
+class RadioStation& RadioStation::operator=(const class RadioStation& copyRadioStation) {
 // LINE 106:
 	asm( 
 "	      00433c3e    push ebp"
@@ -1636,7 +1636,7 @@ int32_t RadioStation::Initialize() {
 }
 
 // FUNCTION: COPTER_D 0x0043459c
-void RadioStation::SetPlayStatus(int32_t) {
+void RadioStation::SetPlayStatus(int32_t bNewPlaying) {
 // LINE 155:
 	asm( 
 "	      0043459c    push ebp"
@@ -2156,7 +2156,7 @@ int32_t RadioStation::DoState() {
 }
 
 // FUNCTION: COPTER_D 0x00434a46
-int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycleType) {
+int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycleType radioStationCycleType) {
 // LINE 271:
 	asm( 
 "	      00434a46    push ebp"
@@ -4149,7 +4149,7 @@ void RadioStation::ShufflePlaylist() {
 }
 
 // FUNCTION: COPTER_D 0x0043678e
-void RadioStation::RandomizeStringList(class list<basic_string<char>>&) {
+void RadioStation::RandomizeStringList(class list<basic_string<char>>& stringList) {
 // LINE 411:
 	asm( 
 "	      0043678e    push ebp"
@@ -4634,7 +4634,7 @@ void RadioStation::ShuffleCycle() {
 }
 
 // FUNCTION: COPTER_D 0x00436d80
-void RadioStation::GetStationCallSign(class basic_string<char>&) {
+void RadioStation::GetStationCallSign(class basic_string<char>& sStationCallSign) {
 // LINE 469:
 	asm( 
 "	      00436d80    push ebp"
@@ -4813,7 +4813,7 @@ enum RadioStationType RadioStation::GetRadioStationType() {
 }
 
 // FUNCTION: COPTER_D 0x00436f7b
-int32_t RadioStation::IsCycleTypePresent(enum RadioStationCycleType) {
+int32_t RadioStation::IsCycleTypePresent(enum RadioStationCycleType radioStationCycleType) {
 // LINE 487:
 	asm( 
 "	      00436f7b    push ebp"
@@ -4927,7 +4927,7 @@ int32_t RadioStation::IsCycleTypePresent(enum RadioStationCycleType) {
 }
 
 // FUNCTION: COPTER_D 0x00437054
-void RadioStation::MoveToNextPlaylistItem(enum RadioStationCycleType) {
+void RadioStation::MoveToNextPlaylistItem(enum RadioStationCycleType radioStationCycleType) {
 // LINE 514:
 	asm( 
 "	      00437054    push ebp"

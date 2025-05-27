@@ -41,7 +41,7 @@ void HotSpot::HotSpot() {
 }
 
 // FUNCTION: COPTER_D 0x004b908f
-void HotSpot::HotSpot(const class HotSpot&) {
+void HotSpot::HotSpot(const class HotSpot& newHotSpot) {
 // LINE 34:
 	asm( 
 "	      004b908f    push ebp"
@@ -347,7 +347,7 @@ void HotSpot::HotSpot(const class HotSpot&) {
 }
 
 // FUNCTION: COPTER_D 0x004b948a
-void HotSpot::HotSpot(long, long, long, long[2]*) {
+void HotSpot::HotSpot(long lNewID, long lNewType, long lNewCount, long[2]* lCoordinates) {
 // LINE 47:
 	asm( 
 "	      004b948a    push ebp"
@@ -684,7 +684,7 @@ void HotSpot::HotSpot(long, long, long, long[2]*) {
 }
 
 // FUNCTION: COPTER_D 0x004b9973
-void HotSpot::HotSpot(struct HotSpotResourceRecord*) {
+void HotSpot::HotSpot(struct HotSpotResourceRecord* hotSpotResourceRecord) {
 // LINE 62:
 	asm( 
 "	      004b9973    push ebp"
@@ -1035,7 +1035,7 @@ void HotSpot::HotSpot(struct HotSpotResourceRecord*) {
 }
 
 // FUNCTION: COPTER_D 0x004b9e75
-void HotSpot::HotSpot(long, struct SparkalRect&) {
+void HotSpot::HotSpot(long lNewID, struct SparkalRect& rectHotspot) {
 // LINE 88:
 	asm( 
 "	      004b9e75    push ebp"
@@ -1599,7 +1599,7 @@ void HotSpot::HotSpot(long, struct SparkalRect&) {
 }
 
 // FUNCTION: COPTER_D 0x004ba78f
-class HotSpot& HotSpot::operator=(const class HotSpot&) {
+class HotSpot& HotSpot::operator=(const class HotSpot& newHotSpot) {
 // LINE 101:
 	asm( 
 "	      004ba78f    push ebp"
@@ -1912,7 +1912,7 @@ class HotSpot& HotSpot::operator=(const class HotSpot&) {
 }
 
 // FUNCTION: COPTER_D 0x004bab7b
-int32_t operator==(const class HotSpot&, const class HotSpot&) {
+int32_t operator==(const class HotSpot& hs1, const class HotSpot& hs2) {
 // LINE 116:
 	asm( 
 "	      004bab7b    push ebp"
@@ -2051,7 +2051,7 @@ int32_t operator==(const class HotSpot&, const class HotSpot&) {
 }
 
 // FUNCTION: COPTER_D 0x004bad05
-int32_t HotSpot::IsPointInHotspot(long, long) {
+int32_t HotSpot::IsPointInHotspot(long lXPosition, long lYPosition) {
 // LINE 132:
 	asm( 
 "	      004bad05    push ebp"
@@ -2153,7 +2153,7 @@ int32_t HotSpot::IsPointInHotspot(long, long) {
 }
 
 // FUNCTION: COPTER_D 0x004badf8
-int32_t HotSpot::PointInCircle(long, long) {
+int32_t HotSpot::PointInCircle(long lXPosition, long lYPosition) {
 // LINE 154:
 	asm( 
 "	      004badf8    push ebp"
@@ -2263,7 +2263,7 @@ int32_t HotSpot::PointInCircle(long, long) {
 }
 
 // FUNCTION: COPTER_D 0x004baf2a
-int32_t HotSpot::PointInPolygon(long, long) {
+int32_t HotSpot::PointInPolygon(long lXPosition, long lYPosition) {
 // LINE 180:
 	asm( 
 "	      004baf2a    push ebp"
@@ -2407,7 +2407,7 @@ int32_t HotSpot::PointInPolygon(long, long) {
 }
 
 // FUNCTION: COPTER_D 0x004bb0d2
-void HotSpot::GetBoundingRect(class MRect&) {
+void HotSpot::GetBoundingRect(class MRect& rectBounds) {
 // LINE 207:
 	asm( 
 "	      004bb0d2    push ebp"
@@ -2798,7 +2798,7 @@ void HotSpot::GetBoundingRect(class MRect&) {
 }
 
 // FUNCTION: COPTER_D 0x004bb49b
-int32_t LoadListFromResource(class list<HotSpot>&, int32_t) {
+int32_t LoadListFromResource(class list<HotSpot>& hotSpotList, int32_t nResourceID) {
 // LINE 269:
 	asm( 
 "	      004bb49b    push ebp"

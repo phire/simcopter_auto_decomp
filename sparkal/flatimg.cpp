@@ -42,7 +42,7 @@ void IFlatImage::IFlatImage() {
 }
 
 // FUNCTION: COPTER_D 0x0048f174
-unsigned long IFlatImage::StretchCompose(class IFlatImage*, long, long, long, long, long, long, long, long) {
+unsigned long IFlatImage::StretchCompose(class IFlatImage* pDest, long SourceLeft, long SourceTop, long SourceWidth, long SourceHeight, long DestLeft, long DestTop, long DestWidth, long DestHeight) {
 // LINE 38:
 	asm( 
 "	      0048f174    push ebp"
@@ -295,7 +295,7 @@ unsigned long IFlatImage::StretchCompose(class IFlatImage*, long, long, long, lo
 }
 
 // FUNCTION: COPTER_D 0x0048f32e
-unsigned long IFlatImage::StretchCompose(class IFlatImage*, struct SparkalRect, struct SparkalRect) {
+unsigned long IFlatImage::StretchCompose(class IFlatImage* pDestImage, struct SparkalRect destRect, struct SparkalRect srcRect) {
 // LINE 110:
 	asm( 
 "	      0048f32e    push ebp"
@@ -387,7 +387,7 @@ unsigned long IFlatImage::StretchCompose(class IFlatImage*, struct SparkalRect, 
 }
 
 // FUNCTION: COPTER_D 0x0048f3b1
-unsigned long IFlatImage::Compose(class IFlatImage*, long, long, long, long, long, long) {
+unsigned long IFlatImage::Compose(class IFlatImage* pDest, long DestLeft, long DestTop, long ClipLeft, long ClipTop, long ClipRight, long ClipBottom) {
 // LINE 133:
 	asm( 
 "	      0048f3b1    push ebp"
@@ -628,7 +628,7 @@ unsigned long IFlatImage::Compose(class IFlatImage*, long, long, long, long, lon
 }
 
 // FUNCTION: COPTER_D 0x0048f56b
-unsigned long IFlatImage::FillRect(long, struct SparkalRect*) {
+unsigned long IFlatImage::FillRect(long nPaletteIndex, struct SparkalRect* rectFill) {
 // LINE 197:
 	asm( 
 "	      0048f56b    push ebp"
@@ -812,7 +812,7 @@ unsigned long IFlatImage::FillRect(long, struct SparkalRect*) {
 }
 
 // FUNCTION: COPTER_D 0x0048f69e
-void CFlatImage::CFlatImage(long, long, unsigned char) {
+void CFlatImage::CFlatImage(long Width, long Height, unsigned char InitialColor) {
 // LINE 253:
 	asm( 
 "	      0048f69e    push ebp"
@@ -983,7 +983,7 @@ void CFlatImage::CFlatImage(long, long, unsigned char) {
 }
 
 // FUNCTION: COPTER_D 0x0048f86d
-void CFlatImage::CFlatImage(class IFlatImage*, long, long, long, long) {
+void CFlatImage::CFlatImage(class IFlatImage* pImage, long SrcLeft, long SrcTop, long SrcRight, long SrcBottom) {
 // LINE 278:
 	asm( 
 "	      0048f86d    push ebp"

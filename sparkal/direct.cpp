@@ -61,7 +61,7 @@ void DirectoryEntry::DirectoryEntry() {
 }
 
 // FUNCTION: COPTER_D 0x00481bae
-void DirectoryEntry::DirectoryEntry(class Directory*, class basic_string<char>&, long) {
+void DirectoryEntry::DirectoryEntry(class Directory* directoryNewParent, class basic_string<char>& sNewName, long lNewType) {
 // LINE 45:
 	asm( 
 "	      00481bae    push ebp"
@@ -206,7 +206,7 @@ void DirectoryEntry::DirectoryEntry(class Directory*, class basic_string<char>&,
 }
 
 // FUNCTION: COPTER_D 0x00481d8a
-int32_t DirectoryEntry::GetEntryExtension(class basic_string<char>&) {
+int32_t DirectoryEntry::GetEntryExtension(class basic_string<char>& sEntryExtension) {
 // LINE 56:
 	asm( 
 "	      00481d8a    push ebp"
@@ -646,7 +646,7 @@ int32_t DirectoryEntry::GetEntryExtension(class basic_string<char>&) {
 }
 
 // FUNCTION: COPTER_D 0x0048237c
-int32_t DirectoryEntry::GetEntryMinusExtension(class basic_string<char>&) {
+int32_t DirectoryEntry::GetEntryMinusExtension(class basic_string<char>& sEntryMinusExtension) {
 // LINE 80:
 	asm( 
 "	      0048237c    push ebp"
@@ -995,7 +995,7 @@ int32_t DirectoryEntry::GetEntryMinusExtension(class basic_string<char>&) {
 }
 
 // FUNCTION: COPTER_D 0x00482833
-void DirectoryEntry::GetFullPath(class basic_string<char>&) {
+void DirectoryEntry::GetFullPath(class basic_string<char>& sFullPath) {
 // LINE 100:
 	asm( 
 "	      00482833    push ebp"

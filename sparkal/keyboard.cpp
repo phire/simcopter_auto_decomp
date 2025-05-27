@@ -18,7 +18,7 @@
 // $E2
 
 // FUNCTION: COPTER_D 0x00431cc0
-int32_t IsModifierSet(unsigned char) {
+int32_t IsModifierSet(unsigned char chModifiers) {
 // LINE 16:
 	asm( 
 "	      00431cc0    push ebp"
@@ -79,7 +79,7 @@ void Keyboard::Keyboard() {
 }
 
 // FUNCTION: COPTER_D 0x00431d0d
-int32_t Keyboard::IsKeyDown(unsigned char) {
+int32_t Keyboard::IsKeyDown(unsigned char chKey) {
 // LINE 40:
 	asm( 
 "	      00431d0d    push ebp"
@@ -109,7 +109,7 @@ int32_t Keyboard::IsKeyDown(unsigned char) {
 }
 
 // FUNCTION: COPTER_D 0x00431d32
-int32_t Keyboard::IsKeyDown(unsigned char, unsigned char) {
+int32_t Keyboard::IsKeyDown(unsigned char chKey, unsigned char chModifiers) {
 // LINE 49:
 	asm( 
 "	      00431d32    push ebp"
@@ -163,7 +163,7 @@ int32_t Keyboard::IsKeyDown(unsigned char, unsigned char) {
 }
 
 // FUNCTION: COPTER_D 0x00431d8d
-void Keyboard::ProcessKeyDown(unsigned char) {
+void Keyboard::ProcessKeyDown(unsigned char chKey) {
 // LINE 66:
 	asm( 
 "	      00431d8d    push ebp"
@@ -209,7 +209,7 @@ void Keyboard::ProcessKeyDown(unsigned char) {
 }
 
 // FUNCTION: COPTER_D 0x00431dd3
-void Keyboard::ProcessKeyUp(unsigned char) {
+void Keyboard::ProcessKeyUp(unsigned char chKey) {
 // LINE 82:
 	asm( 
 "	      00431dd3    push ebp"
@@ -298,7 +298,7 @@ void Keyboard::ClearSettings() {
 }
 
 // FUNCTION: COPTER_D 0x00431e63
-int32_t Keyboard::CharIsModifier(unsigned char) {
+int32_t Keyboard::CharIsModifier(unsigned char chKey) {
 // LINE 109:
 	asm( 
 "	      00431e63    push ebp"
@@ -418,7 +418,7 @@ char Keyboard::GetCurrentModifierState() {
 }
 
 // FUNCTION: COPTER_D 0x00431f1f
-char Keyboard::ConvertKeyToCharacter(unsigned char, unsigned char) {
+char Keyboard::ConvertKeyToCharacter(unsigned char chKey, unsigned char chModifiers) {
 // LINE 165:
 	asm( 
 "	      00431f1f    push ebp"
@@ -747,7 +747,7 @@ char Keyboard::ConvertKeyToCharacter(unsigned char, unsigned char) {
 }
 
 // FUNCTION: COPTER_D 0x00432226
-int32_t Keyboard::IsToggleKeySet(unsigned char) {
+int32_t Keyboard::IsToggleKeySet(unsigned char chToggleKey) {
 // LINE 241:
 	asm( 
 "	      00432226    push ebp"

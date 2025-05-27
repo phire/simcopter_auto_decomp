@@ -1,6 +1,6 @@
 // Function in module: Debug.obj
 // FUNCTION: COPTER_D 0x004256d0
-void execute(char *) {
+void execute(char * data) {
 // LINE 44:
 	asm( 
 "	      004256d0    push ebp"

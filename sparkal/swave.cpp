@@ -6,7 +6,7 @@
 
 // Contribution: 1:0008dbb0-0008e11e Module: 25, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0048ebb0
-int32_t WaveOpenFile(char *, void * __ptr32*, struct tWAVEFORMATEX*, struct _MMCKINFO*) {
+int32_t WaveOpenFile(char * pszFileName, void * __ptr32* phmmioIn, struct tWAVEFORMATEX* pwfxInfo, struct _MMCKINFO* pckInRIFF) {
 // LINE 48:
 	asm( 
 "	      0048ebb0    push ebp"
@@ -257,7 +257,7 @@ int32_t WaveOpenFile(char *, void * __ptr32*, struct tWAVEFORMATEX*, struct _MMC
 }
 
 // FUNCTION: COPTER_D 0x0048edb9
-int32_t WaveStartDataRead(void * __ptr32*, struct _MMCKINFO*, struct _MMCKINFO*) {
+int32_t WaveStartDataRead(void * __ptr32* phmmioIn, struct _MMCKINFO* pckIn, struct _MMCKINFO* pckInRIFF) {
 // LINE 157:
 	asm( 
 "	      0048edb9    push ebp"
@@ -322,7 +322,7 @@ int32_t WaveStartDataRead(void * __ptr32*, struct _MMCKINFO*, struct _MMCKINFO*)
 }
 
 // FUNCTION: COPTER_D 0x0048ee25
-int32_t WaveReadFile(void * __ptr32, uint32_t, unsigned char *, struct _MMCKINFO*, uint32_t *) {
+int32_t WaveReadFile(void * __ptr32 hmmioIn, uint32_t cbRead, unsigned char * pbDest, struct _MMCKINFO* pckIn, uint32_t * cbActualRead) {
 // LINE 191:
 	asm( 
 "	      0048ee25    push ebp"
@@ -500,7 +500,7 @@ int32_t WaveReadFile(void * __ptr32, uint32_t, unsigned char *, struct _MMCKINFO
 }
 
 // FUNCTION: COPTER_D 0x0048ef6f
-int32_t WaveCloseReadFile(void * __ptr32*) {
+int32_t WaveCloseReadFile(void * __ptr32* phmmio) {
 // LINE 251:
 	asm( 
 "	      0048ef6f    push ebp"
@@ -544,7 +544,7 @@ int32_t WaveCloseReadFile(void * __ptr32*) {
 }
 
 // FUNCTION: COPTER_D 0x0048efa4
-int32_t WaveLoadFile(char *, uint32_t *, struct tWAVEFORMATEX*, unsigned char **) {
+int32_t WaveLoadFile(char * pszFileName, uint32_t * cbSize, struct tWAVEFORMATEX* pwfxInfo, unsigned char ** ppbData) {
 // LINE 278:
 	asm( 
 "	      0048efa4    push ebp"
