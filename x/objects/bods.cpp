@@ -6,7 +6,7 @@
 
 // Contribution: 1:0015fbf0-001614f4 Module: 189, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00560bf0
-public: class cCopterAnim * __thiscall cCopterBody::GetPrivateAnim(unsigned long) {
+class cCopterAnim *  cCopterBody::GetPrivateAnim(unsigned long animName) {
 // LINE 1937:
 	asm( 
 "	      00560bf0    push ebp"
@@ -203,7 +203,7 @@ public: class cCopterAnim * __thiscall cCopterBody::GetPrivateAnim(unsigned long
 }
 
 // FUNCTION: COPTER_D 0x00560e78
-public: void __thiscall cCopterBody::ActivateAllPartPointers(unsigned short) {
+void  cCopterBody::ActivateAllPartPointers(unsigned short activated) {
 // LINE 2061:
 	asm( 
 "	      00560e78    push ebp"
@@ -361,7 +361,7 @@ public: void __thiscall cCopterBody::ActivateAllPartPointers(unsigned short) {
 }
 
 // FUNCTION: COPTER_D 0x00561005
-public: static class cCopterBody * __cdecl cCopterBody::GetCopterBody(unsigned char *const) {
+class cCopterBody *  cCopterBody::GetCopterBody(unsigned char * name) {
 // LINE 2084:
 	asm( 
 "	      00561005    push ebp"
@@ -475,7 +475,7 @@ public: static class cCopterBody * __cdecl cCopterBody::GetCopterBody(unsigned c
 }
 
 // FUNCTION: COPTER_D 0x00561190
-public: struct cCopterBody::Part * __thiscall cCopterBody::GetPartByName(unsigned long) {
+struct cCopterBody::Part *  cCopterBody::GetPartByName(unsigned long partname) {
 // LINE 2091:
 	asm( 
 "	      00561190    push ebp"
@@ -571,7 +571,7 @@ public: struct cCopterBody::Part * __thiscall cCopterBody::GetPartByName(unsigne
 }
 
 // FUNCTION: COPTER_D 0x00561281
-public: void __thiscall cCopterBody::DrawSwitch(float, float, struct cCopterBody::Part *, short, short, float, short) {
+void  cCopterBody::DrawSwitch(float phiOff, float psiOff, struct cCopterBody::Part* part, short screenx, short screeny, float scale, short colorIndexShift) {
 // LINE 2102:
 	asm( 
 "	      00561281    push ebp"
@@ -965,7 +965,7 @@ public: void __thiscall cCopterBody::DrawSwitch(float, float, struct cCopterBody
 }
 
 // FUNCTION: COPTER_D 0x00561611
-public: void __thiscall cCopterBody::Draw(float, float, class cCopterAnim *, short, short, short, float, short, short) {
+void  cCopterBody::Draw(float xOff, float yOff, class cCopterAnim* privanim, short framenum, short screenx, short screeny, float scale, short nearMedFar, short colorIndexShift) {
 // LINE 2180:
 	asm( 
 "	      00561611    push ebp"
@@ -1518,7 +1518,7 @@ public: void __thiscall cCopterBody::Draw(float, float, class cCopterAnim *, sho
 }
 
 // FUNCTION: COPTER_D 0x00561b74
-public: virtual void __thiscall cCopterBody::InstallArrayPointers(unsigned short) {
+void  cCopterBody::InstallArrayPointers(unsigned short expectondisk) {
 // LINE 2285:
 	asm( 
 "	      00561b74    push ebp"
@@ -1868,7 +1868,7 @@ public: virtual void __thiscall cCopterBody::InstallArrayPointers(unsigned short
 }
 
 // FUNCTION: COPTER_D 0x005620af
-public: static void __cdecl cCopterBody::DestroyAll(void) {
+void  cCopterBody::DestroyAll() {
 // LINE 2300:
 	asm( 
 "	      005620af    push ebp"

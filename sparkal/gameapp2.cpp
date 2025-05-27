@@ -88,7 +88,7 @@ int32_t IsActualTimeDaytime() {
 }
 
 // FUNCTION: COPTER_D 0x00461208
-public: virtual void __thiscall CGameApp::GetPreferences(void) {
+void  CGameApp::GetPreferences() {
 // LINE 111:
 	asm( 
 "	      00461208    push ebp"
@@ -253,7 +253,7 @@ public: virtual void __thiscall CGameApp::GetPreferences(void) {
 }
 
 // FUNCTION: COPTER_D 0x004613cb
-public: virtual void __thiscall CGameApp::GetSoundPreferences(void) {
+void  CGameApp::GetSoundPreferences() {
 // LINE 143:
 	asm( 
 "	      004613cb    push ebp"
@@ -356,7 +356,7 @@ public: virtual void __thiscall CGameApp::GetSoundPreferences(void) {
 }
 
 // FUNCTION: COPTER_D 0x00461494
-public: virtual void __thiscall CGameApp::SetSoundPreferences(struct SoundPreferences &) {
+void  CGameApp::SetSoundPreferences(struct SoundPreferences& newSoundPreferences) {
 // LINE 172:
 	asm( 
 "	      00461494    push ebp"
@@ -401,7 +401,7 @@ public: virtual void __thiscall CGameApp::SetSoundPreferences(struct SoundPrefer
 }
 
 // FUNCTION: COPTER_D 0x004614de
-public: virtual void __thiscall CGameApp::SavePreferences(void) {
+void  CGameApp::SavePreferences() {
 // LINE 187:
 	asm( 
 "	      004614de    push ebp"
@@ -551,7 +551,7 @@ public: virtual void __thiscall CGameApp::SavePreferences(void) {
 }
 
 // FUNCTION: COPTER_D 0x00461629
-public: virtual unsigned long __thiscall CGameApp::TickGame(void) {
+unsigned long  CGameApp::TickGame() {
 // LINE 218:
 	asm( 
 "	      00461629    push ebp"
@@ -759,7 +759,7 @@ public: virtual unsigned long __thiscall CGameApp::TickGame(void) {
 }
 
 // FUNCTION: COPTER_D 0x004618a3
-public: virtual void __thiscall CGameApp::ComposeFrame(void) {
+void  CGameApp::ComposeFrame() {
 // LINE 269:
 	asm( 
 "	      004618a3    push ebp"
@@ -1270,7 +1270,7 @@ public: virtual void __thiscall CGameApp::ComposeFrame(void) {
 }
 
 // FUNCTION: COPTER_D 0x00461eb9
-public: virtual void __thiscall CGameApp::ComposePlayFrame(void) {
+void  CGameApp::ComposePlayFrame() {
 // LINE 400:
 	asm( 
 "	      00461eb9    push ebp"
@@ -1766,7 +1766,7 @@ public: virtual void __thiscall CGameApp::ComposePlayFrame(void) {
 }
 
 // FUNCTION: COPTER_D 0x004624de
-public: virtual void __thiscall CGameApp::DoRecurringTasks(long) {
+void  CGameApp::DoRecurringTasks(long lMilliSecondsSinceLastCall) {
 // LINE 484:
 	asm( 
 "	      004624de    push ebp"
@@ -1836,7 +1836,7 @@ public: virtual void __thiscall CGameApp::DoRecurringTasks(long) {
 }
 
 // FUNCTION: COPTER_D 0x00462582
-public: virtual int __thiscall CGameApp::EnterMode(int) {
+int  CGameApp::EnterMode(int32_t nMode) {
 // LINE 502:
 	asm( 
 "	      00462582    push ebp"
@@ -3061,7 +3061,7 @@ public: virtual int __thiscall CGameApp::EnterMode(int) {
 }
 
 // FUNCTION: COPTER_D 0x00463608
-public: virtual int __thiscall CGameApp::ExitMode(int) {
+int  CGameApp::ExitMode(int32_t nMode) {
 // LINE 660:
 	asm( 
 "	      00463608    push ebp"
@@ -3621,7 +3621,7 @@ public: virtual int __thiscall CGameApp::ExitMode(int) {
 }
 
 // FUNCTION: COPTER_D 0x00463bf9
-public: virtual void __thiscall CGameApp::DestroyAllModes(void) {
+void  CGameApp::DestroyAllModes() {
 // LINE 748:
 	asm( 
 "	      00463bf9    push ebp"
@@ -3816,7 +3816,7 @@ public: virtual void __thiscall CGameApp::DestroyAllModes(void) {
 }
 
 // FUNCTION: COPTER_D 0x00463dcb
-public: virtual void __thiscall CGameApp::ProcessCommand(int) {
+void  CGameApp::ProcessCommand(int32_t nCommand) {
 // LINE 790:
 	asm( 
 "	      00463dcb    push ebp"
@@ -4508,7 +4508,7 @@ public: virtual void __thiscall CGameApp::ProcessCommand(int) {
 }
 
 // FUNCTION: COPTER_D 0x0046444d
-public: virtual void __thiscall CGameApp::DoKeyDown(long, char) {
+void  CGameApp::DoKeyDown(long lKey, char chModifiers) {
 // LINE 964:
 	asm( 
 "	      0046444d    push ebp"
@@ -4944,7 +4944,7 @@ public: virtual void __thiscall CGameApp::DoKeyDown(long, char) {
 }
 
 // FUNCTION: COPTER_D 0x0046487f
-public: virtual void __thiscall CGameApp::DoKeyUp(long, char) {
+void  CGameApp::DoKeyUp(long lKey, char chModifiers) {
 // LINE 1049:
 	asm( 
 "	      0046487f    push ebp"
@@ -5144,7 +5144,7 @@ public: virtual void __thiscall CGameApp::DoKeyUp(long, char) {
 }
 
 // FUNCTION: COPTER_D 0x00464aa5
-public: virtual void __thiscall CGameApp::DoCharacter(long) {
+void  CGameApp::DoCharacter(long lCharacter) {
 // LINE 1071:
 	asm( 
 "	      00464aa5    push ebp"
@@ -5177,7 +5177,7 @@ public: virtual void __thiscall CGameApp::DoCharacter(long) {
 }
 
 // FUNCTION: COPTER_D 0x00464ad0
-public: virtual void __thiscall CGameApp::DoCursorDown(int, int, int) {
+void  CGameApp::DoCursorDown(int32_t nCursorX, int32_t nCursorY, int32_t nButton) {
 // LINE 1079:
 	asm( 
 "	      00464ad0    push ebp"
@@ -5214,7 +5214,7 @@ public: virtual void __thiscall CGameApp::DoCursorDown(int, int, int) {
 }
 
 // FUNCTION: COPTER_D 0x00464b03
-public: virtual void __thiscall CGameApp::DoCursorUp(int, int, int) {
+void  CGameApp::DoCursorUp(int32_t nCursorX, int32_t nCursorY, int32_t nButton) {
 // LINE 1088:
 	asm( 
 "	      00464b03    push ebp"
@@ -5251,7 +5251,7 @@ public: virtual void __thiscall CGameApp::DoCursorUp(int, int, int) {
 }
 
 // FUNCTION: COPTER_D 0x00464b36
-public: virtual void __thiscall CGameApp::DoCursorMove(int, int) {
+void  CGameApp::DoCursorMove(int32_t nCursorX, int32_t nCursorY) {
 // LINE 1097:
 	asm( 
 "	      00464b36    push ebp"
@@ -5286,7 +5286,7 @@ public: virtual void __thiscall CGameApp::DoCursorMove(int, int) {
 }
 
 // FUNCTION: COPTER_D 0x00464b65
-public: virtual void __thiscall CGameApp::ClearCommands(void) {
+void  CGameApp::ClearCommands() {
 // LINE 1107:
 	asm( 
 "	      00464b65    push ebp"
@@ -5438,7 +5438,7 @@ public: virtual void __thiscall CGameApp::ClearCommands(void) {
 }
 
 // FUNCTION: COPTER_D 0x00464d1a
-public: void __thiscall CGameApp::ProcessSystemCloseRequest(void) {
+void  CGameApp::ProcessSystemCloseRequest() {
 // LINE 1128:
 	asm( 
 "	      00464d1a    push ebp"
@@ -5515,7 +5515,7 @@ public: void __thiscall CGameApp::ProcessSystemCloseRequest(void) {
 }
 
 // FUNCTION: COPTER_D 0x00464db3
-public: virtual int __thiscall CGameApp::CheckForWarpToCareerLevel(void) {
+int  CGameApp::CheckForWarpToCareerLevel() {
 // LINE 1144:
 	asm( 
 "	      00464db3    push ebp"
@@ -5567,7 +5567,7 @@ public: virtual int __thiscall CGameApp::CheckForWarpToCareerLevel(void) {
 }
 
 // FUNCTION: COPTER_D 0x00464e02
-public: virtual int __thiscall CGameApp::WarpToCareerLevel(int) {
+int  CGameApp::WarpToCareerLevel(int32_t nNewLevel) {
 // LINE 1163:
 	asm( 
 "	      00464e02    push ebp"
@@ -5658,7 +5658,7 @@ public: virtual int __thiscall CGameApp::WarpToCareerLevel(int) {
 }
 
 // FUNCTION: COPTER_D 0x00464eb2
-public: virtual int __thiscall CGameApp::GraduateUserToNextCareerLevel(void) {
+int  CGameApp::GraduateUserToNextCareerLevel() {
 // LINE 1181:
 	asm( 
 "	      00464eb2    push ebp"
@@ -5786,7 +5786,7 @@ public: virtual int __thiscall CGameApp::GraduateUserToNextCareerLevel(void) {
 }
 
 // FUNCTION: COPTER_D 0x0046501e
-public: virtual int __thiscall CGameApp::GraduateUserFromAllCareerLevels(void) {
+int  CGameApp::GraduateUserFromAllCareerLevels() {
 // LINE 1206:
 	asm( 
 "	      0046501e    push ebp"
@@ -5837,7 +5837,7 @@ public: virtual int __thiscall CGameApp::GraduateUserFromAllCareerLevels(void) {
 }
 
 // FUNCTION: COPTER_D 0x00465081
-public: virtual void __thiscall CGameApp::NotifyUserOfGraduation(void) {
+void  CGameApp::NotifyUserOfGraduation() {
 // LINE 1216:
 	asm( 
 "	      00465081    push ebp"
@@ -6121,7 +6121,7 @@ public: virtual void __thiscall CGameApp::NotifyUserOfGraduation(void) {
 }
 
 // FUNCTION: COPTER_D 0x004654a4
-public: virtual int __thiscall CGameApp::DoMessage(class GraphicWindow *, long, long, void *) {
+int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
 // LINE 1241:
 	asm( 
 "	      004654a4    push ebp"
@@ -7228,7 +7228,7 @@ public: virtual int __thiscall CGameApp::DoMessage(class GraphicWindow *, long, 
 }
 
 // FUNCTION: COPTER_D 0x00465edb
-public: virtual int __thiscall CGameApp::DoMainMenuMessage(class GraphicWindow *, long, long, void *) {
+int  CGameApp::DoMainMenuMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
 // LINE 1461:
 	asm( 
 "	      00465edb    push ebp"
@@ -7653,7 +7653,7 @@ public: virtual int __thiscall CGameApp::DoMainMenuMessage(class GraphicWindow *
 }
 
 // FUNCTION: COPTER_D 0x004662fa
-public: virtual int __thiscall CGameApp::DoPlayMenuMessage(class GraphicWindow *, long, long, void *) {
+int  CGameApp::DoPlayMenuMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
 // LINE 1573:
 	asm( 
 "	      004662fa    push ebp"
@@ -7994,7 +7994,7 @@ public: virtual int __thiscall CGameApp::DoPlayMenuMessage(class GraphicWindow *
 }
 
 // FUNCTION: COPTER_D 0x004665ad
-public: int __thiscall CGameApp::StartVideoForCitySelection(long) {
+int  CGameApp::StartVideoForCitySelection(long lCurrentCitySelection) {
 // LINE 1658:
 	asm( 
 "	      004665ad    push ebp"
@@ -8209,7 +8209,7 @@ public: int __thiscall CGameApp::StartVideoForCitySelection(long) {
 }
 
 // FUNCTION: COPTER_D 0x004668ad
-public: void __thiscall CGameApp::ComposeCareerCityVideoFrame(void) {
+void  CGameApp::ComposeCareerCityVideoFrame() {
 // LINE 1692:
 	asm( 
 "	      004668ad    push ebp"
@@ -8291,7 +8291,7 @@ public: void __thiscall CGameApp::ComposeCareerCityVideoFrame(void) {
 }
 
 // FUNCTION: COPTER_D 0x00466968
-public: int __thiscall CGameApp::StartVideoForMainMenu(void) {
+int  CGameApp::StartVideoForMainMenu() {
 // LINE 1714:
 	asm( 
 "	      00466968    push ebp"
@@ -8426,7 +8426,7 @@ public: int __thiscall CGameApp::StartVideoForMainMenu(void) {
 }
 
 // FUNCTION: COPTER_D 0x00466b32
-public: void __thiscall CGameApp::EndVideoForMainMenu(void) {
+void  CGameApp::EndVideoForMainMenu() {
 // LINE 1737:
 	asm( 
 "	      00466b32    push ebp"
@@ -8482,7 +8482,7 @@ public: void __thiscall CGameApp::EndVideoForMainMenu(void) {
 }
 
 // FUNCTION: COPTER_D 0x00466b94
-public: void __thiscall CGameApp::ComposeMainMenuVideoFrame(void) {
+void  CGameApp::ComposeMainMenuVideoFrame() {
 // LINE 1749:
 	asm( 
 "	      00466b94    push ebp"

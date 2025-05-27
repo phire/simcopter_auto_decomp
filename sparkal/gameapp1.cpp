@@ -150,7 +150,7 @@ void RenderPreferences::RenderPreferences() {
 }
 
 // FUNCTION: COPTER_D 0x00487bb7
-public: __thiscall CGameApp::CGameApp(void) {
+ CGameApp::CGameApp() {
 // LINE 119:
 	asm( 
 "	      00487bb7    push ebp"
@@ -404,7 +404,7 @@ public: __thiscall CGameApp::CGameApp(void) {
 }
 
 // FUNCTION: COPTER_D 0x00487f72
-public: virtual __thiscall CGameApp::~CGameApp(void) {
+ CGameApp::~CGameApp() {
 // LINE 131:
 	asm( 
 "	      00487f72    push ebp"
@@ -879,7 +879,7 @@ public: virtual __thiscall CGameApp::~CGameApp(void) {
 }
 
 // FUNCTION: COPTER_D 0x004885ed
-public: void __thiscall CGameApp::InitializeMemberVariables(void) {
+void  CGameApp::InitializeMemberVariables() {
 // LINE 203:
 	asm( 
 "	      004885ed    push ebp"
@@ -1091,7 +1091,7 @@ public: void __thiscall CGameApp::InitializeMemberVariables(void) {
 }
 
 // FUNCTION: COPTER_D 0x004887b7
-public: virtual unsigned long __thiscall CGameApp::PrepareGame(void) {
+unsigned long  CGameApp::PrepareGame() {
 // LINE 258:
 	asm( 
 "	      004887b7    push ebp"
@@ -2133,7 +2133,7 @@ public: virtual unsigned long __thiscall CGameApp::PrepareGame(void) {
 }
 
 // FUNCTION: COPTER_D 0x004896d1
-public: virtual class CSparkalWindow * __thiscall CGameApp::NewWindow(unsigned long, unsigned long, unsigned long, struct SparkalColor const *, char const *) {
+class CSparkalWindow *  CGameApp::NewWindow(unsigned long Width, unsigned long Height, unsigned long Style, const struct SparkalColor* pColors, char * Caption) {
 // LINE 373:
 	asm( 
 "	      004896d1    push ebp"
@@ -2179,7 +2179,7 @@ public: virtual class CSparkalWindow * __thiscall CGameApp::NewWindow(unsigned l
 }
 
 // FUNCTION: COPTER_D 0x00489726
-public: virtual unsigned long __thiscall CGameApp::Initialize(void) {
+unsigned long  CGameApp::Initialize() {
 // LINE 386:
 	asm( 
 "	      00489726    push ebp"
@@ -2610,7 +2610,7 @@ public: virtual unsigned long __thiscall CGameApp::Initialize(void) {
 }
 
 // FUNCTION: COPTER_D 0x00489c43
-public: virtual void __thiscall CGameApp::ParseCommandLine(void) {
+void  CGameApp::ParseCommandLine() {
 // LINE 506:
 	asm( 
 "	      00489c43    push ebp"
@@ -2922,7 +2922,7 @@ public: virtual void __thiscall CGameApp::ParseCommandLine(void) {
 }
 
 // FUNCTION: COPTER_D 0x00489f3d
-public: int __thiscall CGameApp::IsSwitchPresent(char, char *) {
+int  CGameApp::IsSwitchPresent(char chSwitchToCheck, char * szResult) {
 // LINE 593:
 	asm( 
 "	      00489f3d    push ebp"
@@ -3142,7 +3142,7 @@ public: int __thiscall CGameApp::IsSwitchPresent(char, char *) {
 }
 
 // FUNCTION: COPTER_D 0x0048a15d
-public: int __thiscall CGameApp::SetCurrentLanguageUse(int) {
+int  CGameApp::SetCurrentLanguageUse(int32_t nLanguageID) {
 // LINE 650:
 	asm( 
 "	      0048a15d    push ebp"
@@ -3176,7 +3176,7 @@ public: int __thiscall CGameApp::SetCurrentLanguageUse(int) {
 }
 
 // FUNCTION: COPTER_D 0x0048a186
-public: void __thiscall CGameApp::DisplayDebugSystemInformation(void) {
+void  CGameApp::DisplayDebugSystemInformation() {
 // LINE 661:
 	asm( 
 "	      0048a186    push ebp"
@@ -3383,7 +3383,7 @@ public: void __thiscall CGameApp::DisplayDebugSystemInformation(void) {
 }
 
 // FUNCTION: COPTER_D 0x0048a370
-public: void __thiscall CGameApp::SetSystemPriorityLevel(long) {
+void  CGameApp::SetSystemPriorityLevel(long lLevel) {
 // LINE 719:
 	asm( 
 "	      0048a370    push ebp"
@@ -3462,7 +3462,7 @@ public: void __thiscall CGameApp::SetSystemPriorityLevel(long) {
 }
 
 // FUNCTION: COPTER_D 0x0048a409
-public: virtual void __thiscall CGameApp::InitializeCommandSystem(void) {
+void  CGameApp::InitializeCommandSystem() {
 // LINE 747:
 	asm( 
 "	      0048a409    push ebp"
@@ -3856,7 +3856,7 @@ public: virtual void __thiscall CGameApp::InitializeCommandSystem(void) {
 }
 
 // FUNCTION: COPTER_D 0x0048a943
-public: virtual void __thiscall CGameApp::InitializeJoysticks(void) {
+void  CGameApp::InitializeJoysticks() {
 // LINE 792:
 	asm( 
 "	      0048a943    push ebp"
@@ -3896,7 +3896,7 @@ public: virtual void __thiscall CGameApp::InitializeJoysticks(void) {
 }
 
 // FUNCTION: COPTER_D 0x0048a980
-public: virtual int __thiscall CGameApp::HaveAnyJoysticksChangedSinceLastPlay(void) {
+int  CGameApp::HaveAnyJoysticksChangedSinceLastPlay() {
 // LINE 809:
 	asm( 
 "	      0048a980    push ebp"

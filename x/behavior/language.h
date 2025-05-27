@@ -1,6 +1,6 @@
 // Function in module: Ylingo.obj
 // FUNCTION: COPTER_D 0x00560bb0
-public: virtual unsigned short __thiscall Language::IsSingleExit(struct Behavior::Node *) {
+unsigned short  Language::IsSingleExit(struct Behavior::Node* node) {
 // LINE 20:
 	asm( 
 "	      00560bb0    push ebp"
@@ -22,7 +22,7 @@ public: virtual unsigned short __thiscall Language::IsSingleExit(struct Behavior
 
 // Function in module: Ylingo.obj
 // FUNCTION: COPTER_D 0x00560bd0
-public: virtual void (__cdecl * __thiscall Language::GetSwizzler(void))(void *, long) {
+void (__cdecl *  Language::GetSwizzler() {
 // LINE 21:
 	asm( 
 "	      00560bd0    push ebp"

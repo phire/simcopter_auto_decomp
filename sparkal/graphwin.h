@@ -50,7 +50,7 @@ int32_t GraphicWindowManager::DecrementBusyCount() {
 
 // Function in module: Inputwin.obj
 // FUNCTION: COPTER_D 0x0040d7e0
-public: virtual void __thiscall GraphicWindow::SetParent(class GraphicWindow *) {
+void  GraphicWindow::SetParent(class GraphicWindow* windowNewParent) {
 // LINE 323:
 	asm( 
 "	      0040d7e0    push ebp"
@@ -80,7 +80,7 @@ public: virtual void __thiscall GraphicWindow::SetParent(class GraphicWindow *) 
 
 // Function in module: Inputwin.obj
 // FUNCTION: COPTER_D 0x0040d810
-public: virtual void __thiscall GraphicWindow::SetBorderDrawing(int) {
+void  GraphicWindow::SetBorderDrawing(int32_t bNewDrawBorder) {
 // LINE 327:
 	asm( 
 "	      0040d810    push ebp"
@@ -110,7 +110,7 @@ public: virtual void __thiscall GraphicWindow::SetBorderDrawing(int) {
 
 // Function in module: Inputwin.obj
 // FUNCTION: COPTER_D 0x0040d840
-public: virtual void __thiscall GraphicWindow::SetWindowPosition(class MPoint &) {
+void  GraphicWindow::SetWindowPosition(class MPoint& ptNewPosition) {
 // LINE 335:
 	asm( 
 "	      0040d840    push ebp"
@@ -163,7 +163,7 @@ public: virtual void __thiscall GraphicWindow::SetWindowPosition(class MPoint &)
 
 // Function in module: Inputwin.obj
 // FUNCTION: COPTER_D 0x0040d8b0
-public: virtual int __thiscall GraphicWindow::IsPointInWindow(long, long) {
+int  GraphicWindow::IsPointInWindow(long nXPosition, long nYPosition) {
 // LINE 362:
 	asm( 
 "	      0040d8b0    push ebp"

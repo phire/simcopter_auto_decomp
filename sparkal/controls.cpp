@@ -5234,7 +5234,7 @@ long RadioButtonWindow::DoCursorMove(long __formal, long __formal) {
 }
 
 // FUNCTION: COPTER_D 0x004b0083
-public: __thiscall ButtonGroup::ButtonGroup(void) {
+ ButtonGroup::ButtonGroup() {
 // LINE 855:
 	asm( 
 "	      004b0083    push ebp"
@@ -5418,7 +5418,7 @@ public: __thiscall ButtonGroup::ButtonGroup(void) {
 }
 
 // FUNCTION: COPTER_D 0x004b030d
-public: __thiscall ButtonGroup::ButtonGroup(long, class GraphicWindow *, class GraphicWindow *, int) {
+ ButtonGroup::ButtonGroup(long lNewID, class GraphicWindow* windowNewParent, class GraphicWindow* gwMyNewOwner, int32_t bAddToParentList) {
 // LINE 868:
 	asm( 
 "	      004b030d    push ebp"
@@ -5624,7 +5624,7 @@ public: __thiscall ButtonGroup::ButtonGroup(long, class GraphicWindow *, class G
 }
 
 // FUNCTION: COPTER_D 0x004b05e2
-public: void __thiscall ButtonGroup::AddButton(class RadioButtonWindow *) {
+void  ButtonGroup::AddButton(class RadioButtonWindow* buttonNew) {
 // LINE 878:
 	asm( 
 "	      004b05e2    push ebp"
@@ -5838,7 +5838,7 @@ public: void __thiscall ButtonGroup::AddButton(class RadioButtonWindow *) {
 }
 
 // FUNCTION: COPTER_D 0x004b08b4
-public: void __thiscall ButtonGroup::RemoveButton(class RadioButtonWindow *) {
+void  ButtonGroup::RemoveButton(class RadioButtonWindow* buttonToRemove) {
 // LINE 892:
 	asm( 
 "	      004b08b4    push ebp"
@@ -5969,7 +5969,7 @@ public: void __thiscall ButtonGroup::RemoveButton(class RadioButtonWindow *) {
 }
 
 // FUNCTION: COPTER_D 0x004b09ed
-public: void __thiscall ButtonGroup::SetSelection(class RadioButtonWindow *) {
+void  ButtonGroup::SetSelection(class RadioButtonWindow* buttonToSelect) {
 // LINE 919:
 	asm( 
 "	      004b09ed    push ebp"
@@ -6125,7 +6125,7 @@ public: void __thiscall ButtonGroup::SetSelection(class RadioButtonWindow *) {
 }
 
 // FUNCTION: COPTER_D 0x004b0b5b
-public: void __thiscall ButtonGroup::SetSelection(long) {
+void  ButtonGroup::SetSelection(long lIDOfButtonToSelect) {
 // LINE 949:
 	asm( 
 "	      004b0b5b    push ebp"
@@ -6284,7 +6284,7 @@ public: void __thiscall ButtonGroup::SetSelection(long) {
 }
 
 // FUNCTION: COPTER_D 0x004b0cd4
-public: void __thiscall ButtonGroup::SetSelectionIndex(int) {
+void  ButtonGroup::SetSelectionIndex(int32_t nIndexOfButtonToSelect) {
 // LINE 980:
 	asm( 
 "	      004b0cd4    push ebp"
@@ -6448,7 +6448,7 @@ public: void __thiscall ButtonGroup::SetSelectionIndex(int) {
 }
 
 // FUNCTION: COPTER_D 0x004b0e4d
-public: int __thiscall ButtonGroup::GetSelection(class RadioButtonWindow *&) {
+int  ButtonGroup::GetSelection(class RadioButtonWindow*& radioButtonWindow) {
 // LINE 1011:
 	asm( 
 "	      004b0e4d    push ebp"
@@ -6553,7 +6553,7 @@ public: int __thiscall ButtonGroup::GetSelection(class RadioButtonWindow *&) {
 }
 
 // FUNCTION: COPTER_D 0x004b0f41
-public: int __thiscall ButtonGroup::GetSelection(long &) {
+int  ButtonGroup::GetSelection(long& lCurrentSelection) {
 // LINE 1032:
 	asm( 
 "	      004b0f41    push ebp"
@@ -6594,7 +6594,7 @@ public: int __thiscall ButtonGroup::GetSelection(long &) {
 }
 
 // FUNCTION: COPTER_D 0x004b0f79
-public: int __thiscall ButtonGroup::GetSelectionIndex(void) {
+int  ButtonGroup::GetSelectionIndex() {
 // LINE 1049:
 	asm( 
 "	      004b0f79    push ebp"
@@ -6699,7 +6699,7 @@ public: int __thiscall ButtonGroup::GetSelectionIndex(void) {
 }
 
 // FUNCTION: COPTER_D 0x004b1067
-protected: int __thiscall ButtonGroup::IsButtonInGroup(class RadioButtonWindow *) {
+int  ButtonGroup::IsButtonInGroup(class RadioButtonWindow* buttonToFind) {
 // LINE 1068:
 	asm( 
 "	      004b1067    push ebp"

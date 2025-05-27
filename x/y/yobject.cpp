@@ -19507,7 +19507,7 @@ void FrameInit() {
 
 // Contribution: 1:00150f40-00150f9e Module: 200, 16 byte alignment, code, (comdat), execute, read, 
 // FUNCTION: COPTER_D 0x00551f40
-public: virtual __thiscall ResFile::~ResFile(void) {
+ ResFile::~ResFile() {
 }
 
 

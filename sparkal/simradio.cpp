@@ -5761,7 +5761,7 @@ int32_t RadioStation::DetectRadioStationType() {
 }
 
 // FUNCTION: COPTER_D 0x00437b10
-public: __thiscall Radio::Radio(void) {
+ Radio::Radio() {
 // LINE 603:
 	asm( 
 "	      00437b10    push ebp"
@@ -5815,7 +5815,7 @@ public: __thiscall Radio::Radio(void) {
 }
 
 // FUNCTION: COPTER_D 0x00437bba
-public: virtual __thiscall Radio::~Radio(void) {
+ Radio::~Radio() {
 // LINE 610:
 	asm( 
 "	      00437bba    push ebp"
@@ -5879,7 +5879,7 @@ public: virtual __thiscall Radio::~Radio(void) {
 }
 
 // FUNCTION: COPTER_D 0x00437c57
-public: virtual int __thiscall Radio::Initialize(void) {
+int  Radio::Initialize() {
 // LINE 619:
 	asm( 
 "	      00437c57    push ebp"
@@ -5920,7 +5920,7 @@ public: virtual int __thiscall Radio::Initialize(void) {
 }
 
 // FUNCTION: COPTER_D 0x00437c88
-public: virtual int __thiscall Radio::DeInitialize(void) {
+int  Radio::DeInitialize() {
 // LINE 630:
 	asm( 
 "	      00437c88    push ebp"
@@ -5962,7 +5962,7 @@ public: virtual int __thiscall Radio::DeInitialize(void) {
 }
 
 // FUNCTION: COPTER_D 0x00437cbd
-public: virtual void __thiscall Radio::SetPreferences(struct RadioPreferences &) {
+void  Radio::SetPreferences(struct RadioPreferences& newRadioPreferences) {
 // LINE 641:
 	asm( 
 "	      00437cbd    push ebp"
@@ -6054,7 +6054,7 @@ public: virtual void __thiscall Radio::SetPreferences(struct RadioPreferences &)
 }
 
 // FUNCTION: COPTER_D 0x00437d4c
-public: virtual void __thiscall Radio::GetPreferences(struct RadioPreferences &) {
+void  Radio::GetPreferences(struct RadioPreferences& currentRadioPreferences) {
 // LINE 660:
 	asm( 
 "	      00437d4c    push ebp"
@@ -6126,7 +6126,7 @@ public: virtual void __thiscall Radio::GetPreferences(struct RadioPreferences &)
 }
 
 // FUNCTION: COPTER_D 0x00437db7
-public: virtual int __thiscall Radio::GetPreferences(void) {
+int  Radio::GetPreferences() {
 // LINE 675:
 	asm( 
 "	      00437db7    push ebp"
@@ -6218,7 +6218,7 @@ public: virtual int __thiscall Radio::GetPreferences(void) {
 }
 
 // FUNCTION: COPTER_D 0x00437e67
-public: virtual int __thiscall Radio::SavePreferences(void) {
+int  Radio::SavePreferences() {
 // LINE 703:
 	asm( 
 "	      00437e67    push ebp"
@@ -6302,7 +6302,7 @@ public: virtual int __thiscall Radio::SavePreferences(void) {
 }
 
 // FUNCTION: COPTER_D 0x00437ee7
-public: virtual int __thiscall Radio::SetOn(int) {
+int  Radio::SetOn(int32_t bNewOn) {
 // LINE 727:
 	asm( 
 "	      00437ee7    push ebp"
@@ -6436,7 +6436,7 @@ public: virtual int __thiscall Radio::SetOn(int) {
 }
 
 // FUNCTION: COPTER_D 0x00438005
-public: virtual void __thiscall Radio::SetMute(int) {
+void  Radio::SetMute(int32_t bNewMute) {
 // LINE 758:
 	asm( 
 "	      00438005    push ebp"
@@ -6519,7 +6519,7 @@ public: virtual void __thiscall Radio::SetMute(int) {
 }
 
 // FUNCTION: COPTER_D 0x004380a0
-public: virtual void __thiscall Radio::SetOption(int, enum RadioOption) {
+void  Radio::SetOption(int32_t bNewOption, enum RadioOption nRadioOption) {
 // LINE 780:
 	asm( 
 "	      004380a0    push ebp"
@@ -6577,7 +6577,7 @@ public: virtual void __thiscall Radio::SetOption(int, enum RadioOption) {
 }
 
 // FUNCTION: COPTER_D 0x004380fb
-public: virtual int __thiscall Radio::GetOption(enum RadioOption) {
+int  Radio::GetOption(enum RadioOption nRadioOption) {
 // LINE 793:
 	asm( 
 "	      004380fb    push ebp"
@@ -6639,7 +6639,7 @@ public: virtual int __thiscall Radio::GetOption(enum RadioOption) {
 }
 
 // FUNCTION: COPTER_D 0x0043815e
-public: virtual int __thiscall Radio::SetVolume(long) {
+int  Radio::SetVolume(long lNewVolume) {
 // LINE 811:
 	asm( 
 "	      0043815e    push ebp"
@@ -6707,7 +6707,7 @@ public: virtual int __thiscall Radio::SetVolume(long) {
 }
 
 // FUNCTION: COPTER_D 0x004381cc
-public: virtual int __thiscall Radio::SetStation(int) {
+int  Radio::SetStation(int32_t nStationIndex) {
 // LINE 826:
 	asm( 
 "	      004381cc    push ebp"
@@ -6830,7 +6830,7 @@ public: virtual int __thiscall Radio::SetStation(int) {
 }
 
 // FUNCTION: COPTER_D 0x004382ca
-public: virtual int __thiscall Radio::SetStation(enum RadioStationType) {
+int  Radio::SetStation(enum RadioStationType radioStationType) {
 // LINE 846:
 	asm( 
 "	      004382ca    push ebp"
@@ -6912,7 +6912,7 @@ public: virtual int __thiscall Radio::SetStation(enum RadioStationType) {
 }
 
 // FUNCTION: COPTER_D 0x00438379
-public: virtual int __thiscall Radio::IsStationTypeAvailable(enum RadioStationType) {
+int  Radio::IsStationTypeAvailable(enum RadioStationType radioStationType) {
 // LINE 860:
 	asm( 
 "	      00438379    push ebp"
@@ -6989,7 +6989,7 @@ public: virtual int __thiscall Radio::IsStationTypeAvailable(enum RadioStationTy
 }
 
 // FUNCTION: COPTER_D 0x0043841e
-public: virtual int __thiscall Radio::GetStationCount(void) {
+int  Radio::GetStationCount() {
 // LINE 875:
 	asm( 
 "	      0043841e    push ebp"
@@ -7025,7 +7025,7 @@ public: virtual int __thiscall Radio::GetStationCount(void) {
 }
 
 // FUNCTION: COPTER_D 0x00438457
-public: virtual int __thiscall Radio::DoState(void) {
+int  Radio::DoState() {
 // LINE 884:
 	asm( 
 "	      00438457    push ebp"
@@ -7079,7 +7079,7 @@ public: virtual int __thiscall Radio::DoState(void) {
 }
 
 // FUNCTION: COPTER_D 0x004384b6
-protected: virtual int __thiscall Radio::StationDirectoryNameIsValid(class basic_string<char> &) {
+int  Radio::StationDirectoryNameIsValid(class basic_string<char>& sStationDirectory) {
 // LINE 895:
 	asm( 
 "	      004384b6    push ebp"
@@ -7226,7 +7226,7 @@ protected: virtual int __thiscall Radio::StationDirectoryNameIsValid(class basic
 }
 
 // FUNCTION: COPTER_D 0x0043867d
-protected: virtual int __thiscall Radio::SetupStations(void) {
+int  Radio::SetupStations() {
 // LINE 914:
 	asm( 
 "	      0043867d    push ebp"
@@ -8329,7 +8329,7 @@ protected: virtual int __thiscall Radio::SetupStations(void) {
 }
 
 // FUNCTION: COPTER_D 0x00439663
-protected: virtual int __thiscall Radio::DoesAtLeastOneSoundEntryExistForTheGivenDirectory(class basic_string<char> const &) {
+int  Radio::DoesAtLeastOneSoundEntryExistForTheGivenDirectory(const class basic_string<char>& sDirectory) {
 // LINE 1013:
 	asm( 
 "	      00439663    push ebp"

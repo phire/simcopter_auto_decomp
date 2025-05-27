@@ -6,7 +6,7 @@
 
 // Contribution: 1:00026550-00027c67 Module: 68, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00427550
-public: unsigned long __thiscall CGameApp::GetLoadFileType(char *, long &) {
+unsigned long  CGameApp::GetLoadFileType(char * szFilePath, long& lFileType) {
 // LINE 61:
 	asm( 
 "	      00427550    push ebp"
@@ -96,7 +96,7 @@ public: unsigned long __thiscall CGameApp::GetLoadFileType(char *, long &) {
 }
 
 // FUNCTION: COPTER_D 0x004275e3
-public: unsigned long __thiscall CGameApp::SetUpLoadGame(char *, long) {
+unsigned long  CGameApp::SetUpLoadGame(char * szLoadGamePath, long lFileType) {
 // LINE 85:
 	asm( 
 "	      004275e3    push ebp"
@@ -193,7 +193,7 @@ public: unsigned long __thiscall CGameApp::SetUpLoadGame(char *, long) {
 }
 
 // FUNCTION: COPTER_D 0x00427691
-public: unsigned long __thiscall CGameApp::LoadUserOrCareerGame(char *) {
+unsigned long  CGameApp::LoadUserOrCareerGame(char * szGamePath) {
 // LINE 109:
 	asm( 
 "	      00427691    push ebp"
@@ -660,7 +660,7 @@ public: unsigned long __thiscall CGameApp::LoadUserOrCareerGame(char *) {
 }
 
 // FUNCTION: COPTER_D 0x00427bf4
-public: unsigned long __thiscall CGameApp::SaveUserOrCareerGame(char *, char *) {
+unsigned long  CGameApp::SaveUserOrCareerGame(char * szGamePath, char * szCityPath) {
 // LINE 222:
 	asm( 
 "	      00427bf4    push ebp"
@@ -997,7 +997,7 @@ public: unsigned long __thiscall CGameApp::SaveUserOrCareerGame(char *, char *) 
 }
 
 // FUNCTION: COPTER_D 0x00427f98
-public: unsigned long __thiscall CGameApp::DoSaveGameAs(void) {
+unsigned long  CGameApp::DoSaveGameAs() {
 // LINE 305:
 	asm( 
 "	      00427f98    push ebp"
@@ -1757,7 +1757,7 @@ public: unsigned long __thiscall CGameApp::DoSaveGameAs(void) {
 }
 
 // FUNCTION: COPTER_D 0x00428a74
-public: long __thiscall CGameApp::ValidateCopterSaveGameFile(char *) {
+long  CGameApp::ValidateCopterSaveGameFile(char * szGamePath) {
 // LINE 421:
 	asm( 
 "	      00428a74    push ebp"
@@ -1907,7 +1907,7 @@ public: long __thiscall CGameApp::ValidateCopterSaveGameFile(char *) {
 }
 
 // FUNCTION: COPTER_D 0x00428c38
-public: int __thiscall CGameApp::DisplayFileOpenError(unsigned long) {
+int  CGameApp::DisplayFileOpenError(unsigned long nResult) {
 // LINE 462:
 	asm( 
 "	      00428c38    push ebp"

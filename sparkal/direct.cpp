@@ -1889,7 +1889,7 @@ int32_t DirectoryEntry::CreatePhysicalEntry() {
 }
 
 // FUNCTION: COPTER_D 0x004832a3
-public: __thiscall Directory::Directory(class basic_string<char> &, int, int, int) {
+ Directory::Directory(class basic_string<char>& sNewDirectoryPath, int32_t bReadNow, int32_t bNewAllowParentDirectoryAsEntry, int32_t bNewAllowCurrentDirectoryAsEntry) {
 // LINE 198:
 	asm( 
 "	      004832a3    push ebp"
@@ -2260,7 +2260,7 @@ public: __thiscall Directory::Directory(class basic_string<char> &, int, int, in
 }
 
 // FUNCTION: COPTER_D 0x004837af
-public: int __thiscall Directory::IsDirectoryRoot(void) {
+int  Directory::IsDirectoryRoot() {
 // LINE 208:
 	asm( 
 "	      004837af    push ebp"
@@ -2287,7 +2287,7 @@ public: int __thiscall Directory::IsDirectoryRoot(void) {
 }
 
 // FUNCTION: COPTER_D 0x004837c7
-public: int __thiscall Directory::ReadDirectoryEntries(void) {
+int  Directory::ReadDirectoryEntries() {
 // LINE 220:
 	asm( 
 "	      004837c7    push ebp"
@@ -3396,7 +3396,7 @@ public: int __thiscall Directory::ReadDirectoryEntries(void) {
 }
 
 // FUNCTION: COPTER_D 0x0048494d
-public: int __thiscall Directory::ReadDirectorySpecificEntriesIntoStringList(class list<class basic_string<char>> &, long) {
+int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_string<char>>& sDirectoryEntries, long lFilter) {
 // LINE 347:
 	asm( 
 "	      0048494d    push ebp"
@@ -4260,7 +4260,7 @@ public: int __thiscall Directory::ReadDirectorySpecificEntriesIntoStringList(cla
 }
 
 // FUNCTION: COPTER_D 0x00485735
-public: static int __cdecl Directory::DoesAnyEntryExistThatMatchesPattern(class basic_string<char> const &) {
+int  Directory::DoesAnyEntryExistThatMatchesPattern(const class basic_string<char>& sPathPattern) {
 // LINE 431:
 	asm( 
 "	      00485735    push ebp"
@@ -4429,7 +4429,7 @@ public: static int __cdecl Directory::DoesAnyEntryExistThatMatchesPattern(class 
 }
 
 // FUNCTION: COPTER_D 0x004859c2
-protected: int __thiscall Directory::DoesDirectoryListContainEntry(class basic_string<char> const &) {
+int  Directory::DoesDirectoryListContainEntry(const class basic_string<char>& sEntry) {
 // LINE 447:
 	asm( 
 "	      004859c2    push ebp"
@@ -4563,7 +4563,7 @@ protected: int __thiscall Directory::DoesDirectoryListContainEntry(class basic_s
 }
 
 // FUNCTION: COPTER_D 0x00485b36
-public: int __thiscall Directory::ChangeDirectory(class basic_string<char> &, int) {
+int  Directory::ChangeDirectory(class basic_string<char>& sNewDirectory, int32_t bReadNow) {
 // LINE 470:
 	asm( 
 "	      00485b36    push ebp"
@@ -4733,7 +4733,7 @@ public: int __thiscall Directory::ChangeDirectory(class basic_string<char> &, in
 }
 
 // FUNCTION: COPTER_D 0x00485d34
-public: int __thiscall Directory::CreateNewEntry(class basic_string<char> &, long) {
+int  Directory::CreateNewEntry(class basic_string<char>& sName, long lType) {
 // LINE 486:
 	asm( 
 "	      00485d34    push ebp"
@@ -4822,7 +4822,7 @@ public: int __thiscall Directory::CreateNewEntry(class basic_string<char> &, lon
 }
 
 // FUNCTION: COPTER_D 0x00485e22
-public: class DirectoryEntry * __thiscall Directory::GetNthEntry(int) {
+class DirectoryEntry *  Directory::GetNthEntry(int32_t nIndex) {
 // LINE 496:
 	asm( 
 "	      00485e22    push ebp"
@@ -4899,7 +4899,7 @@ public: class DirectoryEntry * __thiscall Directory::GetNthEntry(int) {
 }
 
 // FUNCTION: COPTER_D 0x00485ebe
-public: void __thiscall Directory::SetNewDirectoryEntryFilter(class basic_string<char> &, int) {
+void  Directory::SetNewDirectoryEntryFilter(class basic_string<char>& sNewDirectoryEntryFilter, int32_t bRereadEntries) {
 // LINE 511:
 	asm( 
 "	      00485ebe    push ebp"
@@ -5235,7 +5235,7 @@ public: void __thiscall Directory::SetNewDirectoryEntryFilter(class basic_string
 }
 
 // FUNCTION: COPTER_D 0x0048631c
-protected: void __thiscall Directory::MakeSurePathEndsWithSeparator(void) {
+void  Directory::MakeSurePathEndsWithSeparator() {
 // LINE 523:
 	asm( 
 "	      0048631c    push ebp"
@@ -5597,7 +5597,7 @@ protected: void __thiscall Directory::MakeSurePathEndsWithSeparator(void) {
 }
 
 // FUNCTION: COPTER_D 0x004867d2
-public: static void __cdecl Directory::SplitDirectoryPath(class basic_string<char> const &, class basic_string<char> &, class basic_string<char> &) {
+void  Directory::SplitDirectoryPath(const class basic_string<char>& sPath, class basic_string<char>& sFirstPart, class basic_string<char>& sLastPart) {
 // LINE 544:
 	asm( 
 "	      004867d2    push ebp"

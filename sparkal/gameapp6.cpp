@@ -6,7 +6,7 @@
 
 // Contribution: 1:00070e40-00070f60 Module: 37, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00471e40
-public: void __thiscall CGameApp::EnableSoundTrack(void) {
+void  CGameApp::EnableSoundTrack() {
 // LINE 23:
 	asm( 
 "	      00471e40    push ebp"
@@ -35,7 +35,7 @@ public: void __thiscall CGameApp::EnableSoundTrack(void) {
 }
 
 // FUNCTION: COPTER_D 0x00471e62
-public: void __thiscall CGameApp::DisableSoundTrack(void) {
+void  CGameApp::DisableSoundTrack() {
 // LINE 34:
 	asm( 
 "	      00471e62    push ebp"
@@ -64,7 +64,7 @@ public: void __thiscall CGameApp::DisableSoundTrack(void) {
 }
 
 // FUNCTION: COPTER_D 0x00471e84
-public: void __thiscall CGameApp::ToggleMusicSoundTrack(void) {
+void  CGameApp::ToggleMusicSoundTrack() {
 // LINE 47:
 	asm( 
 "	      00471e84    push ebp"
@@ -133,7 +133,7 @@ public: void __thiscall CGameApp::ToggleMusicSoundTrack(void) {
 }
 
 // FUNCTION: COPTER_D 0x00471f41
-public: void __thiscall CGameApp::PlayNextSoundTrackIfNeeded(void) {
+void  CGameApp::PlayNextSoundTrackIfNeeded() {
 // LINE 61:
 	asm( 
 "	      00471f41    push ebp"

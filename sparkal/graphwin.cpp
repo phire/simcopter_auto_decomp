@@ -2046,7 +2046,7 @@ int32_t GraphicWindowManager::IsWindowValid(class GraphicWindow* windowToTestFor
 }
 
 // FUNCTION: COPTER_D 0x004a2a3f
-public: __thiscall GraphicWindow::GraphicWindow(void) {
+ GraphicWindow::GraphicWindow() {
 // LINE 444:
 	asm( 
 "	      004a2a3f    push ebp"
@@ -2422,7 +2422,7 @@ public: __thiscall GraphicWindow::GraphicWindow(void) {
 }
 
 // FUNCTION: COPTER_D 0x004a2f5c
-public: __thiscall GraphicWindow::GraphicWindow(class GraphicWindow const &) {
+ GraphicWindow::GraphicWindow(const class GraphicWindow& copyGraphicWindow) {
 // LINE 464:
 	asm( 
 "	      004a2f5c    push ebp"
@@ -2744,7 +2744,7 @@ public: __thiscall GraphicWindow::GraphicWindow(class GraphicWindow const &) {
 }
 
 // FUNCTION: COPTER_D 0x004a33ee
-public: __thiscall GraphicWindow::GraphicWindow(class MRect &, long, class GraphicWindow *, class GraphicWindowOwner *, int) {
+ GraphicWindow::GraphicWindow(class MRect& rectNewWindow, long lNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
 // LINE 480:
 	asm( 
 "	      004a33ee    push ebp"
@@ -3150,7 +3150,7 @@ public: __thiscall GraphicWindow::GraphicWindow(class MRect &, long, class Graph
 }
 
 // FUNCTION: COPTER_D 0x004a393d
-public: __thiscall GraphicWindow::GraphicWindow(char const *, class MRect &, long, class GraphicWindow *, class GraphicWindowOwner *, int, int) {
+ GraphicWindow::GraphicWindow(char * szImageFileName, class MRect& rectNewWindow, long lNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList, int32_t nNewTransparentIndex) {
 // LINE 513:
 	asm( 
 "	      004a393d    push ebp"
@@ -3641,7 +3641,7 @@ public: __thiscall GraphicWindow::GraphicWindow(char const *, class MRect &, lon
 }
 
 // FUNCTION: COPTER_D 0x004a4045
-protected: virtual __thiscall GraphicWindow::~GraphicWindow(void) {
+ GraphicWindow::~GraphicWindow() {
 // LINE 537:
 	asm( 
 "	      004a4045    push ebp"
@@ -3961,7 +3961,7 @@ protected: virtual __thiscall GraphicWindow::~GraphicWindow(void) {
 }
 
 // FUNCTION: COPTER_D 0x004a44d4
-public: virtual int __thiscall GraphicWindow::Initialize(void) {
+int  GraphicWindow::Initialize() {
 // LINE 560:
 	asm( 
 "	      004a44d4    push ebp"
@@ -3988,7 +3988,7 @@ public: virtual int __thiscall GraphicWindow::Initialize(void) {
 }
 
 // FUNCTION: COPTER_D 0x004a44ef
-public: class GraphicWindow & __thiscall GraphicWindow::operator=(class GraphicWindow const &) {
+class GraphicWindow &  GraphicWindow::operator=(const class GraphicWindow& copyGraphicWindow) {
 // LINE 604:
 	asm( 
 "	      004a44ef    push ebp"
@@ -4476,7 +4476,7 @@ public: class GraphicWindow & __thiscall GraphicWindow::operator=(class GraphicW
 }
 
 // FUNCTION: COPTER_D 0x004a4aa0
-public: virtual int __thiscall GraphicWindow::CreateImage(int) {
+int  GraphicWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 // LINE 641:
 	asm( 
 "	      004a4aa0    push ebp"
@@ -4670,7 +4670,7 @@ public: virtual int __thiscall GraphicWindow::CreateImage(int) {
 }
 
 // FUNCTION: COPTER_D 0x004a4cab
-public: virtual void __thiscall GraphicWindow::DestroyImage(void) {
+void  GraphicWindow::DestroyImage() {
 // LINE 663:
 	asm( 
 "	      004a4cab    push ebp"
@@ -4725,7 +4725,7 @@ public: virtual void __thiscall GraphicWindow::DestroyImage(void) {
 }
 
 // FUNCTION: COPTER_D 0x004a4d1c
-public: virtual void __thiscall GraphicWindow::SetTransparentColor(int) {
+void  GraphicWindow::SetTransparentColor(int32_t nPaletteIndex) {
 // LINE 676:
 	asm( 
 "	      004a4d1c    push ebp"
@@ -4788,7 +4788,7 @@ public: virtual void __thiscall GraphicWindow::SetTransparentColor(int) {
 }
 
 // FUNCTION: COPTER_D 0x004a4d7e
-public: virtual void __thiscall GraphicWindow::MoveWindow(int, int) {
+void  GraphicWindow::MoveWindow(int32_t nXPosition, int32_t nYPosition) {
 // LINE 690:
 	asm( 
 "	      004a4d7e    push ebp"
@@ -4851,7 +4851,7 @@ public: virtual void __thiscall GraphicWindow::MoveWindow(int, int) {
 }
 
 // FUNCTION: COPTER_D 0x004a4df1
-public: virtual void __thiscall GraphicWindow::SetWidthAndHeight(int, int) {
+void  GraphicWindow::SetWidthAndHeight(int32_t nNewWidth, int32_t nNewHeight) {
 // LINE 701:
 	asm( 
 "	      004a4df1    push ebp"
@@ -4916,7 +4916,7 @@ public: virtual void __thiscall GraphicWindow::SetWidthAndHeight(int, int) {
 }
 
 // FUNCTION: COPTER_D 0x004a4e55
-public: virtual void __thiscall GraphicWindow::CenterWindow(class GraphicWindow *) {
+void  GraphicWindow::CenterWindow(class GraphicWindow* windowToCenterOn) {
 // LINE 714:
 	asm( 
 "	      004a4e55    push ebp"
@@ -4964,7 +4964,7 @@ public: virtual void __thiscall GraphicWindow::CenterWindow(class GraphicWindow 
 }
 
 // FUNCTION: COPTER_D 0x004a4ea8
-public: virtual void __thiscall GraphicWindow::CenterWindow(int, int) {
+void  GraphicWindow::CenterWindow(int32_t nXPosition, int32_t nYPosition) {
 // LINE 729:
 	asm( 
 "	      004a4ea8    push ebp"
@@ -5063,7 +5063,7 @@ public: virtual void __thiscall GraphicWindow::CenterWindow(int, int) {
 }
 
 // FUNCTION: COPTER_D 0x004a4f5c
-public: int __thiscall GraphicWindow::FitRectToWindow(class MRect &) {
+int  GraphicWindow::FitRectToWindow(class MRect& rectToFit) {
 // LINE 755:
 	asm( 
 "	      004a4f5c    push ebp"
@@ -5246,7 +5246,7 @@ public: int __thiscall GraphicWindow::FitRectToWindow(class MRect &) {
 }
 
 // FUNCTION: COPTER_D 0x004a50e0
-public: virtual void __thiscall GraphicWindow::SetChanged(int, int) {
+void  GraphicWindow::SetChanged(int32_t bChanged, int32_t bRecursive) {
 // LINE 786:
 	asm( 
 "	      004a50e0    push ebp"
@@ -5351,7 +5351,7 @@ public: virtual void __thiscall GraphicWindow::SetChanged(int, int) {
 }
 
 // FUNCTION: COPTER_D 0x004a51d0
-public: virtual void __thiscall GraphicWindow::SetWindowTitle(class basic_string<char> &) {
+void  GraphicWindow::SetWindowTitle(class basic_string<char>& sNewWindowTitle) {
 // LINE 808:
 	asm( 
 "	      004a51d0    push ebp"
@@ -5511,7 +5511,7 @@ public: virtual void __thiscall GraphicWindow::SetWindowTitle(class basic_string
 }
 
 // FUNCTION: COPTER_D 0x004a53be
-public: virtual int __thiscall GraphicWindow::AddChild(class GraphicWindow *) {
+int  GraphicWindow::AddChild(class GraphicWindow* windowNewChild) {
 // LINE 817:
 	asm( 
 "	      004a53be    push ebp"
@@ -5736,7 +5736,7 @@ public: virtual int __thiscall GraphicWindow::AddChild(class GraphicWindow *) {
 }
 
 // FUNCTION: COPTER_D 0x004a569a
-public: virtual int __thiscall GraphicWindow::DeleteChild(class GraphicWindow *) {
+int  GraphicWindow::DeleteChild(class GraphicWindow* windowChild) {
 // LINE 830:
 	asm( 
 "	      004a569a    push ebp"
@@ -5907,7 +5907,7 @@ public: virtual int __thiscall GraphicWindow::DeleteChild(class GraphicWindow *)
 }
 
 // FUNCTION: COPTER_D 0x004a5837
-public: virtual class GraphicWindow * __thiscall GraphicWindow::DeleteChild(long) {
+class GraphicWindow *  GraphicWindow::DeleteChild(long lChildID) {
 // LINE 861:
 	asm( 
 "	      004a5837    push ebp"
@@ -6103,7 +6103,7 @@ public: virtual class GraphicWindow * __thiscall GraphicWindow::DeleteChild(long
 }
 
 // FUNCTION: COPTER_D 0x004a5a11
-public: virtual int __thiscall GraphicWindow::RemoveChild(class GraphicWindow *) {
+int  GraphicWindow::RemoveChild(class GraphicWindow* windowNewChild) {
 // LINE 892:
 	asm( 
 "	      004a5a11    push ebp"
@@ -6239,7 +6239,7 @@ public: virtual int __thiscall GraphicWindow::RemoveChild(class GraphicWindow *)
 }
 
 // FUNCTION: COPTER_D 0x004a5b58
-public: virtual void __thiscall GraphicWindow::DeleteAllChildren(void) {
+void  GraphicWindow::DeleteAllChildren() {
 // LINE 913:
 	asm( 
 "	      004a5b58    push ebp"
@@ -6389,7 +6389,7 @@ public: virtual void __thiscall GraphicWindow::DeleteAllChildren(void) {
 }
 
 // FUNCTION: COPTER_D 0x004a5cd8
-public: virtual void __thiscall GraphicWindow::RemoveAllChildren(void) {
+void  GraphicWindow::RemoveAllChildren() {
 // LINE 935:
 	asm( 
 "	      004a5cd8    push ebp"
@@ -6482,7 +6482,7 @@ public: virtual void __thiscall GraphicWindow::RemoveAllChildren(void) {
 }
 
 // FUNCTION: COPTER_D 0x004a5dd1
-public: virtual class GraphicWindow * __thiscall GraphicWindow::FindChild(long) {
+class GraphicWindow *  GraphicWindow::FindChild(long lChildID) {
 // LINE 950:
 	asm( 
 "	      004a5dd1    push ebp"
@@ -6575,7 +6575,7 @@ public: virtual class GraphicWindow * __thiscall GraphicWindow::FindChild(long) 
 }
 
 // FUNCTION: COPTER_D 0x004a5ea7
-public: static class GraphicWindow * __cdecl GraphicWindow::FindWindowA(long) {
+class GraphicWindow *  GraphicWindow::FindWindowA(long lID) {
 // LINE 968:
 	asm( 
 "	      004a5ea7    push ebp"
@@ -6665,7 +6665,7 @@ public: static class GraphicWindow * __cdecl GraphicWindow::FindWindowA(long) {
 }
 
 // FUNCTION: COPTER_D 0x004a5f76
-public: static int __cdecl GraphicWindow::FindWindowA(class GraphicWindow *) {
+int  GraphicWindow::FindWindowA(class GraphicWindow* windowToFind) {
 // LINE 983:
 	asm( 
 "	      004a5f76    push ebp"
@@ -6752,7 +6752,7 @@ public: static int __cdecl GraphicWindow::FindWindowA(class GraphicWindow *) {
 }
 
 // FUNCTION: COPTER_D 0x004a603c
-public: virtual int __thiscall GraphicWindow::DeleteSelf(void) {
+int  GraphicWindow::DeleteSelf() {
 // LINE 999:
 	asm( 
 "	      004a603c    push ebp"
@@ -6788,7 +6788,7 @@ public: virtual int __thiscall GraphicWindow::DeleteSelf(void) {
 }
 
 // FUNCTION: COPTER_D 0x004a606b
-public: virtual void __thiscall GraphicWindow::RemoveSelf(void) {
+void  GraphicWindow::RemoveSelf() {
 // LINE 1010:
 	asm( 
 "	      004a606b    push ebp"
@@ -6828,7 +6828,7 @@ public: virtual void __thiscall GraphicWindow::RemoveSelf(void) {
 }
 
 // FUNCTION: COPTER_D 0x004a60a3
-public: virtual int __thiscall GraphicWindow::ComposeSelf(void) {
+int  GraphicWindow::ComposeSelf() {
 // LINE 1027:
 	asm( 
 "	      004a60a3    push ebp"
@@ -6934,7 +6934,7 @@ public: virtual int __thiscall GraphicWindow::ComposeSelf(void) {
 }
 
 // FUNCTION: COPTER_D 0x004a6168
-protected: virtual int __thiscall GraphicWindow::DrawSelf(void) {
+int  GraphicWindow::DrawSelf() {
 // LINE 1059:
 	asm( 
 "	      004a6168    push ebp"
@@ -6961,7 +6961,7 @@ protected: virtual int __thiscall GraphicWindow::DrawSelf(void) {
 }
 
 // FUNCTION: COPTER_D 0x004a6180
-protected: virtual void __thiscall GraphicWindow::DrawChildren(void) {
+void  GraphicWindow::DrawChildren() {
 // LINE 1075:
 	asm( 
 "	      004a6180    push ebp"
@@ -7058,7 +7058,7 @@ protected: virtual void __thiscall GraphicWindow::DrawChildren(void) {
 }
 
 // FUNCTION: COPTER_D 0x004a6256
-public: virtual void __thiscall GraphicWindow::InvalidateAllOverlaps(class list<class GraphicWindow *>::iterator) {
+void  GraphicWindow::InvalidateAllOverlaps(class list<GraphicWindow *>::iterator windowChildListItem) {
 // LINE 1115:
 	asm( 
 "	      004a6256    push ebp"
@@ -7191,7 +7191,7 @@ public: virtual void __thiscall GraphicWindow::InvalidateAllOverlaps(class list<
 }
 
 // FUNCTION: COPTER_D 0x004a6399
-public: virtual void __thiscall GraphicWindow::InvalidateAllChildren(int) {
+void  GraphicWindow::InvalidateAllChildren(int32_t bRecursive) {
 // LINE 1136:
 	asm( 
 "	      004a6399    push ebp"
@@ -7280,7 +7280,7 @@ public: virtual void __thiscall GraphicWindow::InvalidateAllChildren(int) {
 }
 
 // FUNCTION: COPTER_D 0x004a646b
-protected: virtual int __thiscall GraphicWindow::DoesWindowNeedUpdating(void) {
+int  GraphicWindow::DoesWindowNeedUpdating() {
 // LINE 1161:
 	asm( 
 "	      004a646b    push ebp"
@@ -7389,7 +7389,7 @@ protected: virtual int __thiscall GraphicWindow::DoesWindowNeedUpdating(void) {
 }
 
 // FUNCTION: COPTER_D 0x004a6568
-public: virtual long __thiscall GraphicWindow::DoCharacter(long) {
+long  GraphicWindow::DoCharacter(long lCharacter) {
 // LINE 1186:
 	asm( 
 "	      004a6568    push ebp"
@@ -7416,7 +7416,7 @@ public: virtual long __thiscall GraphicWindow::DoCharacter(long) {
 }
 
 // FUNCTION: COPTER_D 0x004a6582
-public: virtual long __thiscall GraphicWindow::DoKeyDown(long, char) {
+long  GraphicWindow::DoKeyDown(long lKey, char chModifiers) {
 // LINE 1199:
 	asm( 
 "	      004a6582    push ebp"
@@ -7443,7 +7443,7 @@ public: virtual long __thiscall GraphicWindow::DoKeyDown(long, char) {
 }
 
 // FUNCTION: COPTER_D 0x004a659c
-public: virtual long __thiscall GraphicWindow::DoKeyUp(long, char) {
+long  GraphicWindow::DoKeyUp(long lKey, char chModifiers) {
 // LINE 1213:
 	asm( 
 "	      004a659c    push ebp"
@@ -7470,7 +7470,7 @@ public: virtual long __thiscall GraphicWindow::DoKeyUp(long, char) {
 }
 
 // FUNCTION: COPTER_D 0x004a65b6
-public: virtual long __thiscall GraphicWindow::DoCursorDown(long, long, unsigned long) {
+long  GraphicWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButton) {
 // LINE 1230:
 	asm( 
 "	      004a65b6    push ebp"
@@ -7497,7 +7497,7 @@ public: virtual long __thiscall GraphicWindow::DoCursorDown(long, long, unsigned
 }
 
 // FUNCTION: COPTER_D 0x004a65d0
-public: virtual long __thiscall GraphicWindow::DoCursorUp(long, long, unsigned long) {
+long  GraphicWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nButton) {
 // LINE 1243:
 	asm( 
 "	      004a65d0    push ebp"
@@ -7524,7 +7524,7 @@ public: virtual long __thiscall GraphicWindow::DoCursorUp(long, long, unsigned l
 }
 
 // FUNCTION: COPTER_D 0x004a65ed
-public: virtual long __thiscall GraphicWindow::DoCursorMove(long, long) {
+long  GraphicWindow::DoCursorMove(long nCursorX, long nCursorY) {
 // LINE 1256:
 	asm( 
 "	      004a65ed    push ebp"
@@ -7551,7 +7551,7 @@ public: virtual long __thiscall GraphicWindow::DoCursorMove(long, long) {
 }
 
 // FUNCTION: COPTER_D 0x004a6607
-public: virtual int __thiscall GraphicWindow::CaptureCursorStart(class GraphicWindow *) {
+int  GraphicWindow::CaptureCursorStart(class GraphicWindow* windowCapture) {
 // LINE 1269:
 	asm( 
 "	      004a6607    push ebp"
@@ -7593,7 +7593,7 @@ public: virtual int __thiscall GraphicWindow::CaptureCursorStart(class GraphicWi
 }
 
 // FUNCTION: COPTER_D 0x004a6640
-public: virtual int __thiscall GraphicWindow::CaptureCursorEnd(class GraphicWindow *) {
+int  GraphicWindow::CaptureCursorEnd(class GraphicWindow* windowCapture) {
 // LINE 1281:
 	asm( 
 "	      004a6640    push ebp"
@@ -7635,7 +7635,7 @@ public: virtual int __thiscall GraphicWindow::CaptureCursorEnd(class GraphicWind
 }
 
 // FUNCTION: COPTER_D 0x004a667d
-public: virtual void __thiscall GraphicWindow::WindowToScreenCoordinates(long &, long &) {
+void  GraphicWindow::WindowToScreenCoordinates(long& nXPosition, long& nYPosition) {
 // LINE 1298:
 	asm( 
 "	      004a667d    push ebp"
@@ -7693,7 +7693,7 @@ public: virtual void __thiscall GraphicWindow::WindowToScreenCoordinates(long &,
 }
 
 // FUNCTION: COPTER_D 0x004a66cc
-public: virtual void __thiscall GraphicWindow::ScreenToWindowCoordinates(long &, long &) {
+void  GraphicWindow::ScreenToWindowCoordinates(long& nXPosition, long& nYPosition) {
 // LINE 1319:
 	asm( 
 "	      004a66cc    push ebp"
@@ -7751,7 +7751,7 @@ public: virtual void __thiscall GraphicWindow::ScreenToWindowCoordinates(long &,
 }
 
 // FUNCTION: COPTER_D 0x004a6720
-protected: virtual class CBackBuffer * __thiscall GraphicWindow::GetImage(void) {
+class CBackBuffer *  GraphicWindow::GetImage() {
 // LINE 1340:
 	asm( 
 "	      004a6720    push ebp"
@@ -7779,7 +7779,7 @@ protected: virtual class CBackBuffer * __thiscall GraphicWindow::GetImage(void) 
 }
 
 // FUNCTION: COPTER_D 0x004a673c
-protected: virtual void __thiscall GraphicWindow::GetImagePath(void) {
+void  GraphicWindow::GetImagePath() {
 // LINE 1353:
 	asm( 
 "	      004a673c    push ebp"
@@ -8054,7 +8054,7 @@ protected: virtual void __thiscall GraphicWindow::GetImagePath(void) {
 }
 
 // FUNCTION: COPTER_D 0x004a6bcd
-public: virtual int __thiscall GraphicWindow::SetImageToDrawOnto(void) {
+int  GraphicWindow::SetImageToDrawOnto() {
 // LINE 1366:
 	asm( 
 "	      004a6bcd    push ebp"
@@ -8197,7 +8197,7 @@ public: virtual int __thiscall GraphicWindow::SetImageToDrawOnto(void) {
 }
 
 // FUNCTION: COPTER_D 0x004a6cf0
-public: virtual void __thiscall GraphicWindow::SetAllImagesToDrawOnto(void) {
+void  GraphicWindow::SetAllImagesToDrawOnto() {
 // LINE 1402:
 	asm( 
 "	      004a6cf0    push ebp"
@@ -8290,7 +8290,7 @@ public: virtual void __thiscall GraphicWindow::SetAllImagesToDrawOnto(void) {
 }
 
 // FUNCTION: COPTER_D 0x004a6dc5
-public: virtual void __thiscall GraphicWindow::CreateAllImages(void) {
+void  GraphicWindow::CreateAllImages() {
 // LINE 1421:
 	asm( 
 "	      004a6dc5    push ebp"
@@ -8391,7 +8391,7 @@ public: virtual void __thiscall GraphicWindow::CreateAllImages(void) {
 }
 
 // FUNCTION: COPTER_D 0x004a6ea7
-public: virtual void __thiscall GraphicWindow::DestroyAllImages(void) {
+void  GraphicWindow::DestroyAllImages() {
 // LINE 1441:
 	asm( 
 "	      004a6ea7    push ebp"
@@ -8484,7 +8484,7 @@ public: virtual void __thiscall GraphicWindow::DestroyAllImages(void) {
 }
 
 // FUNCTION: COPTER_D 0x004a6f7c
-public: virtual void __thiscall GraphicWindow::DrawBorder(struct SparkalColor *) {
+void  GraphicWindow::DrawBorder(struct SparkalColor* colorBorder) {
 // LINE 1455:
 	asm( 
 "	      004a6f7c    push ebp"
@@ -8613,7 +8613,7 @@ public: virtual void __thiscall GraphicWindow::DrawBorder(struct SparkalColor *)
 }
 
 // FUNCTION: COPTER_D 0x004a7075
-public: static int __cdecl GraphicWindow::MakeModal(class GraphicWindow *) {
+int  GraphicWindow::MakeModal(class GraphicWindow* windowModal) {
 // LINE 1484:
 	asm( 
 "	      004a7075    push ebp"
@@ -8827,7 +8827,7 @@ public: static int __cdecl GraphicWindow::MakeModal(class GraphicWindow *) {
 }
 
 // FUNCTION: COPTER_D 0x004a7340
-public: static int __cdecl GraphicWindow::RemoveModal(class GraphicWindow *) {
+int  GraphicWindow::RemoveModal(class GraphicWindow* windowModal) {
 // LINE 1499:
 	asm( 
 "	      004a7340    push ebp"
@@ -8947,7 +8947,7 @@ public: static int __cdecl GraphicWindow::RemoveModal(class GraphicWindow *) {
 }
 
 // FUNCTION: COPTER_D 0x004a7470
-public: static int __cdecl GraphicWindow::MakeFocus(class GraphicWindow *) {
+int  GraphicWindow::MakeFocus(class GraphicWindow* windowFocus) {
 // LINE 1530:
 	asm( 
 "	      004a7470    push ebp"
@@ -9161,7 +9161,7 @@ public: static int __cdecl GraphicWindow::MakeFocus(class GraphicWindow *) {
 }
 
 // FUNCTION: COPTER_D 0x004a773b
-public: static int __cdecl GraphicWindow::RemoveFocus(class GraphicWindow *) {
+int  GraphicWindow::RemoveFocus(class GraphicWindow* windowFocus) {
 // LINE 1544:
 	asm( 
 "	      004a773b    push ebp"
@@ -9281,7 +9281,7 @@ public: static int __cdecl GraphicWindow::RemoveFocus(class GraphicWindow *) {
 }
 
 // FUNCTION: COPTER_D 0x004a786b
-public: virtual int __thiscall GraphicWindow::CanWeRespondToMessage(void) {
+int  GraphicWindow::CanWeRespondToMessage() {
 // LINE 1567:
 	asm( 
 "	      004a786b    push ebp"

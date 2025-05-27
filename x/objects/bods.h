@@ -1,6 +1,6 @@
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055f920
-public: static class cBBase * __cdecl cCopterBody::MakeNew(void *) {
+class cBBase *  cCopterBody::MakeNew(void * __ptr32 h) {
 // LINE 110:
 	asm( 
 "	      0055f920    push ebp"
@@ -258,7 +258,7 @@ public: static class cBBase * __cdecl cCopterBody::MakeNew(void *) {
 
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055fc70
-public: virtual void __thiscall cCopterBody::WriteToDisk(void) {
+void  cCopterBody::WriteToDisk() {
 // LINE 132:
 	asm( 
 "	      0055fc70    push ebp"
@@ -282,7 +282,7 @@ public: virtual void __thiscall cCopterBody::WriteToDisk(void) {
 
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055fc90
-public: virtual class cBList<class cBBase> * __thiscall cCopterBody::GetList(void) {
+class cBList<class cBBase> *  cCopterBody::GetList() {
 // LINE 159:
 	asm( 
 "	      0055fc90    push ebp"

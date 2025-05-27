@@ -1729,7 +1729,7 @@ void FlatResFile::GetString(unsigned char * str, short resID, short index) {
 }
 
 // FUNCTION: COPTER_D 0x00553a84
-private: __thiscall ResMap::ResMap(short, short, void *, unsigned char *, long) {
+ ResMap::ResMap(short refNum, short numTypes, void * __ptr32 resMap, unsigned char * resMapPtr, long dataLoc) {
 // LINE 671:
 	asm( 
 "	      00553a84    push ebp"
@@ -1882,7 +1882,7 @@ private: __thiscall ResMap::ResMap(short, short, void *, unsigned char *, long) 
 }
 
 // FUNCTION: COPTER_D 0x00553ba0
-private: __thiscall ResMap::~ResMap(void) {
+ ResMap::~ResMap() {
 // LINE 728:
 	asm( 
 "	      00553ba0    push ebp"
@@ -1994,7 +1994,7 @@ private: __thiscall ResMap::~ResMap(void) {
 }
 
 // FUNCTION: COPTER_D 0x00553c5b
-public: static long __cdecl ResMap::Get(class FlatResFile *) {
+long  ResMap::Get(class FlatResFile* fromFile) {
 // LINE 753:
 	asm( 
 "	      00553c5b    push ebp"
@@ -2156,7 +2156,7 @@ public: static long __cdecl ResMap::Get(class FlatResFile *) {
 }
 
 // FUNCTION: COPTER_D 0x00553dcc
-public: void __thiscall ResMap::Release(void) {
+void  ResMap::Release() {
 // LINE 785:
 	asm( 
 "	      00553dcc    push ebp"
@@ -2244,7 +2244,7 @@ public: void __thiscall ResMap::Release(void) {
 }
 
 // FUNCTION: COPTER_D 0x00553e96
-public: static short __cdecl ResMap::CheckForLeaks(void) {
+short  ResMap::CheckForLeaks() {
 // LINE 802:
 	asm( 
 "	      00553e96    push ebp"
@@ -2290,7 +2290,7 @@ public: static short __cdecl ResMap::CheckForLeaks(void) {
 }
 
 // FUNCTION: COPTER_D 0x00553edb
-public: void __thiscall ResMap::LoadEntry(struct ResMap::Entry *, class FlatResFile *, unsigned short) {
+void  ResMap::LoadEntry(struct ResMap::Entry* entry, class FlatResFile* file, unsigned short unpurge) {
 // LINE 814:
 	asm( 
 "	      00553edb    push ebp"
@@ -2593,7 +2593,7 @@ public: void __thiscall ResMap::LoadEntry(struct ResMap::Entry *, class FlatResF
 }
 
 // FUNCTION: COPTER_D 0x005541a4
-public: unsigned long __thiscall ResMap::GetIndType(short) {
+unsigned long  ResMap::GetIndType(short index) {
 // LINE 882:
 	asm( 
 "	      005541a4    push ebp"
@@ -2648,7 +2648,7 @@ public: unsigned long __thiscall ResMap::GetIndType(short) {
 }
 
 // FUNCTION: COPTER_D 0x005541fe
-public: short __thiscall ResMap::Count(unsigned long) {
+short  ResMap::Count(unsigned long type) {
 // LINE 895:
 	asm( 
 "	      005541fe    push ebp"
@@ -2723,7 +2723,7 @@ public: short __thiscall ResMap::Count(unsigned long) {
 }
 
 // FUNCTION: COPTER_D 0x00554272
-public: unsigned long __thiscall ResMap::FindType(struct ResMap::Entry *) {
+unsigned long  ResMap::FindType(struct ResMap::Entry* entry) {
 // LINE 911:
 	asm( 
 "	      00554272    push ebp"
@@ -2818,7 +2818,7 @@ public: unsigned long __thiscall ResMap::FindType(struct ResMap::Entry *) {
 }
 
 // FUNCTION: COPTER_D 0x0055430b
-public: struct ResMap::Entry * __thiscall ResMap::FindEntry(void *) {
+struct ResMap::Entry *  ResMap::FindEntry(void * __ptr32 res) {
 // LINE 934:
 	asm( 
 "	      0055430b    push ebp"
@@ -2889,7 +2889,7 @@ public: struct ResMap::Entry * __thiscall ResMap::FindEntry(void *) {
 }
 
 // FUNCTION: COPTER_D 0x0055437a
-public: struct ResMap::Entry * __thiscall ResMap::FindEntry(unsigned long, short) {
+struct ResMap::Entry *  ResMap::FindEntry(unsigned long type, short id) {
 // LINE 947:
 	asm( 
 "	      0055437a    push ebp"
@@ -3009,7 +3009,7 @@ public: struct ResMap::Entry * __thiscall ResMap::FindEntry(unsigned long, short
 }
 
 // FUNCTION: COPTER_D 0x0055443d
-public: struct ResMap::Entry * __thiscall ResMap::FindEntry(unsigned long, unsigned char *) {
+struct ResMap::Entry *  ResMap::FindEntry(unsigned long type, unsigned char * name) {
 // LINE 975:
 	asm( 
 "	      0055443d    push ebp"
@@ -3151,7 +3151,7 @@ public: struct ResMap::Entry * __thiscall ResMap::FindEntry(unsigned long, unsig
 }
 
 // FUNCTION: COPTER_D 0x00554536
-public: struct ResMap::Entry * __thiscall ResMap::FindIndEntry(unsigned long, short) {
+struct ResMap::Entry *  ResMap::FindIndEntry(unsigned long type, short index) {
 // LINE 1007:
 	asm( 
 "	      00554536    push ebp"
@@ -3260,7 +3260,7 @@ public: struct ResMap::Entry * __thiscall ResMap::FindIndEntry(unsigned long, sh
 }
 
 // FUNCTION: COPTER_D 0x005545f1
-public: void __thiscall ResMap::GetName(struct ResMap::Entry *, unsigned char *const) {
+void  ResMap::GetName(struct ResMap::Entry* entry, unsigned char * name) {
 // LINE 1032:
 	asm( 
 "	      005545f1    push ebp"
@@ -3323,7 +3323,7 @@ public: void __thiscall ResMap::GetName(struct ResMap::Entry *, unsigned char *c
 }
 
 // FUNCTION: COPTER_D 0x00554651
-private: static void __cdecl ResMap::SwapTypeHead(struct ResMap::TypeHead *) {
+void  ResMap::SwapTypeHead(struct ResMap::TypeHead* typeHead) {
 // LINE 1048:
 	asm( 
 "	      00554651    push ebp"
@@ -3367,7 +3367,7 @@ private: static void __cdecl ResMap::SwapTypeHead(struct ResMap::TypeHead *) {
 }
 
 // FUNCTION: COPTER_D 0x0055468b
-private: static void __cdecl ResMap::SwapResEntry(struct ResMap::Entry *) {
+void  ResMap::SwapResEntry(struct ResMap::Entry* resEntry) {
 // LINE 1069:
 	asm( 
 "	      0055468b    push ebp"

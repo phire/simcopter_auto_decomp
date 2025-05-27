@@ -6,7 +6,7 @@
 
 // Contribution: 1:000baa30-000bb457 Module: 3, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004bba30
-public: virtual unsigned long __thiscall CGameApp::FinishGame(void) {
+unsigned long  CGameApp::FinishGame() {
 // LINE 48:
 	asm( 
 "	      004bba30    push ebp"
@@ -129,7 +129,7 @@ public: virtual unsigned long __thiscall CGameApp::FinishGame(void) {
 }
 
 // FUNCTION: COPTER_D 0x004bbb17
-public: int __thiscall CGameApp::BackgroundVRAppInit(void) {
+int  CGameApp::BackgroundVRAppInit() {
 // LINE 92:
 	asm( 
 "	      004bbb17    push ebp"

@@ -71,7 +71,7 @@ void SoundCompletionUnloadFunction(long lSoundPointer) {
 }
 
 // FUNCTION: COPTER_D 0x0043e2a5
-public: void __thiscall CGameApp::ShowVersion(void) {
+void  CGameApp::ShowVersion() {
 // LINE 105:
 	asm( 
 "	      0043e2a5    push ebp"
@@ -917,7 +917,7 @@ public: void __thiscall CGameApp::ShowVersion(void) {
 }
 
 // FUNCTION: COPTER_D 0x0043eda6
-public: int __thiscall CGameApp::CreateMessageBox(long, class basic_string<char> &, long) {
+int  CGameApp::CreateMessageBox(long lID, class basic_string<char>& sMessage, long lType) {
 // LINE 186:
 	asm( 
 "	      0043eda6    push ebp"
@@ -1467,7 +1467,7 @@ public: int __thiscall CGameApp::CreateMessageBox(long, class basic_string<char>
 }
 
 // FUNCTION: COPTER_D 0x0043f2b9
-public: int __thiscall CGameApp::CreateMessageBox(long, int, long) {
+int  CGameApp::CreateMessageBox(long lID, int32_t nStringID, long lType) {
 // LINE 280:
 	asm( 
 "	      0043f2b9    push ebp"
@@ -1857,7 +1857,7 @@ public: int __thiscall CGameApp::CreateMessageBox(long, int, long) {
 }
 
 // FUNCTION: COPTER_D 0x0043f8cc
-public: void __thiscall CGameApp::DestroyMessageBox(void) {
+void  CGameApp::DestroyMessageBox() {
 // LINE 297:
 	asm( 
 "	      0043f8cc    push ebp"
@@ -1896,7 +1896,7 @@ public: void __thiscall CGameApp::DestroyMessageBox(void) {
 }
 
 // FUNCTION: COPTER_D 0x0043f908
-public: int __thiscall CGameApp::CreateCheatCodeEntryMessageBox(void) {
+int  CGameApp::CreateCheatCodeEntryMessageBox() {
 // LINE 307:
 	asm( 
 "	      0043f908    push ebp"
@@ -2139,7 +2139,7 @@ public: int __thiscall CGameApp::CreateCheatCodeEntryMessageBox(void) {
 }
 
 // FUNCTION: COPTER_D 0x0043fbaf
-public: void __thiscall CGameApp::DestroyCheatCodeEntryMessageBox(void) {
+void  CGameApp::DestroyCheatCodeEntryMessageBox() {
 // LINE 339:
 	asm( 
 "	      0043fbaf    push ebp"
@@ -2167,7 +2167,7 @@ public: void __thiscall CGameApp::DestroyCheatCodeEntryMessageBox(void) {
 }
 
 // FUNCTION: COPTER_D 0x0043fbcd
-public: int __thiscall CGameApp::DoCheatCode(class basic_string<char> &) {
+int  CGameApp::DoCheatCode(class basic_string<char>& sCheatCodeString) {
 // LINE 352:
 	asm( 
 "	      0043fbcd    push ebp"
@@ -3279,7 +3279,7 @@ public: int __thiscall CGameApp::DoCheatCode(class basic_string<char> &) {
 }
 
 // FUNCTION: COPTER_D 0x00440b3f
-public: int __thiscall CGameApp::CheckCommandLineForCheatCodes(void) {
+int  CGameApp::CheckCommandLineForCheatCodes() {
 // LINE 504:
 	asm( 
 "	      00440b3f    push ebp"
@@ -3451,7 +3451,7 @@ public: int __thiscall CGameApp::CheckCommandLineForCheatCodes(void) {
 }
 
 // FUNCTION: COPTER_D 0x00440dcf
-public: void __thiscall CGameApp::CreateDebugBuffer(void) {
+void  CGameApp::CreateDebugBuffer() {
 // LINE 523:
 	asm( 
 "	      00440dcf    push ebp"
@@ -3575,7 +3575,7 @@ public: void __thiscall CGameApp::CreateDebugBuffer(void) {
 }
 
 // FUNCTION: COPTER_D 0x00440ed6
-public: void __thiscall CGameApp::DestroyDebugBuffer(void) {
+void  CGameApp::DestroyDebugBuffer() {
 // LINE 543:
 	asm( 
 "	      00440ed6    push ebp"
@@ -3627,7 +3627,7 @@ public: void __thiscall CGameApp::DestroyDebugBuffer(void) {
 }
 
 // FUNCTION: COPTER_D 0x00440f3a
-public: void __thiscall CGameApp::CreatePaletteBuffer(void) {
+void  CGameApp::CreatePaletteBuffer() {
 // LINE 554:
 	asm( 
 "	      00440f3a    push ebp"
@@ -3672,7 +3672,7 @@ public: void __thiscall CGameApp::CreatePaletteBuffer(void) {
 }
 
 // FUNCTION: COPTER_D 0x00440f9d
-public: void __thiscall CGameApp::TogglePaletteBufferDisplay(void) {
+void  CGameApp::TogglePaletteBufferDisplay() {
 // LINE 564:
 	asm( 
 "	      00440f9d    push ebp"
@@ -3726,7 +3726,7 @@ public: void __thiscall CGameApp::TogglePaletteBufferDisplay(void) {
 }
 
 // FUNCTION: COPTER_D 0x00440ffa
-public: void __thiscall CGameApp::ToggleDebugWindowDisplay(void) {
+void  CGameApp::ToggleDebugWindowDisplay() {
 // LINE 581:
 	asm( 
 "	      00440ffa    push ebp"
@@ -3789,7 +3789,7 @@ public: void __thiscall CGameApp::ToggleDebugWindowDisplay(void) {
 }
 
 // FUNCTION: COPTER_D 0x0044106f
-public: void __thiscall CGameApp::CreatePlayMenu(void) {
+void  CGameApp::CreatePlayMenu() {
 // LINE 600:
 	asm( 
 "	      0044106f    push ebp"
@@ -4048,7 +4048,7 @@ public: void __thiscall CGameApp::CreatePlayMenu(void) {
 }
 
 // FUNCTION: COPTER_D 0x004413e5
-public: void __thiscall CGameApp::CreateUserInputWindow(void) {
+void  CGameApp::CreateUserInputWindow() {
 // LINE 633:
 	asm( 
 "	      004413e5    push ebp"
@@ -4163,7 +4163,7 @@ public: void __thiscall CGameApp::CreateUserInputWindow(void) {
 }
 
 // FUNCTION: COPTER_D 0x0044150b
-public: void __thiscall CGameApp::DestroyUserInputWindow(class UserInputWindow *, int) {
+void  CGameApp::DestroyUserInputWindow(class UserInputWindow* windowToDestroy, int32_t bUseData) {
 // LINE 649:
 	asm( 
 "	      0044150b    push ebp"
@@ -4250,7 +4250,7 @@ public: void __thiscall CGameApp::DestroyUserInputWindow(class UserInputWindow *
 }
 
 // FUNCTION: COPTER_D 0x004415c7
-public: void __thiscall CGameApp::CreateRenderSettingsWindow(void) {
+void  CGameApp::CreateRenderSettingsWindow() {
 // LINE 669:
 	asm( 
 "	      004415c7    push ebp"
@@ -4377,7 +4377,7 @@ public: void __thiscall CGameApp::CreateRenderSettingsWindow(void) {
 }
 
 // FUNCTION: COPTER_D 0x00441715
-public: void __thiscall CGameApp::DestroyRenderSettingsWindow(class RenderSettingsWindow *, int) {
+void  CGameApp::DestroyRenderSettingsWindow(class RenderSettingsWindow* windowToDestroy, int32_t bUseData) {
 // LINE 690:
 	asm( 
 "	      00441715    push ebp"
@@ -4491,7 +4491,7 @@ public: void __thiscall CGameApp::DestroyRenderSettingsWindow(class RenderSettin
 }
 
 // FUNCTION: COPTER_D 0x004417fe
-public: void __thiscall CGameApp::CreateSoundSettingsWindow(void) {
+void  CGameApp::CreateSoundSettingsWindow() {
 // LINE 728:
 	asm( 
 "	      004417fe    push ebp"
@@ -4668,7 +4668,7 @@ public: void __thiscall CGameApp::CreateSoundSettingsWindow(void) {
 }
 
 // FUNCTION: COPTER_D 0x004419b8
-public: void __thiscall CGameApp::DestroySoundSettingsWindow(class SoundSettingsWindow *, int) {
+void  CGameApp::DestroySoundSettingsWindow(class SoundSettingsWindow* windowToDestroy, int32_t bUseData) {
 // LINE 767:
 	asm( 
 "	      004419b8    push ebp"
@@ -4781,7 +4781,7 @@ public: void __thiscall CGameApp::DestroySoundSettingsWindow(class SoundSettings
 }
 
 // FUNCTION: COPTER_D 0x00441a89
-public: void __thiscall CGameApp::CreateCitySettingsWindow(void) {
+void  CGameApp::CreateCitySettingsWindow() {
 // LINE 807:
 	asm( 
 "	      00441a89    push ebp"
@@ -4869,7 +4869,7 @@ public: void __thiscall CGameApp::CreateCitySettingsWindow(void) {
 }
 
 // FUNCTION: COPTER_D 0x00441b5f
-public: void __thiscall CGameApp::DestroyCitySettingsWindow(class CitySettingsWindow *, int) {
+void  CGameApp::DestroyCitySettingsWindow(class CitySettingsWindow* windowToDestroy, int32_t bUseData) {
 // LINE 824:
 	asm( 
 "	      00441b5f    push ebp"
@@ -4927,7 +4927,7 @@ public: void __thiscall CGameApp::DestroyCitySettingsWindow(class CitySettingsWi
 }
 
 // FUNCTION: COPTER_D 0x00441bc0
-public: void __thiscall CGameApp::CreateControlDisplayWindow(void) {
+void  CGameApp::CreateControlDisplayWindow() {
 // LINE 837:
 	asm( 
 "	      00441bc0    push ebp"
@@ -5018,7 +5018,7 @@ public: void __thiscall CGameApp::CreateControlDisplayWindow(void) {
 }
 
 // FUNCTION: COPTER_D 0x00441c9f
-public: void __thiscall CGameApp::DestroyControlDisplayWindow(void) {
+void  CGameApp::DestroyControlDisplayWindow() {
 // LINE 850:
 	asm( 
 "	      00441c9f    push ebp"
@@ -5046,7 +5046,7 @@ public: void __thiscall CGameApp::DestroyControlDisplayWindow(void) {
 }
 
 // FUNCTION: COPTER_D 0x00441cbe
-public: void __thiscall CGameApp::CreateCheckupWindow(void) {
+void  CGameApp::CreateCheckupWindow() {
 // LINE 858:
 	asm( 
 "	      00441cbe    push ebp"
@@ -5127,7 +5127,7 @@ public: void __thiscall CGameApp::CreateCheckupWindow(void) {
 }
 
 // FUNCTION: COPTER_D 0x00441d86
-public: void __thiscall CGameApp::DestroyCheckupWindow(class CheckupWindow *, int) {
+void  CGameApp::DestroyCheckupWindow(class CheckupWindow* windowToDestroy, int32_t bUseData) {
 // LINE 870:
 	asm( 
 "	      00441d86    push ebp"

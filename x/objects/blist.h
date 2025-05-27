@@ -1,6 +1,6 @@
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055e830
-public: __thiscall cBList<class cCopterAnim>::cBList<class cCopterAnim>(void) {
+cBList<class cCopterAnim>::cBList<class cCopterAnim>(void) cBList<cCopterAnim>::cBList<cCopterAnim>() {
 // LINE 38:
 	asm( 
 "	      0055e830    push ebp"
@@ -58,7 +58,7 @@ public: __thiscall cBList<class cCopterAnim>::cBList<class cCopterAnim>(void) {
 
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055e9b0
-public: __thiscall cBList<class cCopterAnim>::~cBList<class cCopterAnim>(void) {
+cBList<class cCopterAnim>::~cBList<class cCopterAnim>(void) cBList<cCopterAnim>::~cBList<cCopterAnim>() {
 // LINE 44:
 	asm( 
 "	      0055e9b0    push ebp"
@@ -143,7 +143,7 @@ public: __thiscall cBList<class cCopterAnim>::~cBList<class cCopterAnim>(void) {
 
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055eac0
-public: virtual void __thiscall cBList<class cCopterAnim>::Add(class cCopterAnim *) {
+void cBList<class cCopterAnim>::Add(class cCopterAnim *) cBList<cCopterAnim>::Add(class cCopterAnim* thing) {
 // LINE 118:
 	asm( 
 "	      0055eac0    push ebp"
@@ -305,7 +305,7 @@ public: virtual void __thiscall cBList<class cCopterAnim>::Add(class cCopterAnim
 
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055ed00
-public: void __thiscall cBList<class cCopterAnim>::LoadAll(void) {
+void cBList<class cCopterAnim>::LoadAll(void) cBList<cCopterAnim>::LoadAll() {
 // LINE 180:
 	asm( 
 "	      0055ed00    push ebp"

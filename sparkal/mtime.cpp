@@ -72,7 +72,7 @@ void MDate::MDate(const class MTime& t) {
 // $E19
 
 // FUNCTION: COPTER_D 0x0043c81c
-protected: static int __cdecl MTime::AssertMDate(class MDate const &) {
+int  MTime::AssertMDate(const class MDate& date) {
 // LINE 76:
 	asm( 
 "	      0043c81c    push ebp"
@@ -110,7 +110,7 @@ protected: static int __cdecl MTime::AssertMDate(class MDate const &) {
 }
 
 // FUNCTION: COPTER_D 0x0043c867
-protected: static class MTime __cdecl MTime::BuildLocal(class MDate const &, unsigned int) {
+class MTime  MTime::BuildLocal(const class MDate& date, uint32_t h) {
 // LINE 88:
 	asm( 
 "	      0043c867    push ebp"
@@ -159,7 +159,7 @@ protected: static class MTime __cdecl MTime::BuildLocal(class MDate const &, uns
 }
 
 // FUNCTION: COPTER_D 0x0043c8ce
-protected: unsigned long __thiscall MTime::LocalSecs(void) const {
+unsigned long  MTime::LocalSecs() {
 // LINE 101:
 	asm( 
 "	      0043c8ce    push ebp"
@@ -208,7 +208,7 @@ protected: unsigned long __thiscall MTime::LocalSecs(void) const {
 }
 
 // FUNCTION: COPTER_D 0x0043c91e
-public: static class MTime __cdecl MTime::BeginDST(unsigned int) {
+class MTime  MTime::BeginDST(uint32_t year) {
 // LINE 119:
 	asm( 
 "	      0043c91e    push ebp"
@@ -337,7 +337,7 @@ public: static class MTime __cdecl MTime::BeginDST(unsigned int) {
 }
 
 // FUNCTION: COPTER_D 0x0043ca36
-public: static class MTime __cdecl MTime::EndDST(unsigned int) {
+class MTime  MTime::EndDST(uint32_t year) {
 // LINE 147:
 	asm( 
 "	      0043ca36    push ebp"
@@ -383,7 +383,7 @@ public: static class MTime __cdecl MTime::EndDST(unsigned int) {
 }
 
 // FUNCTION: COPTER_D 0x0043ca79
-public: __thiscall MTime::MTime(void) {
+ MTime::MTime() {
 // LINE 163:
 	asm( 
 "	      0043ca79    push ebp"
@@ -460,7 +460,7 @@ public: __thiscall MTime::MTime(void) {
 }
 
 // FUNCTION: COPTER_D 0x0043cb02
-public: __thiscall MTime::MTime(unsigned int, unsigned int, unsigned int) {
+ MTime::MTime(uint32_t h, uint32_t m, uint32_t s) {
 // LINE 190:
 	asm( 
 "	      0043cb02    push ebp"
@@ -503,7 +503,7 @@ public: __thiscall MTime::MTime(unsigned int, unsigned int, unsigned int) {
 }
 
 // FUNCTION: COPTER_D 0x0043cb4b
-public: __thiscall MTime::MTime(class MDate const &, unsigned int, unsigned int, unsigned int) {
+ MTime::MTime(const class MDate& date, uint32_t h, uint32_t m, uint32_t s) {
 // LINE 212:
 	asm( 
 "	      0043cb4b    push ebp"
@@ -632,7 +632,7 @@ public: __thiscall MTime::MTime(class MDate const &, unsigned int, unsigned int,
 }
 
 // FUNCTION: COPTER_D 0x0043cc5b
-public: int __thiscall MTime::SetShouldPrinMDate(int) {
+int  MTime::SetShouldPrinMDate(int32_t bNewPrinMDate) {
 // LINE 241:
 	asm( 
 "	      0043cc5b    push ebp"
@@ -671,7 +671,7 @@ public: int __thiscall MTime::SetShouldPrinMDate(int) {
 }
 
 // FUNCTION: COPTER_D 0x0043cc88
-public: int __thiscall MTime::CompareTo(class MTime const &) const {
+int  MTime::CompareTo(const class MTime& t) {
 // LINE 253:
 	asm( 
 "	      0043cc88    push ebp"
@@ -714,7 +714,7 @@ public: int __thiscall MTime::CompareTo(class MTime const &) const {
 }
 
 // FUNCTION: COPTER_D 0x0043ccd7
-public: unsigned int __thiscall MTime::Hash(void) const {
+unsigned int  MTime::Hash() {
 // LINE 264:
 	asm( 
 "	      0043ccd7    push ebp"
@@ -742,7 +742,7 @@ public: unsigned int __thiscall MTime::Hash(void) const {
 }
 
 // FUNCTION: COPTER_D 0x0043ccf2
-public: unsigned int __thiscall MTime::Hour(void) const {
+unsigned int  MTime::Hour() {
 // LINE 277:
 	asm( 
 "	      0043ccf2    push ebp"
@@ -777,7 +777,7 @@ public: unsigned int __thiscall MTime::Hour(void) const {
 }
 
 // FUNCTION: COPTER_D 0x0043cd24
-public: unsigned int __thiscall MTime::HourGMT(void) const {
+unsigned int  MTime::HourGMT() {
 // LINE 290:
 	asm( 
 "	      0043cd24    push ebp"
@@ -812,7 +812,7 @@ public: unsigned int __thiscall MTime::HourGMT(void) const {
 }
 
 // FUNCTION: COPTER_D 0x0043cd53
-public: int __thiscall MTime::IsDST(void) const {
+int  MTime::IsDST() {
 // LINE 304:
 	asm( 
 "	      0043cd53    push ebp"
@@ -905,7 +905,7 @@ public: int __thiscall MTime::IsDST(void) const {
 }
 
 // FUNCTION: COPTER_D 0x0043ce2a
-public: class MTime __thiscall MTime::MaxTime(class MTime const &) const {
+class MTime  MTime::MaxTime(const class MTime& t) {
 // LINE 325:
 	asm( 
 "	      0043ce2a    push ebp"
@@ -966,7 +966,7 @@ public: class MTime __thiscall MTime::MaxTime(class MTime const &) const {
 }
 
 // FUNCTION: COPTER_D 0x0043ce9b
-public: class MTime __thiscall MTime::MinTime(class MTime const &) const {
+class MTime  MTime::MinTime(const class MTime& t) {
 // LINE 341:
 	asm( 
 "	      0043ce9b    push ebp"
@@ -1027,7 +1027,7 @@ public: class MTime __thiscall MTime::MinTime(class MTime const &) const {
 }
 
 // FUNCTION: COPTER_D 0x0043cf0c
-public: unsigned int __thiscall MTime::Minute(void) const {
+unsigned int  MTime::Minute() {
 // LINE 357:
 	asm( 
 "	      0043cf0c    push ebp"
@@ -1066,7 +1066,7 @@ public: unsigned int __thiscall MTime::Minute(void) const {
 }
 
 // FUNCTION: COPTER_D 0x0043cf49
-public: unsigned int __thiscall MTime::MinuteGMT(void) const {
+unsigned int  MTime::MinuteGMT() {
 // LINE 370:
 	asm( 
 "	      0043cf49    push ebp"
@@ -1105,7 +1105,7 @@ public: unsigned int __thiscall MTime::MinuteGMT(void) const {
 }
 
 // FUNCTION: COPTER_D 0x0043cf83
-public: unsigned int __thiscall MTime::Second(void) const {
+unsigned int  MTime::Second() {
 // LINE 382:
 	asm( 
 "	      0043cf83    push ebp"
@@ -1145,7 +1145,7 @@ public: unsigned int __thiscall MTime::Second(void) const {
 }
 
 // FUNCTION: COPTER_D 0x0043cfbf
-public: char * __thiscall MTime::PrintString(char *) {
+char *  MTime::PrintString(char * szTime) {
 // LINE 396:
 	asm( 
 "	      0043cfbf    push ebp"

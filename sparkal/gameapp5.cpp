@@ -6,7 +6,7 @@
 
 // Contribution: 1:00094b40-000953a2 Module: 19, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00495b40
-public: void __thiscall CGameApp::GetFullRenderingWindowSize(int *, int *) {
+void  CGameApp::GetFullRenderingWindowSize(int32_t * nWidth, int32_t * nHeight) {
 // LINE 67:
 	asm( 
 "	      00495b40    push ebp"
@@ -92,7 +92,7 @@ public: void __thiscall CGameApp::GetFullRenderingWindowSize(int *, int *) {
 }
 
 // FUNCTION: COPTER_D 0x00495be3
-public: int __thiscall CGameApp::S3PreRender(void) {
+int  CGameApp::S3PreRender() {
 // LINE 92:
 	asm( 
 "	      00495be3    push ebp"
@@ -450,7 +450,7 @@ public: int __thiscall CGameApp::S3PreRender(void) {
 }
 
 // FUNCTION: COPTER_D 0x00495ef7
-public: void __thiscall CGameApp::S3PostRender(void) {
+void  CGameApp::S3PostRender() {
 // LINE 197:
 	asm( 
 "	      00495ef7    push ebp"
@@ -556,7 +556,7 @@ public: void __thiscall CGameApp::S3PostRender(void) {
 }
 
 // FUNCTION: COPTER_D 0x00495fc4
-public: void __thiscall CGameApp::DrawCrosshairs(class CBackBuffer *) {
+void  CGameApp::DrawCrosshairs(class CBackBuffer* bufferToDrawTo) {
 // LINE 223:
 	asm( 
 "	      00495fc4    push ebp"
@@ -698,7 +698,7 @@ public: void __thiscall CGameApp::DrawCrosshairs(class CBackBuffer *) {
 }
 
 // FUNCTION: COPTER_D 0x004960c5
-public: void __thiscall CGameApp::S3ShowInfo(void) {
+void  CGameApp::S3ShowInfo() {
 // LINE 265:
 	asm( 
 "	      004960c5    push ebp"
