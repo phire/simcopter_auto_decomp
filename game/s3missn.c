@@ -7,6 +7,8 @@
 // Contribution: 1:000f9090-000fd784 Module: 173, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004fa090
 void S3MissionReset() {
+	long i;
+
 // LINE 134:
 	asm( 
 "	      004fa090    push ebp"
@@ -113,6 +115,9 @@ void S3MissionReset() {
 
 // FUNCTION: COPTER_D 0x004fa175
 void ConvertCitySettingsToSteppedPercentages(struct tagCitySettings* citySettingsIn, struct tagCitySettings* citySettingsOut) {
+	float fSumOfAllValues;
+	float fMultiplier;
+
 // LINE 177:
 	asm( 
 "	      004fa175    push ebp"
@@ -343,6 +348,11 @@ void ConvertCitySettingsToSteppedPercentages(struct tagCitySettings* citySetting
 
 // FUNCTION: COPTER_D 0x004fa33b
 void S3MissionGenerator() {
+	long pct;
+	struct tagCitySettings* currentCitySettings;
+	struct tagCitySettings currentCitySettingPercentages;
+	long adjustor;
+
 // LINE 237:
 	asm( 
 "	      004fa33b    push ebp"
@@ -819,6 +829,20 @@ void S3MissionGenerator() {
 
 // FUNCTION: COPTER_D 0x004fa71d
 void S3MissionDriver() {
+	int32_t personriot_done;
+	struct MISSION_DATA* md;
+	int32_t persontrans_done;
+	int32_t personfire_done;
+	int32_t speeder_done;
+	int32_t debris_done;
+	int32_t criminal_done;
+	long i;
+	int32_t personmed_done;
+	int32_t fires_done;
+	int32_t vehiclefire_done;
+	int32_t personresc_done;
+	int32_t vehiclejam_done;
+
 // LINE 421:
 	asm( 
 "	      004fa71d    push ebp"
@@ -1383,6 +1407,13 @@ void S3MissionDriver() {
 
 // FUNCTION: COPTER_D 0x004fac6d
 long S3MissionStart(long x, long y, long type) {
+	struct MISSION_DATA* md;
+	int32_t numtostart;
+	int32_t startthismission;
+	long i;
+	int32_t count;
+	struct _CELL_FIRE_DATA* cfd;
+
 // LINE 654:
 	asm( 
 "	      004fac6d    push ebp"
@@ -3053,6 +3084,9 @@ long S3MissionStart(long x, long y, long type) {
 
 // FUNCTION: COPTER_D 0x004fbb76
 struct Point2d* S3MissionGetMapLoc(long key) {
+	struct MISSION_DATA* md;
+	long mission_id;
+
 // LINE 1073:
 	asm( 
 "	      004fbb76    push ebp"
@@ -3109,6 +3143,9 @@ struct Point2d* S3MissionGetMapLoc(long key) {
 
 // FUNCTION: COPTER_D 0x004fbbca
 struct Point2d* S3MissionGetDestMapLoc(long key) {
+	struct MISSION_DATA* md;
+	long mission_id;
+
 // LINE 1100:
 	asm( 
 "	      004fbbca    push ebp"
@@ -3176,6 +3213,9 @@ struct Point2d* S3MissionGetDestMapLoc(long key) {
 
 // FUNCTION: COPTER_D 0x004fbc32
 struct Point2d* S3MissionGetPickupLoc(long key) {
+	struct MISSION_DATA* md;
+	long mission_id;
+
 // LINE 1131:
 	asm( 
 "	      004fbc32    push ebp"
@@ -3373,6 +3413,9 @@ struct Point2d* S3MissionGetCurrPickupLoc() {
 
 // FUNCTION: COPTER_D 0x004fbd4a
 void S3MissionUpdate(struct _MISSION_PARMS* mp) {
+	struct MISSION_DATA* md;
+	long mission_id;
+
 // LINE 1216:
 	asm( 
 "	      004fbd4a    push ebp"
@@ -4031,6 +4074,9 @@ void S3MissionUpdate(struct _MISSION_PARMS* mp) {
 
 // FUNCTION: COPTER_D 0x004fc218
 void S3MissionEnd(long mission_id) {
+	struct MISSION_DATA* md;
+	long i;
+
 // LINE 1396:
 	asm( 
 "	      004fc218    push ebp"
@@ -4133,6 +4179,8 @@ void S3MissionEnd(long mission_id) {
 
 // FUNCTION: COPTER_D 0x004fc2db
 struct MISSION_DATA* S3MissionGetByID(long key) {
+	long mission_id;
+
 // LINE 1435:
 	asm( 
 "	      004fc2db    push ebp"
@@ -4182,6 +4230,8 @@ struct MISSION_DATA* S3MissionGetByID(long key) {
 
 // FUNCTION: COPTER_D 0x004fc323
 long S3MissionGetByType(long mission_type) {
+	long count;
+
 // LINE 1446:
 	asm( 
 "	      004fc323    push ebp"
@@ -4271,6 +4321,12 @@ struct MISSION_DATA* S3MissionGetCurr() {
 
 // FUNCTION: COPTER_D 0x004fc3b2
 void S3MissionGenerate(long type) {
+	long tile;
+	struct _CELL_INFO* cptr;
+	long y;
+	long i;
+	long x;
+
 // LINE 1479:
 	asm( 
 "	      004fc3b2    push ebp"
@@ -4819,6 +4875,9 @@ void S3MissionGenerate(long type) {
 
 // FUNCTION: COPTER_D 0x004fc89b
 void S3MissionSetCurrNext() {
+	struct MISSION_DATA* md;
+	long i;
+
 // LINE 1599:
 	asm( 
 "	      004fc89b    push ebp"
@@ -4950,6 +5009,9 @@ void S3MissionSetCurrNext() {
 
 // FUNCTION: COPTER_D 0x004fc9ac
 void S3MissionSetCurrPrev() {
+	struct MISSION_DATA* md;
+	long i;
+
 // LINE 1634:
 	asm( 
 "	      004fc9ac    push ebp"
@@ -5081,6 +5143,9 @@ void S3MissionSetCurrPrev() {
 
 // FUNCTION: COPTER_D 0x004fcabd
 int32_t S3MissionIsType(long key, long mission_type) {
+	struct MISSION_DATA* md;
+	long mission_id;
+
 // LINE 1672:
 	asm( 
 "	      004fcabd    push ebp"
@@ -5257,6 +5322,8 @@ void S3MissionDebugString(struct MISSION_DATA* md, char * p) {
 
 // FUNCTION: COPTER_D 0x004fcbea
 void S3MissionCancel(long mission_id) {
+	struct MISSION_DATA* md;
+
 // LINE 1843:
 	asm( 
 "	      004fcbea    push ebp"
@@ -5386,6 +5453,9 @@ void S3MissionCancel(long mission_id) {
 
 // FUNCTION: COPTER_D 0x004fccd0
 long S3MissionStartDirect(long type) {
+	struct MISSION_DATA* md;
+	long i;
+
 // LINE 1893:
 	asm( 
 "	      004fccd0    push ebp"
@@ -5825,6 +5895,13 @@ long S3MissionStartDirect(long type) {
 
 // FUNCTION: COPTER_D 0x004fd0e6
 void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
+	struct MISSION_DATA* md;
+	int32_t points;
+	char * mname;
+	int32_t key;
+	int32_t money;
+	char * reason;
+
 // LINE 2012:
 	asm( 
 "	      004fd0e6    push ebp"
@@ -6655,6 +6732,10 @@ void S3MissionScoreUpdate(struct _MISSION_PARMS* mp, long * mission_id) {
 
 // FUNCTION: COPTER_D 0x004fd755
 void S3MissionScoreEnd(struct MISSION_DATA* md) {
+	long total_money;
+	int32_t timetmp;
+	long total_pts;
+
 // LINE 2225:
 	asm( 
 "	      004fd755    push ebp"
@@ -7238,6 +7319,9 @@ void S3MissionTweakInit() {
 
 // FUNCTION: COPTER_D 0x004fdc2d
 long S3MissionGetIDByKey(long key) {
+	struct MISSION_DATA* md;
+	long i;
+
 // LINE 2436:
 	asm( 
 "	      004fdc2d    push ebp"
@@ -7361,6 +7445,10 @@ struct MISSION_DATA* S3MissionGetDataByIndex(long index) {
 
 // FUNCTION: COPTER_D 0x004fdcfb
 int32_t S3MissionMIFFLoad(void * __ptr32 miffReader) {
+	struct MISSION_DATA* md;
+	long i;
+	long ret;
+
 // LINE 2487:
 	asm( 
 "	      004fdcfb    push ebp"
@@ -7454,6 +7542,8 @@ int32_t S3MissionMIFFLoad(void * __ptr32 miffReader) {
 
 // FUNCTION: COPTER_D 0x004fddad
 int32_t S3MissionMIFFSave(void * __ptr32 miffWriter) {
+	long ret;
+
 // LINE 2517:
 	asm( 
 "	      004fddad    push ebp"
@@ -7502,6 +7592,10 @@ int32_t S3MissionMIFFSave(void * __ptr32 miffWriter) {
 
 // FUNCTION: COPTER_D 0x004fddf5
 void S3MissionDispatch(long x, long y, long type) {
+	long sid3;
+	long sid2;
+	long sid1;
+
 // LINE 2552:
 	asm( 
 "	      004fddf5    push ebp"

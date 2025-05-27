@@ -7,6 +7,9 @@
 // Contribution: 1:00165850-00165a00 Module: 183, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00566850
 void Swizzle16(void * __ptr32 val) {
+	char[8] hiWord;
+	char[8] loWord;
+
 // LINE 10:
 	asm( 
 "	      00566850    push ebp"
@@ -67,6 +70,9 @@ void Swizzle16(void * __ptr32 val) {
 
 // FUNCTION: COPTER_D 0x0056689d
 void Swizzle8(void * __ptr32 val) {
+	long hiWord;
+	long loWord;
+
 // LINE 22:
 	asm( 
 "	      0056689d    push ebp"
@@ -155,6 +161,9 @@ void SwizzleFloat(void * __ptr32 val) {
 
 // FUNCTION: COPTER_D 0x00566906
 void Swizzle4(void * __ptr32 val) {
+	short hiWord;
+	short loWord;
+
 // LINE 39:
 	asm( 
 "	      00566906    push ebp"
@@ -215,6 +224,9 @@ void Swizzle4(void * __ptr32 val) {
 
 // FUNCTION: COPTER_D 0x0056695b
 void Swizzle2(void * __ptr32 val) {
+	char hiByte;
+	char loByte;
+
 // LINE 51:
 	asm( 
 "	      0056695b    push ebp"
@@ -261,6 +273,8 @@ void Swizzle2(void * __ptr32 val) {
 
 // FUNCTION: COPTER_D 0x00566990
 void SwizzleRect(struct Rect* rect) {
+	short * pShort;
+
 // LINE 62:
 	asm( 
 "	      00566990    push ebp"

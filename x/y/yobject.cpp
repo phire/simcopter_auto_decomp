@@ -263,6 +263,8 @@ unsigned short GetOutOfHeli(long personID) {
 
 // FUNCTION: COPTER_D 0x0054456a
 unsigned short cYObject::GetOutOfHeli(long personID) {
+	class cYObject* obj;
+
 // LINE 171:
 	asm( 
 "	      0054456a    push ebp"
@@ -542,6 +544,10 @@ void AdjustPersonBeamingSlices(int32_t velocity) {
 
 // FUNCTION: COPTER_D 0x00544874
 class cYObject* cYObject::GetObjectA(struct _DYOBJ_INST* dyn) {
+	class cYObject* obj;
+	short count;
+	class cYObject* foundobj;
+
 // LINE 223:
 	asm( 
 "	      00544874    push ebp"
@@ -762,6 +768,10 @@ class cYObject* cYObject::GetObjectA(struct _DYOBJ_INST* dyn) {
 
 // FUNCTION: COPTER_D 0x00544b3b
 struct _DYOBJ_INST* cYObject::SearchForDynObj(short objtypeflag, short numcellstospiral, struct _DYOBJ_INST* onlyonmaster) {
+	short celly;
+	short cellx;
+	struct _DYOBJ_INST* dyobj;
+
 // LINE 248:
 	asm( 
 "	      00544b3b    push ebp"
@@ -827,6 +837,15 @@ struct _DYOBJ_INST* cYObject::SearchForDynObj(short objtypeflag, short numcellst
 
 // FUNCTION: COPTER_D 0x00544bde
 unsigned short cYObject::SearchForPersonSpot(struct _DYOBJ_INST* master, struct Point3d* loc) {
+	short radius;
+	short maxcount;
+	int32_t offsetz;
+	int32_t offsetx;
+	short fullradius;
+	struct Point3d newloc;
+	short count;
+	short smallradius;
+
 // LINE 258:
 	asm( 
 "	      00544bde    push ebp"
@@ -1195,6 +1214,9 @@ unsigned short cYObject::SearchForPersonSpot(struct _DYOBJ_INST* master, struct 
 
 // FUNCTION: COPTER_D 0x00544f78
 unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, struct Point3d* loc, enum cYObject::SearchType searchType) {
+	int32_t offsetz;
+	int32_t offsetx;
+
 // LINE 303:
 	asm( 
 "	      00544f78    push ebp"
@@ -1294,6 +1316,11 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, struct Poi
 
 // FUNCTION: COPTER_D 0x00545049
 unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * offsetx, int32_t * offsetz, enum cYObject::SearchType searchType) {
+	struct Point3d pos;
+	short halfwidth;
+	unsigned short ret;
+	int32_t twiceradius;
+
 // LINE 318:
 	asm( 
 "	      00545049    push ebp"
@@ -2337,6 +2364,11 @@ void duh(double __formal) {
 
 // FUNCTION: COPTER_D 0x00545cd3
 void S3PersonInit() {
+	int32_t success;
+	long i;
+	double y;
+	double x;
+
 // LINE 405:
 	asm( 
 "	      00545cd3    push ebp"
@@ -2490,6 +2522,8 @@ void S3PersonUserNextFrame() {
 
 // FUNCTION: COPTER_D 0x00545dbe
 void S3PersonReset() {
+	short count;
+
 // LINE 445:
 	asm( 
 "	      00545dbe    push ebp"
@@ -2957,6 +2991,8 @@ void S3PersonUserAppearNew(struct Point3d* loc, struct Point3d* facingvector) {
 
 // FUNCTION: COPTER_D 0x0054634c
 void S3PersonUserAppear(int32_t x, int32_t y, int32_t dx, int32_t dz) {
+	struct Point3d loc;
+
 // LINE 490:
 	asm( 
 "	      0054634c    push ebp"
@@ -3054,6 +3090,9 @@ void S3PersonUserAppear(int32_t x, int32_t y, int32_t dx, int32_t dz) {
 
 // FUNCTION: COPTER_D 0x0054642e
 int32_t IsThisABadGuy(struct _DYOBJ_INST* guy) {
+	enum MissionSupertype mt;
+	class cYObject* obj;
+
 // LINE 496:
 	asm( 
 "	      0054642e    push ebp"
@@ -3256,6 +3295,8 @@ struct Point3d* GetAvatarVector() {
 
 // FUNCTION: COPTER_D 0x00546584
 void S3DrawPerson(struct VRBlit* blit) {
+	short id;
+
 // LINE 530:
 	asm( 
 "	      00546584    push ebp"
@@ -3373,6 +3414,13 @@ void S3DrawPerson(struct VRBlit* blit) {
 
 // FUNCTION: COPTER_D 0x005466c5
 void cAvatar::GetControlInput() {
+	int32_t fwdmult;
+	long joystickValue;
+	int32_t rotateRate;
+	int32_t tempfix;
+	int32_t fwdrate;
+	int32_t rotateMult;
+
 // LINE 554:
 	asm( 
 "	      005466c5    push ebp"
@@ -3836,6 +3884,12 @@ void PersonHeliHasLanded() {
 
 // FUNCTION: COPTER_D 0x00546b56
 struct _HELI_DATA* S3PersonGetLandedHeli(struct Point3d* loc) {
+	struct _CELL_INFO* cptr;
+	struct _HELI_DATA* hd;
+	long y;
+	long x;
+	struct _DYOBJ_INST* dyobj;
+
 // LINE 647:
 	asm( 
 "	      00546b56    push ebp"
@@ -3991,6 +4045,9 @@ struct _HELI_DATA* S3PersonGetLandedHeli(struct Point3d* loc) {
 
 // FUNCTION: COPTER_D 0x00546c85
 class cYObject* cYObject::GetOnePersonForScurkID(short cellx, short celly) {
+	short scurkID;
+	short count;
+
 // LINE 695:
 	asm( 
 "	      00546c85    push ebp"
@@ -4152,6 +4209,8 @@ class cYObject* cYObject::GetOnePersonForScurkID(short cellx, short celly) {
 
 // FUNCTION: COPTER_D 0x00546e70
 unsigned short cYObject::StartScurkAmbientMission(short scurkID, short treeID, enum PersonType persontype, short cellx, short celly, struct _DYOBJ_INST* onTopOf, int32_t offsetx, int32_t offsetz) {
+	struct Point3d loc;
+
 // LINE 710:
 	asm( 
 "	      00546e70    push ebp"
@@ -4244,6 +4303,8 @@ unsigned short cYObject::StartScurkAmbientMission(short scurkID, short treeID, e
 
 // FUNCTION: COPTER_D 0x00546f45
 unsigned short cYObject::StartScurkAmbientMission(short scurkID, short treeID, enum PersonType persontype, short cellx, short celly, struct _DYOBJ_INST* onTopOf, struct Point3d* loc) {
+	unsigned short ret;
+
 // LINE 717:
 	asm( 
 "	      00546f45    push ebp"
@@ -4343,6 +4404,11 @@ unsigned short cYObject::StartScurkAmbientMission(short scurkID, short treeID, e
 
 // FUNCTION: COPTER_D 0x00547044
 void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType missiontype, short cellx, short celly, short missionid, struct _DYOBJ_INST* onTopOf) {
+	struct _LZ_INFO* li;
+	short id;
+	int32_t offsetz;
+	int32_t offsetx;
+
 // LINE 731:
 	asm( 
 "	      00547044    push ebp"
@@ -4479,6 +4545,11 @@ void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType miss
 
 // FUNCTION: COPTER_D 0x005471b2
 void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType missiontype, short cellx, short celly, short missionid, struct _DYOBJ_INST* onTopOf, int32_t offsetx, int32_t offsetz) {
+	short id;
+	class cYObject* obj;
+	struct Point3d loc;
+	short ret;
+
 // LINE 747:
 	asm( 
 "	      005471b2    push ebp"
@@ -4691,6 +4762,8 @@ void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType miss
 
 // FUNCTION: COPTER_D 0x00547440
 void cYObject::StartScurkPeople(short cellx, short celly) {
+	short scurkID;
+
 // LINE 778:
 	asm( 
 "	      00547440    push ebp"
@@ -5152,6 +5225,12 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 
 // FUNCTION: COPTER_D 0x00547937
 void cYObject::StartScurkPeopleNearAvatar() {
+	short rectdiam;
+	short celly;
+	short cellx;
+	short count;
+	struct Rect r;
+
 // LINE 837:
 	asm( 
 "	      00547937    push ebp"
@@ -5335,6 +5414,8 @@ void cYObject::StartScurkPeopleNearAvatar() {
 
 // FUNCTION: COPTER_D 0x00547ac2
 void cYObject::BeamRemainingAmbients() {
+	short numtries;
+
 // LINE 871:
 	asm( 
 "	      00547ac2    push ebp"
@@ -5519,6 +5600,10 @@ void cYObject::TryStartAllAmbient() {
 
 // FUNCTION: COPTER_D 0x00547cc8
 class cYObject* cYObject::GetSleepingPerson() {
+	class cYObject* sleeper;
+	short count;
+	class cYObject* test;
+
 // LINE 898:
 	asm( 
 "	      00547cc8    push ebp"
@@ -5625,6 +5710,9 @@ class cYObject* cYObject::GetSleepingPerson() {
 
 // FUNCTION: COPTER_D 0x00547de1
 void MakeAllPeople() {
+	struct _SYSTEMTIME st;
+	char[260] peoplepath;
+
 // LINE 913:
 	asm( 
 "	      00547de1    push ebp"
@@ -5731,6 +5819,10 @@ void DeleteAllPeople() {
 
 // FUNCTION: COPTER_D 0x00547e9b
 void cYObject::MakePlebes() {
+	int32_t newnum;
+	int32_t pindex;
+	struct Point3d p;
+
 // LINE 944:
 	asm( 
 "	      00547e9b    push ebp"
@@ -7894,6 +7986,20 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 
 // FUNCTION: COPTER_D 0x00549bdd
 unsigned short cYObject::BeamIntoCameraRange() {
+	unsigned short foundcell;
+	unsigned short stop_now;
+	int32_t offsetz;
+	int32_t curr_dir;
+	int32_t i;
+	int32_t y;
+	int32_t x;
+	int32_t offsetx;
+	struct Point3d vec;
+	int32_t spiral_dist;
+	int32_t curr_dist;
+	int32_t ydir;
+	int32_t xdir;
+
 // LINE 1279:
 	asm( 
 "	      00549bdd    push ebp"
@@ -8619,6 +8725,9 @@ unsigned short cYObject::OutOfCameraRange() {
 
 // FUNCTION: COPTER_D 0x0054a1d3
 short StartPerson(enum PersonType persontype, enum MissionType mission, short cellx, short celly, long missionid, struct _DYOBJ_INST* onTopOf, struct Point3d* loc) {
+	short ret;
+	class cYObject* newperson;
+
 // LINE 1465:
 	asm( 
 "	      0054a1d3    push ebp"
@@ -8684,6 +8793,8 @@ short StartPerson(enum PersonType persontype, enum MissionType mission, short ce
 
 // FUNCTION: COPTER_D 0x0054a23f
 void LiberateMissionPeople(long missionid) {
+	short count;
+
 // LINE 1476:
 	asm( 
 "	      0054a23f    push ebp"
@@ -8782,6 +8893,9 @@ void LiberateMissionPeople(long missionid) {
 
 // FUNCTION: COPTER_D 0x0054a35a
 void KillMissionPeople(long missionid) {
+	struct _MISSION_PARMS mp;
+	short count;
+
 // LINE 1487:
 	asm( 
 "	      0054a35a    push ebp"
@@ -9063,6 +9177,8 @@ void cYObject::SetPersonData(enum PersonType persontype, enum MissionType missio
 
 // FUNCTION: COPTER_D 0x0054a640
 unsigned short cYObject::IsSuitableForMission(enum MissionType mission, short cellx, short celly) {
+	unsigned short ret;
+
 // LINE 1540:
 	asm( 
 "	      0054a640    push ebp"
@@ -9211,6 +9327,8 @@ unsigned short cYObject::IsSuitableForMission(enum MissionType mission, short ce
 
 // FUNCTION: COPTER_D 0x0054a7a5
 unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionType mission, short cellx, short celly, long missionid, struct _DYOBJ_INST* onTopOf, struct Point3d* loc) {
+	short ret;
+
 // LINE 1566:
 	asm( 
 "	      0054a7a5    push ebp"
@@ -10815,6 +10933,8 @@ void cYObject::ResetToAmbient() {
 
 // FUNCTION: COPTER_D 0x0054b9e6
 long cYObject::JoinRiot() {
+	long riotMissionID;
+
 // LINE 1813:
 	asm( 
 "	      0054b9e6    push ebp"
@@ -11007,6 +11127,10 @@ long cYObject::JoinRiot() {
 
 // FUNCTION: COPTER_D 0x0054bc3c
 void cYObject::PhaseAndBeamSoundChannels() {
+	class cYObject* obj;
+	short nextsoundchannel;
+	short count;
+
 // LINE 1839:
 	asm( 
 "	      0054bc3c    push ebp"
@@ -11239,6 +11363,10 @@ void cYObject::PhaseAndBeamSoundChannels() {
 
 // FUNCTION: COPTER_D 0x0054bf20
 short cYObject::DistributeSoundChannels(short rad, short firstsoundchannel) {
+	class cYObject* obj;
+	short soundchannel;
+	short count;
+
 // LINE 1864:
 	asm( 
 "	      0054bf20    push ebp"
@@ -11495,6 +11623,13 @@ void cYObject::SetSoundChannel(short soundchannel) {
 
 // FUNCTION: COPTER_D 0x0054c1dd
 unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned short playforsure) {
+	int32_t success;
+	short actualSoundChannel;
+	char * soundfile;
+	unsigned short loop;
+	short freqadj;
+	int32_t flags;
+
 // LINE 1897:
 	asm( 
 "	      0054c1dd    push ebp"
@@ -12000,6 +12135,9 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 
 // FUNCTION: COPTER_D 0x0054c671
 void cYObject::SimulateAll() {
+	long debuglooptime;
+	unsigned short simulate;
+
 // LINE 2034:
 	asm( 
 "	      0054c671    push ebp"
@@ -12465,6 +12603,8 @@ void cYObject::SimulateAll() {
 
 // FUNCTION: COPTER_D 0x0054ccbd
 unsigned short cYObject::AddToHeli() {
+	struct tagPassengerInfo tempPassengerInfo;
+
 // LINE 2137:
 	asm( 
 "	      0054ccbd    push ebp"
@@ -12544,6 +12684,8 @@ unsigned short cYObject::AddToHeli() {
 
 // FUNCTION: COPTER_D 0x0054cd49
 void cYObject::RemoveFromHeli() {
+	int32_t yes;
+
 // LINE 2158:
 	asm( 
 "	      0054cd49    push ebp"
@@ -12595,6 +12737,8 @@ void cYObject::RemoveFromHeli() {
 
 // FUNCTION: COPTER_D 0x0054cdb2
 class cYObject* cYObject::GetPersonWithMaster(struct _DYOBJ_INST* dyobj) {
+	short count;
+
 // LINE 2165:
 	asm( 
 "	      0054cdb2    push ebp"
@@ -12695,6 +12839,8 @@ class cYObject* cYObject::GetPersonWithMaster(struct _DYOBJ_INST* dyobj) {
 
 // FUNCTION: COPTER_D 0x0054ceca
 unsigned short cYObject::SetMaster(struct _DYOBJ_INST* obj) {
+	unsigned short success;
+
 // LINE 2176:
 	asm( 
 "	      0054ceca    push ebp"
@@ -12888,6 +13034,9 @@ unsigned short cYObject::SetMaster(struct _DYOBJ_INST* obj) {
 
 // FUNCTION: COPTER_D 0x0054d0e3
 unsigned short cYObject::AdjoinsRoad(struct Point3d pos) {
+	int32_t celly;
+	int32_t cellx;
+
 // LINE 2221:
 	asm( 
 "	      0054d0e3    push ebp"
@@ -13234,6 +13383,16 @@ unsigned short cYObject::AdjoinsRoad(struct Point3d pos) {
 
 // FUNCTION: COPTER_D 0x0054d662
 unsigned short cYObject::GetNeutralLoc(int32_t * cellx, int32_t * celly, int32_t * offsetx, int32_t * offsetz) {
+	struct _CELL_INFO* newcptr;
+	struct _CELL_INFO* cptr;
+	short cy;
+	int32_t z;
+	short cx;
+	short scurkID1;
+	int32_t x;
+	short scurkID2;
+	enum cYObject::LocationType loctype;
+
 // LINE 2239:
 	asm( 
 "	      0054d662    push ebp"
@@ -13761,6 +13920,9 @@ void cYObject::Simulate() {
 
 // FUNCTION: COPTER_D 0x0054dcde
 enum cYObject::MoveErrorCode cAvatar::AvatarMove(struct cYObject::MoveInfo* moveinfo) {
+	unsigned short yaw;
+	enum cYObject::MoveErrorCode movecode;
+
 // LINE 2289:
 	asm( 
 "	      0054dcde    push ebp"
@@ -13899,6 +14061,10 @@ enum cYObject::MoveErrorCode cAvatar::AvatarMove(struct cYObject::MoveInfo* move
 
 // FUNCTION: COPTER_D 0x0054de18
 void cAvatar::Simulate() {
+	struct _HELI_DATA* hd;
+	struct cYObject::MoveInfo moveinfo;
+	enum cYObject::MoveErrorCode movecode;
+
 // LINE 2308:
 	asm( 
 "	      0054de18    push ebp"
@@ -15868,6 +16034,10 @@ void cYObject::DynEffects(short speed, enum cYObject::MoveErrorCode movecode, st
 
 // FUNCTION: COPTER_D 0x0054faee
 void cAvatar::ResetView() {
+	unsigned char figDir;
+	struct Point3D view;
+	int32_t yRot;
+
 // LINE 2501:
 	asm( 
 "	      0054faee    push ebp"
@@ -16004,6 +16174,9 @@ void cAvatar::ResetView() {
 
 // FUNCTION: COPTER_D 0x0054fc2e
 void cYObject::SetCellAndLoc(struct Point3d loc, unsigned char x, unsigned char y) {
+	short loccellx;
+	short loccelly;
+
 // LINE 2535:
 	asm( 
 "	      0054fc2e    push ebp"
@@ -16124,6 +16297,8 @@ void cYObject::SetCellAndLoc(struct Point3d loc, unsigned char x, unsigned char 
 
 // FUNCTION: COPTER_D 0x0054fd4d
 void cYObject::SetCellAndLoc(unsigned char x, unsigned char y, int32_t dx, int32_t dz) {
+	struct Point3d loc;
+
 // LINE 2560:
 	asm( 
 "	      0054fd4d    push ebp"
@@ -16396,6 +16571,12 @@ void cYObject::SetMissionType(enum MissionType type) {
 
 // FUNCTION: COPTER_D 0x0054ffb7
 void cYObject::SetPersonType(enum PersonType type) {
+	short count;
+	short freqadj;
+	short frequnit;
+	unsigned long bodyname;
+	short faceindex;
+
 // LINE 2614:
 	asm( 
 "	      0054ffb7    push ebp"
@@ -17137,6 +17318,8 @@ void cYObject::DestroyObjects() {
 
 // FUNCTION: COPTER_D 0x0055069b
 void cYObject::Link() {
+	struct _CELL_INFO* ncptr;
+
 // LINE 2779:
 	asm( 
 "	      0055069b    push ebp"
@@ -17253,6 +17436,9 @@ void cYObject::Link() {
 
 // FUNCTION: COPTER_D 0x005507ec
 void cYObject::Unlink() {
+	struct _DYOBJ_INST** dyptrptr;
+	struct _CELL_INFO* cptr;
+
 // LINE 2794:
 	asm( 
 "	      005507ec    push ebp"
@@ -17349,6 +17535,9 @@ void cYObject::Unlink() {
 
 // FUNCTION: COPTER_D 0x005508a3
 class cAvatar* cAvatar::MakeAvatar() {
+	class cAvatar* avatar;
+	struct Point3d p;
+
 // LINE 2817:
 	asm( 
 "	      005508a3    push ebp"
@@ -17455,6 +17644,8 @@ class cAvatar* cAvatar::MakeAvatar() {
 
 // FUNCTION: COPTER_D 0x005509cb
 short cYObject::MakeNewObject(short type, struct Point3d loc, class Behavior* behavior) {
+	short id;
+
 // LINE 2825:
 	asm( 
 "	      005509cb    push ebp"
@@ -17598,6 +17789,9 @@ short cYObject::MakeNewObject(short type, struct Point3d loc, class Behavior* be
 
 // FUNCTION: COPTER_D 0x00550b30
 void cYObject::InitForEngine(short id) {
+	struct VRFaceInfo finfo;
+	int32_t face;
+
 // LINE 2844:
 	asm( 
 "	      00550b30    push ebp"
@@ -17734,6 +17928,8 @@ void cYObject::InitForEngine(short id) {
 
 // FUNCTION: COPTER_D 0x00550c30
 void cYObject::KillObject(short id) {
+	class cYObject* obj;
+
 // LINE 2872:
 	asm( 
 "	      00550c30    push ebp"
@@ -17830,6 +18026,8 @@ void cYObject::KillObject(short id) {
 
 // FUNCTION: COPTER_D 0x00550d4d
 void cYObject::cYObject(short type, class Behavior* pBehavior, struct Point3d loc, short id) {
+	short cnt;
+
 // LINE 2885:
 	asm( 
 "	      00550d4d    push ebp"
@@ -18358,6 +18556,19 @@ void cYObject::Reset() {
 
 // FUNCTION: COPTER_D 0x00551388
 void cYObject::Draw(struct VRBlit* blit) {
+	double nearvar;
+	double camPhi;
+	struct Point3d screenPt;
+	char[20] text;
+	double midvar;
+	float psiOff;
+	double camPsi;
+	double farvar;
+	float phiOff;
+	double farlimvar;
+	unsigned short highres;
+	struct BodyDebugInfo bdi;
+
 // LINE 2963:
 	asm( 
 "	      00551388    push ebp"
@@ -18848,6 +19059,9 @@ void BodyDrawDebugInfo(class CBackBuffer* buf) {
 
 // FUNCTION: COPTER_D 0x005518ad
 void cYObject::~cYObject() {
+	unsigned short found;
+	class cYObject** srch;
+
 // LINE 3062:
 	asm( 
 "	      005518ad    push ebp"
@@ -18955,6 +19169,8 @@ void cYObject::~cYObject() {
 
 // FUNCTION: COPTER_D 0x005519d6
 void S3PersonTweakInit() {
+	int32_t *[10] pvals;
+
 // LINE 3080:
 	asm( 
 "	      005519d6    push ebp"
@@ -19035,6 +19251,8 @@ void UpdateFigureVals() {
 
 // FUNCTION: COPTER_D 0x00551a3d
 void cAvatar::RotateMatrixAndYawForEngine() {
+	int32_t[4][4] matrix;
+
 // LINE 3099:
 	asm( 
 "	      00551a3d    push ebp"
@@ -19119,6 +19337,12 @@ void cAvatar::RotateMatrixAndYawForEngine() {
 
 // FUNCTION: COPTER_D 0x00551af1
 int32_t S3PUtilsGetDir(int32_t orgx, int32_t orgy, int32_t destx, int32_t desty) {
+	int32_t deltay;
+	short dir;
+	int32_t deltax;
+	int32_t absy;
+	int32_t absx;
+
 // LINE 3116:
 	asm( 
 "	      00551af1    push ebp"
@@ -19254,6 +19478,16 @@ int32_t S3PUtilsGetDir(int32_t orgx, int32_t orgy, int32_t destx, int32_t desty)
 
 // FUNCTION: COPTER_D 0x00551bf7
 int32_t S3PUtilsGetAlt(int32_t x, int32_t y, int32_t z) {
+	int32_t normy;
+	int32_t normx;
+	struct _CELL_INFO* cptr;
+	int32_t alt;
+	int32_t objy;
+	struct _STOBJ_INST* stobj;
+	int32_t color;
+	int32_t maxobjy;
+	int32_t normz;
+
 // LINE 3152:
 	asm( 
 "	      00551bf7    push ebp"

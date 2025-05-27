@@ -72,6 +72,18 @@ void SoundCompletionUnloadFunction(long lSoundPointer) {
 
 // FUNCTION: COPTER_D 0x0043e2a5
 void  CGameApp::ShowVersion() {
+	long lCPUVersion;
+	long lPhysicalMemory;
+	long lCPUSpeed;
+	char * szVersionInformation;
+	char[64] szUnformattedVersionInformation;
+	char[512] szFormattedVersionInformation;
+	class Version tempVersion;
+	long lSystemType;
+	int32_t nFullStringID;
+	struct _MEMORYSTATUS tempMemoryStatus;
+	class basic_string<char> sMessage;
+
 // LINE 105:
 	asm( 
 "	      0043e2a5    push ebp"
@@ -918,6 +930,14 @@ void  CGameApp::ShowVersion() {
 
 // FUNCTION: COPTER_D 0x0043eda6
 int  CGameApp::CreateMessageBox(long lID, class basic_string<char>& sMessage, long lType) {
+	char * szImageFileNameToUse;
+	struct SparkalColor colorButtonFont;
+	char * szButtonImageFileNameToUse;
+	struct SparkalColor colorButtonFontHighlighted;
+	char * szAnimationFileNameToUse;
+	struct SparkalColor colorMessageFont;
+	class MessageBoxWindow* tempMessageBoxWindow;
+
 // LINE 186:
 	asm( 
 "	      0043eda6    push ebp"
@@ -1468,6 +1488,9 @@ int  CGameApp::CreateMessageBox(long lID, class basic_string<char>& sMessage, lo
 
 // FUNCTION: COPTER_D 0x0043f2b9
 int  CGameApp::CreateMessageBox(long lID, int32_t nStringID, long lType) {
+	int32_t nFullStringID;
+	class basic_string<char> sMessage;
+
 // LINE 280:
 	asm( 
 "	      0043f2b9    push ebp"
@@ -1897,6 +1920,11 @@ void  CGameApp::DestroyMessageBox() {
 
 // FUNCTION: COPTER_D 0x0043f908
 int  CGameApp::CreateCheatCodeEntryMessageBox() {
+	struct SparkalColor colorButtonFont;
+	class MessageBoxWindowEdit* tempMessageBoxWindowEdit;
+	struct SparkalColor colorButtonFontHighlighted;
+	struct SparkalColor colorMessageFont;
+
 // LINE 307:
 	asm( 
 "	      0043f908    push ebp"
@@ -2168,6 +2196,12 @@ void  CGameApp::DestroyCheatCodeEntryMessageBox() {
 
 // FUNCTION: COPTER_D 0x0043fbcd
 int  CGameApp::DoCheatCode(class basic_string<char>& sCheatCodeString) {
+	int32_t nReturnValue;
+	char * szCheatOn;
+	char * szCheatSoundFileName;
+	char * szCheatOff;
+	uint32_t nTextPosition;
+
 // LINE 352:
 	asm( 
 "	      0043fbcd    push ebp"
@@ -3280,6 +3314,9 @@ int  CGameApp::DoCheatCode(class basic_string<char>& sCheatCodeString) {
 
 // FUNCTION: COPTER_D 0x00440b3f
 int  CGameApp::CheckCommandLineForCheatCodes() {
+	int32_t i;
+	char[128] szCommandValue;
+
 // LINE 504:
 	asm( 
 "	      00440b3f    push ebp"
@@ -3452,6 +3489,9 @@ int  CGameApp::CheckCommandLineForCheatCodes() {
 
 // FUNCTION: COPTER_D 0x00440dcf
 void  CGameApp::CreateDebugBuffer() {
+	struct SparkalColor colorDebugText;
+	char[64] szTypeFaceName;
+
 // LINE 523:
 	asm( 
 "	      00440dcf    push ebp"
@@ -3790,6 +3830,9 @@ void  CGameApp::ToggleDebugWindowDisplay() {
 
 // FUNCTION: COPTER_D 0x0044106f
 void  CGameApp::CreatePlayMenu() {
+	struct UserMenuWindowDescription tempUMWD;
+	class UserMenuWindow* myUserMenuWindow;
+
 // LINE 600:
 	asm( 
 "	      0044106f    push ebp"
@@ -4049,6 +4092,9 @@ void  CGameApp::CreatePlayMenu() {
 
 // FUNCTION: COPTER_D 0x004413e5
 void  CGameApp::CreateUserInputWindow() {
+	class UserInputWindow* myUserInputWindow;
+	int32_t nCurrentGameMode;
+
 // LINE 633:
 	asm( 
 "	      004413e5    push ebp"
@@ -4164,6 +4210,8 @@ void  CGameApp::CreateUserInputWindow() {
 
 // FUNCTION: COPTER_D 0x0044150b
 void  CGameApp::DestroyUserInputWindow(class UserInputWindow* windowToDestroy, int32_t bUseData) {
+	int32_t nCurrentGameMode;
+
 // LINE 649:
 	asm( 
 "	      0044150b    push ebp"
@@ -4251,6 +4299,9 @@ void  CGameApp::DestroyUserInputWindow(class UserInputWindow* windowToDestroy, i
 
 // FUNCTION: COPTER_D 0x004415c7
 void  CGameApp::CreateRenderSettingsWindow() {
+	class RenderSettingsWindow* myRenderSettingsWindow;
+	int32_t nCurrentGameMode;
+
 // LINE 669:
 	asm( 
 "	      004415c7    push ebp"
@@ -4378,6 +4429,13 @@ void  CGameApp::CreateRenderSettingsWindow() {
 
 // FUNCTION: COPTER_D 0x00441715
 void  CGameApp::DestroyRenderSettingsWindow(class RenderSettingsWindow* windowToDestroy, int32_t bUseData) {
+	long lQuadPixelType;
+	int32_t nCurrentGameMode;
+	long bShowGroundTextures;
+	long bShowSkyAndClouds;
+	long bShowBuildingTextures;
+	long lFogCloseness;
+
 // LINE 690:
 	asm( 
 "	      00441715    push ebp"
@@ -4492,6 +4550,12 @@ void  CGameApp::DestroyRenderSettingsWindow(class RenderSettingsWindow* windowTo
 
 // FUNCTION: COPTER_D 0x004417fe
 void  CGameApp::CreateSoundSettingsWindow() {
+	class SoundSettingsWindow* mySoundSettingsWindow;
+	struct RadioPreferences tempRadioPreferences;
+	int32_t nCurrentGameMode;
+	char * chPrefData;
+	struct SoundPreferences tempSoundPreferences;
+
 // LINE 728:
 	asm( 
 "	      004417fe    push ebp"
@@ -4669,6 +4733,10 @@ void  CGameApp::CreateSoundSettingsWindow() {
 
 // FUNCTION: COPTER_D 0x004419b8
 void  CGameApp::DestroySoundSettingsWindow(class SoundSettingsWindow* windowToDestroy, int32_t bUseData) {
+	struct RadioPreferences tempRadioPreferences;
+	int32_t nCurrentGameMode;
+	struct SoundPreferences tempSoundPreferences;
+
 // LINE 767:
 	asm( 
 "	      004419b8    push ebp"
@@ -4782,6 +4850,8 @@ void  CGameApp::DestroySoundSettingsWindow(class SoundSettingsWindow* windowToDe
 
 // FUNCTION: COPTER_D 0x00441a89
 void  CGameApp::CreateCitySettingsWindow() {
+	class CitySettingsWindow* myCitySettingsWindow;
+
 // LINE 807:
 	asm( 
 "	      00441a89    push ebp"
@@ -4928,6 +4998,8 @@ void  CGameApp::DestroyCitySettingsWindow(class CitySettingsWindow* windowToDest
 
 // FUNCTION: COPTER_D 0x00441bc0
 void  CGameApp::CreateControlDisplayWindow() {
+	class ControlDisplayWindow* tempControlDisplayWindow;
+
 // LINE 837:
 	asm( 
 "	      00441bc0    push ebp"
@@ -5047,6 +5119,8 @@ void  CGameApp::DestroyControlDisplayWindow() {
 
 // FUNCTION: COPTER_D 0x00441cbe
 void  CGameApp::CreateCheckupWindow() {
+	class CheckupWindow* tempCheckupWindow;
+
 // LINE 858:
 	asm( 
 "	      00441cbe    push ebp"
@@ -5128,6 +5202,8 @@ void  CGameApp::CreateCheckupWindow() {
 
 // FUNCTION: COPTER_D 0x00441d86
 void  CGameApp::DestroyCheckupWindow(class CheckupWindow* windowToDestroy, int32_t bUseData) {
+	long[3] lSettings;
+
 // LINE 870:
 	asm( 
 "	      00441d86    push ebp"

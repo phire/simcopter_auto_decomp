@@ -622,6 +622,8 @@ void TextWindow::TextWindow(class MRect& rectNewWindow, int32_t nNewID, const cl
 
 // FUNCTION: COPTER_D 0x004ad01e
 void TextWindow::LoadStrings() {
+	int32_t nFullStringID;
+
 // LINE 149:
 	asm( 
 "	      004ad01e    push ebp"
@@ -1254,6 +1256,8 @@ void TextWindow::SetWindowTitle(const class basic_string<char>& sNewWindowTitle)
 
 // FUNCTION: COPTER_D 0x004ad9a4
 int32_t TextWindow::DrawSelf() {
+	class MRect rectText;
+
 // LINE 178:
 	asm( 
 "	      004ad9a4    push ebp"
@@ -1561,6 +1565,9 @@ void TextWindow::SetTextDrawStyle(unsigned long nNewTextDrawStyle) {
 
 // FUNCTION: COPTER_D 0x004adc18
 void TextWindow::FitWindowToText() {
+	long lHeight;
+	long lWidth;
+
 // LINE 223:
 	asm( 
 "	      004adc18    push ebp"
@@ -1726,6 +1733,12 @@ void TextWindow::SetTextColor(const struct SparkalColor& colorNewFont) {
 
 // FUNCTION: COPTER_D 0x004adda1
 int32_t TextWindow::ResizeWindowForExactLineHeights() {
+	long lVisibleLines;
+	long lOriginalHeight;
+	long lLineHeight;
+	long lTextWidth;
+	long lFixedHeight;
+
 // LINE 249:
 	asm( 
 "	      004adda1    push ebp"
@@ -2328,6 +2341,13 @@ int32_t ButtonWindow::GetImageCount() {
 
 // FUNCTION: COPTER_D 0x004ae416
 int32_t ButtonWindow::CreateImage(int32_t __formal) {
+	int32_t nReturnValue;
+	class MFont* fontText;
+	char[64] szTypeface;
+	int32_t nWindowWidth;
+	int32_t nWindowHeight;
+	class MRect rectCurrent;
+
 // LINE 348:
 	asm( 
 "	      004ae416    push ebp"
@@ -2972,6 +2992,9 @@ void ButtonWindow::Disable() {
 
 // FUNCTION: COPTER_D 0x004aeb6b
 int32_t ButtonWindow::ComposeSelf() {
+	int32_t nStartXPosition;
+	int32_t nWindowWidth;
+
 // LINE 436:
 	asm( 
 "	      004aeb6b    push ebp"
@@ -3966,6 +3989,9 @@ int32_t CheckBoxWindow::GetImageCount() {
 
 // FUNCTION: COPTER_D 0x004af5c1
 int32_t CheckBoxWindow::ComposeSelf() {
+	int32_t nStartXPosition;
+	int32_t nWindowWidth;
+
 // LINE 571:
 	asm( 
 "	      004af5c1    push ebp"
@@ -4756,6 +4782,9 @@ int32_t RadioButtonWindow::Initialize() {
 
 // FUNCTION: COPTER_D 0x004afd6a
 int32_t RadioButtonWindow::ComposeSelf() {
+	int32_t nStartXPosition;
+	int32_t nWindowWidth;
+
 // LINE 720:
 	asm( 
 "	      004afd6a    push ebp"
@@ -5839,6 +5868,8 @@ void  ButtonGroup::AddButton(class RadioButtonWindow* buttonNew) {
 
 // FUNCTION: COPTER_D 0x004b08b4
 void  ButtonGroup::RemoveButton(class RadioButtonWindow* buttonToRemove) {
+	class list<RadioButtonWindow *>::iterator iterator;
+
 // LINE 892:
 	asm( 
 "	      004b08b4    push ebp"
@@ -5970,6 +6001,8 @@ void  ButtonGroup::RemoveButton(class RadioButtonWindow* buttonToRemove) {
 
 // FUNCTION: COPTER_D 0x004b09ed
 void  ButtonGroup::SetSelection(class RadioButtonWindow* buttonToSelect) {
+	class list<RadioButtonWindow *>::iterator iterator;
+
 // LINE 919:
 	asm( 
 "	      004b09ed    push ebp"
@@ -6126,6 +6159,8 @@ void  ButtonGroup::SetSelection(class RadioButtonWindow* buttonToSelect) {
 
 // FUNCTION: COPTER_D 0x004b0b5b
 void  ButtonGroup::SetSelection(long lIDOfButtonToSelect) {
+	class list<RadioButtonWindow *>::iterator iterator;
+
 // LINE 949:
 	asm( 
 "	      004b0b5b    push ebp"
@@ -6285,6 +6320,9 @@ void  ButtonGroup::SetSelection(long lIDOfButtonToSelect) {
 
 // FUNCTION: COPTER_D 0x004b0cd4
 void  ButtonGroup::SetSelectionIndex(int32_t nIndexOfButtonToSelect) {
+	class list<RadioButtonWindow *>::iterator iterator;
+	int32_t i;
+
 // LINE 980:
 	asm( 
 "	      004b0cd4    push ebp"
@@ -6449,6 +6487,8 @@ void  ButtonGroup::SetSelectionIndex(int32_t nIndexOfButtonToSelect) {
 
 // FUNCTION: COPTER_D 0x004b0e4d
 int  ButtonGroup::GetSelection(class RadioButtonWindow*& radioButtonWindow) {
+	class list<RadioButtonWindow *>::iterator iterator;
+
 // LINE 1011:
 	asm( 
 "	      004b0e4d    push ebp"
@@ -6554,6 +6594,8 @@ int  ButtonGroup::GetSelection(class RadioButtonWindow*& radioButtonWindow) {
 
 // FUNCTION: COPTER_D 0x004b0f41
 int  ButtonGroup::GetSelection(long& lCurrentSelection) {
+	class RadioButtonWindow* tempRadioButtonWindow;
+
 // LINE 1032:
 	asm( 
 "	      004b0f41    push ebp"
@@ -6595,6 +6637,9 @@ int  ButtonGroup::GetSelection(long& lCurrentSelection) {
 
 // FUNCTION: COPTER_D 0x004b0f79
 int  ButtonGroup::GetSelectionIndex() {
+	class list<RadioButtonWindow *>::iterator iterator;
+	int32_t i;
+
 // LINE 1049:
 	asm( 
 "	      004b0f79    push ebp"
@@ -6700,6 +6745,8 @@ int  ButtonGroup::GetSelectionIndex() {
 
 // FUNCTION: COPTER_D 0x004b1067
 int  ButtonGroup::IsButtonInGroup(class RadioButtonWindow* buttonToFind) {
+	class list<RadioButtonWindow *>::iterator i;
+
 // LINE 1068:
 	asm( 
 "	      004b1067    push ebp"
@@ -7504,6 +7551,8 @@ void SliderWindow::~SliderWindow() {
 
 // FUNCTION: COPTER_D 0x004b1adc
 int32_t SliderWindow::Initialize() {
+	int32_t nReturnValue;
+
 // LINE 1166:
 	asm( 
 "	      004b1adc    push ebp"
@@ -7581,6 +7630,9 @@ int32_t SliderWindow::Initialize() {
 
 // FUNCTION: COPTER_D 0x004b1b65
 int32_t SliderWindow::CreateImage(int32_t __formal) {
+	int32_t nReturnValue;
+	class basic_string<char> sBackgroundPath;
+
 // LINE 1183:
 	asm( 
 "	      004b1b65    push ebp"
@@ -7969,6 +8021,11 @@ void SliderWindow::SetWidthAndHeight(int32_t nNewWidth, int32_t nNewHeight) {
 
 // FUNCTION: COPTER_D 0x004b1f45
 int32_t SliderWindow::ComposeSelf() {
+	long lXPosition;
+	long lYPosition;
+	long lThumbHeight;
+	long lThumbWidth;
+
 // LINE 1239:
 	asm( 
 "	      004b1f45    push ebp"
@@ -8290,6 +8347,8 @@ int32_t SliderWindow::ComposeSelf() {
 
 // FUNCTION: COPTER_D 0x004b2202
 long SliderWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButton) {
+	long lNewValue;
+
 // LINE 1292:
 	asm( 
 "	      004b2202    push ebp"
@@ -8355,6 +8414,8 @@ long SliderWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nBut
 
 // FUNCTION: COPTER_D 0x004b226b
 long SliderWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nButton) {
+	long lNewValue;
+
 // LINE 1307:
 	asm( 
 "	      004b226b    push ebp"
@@ -8424,6 +8485,8 @@ long SliderWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nButto
 
 // FUNCTION: COPTER_D 0x004b22ef
 long SliderWindow::DoCursorMove(long nCursorX, long nCursorY) {
+	long lNewValue;
+
 // LINE 1323:
 	asm( 
 "	      004b22ef    push ebp"
@@ -8484,6 +8547,10 @@ long SliderWindow::DoCursorMove(long nCursorX, long nCursorY) {
 
 // FUNCTION: COPTER_D 0x004b2361
 int32_t SliderWindow::ConvertCursorPositionToValue(long& lNewValue, long nCursorX, long nCursorY) {
+	long lPosition;
+	long lPositionScale;
+	long lValueScale;
+
 // LINE 1346:
 	asm( 
 "	      004b2361    push ebp"
@@ -8725,6 +8792,9 @@ void SliderWindow::CalculateAllMetrics() {
 
 // FUNCTION: COPTER_D 0x004b2560
 void SliderWindow::CalculateThumbPosition() {
+	long lPositionScale;
+	long lValueScale;
+
 // LINE 1400:
 	asm( 
 "	      004b2560    push ebp"
@@ -9760,6 +9830,8 @@ void ScrollBarWindow::ScrollBarWindow(class MRect& rectNewWindow, int32_t nNewID
 
 // FUNCTION: COPTER_D 0x004b300d
 int32_t ScrollBarWindow::Initialize() {
+	int32_t nReturnValue;
+
 // LINE 1581:
 	asm( 
 "	      004b300d    push ebp"
@@ -9856,6 +9928,13 @@ int32_t ScrollBarWindow::Initialize() {
 
 // FUNCTION: COPTER_D 0x004b30ae
 int32_t ScrollBarWindow::ComposeSelf() {
+	int32_t i;
+	long lThumbHeight;
+	int32_t nLineUpImageIndexToUse;
+	int32_t nLineDownImageIndexToUse;
+	long lThumbWidth;
+	long lPageDownButtonStartPosition;
+
 // LINE 1603:
 	asm( 
 "	      004b30ae    push ebp"
@@ -10633,6 +10712,8 @@ long ScrollBarWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long n
 
 // FUNCTION: COPTER_D 0x004b3850
 long ScrollBarWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nButton) {
+	long lNewValue;
+
 // LINE 1757:
 	asm( 
 "	      004b3850    push ebp"
@@ -10708,6 +10789,9 @@ long ScrollBarWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nBu
 
 // FUNCTION: COPTER_D 0x004b38e4
 long ScrollBarWindow::DoCursorMove(long nCursorX, long nCursorY) {
+	enum ScrollBarWindow::ScrollHitTestResult currentScrollHitTestResult;
+	long lNewValue;
+
 // LINE 1775:
 	asm( 
 "	      004b38e4    push ebp"
@@ -10814,6 +10898,9 @@ long ScrollBarWindow::DoCursorMove(long nCursorX, long nCursorY) {
 
 // FUNCTION: COPTER_D 0x004b39d0
 void ScrollBarWindow::MoveLinePrevious() {
+	long lValueDelta;
+	long lNewValue;
+
 // LINE 1800:
 	asm( 
 "	      004b39d0    push ebp"
@@ -10883,6 +10970,9 @@ void ScrollBarWindow::MoveLinePrevious() {
 
 // FUNCTION: COPTER_D 0x004b3a46
 void ScrollBarWindow::MoveLineNext() {
+	long lValueDelta;
+	long lNewValue;
+
 // LINE 1818:
 	asm( 
 "	      004b3a46    push ebp"
@@ -10953,6 +11043,9 @@ void ScrollBarWindow::MoveLineNext() {
 
 // FUNCTION: COPTER_D 0x004b3abe
 void ScrollBarWindow::MovePagePrevious() {
+	long lValueDelta;
+	long lNewValue;
+
 // LINE 1835:
 	asm( 
 "	      004b3abe    push ebp"
@@ -11022,6 +11115,9 @@ void ScrollBarWindow::MovePagePrevious() {
 
 // FUNCTION: COPTER_D 0x004b3b34
 void ScrollBarWindow::MovePageNext() {
+	long lValueDelta;
+	long lNewValue;
+
 // LINE 1852:
 	asm( 
 "	      004b3b34    push ebp"
@@ -11179,6 +11275,8 @@ void ScrollBarWindow::SetLineAndPageCount(long lNewLineCount, long lNewPageCount
 
 // FUNCTION: COPTER_D 0x004b3c48
 long ScrollBarWindow::GetCurrentLine() {
+	long lValueRange;
+
 // LINE 1892:
 	asm( 
 "	      004b3c48    push ebp"
@@ -11234,6 +11332,8 @@ long ScrollBarWindow::GetCurrentLine() {
 
 // FUNCTION: COPTER_D 0x004b3ca4
 long ScrollBarWindow::GetValueOfGivenLine(long lLine) {
+	long lValueRange;
+
 // LINE 1905:
 	asm( 
 "	      004b3ca4    push ebp"
@@ -11289,6 +11389,8 @@ long ScrollBarWindow::GetValueOfGivenLine(long lLine) {
 
 // FUNCTION: COPTER_D 0x004b3d00
 long ScrollBarWindow::GetCurrentPage() {
+	long lValueRange;
+
 // LINE 1919:
 	asm( 
 "	      004b3d00    push ebp"
@@ -11344,6 +11446,8 @@ long ScrollBarWindow::GetCurrentPage() {
 
 // FUNCTION: COPTER_D 0x004b3d5c
 long ScrollBarWindow::GetValueOfGivenPage(long lPage) {
+	long lValueRange;
+
 // LINE 1932:
 	asm( 
 "	      004b3d5c    push ebp"
@@ -11399,6 +11503,9 @@ long ScrollBarWindow::GetValueOfGivenPage(long lPage) {
 
 // FUNCTION: COPTER_D 0x004b3db8
 int32_t ScrollBarWindow::DoCursorPositionHitTest(enum ScrollBarWindow::ScrollHitTestResult& nNewScrollHitTestResult, long nCursorX, long nCursorY) {
+	int32_t nPrevNextButtonWidth;
+	int32_t nPrevNextButtonHeight;
+
 // LINE 1964:
 	asm( 
 "	      004b3db8    push ebp"
@@ -12483,6 +12590,10 @@ int32_t ListBoxWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, 
 
 // FUNCTION: COPTER_D 0x004b4867
 void ListBoxWindow::CalculateAllMetrics() {
+	int32_t nReturnValue;
+	long lHeight;
+	long lWidth;
+
 // LINE 2157:
 	asm( 
 "	      004b4867    push ebp"
@@ -12593,6 +12704,10 @@ void ListBoxWindow::SetFontCharacteristics(long lNewHeight, long lNewWidth, long
 
 // FUNCTION: COPTER_D 0x004b4921
 int32_t ListBoxWindow::ResizeWindowForExactLineHeights() {
+	long lNewVisibleLines;
+	long lOriginalHeight;
+	long lFixedHeight;
+
 // LINE 2188:
 	asm( 
 "	      004b4921    push ebp"
@@ -12826,6 +12941,13 @@ void ListBoxWindow::SetTextColor(const struct SparkalColor* colorNewFont, const 
 
 // FUNCTION: COPTER_D 0x004b4a9a
 int32_t ListBoxWindow::DrawSelf() {
+	int32_t j;
+	int32_t i;
+	class list<basic_string<char>>::iterator tempStringListIterator;
+	class MRect rectHighlighted;
+	long lRelativeCurrentSelection;
+	class MRect rectCurrentText;
+
 // LINE 2253:
 	asm( 
 "	      004b4a9a    push ebp"
@@ -13439,6 +13561,9 @@ int32_t ListBoxWindow::DrawSelf() {
 
 // FUNCTION: COPTER_D 0x004b520e
 int32_t ListBoxWindow::RemoveString(class basic_string<char>& sToRemove) {
+	long lIndex;
+	int32_t nReturnValue;
+
 // LINE 2338:
 	asm( 
 "	      004b520e    push ebp"
@@ -13493,6 +13618,9 @@ int32_t ListBoxWindow::RemoveString(class basic_string<char>& sToRemove) {
 
 // FUNCTION: COPTER_D 0x004b5262
 int32_t ListBoxWindow::RemoveString(long lIndex) {
+	long lOriginalLineCount;
+	long lNewSelection;
+
 // LINE 2354:
 	asm( 
 "	      004b5262    push ebp"
@@ -13770,6 +13898,9 @@ void ListBoxWindow::RemoveAllStrings() {
 
 // FUNCTION: COPTER_D 0x004b550e
 int32_t ListBoxWindow::InsertString(class basic_string<char>& sToAdd, long lIndex) {
+	long lOriginalLineCount;
+	long lNewSelection;
+
 // LINE 2396:
 	asm( 
 "	      004b550e    push ebp"
@@ -13894,6 +14025,9 @@ int32_t ListBoxWindow::InsertString(class basic_string<char>& sToAdd, long lInde
 
 // FUNCTION: COPTER_D 0x004b55ee
 int32_t ListBoxWindow::InsertString(long lResourceIndex, long lInsertPosition) {
+	class basic_string<char> sNew;
+	int32_t nFullStringID;
+
 // LINE 2430:
 	asm( 
 "	      004b55ee    push ebp"
@@ -14284,6 +14418,8 @@ int32_t ListBoxWindow::InsertString(long lResourceIndex, long lInsertPosition) {
 
 // FUNCTION: COPTER_D 0x004b5c06
 int32_t ListBoxWindow::ModifyString(long lIndex, class basic_string<char>& sNew) {
+	class basic_string<char>* sAddress;
+
 // LINE 2445:
 	asm( 
 "	      004b5c06    push ebp"
@@ -14467,6 +14603,10 @@ int32_t ListBoxWindow::ModifyString(long lIndex, class basic_string<char>& sNew)
 
 // FUNCTION: COPTER_D 0x004b5e21
 int32_t ListBoxWindow::GetStringAddressFromIndex(long lIndex, class basic_string<char>*& sFound) {
+	long lStringCount;
+	long i;
+	class list<basic_string<char>>::iterator tempStringListIterator;
+
 // LINE 2464:
 	asm( 
 "	      004b5e21    push ebp"
@@ -14568,6 +14708,8 @@ int32_t ListBoxWindow::GetStringAddressFromIndex(long lIndex, class basic_string
 
 // FUNCTION: COPTER_D 0x004b5edc
 int32_t ListBoxWindow::GetStringFromIndex(long lIndex, class basic_string<char>& sFound) {
+	class basic_string<char>* sAddress;
+
 // LINE 2495:
 	asm( 
 "	      004b5edc    push ebp"
@@ -14737,6 +14879,9 @@ int32_t ListBoxWindow::GetStringFromIndex(long lIndex, class basic_string<char>&
 
 // FUNCTION: COPTER_D 0x004b60de
 int32_t ListBoxWindow::GetIndexFromString(long& lIndex, class basic_string<char>& sFound) {
+	long i;
+	class list<basic_string<char>>::iterator tempStringListIterator;
+
 // LINE 2510:
 	asm( 
 "	      004b60de    push ebp"
@@ -14885,6 +15030,8 @@ int32_t ListBoxWindow::GetIndexFromString(long& lIndex, class basic_string<char>
 
 // FUNCTION: COPTER_D 0x004b6266
 int32_t ListBoxWindow::RemoveStringAtIndex(long lIndex) {
+	long lOriginalLineCount;
+
 // LINE 2535:
 	asm( 
 "	      004b6266    push ebp"
@@ -15176,6 +15323,8 @@ int32_t ListBoxWindow::RemoveStringAtIndex(long lIndex) {
 
 // FUNCTION: COPTER_D 0x004b6585
 int32_t ListBoxWindow::InsertStringAtIndex(long lIndex, class basic_string<char>& sToInsert) {
+	long lOriginalLineCount;
+
 // LINE 2580:
 	asm( 
 "	      004b6585    push ebp"
@@ -15697,6 +15846,9 @@ long ListBoxWindow::DoKeyDown(long lKey, char chModifiers) {
 
 // FUNCTION: COPTER_D 0x004b6b8e
 long ListBoxWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButton) {
+	long lAbsoluteSelectionIndex;
+	long lRelativeSelectionIndex;
+
 // LINE 2656:
 	asm( 
 "	      004b6b8e    push ebp"
@@ -16224,6 +16376,8 @@ int32_t ListBoxWindow::ScrollToStart() {
 
 // FUNCTION: COPTER_D 0x004b6f85
 int32_t ListBoxWindow::ScrollToEnd() {
+	long lCurrentLineCount;
+
 // LINE 2785:
 	asm( 
 "	      004b6f85    push ebp"
@@ -16294,6 +16448,8 @@ int32_t ListBoxWindow::ScrollToEnd() {
 
 // FUNCTION: COPTER_D 0x004b6ffd
 int32_t ListBoxWindow::MoveLineUp() {
+	long lCurrentLineCount;
+
 // LINE 2809:
 	asm( 
 "	      004b6ffd    push ebp"
@@ -16361,6 +16517,8 @@ int32_t ListBoxWindow::MoveLineUp() {
 
 // FUNCTION: COPTER_D 0x004b706a
 int32_t ListBoxWindow::MoveLineDown() {
+	long lCurrentLineCount;
+
 // LINE 2834:
 	asm( 
 "	      004b706a    push ebp"
@@ -16430,6 +16588,9 @@ int32_t ListBoxWindow::MoveLineDown() {
 
 // FUNCTION: COPTER_D 0x004b70da
 int32_t ListBoxWindow::ScrollPageUp() {
+	long lNewFirstVisibleLine;
+	long lCurrentLineCount;
+
 // LINE 2858:
 	asm( 
 "	      004b70da    push ebp"
@@ -16503,6 +16664,9 @@ int32_t ListBoxWindow::ScrollPageUp() {
 
 // FUNCTION: COPTER_D 0x004b714e
 int32_t ListBoxWindow::ScrollPageDown() {
+	long lNewFirstVisibleLine;
+	long lCurrentLineCount;
+
 // LINE 2878:
 	asm( 
 "	      004b714e    push ebp"
@@ -16590,6 +16754,9 @@ int32_t ListBoxWindow::ScrollPageDown() {
 
 // FUNCTION: COPTER_D 0x004b71f4
 int32_t ListBoxWindow::ScrollToFirstLetter(char chValue) {
+	int32_t i;
+	class list<basic_string<char>>::iterator tempStringListIterator;
+
 // LINE 2901:
 	asm( 
 "	      004b71f4    push ebp"
@@ -16818,6 +16985,9 @@ void ListBoxWindow::SetShouldSort() {
 
 // FUNCTION: COPTER_D 0x004b742a
 void ListBoxWindow::Sort() {
+	class basic_string<char> sSaved;
+	long lNewSelectionIndex;
+
 // LINE 2938:
 	asm( 
 "	      004b742a    push ebp"
@@ -17452,6 +17622,9 @@ void ListBoxWindow::SetScrollBarValue() {
 
 // FUNCTION: COPTER_D 0x004b7b61
 void ListBoxWindow::SetScrollBarSizes() {
+	int32_t nScrollBarYPosition;
+	int32_t nScrollBarXPosition;
+
 // LINE 3031:
 	asm( 
 "	      004b7b61    push ebp"
@@ -17575,6 +17748,8 @@ void PopupMenuWindow::PopupMenuWindow(class MRect& rectNewWindow, int32_t nNewID
 
 // FUNCTION: COPTER_D 0x004b7c65
 int32_t PopupMenuWindow::Initialize() {
+	int32_t nReturnValue;
+
 // LINE 3066:
 	asm( 
 "	      004b7c65    push ebp"
@@ -17956,6 +18131,8 @@ long PopupMenuWindow::DoCursorMove(long nCursorX, long nCursorY) {
 
 // FUNCTION: COPTER_D 0x004b7f18
 int32_t PopupMenuWindow::RemoveStringAtIndex(long lIndex) {
+	int32_t nReturnValue;
+
 // LINE 3147:
 	asm( 
 "	      004b7f18    push ebp"
@@ -18003,6 +18180,8 @@ int32_t PopupMenuWindow::RemoveStringAtIndex(long lIndex) {
 
 // FUNCTION: COPTER_D 0x004b7f59
 int32_t PopupMenuWindow::InsertStringAtIndex(long lIndex, class basic_string<char>& sToInsert) {
+	int32_t nReturnValue;
+
 // LINE 3160:
 	asm( 
 "	      004b7f59    push ebp"
@@ -18052,6 +18231,12 @@ int32_t PopupMenuWindow::InsertStringAtIndex(long lIndex, class basic_string<cha
 
 // FUNCTION: COPTER_D 0x004b7f9e
 void PopupMenuWindow::ResizeWindowToFitMenuItems() {
+	long lCurrentLongestLineWidth;
+	class list<basic_string<char>>::iterator tempStringListIterator;
+	long lCurrentLineWidth;
+	long lCurrentLineHeight;
+	class MRect rectNewWindow;
+
 // LINE 3173:
 	asm( 
 "	      004b7f9e    push ebp"

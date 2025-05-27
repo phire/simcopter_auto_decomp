@@ -1731,6 +1731,8 @@ int32_t RadioStation::IsPlaying() {
 
 // FUNCTION: COPTER_D 0x00434605
 int32_t RadioStation::DoState() {
+	unsigned long lElapsedTime;
+
 // LINE 184:
 	asm( 
 "	      00434605    push ebp"
@@ -2157,6 +2159,8 @@ int32_t RadioStation::DoState() {
 
 // FUNCTION: COPTER_D 0x00434a46
 int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycleType radioStationCycleType) {
+	class basic_string<char> sFullSelectionPath;
+
 // LINE 271:
 	asm( 
 "	      00434a46    push ebp"
@@ -2836,6 +2840,8 @@ int32_t RadioStation::StartPlayingNextSelectionOfGivenType(enum RadioStationCycl
 
 // FUNCTION: COPTER_D 0x004353e2
 void RadioStation::LoadAllPlaylists() {
+	class Directory tempDirectory;
+
 // LINE 317:
 	asm( 
 "	      004353e2    push ebp"
@@ -3241,6 +3247,9 @@ void RadioStation::LoadAllPlaylists() {
 
 // FUNCTION: COPTER_D 0x004359e2
 void RadioStation::ShufflePlaylist() {
+	class basic_string<char> sTempItem;
+	class basic_string<char> sCurrentLastItem;
+
 // LINE 349:
 	asm( 
 "	      004359e2    push ebp"
@@ -4150,6 +4159,11 @@ void RadioStation::ShufflePlaylist() {
 
 // FUNCTION: COPTER_D 0x0043678e
 void RadioStation::RandomizeStringList(class list<basic_string<char>>& stringList) {
+	class list<basic_string<char>>::iterator stringListIterator;
+	int32_t i;
+	int32_t iEnd;
+	class vector<basic_string<char>> stringArray;
+
 // LINE 411:
 	asm( 
 "	      0043678e    push ebp"
@@ -4481,6 +4495,9 @@ void RadioStation::RandomizeStringList(class list<basic_string<char>>& stringLis
 
 // FUNCTION: COPTER_D 0x00436bcd
 void RadioStation::ShuffleCycle() {
+	int32_t nTempCycleItem;
+	int32_t nCurrentCycleLastItem;
+
 // LINE 445:
 	asm( 
 "	      00436bcd    push ebp"
@@ -5178,6 +5195,9 @@ void RadioStation::MoveToNextPlaylistItem(enum RadioStationCycleType radioStatio
 
 // FUNCTION: COPTER_D 0x00437337
 int32_t RadioStation::ReadCallSignFromDisk() {
+	class Directory tempDirectory;
+	class DirectoryEntry* tempDirectoryEntry;
+
 // LINE 542:
 	asm( 
 "	      00437337    push ebp"
@@ -5462,6 +5482,10 @@ int32_t RadioStation::ReadCallSignFromDisk() {
 
 // FUNCTION: COPTER_D 0x004376dc
 int32_t RadioStation::DetectRadioStationType() {
+	class basic_string<char> sStationDirectoryParent;
+	int32_t i;
+	class basic_string<char> sStationDirectoryName;
+
 // LINE 562:
 	asm( 
 "	      004376dc    push ebp"
@@ -6127,6 +6151,9 @@ void  Radio::GetPreferences(struct RadioPreferences& currentRadioPreferences) {
 
 // FUNCTION: COPTER_D 0x00437db7
 int  Radio::GetPreferences() {
+	struct RadioPreferences tempRadioPreferences;
+	char * chPrefData;
+
 // LINE 675:
 	asm( 
 "	      00437db7    push ebp"
@@ -6219,6 +6246,8 @@ int  Radio::GetPreferences() {
 
 // FUNCTION: COPTER_D 0x00437e67
 int  Radio::SavePreferences() {
+	struct RadioPreferences tempRadioPreferences;
+
 // LINE 703:
 	asm( 
 "	      00437e67    push ebp"
@@ -6831,6 +6860,9 @@ int  Radio::SetStation(int32_t nStationIndex) {
 
 // FUNCTION: COPTER_D 0x004382ca
 int  Radio::SetStation(enum RadioStationType radioStationType) {
+	int32_t i;
+	int32_t iEnd;
+
 // LINE 846:
 	asm( 
 "	      004382ca    push ebp"
@@ -6913,6 +6945,9 @@ int  Radio::SetStation(enum RadioStationType radioStationType) {
 
 // FUNCTION: COPTER_D 0x00438379
 int  Radio::IsStationTypeAvailable(enum RadioStationType radioStationType) {
+	int32_t i;
+	int32_t iEnd;
+
 // LINE 860:
 	asm( 
 "	      00438379    push ebp"
@@ -7080,6 +7115,8 @@ int  Radio::DoState() {
 
 // FUNCTION: COPTER_D 0x004384b6
 int  Radio::StationDirectoryNameIsValid(class basic_string<char>& sStationDirectory) {
+	int32_t i;
+
 // LINE 895:
 	asm( 
 "	      004384b6    push ebp"
@@ -7227,6 +7264,17 @@ int  Radio::StationDirectoryNameIsValid(class basic_string<char>& sStationDirect
 
 // FUNCTION: COPTER_D 0x0043867d
 int  Radio::SetupStations() {
+	class basic_string<char> sStationDirectory;
+	class basic_string<char> sScratch;
+	class list<basic_string<char>> radioStationStringList;
+	class Directory tempDirectory;
+	class basic_string<char> sCurrentLanguage;
+	int32_t nStationCount;
+	class basic_string<char> sCommercialDirectory;
+	class RadioStation tempRadioStation;
+	class basic_string<char> sRadioDirectory;
+	class list<basic_string<char>>::iterator radioStationStringListIterator;
+
 // LINE 914:
 	asm( 
 "	      0043867d    push ebp"

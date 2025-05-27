@@ -83,6 +83,10 @@ void HeliPassengerClearChanged(struct tagHeliPassengerData* heliPassengerData) {
 
 // FUNCTION: COPTER_D 0x004f9bfd
 void HeliPassengerInit(struct tagHeliPassengerData* heliPassengerData, int32_t nHeliType) {
+	long lSeatsTotal;
+	long lRowWidth;
+	int32_t i;
+
 // LINE 54:
 	asm( 
 "	      004f9bfd    push ebp"
@@ -237,6 +241,8 @@ int32_t HeliPassengerCanAdd(struct tagHeliPassengerData* heliPassengerData, stru
 
 // FUNCTION: COPTER_D 0x004f9d16
 int32_t HeliPassengerAdd(struct tagHeliPassengerData* heliPassengerData, struct tagPassengerInfo* passenger) {
+	int32_t i;
+
 // LINE 108:
 	asm( 
 "	      004f9d16    push ebp"
@@ -369,6 +375,8 @@ int32_t HeliPassengerAdd(struct tagHeliPassengerData* heliPassengerData, struct 
 
 // FUNCTION: COPTER_D 0x004f9e04
 int32_t HeliPassengerGetIndexInHeli(struct tagHeliPassengerData* heliPassengerData, long id) {
+	int32_t i;
+
 // LINE 144:
 	asm( 
 "	      004f9e04    push ebp"
@@ -422,6 +430,8 @@ int32_t HeliPassengerGetIndexInHeli(struct tagHeliPassengerData* heliPassengerDa
 
 // FUNCTION: COPTER_D 0x004f9e5b
 int32_t HeliPassengerSetExpression(struct tagHeliPassengerData* heliPassengerData, long id, int32_t expression) {
+	int32_t i;
+
 // LINE 159:
 	asm( 
 "	      004f9e5b    push ebp"
@@ -477,6 +487,8 @@ int32_t HeliPassengerSetExpression(struct tagHeliPassengerData* heliPassengerDat
 
 // FUNCTION: COPTER_D 0x004f9eaa
 int32_t HeliPassengerRemove(struct tagHeliPassengerData* heliPassengerData, long id) {
+	int32_t i;
+
 // LINE 173:
 	asm( 
 "	      004f9eaa    push ebp"
@@ -615,6 +627,10 @@ long HeliPassengerCountFreeSeats(struct tagHeliPassengerData* heliPassengerData)
 
 // FUNCTION: COPTER_D 0x004f9f8a
 void HeliPassengerFitToSeats(struct tagHeliPassengerData* heliPassengerData) {
+	int32_t i;
+	int32_t nSeat;
+	int32_t[16] bSeats;
+
 // LINE 215:
 	asm( 
 "	      004f9f8a    push ebp"
@@ -700,6 +716,8 @@ void HeliPassengerFitToSeats(struct tagHeliPassengerData* heliPassengerData) {
 
 // FUNCTION: COPTER_D 0x004fa033
 int32_t FindFreeSeatForPassenger(int32_t nPassengerSeatUsage, int32_t nSeatsTotal, int32_t nRowWidth, int32_t * bSeats) {
+	int32_t j;
+
 // LINE 242:
 	asm( 
 "	      004fa033    push ebp"

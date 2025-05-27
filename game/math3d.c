@@ -7,6 +7,10 @@
 // Contribution: 1:00141f80-00142684 Module: 152, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00542f80
 int32_t Magnitude(struct Point3d* V) {
+	double k;
+	double j;
+	double i;
+
 // LINE 29:
 	asm( 
 "	      00542f80    push ebp"
@@ -69,6 +73,10 @@ int32_t Magnitude(struct Point3d* V) {
 
 // FUNCTION: COPTER_D 0x00542ff4
 int32_t Distance(struct Point3d* p1, struct Point3d* p2) {
+	double k;
+	double j;
+	double i;
+
 // LINE 51:
 	asm( 
 "	      00542ff4    push ebp"
@@ -144,6 +152,11 @@ int32_t Distance(struct Point3d* p1, struct Point3d* p2) {
 
 // FUNCTION: COPTER_D 0x0054308e
 int32_t Normalize(struct Point3d* V) {
+	double k;
+	double j;
+	double i;
+	double r;
+
 // LINE 71:
 	asm( 
 "	      0054308e    push ebp"
@@ -336,6 +349,10 @@ void CreatePlane(struct Plane* plane, struct Point3d* V, struct Point3d* p) {
 
 // FUNCTION: COPTER_D 0x005431fe
 int32_t SideOfPlane(struct Point3d* V, struct Point3d* p, struct Point3d* q) {
+	struct Plane plane;
+	struct Point3d d;
+	int32_t s;
+
 // LINE 128:
 	asm( 
 "	      005431fe    push ebp"
@@ -421,6 +438,8 @@ int32_t SideOfPlane(struct Point3d* V, struct Point3d* p, struct Point3d* q) {
 
 // FUNCTION: COPTER_D 0x00543292
 void CreateVelocity(struct Point3d* p1, struct Point3d* p2, struct Point3d* V, int32_t t) {
+	int32_t i;
+
 // LINE 157:
 	asm( 
 "	      00543292    push ebp"
@@ -527,6 +546,8 @@ int32_t SameSigns(int32_t s1, int32_t s2) {
 
 // FUNCTION: COPTER_D 0x00543328
 int32_t VectorBounds(struct Point3d* V, int32_t m) {
+	int32_t r;
+
 // LINE 201:
 	asm( 
 "	      00543328    push ebp"
@@ -615,6 +636,8 @@ int32_t VectorBounds(struct Point3d* V, int32_t m) {
 
 // FUNCTION: COPTER_D 0x005433be
 void Apply_Force(struct Point3d* F, struct mv* p, int32_t t) {
+	struct Point3d A;
+
 // LINE 227:
 	asm( 
 "	      005433be    push ebp"
@@ -705,6 +728,11 @@ void Apply_Force(struct Point3d* F, struct mv* p, int32_t t) {
 
 // FUNCTION: COPTER_D 0x00543455
 void Apply_Friction(int32_t F, struct mv* p, int32_t t) {
+	int32_t j;
+	int32_t v;
+	int32_t f;
+	int32_t a;
+
 // LINE 261:
 	asm( 
 "	      00543455    push ebp"
@@ -832,6 +860,9 @@ void Apply_Friction(int32_t F, struct mv* p, int32_t t) {
 
 // FUNCTION: COPTER_D 0x00543535
 int32_t Apply_Force1D(int32_t F, int32_t M, int32_t V, int32_t t, int32_t Vmax) {
+	int32_t nv;
+	int32_t A;
+
 // LINE 299:
 	asm( 
 "	      00543535    push ebp"
@@ -897,6 +928,11 @@ int32_t Apply_Force1D(int32_t F, int32_t M, int32_t V, int32_t t, int32_t Vmax) 
 
 // FUNCTION: COPTER_D 0x005435a4
 int32_t Apply_Friction1D(int32_t F, int32_t M, int32_t V, int32_t t) {
+	int32_t absV;
+	int32_t j;
+	int32_t vf;
+	int32_t A;
+
 // LINE 332:
 	asm( 
 "	      005435a4    push ebp"

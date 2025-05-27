@@ -102,6 +102,10 @@ void PoliceCarClass::~PoliceCarClass() {
 
 // FUNCTION: COPTER_D 0x00536e98
 class PoliceCarClass* PoliceCarClass::CreateInstance(int32_t instanceID) {
+	int32_t object;
+	class PoliceCarClass* youveWonABrandNewCar;
+	char * objectMemory;
+
 // LINE 118:
 	asm( 
 "	      00536e98    push ebp"
@@ -353,6 +357,13 @@ unsigned char PoliceCarClass::Dispatch(enum EmergencyType responseType, enum Eme
 
 // FUNCTION: COPTER_D 0x005370b3
 void PoliceCarClass::ItterateFSM() {
+	struct _GridCoordinates oldemergencyloc;
+	struct _CELL_INFO* cptr;
+	struct _MISSION_PARMS mp;
+	struct Point3d vec;
+	int32_t dist;
+	struct _GridCoordinates badGuyLoc;
+
 // LINE 240:
 	asm( 
 "	      005370b3    push ebp"
@@ -1414,6 +1425,8 @@ void PoliceCarClass::ItterateFSM() {
 
 // FUNCTION: COPTER_D 0x00537a2c
 enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal* pGoal) {
+	struct _GridCoordinates startLoc;
+
 // LINE 540:
 	asm( 
 "	      00537a2c    push ebp"
@@ -1811,6 +1824,9 @@ enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal* pGoal) {
 
 // FUNCTION: COPTER_D 0x00537e2f
 int32_t PoliceCarClass::ChangeEmergencyLocationToSpotlightLocation() {
+	struct _GridCoordinates loc;
+	class SpiralScan scan;
+
 // LINE 642:
 	asm( 
 "	      00537e2f    push ebp"
@@ -1986,6 +2002,10 @@ int32_t PoliceCarClass::AtScene() {
 
 // FUNCTION: COPTER_D 0x00537fd9
 struct _DYOBJ_INST* PoliceCarClass::ScanForBadGuys(struct _GridCoordinates& scanLoc) {
+	struct _CELL_INFO* cptr;
+	struct _DYOBJ_INST* dyptr;
+	class SpiralScan spiral;
+
 // LINE 686:
 	asm( 
 "	      00537fd9    push ebp"
@@ -2248,6 +2268,9 @@ void PoliceCarClass::SetSaveData(struct _AUTO_LOAD_SAVE* sd) {
 
 // FUNCTION: COPTER_D 0x0053822e
 void PoliceCarClass::LoadSaveData(struct _AUTO_LOAD_SAVE* sd) {
+	unsigned char yindex;
+	struct _GridCoordinates badGuyLoc;
+
 // LINE 760:
 	asm( 
 "	      0053822e    push ebp"

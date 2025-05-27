@@ -306,6 +306,11 @@ void cBList<class cCopterAnim>::Add(class cCopterAnim *) cBList<cCopterAnim>::Ad
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055ed00
 void cBList<class cCopterAnim>::LoadAll(void) cBList<cCopterAnim>::LoadAll() {
+	unsigned short fileOpened;
+	void * __ptr32 h;
+	short count;
+	short numThings;
+
 // LINE 180:
 	asm( 
 "	      0055ed00    push ebp"

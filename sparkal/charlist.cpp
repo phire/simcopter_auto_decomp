@@ -108,6 +108,8 @@ void CharList::CharList() {
 
 // FUNCTION: COPTER_D 0x0043d476
 void CharList::~CharList() {
+	class CharData* nextCharData;
+
 // LINE 32:
 	asm( 
 "	      0043d476    push ebp"
@@ -177,6 +179,8 @@ void CharList::~CharList() {
 
 // FUNCTION: COPTER_D 0x0043d4eb
 void CharList::AddItem(unsigned char chNewValue) {
+	class CharData* tempCharData;
+
 // LINE 49:
 	asm( 
 "	      0043d4eb    push ebp"
@@ -422,6 +426,8 @@ void CharList::DeleteItem(class CharData* charDataToDelete) {
 
 // FUNCTION: COPTER_D 0x0043d67f
 void CharList::DeleteItem(unsigned char chValue) {
+	class CharData* charDataToDelete;
+
 // LINE 100:
 	asm( 
 "	      0043d67f    push ebp"
@@ -469,6 +475,8 @@ void CharList::DeleteItem(unsigned char chValue) {
 
 // FUNCTION: COPTER_D 0x0043d6c1
 void CharList::DeleteItem(int32_t nIndex) {
+	class CharData* charDataToDelete;
+
 // LINE 110:
 	asm( 
 "	      0043d6c1    push ebp"
@@ -516,6 +524,9 @@ void CharList::DeleteItem(int32_t nIndex) {
 
 // FUNCTION: COPTER_D 0x0043d703
 void CharList::DeleteAllItems() {
+	int32_t i;
+	int32_t iEnd;
+
 // LINE 120:
 	asm( 
 "	      0043d703    push ebp"
@@ -562,6 +573,9 @@ void CharList::DeleteAllItems() {
 
 // FUNCTION: COPTER_D 0x0043d74d
 class CharData* CharList::FindCharDataByIndex(int32_t nIndex) {
+	int32_t nPresentIndex;
+	class CharData* nextCharData;
+
 // LINE 128:
 	asm( 
 "	      0043d74d    push ebp"
@@ -635,6 +649,8 @@ class CharData* CharList::FindCharDataByIndex(int32_t nIndex) {
 
 // FUNCTION: COPTER_D 0x0043d7ce
 class CharData* CharList::FindCharDataByValue(unsigned char chValue) {
+	class CharData* nextCharData;
+
 // LINE 149:
 	asm( 
 "	      0043d7ce    push ebp"

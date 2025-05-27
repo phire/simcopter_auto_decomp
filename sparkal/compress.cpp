@@ -7,6 +7,11 @@
 // Contribution: 1:000a9800-000aa528 Module: 7, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004aa800
 void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
+	int32_t InputMode;
+	class ifstream InputFile;
+	char[13] FileName;
+	class ostrstream NameOut;
+
 // LINE 47:
 	asm( 
 "	      004aa800    push ebp"
@@ -866,6 +871,10 @@ void ConvertCompressedByteOrdering(struct RLEHeader* pCompressedImage) {
 
 // FUNCTION: COPTER_D 0x004ab073
 void RLEDecompressUnclippedX(unsigned char * pDestBuffer, long DestStride, unsigned char * pSource, short Height, unsigned char TransparentColor) {
+	unsigned char * pDestinationEdge;
+	unsigned char * pDest;
+	unsigned char * pNextSourceLine;
+
 // LINE 322:
 	asm( 
 "	      004ab073    push ebp"
@@ -1125,6 +1134,11 @@ void RLEDecompressUnclippedX(unsigned char * pDestBuffer, long DestStride, unsig
 
 // FUNCTION: COPTER_D 0x004ab1f7
 void RLEDecompressClippedX(unsigned char * pDestBuffer, long DestStride, unsigned char * pSource, short LeftClip, short Width, short Height, unsigned char TransparentColor) {
+	short PixelCount;
+	unsigned char * pDestinationEdge;
+	unsigned char * pDest;
+	unsigned char * pNextSourceLine;
+
 // LINE 404:
 	asm( 
 "	      004ab1f7    push ebp"

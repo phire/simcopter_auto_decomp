@@ -530,6 +530,9 @@ void UserMenuWindow::UserMenuWindow(struct UserMenuWindowDescription& newUserMen
 
 // FUNCTION: COPTER_D 0x0049b678
 void UserMenuWindow::~UserMenuWindow() {
+	int32_t i;
+	int32_t iEnd;
+
 // LINE 65:
 	asm( 
 "	      0049b678    push ebp"
@@ -681,6 +684,11 @@ void UserMenuWindow::~UserMenuWindow() {
 
 // FUNCTION: COPTER_D 0x0049b858
 int32_t UserMenuWindow::Initialize() {
+	class MRect rectTextWindow;
+	class TextWindow* tempTextWindow;
+	int32_t i;
+	char[260] szFullSoundPath;
+
 // LINE 81:
 	asm( 
 "	      0049b858    push ebp"
@@ -1380,6 +1388,9 @@ int32_t UserMenuWindow::Initialize() {
 
 // FUNCTION: COPTER_D 0x0049c3ad
 int32_t UserMenuWindow::DrawSelf() {
+	int32_t i;
+	int32_t iEnd;
+
 // LINE 158:
 	asm( 
 "	      0049c3ad    push ebp"
@@ -1630,6 +1641,9 @@ void UserMenuWindow::DrawSelectionIndicators() {
 
 // FUNCTION: COPTER_D 0x0049c5ab
 int32_t UserMenuWindow::DoCursorHitTest(int32_t& nHitIndex, long nCursorX, long nCursorY) {
+	int32_t i;
+	int32_t iEnd;
+
 // LINE 231:
 	asm( 
 "	      0049c5ab    push ebp"
@@ -1774,6 +1788,9 @@ int32_t UserMenuWindow::GetPositionOfNthItem(int32_t nIndex, class MPoint& ptPos
 
 // FUNCTION: COPTER_D 0x0049c6f4
 long UserMenuWindow::DoCharacter(long lCharacter) {
+	int32_t i;
+	int32_t iEnd;
+
 // LINE 263:
 	asm( 
 "	      0049c6f4    push ebp"
@@ -2225,6 +2242,9 @@ long UserMenuWindow::DoKeyDown(long lKey, char chModifiers) {
 
 // FUNCTION: COPTER_D 0x0049cb8d
 long UserMenuWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButton) {
+	int32_t nIndex;
+	int32_t bExecute;
+
 // LINE 327:
 	asm( 
 "	      0049cb8d    push ebp"
@@ -2305,6 +2325,8 @@ long UserMenuWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nB
 
 // FUNCTION: COPTER_D 0x0049cc1a
 long UserMenuWindow::DoCursorMove(long nCursorX, long nCursorY) {
+	int32_t nIndex;
+
 // LINE 346:
 	asm( 
 "	      0049cc1a    push ebp"
@@ -2356,6 +2378,8 @@ long UserMenuWindow::DoCursorMove(long nCursorX, long nCursorY) {
 
 // FUNCTION: COPTER_D 0x0049cc6b
 int32_t UserMenuWindow::ExecuteSelection(int32_t nIndex) {
+	long lValue;
+
 // LINE 359:
 	asm( 
 "	      0049cc6b    push ebp"
@@ -2605,6 +2629,9 @@ int32_t CopterMainMenu::Initialize() {
 
 // FUNCTION: COPTER_D 0x0049ce9b
 int32_t CopterMainMenu::CreateImage(int32_t __formal) {
+	class basic_string<char> sImagePath;
+	class basic_string<char> sImageFile;
+
 // LINE 425:
 	asm( 
 "	      0049ce9b    push ebp"
@@ -3132,6 +3159,12 @@ int32_t CopterMainMenu::DrawSelf() {
 
 // FUNCTION: COPTER_D 0x0049d4f4
 void CopterMainMenu::DrawRatchetAndLights() {
+	class MPoint[5] ptLightsDestination;
+	class MRect[5] rectLightsSource;
+	int32_t i;
+	class MRect[5] rectRatchetsSource;
+	class MPoint[5] ptRatchetsDestination;
+
 // LINE 472:
 	asm( 
 "	      0049d4f4    push ebp"
@@ -3799,6 +3832,9 @@ int32_t CopterPlayMenu::Initialize() {
 
 // FUNCTION: COPTER_D 0x0049dac8
 int32_t CopterPlayMenu::CreateImage(int32_t __formal) {
+	class basic_string<char> sImagePath;
+	class basic_string<char> sImageFile;
+
 // LINE 630:
 	asm( 
 "	      0049dac8    push ebp"
@@ -4338,6 +4374,9 @@ int32_t CopterPlayMenu::DrawSelf() {
 
 // FUNCTION: COPTER_D 0x0049e146
 void CopterPlayMenu::DrawRatchet() {
+	class MPoint ptDestinationRatchet;
+	class MPoint ptDestinationBackground;
+
 // LINE 677:
 	asm( 
 "	      0049e146    push ebp"

@@ -66,6 +66,13 @@ void SetSRandSeed(unsigned long theSeed) {
 
 // FUNCTION: COPTER_D 0x0055d545
 unsigned short RRand(unsigned short lim) {
+	unsigned long myRandom4;
+	unsigned long myRandom3;
+	unsigned long myRandom2;
+	unsigned long myRandom1;
+	unsigned long myRandom5;
+	unsigned long myRandom0;
+
 // LINE 55:
 	asm( 
 "	      0055d545    push ebp"
@@ -241,6 +248,8 @@ unsigned short RRand(unsigned short lim) {
 
 // FUNCTION: COPTER_D 0x0055d6a3
 unsigned short GetNextRandomNumber() {
+	unsigned short temp;
+
 // LINE 104:
 	asm( 
 "	      0055d6a3    push ebp"
@@ -306,6 +315,8 @@ unsigned short GetNextRandomNumber() {
 
 // FUNCTION: COPTER_D 0x0055d717
 unsigned short SRand(unsigned short lim) {
+	unsigned short next;
+
 // LINE 118:
 	asm( 
 "	      0055d717    push ebp"
@@ -502,6 +513,9 @@ unsigned short SRand256() {
 
 // FUNCTION: COPTER_D 0x0055d824
 unsigned short SGIRand(unsigned short limit) {
+	unsigned short z;
+	unsigned short x;
+
 // LINE 132:
 	asm( 
 "	      0055d824    push ebp"
@@ -562,6 +576,9 @@ unsigned short SGIRand(unsigned short limit) {
 
 // FUNCTION: COPTER_D 0x0055d882
 unsigned short SGRand(unsigned short limit) {
+	unsigned short z;
+	unsigned short x;
+
 // LINE 147:
 	asm( 
 "	      0055d882    push ebp"
@@ -622,6 +639,9 @@ unsigned short SGRand(unsigned short limit) {
 
 // FUNCTION: COPTER_D 0x0055d8e0
 short SGSRand(unsigned short limit) {
+	short z;
+	short x;
+
 // LINE 162:
 	asm( 
 "	      0055d8e0    push ebp"

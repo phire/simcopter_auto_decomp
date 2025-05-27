@@ -7,6 +7,16 @@
 // Contribution: 1:00117f90-0011d769 Module: 168, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00518f90
 void S3ObjInit() {
+	char[80] msg;
+	int32_t obj;
+	long j;
+	long i;
+	struct VRFaceInfo finfo;
+	long objcount;
+	int32_t face;
+	struct VRBmpHdr* bhdr;
+	struct VRObjInfo oinfo;
+
 // LINE 379:
 	asm( 
 "	      00518f90    push ebp"
@@ -1276,6 +1286,14 @@ void S3ObjLinkLowRes() {
 
 // FUNCTION: COPTER_D 0x00519aa4
 void S3DrawBlinkingLight(struct VRBlit* blit) {
+	long winheight;
+	int32_t ctr;
+	int32_t y;
+	int32_t x;
+	long bufwidth;
+	long winwidth;
+	char * ptr;
+
 // LINE 852:
 	asm( 
 "	      00519aa4    push ebp"
@@ -1542,6 +1560,29 @@ void S3DrawBlinkingLight(struct VRBlit* blit) {
 
 // FUNCTION: COPTER_D 0x00519c86
 void S3DrawWaterPoint(struct VRBlit* blit) {
+	long winheight;
+	long num;
+	int32_t z;
+	char * tablerow;
+	int32_t tablerows;
+	long i;
+	int32_t y;
+	long num3;
+	int32_t x;
+	int32_t dim;
+	long num2;
+	int32_t minval;
+	int32_t maxval;
+	char * table;
+	long ploty;
+	char color;
+	long bufwidth;
+	long winwidth;
+	int32_t numvals;
+	long plotx;
+	char * ptr;
+	int32_t scale;
+
 // LINE 951:
 	asm( 
 "	      00519c86    push ebp"
@@ -12507,6 +12548,8 @@ struct _LZ_INFO* S3ObjGetLandingZone(long tile) {
 
 // FUNCTION: COPTER_D 0x0051da96
 void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DYOBJ_INST* dyhittee, long mission_id, long xtra_msg) {
+	long hittee_type;
+
 // LINE 3703:
 	asm( 
 "	      0051da96    push ebp"
@@ -14195,6 +14238,10 @@ void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 
 // FUNCTION: COPTER_D 0x0051e69a
 void S3ObjSetFlatShading() {
+	int32_t obj;
+	long i;
+	long objcount;
+
 // LINE 4145:
 	asm( 
 "	      0051e69a    push ebp"

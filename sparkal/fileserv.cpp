@@ -53,6 +53,12 @@ int32_t GetPathForFile(int32_t nType, int32_t nLanguage, char * szFile, char * s
 
 // FUNCTION: COPTER_D 0x00491755
 int32_t FileServices::Initialize() {
+	int32_t nMessageBoxReturnValue;
+	class basic_string<char> sErrorText;
+	class basic_string<char> sErrorTitle;
+	int32_t bRemotePathFound;
+	int32_t nFullStringID;
+
 // LINE 38:
 	asm( 
 "	      00491755    push ebp"
@@ -500,6 +506,13 @@ int32_t FileServices::Initialize() {
 
 // FUNCTION: COPTER_D 0x00491d1c
 int32_t FileServices::FindRemotePath() {
+	long lDriveStringLength;
+	uint32_t uiDriveType;
+	char * szDriveStrings;
+	int32_t nReturnValue;
+	int32_t i;
+	int32_t iEnd;
+
 // LINE 88:
 	asm( 
 "	      00491d1c    push ebp"
@@ -1025,6 +1038,9 @@ int32_t FileServices::FindRemotePath() {
 
 // FUNCTION: COPTER_D 0x004923c6
 int32_t FileServices::ValidateRemotePath() {
+	class PFile tempPFile;
+	class basic_string<char> sTempValidationFilePath;
+
 // LINE 138:
 	asm( 
 "	      004923c6    push ebp"
@@ -1390,6 +1406,12 @@ int32_t FileServices::ValidateRemotePath() {
 
 // FUNCTION: COPTER_D 0x0049299a
 void FileServices::RefreshLocalPathCache(class basic_string<char>& sDirectoryBase) {
+	class Directory tempDirectory;
+	class list<basic_string<char>> tempStringListDirectories;
+	class basic_string<char> sTempDirectory;
+	class list<basic_string<char>>::iterator tempStringListIterator;
+	class list<basic_string<char>> tempStringListFiles;
+
 // LINE 164:
 	asm( 
 "	      0049299a    push ebp"
@@ -1764,6 +1786,8 @@ int32_t FileServices::CopyFileFromRemoteToLocal(char * szPartialPath) {
 
 // FUNCTION: COPTER_D 0x00492e50
 int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * szFile, char * szPath) {
+	long lTotalStringLength;
+
 // LINE 215:
 	asm( 
 "	      00492e50    push ebp"
@@ -4173,6 +4197,10 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 
 // FUNCTION: COPTER_D 0x00494f82
 int32_t FileServices::GetPathForFileString(int32_t nType, int32_t nLanguage, class basic_string<char>& sFile, class basic_string<char>& sPath) {
+	char * szFile;
+	int32_t nReturnValue;
+	char[260] szPath;
+
 // LINE 391:
 	asm( 
 "	      00494f82    push ebp"

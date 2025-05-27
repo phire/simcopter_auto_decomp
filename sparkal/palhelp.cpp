@@ -120,6 +120,11 @@ void SparkalPalette::~SparkalPalette() {
 
 // FUNCTION: COPTER_D 0x00496483
 void SparkalPalette::GetNearestIndex(struct SparkalColor& colorValue, int32_t& nIndex) {
+	int32_t nCurrentBestMatch;
+	int32_t i;
+	unsigned long lCurrentDistance;
+	unsigned long lClosestDistance;
+
 // LINE 64:
 	asm( 
 "	      00496483    push ebp"
@@ -259,6 +264,15 @@ void SparkalPalette::GetNearestIndex(struct SparkalColor& colorValue, int32_t& n
 
 // FUNCTION: COPTER_D 0x004965b0
 void SparkalPalette::FadeToWhite(long lFadeTime) {
+	const unsigned long lDelayTime;
+	class MTimer timerFade;
+	struct tagPALETTEENTRY[256] palEntries;
+	int32_t j;
+	int32_t i;
+	int32_t nOriginalPriority;
+	int32_t nMultiplier;
+	int32_t nDivisor;
+
 // LINE 93:
 	asm( 
 "	      004965b0    push ebp"
@@ -601,6 +615,15 @@ void SparkalPalette::FadeToWhite(long lFadeTime) {
 
 // FUNCTION: COPTER_D 0x00496a14
 void SparkalPalette::FadeToBlack(long lFadeTime) {
+	const unsigned long lDelayTime;
+	class MTimer timerFade;
+	struct tagPALETTEENTRY[256] palEntries;
+	int32_t j;
+	int32_t i;
+	int32_t nOriginalPriority;
+	int32_t nMultiplier;
+	int32_t nDivisor;
+
 // LINE 180:
 	asm( 
 "	      00496a14    push ebp"
@@ -934,6 +957,16 @@ void SparkalPalette::FadeToBlack(long lFadeTime) {
 
 // FUNCTION: COPTER_D 0x00496e54
 void SparkalPalette::FadeToRGB(struct SparkalColor& colorToFadeTo, long lFadeTime) {
+	const unsigned long lDelayTime;
+	class MTimer timerFade;
+	struct tagPALETTEENTRY[256] palEntries;
+	int32_t nDifference;
+	int32_t j;
+	int32_t i;
+	int32_t nOriginalPriority;
+	int32_t nMultiplier;
+	int32_t nDivisor;
+
 // LINE 269:
 	asm( 
 "	      00496e54    push ebp"
@@ -1340,6 +1373,17 @@ void SparkalPalette::FadeToPalette(struct SparkalColor colorStart, long lFadeTim
 
 // FUNCTION: COPTER_D 0x0049731a
 void SparkalPalette::FadeToPalette(struct SparkalColor colorStart, struct SparkalColor* paletteDestination, long lFadeTime, long lSteps) {
+	const unsigned long lDelayTime;
+	class MTimer timerFade;
+	int32_t nDifference;
+	struct SparkalPalette::FadeToPalette::TempPalette* paletteArray;
+	int32_t j;
+	int32_t i;
+	const int32_t nLastStepIndex;
+	int32_t nOriginalPriority;
+	int32_t nMultiplier;
+	int32_t nDivisor;
+
 // LINE 377:
 	asm( 
 "	      0049731a    push ebp"
@@ -1859,6 +1903,9 @@ void SparkalPalette::FadeToPalette(struct SparkalColor colorStart, struct Sparka
 
 // FUNCTION: COPTER_D 0x00497844
 void SparkalPalette::SetSystemPaletteEntriesToRGB(struct SparkalColor& colorToSet) {
+	struct tagPALETTEENTRY[256] palEntries;
+	int32_t i;
+
 // LINE 462:
 	asm( 
 "	      00497844    push ebp"
@@ -1942,6 +1989,10 @@ void SparkalPalette::SetSystemPaletteEntriesToRGB(struct SparkalColor& colorToSe
 
 // FUNCTION: COPTER_D 0x004978e9
 void SparkalPalette::ImplementNewPalette(struct SparkalColor* pNewColors) {
+	long hResult;
+	struct tagPALETTEENTRY[256] palEntries;
+	int32_t i;
+
 // LINE 493:
 	asm( 
 "	      004978e9    push ebp"
@@ -2100,6 +2151,12 @@ void CopterSparkalPalette::CopterSparkalPalette(struct SparkalColor* pNewColors,
 
 // FUNCTION: COPTER_D 0x00497a32
 void ClearWindowsSystemPalette() {
+	void * __ptr32 ScreenDC;
+	void * __ptr32 OldPalette;
+	void * __ptr32 BlackPalette;
+	struct ClearWindowsSystemPalette::__unnamed Palette;
+	int32_t Counter;
+
 // LINE 560:
 	asm( 
 "	      00497a32    push ebp"

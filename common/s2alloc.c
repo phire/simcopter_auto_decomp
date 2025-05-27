@@ -7,6 +7,8 @@
 // Contribution: 1:000ca2b0-000ca878 Module: 91, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004cb2b0
 struct alloc_handle_t* S2AllocInit(int32_t index, unsigned long poolsize) {
+	struct alloc_handle_t* old;
+
 // LINE 267:
 	asm( 
 "	      004cb2b0    push ebp"
@@ -82,6 +84,9 @@ struct alloc_handle_t* S2AllocInit(int32_t index, unsigned long poolsize) {
 
 // FUNCTION: COPTER_D 0x004cb34d
 struct alloc_hdr_s* S2AllocHdr(unsigned long size) {
+	char * block;
+	struct alloc_hdr_s* hdr;
+
 // LINE 234:
 	asm( 
 "	      004cb34d    push ebp"
@@ -180,6 +185,9 @@ struct alloc_hdr_s* S2AllocHdr(unsigned long size) {
 
 // FUNCTION: COPTER_D 0x004cb401
 int32_t S2AllocPool(unsigned long poolsize) {
+	int32_t index;
+	struct alloc_handle_t* lastPool;
+
 // LINE 291:
 	asm( 
 "	      004cb401    push ebp"
@@ -274,6 +282,9 @@ int32_t S2AllocPool(unsigned long poolsize) {
 
 // FUNCTION: COPTER_D 0x004cb4ac
 char * S2Alloc(int32_t index, int32_t size) {
+	struct alloc_hdr_s* hdr;
+	char * ptr;
+
 // LINE 330:
 	asm( 
 "	      004cb4ac    push ebp"
@@ -448,6 +459,8 @@ char * S2AllocMem1(int32_t index, char * name, int32_t size, unsigned short prot
 
 // FUNCTION: COPTER_D 0x004cb5cf
 char * S2AllocMem(int32_t index, char * name, int32_t size) {
+	char * ptr;
+
 // LINE 408:
 	asm( 
 "	      004cb5cf    push ebp"
@@ -484,6 +497,8 @@ char * S2AllocMem(int32_t index, char * name, int32_t size) {
 
 // FUNCTION: COPTER_D 0x004cb5f8
 struct alloc_handle_t* S2AllocSetPool(int32_t index, struct alloc_handle_t* newPtr) {
+	struct alloc_handle_t* old;
+
 // LINE 437:
 	asm( 
 "	      004cb5f8    push ebp"
@@ -522,6 +537,8 @@ struct alloc_handle_t* S2AllocSetPool(int32_t index, struct alloc_handle_t* newP
 
 // FUNCTION: COPTER_D 0x004cb628
 void S2AllocReset(int32_t index) {
+	struct alloc_hdr_s* hdr;
+
 // LINE 456:
 	asm( 
 "	      004cb628    push ebp"
@@ -606,6 +623,9 @@ void S2AllocReset(int32_t index) {
 
 // FUNCTION: COPTER_D 0x004cb6c3
 void S2AllocFreePool(int32_t index) {
+	struct alloc_hdr_s* hdr;
+	struct alloc_hdr_s* next_hdr;
+
 // LINE 489:
 	asm( 
 "	      004cb6c3    push ebp"
@@ -764,6 +784,8 @@ void * __ptr32 S2AllocAligned() {
 
 // FUNCTION: COPTER_D 0x004cb7ba
 void * __ptr32 DOSAllocAlignedHack() {
+	void * __ptr32 retaddr;
+
 // LINE 749:
 	asm( 
 "	      004cb7ba    push ebp"

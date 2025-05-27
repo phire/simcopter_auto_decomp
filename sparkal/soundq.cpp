@@ -1362,6 +1362,8 @@ void SoundQueue::DeInitialize(int32_t bStopCurrentlyPlayingSound) {
 
 // FUNCTION: COPTER_D 0x0042151a
 void SoundQueue::ClearQueue(int32_t bStopCurrentlyPlayingSound) {
+	struct SoundQueueItem* currentSoundQueueItem;
+
 // LINE 196:
 	asm( 
 "	      0042151a    push ebp"
@@ -2039,6 +2041,8 @@ void SoundQueue::EndPauseCallback() {
 
 // FUNCTION: COPTER_D 0x00421bf9
 void SoundQueue::PlayNextSoundInQueue() {
+	struct SoundQueueItem* currentSoundQueueItem;
+
 // LINE 299:
 	asm( 
 "	      00421bf9    push ebp"
@@ -2189,6 +2193,8 @@ void SoundQueue::PlayNextSoundInQueue() {
 
 // FUNCTION: COPTER_D 0x00421d19
 void SoundQueue::RemoveNextSoundInQueue() {
+	struct SoundQueueItem* currentSoundQueueItem;
+
 // LINE 333:
 	asm( 
 "	      00421d19    push ebp"
@@ -2451,6 +2457,8 @@ void SoundQueue::StaticSoundQueueCompletionCallback(long lData) {
 
 // FUNCTION: COPTER_D 0x00421f5c
 void SoundQueue::SoundQueueCompletionCallback() {
+	struct SoundQueueItem* currentSoundQueueItem;
+
 // LINE 384:
 	asm( 
 "	      00421f5c    push ebp"
@@ -2608,6 +2616,9 @@ void SoundQueue::SoundQueueWaitTimeCallback() {
 
 // FUNCTION: COPTER_D 0x00422056
 int32_t SoundQueue::GetMutex(unsigned long lTimeoutValue) {
+	const class SoundQueue& soundQueueReference;
+	class MTimer timeoutTimer;
+
 // LINE 428:
 	asm( 
 "	      00422056    push ebp"

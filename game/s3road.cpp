@@ -7,6 +7,15 @@
 // Contribution: 1:00137470-00138bf2 Module: 157, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00538470
 void S3RoadDataInit() {
+	int32_t dir;
+	double straightLegSize;
+	double turnRadius;
+	int32_t incline;
+	int32_t leg;
+	double turnAngle;
+	double DiagShortDist;
+	double DiagLongDist;
+
 // LINE 43:
 	asm( 
 "	      00538470    push ebp"
@@ -1254,6 +1263,9 @@ void S3RoadDataInit() {
 
 // FUNCTION: COPTER_D 0x00539260
 int32_t IsThisAnIntersection(long x, long y) {
+	unsigned short t2;
+	unsigned short t;
+
 // LINE 419:
 	asm( 
 "	      00539260    push ebp"
@@ -1587,6 +1599,9 @@ int32_t IsThisAnIntersection(long x, long y) {
 
 // FUNCTION: COPTER_D 0x0053964a
 int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum DirectionTypes CurDir, enum DirectionTypes TestDir) {
+	enum DirectionTypes fromConnections;
+	enum DirectionTypes toConnections;
+
 // LINE 492:
 	asm( 
 "	      0053964a    push ebp"

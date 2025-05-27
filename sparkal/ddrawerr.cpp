@@ -7,6 +7,8 @@
 // Contribution: 1:0002c420-0002cf5b Module: 65, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0042d420
 void DirectDrawError::DisplayError(char * szErrorDescription) {
+	char[256] szFullErrorDescription;
+
 // LINE 10:
 	asm( 
 "	      0042d420    push ebp"
@@ -838,6 +840,8 @@ void DirectDrawError::MakeErrorString(char * szFullErrorDescription, char * szEr
 
 // FUNCTION: COPTER_D 0x0042dc69
 void DirectSoundError::DisplayError(char * szErrorDescription) {
+	char[256] szFullErrorDescription;
+
 // LINE 190:
 	asm( 
 "	      0042dc69    push ebp"

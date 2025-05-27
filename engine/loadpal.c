@@ -7,6 +7,8 @@
 // Contribution: 1:000d10d0-000d1175 Module: 148, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004d20d0
 struct VRResource* LoadPalette() {
+	struct CMAP_Resource* res;
+
 // LINE 53:
 	asm( 
 "	      004d20d0    push ebp"
@@ -87,6 +89,8 @@ struct VRResource* LoadPalette() {
 
 // FUNCTION: COPTER_D 0x004d2157
 char * VRGetPalFromResource(struct VRResource* res) {
+	struct CMAP_Resource* cmp;
+
 // LINE 110:
 	asm( 
 "	      004d2157    push ebp"

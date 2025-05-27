@@ -32,6 +32,23 @@ int32_t DllMain(void * __ptr32 hDLL, unsigned long dwReason, void * __ptr32 lpRe
 
 // FUNCTION: COPTER_D 0x00447b77
 struct FREQ_INFO cpuspeed(int32_t clocks) {
+	int32_t tries;
+	unsigned long cycles;
+	union _LARGE_INTEGER t1;
+	unsigned long freq3;
+	union _LARGE_INTEGER t0;
+	unsigned long freq2;
+	unsigned long total;
+	union _LARGE_INTEGER count_freq;
+	unsigned long freq;
+	struct FREQ_INFO cpu_speed;
+	unsigned short processor;
+	unsigned long features;
+	unsigned long stamp0;
+	int32_t manual;
+	unsigned long ticks;
+	unsigned long stamp1;
+
 // LINE 88:
 	asm( 
 "	      00447b77    push ebp"
@@ -628,6 +645,13 @@ struct FREQ_INFO cpuspeed(int32_t clocks) {
 
 // FUNCTION: COPTER_D 0x00447fce
 unsigned long NormFreq(unsigned short processor, unsigned long freq) {
+	unsigned short[12] iPentiumSpeeds;
+	unsigned short * speeds;
+	unsigned short[7] i486Speeds;
+	unsigned short[6] i386Speeds;
+	unsigned short[10] iPentiumProSpeeds;
+	int32_t ptr;
+
 // LINE 428:
 	asm( 
 "	      00447fce    push ebp"

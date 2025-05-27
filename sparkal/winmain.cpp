@@ -7,6 +7,9 @@
 // Contribution: 1:0001e870-0001eac1 Module: 73, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0041f870
 int32_t WinMain(void * __ptr32 hInstance, void * __ptr32 __formal, char * CommandLine, int32_t __formal) {
+	struct tagMSG Message;
+	union _LARGE_INTEGER TimerFrequency;
+
 // LINE 28:
 	asm( 
 "	      0041f870    push ebp"

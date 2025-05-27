@@ -44,6 +44,8 @@ int32_t GetAllDisplayModes() {
 
 // FUNCTION: COPTER_D 0x0048b140
 int32_t IsModeAvailable(long lWidth, long lHeight, long lBPP) {
+	int32_t i;
+
 // LINE 56:
 	asm( 
 "	      0048b140    push ebp"
@@ -106,6 +108,10 @@ int32_t IsModeAvailable(long lWidth, long lHeight, long lBPP) {
 
 // FUNCTION: COPTER_D 0x0048b1c4
 void GetCurrentScreenMode(struct tagMode* modeCurrent, int32_t __formal) {
+	void * __ptr32 hdcScreen;
+	int32_t nPlanes;
+	int32_t nBitsPerPixel;
+
 // LINE 78:
 	asm( 
 "	      0048b1c4    push ebp"

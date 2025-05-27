@@ -169,6 +169,8 @@ class ResFile* Behavior::GetGlobFile() {
 
 // FUNCTION: COPTER_D 0x00560385
 void Behavior::StdTreeSwizzle(struct Behavior::Tree* tree, long size, void (*)(short, struct Behavior::NodeParameter*) paramswizzler) {
+	short count;
+
 // LINE 48:
 	asm( 
 "	      00560385    push ebp"
@@ -240,6 +242,8 @@ void Behavior::StdTreeSwizzle(struct Behavior::Tree* tree, long size, void (*)(s
 
 // FUNCTION: COPTER_D 0x0056040a
 const struct Behavior::Node* Behavior::GetNodeRef(short treeID, short nodeNum) {
+	struct Behavior::Tree* tree;
+
 // LINE 57:
 	asm( 
 "	      0056040a    push ebp"
@@ -406,6 +410,8 @@ void Behavior::GetNodeText(struct Behavior::Node* node, unsigned char * str) {
 
 // FUNCTION: COPTER_D 0x005605c4
 void Behavior::GetNodeText(short treeID, short nodeNum, unsigned char * TheStr) {
+	struct Behavior::Node node;
+
 // LINE 131:
 	asm( 
 "	      005605c4    push ebp"
@@ -489,6 +495,9 @@ short Behavior::CountPrimitives() {
 
 // FUNCTION: COPTER_D 0x0056063d
 void Behavior::GetTreeName(short treeID, unsigned char * name) {
+	class ResFile* pFile;
+	void * __ptr32 tree;
+
 // LINE 145:
 	asm( 
 "	      0056063d    push ebp"
@@ -655,6 +664,8 @@ class ResFile* Behavior::GetResFile(short treeID) {
 
 // FUNCTION: COPTER_D 0x0056077d
 short Behavior::GetBaseID(short treeclass) {
+	short baseID;
+
 // LINE 189:
 	asm( 
 "	      0056077d    push ebp"
@@ -738,6 +749,8 @@ short Behavior::GetBaseID(short treeclass) {
 
 // FUNCTION: COPTER_D 0x005607fb
 short Behavior::GetMaxID(short treeclass) {
+	short maxID;
+
 // LINE 208:
 	asm( 
 "	      005607fb    push ebp"
@@ -903,6 +916,8 @@ short Behavior::GetTreeClass(short treeID) {
 
 // FUNCTION: COPTER_D 0x00560924
 void Behavior::GetClassNameA(short cl, unsigned char * name) {
+	char * str;
+
 // LINE 239:
 	asm( 
 "	      00560924    push ebp"

@@ -688,6 +688,8 @@ void cGZXParamBitstream<t_alloc,t_free>::Mark() {
 // Function in module: scxload.obj
 // FUNCTION: COPTER_D 0x004ce000
 void cGZXParamBitstream<t_alloc,t_free>::FreeAll() {
+	int32_t loop;
+
 // LINE 365:
 	asm( 
 "	      004ce000    push ebp"
@@ -794,6 +796,8 @@ void cGZXParamBitstream<t_alloc,t_free>::FreeAll() {
 // Function in module: scxload.obj
 // FUNCTION: COPTER_D 0x004ce100
 unsigned long cGZXParamBitstream<t_alloc,t_free>::Read(unsigned char * buffer, unsigned long nBytes) {
+	unsigned long i;
+
 // LINE 284:
 	asm( 
 "	      004ce100    push ebp"
@@ -904,6 +908,8 @@ unsigned long cGZXParamBitstream<t_alloc,t_free>::Read(unsigned char * buffer, u
 // Function in module: scxload.obj
 // FUNCTION: COPTER_D 0x004ce200
 unsigned long cGZXParamBitstream<t_alloc,t_free>::Write(unsigned char * buffer, unsigned long nBytes) {
+	unsigned long i;
+
 // LINE 304:
 	asm( 
 "	      004ce200    push ebp"
@@ -1753,6 +1759,9 @@ unsigned long cGZXParamBitstream<t_alloc,t_free>::Write(unsigned char * buffer, 
 // Function in module: scxload.obj
 // FUNCTION: COPTER_D 0x004cef40
 long cGZXParamBitstream<t_alloc,t_free>::Size() {
+	long retVal;
+	int32_t loop;
+
 // LINE 354:
 	asm( 
 "	      004cef40    push ebp"

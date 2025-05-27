@@ -42,6 +42,8 @@ void S3SwitchToProperSkyType() {
 
 // FUNCTION: COPTER_D 0x004611bf
 int32_t IsActualTimeDaytime() {
+	class MTime tempTime;
+
 // LINE 98:
 	asm( 
 "	      004611bf    push ebp"
@@ -89,6 +91,9 @@ int32_t IsActualTimeDaytime() {
 
 // FUNCTION: COPTER_D 0x00461208
 void  CGameApp::GetPreferences() {
+	char * chPrefData;
+	char[260] szPath;
+
 // LINE 111:
 	asm( 
 "	      00461208    push ebp"
@@ -254,6 +259,9 @@ void  CGameApp::GetPreferences() {
 
 // FUNCTION: COPTER_D 0x004613cb
 void  CGameApp::GetSoundPreferences() {
+	char * chPrefData;
+	struct SoundPreferences tempSoundPreferences;
+
 // LINE 143:
 	asm( 
 "	      004613cb    push ebp"
@@ -402,6 +410,10 @@ void  CGameApp::SetSoundPreferences(struct SoundPreferences& newSoundPreferences
 
 // FUNCTION: COPTER_D 0x004614de
 void  CGameApp::SavePreferences() {
+	long lCurrentJoystickCount;
+	int32_t i;
+	char[64] szJoystickName;
+
 // LINE 187:
 	asm( 
 "	      004614de    push ebp"
@@ -552,6 +564,8 @@ void  CGameApp::SavePreferences() {
 
 // FUNCTION: COPTER_D 0x00461629
 unsigned long  CGameApp::TickGame() {
+	long lElapsedMilliSeconds;
+
 // LINE 218:
 	asm( 
 "	      00461629    push ebp"
@@ -760,6 +774,8 @@ unsigned long  CGameApp::TickGame() {
 
 // FUNCTION: COPTER_D 0x004618a3
 void  CGameApp::ComposeFrame() {
+	int32_t nCurrentMode;
+
 // LINE 269:
 	asm( 
 "	      004618a3    push ebp"
@@ -1271,6 +1287,8 @@ void  CGameApp::ComposeFrame() {
 
 // FUNCTION: COPTER_D 0x00461eb9
 void  CGameApp::ComposePlayFrame() {
+	long lBuildingID;
+
 // LINE 400:
 	asm( 
 "	      00461eb9    push ebp"
@@ -1767,6 +1785,8 @@ void  CGameApp::ComposePlayFrame() {
 
 // FUNCTION: COPTER_D 0x004624de
 void  CGameApp::DoRecurringTasks(long lMilliSecondsSinceLastCall) {
+	int32_t i;
+
 // LINE 484:
 	asm( 
 "	      004624de    push ebp"
@@ -3622,6 +3642,9 @@ int  CGameApp::ExitMode(int32_t nMode) {
 
 // FUNCTION: COPTER_D 0x00463bf9
 void  CGameApp::DestroyAllModes() {
+	int32_t nCurrentMode;
+	class list<CopterGameMode>::iterator i;
+
 // LINE 748:
 	asm( 
 "	      00463bf9    push ebp"
@@ -4509,6 +4532,9 @@ void  CGameApp::ProcessCommand(int32_t nCommand) {
 
 // FUNCTION: COPTER_D 0x0046444d
 void  CGameApp::DoKeyDown(long lKey, char chModifiers) {
+	int32_t bPushCommand;
+	int32_t nCommand;
+
 // LINE 964:
 	asm( 
 "	      0046444d    push ebp"
@@ -5516,6 +5542,8 @@ void  CGameApp::ProcessSystemCloseRequest() {
 
 // FUNCTION: COPTER_D 0x00464db3
 int  CGameApp::CheckForWarpToCareerLevel() {
+	int32_t nNewLevel;
+
 // LINE 1144:
 	asm( 
 "	      00464db3    push ebp"
@@ -5838,6 +5866,11 @@ int  CGameApp::GraduateUserFromAllCareerLevels() {
 
 // FUNCTION: COPTER_D 0x00465081
 void  CGameApp::NotifyUserOfGraduation() {
+	class DigitalSound* tempNotificationSound;
+	char[128] szString;
+	char[260] szFullPath;
+	int32_t nFullStringID;
+
 // LINE 1216:
 	asm( 
 "	      00465081    push ebp"
@@ -6122,6 +6155,9 @@ void  CGameApp::NotifyUserOfGraduation() {
 
 // FUNCTION: COPTER_D 0x004654a4
 int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
+	unsigned long nResult;
+	int32_t nCurrentGameMode;
+
 // LINE 1241:
 	asm( 
 "	      004654a4    push ebp"
@@ -7229,6 +7265,14 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 
 // FUNCTION: COPTER_D 0x00465edb
 int  CGameApp::DoMainMenuMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
+	char[256] szSplitPathFilename;
+	char[256] szSplitPathDirectory;
+	int32_t nCurrentGameMode;
+	char * chPrefData;
+	char[256] szSplitPathFullDirectory;
+	char[3] szSplitPathDrive;
+	char[256] szSplitPathExtension;
+
 // LINE 1461:
 	asm( 
 "	      00465edb    push ebp"
@@ -7654,6 +7698,9 @@ int  CGameApp::DoMainMenuMessage(class GraphicWindow* gwSource, long lWindowID, 
 
 // FUNCTION: COPTER_D 0x004662fa
 int  CGameApp::DoPlayMenuMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
+	unsigned long nResult;
+	int32_t nCurrentGameMode;
+
 // LINE 1573:
 	asm( 
 "	      004662fa    push ebp"
@@ -7995,6 +8042,10 @@ int  CGameApp::DoPlayMenuMessage(class GraphicWindow* gwSource, long lWindowID, 
 
 // FUNCTION: COPTER_D 0x004665ad
 int  CGameApp::StartVideoForCitySelection(long lCurrentCitySelection) {
+	char[256] szFullCityVideoFileName;
+	char[260] szFullCityVideoFilePath;
+	float fScaleFactor;
+
 // LINE 1658:
 	asm( 
 "	      004665ad    push ebp"
@@ -8210,6 +8261,8 @@ int  CGameApp::StartVideoForCitySelection(long lCurrentCitySelection) {
 
 // FUNCTION: COPTER_D 0x004668ad
 void  CGameApp::ComposeCareerCityVideoFrame() {
+	unsigned long nErrorCode;
+
 // LINE 1692:
 	asm( 
 "	      004668ad    push ebp"
@@ -8292,6 +8345,8 @@ void  CGameApp::ComposeCareerCityVideoFrame() {
 
 // FUNCTION: COPTER_D 0x00466968
 int  CGameApp::StartVideoForMainMenu() {
+	char[260] szMainMenuVideoPath;
+
 // LINE 1714:
 	asm( 
 "	      00466968    push ebp"
@@ -8483,6 +8538,8 @@ void  CGameApp::EndVideoForMainMenu() {
 
 // FUNCTION: COPTER_D 0x00466b94
 void  CGameApp::ComposeMainMenuVideoFrame() {
+	unsigned long nErrorCode;
+
 // LINE 1749:
 	asm( 
 "	      00466b94    push ebp"

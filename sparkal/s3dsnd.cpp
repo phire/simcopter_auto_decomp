@@ -62,6 +62,11 @@ int32_t SoundChangeNotificationSink::Initialize() {
 
 // FUNCTION: COPTER_D 0x00441ee5
 void SoundChangeNotificationSink::DoNotificationChange(long lPreferenceType, class PreferenceManager* thePreferenceManager) {
+	long lNewVolume;
+	char * chPrefsData;
+	struct SoundPreferences* currentSoundPreferences;
+	int32_t i;
+
 // LINE 78:
 	asm( 
 "	      00441ee5    push ebp"
@@ -161,6 +166,8 @@ void SoundChangeNotificationSink::DoNotificationChange(long lPreferenceType, cla
 
 // FUNCTION: COPTER_D 0x00441fb5
 int32_t S3DSInit(void * __ptr32 hWnd) {
+	int32_t i;
+
 // LINE 124:
 	asm( 
 "	      00441fb5    push ebp"
@@ -207,6 +214,9 @@ int32_t S3DSInit(void * __ptr32 hWnd) {
 
 // FUNCTION: COPTER_D 0x00442002
 int32_t S3LoadSounds() {
+	int32_t count;
+	char[260] szFullSoundPath;
+
 // LINE 146:
 	asm( 
 "	      00442002    push ebp"
@@ -4827,6 +4837,9 @@ int32_t S3LoadSounds() {
 
 // FUNCTION: COPTER_D 0x00446a6b
 void S3DSSetFile(int32_t nSoundIndex, char * szSoundFile) {
+	class DigitalSound* theSound;
+	char[260] szFullSoundPath;
+
 // LINE 466:
 	asm( 
 "	      00446a6b    push ebp"
@@ -4982,6 +4995,14 @@ void S3DSSetFile(int32_t nSoundIndex, char * szSoundFile) {
 
 // FUNCTION: COPTER_D 0x00446cc2
 int32_t S3DSPlay(int32_t nSoundIndex, struct Point3d* loc, int32_t nFlags) {
+	long lNewVolume;
+	long midparam;
+	int32_t nReturnValue;
+	struct Point3d viewvect;
+	int32_t fpDistance;
+	int32_t lastparam;
+	class DigitalSound* theSound;
+
 // LINE 491:
 	asm( 
 "	      00446cc2    push ebp"
@@ -5207,6 +5228,8 @@ void S3DSStopAllSounds() {
 
 // FUNCTION: COPTER_D 0x00446e3c
 void S3SoundAdjFreq(int32_t nSoundIndex, long lFrequencyAdjustment) {
+	class DigitalSound* theSound;
+
 // LINE 584:
 	asm( 
 "	      00446e3c    push ebp"
@@ -5360,6 +5383,13 @@ int32_t S3SoundIsPlaying(int32_t nSoundIndex) {
 
 // FUNCTION: COPTER_D 0x00446f43
 void S3SoundSetPosition(int32_t nSoundIndex, struct Point3d* loc) {
+	long lVolume;
+	long lPan;
+	struct Point3d positionRelative;
+	int32_t fpDistance;
+	class DigitalSound* theSound;
+	struct Point3d positionTemp;
+
 // LINE 674:
 	asm( 
 "	      00446f43    push ebp"
@@ -5547,6 +5577,9 @@ void S3SoundSetPosition(int32_t nSoundIndex, struct Point3d* loc) {
 
 // FUNCTION: COPTER_D 0x004470fa
 void S3SoundAddToQueue(int32_t nQueue, int32_t nSoundIndex, int32_t nDelayBeforePlay) {
+	long lNewVolume;
+	class DigitalSound* theSound;
+
 // LINE 736:
 	asm( 
 "	      004470fa    push ebp"

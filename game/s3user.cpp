@@ -303,6 +303,8 @@ struct tagCitySettings* GetCurrentCitySettings() {
 
 // FUNCTION: COPTER_D 0x004290ab
 void SetCurrentCitySettings(struct tagCitySettings* newCitySettings) {
+	struct tagCitySettings* tempCitySettings;
+
 // LINE 156:
 	asm( 
 "	      004290ab    push ebp"
@@ -663,6 +665,11 @@ void InitializeAllUserInfo() {
 
 // FUNCTION: COPTER_D 0x004292ec
 void CareerCityTweakInit() {
+	const int32_t nPvals;
+	int32_t *[9] pvals;
+	int32_t i;
+	struct tagCareerCityInfo* currentCareerCityInfo;
+
 // LINE 267:
 	asm( 
 "	      004292ec    push ebp"
@@ -774,6 +781,8 @@ void CareerCityTweakInit() {
 
 // FUNCTION: COPTER_D 0x0042939b
 void SetUpNewCareerCity(long lNewCareerCityIndex) {
+	char[256] szFullCityFileName;
+
 // LINE 300:
 	asm( 
 "	      0042939b    push ebp"
@@ -945,6 +954,8 @@ void SetUpNewCareerCity(long lNewCareerCityIndex) {
 
 // FUNCTION: COPTER_D 0x00429582
 void SetUpNewUserCity(char * szUserCityPath) {
+	char * chPrefData;
+
 // LINE 345:
 	asm( 
 "	      00429582    push ebp"
@@ -1118,6 +1129,9 @@ void SetUpNewUserCity(char * szUserCityPath) {
 
 // FUNCTION: COPTER_D 0x00429760
 void MoveToNextCareerCity(long lNewCareerCityIndex) {
+	char[256] szFullCityFileName;
+	long lOriginalIndex;
+
 // LINE 391:
 	asm( 
 "	      00429760    push ebp"
@@ -1246,6 +1260,8 @@ void MoveToNextCareerCity(long lNewCareerCityIndex) {
 
 // FUNCTION: COPTER_D 0x004298d7
 void InitializeAllCareerCitiesInfo() {
+	int32_t i;
+
 // LINE 418:
 	asm( 
 "	      004298d7    push ebp"

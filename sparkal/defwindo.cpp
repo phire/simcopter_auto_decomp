@@ -7,6 +7,8 @@
 // Contribution: 1:00031260-000314d4 Module: 61, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00432260
 class ICommander* CSparkalWindow::SetCommander(class ICommander* pCommander) {
+	class ICommander* ReturnCommander;
+
 // LINE 18:
 	asm( 
 "	      00432260    push ebp"
@@ -86,6 +88,8 @@ class ICommander* CSparkalWindow::SetCommander(class ICommander* pCommander) {
 
 // FUNCTION: COPTER_D 0x004322d7
 class ScreenBuffer* CSparkalWindow::SetBackBuffer(class ScreenBuffer* pBuffer) {
+	class ScreenBuffer* ReturnBuffer;
+
 // LINE 41:
 	asm( 
 "	      004322d7    push ebp"
@@ -221,6 +225,8 @@ unsigned long CSparkalWindow::SwapBuffer() {
 
 // FUNCTION: COPTER_D 0x0043238c
 unsigned long CSparkalWindow::SwapBuffer(long Left, long Top, long Right, long Bottom) {
+	unsigned long Error;
+
 // LINE 80:
 	asm( 
 "	      0043238c    push ebp"

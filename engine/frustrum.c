@@ -7,6 +7,12 @@
 // Contribution: 1:000d56c0-000d57db Module: 143, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004d66c0
 void VRFrustSetNormals() {
+	int32_t swide;
+	int32_t shigh;
+	int32_t disty;
+	int32_t distx;
+	struct Point3d vect;
+
 // LINE 49:
 	asm( 
 "	      004d66c0    push ebp"

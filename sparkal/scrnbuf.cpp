@@ -7,6 +7,8 @@
 // Contribution: 1:0009d450-0009e705 Module: 12, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0049e450
 void ScreenBuffer::ScreenBuffer() {
+	struct SparkalRect rectWindowTemp;
+
 // LINE 24:
 	asm( 
 "	      0049e450    push ebp"
@@ -118,6 +120,8 @@ void ScreenBuffer::ScreenBuffer() {
 
 // FUNCTION: COPTER_D 0x0049e534
 void ScreenBuffer::ScreenBuffer(class CSparkalWindow* pNewWindow, long nNewWidth, long nNewHeight, struct SparkalColor* pColors, int32_t nNewBackBuffers, enum tagModeType nNewCurrentModeType, int32_t bNewUsingFlipping) {
+	struct SparkalRect rectWindowTemp;
+
 // LINE 62:
 	asm( 
 "	      0049e534    push ebp"
@@ -314,6 +318,8 @@ void ScreenBuffer::~ScreenBuffer() {
 
 // FUNCTION: COPTER_D 0x0049e69e
 int32_t ScreenBuffer::CreateSurfaces() {
+	long hResult;
+
 // LINE 127:
 	asm( 
 "	      0049e69e    push ebp"
@@ -892,6 +898,9 @@ int32_t ScreenBuffer::DeleteSurfaces() {
 
 // FUNCTION: COPTER_D 0x0049eb58
 int32_t ScreenBuffer::ClearSurfaces(int32_t nClearPaletteIndex) {
+	long hResult;
+	struct _DDBLTFX ddbltfx;
+
 // LINE 281:
 	asm( 
 "	      0049eb58    push ebp"
@@ -1215,6 +1224,8 @@ int32_t ScreenBuffer::ClearSurfaces(int32_t nClearPaletteIndex) {
 
 // FUNCTION: COPTER_D 0x0049ee15
 unsigned long ScreenBuffer::Swap(class CSparkalWindow* __formal, long __formal, long __formal) {
+	long hResult;
+
 // LINE 361:
 	asm( 
 "	      0049ee15    push ebp"
@@ -1452,6 +1463,9 @@ unsigned long ScreenBuffer::Swap(class CSparkalWindow* __formal, long __formal, 
 
 // FUNCTION: COPTER_D 0x0049efff
 void ScreenBuffer::WaitTillReadyToFlip() {
+	long hResult;
+	int32_t bIsInVerticalBlank;
+
 // LINE 420:
 	asm( 
 "	      0049efff    push ebp"
@@ -1493,6 +1507,8 @@ void ScreenBuffer::WaitTillReadyToFlip() {
 
 // FUNCTION: COPTER_D 0x0049f040
 void ScreenBuffer::SetPalette() {
+	long hResult;
+
 // LINE 438:
 	asm( 
 "	      0049f040    push ebp"
@@ -1591,6 +1607,8 @@ void ScreenBuffer::SetPalette() {
 
 // FUNCTION: COPTER_D 0x0049f0fa
 int32_t ScreenBuffer::UsePalette(struct SparkalColor* pColors) {
+	long hResult;
+
 // LINE 471:
 	asm( 
 "	      0049f0fa    push ebp"
@@ -1977,6 +1995,9 @@ void ScreenBuffer::FreePalette() {
 
 // FUNCTION: COPTER_D 0x0049f472
 unsigned long ScreenBuffer::FillRect(long nPaletteIndex, struct SparkalRect* rectFill) {
+	long hResult;
+	struct tagRECT rectFillTemp;
+
 // LINE 649:
 	asm( 
 "	      0049f472    push ebp"

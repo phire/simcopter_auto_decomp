@@ -145,6 +145,8 @@ void YObjLang::SwizzleTreeParam(short id, struct Behavior::NodeParameter* param)
 
 // FUNCTION: COPTER_D 0x00560abe
 void YObjLang::SwizzleTree(void * __ptr32 treevoid, long size) {
+	struct Behavior::Tree* tree;
+
 // LINE 75:
 	asm( 
 "	      00560abe    push ebp"

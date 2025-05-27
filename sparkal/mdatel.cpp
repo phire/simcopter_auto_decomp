@@ -7,6 +7,9 @@
 // Contribution: 1:0001ead0-0001f5cb Module: 72, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0041fad0
 char * MTimeLocalized::PrintStringLocalized(char * szTime, int32_t nLanguageToUse) {
+	int32_t nTempOriginalLanguage;
+	class ostrstream strtemp;
+
 // LINE 25:
 	asm( 
 "	      0041fad0    push ebp"
@@ -95,6 +98,13 @@ char * MTimeLocalized::PrintStringLocalized(char * szTime, int32_t nLanguageToUs
 
 // FUNCTION: COPTER_D 0x0041fb6a
 class ostream& operator<<(class ostream& s, const class MTimeLocalized& t) {
+	uint32_t hh;
+	uint32_t mm;
+	int32_t nLanguageToUse;
+	class ostrstream out;
+	char[80] buf;
+	char[80] buf1;
+
 // LINE 49:
 	asm( 
 "	      0041fb6a    push ebp"
@@ -726,6 +736,9 @@ char * MDateLocalized::NameOfMonthLocalized(char * szMonthName, int32_t nLanguag
 
 // FUNCTION: COPTER_D 0x004200a0
 char * MDateLocalized::PrintStringLocalized(char * szDate, int32_t nLanguageToUse) {
+	int32_t nTempOriginalLanguage;
+	class ostrstream strtemp;
+
 // LINE 197:
 	asm( 
 "	      004200a0    push ebp"
@@ -824,6 +837,8 @@ char * MDateLocalized::PrintStringLocalized(char * szDate, int32_t nLanguageToUs
 
 // FUNCTION: COPTER_D 0x0042014c
 class MDate MDateLocalized::PreviousLocalized(char * dayName, int32_t nLanguageToUse) {
+	uint32_t day;
+
 // LINE 221:
 	asm( 
 "	      0042014c    push ebp"
@@ -900,6 +915,9 @@ class MDate MDateLocalized::PreviousLocalized(char * dayName, int32_t nLanguageT
 
 // FUNCTION: COPTER_D 0x004201c9
 uint32_t MDateLocalized::DayOfWeekLocalized(char * dayName, int32_t nLanguageToUse) {
+	char[4096] szCurrentDay;
+	int32_t i;
+
 // LINE 242:
 	asm( 
 "	      004201c9    push ebp"
@@ -962,6 +980,9 @@ uint32_t MDateLocalized::DayOfWeekLocalized(char * dayName, int32_t nLanguageToU
 
 // FUNCTION: COPTER_D 0x00420237
 uint32_t MDateLocalized::IndexOfMonthLocalized(char * monthName, int32_t nLanguageToUse) {
+	char[4096] szCurrentMonth;
+	int32_t i;
+
 // LINE 263:
 	asm( 
 "	      00420237    push ebp"
@@ -1024,6 +1045,8 @@ uint32_t MDateLocalized::IndexOfMonthLocalized(char * monthName, int32_t nLangua
 
 // FUNCTION: COPTER_D 0x004202a5
 char * MDateLocalized::DayNameLocalized(uint32_t weekDayNumber, char * szDayName, int32_t nLanguageToUse) {
+	int32_t nFullStringID;
+
 // LINE 285:
 	asm( 
 "	      004202a5    push ebp"
@@ -1098,6 +1121,8 @@ char * MDateLocalized::DayNameLocalized(uint32_t weekDayNumber, char * szDayName
 
 // FUNCTION: COPTER_D 0x0042033c
 char * MDateLocalized::MonthNameLocalized(uint32_t monthNumber, char * szMonthName, int32_t nLanguageToUse) {
+	int32_t nFullStringID;
+
 // LINE 305:
 	asm( 
 "	      0042033c    push ebp"
@@ -1172,6 +1197,9 @@ char * MDateLocalized::MonthNameLocalized(uint32_t monthNumber, char * szMonthNa
 
 // FUNCTION: COPTER_D 0x004203d3
 class ostream& operator<<(class ostream& s, const class MDateLocalized& d) {
+	int32_t nLanguageToUse;
+	char[80] buf;
+
 // LINE 325:
 	asm( 
 "	      004203d3    push ebp"

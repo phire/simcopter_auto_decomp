@@ -7,6 +7,10 @@
 // Contribution: 1:00122910-001235ed Module: 166, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00523910
 void S3ExplosionReset() {
+	struct _EXPLODE_DATA* ed;
+	long i;
+	struct _SMOKE_DATA* sd;
+
 // LINE 54:
 	asm( 
 "	      00523910    push ebp"
@@ -74,6 +78,14 @@ void S3ExplosionReset() {
 
 // FUNCTION: COPTER_D 0x00523996
 void S3ExplosionInit() {
+	struct _EXPLODE_DATA* ed;
+	char * mem;
+	long i;
+	struct _SMOKE_DATA* sd;
+	struct Point3d vec;
+	long size;
+	int32_t[4][4] mat;
+
 // LINE 86:
 	asm( 
 "	      00523996    push ebp"
@@ -766,6 +778,11 @@ void S3ExplosionInit() {
 
 // FUNCTION: COPTER_D 0x00523f50
 void S3ExplosionStart(struct _CELL_INFO* cptr, int32_t x, int32_t y, int32_t z, long scale, long mission_id) {
+	struct _EXPLODE_DATA* ed;
+	long i;
+	struct VRFaceInfo finfo;
+	long dim;
+
 // LINE 233:
 	asm( 
 "	      00523f50    push ebp"
@@ -985,6 +1002,10 @@ void S3ExplosionStart(struct _CELL_INFO* cptr, int32_t x, int32_t y, int32_t z, 
 
 // FUNCTION: COPTER_D 0x005240dc
 void S3ExplosionSmokeStart(struct _CELL_INFO* cptr, struct Point3d* loc, long smoke_size) {
+	long i;
+	struct VRFaceInfo finfo;
+	struct _SMOKE_DATA* sd;
+
 // LINE 313:
 	asm( 
 "	      005240dc    push ebp"
@@ -1249,6 +1270,15 @@ void S3ExplosionSmokeStart(struct _CELL_INFO* cptr, struct Point3d* loc, long sm
 
 // FUNCTION: COPTER_D 0x0052429d
 void S3ExplosionDriver() {
+	struct _EXPLODE_DATA* ed;
+	struct VRview pos;
+	struct _DYOBJ_INST** dyptrptr;
+	long j;
+	long i;
+	struct Point2d celloc;
+	struct VRFaceInfo finfo;
+	struct _SMOKE_DATA* sd;
+
 // LINE 400:
 	asm( 
 "	      0052429d    push ebp"

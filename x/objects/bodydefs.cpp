@@ -7,6 +7,8 @@
 // Contribution: 1:0015c950-0015d654 Module: 192, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0055d950
 void SwizzlePrivAnimPartInfo(void * __ptr32 val, long size) {
+	struct PrivAnimPartInfo* pinfo;
+
 // LINE 109:
 	asm( 
 "	      0055d950    push ebp"
@@ -45,6 +47,8 @@ void SwizzlePrivAnimPartInfo(void * __ptr32 val, long size) {
 
 // FUNCTION: COPTER_D 0x0055d98c
 struct TinyXZY DXZY_2_TinyXZY(struct DXZY dxzy) {
+	struct TinyXZY txzy;
+
 // LINE 128:
 	asm( 
 "	      0055d98c    push ebp"
@@ -95,6 +99,8 @@ struct TinyXZY DXZY_2_TinyXZY(struct DXZY dxzy) {
 
 // FUNCTION: COPTER_D 0x0055d9cf
 struct DXZY TinyXZY_2_DXZY(struct TinyXZY txzy) {
+	struct DXZY dxzy;
+
 // LINE 137:
 	asm( 
 "	      0055d9cf    push ebp"
@@ -228,6 +234,8 @@ char Float_2_Byte(float flt) {
 
 // FUNCTION: COPTER_D 0x0055daa7
 void SwizzlePoint(void * __ptr32 val, long size) {
+	struct Point* pt;
+
 // LINE 165:
 	asm( 
 "	      0055daa7    push ebp"
@@ -281,6 +289,9 @@ void SwizzlePoint(void * __ptr32 val, long size) {
 
 // FUNCTION: COPTER_D 0x0055db01
 void InitBodiesAndAnimations() {
+	char[260] animpath;
+	unsigned char[256] privname;
+
 // LINE 175:
 	asm( 
 "	      0055db01    push ebp"

@@ -7,6 +7,16 @@
 // Contribution: 1:000e9c40-000eabb1 Module: 179, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004eac40
 int32_t VRAppInit() {
+	int32_t obj;
+	int32_t j;
+	long mem2d;
+	int32_t i;
+	long memxf;
+	long maxval;
+	int32_t instanceID;
+	int32_t totalVehicles;
+	char[260] szFilePath;
+
 // LINE 163:
 	asm( 
 "	      004eac40    push ebp"
@@ -999,6 +1009,10 @@ int32_t VRAppInit() {
 
 // FUNCTION: COPTER_D 0x004eb5ca
 int32_t VRAppCityInit(int32_t reload) {
+	struct tagUserPersonalInfo* up;
+	long i;
+	struct Point2d* pad;
+
 // LINE 548:
 	asm( 
 "	      004eb5ca    push ebp"

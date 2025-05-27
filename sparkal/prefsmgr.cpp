@@ -374,6 +374,8 @@ int32_t operator<(const class PreferenceItem& P1, const class PreferenceItem& P2
 
 // FUNCTION: COPTER_D 0x0047bdaa
 class PreferenceItem* PreferenceItem::DuplicatePointer() {
+	class PreferenceItem* prefItemReturn;
+
 // LINE 129:
 	asm( 
 "	      0047bdaa    push ebp"
@@ -941,6 +943,9 @@ void PreferenceManager::~PreferenceManager() {
 
 // FUNCTION: COPTER_D 0x0047c3e2
 void PreferenceManager::EnumeratePrefs() {
+	long j;
+	class list<PreferenceItem>::iterator i;
+
 // LINE 203:
 	asm( 
 "	      0047c3e2    push ebp"
@@ -1026,6 +1031,9 @@ void PreferenceManager::EnumeratePrefs() {
 
 // FUNCTION: COPTER_D 0x0047c4ad
 long PreferenceManager::SaveAllPrefs() {
+	class list<PreferenceItem>::iterator i;
+	char[41] szStringRudelyEmbeddedDirectly;
+
 // LINE 222:
 	asm( 
 "	      0047c4ad    push ebp"
@@ -1231,6 +1239,11 @@ long PreferenceManager::SaveAllPrefs() {
 
 // FUNCTION: COPTER_D 0x0047c670
 long PreferenceManager::LoadAllPrefs() {
+	int32_t bStillMoreRecords;
+	int32_t bFileOK;
+	class PreferenceItem tempPrefItem;
+	long lRecordDataSize;
+
 // LINE 270:
 	asm( 
 "	      0047c670    push ebp"
@@ -1565,6 +1578,8 @@ long PreferenceManager::ClearPrefsMemory() {
 
 // FUNCTION: COPTER_D 0x0047c970
 long PreferenceManager::RemovePref(long lPrefType) {
+	class list<PreferenceItem>::iterator i;
+
 // LINE 326:
 	asm( 
 "	      0047c970    push ebp"
@@ -1716,6 +1731,8 @@ long PreferenceManager::RemovePref(long lPrefType) {
 
 // FUNCTION: COPTER_D 0x0047cae0
 class PreferenceItem* PreferenceManager::GetPrefPointer(long lPrefType) {
+	class list<PreferenceItem>::iterator i;
+
 // LINE 354:
 	asm( 
 "	      0047cae0    push ebp"
@@ -1815,6 +1832,9 @@ class PreferenceItem* PreferenceManager::GetPrefPointer(long lPrefType) {
 
 // FUNCTION: COPTER_D 0x0047cbc3
 class PreferenceItem* PreferenceManager::GetPrefCopy(long lPrefType) {
+	class PreferenceItem* prefItemReturn;
+	class PreferenceItem* prefItemTemp;
+
 // LINE 375:
 	asm( 
 "	      0047cbc3    push ebp"
@@ -1868,6 +1888,8 @@ class PreferenceItem* PreferenceManager::GetPrefCopy(long lPrefType) {
 
 // FUNCTION: COPTER_D 0x0047cc0c
 char * PreferenceManager::GetPrefDataPointer(long lPrefType) {
+	class PreferenceItem* prefItemTemp;
+
 // LINE 401:
 	asm( 
 "	      0047cc0c    push ebp"
@@ -1916,6 +1938,9 @@ char * PreferenceManager::GetPrefDataPointer(long lPrefType) {
 
 // FUNCTION: COPTER_D 0x0047cc4d
 char * PreferenceManager::GetPrefDataCopy(long lPrefType) {
+	class PreferenceItem* prefItemTemp;
+	char * chDataCopy;
+
 // LINE 421:
 	asm( 
 "	      0047cc4d    push ebp"
@@ -1985,6 +2010,8 @@ char * PreferenceManager::GetPrefDataCopy(long lPrefType) {
 
 // FUNCTION: COPTER_D 0x0047ccb7
 long PreferenceManager::GetPrefDataLength(long lPrefType) {
+	class PreferenceItem* prefItemTemp;
+
 // LINE 451:
 	asm( 
 "	      0047ccb7    push ebp"
@@ -2033,6 +2060,8 @@ long PreferenceManager::GetPrefDataLength(long lPrefType) {
 
 // FUNCTION: COPTER_D 0x0047ccf8
 long PreferenceManager::SetPref(long lPrefType, char * chPref, long lSizeofPref) {
+	class PreferenceItem* prefItemToSet;
+
 // LINE 465:
 	asm( 
 "	      0047ccf8    push ebp"
@@ -2693,6 +2722,8 @@ void NotificationPreferenceManager::NotificationPreferenceManager(long lTheFileC
 
 // FUNCTION: COPTER_D 0x0047d4cf
 int32_t NotificationPreferenceManager::AddNotification(long lPreferenceType, class NotificationSink* newNotificationSink) {
+	class NotificationItem tempNewNotificationItem;
+
 // LINE 546:
 	asm( 
 "	      0047d4cf    push ebp"
@@ -2942,6 +2973,9 @@ int32_t NotificationPreferenceManager::AddNotification(class NotificationItem& n
 
 // FUNCTION: COPTER_D 0x0047d7c7
 int32_t NotificationPreferenceManager::RemoveNotification(class NotificationSink* theNotificationSink, long lPreferenceType) {
+	class list<NotificationItem>::iterator iterator;
+	int32_t nFound;
+
 // LINE 568:
 	asm( 
 "	      0047d7c7    push ebp"
@@ -3087,6 +3121,8 @@ int32_t NotificationPreferenceManager::RemoveNotification(class NotificationSink
 
 // FUNCTION: COPTER_D 0x0047d92f
 long NotificationPreferenceManager::SetPref(long lPrefType, char * chPref, long lSizeofPref) {
+	long lReturnValue;
+
 // LINE 593:
 	asm( 
 "	      0047d92f    push ebp"
@@ -3140,6 +3176,8 @@ long NotificationPreferenceManager::SetPref(long lPrefType, char * chPref, long 
 
 // FUNCTION: COPTER_D 0x0047d97a
 long NotificationPreferenceManager::SetPref(class PreferenceItem* prefItemToUse) {
+	long lReturnValue;
+
 // LINE 604:
 	asm( 
 "	      0047d97a    push ebp"
@@ -3190,6 +3228,8 @@ long NotificationPreferenceManager::SetPref(class PreferenceItem* prefItemToUse)
 
 // FUNCTION: COPTER_D 0x0047d9bf
 void NotificationPreferenceManager::DoNotification(long lPrefType) {
+	class list<NotificationItem>::iterator iterator;
+
 // LINE 615:
 	asm( 
 "	      0047d9bf    push ebp"

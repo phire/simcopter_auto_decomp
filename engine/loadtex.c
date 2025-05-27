@@ -7,6 +7,16 @@
 // Contribution: 1:000d5060-000d560b Module: 145, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004d6060
 struct VRResource* LoadImages(char * name) {
+	int32_t file;
+	struct BMPFileHdr bmp;
+	int32_t i;
+	struct TEXT_Resource* res;
+	char * byteptr;
+	char * group;
+	int32_t s;
+	struct VRBmpInfo* bhdr;
+	int32_t r;
+
 // LINE 70:
 	asm( 
 "	      004d6060    push ebp"
@@ -261,6 +271,10 @@ struct VRResource* LoadImages(char * name) {
 
 // FUNCTION: COPTER_D 0x004d6246
 struct VRBmpHdr* VRInt2BmpHdr(struct VRResource* res, int32_t i) {
+	struct TEXT_Resource* hdr;
+	int32_t j;
+	struct VRBmpHdr* bhdr;
+
 // LINE 223:
 	asm( 
 "	      004d6246    push ebp"
@@ -325,6 +339,8 @@ struct VRBmpHdr* VRInt2BmpHdr(struct VRResource* res, int32_t i) {
 
 // FUNCTION: COPTER_D 0x004d62a5
 int32_t VRGetResTextureCnt(struct VRResource* res) {
+	struct TEXT_Resource* hdr;
+
 // LINE 254:
 	asm( 
 "	      004d62a5    push ebp"
@@ -357,6 +373,17 @@ int32_t VRGetResTextureCnt(struct VRResource* res) {
 
 // FUNCTION: COPTER_D 0x004d62c4
 int32_t VRSetBmpToTiled(struct VRResource* res, int32_t mask, int32_t bmpid, unsigned char * basearg) {
+	unsigned char * baseptr;
+	unsigned char * tptr;
+	struct TEXT_Resource* hdr;
+	int32_t i;
+	int32_t colmask;
+	struct VRBmpHdr* bhdr;
+	int32_t notiles;
+	int32_t row;
+	int32_t col;
+	int32_t rowshift;
+
 // LINE 282:
 	asm( 
 "	      004d62c4    push ebp"
@@ -577,6 +604,12 @@ int32_t VRSetBmpToTiled(struct VRResource* res, int32_t mask, int32_t bmpid, uns
 
 // FUNCTION: COPTER_D 0x004d6460
 int32_t VRLoadAlignedBmp(char * name, struct VRResource* res, int32_t mask, int32_t bmpid) {
+	int32_t file;
+	struct BMPFileHdr bmp;
+	unsigned char * alignptr;
+	struct VRBmpInfo* bhdr;
+	int32_t r;
+
 // LINE 384:
 	asm( 
 "	      004d6460    push ebp"

@@ -41,6 +41,10 @@ unsigned long __long_random(unsigned long limit) {
 
 // FUNCTION: COPTER_D 0x00490ff1
 void Random::seed(unsigned long j) {
+	unsigned long k;
+	uint32_t i;
+	int32_t loop;
+
 // LINE 34:
 	asm( 
 "	      00490ff1    push ebp"

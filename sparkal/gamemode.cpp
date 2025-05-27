@@ -290,6 +290,8 @@ void GameModeMainMenuData::GameModeMainMenuData() {
 
 // FUNCTION: COPTER_D 0x004bd81a
 void GameModeMainMenuData::CreatePalette() {
+	char[260] szPath;
+
 // LINE 169:
 	asm( 
 "	      004bd81a    push ebp"
@@ -416,6 +418,9 @@ void GameModeMainMenuData::UsePalette() {
 
 // FUNCTION: COPTER_D 0x004bd94a
 int32_t GameModeMainMenuData::CreateAllSurfaces() {
+	struct UserMenuWindowDescription tempUMWD;
+	class UserMenuWindow* myUserMenuWindow;
+
 // LINE 196:
 	asm( 
 "	      004bd94a    push ebp"
@@ -807,6 +812,8 @@ void GameModePickCareerCityData::Initialize() {
 
 // FUNCTION: COPTER_D 0x004bdd5b
 void GameModePickCareerCityData::CreatePalette() {
+	char[260] szPath;
+
 // LINE 273:
 	asm( 
 "	      004bdd5b    push ebp"
@@ -933,6 +940,9 @@ void GameModePickCareerCityData::UsePalette() {
 
 // FUNCTION: COPTER_D 0x004bde8b
 int32_t GameModePickCareerCityData::CreateAllSurfaces() {
+	class CareerWindow* myCareerWindow;
+	long * lNewCitiesPointer;
+
 // LINE 300:
 	asm( 
 "	      004bde8b    push ebp"
@@ -1307,6 +1317,10 @@ void GameModePlayData::Initialize() {
 
 // FUNCTION: COPTER_D 0x004be16e
 void GameModePlayData::CreatePalette() {
+	int32_t i;
+	char * pPalettePosition;
+	char[260] szPath;
+
 // LINE 399:
 	asm( 
 "	      004be16e    push ebp"
@@ -2170,6 +2184,15 @@ int32_t GameModePlayData::CreateAllSurfaces() {
 
 // FUNCTION: COPTER_D 0x004be8cb
 int32_t GameModePlayData::CreatePanels() {
+	class MRect rectPanel3;
+	class MRect rectPanel4;
+	class MRect rectPanel5;
+	class MRect rectPassengerWindow;
+	class MRect rectPanel6;
+	class MRect rectPanel0;
+	class MRect rectPanel1;
+	class MRect rectPanel2;
+
 // LINE 554:
 	asm( 
 "	      004be8cb    push ebp"
@@ -2745,6 +2768,12 @@ int32_t GameModePlayData::CreatePanels() {
 
 // FUNCTION: COPTER_D 0x004bf018
 void GameModePlayData::MakeSureHeliHasProperFlaps() {
+	class MRect rectFlap0;
+	class MRect rectFlap2;
+	struct tagUserPersonalInfo* userPersonalInfo;
+	class MRect rectFlap1;
+	class MRect rectFlap3;
+
 // LINE 636:
 	asm( 
 "	      004bf018    push ebp"
@@ -4486,6 +4515,8 @@ void GameModePlayData::Shutdown() {
 
 // FUNCTION: COPTER_D 0x004bfed8
 long GameModePlayData::TestForUserInHelicopter() {
+	long lReturnValue;
+
 // LINE 1011:
 	asm( 
 "	      004bfed8    push ebp"
@@ -4910,6 +4941,9 @@ void GameModePlayData::ReadUserConfigurableCommands() {
 
 // FUNCTION: COPTER_D 0x004c01b8
 void GameModePlayData::RemoveUserConfigurableCommands() {
+	long lCurrentCommand;
+	class list<Shortcut>::iterator tempShortcutListIterator;
+
 // LINE 1143:
 	asm( 
 "	      004c01b8    push ebp"
@@ -5069,6 +5103,8 @@ void GameModePlayData::SetUserConfigurableCommandsToDefaults() {
 
 // FUNCTION: COPTER_D 0x004c0326
 void GameModePlayData::SetNonUserConfigurableCommandsToDefaults() {
+	struct Shortcut tempShortcut;
+
 // LINE 1175:
 	asm( 
 "	      004c0326    push ebp"
@@ -6730,6 +6766,8 @@ void GameModeHangarData::Shutdown() {
 
 // FUNCTION: COPTER_D 0x004c15b3
 void GameModeHangarData::SetCommandsToDefaults() {
+	struct Shortcut tempShortcut;
+
 // LINE 1518:
 	asm( 
 "	      004c15b3    push ebp"
@@ -7588,6 +7626,8 @@ void GameModeCatalogData::Shutdown() {
 
 // FUNCTION: COPTER_D 0x004c1e29
 void GameModeCatalogData::SetCommandsToDefaults() {
+	struct Shortcut tempShortcut;
+
 // LINE 1672:
 	asm( 
 "	      004c1e29    push ebp"
@@ -8428,6 +8468,8 @@ void GameModeMissionLogData::Shutdown() {
 
 // FUNCTION: COPTER_D 0x004c27b1
 void GameModeMissionLogData::SetCommandsToDefaults() {
+	struct Shortcut tempShortcut;
+
 // LINE 1797:
 	asm( 
 "	      004c27b1    push ebp"
@@ -9268,6 +9310,8 @@ void GameModeInventoryData::Shutdown() {
 
 // FUNCTION: COPTER_D 0x004c3139
 void GameModeInventoryData::SetCommandsToDefaults() {
+	struct Shortcut tempShortcut;
+
 // LINE 1918:
 	asm( 
 "	      004c3139    push ebp"

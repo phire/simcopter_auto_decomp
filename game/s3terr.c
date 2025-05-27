@@ -7,6 +7,9 @@
 // Contribution: 1:00112d50-00117f8b Module: 169, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00513d50
 short GetAltitude(int32_t x, int32_t y) {
+	short alt;
+	short wat;
+
 // LINE 93:
 	asm( 
 "	      00513d50    push ebp"
@@ -101,6 +104,8 @@ short GetAltitude(int32_t x, int32_t y) {
 
 // FUNCTION: COPTER_D 0x00513e15
 void S3TerrainInit() {
+	long i;
+
 // LINE 121:
 	asm( 
 "	      00513e15    push ebp"
@@ -160,6 +165,17 @@ void S3TerrainInit() {
 
 // FUNCTION: COPTER_D 0x00513e81
 short S3TerrainInitMap() {
+	short tile;
+	short alt;
+	long y;
+	long x;
+	int32_t k3;
+	unsigned char texval;
+	short alt2;
+	int32_t k2;
+	int32_t k1;
+	short wflags;
+
 // LINE 155:
 	asm( 
 "	      00513e81    push ebp"
@@ -4628,6 +4644,10 @@ short S3TerrainInitMap() {
 
 // FUNCTION: COPTER_D 0x0051723c
 void do_map_square(short x, short y, short msize) {
+	unsigned short hght;
+	short midp;
+	short is_odd;
+
 // LINE 1012:
 	asm( 
 "	      0051723c    push ebp"
@@ -5594,6 +5614,10 @@ void do_map_square(short x, short y, short msize) {
 
 // FUNCTION: COPTER_D 0x00517dc6
 unsigned short noise(unsigned short hght, unsigned short edge_len) {
+	long delta;
+	long max_noise;
+	long new_height;
+
 // LINE 1109:
 	asm( 
 "	      00517dc6    push ebp"
@@ -5668,6 +5692,11 @@ unsigned short noise(unsigned short hght, unsigned short edge_len) {
 
 // FUNCTION: COPTER_D 0x00517e5d
 void S3TerrSetGridObj() {
+	long y;
+	long x;
+	int32_t * yptr;
+	struct Point2d ulp;
+
 // LINE 1134:
 	asm( 
 "	      00517e5d    push ebp"
@@ -5784,6 +5813,10 @@ void S3TerrSetGridObj() {
 
 // FUNCTION: COPTER_D 0x00517f70
 void S3TerrainMorph() {
+	struct Point2d mcell;
+	struct Point3d* v;
+	struct Point2d ulp;
+
 // LINE 1190:
 	asm( 
 "	      00517f70    push ebp"
@@ -6269,6 +6302,14 @@ void S3TerrainMorph() {
 
 // FUNCTION: COPTER_D 0x00518499
 int32_t S3TerrMorphWater() {
+	long xstart;
+	long ystart;
+	long y;
+	long x;
+	short * cycle;
+	short alt0;
+	short * array1;
+
 // LINE 1431:
 	asm( 
 "	      00518499    push ebp"
@@ -6468,6 +6509,17 @@ int32_t S3TerrMorphWater() {
 
 // FUNCTION: COPTER_D 0x0051865b
 void AdjustTerrainMap() {
+	int32_t start;
+	int32_t alt;
+	int32_t z;
+	int32_t i;
+	int32_t x;
+	int32_t citysize;
+	int32_t alt3;
+	int32_t alt2;
+	int32_t end;
+	int32_t alt1;
+
 // LINE 1540:
 	asm( 
 "	      0051865b    push ebp"
@@ -6864,6 +6916,18 @@ void AdjustTerrainMap() {
 
 // FUNCTION: COPTER_D 0x00518a8c
 int32_t S3TerrPrecisionAlt(int32_t worldx, int32_t worldz, int32_t * landable) {
+	struct Point2d cell;
+	int32_t hypz;
+	int32_t ratio;
+	int32_t zdist;
+	int32_t z;
+	int32_t x;
+	int32_t sidez;
+	int32_t sidealt;
+	int32_t alt2;
+	int32_t hypalt;
+	int32_t alt1;
+
 // LINE 1605:
 	asm( 
 "	      00518a8c    push ebp"
@@ -7324,6 +7388,16 @@ unsigned char S3TerrGetShadeIndex(long x, long y) {
 
 // FUNCTION: COPTER_D 0x00518e76
 int32_t S3ObjectPrecisionAlt(int32_t cityx, int32_t cityy) {
+	int32_t normy;
+	int32_t normx;
+	struct _CELL_INFO* cptr;
+	int32_t alt;
+	int32_t objy;
+	struct _STOBJ_INST* stobj;
+	int32_t maxobjy;
+	int32_t normz;
+	int32_t flags;
+
 // LINE 1822:
 	asm( 
 "	      00518e76    push ebp"

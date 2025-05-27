@@ -739,6 +739,8 @@ int32_t GraphicWindowManager::DeleteWindow(class GraphicWindow* windowToDelete) 
 
 // FUNCTION: COPTER_D 0x004a1f4e
 int32_t GraphicWindowManager::DeleteWindowAndRemoveItsTraces(class GraphicWindow* windowToDelete) {
+	class GraphicWindow* windowParent;
+
 // LINE 138:
 	asm( 
 "	      004a1f4e    push ebp"
@@ -832,6 +834,8 @@ int32_t GraphicWindowManager::DeleteWindowAndRemoveItsTraces(class GraphicWindow
 
 // FUNCTION: COPTER_D 0x004a1ff2
 int32_t GraphicWindowManager::DeleteAllWindowsInDeletionList() {
+	class list<GraphicWindow *>::iterator tempGraphicWindowPtrListIterator;
+
 // LINE 162:
 	asm( 
 "	      004a1ff2    push ebp"
@@ -1011,6 +1015,9 @@ int32_t GraphicWindowManager::DeleteAllWindowsInDeletionList() {
 
 // FUNCTION: COPTER_D 0x004a21d6
 int32_t GraphicWindowManager::IsWindowOrParentInDeletionList(class GraphicWindow* windowToCheck) {
+	class GraphicWindow* currentGraphicWindowToCheck;
+	class list<GraphicWindow *>::iterator tempGraphicWindowPtrListIterator;
+
 // LINE 191:
 	asm( 
 "	      004a21d6    push ebp"
@@ -1121,6 +1128,10 @@ int32_t GraphicWindowManager::IsWindowOrParentInDeletionList(class GraphicWindow
 
 // FUNCTION: COPTER_D 0x004a22c1
 long GraphicWindowManager::DoKeyDown(long lKey, char chModifiers) {
+	class list<GraphicWindow *>::iterator iterator;
+	int32_t nReturnValue;
+	class GraphicWindow* windowCurrent;
+
 // LINE 217:
 	asm( 
 "	      004a22c1    push ebp"
@@ -1255,6 +1266,10 @@ long GraphicWindowManager::DoKeyDown(long lKey, char chModifiers) {
 
 // FUNCTION: COPTER_D 0x004a23da
 long GraphicWindowManager::DoKeyUp(long lKey, char chModifiers) {
+	class list<GraphicWindow *>::iterator iterator;
+	int32_t nReturnValue;
+	class GraphicWindow* windowCurrent;
+
 // LINE 249:
 	asm( 
 "	      004a23da    push ebp"
@@ -1389,6 +1404,10 @@ long GraphicWindowManager::DoKeyUp(long lKey, char chModifiers) {
 
 // FUNCTION: COPTER_D 0x004a24f3
 long GraphicWindowManager::DoCharacter(long lCharacter) {
+	class list<GraphicWindow *>::iterator iterator;
+	int32_t nReturnValue;
+	class GraphicWindow* windowCurrent;
+
 // LINE 276:
 	asm( 
 "	      004a24f3    push ebp"
@@ -1959,6 +1978,8 @@ int32_t GraphicWindowManager::SendCursorMessageToChildWindow(class GraphicWindow
 
 // FUNCTION: COPTER_D 0x004a29cd
 int32_t GraphicWindowManager::ComposeAllWindows() {
+	int32_t nReturnValue;
+
 // LINE 396:
 	asm( 
 "	      004a29cd    push ebp"
@@ -4965,6 +4986,9 @@ void  GraphicWindow::CenterWindow(class GraphicWindow* windowToCenterOn) {
 
 // FUNCTION: COPTER_D 0x004a4ea8
 void  GraphicWindow::CenterWindow(int32_t nXPosition, int32_t nYPosition) {
+	int32_t nNewXPosition;
+	int32_t nNewYPosition;
+
 // LINE 729:
 	asm( 
 "	      004a4ea8    push ebp"
@@ -5064,6 +5088,8 @@ void  GraphicWindow::CenterWindow(int32_t nXPosition, int32_t nYPosition) {
 
 // FUNCTION: COPTER_D 0x004a4f5c
 int  GraphicWindow::FitRectToWindow(class MRect& rectToFit) {
+	class MRect rectTempCurrentWindow;
+
 // LINE 755:
 	asm( 
 "	      004a4f5c    push ebp"
@@ -5737,6 +5763,9 @@ int  GraphicWindow::AddChild(class GraphicWindow* windowNewChild) {
 
 // FUNCTION: COPTER_D 0x004a569a
 int  GraphicWindow::DeleteChild(class GraphicWindow* windowChild) {
+	int32_t nReturnValue;
+	class list<GraphicWindow *>::iterator i;
+
 // LINE 830:
 	asm( 
 "	      004a569a    push ebp"
@@ -5908,6 +5937,9 @@ int  GraphicWindow::DeleteChild(class GraphicWindow* windowChild) {
 
 // FUNCTION: COPTER_D 0x004a5837
 class GraphicWindow *  GraphicWindow::DeleteChild(long lChildID) {
+	class list<GraphicWindow *>::iterator i;
+	class GraphicWindow* windowFound;
+
 // LINE 861:
 	asm( 
 "	      004a5837    push ebp"
@@ -6104,6 +6136,9 @@ class GraphicWindow *  GraphicWindow::DeleteChild(long lChildID) {
 
 // FUNCTION: COPTER_D 0x004a5a11
 int  GraphicWindow::RemoveChild(class GraphicWindow* windowNewChild) {
+	int32_t nReturnValue;
+	class list<GraphicWindow *>::iterator i;
+
 // LINE 892:
 	asm( 
 "	      004a5a11    push ebp"
@@ -6240,6 +6275,9 @@ int  GraphicWindow::RemoveChild(class GraphicWindow* windowNewChild) {
 
 // FUNCTION: COPTER_D 0x004a5b58
 void  GraphicWindow::DeleteAllChildren() {
+	class list<GraphicWindow *>::iterator i;
+	class GraphicWindow* windowToDelete;
+
 // LINE 913:
 	asm( 
 "	      004a5b58    push ebp"
@@ -6390,6 +6428,8 @@ void  GraphicWindow::DeleteAllChildren() {
 
 // FUNCTION: COPTER_D 0x004a5cd8
 void  GraphicWindow::RemoveAllChildren() {
+	class list<GraphicWindow *>::iterator i;
+
 // LINE 935:
 	asm( 
 "	      004a5cd8    push ebp"
@@ -6483,6 +6523,8 @@ void  GraphicWindow::RemoveAllChildren() {
 
 // FUNCTION: COPTER_D 0x004a5dd1
 class GraphicWindow *  GraphicWindow::FindChild(long lChildID) {
+	class list<GraphicWindow *>::iterator i;
+
 // LINE 950:
 	asm( 
 "	      004a5dd1    push ebp"
@@ -6576,6 +6618,8 @@ class GraphicWindow *  GraphicWindow::FindChild(long lChildID) {
 
 // FUNCTION: COPTER_D 0x004a5ea7
 class GraphicWindow *  GraphicWindow::FindWindowA(long lID) {
+	class list<GraphicWindow *>::iterator i;
+
 // LINE 968:
 	asm( 
 "	      004a5ea7    push ebp"
@@ -6666,6 +6710,8 @@ class GraphicWindow *  GraphicWindow::FindWindowA(long lID) {
 
 // FUNCTION: COPTER_D 0x004a5f76
 int  GraphicWindow::FindWindowA(class GraphicWindow* windowToFind) {
+	class list<GraphicWindow *>::iterator i;
+
 // LINE 983:
 	asm( 
 "	      004a5f76    push ebp"
@@ -6962,6 +7008,9 @@ int  GraphicWindow::DrawSelf() {
 
 // FUNCTION: COPTER_D 0x004a6180
 void  GraphicWindow::DrawChildren() {
+	class list<GraphicWindow *>::iterator i;
+	class GraphicWindow* gwCurrentChild;
+
 // LINE 1075:
 	asm( 
 "	      004a6180    push ebp"
@@ -7059,6 +7108,9 @@ void  GraphicWindow::DrawChildren() {
 
 // FUNCTION: COPTER_D 0x004a6256
 void  GraphicWindow::InvalidateAllOverlaps(class list<GraphicWindow *>::iterator windowChildListItem) {
+	class GraphicWindow* windowNextChild;
+	class GraphicWindow* windowCurrentChild;
+
 // LINE 1115:
 	asm( 
 "	      004a6256    push ebp"
@@ -7192,6 +7244,8 @@ void  GraphicWindow::InvalidateAllOverlaps(class list<GraphicWindow *>::iterator
 
 // FUNCTION: COPTER_D 0x004a6399
 void  GraphicWindow::InvalidateAllChildren(int32_t bRecursive) {
+	class list<GraphicWindow *>::iterator i;
+
 // LINE 1136:
 	asm( 
 "	      004a6399    push ebp"
@@ -7281,6 +7335,8 @@ void  GraphicWindow::InvalidateAllChildren(int32_t bRecursive) {
 
 // FUNCTION: COPTER_D 0x004a646b
 int  GraphicWindow::DoesWindowNeedUpdating() {
+	class list<GraphicWindow *>::iterator i;
+
 // LINE 1161:
 	asm( 
 "	      004a646b    push ebp"
@@ -7636,6 +7692,8 @@ int  GraphicWindow::CaptureCursorEnd(class GraphicWindow* windowCapture) {
 
 // FUNCTION: COPTER_D 0x004a667d
 void  GraphicWindow::WindowToScreenCoordinates(long& nXPosition, long& nYPosition) {
+	class GraphicWindow* currentWindow;
+
 // LINE 1298:
 	asm( 
 "	      004a667d    push ebp"
@@ -7694,6 +7752,9 @@ void  GraphicWindow::WindowToScreenCoordinates(long& nXPosition, long& nYPositio
 
 // FUNCTION: COPTER_D 0x004a66cc
 void  GraphicWindow::ScreenToWindowCoordinates(long& nXPosition, long& nYPosition) {
+	long nYFactor;
+	long nXFactor;
+
 // LINE 1319:
 	asm( 
 "	      004a66cc    push ebp"
@@ -7780,6 +7841,8 @@ class CBackBuffer *  GraphicWindow::GetImage() {
 
 // FUNCTION: COPTER_D 0x004a673c
 void  GraphicWindow::GetImagePath() {
+	char[261] szFullImagePath;
+
 // LINE 1353:
 	asm( 
 "	      004a673c    push ebp"
@@ -8055,6 +8118,10 @@ void  GraphicWindow::GetImagePath() {
 
 // FUNCTION: COPTER_D 0x004a6bcd
 int  GraphicWindow::SetImageToDrawOnto() {
+	class MRect rectNewPosition;
+	class GraphicWindow* gwCurrentParent;
+	class CBackBuffer* imageCurrentParent;
+
 // LINE 1366:
 	asm( 
 "	      004a6bcd    push ebp"
@@ -8198,6 +8265,8 @@ int  GraphicWindow::SetImageToDrawOnto() {
 
 // FUNCTION: COPTER_D 0x004a6cf0
 void  GraphicWindow::SetAllImagesToDrawOnto() {
+	class list<GraphicWindow *>::iterator i;
+
 // LINE 1402:
 	asm( 
 "	      004a6cf0    push ebp"
@@ -8291,6 +8360,8 @@ void  GraphicWindow::SetAllImagesToDrawOnto() {
 
 // FUNCTION: COPTER_D 0x004a6dc5
 void  GraphicWindow::CreateAllImages() {
+	class list<GraphicWindow *>::iterator i;
+
 // LINE 1421:
 	asm( 
 "	      004a6dc5    push ebp"
@@ -8392,6 +8463,8 @@ void  GraphicWindow::CreateAllImages() {
 
 // FUNCTION: COPTER_D 0x004a6ea7
 void  GraphicWindow::DestroyAllImages() {
+	class list<GraphicWindow *>::iterator i;
+
 // LINE 1441:
 	asm( 
 "	      004a6ea7    push ebp"
@@ -8828,6 +8901,8 @@ int  GraphicWindow::MakeModal(class GraphicWindow* windowModal) {
 
 // FUNCTION: COPTER_D 0x004a7340
 int  GraphicWindow::RemoveModal(class GraphicWindow* windowModal) {
+	class list<GraphicWindow *>::iterator i;
+
 // LINE 1499:
 	asm( 
 "	      004a7340    push ebp"
@@ -9162,6 +9237,8 @@ int  GraphicWindow::MakeFocus(class GraphicWindow* windowFocus) {
 
 // FUNCTION: COPTER_D 0x004a773b
 int  GraphicWindow::RemoveFocus(class GraphicWindow* windowFocus) {
+	class list<GraphicWindow *>::iterator i;
+
 // LINE 1544:
 	asm( 
 "	      004a773b    push ebp"
@@ -9282,6 +9359,10 @@ int  GraphicWindow::RemoveFocus(class GraphicWindow* windowFocus) {
 
 // FUNCTION: COPTER_D 0x004a786b
 int  GraphicWindow::CanWeRespondToMessage() {
+	class GraphicWindow* gwModal;
+	class GraphicWindow* gwCurrentTest;
+	int32_t nModalWindowCount;
+
 // LINE 1567:
 	asm( 
 "	      004a786b    push ebp"
@@ -9574,6 +9655,9 @@ class ScreenWindow& ScreenWindow::operator=(const class ScreenWindow& copyScreen
 
 // FUNCTION: COPTER_D 0x004a7a51
 int32_t ScreenWindow::ComposeSelf() {
+	class list<GraphicWindow *>::iterator i;
+	class GraphicWindow* gwCurrentChild;
+
 // LINE 1662:
 	asm( 
 "	      004a7a51    push ebp"

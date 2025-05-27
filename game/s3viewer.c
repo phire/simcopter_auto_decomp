@@ -7,6 +7,9 @@
 // Contribution: 1:000ed720-000ee1b4 Module: 177, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004ee720
 void S3ViewerInit() {
+	struct Point3d IdealCameraLoc;
+	int32_t[4][4] rotmat;
+
 // LINE 97:
 	asm( 
 "	      004ee720    push ebp"
@@ -210,6 +213,14 @@ void S3ViewerInit() {
 
 // FUNCTION: COPTER_D 0x004ee8f1
 void S3ViewerControl() {
+	int32_t timerDelay;
+	int32_t roty;
+	struct Point3d IdealCameraPos;
+	int32_t rotx;
+	long lJoystickValue;
+	struct Point3d vec;
+	long viewSize;
+
 // LINE 169:
 	asm( 
 "	      004ee8f1    push ebp"
@@ -796,6 +807,9 @@ void S3ViewerControl() {
 
 // FUNCTION: COPTER_D 0x004eee12
 void S3SetBackPlaneBasedOnValue(long lValue) {
+	long nOriginalViewSize;
+	long nConvertedValue;
+
 // LINE 321:
 	asm( 
 "	      004eee12    push ebp"
@@ -916,6 +930,8 @@ long GetRenderBackPlaneValue() {
 
 // FUNCTION: COPTER_D 0x004eeecc
 long ConvertGUIBackPlaneValueToRender(long lValue) {
+	long lHalfOfGOBJRange;
+
 // LINE 360:
 	asm( 
 "	      004eeecc    push ebp"
@@ -968,6 +984,8 @@ long ConvertGUIBackPlaneValueToRender(long lValue) {
 
 // FUNCTION: COPTER_D 0x004eef09
 long ConvertRenderBackPlaneValueToGUI(long lValue) {
+	long lHalfOfGOBJRange;
+
 // LINE 379:
 	asm( 
 "	      004eef09    push ebp"
@@ -1076,6 +1094,9 @@ int32_t S3ViewerPosDelta() {
 
 // FUNCTION: COPTER_D 0x004eef7f
 void S3ViewerSetView() {
+	int32_t[4][4] matrix;
+	struct Point3d p;
+
 // LINE 423:
 	asm( 
 "	      004eef7f    push ebp"

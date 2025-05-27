@@ -7,6 +7,10 @@
 // Contribution: 1:00073960-0007a5d0 Module: 34, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00474960
 void CatalogWindow::CatalogWindow(int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+	class Random tempRandom;
+	int32_t i;
+	int32_t nFullStringID;
+
 // LINE 65:
 	asm( 
 "	      00474960    push ebp"
@@ -1579,6 +1583,9 @@ void CatalogWindow::~CatalogWindow() {
 
 // FUNCTION: COPTER_D 0x00476517
 int32_t CatalogWindow::Initialize() {
+	class basic_string<char> sText;
+	int32_t nFullStringID;
+
 // LINE 132:
 	asm( 
 "	      00476517    push ebp"
@@ -2094,6 +2101,19 @@ int32_t CatalogWindow::Initialize() {
 
 // FUNCTION: COPTER_D 0x00476c64
 void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
+	class basic_string<char> sTempMainGraphicFilePath;
+	struct tagUserPersonalInfo* currentUserPersonalInfo;
+	class basic_string<char> sTempMainGraphicFileName;
+	int32_t i;
+	class MRect[5] rectEquipmentDescriptions;
+	class MRect rectFundsText;
+	class basic_string<char> sTempTabFilePath;
+	class basic_string<char> sTempTabFileName;
+	int32_t nFullStringID;
+	class basic_string<char>[5] sEquipmentDescriptions;
+	class MRect[5] rectEquipmentDescriptionTitles;
+	char[260] szFilePath;
+
 // LINE 167:
 	asm( 
 "	      00476c64    push ebp"
@@ -5060,6 +5080,10 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 
 // FUNCTION: COPTER_D 0x00479dbb
 void CatalogWindow::DrawCurrentEquipmentSelection() {
+	class MRect rectOutline;
+	const int32_t nColorArraySize;
+	unsigned long[6] lIndexArray;
+
 // LINE 394:
 	asm( 
 "	      00479dbb    push ebp"
@@ -5295,6 +5319,9 @@ void CatalogWindow::DrawCurrentEquipmentSelection() {
 
 // FUNCTION: COPTER_D 0x0047a09f
 void CatalogWindow::SetNewEquipmentSelection(long lNewEquipmentSelection) {
+	struct tagUserPersonalInfo* currentUserPersonalInfo;
+	class MRect rectFill;
+
 // LINE 442:
 	asm( 
 "	      0047a09f    push ebp"
@@ -5526,6 +5553,8 @@ void CatalogWindow::SetNewEquipmentSelection(long lNewEquipmentSelection) {
 
 // FUNCTION: COPTER_D 0x0047a30e
 int32_t CatalogWindow::DoesTabHaveAnyStains(long lTab) {
+	int32_t i;
+
 // LINE 474:
 	asm( 
 "	      0047a30e    push ebp"
@@ -5578,6 +5607,8 @@ int32_t CatalogWindow::DoesTabHaveAnyStains(long lTab) {
 
 // FUNCTION: COPTER_D 0x0047a366
 int32_t CatalogWindow::DoesTabHaveAnyPaperClips(long lTab) {
+	int32_t i;
+
 // LINE 488:
 	asm( 
 "	      0047a366    push ebp"
@@ -5630,6 +5661,9 @@ int32_t CatalogWindow::DoesTabHaveAnyPaperClips(long lTab) {
 
 // FUNCTION: COPTER_D 0x0047a3be
 void CatalogWindow::GetCurrentGraphicsFileNames(class basic_string<char>& sMainGraphicFileName, class basic_string<char>& sTabFileName) {
+	char *[9] szTabFileNames;
+	char *[9] szHelicopterFileNames;
+
 // LINE 504:
 	asm( 
 "	      0047a3be    push ebp"
@@ -6235,6 +6269,9 @@ int32_t CatalogWindow::ComposeSelf() {
 
 // FUNCTION: COPTER_D 0x0047ab89
 int32_t CatalogWindow::DoesCursorHitEquipmentSelection(long lXPosition, long lYPosition, long& lEquipment) {
+	int32_t i;
+	const class MRect[5] rectEquipment;
+
 // LINE 557:
 	asm( 
 "	      0047ab89    push ebp"
@@ -6491,6 +6528,9 @@ long CatalogWindow::DoKeyDown(long lKey, char chModifiers) {
 
 // FUNCTION: COPTER_D 0x0047ae0e
 long CatalogWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButton) {
+	long lEquipment;
+	long lTab;
+
 // LINE 615:
 	asm( 
 "	      0047ae0e    push ebp"
@@ -6628,6 +6668,8 @@ long CatalogWindow::DoCursorMove(long nCursorX, long nCursorY) {
 
 // FUNCTION: COPTER_D 0x0047aed6
 void CatalogWindow::SetButtonStates() {
+	const struct tagUserPersonalInfo* currentUserPersonalInfo;
+
 // LINE 654:
 	asm( 
 "	      0047aed6    push ebp"
@@ -6834,6 +6876,8 @@ void CatalogWindow::SetButtonStates() {
 
 // FUNCTION: COPTER_D 0x0047b0d8
 int32_t CatalogWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
+	long[2] lMyMessage;
+
 // LINE 700:
 	asm( 
 "	      0047b0d8    push ebp"
@@ -7005,6 +7049,8 @@ int32_t CatalogWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, 
 
 // FUNCTION: COPTER_D 0x0047b233
 long CatalogWindow::GetHelicopterFromTab(long lTab) {
+	const long[8] lHelicopterTabs;
+
 // LINE 734:
 	asm( 
 "	      0047b233    push ebp"
@@ -7047,6 +7093,8 @@ long CatalogWindow::GetHelicopterFromTab(long lTab) {
 
 // FUNCTION: COPTER_D 0x0047b28a
 long CatalogWindow::GetEquipmentFromSelectionIndex(long lSelectionIndex) {
+	const long[5] lEquipmentChoices;
+
 // LINE 745:
 	asm( 
 "	      0047b28a    push ebp"
@@ -7086,6 +7134,9 @@ long CatalogWindow::GetEquipmentFromSelectionIndex(long lSelectionIndex) {
 
 // FUNCTION: COPTER_D 0x0047b2cc
 int32_t CatalogWindow::CanUserBuy() {
+	long lCurrentValue;
+	long lCurrentFunds;
+
 // LINE 762:
 	asm( 
 "	      0047b2cc    push ebp"
@@ -7157,6 +7208,8 @@ int32_t CatalogWindow::CanUserBuy() {
 
 // FUNCTION: COPTER_D 0x0047b353
 int32_t CatalogWindow::CanUserSell() {
+	const struct tagUserPersonalInfo* currentUserPersonalInfo;
+
 // LINE 783:
 	asm( 
 "	      0047b353    push ebp"
@@ -7224,6 +7277,12 @@ int32_t CatalogWindow::CanUserSell() {
 
 // FUNCTION: COPTER_D 0x0047b3d1
 int32_t CatalogWindow::DoCatalogWindowBuy() {
+	struct tagUserPersonalInfo* currentUserPersonalInfo;
+	long lCurrentValue;
+	long lCurrentHelicopter;
+	long lCurrentFunds;
+	long lFixedCurrentEquipmentSelection;
+
 // LINE 800:
 	asm( 
 "	      0047b3d1    push ebp"
@@ -7366,6 +7425,12 @@ int32_t CatalogWindow::DoCatalogWindowBuy() {
 
 // FUNCTION: COPTER_D 0x0047b4d0
 int32_t CatalogWindow::DoCatalogWindowSell() {
+	struct tagUserPersonalInfo* currentUserPersonalInfo;
+	long lCurrentValue;
+	long lCurrentHelicopter;
+	long lCurrentFunds;
+	long lFixedCurrentEquipmentSelection;
+
 // LINE 833:
 	asm( 
 "	      0047b4d0    push ebp"

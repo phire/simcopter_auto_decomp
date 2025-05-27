@@ -173,6 +173,8 @@ void TreeSim::~TreeSim() {
 
 // FUNCTION: COPTER_D 0x0055cc58
 void TreeSim::Reset(class Behavior* startBehavior, short startTreeID) {
+	struct TreeSim::StackElem* bottom;
+
 // LINE 43:
 	asm( 
 "	      0055cc58    push ebp"
@@ -255,6 +257,9 @@ void TreeSim::Reset(class Behavior* startBehavior, short startTreeID) {
 
 // FUNCTION: COPTER_D 0x0055ccef
 struct TreeSim::StackElem* TreeSim::GetHighLevelAction() {
+	short stackSize;
+	class Behavior* curBeh;
+
 // LINE 62:
 	asm( 
 "	      0055ccef    push ebp"
@@ -520,6 +525,11 @@ unsigned short TreeSim::Gosub(class Behavior* pTransfer, short * stack, short tr
 
 // FUNCTION: COPTER_D 0x0055cf37
 unsigned short TreeSim::Simulate(long ticks, unsigned short bOnceOnly) {
+	struct TreeSim::StackElem* elem;
+	unsigned short done;
+	const struct Behavior::Node* node;
+	enum TreeSim::ReturnCode result;
+
 // LINE 114:
 	asm( 
 "	      0055cf37    push ebp"
@@ -811,6 +821,11 @@ unsigned short TreeSim::Simulate(long ticks, unsigned short bOnceOnly) {
 
 // FUNCTION: COPTER_D 0x0055d1c3
 char TreeSim::NodeComplete(unsigned short success) {
+	char trans;
+	struct TreeSim::StackElem* elem;
+	unsigned short done;
+	const struct Behavior::Node* node;
+
 // LINE 198:
 	asm( 
 "	      0055d1c3    push ebp"
@@ -973,6 +988,8 @@ char TreeSim::NodeComplete(unsigned short success) {
 
 // FUNCTION: COPTER_D 0x0055d2fd
 void TreeSim::GetCurrentNode(short * treeID, short * nodeNum) {
+	struct TreeSim::StackElem* elem;
+
 // LINE 239:
 	asm( 
 "	      0055d2fd    push ebp"
@@ -1118,6 +1135,11 @@ void ExtSim::Error(short errNum) {
 
 // FUNCTION: COPTER_D 0x0055d402
 unsigned short ExtSim::Simulate(long ticks, unsigned short bOnceOnly) {
+	struct TreeSim::StackElem* savestack;
+	unsigned short ret;
+	short savemaxstacksize;
+	short savestacksize;
+
 // LINE 271:
 	asm( 
 "	      0055d402    push ebp"

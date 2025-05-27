@@ -72,6 +72,8 @@ int  CGameApp::CanWeSwitchToFullScreenMode() {
 
 // FUNCTION: COPTER_D 0x00432553
 int  CGameApp::SwitchToWindowedMode() {
+	long hResult;
+
 // LINE 57:
 	asm( 
 "	      00432553    push ebp"
@@ -279,6 +281,8 @@ int  CGameApp::SwitchToWindowedMode() {
 
 // FUNCTION: COPTER_D 0x004326cb
 int  CGameApp::SwitchToFullScreenMode() {
+	long hResult;
+
 // LINE 112:
 	asm( 
 "	      004326cb    push ebp"
@@ -486,6 +490,8 @@ int  CGameApp::SwitchToFullScreenMode() {
 
 // FUNCTION: COPTER_D 0x00432843
 int  CGameApp::ConvertMonitorToWindowedMode() {
+	long hResult;
+
 // LINE 164:
 	asm( 
 "	      00432843    push ebp"
@@ -522,6 +528,8 @@ int  CGameApp::ConvertMonitorToWindowedMode() {
 
 // FUNCTION: COPTER_D 0x00432871
 int  CGameApp::ConvertMonitorToFullScreenMode() {
+	long hResult;
+
 // LINE 179:
 	asm( 
 "	      00432871    push ebp"
@@ -615,6 +623,10 @@ int  CGameApp::ToggleScreenMode() {
 
 // FUNCTION: COPTER_D 0x00432900
 int  CGameApp::CreateDisplaySurfaces() {
+	class MRect rectScreenWindow;
+	long nWindowWidth;
+	long nWindowHeight;
+
 // LINE 210:
 	asm( 
 "	      00432900    push ebp"
@@ -917,6 +929,9 @@ int  CGameApp::DestroyDisplaySurfaces() {
 
 // FUNCTION: COPTER_D 0x00432bcc
 int  CGameApp::CreateModeSurfaces() {
+	int32_t nCurrentMode;
+	class list<CopterGameMode>::iterator i;
+
 // LINE 278:
 	asm( 
 "	      00432bcc    push ebp"
@@ -1040,6 +1055,9 @@ int  CGameApp::CreateModeSurfaces() {
 
 // FUNCTION: COPTER_D 0x00432ce2
 int  CGameApp::DestroyModeSurfaces() {
+	int32_t nCurrentMode;
+	class list<CopterGameMode>::iterator i;
+
 // LINE 319:
 	asm( 
 "	      00432ce2    push ebp"

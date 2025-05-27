@@ -7,6 +7,8 @@
 // Contribution: 1:000c8ad0-000c90b4 Module: 93, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004c9ad0
 int32_t TWKEnQueue(int32_t ** pValues, int32_t nNumValues, char * pszSection) {
+	int32_t nCt;
+
 // LINE 40:
 	asm( 
 "	      004c9ad0    push ebp"
@@ -105,6 +107,11 @@ int32_t TWKEnQueue(int32_t ** pValues, int32_t nNumValues, char * pszSection) {
 
 // FUNCTION: COPTER_D 0x004c9b9b
 int32_t TWKReadFile(char * pszTWKFile, int32_t bIsOnMessageRead) {
+	char[50] szSection;
+	int32_t nCt;
+	char[300] szTemp;
+	char[260] szFullPath;
+
 // LINE 70:
 	asm( 
 "	      004c9b9b    push ebp"
@@ -319,6 +326,12 @@ void TWKUpdate() {
 
 // FUNCTION: COPTER_D 0x004c9d68
 void TWKReadAllFiles(char * pszTWKFile) {
+	char * pszSection;
+	int32_t nCt;
+	char[300] szTemp;
+	char[260] szFullPath;
+	char * pszFile;
+
 // LINE 154:
 	asm( 
 "	      004c9d68    push ebp"
@@ -423,6 +436,13 @@ void TWKReadAllFiles(char * pszTWKFile) {
 
 // FUNCTION: COPTER_D 0x004c9e4f
 void TWKReadSection(char * pszFile, char * pszSection, int32_t nTweakQueueSlotIdx) {
+	char[50] szKey;
+	char[20] szDataType;
+	int32_t nNumCtrl;
+	int32_t nCt2;
+	char[260] szFullPath;
+	char[15] szValue;
+
 // LINE 203:
 	asm( 
 "	      004c9e4f    push ebp"
@@ -660,6 +680,8 @@ int32_t TWKDOSRead(char * pszTWKFile) {
 
 // FUNCTION: COPTER_D 0x004ca06e
 void TWKGetToEOLN(char * pDest, char * pSource) {
+	int32_t nCt;
+
 // LINE 361:
 	asm( 
 "	      004ca06e    push ebp"

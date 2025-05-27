@@ -7,6 +7,9 @@
 // Contribution: 1:0003c850-0003cad2 Module: 56, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0043d850
 float GetMillisecondTime() {
+	float Time;
+	union _LARGE_INTEGER Counter;
+
 // LINE 27:
 	asm( 
 "	      0043d850    push ebp"
@@ -152,6 +155,8 @@ long ConvertRange(long lPositionSource, long lMinSource, long lMaxSource, long l
 
 // FUNCTION: COPTER_D 0x0043d91f
 void SparkalDelay(unsigned long lMilliseconds) {
+	class MTimer tempTimer;
+
 // LINE 99:
 	asm( 
 "	      0043d91f    push ebp"

@@ -7,6 +7,12 @@
 // Contribution: 1:0003cae0-0003d110 Module: 55, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0043dae0
 void Version::Version() {
+	unsigned long dwVersionInfoHandle;
+	void * __ptr32 hModule;
+	unsigned long dwVersionInfoSize;
+	uint32_t nValueSize;
+	char[260] szFileName;
+
 // LINE 23:
 	asm( 
 "	      0043dae0    push ebp"
@@ -166,6 +172,10 @@ void Version::~Version() {
 
 // FUNCTION: COPTER_D 0x0043dc57
 int32_t Version::GetApplicationName(char *& szName) {
+	char[255] subBlockName;
+	int32_t nReturnValue;
+	uint32_t vSize;
+
 // LINE 74:
 	asm( 
 "	      0043dc57    push ebp"
@@ -237,6 +247,10 @@ int32_t Version::GetApplicationName(char *& szName) {
 
 // FUNCTION: COPTER_D 0x0043dce9
 int32_t Version::GetApplicationVersion(char *& szVersion) {
+	char[255] subBlockName;
+	int32_t nReturnValue;
+	uint32_t vSize;
+
 // LINE 109:
 	asm( 
 "	      0043dce9    push ebp"
@@ -308,6 +322,10 @@ int32_t Version::GetApplicationVersion(char *& szVersion) {
 
 // FUNCTION: COPTER_D 0x0043dd7b
 int32_t Version::GetApplicationCopyright(char *& szCopyright) {
+	char[255] subBlockName;
+	int32_t nReturnValue;
+	uint32_t vSize;
+
 // LINE 133:
 	asm( 
 "	      0043dd7b    push ebp"
@@ -379,6 +397,10 @@ int32_t Version::GetApplicationCopyright(char *& szCopyright) {
 
 // FUNCTION: COPTER_D 0x0043de0d
 int32_t Version::GetApplicationDebugVersion(char *& szVersion) {
+	char[255] subBlockName;
+	int32_t nReturnValue;
+	uint32_t vSize;
+
 // LINE 156:
 	asm( 
 "	      0043de0d    push ebp"
@@ -450,6 +472,10 @@ int32_t Version::GetApplicationDebugVersion(char *& szVersion) {
 
 // FUNCTION: COPTER_D 0x0043de9f
 long Version::GetApplicationVersion(int32_t nVersionComponent) {
+	int32_t nReturnValue;
+	struct tagVS_FIXEDFILEINFO* vsFixedFileInfo;
+	uint32_t vSize;
+
 // LINE 187:
 	asm( 
 "	      0043de9f    push ebp"
@@ -568,6 +594,8 @@ long Version::GetApplicationVersion(int32_t nVersionComponent) {
 
 // FUNCTION: COPTER_D 0x0043df83
 int32_t Version::GetSystemVersion(char * szSystemVersion) {
+	unsigned long dwVersion;
+
 // LINE 230:
 	asm( 
 "	      0043df83    push ebp"
@@ -636,6 +664,9 @@ int32_t Version::GetSystemVersion(char * szSystemVersion) {
 
 // FUNCTION: COPTER_D 0x0043dff2
 int32_t Version::GetSystemType() {
+	int32_t nSystemType;
+	unsigned long dwVersion;
+
 // LINE 267:
 	asm( 
 "	      0043dff2    push ebp"
@@ -688,6 +719,8 @@ int32_t Version::GetSystemType() {
 
 // FUNCTION: COPTER_D 0x0043e038
 long Version::GetSystemVersion(int32_t nVersionComponent) {
+	unsigned long dwVersion;
+
 // LINE 302:
 	asm( 
 "	      0043e038    push ebp"
@@ -742,6 +775,8 @@ long Version::GetSystemVersion(int32_t nVersionComponent) {
 
 // FUNCTION: COPTER_D 0x0043e086
 long Version::GetCPUVersion() {
+	long lReturnValue;
+
 // LINE 334:
 	asm( 
 "	      0043e086    push ebp"
@@ -783,6 +818,8 @@ long Version::GetCPUVersion() {
 
 // FUNCTION: COPTER_D 0x0043e0b8
 long Version::GetCPUSpeed() {
+	struct FREQ_INFO tempFREQ_INFO;
+
 // LINE 355:
 	asm( 
 "	      0043e0b8    push ebp"

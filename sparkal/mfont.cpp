@@ -703,6 +703,11 @@ class MFont& MFont::operator=(const class MFont& copyMFont) {
 
 // FUNCTION: COPTER_D 0x0049ff74
 int32_t MFont::CreateFontA() {
+	unsigned long dwItalic;
+	unsigned long dwStrikeOut;
+	int32_t nWeight;
+	unsigned long dwUnderline;
+
 // LINE 125:
 	asm( 
 "	      0049ff74    push ebp"
@@ -911,6 +916,8 @@ int32_t MFont::CreateFontA() {
 
 // FUNCTION: COPTER_D 0x004a015d
 void MFont::SetFontCharacteristics(long lNewHeight, long lNewWidth, long lNewAttributes) {
+	int32_t bFontChanged;
+
 // LINE 163:
 	asm( 
 "	      004a015d    push ebp"
@@ -1068,6 +1075,8 @@ int32_t MFont::IsFontAvailable(char * szFaceName, unsigned long lNewHeight, unsi
 
 // FUNCTION: COPTER_D 0x004a0235
 int32_t MFont::LoadFont(char * szPath) {
+	int32_t nReturnValue;
+
 // LINE 222:
 	asm( 
 "	      004a0235    push ebp"
@@ -1114,6 +1123,8 @@ int32_t MFont::LoadFont(char * szPath) {
 
 // FUNCTION: COPTER_D 0x004a0273
 int32_t MFont::UnloadFont(char * szPath) {
+	int32_t nReturnValue;
+
 // LINE 239:
 	asm( 
 "	      004a0273    push ebp"
@@ -1160,6 +1171,13 @@ int32_t MFont::UnloadFont(char * szPath) {
 
 // FUNCTION: COPTER_D 0x004a02b1
 int32_t MFont::GetTextDimensions(char * szString, long& lWidth, long& lHeight) {
+	struct tagSIZE sizeText;
+	struct tagRECT rectText;
+	void * __ptr32 hdcScreen;
+	long lStringLength;
+	int32_t nReturnValue;
+	void * __ptr32 hFontOriginal;
+
 // LINE 259:
 	asm( 
 "	      004a02b1    push ebp"

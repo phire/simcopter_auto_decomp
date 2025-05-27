@@ -7,6 +7,8 @@
 // Contribution: 1:0015fbf0-001614f4 Module: 189, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00560bf0
 class cCopterAnim *  cCopterBody::GetPrivateAnim(unsigned long animName) {
+	short count;
+
 // LINE 1937:
 	asm( 
 "	      00560bf0    push ebp"
@@ -204,6 +206,8 @@ class cCopterAnim *  cCopterBody::GetPrivateAnim(unsigned long animName) {
 
 // FUNCTION: COPTER_D 0x00560e78
 void  cCopterBody::ActivateAllPartPointers(unsigned short activated) {
+	short count;
+
 // LINE 2061:
 	asm( 
 "	      00560e78    push ebp"
@@ -476,6 +480,9 @@ class cCopterBody *  cCopterBody::GetCopterBody(unsigned char * name) {
 
 // FUNCTION: COPTER_D 0x00561190
 struct cCopterBody::Part *  cCopterBody::GetPartByName(unsigned long partname) {
+	struct cCopterBody::Part* part;
+	short count;
+
 // LINE 2091:
 	asm( 
 "	      00561190    push ebp"
@@ -572,6 +579,13 @@ struct cCopterBody::Part *  cCopterBody::GetPartByName(unsigned long partname) {
 
 // FUNCTION: COPTER_D 0x00561281
 void  cCopterBody::DrawSwitch(float phiOff, float psiOff, struct cCopterBody::Part* part, short screenx, short screeny, float scale, short colorIndexShift) {
+	struct TransformedInfo transinfo;
+	struct Point cpt;
+	struct Point ept;
+	struct Point3d ePt;
+	short color;
+	struct Point3d sPt;
+
 // LINE 2102:
 	asm( 
 "	      00561281    push ebp"
@@ -966,6 +980,17 @@ void  cCopterBody::DrawSwitch(float phiOff, float psiOff, struct cCopterBody::Pa
 
 // FUNCTION: COPTER_D 0x00561611
 void  cCopterBody::Draw(float xOff, float yOff, class cCopterAnim* privanim, short framenum, short screenx, short screeny, float scale, short nearMedFar, short colorIndexShift) {
+	float cosY;
+	float cosX;
+	struct PrivAnimPartInfo* privpartinfos;
+	int32_t drawordercount;
+	struct cCopterBody::Part* part;
+	long numParts;
+	short orderID;
+	short count;
+	float sinY;
+	float sinX;
+
 // LINE 2180:
 	asm( 
 "	      00561611    push ebp"
@@ -1519,6 +1544,9 @@ void  cCopterBody::Draw(float xOff, float yOff, class cCopterAnim* privanim, sho
 
 // FUNCTION: COPTER_D 0x00561b74
 void  cCopterBody::InstallArrayPointers(unsigned short expectondisk) {
+	short numRealAnims;
+	unsigned char[16] tmp;
+
 // LINE 2285:
 	asm( 
 "	      00561b74    push ebp"
@@ -1869,6 +1897,9 @@ void  cCopterBody::InstallArrayPointers(unsigned short expectondisk) {
 
 // FUNCTION: COPTER_D 0x005620af
 void  cCopterBody::DestroyAll() {
+	void * __ptr32 h;
+	short count;
+
 // LINE 2300:
 	asm( 
 "	      005620af    push ebp"
@@ -2187,6 +2218,9 @@ int32_t cCopterBodyCompareDrawOrder(void * __ptr32 p1, void * __ptr32 p2) {
 
 // FUNCTION: COPTER_D 0x0056240b
 void SwizzleCopterBodyPart(void * __ptr32 val, long size) {
+	struct cCopterBody::Part* part;
+	short debugbodypartsize;
+
 // LINE 2332:
 	asm( 
 "	      0056240b    push ebp"
@@ -2269,6 +2303,8 @@ void SwizzleCopterBodyPart(void * __ptr32 val, long size) {
 
 // FUNCTION: COPTER_D 0x0056249b
 void SwizzleAnimLookup(void * __ptr32 val, long size) {
+	struct AnimLookup* al;
+
 // LINE 2346:
 	asm( 
 "	      0056249b    push ebp"

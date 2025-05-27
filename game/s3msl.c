@@ -7,6 +7,9 @@
 // Contribution: 1:0011d770-0012290d Module: 167, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0051e770
 void S3MissileReset() {
+	struct _MISSILE_DATA* md;
+	long i;
+
 // LINE 112:
 	asm( 
 "	      0051e770    push ebp"
@@ -166,6 +169,15 @@ void S3MissileReset() {
 
 // FUNCTION: COPTER_D 0x0051e8e0
 void S3MissileInit() {
+	struct _MISSILE_DATA* md;
+	int32_t obj;
+	long j;
+	char * mem;
+	long i;
+	struct Point3d* verts;
+	long size;
+	struct VRObjInfo oinfo;
+
 // LINE 193:
 	asm( 
 "	      0051e8e0    push ebp"
@@ -891,6 +903,18 @@ void S3MissileInit() {
 
 // FUNCTION: COPTER_D 0x0051eee5
 struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, struct Point3d* loc, struct Point3d* vect, long scale, struct _DYOBJ_INST* dystarter, int32_t speed, long mission_id) {
+	struct _MISSILE_DATA* md;
+	struct VRview pos;
+	struct _CELL_INFO* cptr;
+	int32_t rdist;
+	struct _MISSION_PARMS mp;
+	long i;
+	long smoke_size;
+	struct VRFaceInfo finfo;
+	int32_t face;
+	struct Point3d sloc;
+	struct VRObjInfo oinfo;
+
 // LINE 403:
 	asm( 
 "	      0051eee5    push ebp"
@@ -2678,6 +2702,22 @@ struct _MISSILE_DATA* S3MissileStart(long msl_type, struct Point2d* celloc, stru
 
 // FUNCTION: COPTER_D 0x0051fe8a
 void S3MissileDriver() {
+	struct _CELL_INFO* tmpcptr;
+	struct _MISSILE_DATA* md;
+	struct VRview pos;
+	struct _DYOBJ_INST** dyptrptr;
+	struct _CELL_INFO* cptr;
+	struct _CELL_INFO* lcptr;
+	int32_t alt;
+	struct _MISSION_PARMS mp;
+	long i;
+	struct Point2d newpos;
+	struct Point3d newloc;
+	struct Point3d tmploc;
+	int32_t dist;
+	struct _DYOBJ_INST* dyobj;
+	struct _CELL_FIRE_DATA* cfd;
+
 // LINE 913:
 	asm( 
 "	      0051fe8a    push ebp"
@@ -6341,6 +6381,25 @@ void S3MissileDriver() {
 
 // FUNCTION: COPTER_D 0x00522096
 int32_t S3MissileCollisionCheck(struct _MISSILE_DATA* md, int32_t dist, struct _CELL_INFO* cptr) {
+	long num_debris;
+	struct Point3d newvector;
+	int32_t newdist;
+	struct Point3d oloc;
+	long j;
+	struct Point3d loc;
+	struct Point2d celloc;
+	struct Point3d center;
+	struct Point3d vec;
+	int32_t[4][4] refmat;
+	struct _STOBJ_INST* stobj;
+	struct _DYOBJ_INST* dyobj;
+	struct Point3d cloc;
+	struct Point3d sloc;
+	long hit_type;
+	struct _CELL_FIRE_DATA* cfd;
+	struct VRObjInfo oinfo;
+	struct Point3d* norm;
+
 // LINE 1791:
 	asm( 
 "	      00522096    push ebp"
@@ -7865,6 +7924,10 @@ int32_t S3MissileCollisionCheck(struct _MISSILE_DATA* md, int32_t dist, struct _
 
 // FUNCTION: COPTER_D 0x00522dbc
 int32_t S3MissileGroundHit(struct Point3d* sp, struct Point3d* sv, int32_t dist, struct Point3d* cloc) {
+	int32_t alt;
+	struct Point3d endp;
+	int32_t alt2;
+
 // LINE 2253:
 	asm( 
 "	      00522dbc    push ebp"
@@ -7996,6 +8059,16 @@ int32_t S3MissileGroundHit(struct Point3d* sp, struct Point3d* sv, int32_t dist,
 
 // FUNCTION: COPTER_D 0x00522eb3
 int32_t S3MissileSphereHit(struct Point3d* sp, struct Point3d* sv, int32_t dist, struct Point3d* tc, int32_t r) {
+	struct FP3D s_to_t;
+	struct FP3D ftc;
+	double newdist;
+	struct FP3D fsv;
+	struct FP3D fsp;
+	double dotp2;
+	double dotp1;
+	double d_squared;
+	double fr;
+
 // LINE 2509:
 	asm( 
 "	      00522eb3    push ebp"
@@ -8285,6 +8358,13 @@ int32_t S3MissileSphereHit(struct Point3d* sp, struct Point3d* sv, int32_t dist,
 
 // FUNCTION: COPTER_D 0x005231c2
 void S3DrawPoint(struct VRBlit* blit) {
+	long winheight;
+	int32_t y;
+	int32_t x;
+	long bufwidth;
+	long winwidth;
+	char * ptr;
+
 // LINE 2608:
 	asm( 
 "	      005231c2    push ebp"
@@ -8397,6 +8477,9 @@ void S3DrawPoint(struct VRBlit* blit) {
 
 // FUNCTION: COPTER_D 0x00523270
 struct _MISSILE_DATA* S3DebrisGetByMission(long mission_id) {
+	struct _MISSILE_DATA* md;
+	long i;
+
 // LINE 2663:
 	asm( 
 "	      00523270    push ebp"
@@ -8452,6 +8535,11 @@ struct _MISSILE_DATA* S3DebrisGetByMission(long mission_id) {
 
 // FUNCTION: COPTER_D 0x005232d1
 void S3MissileDebrisDouse(struct _DYOBJ_INST* dyobj) {
+	struct _MISSILE_DATA* md;
+	struct _DYOBJ_INST** dyptrptr;
+	struct _CELL_INFO* cptr;
+	struct _MISSION_PARMS mp;
+
 // LINE 2686:
 	asm( 
 "	      005232d1    push ebp"
@@ -8619,6 +8707,8 @@ void S3MissileDebrisDouse(struct _DYOBJ_INST* dyobj) {
 
 // FUNCTION: COPTER_D 0x005233ff
 void S3MissileDebrisFire(struct _CELL_INFO* cptr, struct Point3d* loc, long * seq) {
+	struct Point3d tmploc;
+
 // LINE 2748:
 	asm( 
 "	      005233ff    push ebp"
@@ -8681,6 +8771,11 @@ void S3MissileDebrisFire(struct _CELL_INFO* cptr, struct Point3d* loc, long * se
 
 // FUNCTION: COPTER_D 0x0052345a
 int32_t S3MissileMIFFLoad(void * __ptr32 miffReader) {
+	struct _MISSILE_DATA* md;
+	struct _CELL_INFO* cptr;
+	long i;
+	long ret;
+
 // LINE 2776:
 	asm( 
 "	      0052345a    push ebp"
@@ -9125,6 +9220,9 @@ int32_t S3MissileMIFFLoad(void * __ptr32 miffReader) {
 
 // FUNCTION: COPTER_D 0x005237ee
 int32_t S3MissileMIFFSave(void * __ptr32 miffWriter) {
+	long i;
+	long ret;
+
 // LINE 2877:
 	asm( 
 "	      005237ee    push ebp"

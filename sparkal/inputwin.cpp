@@ -955,6 +955,9 @@ int32_t KeyboardWindow::Initialize() {
 
 // FUNCTION: COPTER_D 0x00402108
 int32_t KeyboardWindow::CreateImage(int32_t bResizeWindowToFitImage) {
+	class basic_string<char> sKeyLightPath;
+	class basic_string<char> sNonTextKeyPath;
+
 // LINE 111:
 	asm( 
 "	      00402108    push ebp"
@@ -1423,6 +1426,8 @@ void KeyboardWindow::DestroyImage() {
 
 // FUNCTION: COPTER_D 0x00402725
 int32_t KeyboardWindow::ConvertKeyToString(int32_t nLanguage, long lKey, class basic_string<char>& sKey) {
+	int32_t nFullStringID;
+
 // LINE 162:
 	asm( 
 "	      00402725    push ebp"
@@ -1854,6 +1859,8 @@ int32_t KeyboardWindow::ConvertKeyToString(int32_t nLanguage, long lKey, class b
 
 // FUNCTION: COPTER_D 0x00402e31
 int32_t KeyboardWindow::DoesKeyExistOnKeyboard(long lKey) {
+	class list<HotSpot>::iterator tempHotSpotListIterator;
+
 // LINE 174:
 	asm( 
 "	      00402e31    push ebp"
@@ -2018,6 +2025,8 @@ int32_t KeyboardWindow::DoesKeyExistOnKeyboard(long lKey) {
 
 // FUNCTION: COPTER_D 0x00402fcd
 int32_t KeyboardWindow::DoesPositionHitKey(long lXPosition, long lYPosition, long& lKey) {
+	class list<HotSpot>::iterator tempHotSpotListIterator;
+
 // LINE 199:
 	asm( 
 "	      00402fcd    push ebp"
@@ -2660,6 +2669,13 @@ int32_t KeyboardWindow::ComposeSelf() {
 
 // FUNCTION: COPTER_D 0x0040364f
 void KeyboardWindow::DrawKeyColorsOnKeyboard() {
+	class list<HotSpot>::iterator tempHotSpotListIterator;
+	long lCurrentHotSpotID;
+	class list<KeyColors>::iterator tempKeyColorsListIterator;
+	long lCurrentColorIndex;
+	long lCurrentKeyColorID;
+	class MRect rectCurrentKey;
+
 // LINE 319:
 	asm( 
 "	      0040364f    push ebp"
@@ -3061,6 +3077,13 @@ void KeyboardWindow::DrawKeyColorsOnKeyboard() {
 
 // FUNCTION: COPTER_D 0x00403a8f
 void KeyboardWindow::DrawCharactersOnKeyboard() {
+	long lCurrentHotSpotID;
+	class list<HotSpot>::iterator tempHotSpotListIterator;
+	char[64] szTypeface;
+	class MRect rectCurrentKey;
+	class MRect rectCurrentImage;
+	class basic_string<char> sKey;
+
 // LINE 386:
 	asm( 
 "	      00403a8f    push ebp"
@@ -3713,6 +3736,10 @@ void KeyboardWindow::DrawCharactersOnKeyboard() {
 
 // FUNCTION: COPTER_D 0x004042e5
 void KeyboardWindow::DrawLightsOnKeyboard() {
+	int32_t nCapsLockLightImageX;
+	int32_t nScrollLockLightImageX;
+	int32_t nNumLockLightImageX;
+
 // LINE 458:
 	asm( 
 "	      004042e5    push ebp"
@@ -4026,6 +4053,8 @@ long KeyboardWindow::DoKeyUp(long lKey, char chModifiers) {
 
 // FUNCTION: COPTER_D 0x00404549
 long KeyboardWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButton) {
+	struct KeyboardWindowMessage tempKeyboardWindowMessage;
+
 // LINE 530:
 	asm( 
 "	      00404549    push ebp"
@@ -4103,6 +4132,8 @@ long KeyboardWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nB
 
 // FUNCTION: COPTER_D 0x004045cb
 long KeyboardWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nButton) {
+	struct KeyboardWindowMessage tempKeyboardWindowMessage;
+
 // LINE 549:
 	asm( 
 "	      004045cb    push ebp"
@@ -4173,6 +4204,8 @@ long KeyboardWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nBut
 
 // FUNCTION: COPTER_D 0x00404641
 long KeyboardWindow::DoCursorMove(long nCursorX, long nCursorY) {
+	struct KeyboardWindowMessage tempKeyboardWindowMessage;
+
 // LINE 567:
 	asm( 
 "	      00404641    push ebp"
@@ -4242,6 +4275,8 @@ long KeyboardWindow::DoCursorMove(long nCursorX, long nCursorY) {
 
 // FUNCTION: COPTER_D 0x004046b8
 void JoystickWindow::JoystickWindow(class MRect& rectNewPosition, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+	int32_t i;
+
 // LINE 612:
 	asm( 
 "	      004046b8    push ebp"
@@ -4623,6 +4658,8 @@ int32_t JoystickWindow::Initialize() {
 
 // FUNCTION: COPTER_D 0x00404c35
 int32_t JoystickWindow::CreateImage(int32_t bResizeWindowToFitImage) {
+	class basic_string<char> sPath;
+
 // LINE 663:
 	asm( 
 "	      00404c35    push ebp"
@@ -5277,6 +5314,10 @@ void JoystickWindow::DestroyImage() {
 
 // FUNCTION: COPTER_D 0x004054fd
 int32_t JoystickWindow::ComposeSelf() {
+	int32_t j;
+	int32_t i;
+	long[14] lNewJoystickControlStates;
+
 // LINE 724:
 	asm( 
 "	      004054fd    push ebp"
@@ -5400,6 +5441,8 @@ int32_t JoystickWindow::ComposeSelf() {
 
 // FUNCTION: COPTER_D 0x004055ec
 void JoystickWindow::DrawCurrentJoystick() {
+	int32_t i;
+
 // LINE 761:
 	asm( 
 "	      004055ec    push ebp"
@@ -5496,6 +5539,10 @@ void JoystickWindow::DrawCurrentJoystick() {
 
 // FUNCTION: COPTER_D 0x004056b8
 void JoystickWindow::DrawButton(int32_t nButton) {
+	int32_t x2;
+	int32_t x1;
+	int32_t nImageWidth;
+
 // LINE 787:
 	asm( 
 "	      004056b8    push ebp"
@@ -5584,6 +5631,10 @@ void JoystickWindow::DrawButton(int32_t nButton) {
 
 // FUNCTION: COPTER_D 0x00405781
 void JoystickWindow::DrawSlider(int32_t nSlider) {
+	int32_t x2;
+	int32_t x1;
+	int32_t nImageWidth;
+
 // LINE 810:
 	asm( 
 "	      00405781    push ebp"
@@ -5687,6 +5738,13 @@ void JoystickWindow::DrawSlider(int32_t nSlider) {
 
 // FUNCTION: COPTER_D 0x00405867
 void JoystickWindow::DrawHandle() {
+	int32_t i;
+	int32_t x2;
+	class MRect[4] rectHandleBaseSources;
+	int32_t x1;
+	int32_t nImageWidth;
+	int32_t nHandleImageToUse;
+
 // LINE 833:
 	asm( 
 "	      00405867    push ebp"
@@ -6086,6 +6144,8 @@ int32_t JoystickWindow::GetHandleImageToUse() {
 
 // FUNCTION: COPTER_D 0x00405ca4
 void JoystickWindow::GetNewJoystickControlStates(long * lNewJoystickControlStates) {
+	int32_t i;
+
 // LINE 925:
 	asm( 
 "	      00405ca4    push ebp"
@@ -6250,6 +6310,8 @@ void JoystickWindow::SetCurrentJoystick(int32_t nNewCurrentJoystick) {
 
 // FUNCTION: COPTER_D 0x00405db8
 long JoystickWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButton) {
+	long lKey;
+
 // LINE 964:
 	asm( 
 "	      00405db8    push ebp"
@@ -6376,6 +6438,8 @@ long JoystickWindow::DoCursorMove(long nCursorX, long nCursorY) {
 
 // FUNCTION: COPTER_D 0x00405e6e
 int32_t JoystickWindow::DoesPositionHitKey(long lXPosition, long lYPosition, long& lKey) {
+	int32_t i;
+
 // LINE 995:
 	asm( 
 "	      00405e6e    push ebp"
@@ -7088,6 +7152,10 @@ void UserInputWindow::UserInputWindow(class MRect& rectNewPosition, int32_t nNew
 
 // FUNCTION: COPTER_D 0x004069bb
 int32_t UserInputWindow::Initialize() {
+	class ButtonWindow* tempButtonWindow;
+	class basic_string<char> sText;
+	int32_t nFullStringID;
+
 // LINE 1087:
 	asm( 
 "	      004069bb    push ebp"
@@ -8491,6 +8559,8 @@ long UserInputWindow::DoKeyDown(long lKey, char chModifiers) {
 
 // FUNCTION: COPTER_D 0x00407db1
 int32_t UserInputWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
+	class ControlDisplayWindow* tempControlDisplayWindow;
+
 // LINE 1195:
 	asm( 
 "	      00407db1    push ebp"
@@ -8859,6 +8929,12 @@ int32_t UserInputWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID
 
 // FUNCTION: COPTER_D 0x00408142
 int32_t UserInputWindow::DoJoystickWindowMessage(long lMessage, void * __ptr32 pMessageData) {
+	long lControl;
+	long lDevice;
+	long lCurrentCommand;
+	enum UserInputWindow::KeyUsageType tempKeyUsageType;
+	struct Shortcut tempShortcut;
+
 // LINE 1251:
 	asm( 
 "	      00408142    push ebp"
@@ -9505,6 +9581,9 @@ int32_t UserInputWindow::DoJoystickWindowMessage(long lMessage, void * __ptr32 p
 
 // FUNCTION: COPTER_D 0x004089e6
 void UserInputWindow::AddJoystickTwinCommand(long lCommand, long lDevice, long lControl) {
+	long lTwinCommand;
+	struct Shortcut tempShortcut;
+
 // LINE 1342:
 	asm( 
 "	      004089e6    push ebp"
@@ -9749,6 +9828,8 @@ void UserInputWindow::AddJoystickTwinCommand(long lCommand, long lDevice, long l
 
 // FUNCTION: COPTER_D 0x00408d04
 void UserInputWindow::RemoveJoystickTwinCommand(long lCommand, long lDevice, long lControl) {
+	long lTwinCommand;
+
 // LINE 1365:
 	asm( 
 "	      00408d04    push ebp"
@@ -9796,6 +9877,13 @@ void UserInputWindow::RemoveJoystickTwinCommand(long lCommand, long lDevice, lon
 
 // FUNCTION: COPTER_D 0x00408d49
 int32_t UserInputWindow::DoKeyboardWindowMessage(long lMessage, void * __ptr32 pMessageData) {
+	long lCurrentCommand;
+	long lPush;
+	long lKey;
+	enum UserInputWindow::KeyUsageType tempKeyUsageType;
+	struct Shortcut tempShortcut;
+	long lIgnoreModifiers;
+
 // LINE 1378:
 	asm( 
 "	      00408d49    push ebp"
@@ -10216,6 +10304,8 @@ int32_t UserInputWindow::DoKeyboardWindowMessage(long lMessage, void * __ptr32 p
 
 // FUNCTION: COPTER_D 0x0040920e
 enum UserInputWindow::KeyUsageType UserInputWindow::GetKeyUsageType(long lKey, long lDevice) {
+	long lCurrentCommand;
+
 // LINE 1443:
 	asm( 
 "	      0040920e    push ebp"
@@ -10467,6 +10557,9 @@ enum UserInputWindow::KeyUsageType UserInputWindow::GetKeyUsageType(long lKey, l
 
 // FUNCTION: COPTER_D 0x00409494
 void UserInputWindow::RemoveShortcutFromList(long lCommand, long lDevice, long lKey) {
+	class list<Shortcut>::iterator tempShortcutListIterator;
+	struct Shortcut tempShortcut;
+
 // LINE 1489:
 	asm( 
 "	      00409494    push ebp"
@@ -10698,6 +10791,11 @@ int32_t UserInputWindow::DoCommandListBoxWindowMessage(long lMessage, void * __p
 
 // FUNCTION: COPTER_D 0x0040967f
 long UserInputWindow::GetCurrentDevice() {
+	int32_t nDeviceCount;
+	class list<StringIDAssociation>::iterator tempIterator;
+	int32_t i;
+	long lCurrentInputDeviceIndex;
+
 // LINE 1537:
 	asm( 
 "	      0040967f    push ebp"
@@ -10802,6 +10900,11 @@ long UserInputWindow::GetCurrentDevice() {
 
 // FUNCTION: COPTER_D 0x00409740
 long UserInputWindow::GetCurrentCommand() {
+	class list<StringIDAssociation>::iterator tempIterator;
+	int32_t i;
+	long lCurrentCommandIndex;
+	int32_t nCommandCount;
+
 // LINE 1559:
 	asm( 
 "	      00409740    push ebp"
@@ -10906,6 +11009,13 @@ long UserInputWindow::GetCurrentCommand() {
 
 // FUNCTION: COPTER_D 0x00409804
 void UserInputWindow::UpdateDisplay(int32_t bRedrawBackground) {
+	long lCurrentCommand;
+	int32_t i;
+	long lCurrentDevice;
+	long[16] lReservedKeys;
+	struct Shortcut tempShortcut;
+	struct KeyColors tempKeyColors;
+
 // LINE 1585:
 	asm( 
 "	      00409804    push ebp"
@@ -11723,6 +11833,9 @@ void UserInputWindow::UpdateDisplay(int32_t bRedrawBackground) {
 
 // FUNCTION: COPTER_D 0x0040a345
 int32_t UserInputWindow::DoesTwinCommandExistForShortcut(long lDevice, long lCommand, long lKey) {
+	long lTwinCommand;
+	class list<Shortcut>::iterator tempShortcutListIterator;
+
 // LINE 1694:
 	asm( 
 "	      0040a345    push ebp"
@@ -11833,6 +11946,10 @@ int32_t UserInputWindow::DoesTwinCommandExistForShortcut(long lDevice, long lCom
 
 // FUNCTION: COPTER_D 0x0040a459
 void UserInputWindow::ClearDeviceArea() {
+	class MPoint ptDeviceArea;
+	class CBackBuffer tempImage;
+	char[260] szFilePath;
+
 // LINE 1716:
 	asm( 
 "	      0040a459    push ebp"
@@ -11903,6 +12020,12 @@ void UserInputWindow::ClearDeviceArea() {
 
 // FUNCTION: COPTER_D 0x0040a508
 void UserInputWindow::SetupAllInputDevices() {
+	class basic_string<char> sDeviceName;
+	int32_t i;
+	unsigned long nFullStringID;
+	int32_t nJoystickCount;
+	char[64] szJoystickName;
+
 // LINE 1732:
 	asm( 
 "	      0040a508    push ebp"
@@ -12272,6 +12395,10 @@ void UserInputWindow::SetupAllInputDevices() {
 
 // FUNCTION: COPTER_D 0x0040aa51
 void UserInputWindow::SetupAllCommands() {
+	class basic_string<char> sCommandName;
+	int32_t i;
+	uint32_t nFullStringID;
+
 // LINE 1767:
 	asm( 
 "	      0040aa51    push ebp"
@@ -12582,6 +12709,9 @@ void UserInputWindow::SetupAllCommands() {
 
 // FUNCTION: COPTER_D 0x0040ae7c
 void UserInputWindow::ReadShortcuts(class list<Shortcut>& shortCutList) {
+	long lCurrentCommand;
+	class list<Shortcut>::iterator tempShortcutListIterator;
+
 // LINE 1785:
 	asm( 
 "	      0040ae7c    push ebp"
@@ -13075,6 +13205,11 @@ void ControlDisplayWindow::ControlDisplayWindow(class MRect& rectNewPosition, in
 
 // FUNCTION: COPTER_D 0x0040b51a
 int32_t ControlDisplayWindow::Initialize() {
+	class ButtonWindow* tempButtonWindow;
+	class TextWindow* tempTextWindow;
+	class basic_string<char> sText;
+	int32_t nFullStringID;
+
 // LINE 1862:
 	asm( 
 "	      0040b51a    push ebp"
@@ -14357,6 +14492,17 @@ int32_t ControlDisplayWindow::DoMessage(class GraphicWindow* gwSource, long lWin
 
 // FUNCTION: COPTER_D 0x0040c5b1
 void ControlDisplayWindow::ReadShortcuts(class list<Shortcut>* addedShortcutList) {
+	class list<Shortcut>::iterator shortcutIterator;
+	class basic_string<char> sCurrentCommand;
+	class set<long,less<long>> tempLongSet;
+	int32_t nFirstShowableCommandIndex;
+	class rb_tree<long,long,ident<long,long>,less<long>>::const_iterator tempLongSetIterator;
+	class basic_string<char> sCurrentKeys;
+	struct Shortcut* tempShortcut;
+	int32_t nTempForDebugging;
+	int32_t nKeyCountForCommand;
+	int32_t nLastShowableCommandIndex;
+
 // LINE 1982:
 	asm( 
 "	      0040c5b1    push ebp"
@@ -14803,6 +14949,8 @@ void ControlDisplayWindow::ReadShortcuts(class list<Shortcut>* addedShortcutList
 
 // FUNCTION: COPTER_D 0x0040cb52
 void ControlDisplayWindow::GetCommandString(class basic_string<char>& sCommand, long lCommand) {
+	uint32_t nFullStringID;
+
 // LINE 2043:
 	asm( 
 "	      0040cb52    push ebp"
@@ -15230,6 +15378,12 @@ void ControlDisplayWindow::GetCommandString(class basic_string<char>& sCommand, 
 
 // FUNCTION: COPTER_D 0x0040d24a
 void ControlDisplayWindow::AppendKeysString(class basic_string<char>& sKeys, long lKey, long lModifiers, int32_t nKeyIndex) {
+	class basic_string<char> sModifier;
+	uint32_t nFullStringID;
+	int32_t bAtLeastOneModifierFoundAlready;
+	class basic_string<char> sSeparator;
+	class basic_string<char> sKey;
+
 // LINE 2054:
 	asm( 
 "	      0040d24a    push ebp"

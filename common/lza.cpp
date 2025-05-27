@@ -7,6 +7,12 @@
 // Contribution: 1:000ce090-000cfa4b Module: 88, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004cf090
 short LZACompress(class cGZXBitstream* inStream, class cGZXBitstream* outStream, unsigned long * cSize) {
+	struct tLZSSBinaryForest* forest;
+	short retVal;
+	struct tCompressState* state;
+	unsigned char[5] header;
+	struct tACompModel* model;
+
 // LINE 646:
 	asm( 
 "	      004cf090    push ebp"
@@ -319,6 +325,15 @@ short LZACompress(class cGZXBitstream* inStream, class cGZXBitstream* outStream,
 
 // FUNCTION: COPTER_D 0x004cf2ed
 short Encode(struct tACompModel* model, struct tLZSSBinaryForest* forest, struct tCompressState* state) {
+	unsigned char tempByte;
+	long len;
+	long tempDebug;
+	long last_match_length;
+	long i;
+	long c;
+	long s;
+	long r;
+
 // LINE 525:
 	asm( 
 "	      004cf2ed    push ebp"
@@ -700,6 +715,8 @@ short Encode(struct tACompModel* model, struct tLZSSBinaryForest* forest, struct
 
 // FUNCTION: COPTER_D 0x004cf607
 void InitTree(struct tLZSSBinaryForest* forest) {
+	long i;
+
 // LINE 195:
 	asm( 
 "	      004cf607    push ebp"
@@ -746,6 +763,12 @@ void InitTree(struct tLZSSBinaryForest* forest) {
 
 // FUNCTION: COPTER_D 0x004cf67e
 void InsertNode(long r, struct tLZSSBinaryForest* forest) {
+	long cmp;
+	long i;
+	long temp;
+	unsigned char * key;
+	long p;
+
 // LINE 217:
 	asm( 
 "	      004cf67e    push ebp"
@@ -1040,6 +1063,8 @@ void InsertNode(long r, struct tLZSSBinaryForest* forest) {
 
 // FUNCTION: COPTER_D 0x004cf96a
 void DeleteNode(long p, struct tLZSSBinaryForest* forest) {
+	long q;
+
 // LINE 266:
 	asm( 
 "	      004cf96a    push ebp"
@@ -1224,6 +1249,10 @@ void DeleteNode(long p, struct tLZSSBinaryForest* forest) {
 
 // FUNCTION: COPTER_D 0x004cfb73
 void StartModel(struct tACompModel* model) {
+	long ch;
+	long i;
+	long sym;
+
 // LINE 300:
 	asm( 
 "	      004cfb73    push ebp"
@@ -1335,6 +1364,9 @@ void StartModel(struct tACompModel* model) {
 
 // FUNCTION: COPTER_D 0x004cfc72
 short EncodeChar(long ch, struct tACompModel* model, struct tCompressState* dest) {
+	unsigned long range;
+	long sym;
+
 // LINE 356:
 	asm( 
 "	      004cfc72    push ebp"
@@ -1513,6 +1545,11 @@ short EncodeChar(long ch, struct tACompModel* model, struct tCompressState* dest
 
 // FUNCTION: COPTER_D 0x004cfde2
 void UpdateModel(long sym, struct tACompModel* model) {
+	long i;
+	long ch_i;
+	long c;
+	long ch_sym;
+
 // LINE 320:
 	asm( 
 "	      004cfde2    push ebp"
@@ -1732,6 +1769,8 @@ short Output(long bit, struct tACompModel* model, struct tCompressState* dest) {
 
 // FUNCTION: COPTER_D 0x004cffb8
 short PutBit(long bit, struct tCompressState* dest) {
+	unsigned char tempByte;
+
 // LINE 124:
 	asm( 
 "	      004cffb8    push ebp"
@@ -1815,6 +1854,8 @@ short PutBit(long bit, struct tCompressState* dest) {
 
 // FUNCTION: COPTER_D 0x004d0041
 short EncodePosition(long position, struct tACompModel* model, struct tCompressState* dest) {
+	unsigned long range;
+
 // LINE 386:
 	asm( 
 "	      004d0041    push ebp"
@@ -2050,6 +2091,9 @@ short EncodeEnd(struct tACompModel* model, struct tCompressState* dest) {
 
 // FUNCTION: COPTER_D 0x004d0216
 short FlushBitBuffer(struct tCompressState* dest) {
+	short retVal;
+	long i;
+
 // LINE 145:
 	asm( 
 "	      004d0216    push ebp"
@@ -2108,6 +2152,11 @@ short FlushBitBuffer(struct tCompressState* dest) {
 
 // FUNCTION: COPTER_D 0x004d0271
 short LZAExpand(class cGZXBitstream* inStream, class cGZXBitstream* outStream) {
+	struct tLZSSBinaryForest* forest;
+	short retVal;
+	struct tCompressState* state;
+	struct tACompModel* model;
+
 // LINE 731:
 	asm( 
 "	      004d0271    push ebp"
@@ -2307,6 +2356,14 @@ short LZAExpand(class cGZXBitstream* inStream, class cGZXBitstream* outStream) {
 
 // FUNCTION: COPTER_D 0x004d03e6
 short Decode(struct tACompModel* model, struct tLZSSBinaryForest* forest, struct tCompressState* state) {
+	unsigned char tempByte;
+	long k;
+	long j;
+	long i;
+	unsigned long count;
+	long c;
+	long r;
+
 // LINE 592:
 	asm( 
 "	      004d03e6    push ebp"
@@ -2547,6 +2604,8 @@ short Decode(struct tACompModel* model, struct tLZSSBinaryForest* forest, struct
 
 // FUNCTION: COPTER_D 0x004d05b8
 void StartDecode(struct tACompModel* model, struct tCompressState* src) {
+	long i;
+
 // LINE 455:
 	asm( 
 "	      004d05b8    push ebp"
@@ -2590,6 +2649,9 @@ void StartDecode(struct tACompModel* model, struct tCompressState* src) {
 
 // FUNCTION: COPTER_D 0x004d0604
 long GetBit(struct tCompressState* source) {
+	unsigned char tempByte;
+	unsigned char kludger;
+
 // LINE 162:
 	asm( 
 "	      004d0604    push ebp"
@@ -2679,6 +2741,10 @@ long GetBit(struct tCompressState* source) {
 
 // FUNCTION: COPTER_D 0x004d06a5
 long DecodeChar(struct tACompModel* model, struct tCompressState* src) {
+	long ch;
+	unsigned long range;
+	long sym;
+
 // LINE 463:
 	asm( 
 "	      004d06a5    push ebp"
@@ -2859,6 +2925,10 @@ long DecodeChar(struct tACompModel* model, struct tCompressState* src) {
 
 // FUNCTION: COPTER_D 0x004d081c
 long BinarySearchSym(unsigned long x, struct tACompModel* model) {
+	long k;
+	long j;
+	long i;
+
 // LINE 426:
 	asm( 
 "	      004d081c    push ebp"
@@ -2926,6 +2996,9 @@ long BinarySearchSym(unsigned long x, struct tACompModel* model) {
 
 // FUNCTION: COPTER_D 0x004d0888
 long DecodePosition(struct tACompModel* model, struct tCompressState* src) {
+	unsigned long range;
+	long position;
+
 // LINE 494:
 	asm( 
 "	      004d0888    push ebp"
@@ -3090,6 +3163,10 @@ long DecodePosition(struct tACompModel* model, struct tCompressState* src) {
 
 // FUNCTION: COPTER_D 0x004d09df
 long BinarySearchPos(unsigned long x, struct tACompModel* model) {
+	long k;
+	long j;
+	long i;
+
 // LINE 442:
 	asm( 
 "	      004d09df    push ebp"

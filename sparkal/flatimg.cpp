@@ -43,6 +43,16 @@ void IFlatImage::IFlatImage() {
 
 // FUNCTION: COPTER_D 0x0048f174
 unsigned long IFlatImage::StretchCompose(class IFlatImage* pDest, long SourceLeft, long SourceTop, long SourceWidth, long SourceHeight, long DestLeft, long DestTop, long DestWidth, long DestHeight) {
+	long YError;
+	long DestStride;
+	unsigned char * pDestBits;
+	unsigned char * pSourceLeft;
+	unsigned char * pSourceBits;
+	long YCount;
+	unsigned long ReturnCode;
+	unsigned char * pDestLeft;
+	long SourceStride;
+
 // LINE 38:
 	asm( 
 "	      0048f174    push ebp"
@@ -296,6 +306,15 @@ unsigned long IFlatImage::StretchCompose(class IFlatImage* pDest, long SourceLef
 
 // FUNCTION: COPTER_D 0x0048f32e
 unsigned long IFlatImage::StretchCompose(class IFlatImage* pDestImage, struct SparkalRect destRect, struct SparkalRect srcRect) {
+	long SrcWidth;
+	long SrcHeight;
+	long DestHeight;
+	long SrcTop;
+	long DestLeft;
+	long DestTop;
+	long DestWidth;
+	long SrcLeft;
+
 // LINE 110:
 	asm( 
 "	      0048f32e    push ebp"
@@ -388,6 +407,13 @@ unsigned long IFlatImage::StretchCompose(class IFlatImage* pDestImage, struct Sp
 
 // FUNCTION: COPTER_D 0x0048f3b1
 unsigned long IFlatImage::Compose(class IFlatImage* pDest, long DestLeft, long DestTop, long ClipLeft, long ClipTop, long ClipRight, long ClipBottom) {
+	unsigned char * pSource;
+	long DestStride;
+	unsigned char * pDestBits;
+	long Width;
+	long Height;
+	unsigned long Error;
+
 // LINE 133:
 	asm( 
 "	      0048f3b1    push ebp"
@@ -629,6 +655,14 @@ unsigned long IFlatImage::Compose(class IFlatImage* pDest, long DestLeft, long D
 
 // FUNCTION: COPTER_D 0x0048f56b
 unsigned long IFlatImage::FillRect(long nPaletteIndex, struct SparkalRect* rectFill) {
+	int32_t Left;
+	int32_t Top;
+	int32_t Right;
+	long Width;
+	long Height;
+	unsigned char * pBits;
+	int32_t Bottom;
+
 // LINE 197:
 	asm( 
 "	      0048f56b    push ebp"

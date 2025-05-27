@@ -33,6 +33,10 @@ void EmptyPStr(unsigned char * str) {
 
 // FUNCTION: COPTER_D 0x00565cb6
 unsigned short Str2Num(unsigned char * str, long * num) {
+	unsigned char digit;
+	unsigned char count;
+	unsigned short neg;
+
 // LINE 59:
 	asm( 
 "	      00565cb6    push ebp"
@@ -262,6 +266,10 @@ unsigned short Str2Num(unsigned char * str, long * num) {
 
 // FUNCTION: COPTER_D 0x00565e80
 void Num2Str(long num, unsigned char * str) {
+	int32_t power;
+	unsigned short neg;
+	unsigned long tenPower;
+
 // LINE 99:
 	asm( 
 "	      00565e80    push ebp"
@@ -459,6 +467,10 @@ void Num2Str(long num, unsigned char * str) {
 
 // FUNCTION: COPTER_D 0x00565fbd
 unsigned short HexStr2Num(unsigned char * str, unsigned long * num) {
+	unsigned char digit;
+	unsigned char digitval;
+	unsigned long result;
+
 // LINE 154:
 	asm( 
 "	      00565fbd    push ebp"
@@ -604,6 +616,9 @@ unsigned short HexStr2Num(unsigned char * str, unsigned long * num) {
 
 // FUNCTION: COPTER_D 0x005660be
 void Num2HexStr(unsigned long num, unsigned char * str) {
+	int32_t power;
+	unsigned long sixteenPower;
+
 // LINE 176:
 	asm( 
 "	      005660be    push ebp"
@@ -880,6 +895,8 @@ unsigned long PStr2Long(unsigned char * name) {
 
 // FUNCTION: COPTER_D 0x00566266
 void CToPString(char * cstr, unsigned char * pstr) {
+	int32_t count;
+
 // LINE 257:
 	asm( 
 "	      00566266    push ebp"
@@ -932,6 +949,10 @@ void CToPString(char * cstr, unsigned char * pstr) {
 
 // FUNCTION: COPTER_D 0x005662c1
 short Round(float val) {
+	double frac;
+	short intval;
+	double dint;
+
 // LINE 268:
 	asm( 
 "	      005662c1    push ebp"
@@ -1052,6 +1073,8 @@ void CToPStr(char * cstr, unsigned char * pstr) {
 
 // FUNCTION: COPTER_D 0x0056639c
 void ConcatPStr(unsigned char * str1, unsigned char * str2, short destSize) {
+	unsigned short copyBytes;
+
 // LINE 442:
 	asm( 
 "	      0056639c    push ebp"
@@ -1135,6 +1158,8 @@ void ConcatPStr(unsigned char * str1, unsigned char * str2, short destSize) {
 
 // FUNCTION: COPTER_D 0x00566425
 void ConcatCPStr(char * src, unsigned char * dest, short destSize) {
+	unsigned char[256] buff;
+
 // LINE 454:
 	asm( 
 "	      00566425    push ebp"
@@ -1185,6 +1210,8 @@ void ConcatCPStr(char * src, unsigned char * dest, short destSize) {
 
 // FUNCTION: COPTER_D 0x00566479
 void ConcatNum(long number, unsigned char * str, short destSize) {
+	unsigned char[256] numStr;
+
 // LINE 464:
 	asm( 
 "	      00566479    push ebp"
@@ -1227,6 +1254,9 @@ void ConcatNum(long number, unsigned char * str, short destSize) {
 
 // FUNCTION: COPTER_D 0x005664b9
 void HexToString(unsigned long num, unsigned char * str) {
+	short position;
+	char letter;
+
 // LINE 499:
 	asm( 
 "	      005664b9    push ebp"
@@ -1363,6 +1393,13 @@ void HexToString(unsigned long num, unsigned char * str) {
 
 // FUNCTION: COPTER_D 0x005665b7
 int32_t PStrCompare(void * __ptr32 voidFirst, void * __ptr32 voidSecond) {
+	unsigned char char2;
+	unsigned char char1;
+	short numChars;
+	unsigned char * second;
+	short count;
+	unsigned char * first;
+
 // LINE 906:
 	asm( 
 "	      005665b7    push ebp"
@@ -1520,6 +1557,8 @@ int32_t PStrCompare(void * __ptr32 voidFirst, void * __ptr32 voidSecond) {
 
 // FUNCTION: COPTER_D 0x00566705
 void ExtractFileName(unsigned char * path, unsigned char * name) {
+	short place;
+
 // LINE 928:
 	asm( 
 "	      00566705    push ebp"
@@ -1666,6 +1705,8 @@ void MyTextBox(char * cString, long strLen, struct Rect* rect, short justType) {
 
 // FUNCTION: COPTER_D 0x005667fe
 struct Point center(struct Rect* pRect) {
+	struct Point tmp;
+
 // LINE 1253:
 	asm( 
 "	      005667fe    push ebp"

@@ -1092,6 +1092,13 @@ void  CGameApp::InitializeMemberVariables() {
 
 // FUNCTION: COPTER_D 0x004887b7
 unsigned long  CGameApp::PrepareGame() {
+	long hResult;
+	class basic_string<char> sErrorText;
+	class basic_string<char> sErrorTitle;
+	char[260] szButtonWindowSoundFilePath;
+	int32_t nFullStringID;
+	class basic_string<char> sApplicationTitle;
+
 // LINE 258:
 	asm( 
 "	      004887b7    push ebp"
@@ -2180,6 +2187,8 @@ class CSparkalWindow *  CGameApp::NewWindow(unsigned long Width, unsigned long H
 
 // FUNCTION: COPTER_D 0x00489726
 unsigned long  CGameApp::Initialize() {
+	int32_t i;
+
 // LINE 386:
 	asm( 
 "	      00489726    push ebp"
@@ -2611,6 +2620,10 @@ unsigned long  CGameApp::Initialize() {
 
 // FUNCTION: COPTER_D 0x00489c43
 void  CGameApp::ParseCommandLine() {
+	long lValue;
+	int32_t nLanguage;
+	char[128] szCommandValue;
+
 // LINE 506:
 	asm( 
 "	      00489c43    push ebp"
@@ -2923,6 +2936,13 @@ void  CGameApp::ParseCommandLine() {
 
 // FUNCTION: COPTER_D 0x00489f3d
 int  CGameApp::IsSwitchPresent(char chSwitchToCheck, char * szResult) {
+	char chUpperToCheck;
+	short k;
+	int32_t bInQuotation;
+	short j;
+	short i;
+	char chLowerToCheck;
+
 // LINE 593:
 	asm( 
 "	      00489f3d    push ebp"
@@ -3177,6 +3197,12 @@ int  CGameApp::SetCurrentLanguageUse(int32_t nLanguageID) {
 
 // FUNCTION: COPTER_D 0x0048a186
 void  CGameApp::DisplayDebugSystemInformation() {
+	char * szVersionInformation;
+	char[32] szUnformattedVersionInformation;
+	char[256] szFormattedVersionInformation;
+	class Version tempVersion;
+	struct _MEMORYSTATUS tempMemoryStatus;
+
 // LINE 661:
 	asm( 
 "	      0048a186    push ebp"
@@ -3384,6 +3410,9 @@ void  CGameApp::DisplayDebugSystemInformation() {
 
 // FUNCTION: COPTER_D 0x0048a370
 void  CGameApp::SetSystemPriorityLevel(long lLevel) {
+	int32_t bReturnValue;
+	void * __ptr32 hThread;
+
 // LINE 719:
 	asm( 
 "	      0048a370    push ebp"
@@ -3463,6 +3492,8 @@ void  CGameApp::SetSystemPriorityLevel(long lLevel) {
 
 // FUNCTION: COPTER_D 0x0048a409
 void  CGameApp::InitializeCommandSystem() {
+	struct Shortcut tempShortcut;
+
 // LINE 747:
 	asm( 
 "	      0048a409    push ebp"
@@ -3897,6 +3928,14 @@ void  CGameApp::InitializeJoysticks() {
 
 // FUNCTION: COPTER_D 0x0048a980
 int  CGameApp::HaveAnyJoysticksChangedSinceLastPlay() {
+	long lJoystickCountAtCurrentPlay;
+	char[64] chCurrentJoystickName;
+	int32_t i;
+	long lJoystickCountAtLastPlay;
+	int32_t iEnd;
+	char * chLastJoystickName;
+	char * chPrefData;
+
 // LINE 809:
 	asm( 
 "	      0048a980    push ebp"

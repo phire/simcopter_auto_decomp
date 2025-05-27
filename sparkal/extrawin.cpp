@@ -773,6 +773,15 @@ void MessageBoxWindow::MessageBoxWindow(class MPoint& ptNewPosition, unsigned lo
 
 // FUNCTION: COPTER_D 0x00450b5d
 int32_t MessageBoxWindow::Initialize() {
+	int32_t[2] nButtonID;
+	class ButtonWindow* tempButtonWindow;
+	unsigned long i;
+	int32_t nButtonCount;
+	class MRect[2] rectButtons;
+	class basic_string<char> sText;
+	int32_t nFullStringID;
+	int32_t[2] nButtonStringID;
+
 // LINE 82:
 	asm( 
 "	      00450b5d    push ebp"
@@ -1803,6 +1812,11 @@ int32_t MessageBoxWindow::ConvertTypeToStringID(long lType) {
 
 // FUNCTION: COPTER_D 0x00451817
 void MessageBoxWindow::DrawTextOntoBox() {
+	class MRect rectText;
+	class MFont* fontText;
+	char[64] szTypeface;
+	int32_t nFullStringID;
+
 // LINE 232:
 	asm( 
 "	      00451817    push ebp"
@@ -2538,6 +2552,11 @@ void AnimationWindow::AnimationWindow(char * szImageFileName, class MRect& rectN
 
 // FUNCTION: COPTER_D 0x0045210c
 int32_t AnimationWindow::ComposeSelf() {
+	long lFramesToShift;
+	long lSourceLeft;
+	long lMillisecondsCurrent;
+	long lSourceRight;
+
 // LINE 341:
 	asm( 
 "	      0045210c    push ebp"
@@ -3076,6 +3095,12 @@ void RenderSettingsWindow::~RenderSettingsWindow() {
 
 // FUNCTION: COPTER_D 0x00452637
 int32_t RenderSettingsWindow::Initialize() {
+	class ButtonWindow* tempButtonWindow;
+	class TextWindow* tempTextWindow;
+	class RadioButtonWindow* tempRadioButtonWindow;
+	class basic_string<char> sText;
+	int32_t nFullStringID;
+
 // LINE 520:
 	asm( 
 "	      00452637    push ebp"
@@ -5530,6 +5555,14 @@ void RenderSettingsWindow::SetControlsBasedOnCurrentSettings() {
 
 // FUNCTION: COPTER_D 0x004547ca
 void RenderSettingsWindow::DrawPreviewBasedOnCurrentSettings() {
+	class basic_string<char> sGroundPreviewFileName;
+	class basic_string<char> sGroundPreviewFilePath;
+	class basic_string<char> sSkyPreviewFilePath;
+	class CBackBuffer tempGroundImage;
+	class basic_string<char> sBuildingPreviewFilePath;
+	class basic_string<char> sSkyPreviewFileName;
+	class basic_string<char> sBuildingPreviewFileName;
+
 // LINE 814:
 	asm( 
 "	      004547ca    push ebp"
@@ -7078,6 +7111,12 @@ void SoundSettingsWindow::SoundSettingsWindow(class MRect& rectNewPosition, int3
 
 // FUNCTION: COPTER_D 0x00455c7f
 int32_t SoundSettingsWindow::Initialize() {
+	class TextWindow* tempTextWindow;
+	class ButtonWindow* tempButtonWindow2;
+	class ButtonWindow* tempButtonWindow1;
+	class basic_string<char> sText;
+	int32_t nFullStringID;
+
 // LINE 999:
 	asm( 
 "	      00455c7f    push ebp"
@@ -8852,6 +8891,8 @@ long SoundSettingsWindow::ConvertSliderValueToSoundValue(long lSliderValue) {
 
 // FUNCTION: COPTER_D 0x00457331
 void CitySettingsWindow::CitySettingsWindow(class MRect& rectNewPosition, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+	int32_t i;
+
 // LINE 1321:
 	asm( 
 "	      00457331    push ebp"
@@ -8909,6 +8950,11 @@ void CitySettingsWindow::CitySettingsWindow(class MRect& rectNewPosition, int32_
 
 // FUNCTION: COPTER_D 0x004573a9
 int32_t CitySettingsWindow::Initialize() {
+	class ButtonWindow* tempButtonWindow;
+	class TextWindow* tempTextWindow;
+	class basic_string<char> sText;
+	int32_t nFullStringID;
+
 // LINE 1332:
 	asm( 
 "	      004573a9    push ebp"
@@ -11706,6 +11752,15 @@ int32_t PopupMenuExtra::Initialize() {
 
 // FUNCTION: COPTER_D 0x00459afd
 int32_t PopupMenuExtra::DrawSelf() {
+	long lCurrentXPosition;
+	int32_t j;
+	long lEndXPosition;
+	int32_t i;
+	class list<basic_string<char>>::iterator tempStringListIterator;
+	class MRect rectHighlighted;
+	long lSourceWidth;
+	class MRect rectCurrentText;
+
 // LINE 1580:
 	asm( 
 "	      00459afd    push ebp"
@@ -12598,6 +12653,8 @@ int32_t PopupMenuExtra::DrawSelf() {
 
 // FUNCTION: COPTER_D 0x0045a5f8
 int32_t PopupMenuExtra::CreateImage() {
+	class basic_string<char> sImagePath;
+
 // LINE 1690:
 	asm( 
 "	      0045a5f8    push ebp"
@@ -12950,6 +13007,12 @@ void PopupMenuExtra::CalculateAllMetrics() {
 
 // FUNCTION: COPTER_D 0x0045a9b0
 void PopupMenuExtra::ResizeWindowToFitMenuItems() {
+	long lCurrentWidth;
+	class MRect rectSelf;
+	long lTileWidth;
+	class MPoint ptSelf;
+	class MPoint ptParentWindowCenter;
+
 // LINE 1737:
 	asm( 
 "	      0045a9b0    push ebp"
@@ -13859,6 +13922,11 @@ void TooltipWindow::SetWindowTitle(class basic_string<char>& sNewWindowTitle) {
 
 // FUNCTION: COPTER_D 0x0045b40a
 int32_t TooltipWindow::DrawSelf() {
+	class MRect rectText;
+	long lCurrentXPosition;
+	long lEndXPosition;
+	long lSourceWidth;
+
 // LINE 1865:
 	asm( 
 "	      0045b40a    push ebp"
@@ -14148,6 +14216,8 @@ int32_t TooltipWindow::DrawSelf() {
 
 // FUNCTION: COPTER_D 0x0045b6ca
 int32_t TooltipWindow::CreateImage() {
+	class basic_string<char> sImagePath;
+
 // LINE 1896:
 	asm( 
 "	      0045b6ca    push ebp"
@@ -15301,6 +15371,8 @@ int32_t BoneheadTextEditWindow::Initialize() {
 
 // FUNCTION: COPTER_D 0x0045c476
 int32_t BoneheadTextEditWindow::CreateImage() {
+	char[260] szFullPath;
+
 // LINE 2029:
 	asm( 
 "	      0045c476    push ebp"
@@ -15496,6 +15568,8 @@ void BoneheadTextEditWindow::DestroyImage() {
 
 // FUNCTION: COPTER_D 0x0045c6f6
 int32_t BoneheadTextEditWindow::DrawSelf() {
+	char * chCaret;
+
 // LINE 2053:
 	asm( 
 "	      0045c6f6    push ebp"
@@ -15744,6 +15818,8 @@ int32_t BoneheadTextEditWindow::DrawSelf() {
 
 // FUNCTION: COPTER_D 0x0045c98b
 long BoneheadTextEditWindow::DoCharacter(long lCharacter) {
+	unsigned char * chCharacter;
+
 // LINE 2095:
 	asm( 
 "	      0045c98b    push ebp"
@@ -16292,6 +16368,8 @@ void BoneheadTextEditWindow::SetCharacterCountLimit(unsigned long lNewCharacterC
 
 // FUNCTION: COPTER_D 0x0045cf58
 int32_t BoneheadTextEditWindow::ProcessBackspace() {
+	unsigned char * chCharacter;
+
 // LINE 2169:
 	asm( 
 "	      0045cf58    push ebp"
@@ -17878,6 +17956,8 @@ int32_t ScrollingCreditWindow::DoMessage(class GraphicWindow* gwSource, long lWi
 
 // FUNCTION: COPTER_D 0x0045e1a4
 void CheckupWindow::CheckupWindow(class MRect& rectNewPosition, int32_t nNewID, class GraphicWindow* windowNewParent, class GraphicWindowOwner* myNewOwner, int32_t bAddToParentList) {
+	int32_t i;
+
 // LINE 2418:
 	asm( 
 "	      0045e1a4    push ebp"
@@ -17950,6 +18030,11 @@ void CheckupWindow::CheckupWindow(class MRect& rectNewPosition, int32_t nNewID, 
 
 // FUNCTION: COPTER_D 0x0045e24b
 int32_t CheckupWindow::Initialize() {
+	class ButtonWindow* tempButtonWindow;
+	class TextWindow* tempTextWindow;
+	class basic_string<char> sText;
+	int32_t nFullStringID;
+
 // LINE 2431:
 	asm( 
 "	      0045e24b    push ebp"
@@ -19845,6 +19930,8 @@ void CheckupWindow::GetCurrentSettings(long * lCurrentSettings) {
 
 // FUNCTION: COPTER_D 0x0045fec2
 void CheckupWindow::SetAllControlValuesToDefaults() {
+	long lValue;
+
 // LINE 2573:
 	asm( 
 "	      0045fec2    push ebp"
@@ -20039,6 +20126,8 @@ int32_t CheckupWindow::ShouldWeDisplayCheckupWindow() {
 
 // FUNCTION: COPTER_D 0x00460033
 int32_t CheckupWindow::CanUserAffordCurrentSliderValues() {
+	long[3] lSliderValues;
+
 // LINE 2620:
 	asm( 
 "	      00460033    push ebp"
@@ -20081,6 +20170,11 @@ int32_t CheckupWindow::CanUserAffordCurrentSliderValues() {
 
 // FUNCTION: COPTER_D 0x00460077
 void CheckupWindow::SetTextControlsBasedOnCurrentSliderValues() {
+	char[32] szCurrentText;
+	long lCurrentValue;
+	class MRect rectWindowTemp;
+	long[3] lSliderValues;
+
 // LINE 2632:
 	asm( 
 "	      00460077    push ebp"

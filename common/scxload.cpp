@@ -687,6 +687,10 @@ void SCXReadPlayer(class cGZXBitstream* AStream, unsigned char * data) {
 
 // FUNCTION: COPTER_D 0x004cbd38
 void SCXReadNeighbors(class cGZXBitstream* AStream, unsigned char * data) {
+	long num;
+	long loop;
+	struct SCXNeighborData* pData;
+
 // LINE 221:
 	asm( 
 "	      004cbd38    push ebp"
@@ -974,6 +978,8 @@ void SCXReadNeighbors(class cGZXBitstream* AStream, unsigned char * data) {
 
 // FUNCTION: COPTER_D 0x004cbfc8
 void SCXReadContracts(class cGZXBitstream* AStream, unsigned char * data) {
+	long num;
+
 // LINE 279:
 	asm( 
 "	      004cbfc8    push ebp"
@@ -1019,6 +1025,16 @@ void SCXReadContracts(class cGZXBitstream* AStream, unsigned char * data) {
 
 // FUNCTION: COPTER_D 0x004cc003
 int32_t ReadSCXFile(char * filePath) {
+	long[11] scxInd;
+	long[256] scxTileCount;
+	class cLZAPFileBitStream fileStream;
+	struct ReadSCXFile::__unnamed SCXMicroRecord;
+	long tempLong;
+	long[50] longBonds;
+	long loop;
+	class cGZXParamBitstream<t_alloc,t_free> memstrm;
+	struct tSCXSaveFileHdr header;
+
 // LINE 295:
 	asm( 
 "	      004cc003    push ebp"

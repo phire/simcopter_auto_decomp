@@ -7,6 +7,10 @@
 // Contribution: 1:0008eed0-0008ff8c Module: 23, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0048fed0
 void FixResourceFilterString(class basic_string<char>& sFilter, char chReplacementToken) {
+	char chCurrentValue;
+	int32_t i;
+	char * szString;
+
 // LINE 33:
 	asm( 
 "	      0048fed0    push ebp"
@@ -430,6 +434,9 @@ void FixResourceFilterString(class basic_string<char>& sFilter, char chReplaceme
 
 // FUNCTION: COPTER_D 0x00490439
 unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int32_t nFileFilterStringID, char * pInitialDirectory) {
+	class basic_string<char> sFilter;
+	class basic_string<char> sTitle;
+
 // LINE 62:
 	asm( 
 "	      00490439    push ebp"
@@ -792,6 +799,8 @@ unsigned long GetLoadFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 
 // FUNCTION: COPTER_D 0x0049092a
 unsigned long GetLoadFilePath(char * pFilePath, char * pLoadTitle, char * pFilter, char * pInitialDirectory) {
+	struct tagOFNA ofn;
+
 // LINE 83:
 	asm( 
 "	      0049092a    push ebp"
@@ -917,6 +926,9 @@ unsigned long GetLoadFilePath(char * pFilePath, char * pLoadTitle, char * pFilte
 
 // FUNCTION: COPTER_D 0x004909e3
 unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int32_t nFileFilterStringID, char * pInitialDirectory) {
+	class basic_string<char> sFilter;
+	class basic_string<char> sTitle;
+
 // LINE 120:
 	asm( 
 "	      004909e3    push ebp"
@@ -1279,6 +1291,8 @@ unsigned long GetSaveFilePath(char * pFilePath, int32_t nLoadTitleStringID, int3
 
 // FUNCTION: COPTER_D 0x00490ed4
 unsigned long GetSaveFilePath(char * pFilePath, char * pSaveTitle, char * pFilter, char * pInitialDirectory) {
+	struct tagOFNA ofn;
+
 // LINE 140:
 	asm( 
 "	      00490ed4    push ebp"

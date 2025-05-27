@@ -46,6 +46,12 @@ void CBackBuffer::CBackBuffer() {
 
 // FUNCTION: COPTER_D 0x0046e6df
 void CBackBuffer::CBackBuffer(char * imageFileName) {
+	int32_t nFileNameLength;
+	struct tagBITMAPINFOHEADER biHeader;
+	long ddrval;
+	struct tagBITMAPFILEHEADER bfHeader;
+	class PFile* fileImage;
+
 // LINE 60:
 	asm( 
 "	      0046e6df    push ebp"
@@ -387,6 +393,8 @@ void CBackBuffer::CBackBuffer(char * imageFileName) {
 
 // FUNCTION: COPTER_D 0x0046ea06
 void CBackBuffer::CBackBuffer(long Width, long Height, const struct SparkalColor* __formal) {
+	long ddrval;
+
 // LINE 157:
 	asm( 
 "	      0046ea06    push ebp"
@@ -860,6 +868,16 @@ void CBackBuffer::~CBackBuffer() {
 
 // FUNCTION: COPTER_D 0x0046edca
 unsigned long CBackBuffer::Load() {
+	struct tagBITMAPINFOHEADER biHeader;
+	struct tagRGBQUAD[256] biColors;
+	int32_t i;
+	unsigned char * biData;
+	struct tagBITMAPFILEHEADER bfHeader;
+	int32_t nPosition;
+	class PFile* fileImage;
+	int32_t nFileLength;
+	int32_t nBytesRead;
+
 // LINE 305:
 	asm( 
 "	      0046edca    push ebp"
@@ -1222,6 +1240,13 @@ unsigned long CBackBuffer::Load() {
 
 // FUNCTION: COPTER_D 0x0046f1bd
 unsigned long CBackBuffer::DrawBufferText(char * pText, unsigned long Style, long * pRectLeft, long * pRectTop, long * pRectRight, long * pRectBottom, class MFont* mfontToUse) {
+	struct tagRECT rectText;
+	struct IDirectDrawSurface* pOurSurface;
+	void * __ptr32 hdcSurface;
+	long ddrval;
+	uint32_t nFormat;
+	void * __ptr32 hFontOriginal;
+
 // LINE 378:
 	asm( 
 "	      0046f1bd    push ebp"
@@ -1551,6 +1576,12 @@ unsigned long CBackBuffer::DrawBufferText(char * pText, unsigned long Style, lon
 
 // FUNCTION: COPTER_D 0x0046f403
 unsigned long CBackBuffer::DrawBufferText(char * pText, long nTextLength, unsigned long Style, const class MRect& rectText, class MFont* mfontToUse) {
+	struct IDirectDrawSurface* pOurSurface;
+	void * __ptr32 hdcSurface;
+	long ddrval;
+	uint32_t nFormat;
+	void * __ptr32 hFontOriginal;
+
 // LINE 458:
 	asm( 
 "	      0046f403    push ebp"
@@ -1794,6 +1825,13 @@ unsigned long CBackBuffer::DrawBufferText(char * pText, long nTextLength, unsign
 
 // FUNCTION: COPTER_D 0x0046f5c6
 unsigned long CBackBuffer::DrawLine(long nStartX, long nStartY, long nEndX, long nEndY, long nThickness) {
+	void * __ptr32 hPenOld;
+	struct IDirectDrawSurface* pOurSurface;
+	void * __ptr32 hdcSurface;
+	long ddrval;
+	struct tagPOINT ptPositionOld;
+	unsigned long crPen;
+
 // LINE 522:
 	asm( 
 "	      0046f5c6    push ebp"
@@ -2029,6 +2067,8 @@ unsigned long CBackBuffer::DrawLine(long nStartX, long nStartY, long nEndX, long
 
 // FUNCTION: COPTER_D 0x0046f7bb
 unsigned long CBackBuffer::Swap(class CSparkalWindow* pDest, long DestLeft, long DestTop) {
+	long ddrval;
+
 // LINE 598:
 	asm( 
 "	      0046f7bb    push ebp"
@@ -2094,6 +2134,12 @@ unsigned long CBackBuffer::Swap(class CSparkalWindow* pDest, long DestLeft, long
 
 // FUNCTION: COPTER_D 0x0046f828
 unsigned long CBackBuffer::SwapRect(class CSparkalWindow* pDest, long SrcLeft, long SrcTop, long SrcRight, long SrcBottom, long DestLeft, long DestTop) {
+	struct IDirectDrawSurface* pOurSurface;
+	struct IDirectDrawSurface* pDestSurface;
+	struct tagRECT destRect;
+	struct _DDBLTFX ddbltfx;
+	struct tagRECT srcRect;
+
 // LINE 627:
 	asm( 
 "	      0046f828    push ebp"
@@ -2228,6 +2274,15 @@ unsigned long CBackBuffer::SwapRect(class CSparkalWindow* pDest, long SrcLeft, l
 
 // FUNCTION: COPTER_D 0x0046f948
 unsigned long CBackBuffer::Compose(class IFlatImage* pDestImage, long DestLeft, long DestTop, long SrcLeft, long SrcTop, long SrcRight, long SrcBottom) {
+	struct IDirectDrawSurface* pOurSurface;
+	long ddrval;
+	int32_t nOverhangDistance;
+	struct IDirectDrawSurface* pDestSurface;
+	unsigned long ddBltFlags;
+	struct tagRECT destRect;
+	struct _DDBLTFX ddbltfx;
+	struct tagRECT srcRect;
+
 // LINE 673:
 	asm( 
 "	      0046f948    push ebp"
@@ -2514,6 +2569,14 @@ unsigned long CBackBuffer::Compose(class IFlatImage* pDestImage, long DestLeft, 
 
 // FUNCTION: COPTER_D 0x0046fbb1
 unsigned long CBackBuffer::ComposeNoClip(class IFlatImage* pDestImage, long DestLeft, long DestTop, long SrcLeft, long SrcTop, long SrcRight, long SrcBottom) {
+	struct IDirectDrawSurface* pOurSurface;
+	long ddrval;
+	struct IDirectDrawSurface* pDestSurface;
+	unsigned long ddBltFlags;
+	class MRect destRect;
+	struct _DDBLTFX ddbltfx;
+	class MRect sourceRect;
+
 // LINE 796:
 	asm( 
 "	      0046fbb1    push ebp"
@@ -2742,6 +2805,11 @@ unsigned long CBackBuffer::Compose(class IFlatImage* pDestImage, const struct Sp
 
 // FUNCTION: COPTER_D 0x0046fd82
 unsigned long CBackBuffer::StretchCompose(class IFlatImage* pDestImage, const struct SparkalRect& destRect, const struct SparkalRect& srcRect) {
+	struct IDirectDrawSurface* pOurSurface;
+	struct IDirectDrawSurface* pDestSurface;
+	unsigned long ddBltFlags;
+	struct _DDBLTFX ddbltfx;
+
 // LINE 866:
 	asm( 
 "	      0046fd82    push ebp"
@@ -2831,6 +2899,9 @@ unsigned long CBackBuffer::StretchCompose(class IFlatImage* pDestImage, const st
 
 // FUNCTION: COPTER_D 0x0046fe13
 unsigned long CBackBuffer::StretchCompose(class IFlatImage* pDestImage, long DestLeft, long DestTop, long DestRight, long DestBottom, long SrcLeft, long SrcTop, long SrcRight, long SrcBottom) {
+	struct SparkalRect destRect;
+	struct SparkalRect srcRect;
+
 // LINE 903:
 	asm( 
 "	      0046fe13    push ebp"
@@ -2912,6 +2983,14 @@ unsigned long CBackBuffer::StretchCompose(class IFlatImage* pDestImage, long Des
 
 // FUNCTION: COPTER_D 0x0046fe7c
 unsigned long CBackBuffer::Duplicate(class CBackBuffer* pDestImage, int32_t bAllowTransparent) {
+	struct IDirectDrawSurface* pOurSurface;
+	long ddrval;
+	struct IDirectDrawSurface* pDestSurface;
+	unsigned long ddBltFlags;
+	struct tagRECT destRect;
+	struct _DDBLTFX ddbltfx;
+	struct tagRECT srcRect;
+
 // LINE 931:
 	asm( 
 "	      0046fe7c    push ebp"
@@ -3079,6 +3158,9 @@ unsigned long CBackBuffer::StretchRect(class CSparkalWindow* pDest, long __forma
 
 // FUNCTION: COPTER_D 0x0046ffe6
 void CBackBuffer::SetTransparentColor(int32_t bEnable, long nPaletteIndex) {
+	struct IDirectDrawSurface* pOurSurface;
+	struct _DDCOLORKEY DDColorKey;
+
 // LINE 991:
 	asm( 
 "	      0046ffe6    push ebp"
@@ -3170,6 +3252,9 @@ void CBackBuffer::SetTransparentColor(int32_t bEnable, long nPaletteIndex) {
 
 // FUNCTION: COPTER_D 0x0047006f
 unsigned long CBackBuffer::Lock() {
+	struct IDirectDrawSurface* pOurSurface;
+	long ddrval;
+
 // LINE 1027:
 	asm( 
 "	      0047006f    push ebp"
@@ -3297,6 +3382,9 @@ unsigned long CBackBuffer::Lock() {
 
 // FUNCTION: COPTER_D 0x00470149
 unsigned long CBackBuffer::Unlock() {
+	struct IDirectDrawSurface* pOurSurface;
+	long ddrval;
+
 // LINE 1080:
 	asm( 
 "	      00470149    push ebp"
@@ -3426,6 +3514,9 @@ unsigned long CBackBuffer::Unlock() {
 
 // FUNCTION: COPTER_D 0x00470221
 void CBackBuffer::UpdatePalette(long start, long count, const struct SparkalColor* pColor) {
+	int32_t i;
+	struct tagPALETTEENTRY[256] palColors;
+
 // LINE 1127:
 	asm( 
 "	      00470221    push ebp"
@@ -3518,6 +3609,11 @@ void CBackBuffer::UpdatePalette(long start, long count, const struct SparkalColo
 
 // FUNCTION: COPTER_D 0x004702f1
 unsigned long CBackBuffer::FillRect(long nPaletteIndex, const struct SparkalRect* rectFill) {
+	struct IDirectDrawSurface* pOurSurface;
+	struct tagRECT rectFillTemp;
+	long ddrval;
+	struct tagRECT* rectToUse;
+
 // LINE 1169:
 	asm( 
 "	      004702f1    push ebp"
@@ -3803,6 +3899,10 @@ struct IDirectDrawSurface* CBackBuffer::GetDDSurface() {
 
 // FUNCTION: COPTER_D 0x004704db
 int32_t CBackBuffer::GetPaletteFromImage(char * imageFileName, struct SparkalColor* pColors) {
+	struct tagBITMAPINFOHEADER biHeader;
+	struct tagBITMAPFILEHEADER bfHeader;
+	class PFile* fileImage;
+
 // LINE 1255:
 	asm( 
 "	      004704db    push ebp"
@@ -4225,6 +4325,14 @@ unsigned long CBackBuffer::DrawRectangleOutlineUnclipped(const struct SparkalRec
 
 // FUNCTION: COPTER_D 0x00470864
 unsigned long CBackBuffer::DrawLineUnclipped(long nStartX, long nStartY, long nEndX, long nEndY, long nThickness) {
+	int32_t bufferWidth;
+	int32_t j;
+	int32_t i;
+	int32_t temp;
+	int32_t length;
+	int32_t bufferHeight;
+	char * address;
+
 // LINE 1455:
 	asm( 
 "	      00470864    push ebp"
@@ -4788,6 +4896,14 @@ unsigned long CBackBuffer::DrawLineUnclipped(long nStartX, long nStartY, long nE
 
 // FUNCTION: COPTER_D 0x00470c22
 unsigned long CBackBuffer::DrawLineClipped(long nStartX, long nStartY, long nEndX, long nEndY, long nThickness) {
+	int32_t bufferWidth;
+	int32_t j;
+	int32_t i;
+	int32_t temp;
+	int32_t length;
+	int32_t bufferHeight;
+	char * address;
+
 // LINE 1625:
 	asm( 
 "	      00470c22    push ebp"

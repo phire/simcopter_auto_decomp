@@ -7,6 +7,10 @@
 // Contribution: 1:00021280-000246c8 Module: 70, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00422280
 void CDebugWindow::HandleDebugCommand(char * data) {
+	struct debug_command** it;
+	class vector<basic_string<char>> commands;
+	int32_t num;
+
 // LINE 23:
 	asm( 
 "	      00422280    push ebp"
@@ -1268,6 +1272,9 @@ void CDebugWindow::HideWindow() {
 
 // FUNCTION: COPTER_D 0x004233b1
 int32_t CDebugWindow::Save(char * filePath) {
+	struct _iobuf* file;
+	class deque<basic_string<char>>::iterator it;
+
 // LINE 146:
 	asm( 
 "	      004233b1    push ebp"
@@ -1552,6 +1559,9 @@ int32_t CDebugWindow::Save(char * filePath) {
 
 // FUNCTION: COPTER_D 0x004236c6
 void CDebugWindow::OnSize(unsigned long sizeType, unsigned short width, unsigned short height) {
+	struct tagRECT winRect;
+	struct tagRECT editRect;
+
 // LINE 178:
 	asm( 
 "	      004236c6    push ebp"
@@ -1623,6 +1633,14 @@ void CDebugWindow::OnSize(unsigned long sizeType, unsigned short width, unsigned
 
 // FUNCTION: COPTER_D 0x00423739
 void CDebugWindow::OnPaint() {
+	class deque<basic_string<char>>::iterator it;
+	int32_t index;
+	struct tagPAINTSTRUCT ps;
+	void * __ptr32 hDC;
+	struct tagTEXTMETRICA tm;
+	char * str;
+	int32_t scrollStart;
+
 // LINE 191:
 	asm( 
 "	      00423739    push ebp"
@@ -1941,6 +1959,10 @@ void CDebugWindow::OnPaint() {
 
 // FUNCTION: COPTER_D 0x00423ba5
 void CDebugWindow::OnScroll(int32_t scrollCode, int32_t pos) {
+	int32_t minPos;
+	int32_t maxPos;
+	int32_t curPos;
+
 // LINE 221:
 	asm( 
 "	      00423ba5    push ebp"
@@ -2076,6 +2098,8 @@ void CDebugWindow::OnScroll(int32_t scrollCode, int32_t pos) {
 
 // FUNCTION: COPTER_D 0x00423c9d
 void CDebugWindow::OutputString(char * buf) {
+	class basic_string<char> str;
+
 // LINE 249:
 	asm( 
 "	      00423c9d    push ebp"
@@ -2455,6 +2479,17 @@ void CDebugWindow::OutputString(char * buf) {
 
 // FUNCTION: COPTER_D 0x004241ff
 void CDebugWindow::RecalcScrollRange() {
+	int32_t pane_lines;
+	void * __ptr32 hDC;
+	struct tagRECT winRect;
+	int32_t range;
+	struct tagTEXTMETRICA tm;
+	struct tagRECT editRect;
+	int32_t pane_height;
+	int32_t minPos;
+	int32_t maxPos;
+	int32_t curPos;
+
 // LINE 261:
 	asm( 
 "	      004241ff    push ebp"
@@ -2607,6 +2642,10 @@ void CDebugWindow::RecalcScrollRange() {
 
 // FUNCTION: COPTER_D 0x0042430d
 void CDebugWindow::OnEditChange() {
+	long len;
+	long count;
+	char[256] buf;
+
 // LINE 294:
 	asm( 
 "	      0042430d    push ebp"
@@ -3125,6 +3164,8 @@ long CDebugWindow::InstanceWindowProcedure(uint32_t Message, uint32_t WParam, lo
 
 // FUNCTION: COPTER_D 0x004249ef
 long CDebugWindow::WindowProcedure(void * __ptr32 hWindow, uint32_t Message, uint32_t WParam, long LParam) {
+	class CDebugWindow* debugWin;
+
 // LINE 362:
 	asm( 
 "	      004249ef    push ebp"
@@ -3283,6 +3324,9 @@ void DestroyDebugWindow() {
 
 // FUNCTION: COPTER_D 0x00424b14
 void DebugOutput(char * text, ...) {
+	char * Marker;
+	char[256] buf;
+
 // LINE 401:
 	asm( 
 "	      00424b14    push ebp"
@@ -3741,6 +3785,11 @@ void SaveDebugWindow(char * fileName) {
 
 // FUNCTION: COPTER_D 0x00425041
 int32_t ParseCommandLine(class basic_string<char> str, class vector<basic_string<char>>& commands) {
+	class basic_string<char> parseStr;
+	int32_t pos;
+	int32_t index;
+	class basic_string<char> subString;
+
 // LINE 430:
 	asm( 
 "	      00425041    push ebp"

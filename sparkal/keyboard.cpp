@@ -110,6 +110,8 @@ int32_t Keyboard::IsKeyDown(unsigned char chKey) {
 
 // FUNCTION: COPTER_D 0x00431d32
 int32_t Keyboard::IsKeyDown(unsigned char chKey, unsigned char chModifiers) {
+	char chCurrentModifiers;
+
 // LINE 49:
 	asm( 
 "	      00431d32    push ebp"
@@ -256,6 +258,8 @@ void Keyboard::ProcessKeyUp(unsigned char chKey) {
 
 // FUNCTION: COPTER_D 0x00431e19
 void Keyboard::ClearSettings() {
+	int32_t i;
+
 // LINE 95:
 	asm( 
 "	      00431e19    push ebp"
@@ -346,6 +350,8 @@ int32_t Keyboard::CharIsModifier(unsigned char chKey) {
 
 // FUNCTION: COPTER_D 0x00431eb1
 char Keyboard::GetCurrentModifierState() {
+	char chReturnValue;
+
 // LINE 124:
 	asm( 
 "	      00431eb1    push ebp"
@@ -419,6 +425,8 @@ char Keyboard::GetCurrentModifierState() {
 
 // FUNCTION: COPTER_D 0x00431f1f
 char Keyboard::ConvertKeyToCharacter(unsigned char chKey, unsigned char chModifiers) {
+	char chIndex;
+
 // LINE 165:
 	asm( 
 "	      00431f1f    push ebp"

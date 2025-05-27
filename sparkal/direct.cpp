@@ -207,6 +207,8 @@ void DirectoryEntry::DirectoryEntry(class Directory* directoryNewParent, class b
 
 // FUNCTION: COPTER_D 0x00481d8a
 int32_t DirectoryEntry::GetEntryExtension(class basic_string<char>& sEntryExtension) {
+	uint32_t nPosition;
+
 // LINE 56:
 	asm( 
 "	      00481d8a    push ebp"
@@ -647,6 +649,8 @@ int32_t DirectoryEntry::GetEntryExtension(class basic_string<char>& sEntryExtens
 
 // FUNCTION: COPTER_D 0x0048237c
 int32_t DirectoryEntry::GetEntryMinusExtension(class basic_string<char>& sEntryMinusExtension) {
+	uint32_t nPosition;
+
 // LINE 80:
 	asm( 
 "	      0048237c    push ebp"
@@ -2288,6 +2292,14 @@ int  Directory::IsDirectoryRoot() {
 
 // FUNCTION: COPTER_D 0x004837c7
 int  Directory::ReadDirectoryEntries() {
+	int32_t bNextFileFound;
+	class basic_string<char> sPathWithFilter;
+	int32_t bParentDirectoryEnumerated;
+	int32_t bCurrentDirectoryEnumerated;
+	void * __ptr32 hFind;
+	class DirectoryEntry directoryEntryCurrent;
+	struct _WIN32_FIND_DATAA findData;
+
 // LINE 220:
 	asm( 
 "	      004837c7    push ebp"
@@ -3397,6 +3409,14 @@ int  Directory::ReadDirectoryEntries() {
 
 // FUNCTION: COPTER_D 0x0048494d
 int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_string<char>>& sDirectoryEntries, long lFilter) {
+	int32_t bNextFileFound;
+	class basic_string<char> sPathWithFilter;
+	int32_t bParentDirectoryEnumerated;
+	int32_t bCurrentDirectoryEnumerated;
+	void * __ptr32 hFind;
+	class DirectoryEntry directoryEntryCurrent;
+	struct _WIN32_FIND_DATAA findData;
+
 // LINE 347:
 	asm( 
 "	      0048494d    push ebp"
@@ -4261,6 +4281,10 @@ int  Directory::ReadDirectorySpecificEntriesIntoStringList(class list<basic_stri
 
 // FUNCTION: COPTER_D 0x00485735
 int  Directory::DoesAnyEntryExistThatMatchesPattern(const class basic_string<char>& sPathPattern) {
+	void * __ptr32 hFind;
+	class DirectoryEntry directoryEntryCurrent;
+	struct _WIN32_FIND_DATAA findData;
+
 // LINE 431:
 	asm( 
 "	      00485735    push ebp"
@@ -4430,6 +4454,8 @@ int  Directory::DoesAnyEntryExistThatMatchesPattern(const class basic_string<cha
 
 // FUNCTION: COPTER_D 0x004859c2
 int  Directory::DoesDirectoryListContainEntry(const class basic_string<char>& sEntry) {
+	class list<DirectoryEntry>::iterator tempDirectoryEntryListIterator;
+
 // LINE 447:
 	asm( 
 "	      004859c2    push ebp"
@@ -4734,6 +4760,8 @@ int  Directory::ChangeDirectory(class basic_string<char>& sNewDirectory, int32_t
 
 // FUNCTION: COPTER_D 0x00485d34
 int  Directory::CreateNewEntry(class basic_string<char>& sName, long lType) {
+	class DirectoryEntry tempDirectoryEntry;
+
 // LINE 486:
 	asm( 
 "	      00485d34    push ebp"
@@ -4823,6 +4851,10 @@ int  Directory::CreateNewEntry(class basic_string<char>& sName, long lType) {
 
 // FUNCTION: COPTER_D 0x00485e22
 class DirectoryEntry *  Directory::GetNthEntry(int32_t nIndex) {
+	class list<DirectoryEntry>::iterator iterator;
+	int32_t i;
+	int32_t iEnd;
+
 // LINE 496:
 	asm( 
 "	      00485e22    push ebp"
@@ -5236,6 +5268,9 @@ void  Directory::SetNewDirectoryEntryFilter(class basic_string<char>& sNewDirect
 
 // FUNCTION: COPTER_D 0x0048631c
 void  Directory::MakeSurePathEndsWithSeparator() {
+	uint32_t nDirectoryPathLength;
+	char chLastCharacter;
+
 // LINE 523:
 	asm( 
 "	      0048631c    push ebp"
@@ -5598,6 +5633,9 @@ void  Directory::MakeSurePathEndsWithSeparator() {
 
 // FUNCTION: COPTER_D 0x004867d2
 void  Directory::SplitDirectoryPath(const class basic_string<char>& sPath, class basic_string<char>& sFirstPart, class basic_string<char>& sLastPart) {
+	uint32_t nDirectoryPathLength;
+	uint32_t nPosition;
+
 // LINE 544:
 	asm( 
 "	      004867d2    push ebp"

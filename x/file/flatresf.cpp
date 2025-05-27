@@ -7,6 +7,9 @@
 // Contribution: 1:00151b10-0015371d Module: 199, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00552b10
 void FlatResFile::LoadResMap(void * __ptr32* newMap, short * numTypes, long * dataLoc) {
+	unsigned char * resMapPtr;
+	long err;
+
 // LINE 97:
 	asm( 
 "	      00552b10    push ebp"
@@ -546,6 +549,8 @@ long FlatResFile::Close() {
 
 // FUNCTION: COPTER_D 0x00552fca
 short FlatResFile::CheckForLeaks() {
+	short total;
+
 // LINE 259:
 	asm( 
 "	      00552fca    push ebp"
@@ -710,6 +715,8 @@ short FlatResFile::CountTypes() {
 
 // FUNCTION: COPTER_D 0x0055310d
 unsigned long FlatResFile::GetIndType(short index) {
+	unsigned long type;
+
 // LINE 311:
 	asm( 
 "	      0055310d    push ebp"
@@ -816,6 +823,8 @@ short FlatResFile::Count(unsigned long type) {
 
 // FUNCTION: COPTER_D 0x0055320b
 void * __ptr32 FlatResFile::GetByID(unsigned long type, short id, void (*)(void * __ptr32, long) Swizzler) {
+	struct ResMap::Entry* entry;
+
 // LINE 336:
 	asm( 
 "	      0055320b    push ebp"
@@ -935,6 +944,8 @@ void * __ptr32 FlatResFile::GetByID(unsigned long type, short id, void (*)(void 
 
 // FUNCTION: COPTER_D 0x0055331d
 void * __ptr32 FlatResFile::GetByName(unsigned long type, unsigned char * name, void (*)(void * __ptr32, long) Swizzler) {
+	struct ResMap::Entry* entry;
+
 // LINE 363:
 	asm( 
 "	      0055331d    push ebp"
@@ -1066,6 +1077,8 @@ void * __ptr32 FlatResFile::GetByName(unsigned long type, unsigned char * name, 
 
 // FUNCTION: COPTER_D 0x00553452
 void * __ptr32 FlatResFile::GetByIndex(unsigned long type, short index, void (*)(void * __ptr32, long) Swizzler) {
+	struct ResMap::Entry* entry;
+
 // LINE 392:
 	asm( 
 "	      00553452    push ebp"
@@ -1185,6 +1198,8 @@ void * __ptr32 FlatResFile::GetByIndex(unsigned long type, short index, void (*)
 
 // FUNCTION: COPTER_D 0x00553564
 void FlatResFile::GetName(void * __ptr32 res, unsigned char * name) {
+	struct ResMap::Entry* entry;
+
 // LINE 419:
 	asm( 
 "	      00553564    push ebp"
@@ -1255,6 +1270,8 @@ void FlatResFile::GetName(void * __ptr32 res, unsigned char * name) {
 
 // FUNCTION: COPTER_D 0x0055360d
 void FlatResFile::GetID(void * __ptr32 res, short * id) {
+	struct ResMap::Entry* entry;
+
 // LINE 436:
 	asm( 
 "	      0055360d    push ebp"
@@ -1322,6 +1339,9 @@ void FlatResFile::GetID(void * __ptr32 res, short * id) {
 
 // FUNCTION: COPTER_D 0x005536ae
 unsigned long FlatResFile::GetResType(void * __ptr32 res) {
+	unsigned long returnType;
+	struct ResMap::Entry* entry;
+
 // LINE 449:
 	asm( 
 "	      005536ae    push ebp"
@@ -1410,6 +1430,8 @@ unsigned long FlatResFile::GetResType(void * __ptr32 res) {
 
 // FUNCTION: COPTER_D 0x00553794
 void FlatResFile::Release(void * __ptr32 res) {
+	struct ResMap::Entry* entry;
+
 // LINE 468:
 	asm( 
 "	      00553794    push ebp"
@@ -1479,6 +1501,8 @@ void FlatResFile::Release(void * __ptr32 res) {
 
 // FUNCTION: COPTER_D 0x0055383a
 void FlatResFile::Detach(void * __ptr32 res) {
+	struct ResMap::Entry* entry;
+
 // LINE 496:
 	asm( 
 "	      0055383a    push ebp"
@@ -1539,6 +1563,10 @@ void FlatResFile::Detach(void * __ptr32 res) {
 
 // FUNCTION: COPTER_D 0x005538d1
 void FlatResFile::Load(void * __ptr32 res) {
+	struct ResMap::Entry* entry;
+	unsigned char oldState;
+	unsigned char * ptr;
+
 // LINE 522:
 	asm( 
 "	      005538d1    push ebp"
@@ -1643,6 +1671,8 @@ void FlatResFile::Load(void * __ptr32 res) {
 
 // FUNCTION: COPTER_D 0x005539be
 void FlatResFile::GetString(unsigned char * str, short resID, short index) {
+	class StringSet tempStrs;
+
 // LINE 595:
 	asm( 
 "	      005539be    push ebp"
@@ -1730,6 +1760,13 @@ void FlatResFile::GetString(unsigned char * str, short resID, short index) {
 
 // FUNCTION: COPTER_D 0x00553a84
  ResMap::ResMap(short refNum, short numTypes, void * __ptr32 resMap, unsigned char * resMapPtr, long dataLoc) {
+	short typeCnt;
+	struct ResMap::TypeHead* typeList;
+	short total;
+	struct ResMap::Entry* resList;
+	short resCnt;
+	unsigned char * mapStart;
+
 // LINE 671:
 	asm( 
 "	      00553a84    push ebp"
@@ -1883,6 +1920,10 @@ void FlatResFile::GetString(unsigned char * str, short resID, short index) {
 
 // FUNCTION: COPTER_D 0x00553ba0
  ResMap::~ResMap() {
+	struct ResMap::Entry* srch;
+	struct ResMap::Entry* last;
+	unsigned char hState;
+
 // LINE 728:
 	asm( 
 "	      00553ba0    push ebp"
@@ -1995,6 +2036,12 @@ void FlatResFile::GetString(unsigned char * str, short resID, short index) {
 
 // FUNCTION: COPTER_D 0x00553c5b
 long  ResMap::Get(class FlatResFile* fromFile) {
+	class ResMap* srch;
+	short numTypes;
+	long dataLoc;
+	void * __ptr32 newMap;
+	unsigned char * resPtr;
+
 // LINE 753:
 	asm( 
 "	      00553c5b    push ebp"
@@ -2245,6 +2292,9 @@ void  ResMap::Release() {
 
 // FUNCTION: COPTER_D 0x00553e96
 short  ResMap::CheckForLeaks() {
+	class ResMap* srch;
+	short total;
+
 // LINE 802:
 	asm( 
 "	      00553e96    push ebp"
@@ -2291,6 +2341,11 @@ short  ResMap::CheckForLeaks() {
 
 // FUNCTION: COPTER_D 0x00553edb
 void  ResMap::LoadEntry(struct ResMap::Entry* entry, class FlatResFile* file, unsigned short unpurge) {
+	long pos;
+	unsigned char oldHandState;
+	long err;
+	long size;
+
 // LINE 814:
 	asm( 
 "	      00553edb    push ebp"
@@ -2594,6 +2649,8 @@ void  ResMap::LoadEntry(struct ResMap::Entry* entry, class FlatResFile* file, un
 
 // FUNCTION: COPTER_D 0x005541a4
 unsigned long  ResMap::GetIndType(short index) {
+	unsigned long type;
+
 // LINE 882:
 	asm( 
 "	      005541a4    push ebp"
@@ -2649,6 +2706,9 @@ unsigned long  ResMap::GetIndType(short index) {
 
 // FUNCTION: COPTER_D 0x005541fe
 short  ResMap::Count(unsigned long type) {
+	struct ResMap::TypeHead* typeList;
+	short cnt;
+
 // LINE 895:
 	asm( 
 "	      005541fe    push ebp"
@@ -2724,6 +2784,11 @@ short  ResMap::Count(unsigned long type) {
 
 // FUNCTION: COPTER_D 0x00554272
 unsigned long  ResMap::FindType(struct ResMap::Entry* entry) {
+	struct ResMap::TypeHead* typeList;
+	unsigned long type;
+	short cnt;
+	short numEntries;
+
 // LINE 911:
 	asm( 
 "	      00554272    push ebp"
@@ -2819,6 +2884,10 @@ unsigned long  ResMap::FindType(struct ResMap::Entry* entry) {
 
 // FUNCTION: COPTER_D 0x0055430b
 struct ResMap::Entry *  ResMap::FindEntry(void * __ptr32 res) {
+	struct ResMap::Entry* found;
+	struct ResMap::Entry* srch;
+	struct ResMap::Entry* last;
+
 // LINE 934:
 	asm( 
 "	      0055430b    push ebp"
@@ -2890,6 +2959,10 @@ struct ResMap::Entry *  ResMap::FindEntry(void * __ptr32 res) {
 
 // FUNCTION: COPTER_D 0x0055437a
 struct ResMap::Entry *  ResMap::FindEntry(unsigned long type, short id) {
+	struct ResMap::Entry* found;
+	struct ResMap::TypeHead* typeList;
+	short cnt;
+
 // LINE 947:
 	asm( 
 "	      0055437a    push ebp"
@@ -3010,6 +3083,10 @@ struct ResMap::Entry *  ResMap::FindEntry(unsigned long type, short id) {
 
 // FUNCTION: COPTER_D 0x0055443d
 struct ResMap::Entry *  ResMap::FindEntry(unsigned long type, unsigned char * name) {
+	struct ResMap::Entry* found;
+	struct ResMap::TypeHead* typeList;
+	short cnt;
+
 // LINE 975:
 	asm( 
 "	      0055443d    push ebp"
@@ -3152,6 +3229,10 @@ struct ResMap::Entry *  ResMap::FindEntry(unsigned long type, unsigned char * na
 
 // FUNCTION: COPTER_D 0x00554536
 struct ResMap::Entry *  ResMap::FindIndEntry(unsigned long type, short index) {
+	struct ResMap::Entry* found;
+	struct ResMap::TypeHead* typeList;
+	short cnt;
+
 // LINE 1007:
 	asm( 
 "	      00554536    push ebp"
@@ -3261,6 +3342,8 @@ struct ResMap::Entry *  ResMap::FindIndEntry(unsigned long type, short index) {
 
 // FUNCTION: COPTER_D 0x005545f1
 void  ResMap::GetName(struct ResMap::Entry* entry, unsigned char * name) {
+	unsigned char * namePtr;
+
 // LINE 1032:
 	asm( 
 "	      005545f1    push ebp"
@@ -3368,6 +3451,12 @@ void  ResMap::SwapTypeHead(struct ResMap::TypeHead* typeHead) {
 
 // FUNCTION: COPTER_D 0x0055468b
 void  ResMap::SwapResEntry(struct ResMap::Entry* resEntry) {
+	unsigned long dataLoc;
+	unsigned char hiWord;
+	unsigned char * bptr;
+	unsigned char loWord;
+	unsigned char midWord;
+
 // LINE 1069:
 	asm( 
 "	      0055468b    push ebp"

@@ -194,6 +194,22 @@ unsigned long  CGameApp::SetUpLoadGame(char * szLoadGamePath, long lFileType) {
 
 // FUNCTION: COPTER_D 0x00427691
 unsigned long  CGameApp::LoadUserOrCareerGame(char * szGamePath) {
+	char[260] szCityFile;
+	struct tagUserCityInfo tempUserCityInfo;
+	unsigned long lActualCityFileChecksum;
+	char[260] szCityPath;
+	int32_t bPathInfoFound;
+	char[256] szSplitPathFilename;
+	struct tagCitySettings savedCitySettings;
+	char[256] szSplitPathDirectory;
+	int32_t bSaveGameInfoFound;
+	struct tagCurrentCareerCityInfo tempCurrentCareerCityInfo;
+	unsigned long lSavedCityFileChecksum;
+	long lFileType;
+	char[3] szSplitPathDrive;
+	char[256] szSplitPathExtension;
+	long lPresentRecordType;
+
 // LINE 109:
 	asm( 
 "	      00427691    push ebp"
@@ -661,6 +677,15 @@ unsigned long  CGameApp::LoadUserOrCareerGame(char * szGamePath) {
 
 // FUNCTION: COPTER_D 0x00427bf4
 unsigned long  CGameApp::SaveUserOrCareerGame(char * szGamePath, char * szCityPath) {
+	unsigned long lActualCityFileChecksum;
+	char[256] szCityFile;
+	char[256] szSplitPathFilename;
+	struct tagCitySettings tempCitySettings;
+	char[256] szSplitPathDirectory;
+	long lFileType;
+	char[3] szSplitPathDrive;
+	char[256] szSplitPathExtension;
+
 // LINE 222:
 	asm( 
 "	      00427bf4    push ebp"
@@ -998,6 +1023,20 @@ unsigned long  CGameApp::SaveUserOrCareerGame(char * szGamePath, char * szCityPa
 
 // FUNCTION: COPTER_D 0x00427f98
 unsigned long  CGameApp::DoSaveGameAs() {
+	unsigned long nResult;
+	int32_t nFullFilterID;
+	char[256] szSplitPathFilename;
+	char[260] szGameFileSavePath;
+	char[260] szCityFileSavePath;
+	char[256] szSplitPathDirectory;
+	char[256] szNewDirectory;
+	char * chPrefData;
+	char[256] szSplitPathFullDirectory;
+	int32_t nFullTitleID;
+	char[3] szSplitPathDrive;
+	int32_t nFullStringID;
+	char[256] szSplitPathExtension;
+
 // LINE 305:
 	asm( 
 "	      00427f98    push ebp"
@@ -1758,6 +1797,9 @@ unsigned long  CGameApp::DoSaveGameAs() {
 
 // FUNCTION: COPTER_D 0x00428a74
 long  CGameApp::ValidateCopterSaveGameFile(char * szGamePath) {
+	class MIFF myMIFF;
+	long lFileType;
+
 // LINE 421:
 	asm( 
 "	      00428a74    push ebp"

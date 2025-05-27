@@ -97,6 +97,10 @@ void AmbulanceClass::~AmbulanceClass() {
 
 // FUNCTION: COPTER_D 0x0053592b
 class AmbulanceClass* AmbulanceClass::CreateInstance(int32_t instanceID) {
+	int32_t object;
+	class AmbulanceClass* youveWonABrandNewCar;
+	char * objectMemory;
+
 // LINE 106:
 	asm( 
 "	      0053592b    push ebp"
@@ -439,6 +443,9 @@ int32_t AmbulanceClass::IsThisAHospital(long mapX, long mapY) {
 
 // FUNCTION: COPTER_D 0x00535c21
 void AmbulanceClass::ItterateFSM() {
+	struct Point3d vec;
+	int32_t dist;
+
 // LINE 288:
 	asm( 
 "	      00535c21    push ebp"

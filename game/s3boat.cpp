@@ -19,6 +19,9 @@
 
 // FUNCTION: COPTER_D 0x005274fd
 void BoatClass::BoatClass(long mapx, long mapy, int32_t instanceID) {
+	long odds;
+	int32_t currentFlag;
+
 // LINE 153:
 	asm( 
 "	      005274fd    push ebp"
@@ -303,6 +306,8 @@ class BoatClass* BoatClass::CreateInstance(int32_t instanceID) {
 
 // FUNCTION: COPTER_D 0x005276d5
 class BoatClass* BoatClass::CreateInstance(long mapx, long mapy, int32_t instanceID) {
+	class BoatClass* newboat;
+
 // LINE 341:
 	asm( 
 "	      005276d5    push ebp"
@@ -423,6 +428,8 @@ int32_t BoatClass::Initialize(int32_t instanceID) {
 
 // FUNCTION: COPTER_D 0x005277ab
 void BoatClass::ResetAll() {
+	int32_t currentBoatIndex;
+
 // LINE 468:
 	asm( 
 "	      005277ab    push ebp"
@@ -463,6 +470,8 @@ void BoatClass::ResetAll() {
 
 // FUNCTION: COPTER_D 0x005277eb
 void BoatClass::ItterateAll() {
+	int32_t currentBoatIndex;
+
 // LINE 516:
 	asm( 
 "	      005277eb    push ebp"
@@ -1083,6 +1092,9 @@ void BoatClass::AdjustSpeed() {
 
 // FUNCTION: COPTER_D 0x00527cb3
 enum BoatClass::StoppedReasons BoatClass::IsWaterPathClear() {
+	struct Point2d boatLocation;
+	struct Point3d boatHeading;
+
 // LINE 887:
 	asm( 
 "	      00527cb3    push ebp"
@@ -1176,6 +1188,14 @@ enum BoatClass::StoppedReasons BoatClass::IsWaterPathClear() {
 
 // FUNCTION: COPTER_D 0x00527d76
 enum BoatClass::StoppedReasons BoatClass::CheckWaterDynamicObjectsAt(const struct Point2d& __formal, const struct Point3d& collisionPoint) {
+	int32_t combinedradius;
+	int32_t xdiff;
+	int32_t zdiff;
+	unsigned short cellType;
+	struct _CELL_INFO* currentCell;
+	struct _DYOBJ_INST* currentObject;
+	int32_t ydiff;
+
 // LINE 920:
 	asm( 
 "	      00527d76    push ebp"
@@ -1570,6 +1590,9 @@ enum BoatClass::StoppedReasons BoatClass::CheckWaterDynamicObjectsAt(const struc
 
 // FUNCTION: COPTER_D 0x005280bb
 int32_t BoatClass::IsBoatOutOfCameraRange() {
+	int32_t deltaY;
+	int32_t deltaX;
+
 // LINE 1074:
 	asm( 
 "	      005280bb    push ebp"
@@ -1707,6 +1730,10 @@ int32_t BoatClass::IsBoatOutOfCameraRange() {
 
 // FUNCTION: COPTER_D 0x005281a8
 void BoatClass::SetBoatDirection(unsigned short tileType) {
+	unsigned short tile;
+	enum DirectionTypes[4] validdirs;
+	int32_t i;
+
 // LINE 1139:
 	asm( 
 "	      005281a8    push ebp"
@@ -2047,6 +2074,8 @@ void BoatClass::Stop() {
 
 // FUNCTION: COPTER_D 0x005284ba
 void BoatClass::MoveForward() {
+	int32_t distance;
+
 // LINE 1256:
 	asm( 
 "	      005284ba    push ebp"
@@ -2330,6 +2359,8 @@ int32_t BoatClass::AmIInANewCell() {
 
 // FUNCTION: COPTER_D 0x00528746
 void BoatClass::UnlinkFromCell(const struct Point2d& point) {
+	struct _CELL_INFO* cellPointer;
+
 // LINE 1370:
 	asm( 
 "	      00528746    push ebp"
@@ -2448,6 +2479,8 @@ void BoatClass::UnlinkFromCell(const struct Point2d& point) {
 
 // FUNCTION: COPTER_D 0x0052885c
 void BoatClass::LinkToCell(const struct Point2d& point) {
+	struct _CELL_INFO* cellPointer;
+
 // LINE 1418:
 	asm( 
 "	      0052885c    push ebp"
@@ -2524,6 +2557,17 @@ void BoatClass::LinkToCell(const struct Point2d& point) {
 
 // FUNCTION: COPTER_D 0x00528918
 enum BoatClass::IntersectionTypes BoatClass::PickTurnDirection(const struct Point2d& point) {
+	struct _CELL_INFO* ncptr;
+	unsigned short southTile;
+	unsigned short westTile;
+	unsigned short currentTile;
+	unsigned short eastTile;
+	struct _CELL_INFO* wcptr;
+	struct _CELL_INFO* scptr;
+	long intersection;
+	struct _CELL_INFO* ecptr;
+	unsigned short northTile;
+
 // LINE 1450:
 	asm( 
 "	      00528918    push ebp"
@@ -3763,6 +3807,8 @@ void BoatClass::AdjustCurrentPosition() {
 
 // FUNCTION: COPTER_D 0x00529543
 void BoatClass::AdjustNextPosition() {
+	struct Point3d nextFineLocation;
+
 // LINE 1853:
 	asm( 
 "	      00529543    push ebp"
@@ -4377,6 +4423,21 @@ int32_t BoatClass::FinishedUturn() {
 
 // FUNCTION: COPTER_D 0x00529a51
 void BoatClass::BeamBoatToWithinCameraRange() {
+	int32_t foundcell;
+	int32_t stop_now;
+	struct _CELL_INFO* cptr;
+	int32_t curr_dir;
+	int32_t currentFlag;
+	int32_t i;
+	int32_t y;
+	int32_t x;
+	struct Point2d beampoint;
+	struct Point3d vec;
+	int32_t spiral_dist;
+	int32_t curr_dist;
+	int32_t ydir;
+	int32_t xdir;
+
 // LINE 2189:
 	asm( 
 "	      00529a51    push ebp"
@@ -4974,6 +5035,20 @@ void BoatClass::UnPlaceBoat() {
 
 // FUNCTION: COPTER_D 0x00529f2b
 int32_t BoatClass::BeamBoatToLocation(long mapx, long mapy) {
+	int32_t foundcell;
+	int32_t stop_now;
+	struct _CELL_INFO* cptr;
+	int32_t curr_dir;
+	int32_t currentFlag;
+	int32_t i;
+	int32_t y;
+	int32_t x;
+	struct Point2d beampoint;
+	int32_t spiral_dist;
+	int32_t curr_dist;
+	int32_t ydir;
+	int32_t xdir;
+
 // LINE 2394:
 	asm( 
 "	      00529f2b    push ebp"
@@ -5703,6 +5778,9 @@ int32_t BoatClass::BeamBoatToLocation(long mapx, long mapy) {
 
 // FUNCTION: COPTER_D 0x0052a81c
 int32_t BoatClass::InitializeInstance(long mapx, long mapy, int32_t instanceID) {
+	int32_t object;
+	struct VRObjInfo objectInfo;
+
 // LINE 2811:
 	asm( 
 "	      0052a81c    push ebp"
@@ -6159,6 +6237,14 @@ void ResetAllBoats() {
 
 // FUNCTION: COPTER_D 0x0052ab7e
 struct _DYOBJ_INST* BoatClass::StartCapsizedBoat(long mission_id, int32_t timetolive) {
+	long numtostart;
+	struct _MISSION_PARMS mp;
+	long y;
+	long x;
+	long count;
+	long totalpersons;
+	class BoatClass* capboat;
+
 // LINE 3059:
 	asm( 
 "	      0052ab7e    push ebp"
@@ -6375,6 +6461,8 @@ struct _DYOBJ_INST* BoatClass::StartCapsizedBoat(long mission_id, int32_t timeto
 
 // FUNCTION: COPTER_D 0x0052acfb
 struct _DYOBJ_INST* BoatClass::GetCapsizedBoat() {
+	class BoatClass* capboat;
+
 // LINE 3127:
 	asm( 
 "	      0052acfb    push ebp"
@@ -6531,6 +6619,10 @@ int32_t S3BoatMIFFSave(void * __ptr32 miffWriter) {
 
 // FUNCTION: COPTER_D 0x0052ada4
 int32_t BoatClass::MIFFLoad(void * __ptr32 miffReader) {
+	int32_t i;
+	int32_t ret;
+	class BoatClass* b;
+
 // LINE 3199:
 	asm( 
 "	      0052ada4    push ebp"
@@ -6825,6 +6917,9 @@ int32_t BoatClass::MIFFLoad(void * __ptr32 miffReader) {
 
 // FUNCTION: COPTER_D 0x0052b00a
 int32_t BoatClass::MIFFSave(void * __ptr32 miffWriter) {
+	int32_t i;
+	int32_t ret;
+
 // LINE 3263:
 	asm( 
 "	      0052b00a    push ebp"

@@ -7,6 +7,14 @@
 // Contribution: 1:000c3690-000c8acf Module: 94, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004c4690
 int32_t S2CityValidate(char * filepath) {
+	long lBytesReadSoFar;
+	int32_t bOK;
+	long lCityDataChunkLength;
+	long lFileLength;
+	struct _iobuf* filNum;
+	long lChunkDataSize;
+	long lChunkType;
+
 // LINE 110:
 	asm( 
 "	      004c4690    push ebp"
@@ -229,6 +237,14 @@ int32_t S2CityValidate(char * filepath) {
 
 // FUNCTION: COPTER_D 0x004c481e
 short S2CityGetCityNameFromFile(char * filePath, char * cityName) {
+	long sofar;
+	struct _iobuf* filNum;
+	unsigned short done;
+	long length;
+	long dp;
+	long count;
+	long size;
+
 // LINE 180:
 	asm( 
 "	      004c481e    push ebp"
@@ -470,6 +486,9 @@ short S2CityGetCityNameFromFile(char * filePath, char * cityName) {
 
 // FUNCTION: COPTER_D 0x004c49d8
 long stol(char * tag) {
+	long buildval;
+	char * s;
+
 // LINE 245:
 	asm( 
 "	      004c49d8    push ebp"
@@ -532,6 +551,9 @@ long stol(char * tag) {
 
 // FUNCTION: COPTER_D 0x004c4a2b
 long ValidateSCXSaveGameFile(char * szFilePath) {
+	struct _iobuf* fp;
+	char[5] buf;
+
 // LINE 272:
 	asm( 
 "	      004c4a2b    push ebp"
@@ -617,6 +639,16 @@ long ValidateSCXSaveGameFile(char * szFilePath) {
 
 // FUNCTION: COPTER_D 0x004c4ab6
 short S2CityLoad(char * filePath) {
+	long sofar;
+	short got_label;
+	struct _iobuf* filNum;
+	unsigned short bFoundName;
+	long length;
+	long dp;
+	unsigned short bDone;
+	char[256] tempCityName;
+	long size;
+
 // LINE 298:
 	asm( 
 "	      004c4ab6    push ebp"
@@ -1516,6 +1548,9 @@ short S2CityLoad(char * filePath) {
 
 // FUNCTION: COPTER_D 0x004c5373
 void label_kludge() {
+	short len;
+	short i;
+
 // LINE 473:
 	asm( 
 "	      004c5373    push ebp"
@@ -1590,6 +1625,9 @@ void label_kludge() {
 
 // FUNCTION: COPTER_D 0x004c5412
 void clear_label() {
+	short j;
+	short i;
+
 // LINE 496:
 	asm( 
 "	      004c5412    push ebp"
@@ -1644,6 +1682,9 @@ void clear_label() {
 
 // FUNCTION: COPTER_D 0x004c547e
 void graph_kludge() {
+	short j;
+	short i;
+
 // LINE 516:
 	asm( 
 "	      004c547e    push ebp"
@@ -1738,6 +1779,12 @@ void graph_kludge() {
 
 // FUNCTION: COPTER_D 0x004c555f
 void S2CityMakeCityNameFromFilePath(char * filePath, char * cityName) {
+	char[256] szSplitPathFilename;
+	uint32_t stringLength;
+	char[256] szSplitPathDirectory;
+	char[3] szSplitPathDrive;
+	char[256] szSplitPathExtension;
+
 // LINE 542:
 	asm( 
 "	      004c555f    push ebp"
@@ -1829,6 +1876,8 @@ void S2CityMakeFileNameFromCityName(char * cityName, char * fileName) {
 
 // FUNCTION: COPTER_D 0x004c55f2
 unsigned short S2CityReadHeader(struct _iobuf* filNum, long * length) {
+	long data;
+
 // LINE 588:
 	asm( 
 "	      004c55f2    push ebp"
@@ -1961,6 +2010,11 @@ unsigned short S2CityReadHeader(struct _iobuf* filNum, long * length) {
 
 // FUNCTION: COPTER_D 0x004c56e2
 unsigned short S2CityMiscRead(struct _iobuf* filNum, long size) {
+	long lval;
+	short j;
+	short i;
+	short ix;
+
 // LINE 629:
 	asm( 
 "	      004c56e2    push ebp"
@@ -3389,6 +3443,9 @@ unsigned short S2CityGameReadUncompressed(struct _iobuf* filNum, long size, char
 
 // FUNCTION: COPTER_D 0x004c6619
 unsigned short S2CityBucketGameRead(struct _iobuf* filNum, long size) {
+	char * temp;
+	long count;
+
 // LINE 883:
 	asm( 
 "	      004c6619    push ebp"
@@ -3471,6 +3528,13 @@ unsigned short S2CityBucketGameRead(struct _iobuf* filNum, long size) {
 
 // FUNCTION: COPTER_D 0x004c66a4
 unsigned short S2CityGameReadCompressed(struct _iobuf* filNum, long size, char * data, long dataSize) {
+	char * temp;
+	long tp;
+	long dp;
+	long count;
+	long ix;
+	char b;
+
 // LINE 915:
 	asm( 
 "	      004c66a4    push ebp"
@@ -3662,6 +3726,9 @@ unsigned short S2CityGameReadCompressed(struct _iobuf* filNum, long size, char *
 
 // FUNCTION: COPTER_D 0x004c680e
 short S2CitySave(char * filePath) {
+	char[33] tempCityNameString;
+	struct _iobuf* filNum;
+
 // LINE 976:
 	asm( 
 "	      004c680e    push ebp"
@@ -4201,6 +4268,9 @@ short S2CitySave(char * filePath) {
 
 // FUNCTION: COPTER_D 0x004c6cfe
 unsigned short S2CityWriteName(struct _iobuf* filNum, long head, char * data) {
+	long count;
+	long size;
+
 // LINE 1072:
 	asm( 
 "	      004c6cfe    push ebp"
@@ -4326,6 +4396,9 @@ unsigned short S2CityWriteName(struct _iobuf* filNum, long head, char * data) {
 
 // FUNCTION: COPTER_D 0x004c6dd5
 unsigned short S2CityGameWriteUncompressed(struct _iobuf* filNum, long head, char * data, long dataSize) {
+	long count;
+	long size;
+
 // LINE 1111:
 	asm( 
 "	      004c6dd5    push ebp"
@@ -4479,6 +4552,9 @@ unsigned short S2CityGameWriteUncompressed(struct _iobuf* filNum, long head, cha
 
 // FUNCTION: COPTER_D 0x004c6edb
 unsigned short S2CityWriteHeader(struct _iobuf* filNum, long length) {
+	long count;
+	long data;
+
 // LINE 1156:
 	asm( 
 "	      004c6edb    push ebp"
@@ -4628,6 +4704,12 @@ unsigned short S2CityWriteHeader(struct _iobuf* filNum, long length) {
 
 // FUNCTION: COPTER_D 0x004c6fe6
 unsigned short S2CityGameWriteCompressed(struct _iobuf* filNum, long head, char * data, long count) {
+	char * temp;
+	long tp;
+	long dp;
+	long ix;
+	unsigned char b;
+
 // LINE 1197:
 	asm( 
 "	      004c6fe6    push ebp"
@@ -5042,6 +5124,10 @@ unsigned short S2CityGameWriteCompressed(struct _iobuf* filNum, long head, char 
 
 // FUNCTION: COPTER_D 0x004c732e
 unsigned short S2CityMiscWrite(struct _iobuf* filNum) {
+	short j;
+	short i;
+	short ix;
+
 // LINE 1300:
 	asm( 
 "	      004c732e    push ebp"
@@ -6354,6 +6440,10 @@ unsigned short S2CityMiscWrite(struct _iobuf* filNum) {
 
 // FUNCTION: COPTER_D 0x004c81c9
 void swizzle_buffer(char * data, long count) {
+	long * lptr;
+	long lval;
+	long i;
+
 // LINE 1494:
 	asm( 
 "	      004c81c9    push ebp"
@@ -6419,6 +6509,9 @@ void swizzle_buffer(char * data, long count) {
 
 // FUNCTION: COPTER_D 0x004c822d
 void swizzle_Micro(char * data, long count) {
+	struct Micro* mptr;
+	long i;
+
 // LINE 1522:
 	asm( 
 "	      004c822d    push ebp"
@@ -6498,6 +6591,10 @@ void swizzle_Micro(char * data, long count) {
 
 // FUNCTION: COPTER_D 0x004c82b3
 void swizzle_shorts(char * data, long count) {
+	short * sptr;
+	short sval;
+	long i;
+
 // LINE 1552:
 	asm( 
 "	      004c82b3    push ebp"
@@ -6562,6 +6659,9 @@ void swizzle_shorts(char * data, long count) {
 
 // FUNCTION: COPTER_D 0x004c8317
 short swizzle_short(short svalue) {
+	unsigned char cval;
+	unsigned char * byteptr;
+
 // LINE 1580:
 	asm( 
 "	      004c8317    push ebp"
@@ -6612,6 +6712,9 @@ short swizzle_short(short svalue) {
 
 // FUNCTION: COPTER_D 0x004c8350
 long swap_long(long lvalue) {
+	unsigned short sval;
+	unsigned short * shortptr;
+
 // LINE 1605:
 	asm( 
 "	      004c8350    push ebp"
@@ -6662,6 +6765,9 @@ long swap_long(long lvalue) {
 
 // FUNCTION: COPTER_D 0x004c838e
 long swizzle_long(long lvalue) {
+	unsigned char cval;
+	unsigned char * byteptr;
+
 // LINE 1631:
 	asm( 
 "	      004c838e    push ebp"
@@ -6756,6 +6862,14 @@ void GetStringResource(unsigned char * theString, short resourceID, short index)
 
 // FUNCTION: COPTER_D 0x004c83f5
 short S2CityAlloc() {
+	long j;
+	short z;
+	long i;
+	short y;
+	short x;
+	unsigned long poolsize;
+	long cnt;
+
 // LINE 1703:
 	asm( 
 "	      004c83f5    push ebp"
@@ -8178,6 +8292,9 @@ void S2CityFree() {
 
 // FUNCTION: COPTER_D 0x004c9227
 void PStringToCString(char * string) {
+	int32_t i;
+	char sizePString;
+
 // LINE 1979:
 	asm( 
 "	      004c9227    push ebp"
@@ -8230,6 +8347,9 @@ void PStringToCString(char * string) {
 
 // FUNCTION: COPTER_D 0x004c927b
 void CStringToPString(char * string) {
+	int32_t i;
+	int32_t sizeCString;
+
 // LINE 1993:
 	asm( 
 "	      004c927b    push ebp"
@@ -8294,6 +8414,9 @@ void CStringToPString(char * string) {
 
 // FUNCTION: COPTER_D 0x004c92e5
 void CopyPString(char * stringDestination, char * stringSource) {
+	int32_t i;
+	int32_t iEnd;
+
 // LINE 2010:
 	asm( 
 "	      004c92e5    push ebp"
@@ -8348,6 +8471,9 @@ void CopyPString(char * stringDestination, char * stringSource) {
 
 // FUNCTION: COPTER_D 0x004c9339
 void check_backslash_terminate(char * path) {
+	short len;
+	char * s;
+
 // LINE 2039:
 	asm( 
 "	      004c9339    push ebp"
@@ -8405,6 +8531,12 @@ void check_backslash_terminate(char * path) {
 
 // FUNCTION: COPTER_D 0x004c9381
 short check_root(char * pathname) {
+	char[260] pathonly;
+	short len;
+	short count;
+	char * t;
+	char * s;
+
 // LINE 2066:
 	asm( 
 "	      004c9381    push ebp"
@@ -8560,6 +8692,10 @@ short check_root(char * pathname) {
 
 // FUNCTION: COPTER_D 0x004c9495
 void get_path_at_start(char * ref, char * ret) {
+	short len;
+	short off;
+	char * s;
+
 // LINE 2121:
 	asm( 
 "	      004c9495    push ebp"
@@ -8675,6 +8811,10 @@ void get_path_at_start(char * ref, char * ret) {
 
 // FUNCTION: COPTER_D 0x004c9545
 void do_uppercase(char * ref, char * res) {
+	short len;
+	short i;
+	char * s;
+
 // LINE 2160:
 	asm( 
 "	      004c9545    push ebp"
@@ -8767,6 +8907,9 @@ void do_uppercase(char * ref, char * res) {
 
 // FUNCTION: COPTER_D 0x004c95e3
 void get_name_at_end(char * ref, char * ret) {
+	short len;
+	char * s;
+
 // LINE 2193:
 	asm( 
 "	      004c95e3    push ebp"
@@ -8882,6 +9025,9 @@ void get_name_at_end(char * ref, char * ret) {
 
 // FUNCTION: COPTER_D 0x004c9694
 void strip_extension(char * ref) {
+	short len;
+	char * s;
+
 // LINE 2233:
 	asm( 
 "	      004c9694    push ebp"
@@ -8958,6 +9104,10 @@ void strip_extension(char * ref) {
 
 // FUNCTION: COPTER_D 0x004c96fc
 void check_extension(char * pathname, char * ext) {
+	short len;
+	char[64] nameonly;
+	char * s;
+
 // LINE 2266:
 	asm( 
 "	      004c96fc    push ebp"
@@ -9148,6 +9298,8 @@ void check_extension(char * pathname, char * ext) {
 
 // FUNCTION: COPTER_D 0x004c9835
 short check_file_exist(char * filename) {
+	struct _iobuf* fileNum;
+
 // LINE 2318:
 	asm( 
 "	      004c9835    push ebp"
@@ -9200,6 +9352,11 @@ short check_file_exist(char * filename) {
 
 // FUNCTION: COPTER_D 0x004c987e
 void remove_illegals(char * ref) {
+	short len;
+	char[260] temp;
+	char * s;
+	char * r;
+
 // LINE 2344:
 	asm( 
 "	      004c987e    push ebp"
@@ -9370,6 +9527,11 @@ void remove_illegals(char * ref) {
 
 // FUNCTION: COPTER_D 0x004c9a2e
 void compress_spaces(char * ref) {
+	short len;
+	char[260] temp;
+	char * s;
+	char * r;
+
 // LINE 2385:
 	asm( 
 "	      004c9a2e    push ebp"

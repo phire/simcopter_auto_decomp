@@ -7,6 +7,8 @@
 // Contribution: 1:0007a640-0007ab67 Module: 33, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0047b640
 unsigned short wincpuidsupport() {
+	int32_t cpuid_support;
+
 // LINE 63:
 	asm( 
 "	      0047b640    push ebp"
@@ -81,6 +83,8 @@ unsigned short wincpuidsupport() {
 
 // FUNCTION: COPTER_D 0x0047b67a
 unsigned short wincpuid() {
+	unsigned short cpuid;
+
 // LINE 106:
 	asm( 
 "	      0047b67a    push ebp"
@@ -182,6 +186,12 @@ unsigned short wincpuid() {
 
 // FUNCTION: COPTER_D 0x0047b739
 unsigned short wincpuidext() {
+	unsigned char[12] intel_id;
+	int32_t i;
+	unsigned short cpuidext;
+	unsigned char[12] vendor_id;
+	unsigned short cpu_type;
+
 // LINE 162:
 	asm( 
 "	      0047b739    push ebp"
@@ -340,6 +350,11 @@ unsigned short wincpuidext() {
 
 // FUNCTION: COPTER_D 0x0047b825
 unsigned long wincpufeatures() {
+	unsigned char[12] intel_id;
+	int32_t i;
+	unsigned long cpuff;
+	unsigned char[12] vendor_id;
+
 // LINE 253:
 	asm( 
 "	      0047b825    push ebp"
@@ -478,6 +493,9 @@ unsigned long wincpufeatures() {
 
 // FUNCTION: COPTER_D 0x0047b8ec
 struct TIME_STAMP winrdtsc() {
+	struct TIME_STAMP timestamp;
+	unsigned long features;
+
 // LINE 320:
 	asm( 
 "	      0047b8ec    push ebp"
@@ -535,6 +553,8 @@ struct TIME_STAMP winrdtsc() {
 
 // FUNCTION: COPTER_D 0x0047b92d
 unsigned short getdllversion() {
+	unsigned short Version;
+
 // LINE 359:
 	asm( 
 "	      0047b92d    push ebp"
@@ -565,6 +585,8 @@ unsigned short getdllversion() {
 
 // FUNCTION: COPTER_D 0x0047b94a
 unsigned short check_clone() {
+	short cpu_type;
+
 // LINE 381:
 	asm( 
 "	      0047b94a    push ebp"
@@ -653,6 +675,8 @@ unsigned short check_clone() {
 
 // FUNCTION: COPTER_D 0x0047b999
 unsigned short check_8086() {
+	unsigned short cpu_type;
+
 // LINE 422:
 	asm( 
 "	      0047b999    push ebp"
@@ -747,6 +771,8 @@ unsigned short check_8086() {
 
 // FUNCTION: COPTER_D 0x0047b9eb
 unsigned short check_80286() {
+	unsigned short cpu_type;
+
 // LINE 465:
 	asm( 
 "	      0047b9eb    push ebp"
@@ -837,6 +863,8 @@ unsigned short check_80286() {
 
 // FUNCTION: COPTER_D 0x0047ba3a
 unsigned short check_80386() {
+	unsigned short cpu_type;
+
 // LINE 511:
 	asm( 
 "	      0047ba3a    push ebp"
@@ -943,6 +971,13 @@ unsigned short check_80386() {
 
 // FUNCTION: COPTER_D 0x0047ba8d
 unsigned short check_IDProc() {
+	unsigned char[12] intel_id;
+	unsigned char stepping;
+	int32_t i;
+	unsigned char[12] vendor_id;
+	unsigned short cpu_type;
+	unsigned char model;
+
 // LINE 561:
 	asm( 
 "	      0047ba8d    push ebp"

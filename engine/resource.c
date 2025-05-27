@@ -54,6 +54,8 @@ void InitResource() {
 
 // FUNCTION: COPTER_D 0x004d530f
 void VRResFreeBarrys(struct VRResource* res) {
+	struct GEOM_Resource* geo;
+
 // LINE 112:
 	asm( 
 "	      004d530f    push ebp"
@@ -108,6 +110,9 @@ void VRResFreeBarrys(struct VRResource* res) {
 
 // FUNCTION: COPTER_D 0x004d5356
 struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 misc) {
+	int32_t i;
+	struct VRResource* res;
+
 // LINE 138:
 	asm( 
 "	      004d5356    push ebp"
@@ -686,6 +691,8 @@ struct VRResource* VRLoadResource(char * name, int32_t Flags, void * __ptr32 mis
 
 // FUNCTION: COPTER_D 0x004d5825
 int32_t VRUnLoadAllResources() {
+	struct VRResource* res;
+
 // LINE 275:
 	asm( 
 "	      004d5825    push ebp"
@@ -740,6 +747,8 @@ int32_t VRUnLoadAllResources() {
 
 // FUNCTION: COPTER_D 0x004d5872
 int32_t VRUnLoadResource(struct VRResource* res) {
+	struct GEOM_Resource* geo;
+
 // LINE 301:
 	asm( 
 "	      004d5872    push ebp"
@@ -845,6 +854,9 @@ int32_t VRUnLoadResource(struct VRResource* res) {
 
 // FUNCTION: COPTER_D 0x004d5926
 int32_t GetDir_GEOM(char * name) {
+	struct Chunk chunk;
+	int32_t i;
+
 // LINE 358:
 	asm( 
 "	      004d5926    push ebp"
@@ -1134,6 +1146,9 @@ int32_t GetDir_GEOM(char * name) {
 
 // FUNCTION: COPTER_D 0x004d5baf
 int32_t GetDir_CMAP(char * name) {
+	struct Chunk chunk;
+	int32_t i;
+
 // LINE 635:
 	asm( 
 "	      004d5baf    push ebp"
@@ -1329,6 +1344,8 @@ int32_t GetDir_CMAP(char * name) {
 
 // FUNCTION: COPTER_D 0x004d5d48
 int32_t GetResourceDir(char * name) {
+	struct Chunk chunk;
+
 // LINE 752:
 	asm( 
 "	      004d5d48    push ebp"
@@ -1717,6 +1734,9 @@ int32_t RegisterResource(struct VRResource* res) {
 
 // FUNCTION: COPTER_D 0x004d5ffd
 void UnRegisterResource(struct VRResource* res) {
+	int32_t i;
+	struct VRResource* r;
+
 // LINE 1142:
 	asm( 
 "	      004d5ffd    push ebp"

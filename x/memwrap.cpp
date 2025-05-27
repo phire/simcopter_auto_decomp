@@ -82,6 +82,9 @@ void * __ptr32 Memory::AdoptPlatformHandle(void * __ptr32 mem) {
 
 // FUNCTION: COPTER_D 0x00554759
 void * __ptr32 Memory::HAlloc(long size, long state) {
+	void * __ptr32 mem;
+	unsigned long wstate;
+
 // LINE 150:
 	asm( 
 "	      00554759    push ebp"
@@ -237,6 +240,8 @@ void Memory::HUnpurge(void * __ptr32 purged, long oldSize) {
 
 // FUNCTION: COPTER_D 0x00554870
 unsigned char * Memory::PAlloc(long * pool, long size) {
+	void * __ptr32 mem;
+
 // LINE 202:
 	asm( 
 "	      00554870    push ebp"
@@ -287,6 +292,8 @@ unsigned char * Memory::PAlloc(long * pool, long size) {
 
 // FUNCTION: COPTER_D 0x005548c3
 void Memory::HFree(void * __ptr32 mem) {
+	unsigned char * p;
+
 // LINE 219:
 	asm( 
 "	      005548c3    push ebp"
@@ -435,6 +442,9 @@ void Memory::PFree(unsigned char * mem) {
 
 // FUNCTION: COPTER_D 0x005549e0
 unsigned char * Memory::HLock(void * __ptr32 mem) {
+	short err;
+	unsigned char * p;
+
 // LINE 265:
 	asm( 
 "	      005549e0    push ebp"
@@ -491,6 +501,8 @@ unsigned char * Memory::HLock(void * __ptr32 mem) {
 
 // FUNCTION: COPTER_D 0x00554a3d
 void Memory::HUnlock(void * __ptr32 mem) {
+	short err;
+
 // LINE 295:
 	asm( 
 "	      00554a3d    push ebp"
@@ -627,6 +639,8 @@ void Memory::HNoPurge(void * __ptr32 h) {
 
 // FUNCTION: COPTER_D 0x00554b04
 unsigned char * Memory::Stash(void * __ptr32 h) {
+	unsigned long flags;
+
 // LINE 350:
 	asm( 
 "	      00554b04    push ebp"
@@ -779,6 +793,8 @@ void Memory::BlockCopy(void * __ptr32 from, void * __ptr32 to, unsigned long siz
 
 // FUNCTION: COPTER_D 0x00554c10
 void Memory::BlockFill(void * __ptr32 mem, unsigned char byteVal, unsigned long size) {
+	short err;
+
 // LINE 392:
 	asm( 
 "	      00554c10    push ebp"
@@ -936,6 +952,8 @@ void Memory::PoolFree(long * pool) {
 
 // FUNCTION: COPTER_D 0x00554d05
 unsigned long Memory::HGetSize(void * __ptr32 mem) {
+	unsigned long size;
+
 // LINE 423:
 	asm( 
 "	      00554d05    push ebp"
@@ -986,6 +1004,8 @@ unsigned long Memory::HGetSize(void * __ptr32 mem) {
 
 // FUNCTION: COPTER_D 0x00554d5a
 unsigned long Memory::PGetSize(unsigned char * mem) {
+	unsigned long size;
+
 // LINE 438:
 	asm( 
 "	      00554d5a    push ebp"
@@ -1036,6 +1056,8 @@ unsigned long Memory::PGetSize(unsigned char * mem) {
 
 // FUNCTION: COPTER_D 0x00554daf
 unsigned short Memory::HIsLocked(void * __ptr32 h) {
+	long state;
+
 // LINE 453:
 	asm( 
 "	      00554daf    push ebp"
@@ -1074,6 +1096,9 @@ unsigned short Memory::HIsLocked(void * __ptr32 h) {
 
 // FUNCTION: COPTER_D 0x00554de7
 long Memory::HGetState(void * __ptr32 h) {
+	long state;
+	unsigned long wstate;
+
 // LINE 462:
 	asm( 
 "	      00554de7    push ebp"
@@ -1178,6 +1203,8 @@ void Memory::HSetState(void * __ptr32 h, long newState) {
 
 // FUNCTION: COPTER_D 0x00554e99
 long Memory::HSetSize(void * __ptr32 mem, unsigned long newSize) {
+	long err;
+
 // LINE 494:
 	asm( 
 "	      00554e99    push ebp"
@@ -1240,6 +1267,8 @@ long Memory::HSetSize(void * __ptr32 mem, unsigned long newSize) {
 
 // FUNCTION: COPTER_D 0x00554f06
 long Memory::Error() {
+	long err;
+
 // LINE 536:
 	asm( 
 "	      00554f06    push ebp"

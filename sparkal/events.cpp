@@ -119,6 +119,8 @@ long GetJoystickValue(int32_t nCommand) {
 
 // FUNCTION: COPTER_D 0x00431bfb
 long GetJoystickValueEither(int32_t nCommand1, int32_t nCommand2) {
+	long lReturnValue;
+
 // LINE 55:
 	asm( 
 "	      00431bfb    push ebp"

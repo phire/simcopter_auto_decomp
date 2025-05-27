@@ -474,6 +474,11 @@ void HangarWindow::~HangarWindow() {
 
 // FUNCTION: COPTER_D 0x00472611
 int32_t HangarWindow::Initialize() {
+	class ButtonWindow* tempButtonWindow;
+	char * szButtonFileName;
+	class basic_string<char> sText;
+	int32_t nFullStringID;
+
 // LINE 73:
 	asm( 
 "	      00472611    push ebp"
@@ -1463,6 +1468,8 @@ void HangarWindow::DestroyImage() {
 
 // FUNCTION: COPTER_D 0x00473296
 int32_t HangarWindow::ComposeSelf() {
+	long lHelpID;
+
 // LINE 153:
 	asm( 
 "	      00473296    push ebp"
@@ -1673,6 +1680,8 @@ int32_t HangarWindow::ComposeSelf() {
 
 // FUNCTION: COPTER_D 0x004734ed
 int32_t HangarWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
+	long lOwnerMessage;
+
 // LINE 183:
 	asm( 
 "	      004734ed    push ebp"
@@ -1867,6 +1876,8 @@ long HangarWindow::DoKeyDown(long lKey, char chModifiers) {
 
 // FUNCTION: COPTER_D 0x0047363c
 long HangarWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButton) {
+	long lHotspotID;
+
 // LINE 232:
 	asm( 
 "	      0047363c    push ebp"
@@ -2335,6 +2346,9 @@ void HangarWindow::GetImagePath() {
 
 // FUNCTION: COPTER_D 0x00473b5c
 int32_t HangarWindow::GetHotspotFromPosition(long& lHelpID, class MPoint& ptPosition) {
+	class list<HotSpot>::iterator iterator;
+	int32_t i;
+
 // LINE 292:
 	asm( 
 "	      00473b5c    push ebp"
@@ -2455,6 +2469,9 @@ int32_t HangarWindow::GetHotspotFromPosition(long& lHelpID, class MPoint& ptPosi
 
 // FUNCTION: COPTER_D 0x00473c6c
 void HangarWindow::ScrollHangarView(long lDistance) {
+	long lHangarGraphicWidth;
+	long lHangarWindowWidth;
+
 // LINE 313:
 	asm( 
 "	      00473c6c    push ebp"
@@ -2587,6 +2604,9 @@ void HangarWindow::ScrollHangarView(long lDistance) {
 
 // FUNCTION: COPTER_D 0x00473de1
 int32_t HangarWindow::IsHangarRectVisibleInWindow(class MRect& rectHangar) {
+	class MRect rectCompare;
+	class MRect rectWindowLocal;
+
 // LINE 364:
 	asm( 
 "	      00473de1    push ebp"
@@ -2774,6 +2794,10 @@ void HangarWindow::ClipRectToWindow(class MRect& rectToClip) {
 
 // FUNCTION: COPTER_D 0x00473f53
 void HangarWindow::DisplayHelp(int32_t nHelp, class MPoint& ptHelp) {
+	class MRect rectTempChildWindow;
+	class basic_string<char> sHelp;
+	int32_t nFullStringID;
+
 // LINE 438:
 	asm( 
 "	      00473f53    push ebp"

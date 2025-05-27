@@ -160,6 +160,8 @@ class MTime  MTime::BuildLocal(const class MDate& date, uint32_t h) {
 
 // FUNCTION: COPTER_D 0x0043c8ce
 unsigned long  MTime::LocalSecs() {
+	class MTime local_time;
+
 // LINE 101:
 	asm( 
 "	      0043c8ce    push ebp"
@@ -209,6 +211,8 @@ unsigned long  MTime::LocalSecs() {
 
 // FUNCTION: COPTER_D 0x0043c91e
 class MTime  MTime::BeginDST(uint32_t year) {
+	class MDate endApril;
+
 // LINE 119:
 	asm( 
 "	      0043c91e    push ebp"
@@ -338,6 +342,8 @@ class MTime  MTime::BeginDST(uint32_t year) {
 
 // FUNCTION: COPTER_D 0x0043ca36
 class MTime  MTime::EndDST(uint32_t year) {
+	class MDate endOctober;
+
 // LINE 147:
 	asm( 
 "	      0043ca36    push ebp"
@@ -384,6 +390,10 @@ class MTime  MTime::EndDST(uint32_t year) {
 
 // FUNCTION: COPTER_D 0x0043ca79
  MTime::MTime() {
+	class MDate today;
+	struct tm* t;
+	long ltime;
+
 // LINE 163:
 	asm( 
 "	      0043ca79    push ebp"
@@ -633,6 +643,8 @@ class MTime  MTime::EndDST(uint32_t year) {
 
 // FUNCTION: COPTER_D 0x0043cc5b
 int  MTime::SetShouldPrinMDate(int32_t bNewPrinMDate) {
+	int32_t bPreviousPrinMDate;
+
 // LINE 241:
 	asm( 
 "	      0043cc5b    push ebp"
@@ -672,6 +684,8 @@ int  MTime::SetShouldPrinMDate(int32_t bNewPrinMDate) {
 
 // FUNCTION: COPTER_D 0x0043cc88
 int  MTime::CompareTo(const class MTime& t) {
+	unsigned long diff;
+
 // LINE 253:
 	asm( 
 "	      0043cc88    push ebp"
@@ -813,6 +827,9 @@ unsigned int  MTime::HourGMT() {
 
 // FUNCTION: COPTER_D 0x0043cd53
 int  MTime::IsDST() {
+	uint32_t daycount;
+	uint32_t year;
+
 // LINE 304:
 	asm( 
 "	      0043cd53    push ebp"
@@ -1146,6 +1163,8 @@ unsigned int  MTime::Second() {
 
 // FUNCTION: COPTER_D 0x0043cfbf
 char *  MTime::PrintString(char * szTime) {
+	class ostrstream strtemp;
+
 // LINE 396:
 	asm( 
 "	      0043cfbf    push ebp"
@@ -1205,6 +1224,10 @@ char *  MTime::PrintString(char * szTime) {
 
 // FUNCTION: COPTER_D 0x0043d02b
 class ostream& operator<<(class ostream& s, const class MTime& t) {
+	uint32_t hh;
+	class ostrstream out;
+	char[80] buf;
+
 // LINE 407:
 	asm( 
 "	      0043d02b    push ebp"

@@ -7,6 +7,8 @@
 // Contribution: 1:0001e500-0001e869 Module: 74, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0041f500
 long DDEnable() {
+	long hResult;
+
 // LINE 30:
 	asm( 
 "	      0041f500    push ebp"
@@ -141,6 +143,12 @@ void DDDisable() {
 
 // FUNCTION: COPTER_D 0x0041f5f1
 unsigned long DDColorMatch(struct IDirectDrawSurface* pdds, unsigned long rgb) {
+	unsigned long rgbT;
+	unsigned long dw;
+	void * __ptr32 hdc;
+	long hres;
+	struct _DDSURFACEDESC ddsd;
+
 // LINE 84:
 	asm( 
 "	      0041f5f1    push ebp"
@@ -290,6 +298,12 @@ unsigned long DDColorMatch(struct IDirectDrawSurface* pdds, unsigned long rgb) {
 
 // FUNCTION: COPTER_D 0x0041f6e4
 struct IDirectDrawPalette* ReadPalFile(char * fname) {
+	struct ReadPalFile::__unnamed pal;
+	long ddrval;
+	int32_t i;
+	int32_t fh;
+	struct IDirectDrawPalette* ppal;
+
 // LINE 126:
 	asm( 
 "	      0041f6e4    push ebp"

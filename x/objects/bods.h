@@ -1,6 +1,8 @@
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055f920
 class cBBase *  cCopterBody::MakeNew(void * __ptr32 h) {
+	class cCopterBody* thing;
+
 // LINE 110:
 	asm( 
 "	      0055f920    push ebp"

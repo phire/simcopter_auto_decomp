@@ -405,6 +405,9 @@ void LogManager::~LogManager() {
 
 // FUNCTION: COPTER_D 0x004ec0ed
 int32_t LogManager::ReadLogFromFile(char * szFilePath) {
+	int32_t nReturnValue;
+	class MIFF tempMIFF;
+
 // LINE 66:
 	asm( 
 "	      004ec0ed    push ebp"
@@ -461,6 +464,9 @@ int32_t LogManager::ReadLogFromFile(char * szFilePath) {
 
 // FUNCTION: COPTER_D 0x004ec165
 int32_t LogManager::WriteLogToFile(char * szFilePath) {
+	int32_t nReturnValue;
+	class MIFF tempMIFF;
+
 // LINE 81:
 	asm( 
 "	      004ec165    push ebp"
@@ -517,6 +523,9 @@ int32_t LogManager::WriteLogToFile(char * szFilePath) {
 
 // FUNCTION: COPTER_D 0x004ec1dd
 int32_t LogManager::ReadFromMIFF(class MIFF* miffReader) {
+	struct tagLogBase tempLogBase;
+	long lPresentRecordDataLength;
+
 // LINE 99:
 	asm( 
 "	      004ec1dd    push ebp"
@@ -621,6 +630,8 @@ int32_t LogManager::ReadFromMIFF(class MIFF* miffReader) {
 
 // FUNCTION: COPTER_D 0x004ec284
 int32_t LogManager::WriteToMIFF(class MIFF* miffWriter) {
+	class list<tagLogBase *>::iterator iterator;
+
 // LINE 122:
 	asm( 
 "	      004ec284    push ebp"
@@ -946,6 +957,9 @@ long LogManager::GetSizeOfLogRecord(struct tagLogBase* logRecord) {
 
 // FUNCTION: COPTER_D 0x004ec65b
 int32_t LogManager::ReadCurrentRecordFromMIFF(class MIFF* miffReader) {
+	struct tagLogBase tempLogBase;
+	char[56] chBuffer;
+
 // LINE 176:
 	asm( 
 "	      004ec65b    push ebp"
@@ -1552,6 +1566,10 @@ int32_t LogManager::AddLogEntry(struct tagLogBase* logData, int32_t bShowUserMes
 
 // FUNCTION: COPTER_D 0x004eccd1
 int32_t LogManager::SortLogEntriesByDate() {
+	class list<tagLogBase *>::iterator currentLowest;
+	class list<tagLogBase *>::iterator iterator;
+	class list<tagLogBase *>* newLogBasePtrList;
+
 // LINE 265:
 	asm( 
 "	      004eccd1    push ebp"
@@ -1946,6 +1964,10 @@ int32_t LogManager::SortLogEntriesByDate() {
 
 // FUNCTION: COPTER_D 0x004ed1fd
 int32_t LogManager::SortLogEntriesByType() {
+	class list<tagLogBase *>::iterator currentLowest;
+	class list<tagLogBase *>::iterator iterator;
+	class list<tagLogBase *>* newLogBasePtrList;
+
 // LINE 291:
 	asm( 
 "	      004ed1fd    push ebp"
@@ -2340,6 +2362,8 @@ int32_t LogManager::SortLogEntriesByType() {
 
 // FUNCTION: COPTER_D 0x004ed729
 int32_t LogManager::PurgeAllEntries() {
+	class list<tagLogBase *>::iterator iterator;
+
 // LINE 321:
 	asm( 
 "	      004ed729    push ebp"
@@ -2539,6 +2563,9 @@ int32_t LogManager::PurgeAllEntries() {
 
 // FUNCTION: COPTER_D 0x004ed947
 int32_t LogManager::PurgeNEntries(long lEntryCountToPurge) {
+	class list<tagLogBase *>::iterator iterator;
+	long i;
+
 // LINE 343:
 	asm( 
 "	      004ed947    push ebp"
@@ -2733,6 +2760,12 @@ int32_t LogManager::PurgeNEntries(long lEntryCountToPurge) {
 
 // FUNCTION: COPTER_D 0x004edb4e
 void LogManager::MakeStringFromLogData(struct tagLogBase* logData, class basic_string<char>& sCurrentText, int32_t bPrintTime) {
+	class MTimeLocalized tempTime;
+	char[256] szBuffer1;
+	char[64] szTime;
+	int32_t nFullStringID;
+	char[256] szBuffer;
+
 // LINE 365:
 	asm( 
 "	      004edb4e    push ebp"

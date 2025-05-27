@@ -273,6 +273,9 @@ void StringSet::~StringSet() {
 
 // FUNCTION: COPTER_D 0x00565bff
 unsigned char * StringSet::GetString(short which) {
+	short cnt;
+	unsigned char * str;
+
 // LINE 65:
 	asm( 
 "	      00565bff    push ebp"

@@ -32,6 +32,8 @@ int32_t Check_Pointer(char * ptr, short numchars, char * text) {
 
 // FUNCTION: COPTER_D 0x00563eb5
 void MyPixel(int32_t x, int32_t y, unsigned char color) {
+	char * ptr;
+
 // LINE 144:
 	asm( 
 "	      00563eb5    push ebp"
@@ -172,6 +174,21 @@ void MyPixel(int32_t x, int32_t y, unsigned char color) {
 
 // FUNCTION: COPTER_D 0x00563fd1
 void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int32_t shadeFlag) {
+	int32_t lineY;
+	int32_t xOffset;
+	int32_t startX;
+	unsigned char[51] shade;
+	long radius;
+	long ditherLimit;
+	long j;
+	long i;
+	int32_t radiusSquared;
+	unsigned char hiColor;
+	double bandSize;
+	unsigned char[51][3] pat;
+	unsigned char shftCt;
+	int32_t endX;
+
 // LINE 176:
 	asm( 
 "	      00563fd1    push ebp"
@@ -858,6 +875,20 @@ void DrawSphere(struct Point3d centerPt, long diameter, unsigned char color, int
 
 // FUNCTION: COPTER_D 0x00564770
 void DrawFaceTwo(struct Point3d centerPt, long vertRad, float psi, double scaleFactor, short facenum) {
+	long yLine;
+	double yStride;
+	long startX;
+	struct BmpLineInfo pixLine;
+	long i;
+	struct Point3d offset;
+	unsigned char * pixPtr;
+	double bSquared;
+	struct VRBmpHdr* bhdr;
+	long endX;
+	double aSquared;
+	struct Point3d faceCenter;
+	long yScanLine;
+
 // LINE 404:
 	asm( 
 "	      00564770    push ebp"
@@ -1177,6 +1208,13 @@ long ComputeViewToFigureOffset(struct Point3D view, int32_t index) {
 
 // FUNCTION: COPTER_D 0x005649d3
 void DrawLineOnFace(long startX, long endX, long yLine, struct Point3d offset, struct Point3d faceCenter, struct BmpLineInfo* pixLine) {
+	long loBitmapLimit;
+	struct Point3d scaledOffset;
+	long begin;
+	long hiBitmapLimit;
+	long end;
+	unsigned char * ptr;
+
 // LINE 523:
 	asm( 
 "	      005649d3    push ebp"
@@ -1443,6 +1481,8 @@ void DrawLineOnFace(long startX, long endX, long yLine, struct Point3d offset, s
 
 // FUNCTION: COPTER_D 0x00564bb8
 void FindFaceQuadrant(struct VRBmpHdr* bhdr, long dir, struct Point3D viewPos, struct Point3d* faceCenter) {
+	double widthOverTwo;
+
 // LINE 583:
 	asm( 
 "	      00564bb8    push ebp"
@@ -1502,6 +1542,9 @@ void FindFaceQuadrant(struct VRBmpHdr* bhdr, long dir, struct Point3D viewPos, s
 
 // FUNCTION: COPTER_D 0x00564c10
 void FindFaceQuadrant2(struct VRBmpHdr* bhdr, float psi, struct Point3d* faceCenter) {
+	double widthOverTwo;
+	double mydir;
+
 // LINE 599:
 	asm( 
 "	      00564c10    push ebp"
@@ -1647,6 +1690,27 @@ void FindFaceQuadrant2(struct VRBmpHdr* bhdr, float psi, struct Point3d* faceCen
 
 // FUNCTION: COPTER_D 0x00564d8d
 void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, unsigned char color, long width) {
+	long dy;
+	long dx;
+	long startWidth;
+	long error;
+	long cInc;
+	double step;
+	long yInc;
+	long tapWidth;
+	long xInc;
+	long j;
+	long longColor;
+	long i;
+	long oneByteWrites;
+	long fourByteWrites;
+	long segLen;
+	char * writeBufferTmp;
+	double colorLimit;
+	char * writeBuffer;
+	long endWidth;
+	char[26] col;
+
 // LINE 637:
 	asm( 
 "	      00564d8d    push ebp"
@@ -2252,6 +2316,23 @@ void DrawTaperedLine(struct Point3d startPt, struct Point3d endPt, long taper, u
 
 // FUNCTION: COPTER_D 0x00565225
 void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color, long width) {
+	long dy;
+	long dx;
+	long error;
+	double step;
+	long cInc;
+	long yInc;
+	long xInc;
+	long j;
+	long longColor;
+	long i;
+	long oneByteWrites;
+	long fourByteWrites;
+	char * writeBufferTmp;
+	double colorLimit;
+	char * writeBuffer;
+	char[26] col;
+
 // LINE 824:
 	asm( 
 "	      00565225    push ebp"
@@ -2776,6 +2857,17 @@ void DrawLine(struct Point3d startPt, struct Point3d endPt, unsigned char color,
 
 // FUNCTION: COPTER_D 0x00565641
 void DrawHorzLinePat(long startX, long endX, long yPos, unsigned char * pixPtr, unsigned char colorShift, double xStride) {
+	double stride1;
+	long dx;
+	double stride3;
+	double stride2;
+	long longColor;
+	long oneByteWrites;
+	double curPatOffset;
+	long fourByteWrites;
+	double stride4;
+	unsigned char * writeBuffer;
+
 // LINE 972:
 	asm( 
 "	      00565641    push ebp"
@@ -3062,6 +3154,12 @@ void DrawHorzLinePat(long startX, long endX, long yPos, unsigned char * pixPtr, 
 
 // FUNCTION: COPTER_D 0x00565898
 void DrawHorzLine(long startX, long endX, long yPos, unsigned char color) {
+	long dx;
+	long oneByteWrites;
+	long fourByteWrites;
+	unsigned long fourByteColor;
+	char * writeBuffer;
+
 // LINE 1056:
 	asm( 
 "	      00565898    push ebp"

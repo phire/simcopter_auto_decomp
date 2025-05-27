@@ -189,6 +189,9 @@ void CommandSystem::CommandSystem() {
 
 // FUNCTION: COPTER_D 0x0048b534
 void CommandSystem::Initialize() {
+	int32_t j;
+	int32_t i;
+
 // LINE 43:
 	asm( 
 "	      0048b534    push ebp"
@@ -298,6 +301,8 @@ void CommandSystem::Initialize() {
 
 // FUNCTION: COPTER_D 0x0048b631
 void CommandSystem::ClearAllCommands() {
+	int32_t i;
+
 // LINE 71:
 	asm( 
 "	      0048b631    push ebp"
@@ -343,6 +348,8 @@ void CommandSystem::ClearAllCommands() {
 
 // FUNCTION: COPTER_D 0x0048b682
 void CommandSystem::ClearAllCommandsDevice(long lDevice) {
+	int32_t i;
+
 // LINE 86:
 	asm( 
 "	      0048b682    push ebp"
@@ -397,6 +404,13 @@ void CommandSystem::ClearAllCommandsDevice(long lDevice) {
 
 // FUNCTION: COPTER_D 0x0048b6ed
 void CommandSystem::SetUpCommandArraysFromShortcuts() {
+	unsigned char chCurrentCommand;
+	unsigned char chCurrentModifiers;
+	int32_t nTempIndex;
+	class list<Shortcut>::iterator tempShortcutListIterator;
+	unsigned char chCurrentChar;
+	long lCurrentIgnoreModifiers;
+
 // LINE 124:
 	asm( 
 "	      0048b6ed    push ebp"
@@ -707,6 +721,12 @@ void CommandSystem::SetUpCommandArraysFromShortcuts() {
 
 // FUNCTION: COPTER_D 0x0048b9a9
 void CommandSystem::PollJoysticksForCommands() {
+	long lValue;
+	int32_t j;
+	int32_t i;
+	int32_t iEnd;
+	int32_t nCommand;
+
 // LINE 190:
 	asm( 
 "	      0048b9a9    push ebp"
@@ -1441,6 +1461,10 @@ void CGameCommander::ProcessKeyUp(long lKey) {
 
 // FUNCTION: COPTER_D 0x0048be6f
 void CGameCommander::ProcessKeyDown(long lKey, struct CommandSystem& commandSystem, int32_t& nCommand, int32_t& bPushCommand) {
+	int32_t nTempCommand;
+	int32_t nTempIndex;
+	unsigned char chTempModifierState;
+
 // LINE 402:
 	asm( 
 "	      0048be6f    push ebp"
@@ -1687,6 +1711,10 @@ void CGameCommander::ProcessKeyDown(long lKey, struct CommandSystem& commandSyst
 
 // FUNCTION: COPTER_D 0x0048c064
 void CGameCommander::ProcessKeyUp(long lKey, struct CommandSystem& commandSystem) {
+	int32_t nTempCommand;
+	int32_t nTempIndex;
+	unsigned char chTempModifierState;
+
 // LINE 478:
 	asm( 
 "	      0048c064    push ebp"
@@ -1926,6 +1954,10 @@ void CGameCommander::ProcessSystemCloseRequest() {
 
 // FUNCTION: COPTER_D 0x0048c234
 int32_t ReadShortcutPrefsFile(class list<Shortcut>& shortcutList) {
+	class MIFF myMIFF;
+	struct Shortcut tempShortcut;
+	char[260] szFilePath;
+
 // LINE 552:
 	asm( 
 "	      0048c234    push ebp"
@@ -2229,6 +2261,11 @@ int32_t ReadShortcutPrefsFile(class list<Shortcut>& shortcutList) {
 
 // FUNCTION: COPTER_D 0x0048c6f1
 int32_t WriteShortcutPrefsFile(class list<Shortcut>& shortcutList) {
+	int32_t nReturnValue;
+	class MIFF myMIFF;
+	struct Shortcut tempShortcut;
+	char[260] szFilePath;
+
 // LINE 586:
 	asm( 
 "	      0048c6f1    push ebp"
@@ -2387,6 +2424,9 @@ int32_t WriteShortcutPrefsFile(class list<Shortcut>& shortcutList) {
 
 // FUNCTION: COPTER_D 0x0048c8bd
 void MakeDefaultConfigurableShortcuts(class list<Shortcut>& shortcutList) {
+	int32_t i;
+	struct Shortcut tempShortcut;
+
 // LINE 611:
 	asm( 
 "	      0048c8bd    push ebp"
@@ -4786,6 +4826,8 @@ int32_t GetPushAndIgnoreSettingsForCommand(long lCommand, long& lPush, long& lIg
 
 // FUNCTION: COPTER_D 0x0048e4b5
 void DeleteShortcutPrefsFile() {
+	char[260] szFilePath;
+
 // LINE 968:
 	asm( 
 "	      0048e4b5    push ebp"

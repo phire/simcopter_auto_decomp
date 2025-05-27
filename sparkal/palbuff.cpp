@@ -7,6 +7,8 @@
 // Contribution: 1:00046240-00046788 Module: 50, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00447240
 void PaletteBuffer::PaletteBuffer() {
+	char[64] szTypeFaceName;
+
 // LINE 34:
 	asm( 
 "	      00447240    push ebp"
@@ -106,6 +108,8 @@ void PaletteBuffer::PaletteBuffer() {
 
 // FUNCTION: COPTER_D 0x00447340
 void PaletteBuffer::PaletteBuffer(struct SparkalColor* newSparkalColors) {
+	char[64] szTypeFaceName;
+
 // LINE 52:
 	asm( 
 "	      00447340    push ebp"
@@ -258,6 +262,8 @@ void PaletteBuffer::~PaletteBuffer() {
 
 // FUNCTION: COPTER_D 0x004474ab
 int32_t PaletteBuffer::SetPalette(const struct SparkalColor* pColors) {
+	int32_t i;
+
 // LINE 78:
 	asm( 
 "	      004474ab    push ebp"
@@ -307,6 +313,10 @@ int32_t PaletteBuffer::SetPalette(const struct SparkalColor* pColors) {
 
 // FUNCTION: COPTER_D 0x00447501
 int32_t PaletteBuffer::SetPalette() {
+	long hResult;
+	int32_t i;
+	struct tagPALETTEENTRY* paletteEntries;
+
 // LINE 96:
 	asm( 
 "	      00447501    push ebp"
@@ -418,6 +428,10 @@ int32_t PaletteBuffer::SetPalette() {
 
 // FUNCTION: COPTER_D 0x004475e2
 void PaletteBuffer::DrawPalette() {
+	char[256] szDescriptionString;
+	int32_t i;
+	struct SparkalRect rectFill;
+
 // LINE 125:
 	asm( 
 "	      004475e2    push ebp"

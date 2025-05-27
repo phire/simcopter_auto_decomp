@@ -909,6 +909,9 @@ long MIFF::ReadMIFFHeader() {
 
 // FUNCTION: COPTER_D 0x004abcba
 long MIFF::ReadFileCreator() {
+	long lResult;
+	long bWeOpenedFile;
+
 // LINE 236:
 	asm( 
 "	      004abcba    push ebp"
@@ -1002,6 +1005,9 @@ long MIFF::ReadFileCreator() {
 
 // FUNCTION: COPTER_D 0x004abd6e
 long MIFF::ReadFileType() {
+	long lResult;
+	long bWeOpenedFile;
+
 // LINE 258:
 	asm( 
 "	      004abd6e    push ebp"
@@ -1095,6 +1101,9 @@ long MIFF::ReadFileType() {
 
 // FUNCTION: COPTER_D 0x004abe22
 long MIFF::ReadFileVersion() {
+	long lResult;
+	long bWeOpenedFile;
+
 // LINE 279:
 	asm( 
 "	      004abe22    push ebp"
@@ -1188,6 +1197,8 @@ long MIFF::ReadFileVersion() {
 
 // FUNCTION: COPTER_D 0x004abed6
 long MIFF::ReadRecordHeader() {
+	long lBytesRead;
+
 // LINE 308:
 	asm( 
 "	      004abed6    push ebp"
@@ -1304,6 +1315,9 @@ long MIFF::ReadRecordHeader() {
 
 // FUNCTION: COPTER_D 0x004abfcc
 long MIFF::CountRecords() {
+	long lCount;
+	long bWeOpenedFile;
+
 // LINE 349:
 	asm( 
 "	      004abfcc    push ebp"
@@ -1507,6 +1521,9 @@ long MIFF::GoToFirstRecord() {
 
 // FUNCTION: COPTER_D 0x004ac14f
 long MIFF::GoToNextRecord() {
+	long lResult;
+	long lSavedPreviousStart;
+
 // LINE 413:
 	asm( 
 "	      004ac14f    push ebp"
@@ -1690,6 +1707,8 @@ long MIFF::GoToNextRecord() {
 
 // FUNCTION: COPTER_D 0x004ac2f1
 long MIFF::GoToPreviousRecord() {
+	long lTempPresentRecord;
+
 // LINE 467:
 	asm( 
 "	      004ac2f1    push ebp"
@@ -1870,6 +1889,8 @@ long MIFF::GoToNextRecordOfGivenType(long lRecordType) {
 
 // FUNCTION: COPTER_D 0x004ac3fb
 long MIFF::GoToNthRecord(long lRecordToGoTo) {
+	long lTempPresentRecord;
+
 // LINE 535:
 	asm( 
 "	      004ac3fb    push ebp"
@@ -1921,6 +1942,9 @@ long MIFF::GoToNthRecord(long lRecordToGoTo) {
 
 // FUNCTION: COPTER_D 0x004ac44e
 long MIFF::ReadPresentRecord(struct MIFFRecord* miffRecordToRead, long lMaxBytesToRead) {
+	long lReturnValue;
+	long lActualDataBytesToRead;
+
 // LINE 553:
 	asm( 
 "	      004ac44e    push ebp"
@@ -2035,6 +2059,9 @@ long MIFF::ReadPresentRecord(struct MIFFRecord* miffRecordToRead, long lMaxBytes
 
 // FUNCTION: COPTER_D 0x004ac544
 long MIFF::ReadPresentRecordData(char * chBuffer, long lMaxBytesToRead) {
+	long lReturnValue;
+	long lActualBytesToRead;
+
 // LINE 591:
 	asm( 
 "	      004ac544    push ebp"
@@ -2143,6 +2170,8 @@ long MIFF::ReadPresentRecordData(char * chBuffer, long lMaxBytesToRead) {
 
 // FUNCTION: COPTER_D 0x004ac63b
 long MIFF::WriteFileHeader(long lCreatorType, long lFileType, long lFileVersion) {
+	long lReturnValue;
+
 // LINE 639:
 	asm( 
 "	      004ac63b    push ebp"
@@ -2269,6 +2298,9 @@ long MIFF::WriteFileHeader(long lCreatorType, long lFileType, long lFileVersion)
 
 // FUNCTION: COPTER_D 0x004ac758
 long MIFF::WriteMIFFRecord(struct MIFFRecord* miffRecordToWrite, long lSizeOfMIFFRecordData) {
+	long lReturnValue;
+	long lAmountOfDataToWrite;
+
 // LINE 669:
 	asm( 
 "	      004ac758    push ebp"
@@ -2358,6 +2390,9 @@ long MIFF::WriteMIFFRecord(struct MIFFRecord* miffRecordToWrite, long lSizeOfMIF
 
 // FUNCTION: COPTER_D 0x004ac811
 long MIFF::WriteDataRecord(long lRecordType, char * ptrData, long lDataLength) {
+	long lReturnValue;
+	long lRecordLength;
+
 // LINE 701:
 	asm( 
 "	      004ac811    push ebp"
@@ -2465,6 +2500,9 @@ long MIFF::WriteDataRecord(long lRecordType, char * ptrData, long lDataLength) {
 
 // FUNCTION: COPTER_D 0x004ac8fb
 long MIFF::WriteEnd() {
+	long lPresentPosition;
+	long lFileLength;
+
 // LINE 735:
 	asm( 
 "	      004ac8fb    push ebp"

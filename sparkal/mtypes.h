@@ -24,6 +24,8 @@ void MPoint::MPoint() {
 // Function in module: Dialwin.obj
 // FUNCTION: COPTER_D 0x0044fc60
 void MRect::NormalizeRect() {
+	long nTemp;
+
 // LINE 589:
 	asm( 
 "	      0044fc60    push ebp"

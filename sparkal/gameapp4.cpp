@@ -130,6 +130,22 @@ unsigned long  CGameApp::FinishGame() {
 
 // FUNCTION: COPTER_D 0x004bbb17
 int  CGameApp::BackgroundVRAppInit() {
+	class MRect rectText;
+	char[260] szVideoPath;
+	struct VRAppInitThreadStruct tempVRAppInitThreadStruct;
+	class Random tempRandom;
+	int32_t nXPosition;
+	int32_t nHeight;
+	unsigned long lCurrentInitializationFlag;
+	unsigned long lCurrentInitializationIndex;
+	void * __ptr32 hAppInitThread;
+	class MRect rectLine;
+	int32_t nWidth;
+	int32_t nYPosition;
+	class basic_string<char> sCurrentInitializer;
+	unsigned long lFullStringIndex;
+	class SmackerBackBuffer tempHourglassVideoBuffer;
+
 // LINE 92:
 	asm( 
 "	      004bbb17    push ebp"
@@ -725,6 +741,8 @@ int  CGameApp::BackgroundVRAppInit() {
 
 // FUNCTION: COPTER_D 0x004bc3db
 void AppInitThreadStartRoutine(void * __ptr32 pVRAppInitThreadStruct) {
+	struct VRAppInitThreadStruct* tempVRAppInitThreadStruct;
+
 // LINE 157:
 	asm( 
 "	      004bc3db    push ebp"

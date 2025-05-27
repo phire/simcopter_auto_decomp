@@ -19,6 +19,8 @@
 
 // FUNCTION: COPTER_D 0x0052b14d
 void PlaneClass::PlaneClass(long mapx, long mapy) {
+	int32_t currentFlag;
+
 // LINE 174:
 	asm( 
 "	      0052b14d    push ebp"
@@ -250,6 +252,8 @@ class PlaneClass* PlaneClass::CreateInstance(int32_t instanceID) {
 
 // FUNCTION: COPTER_D 0x0052b2be
 class PlaneClass* PlaneClass::CreateInstance(long mapx, long mapy, int32_t instanceID) {
+	class PlaneClass* newplane;
+
 // LINE 350:
 	asm( 
 "	      0052b2be    push ebp"
@@ -368,6 +372,8 @@ int32_t PlaneClass::Initialize(int32_t instanceID) {
 
 // FUNCTION: COPTER_D 0x0052b390
 void PlaneClass::ResetAll() {
+	int32_t currentPlaneIndex;
+
 // LINE 477:
 	asm( 
 "	      0052b390    push ebp"
@@ -408,6 +414,8 @@ void PlaneClass::ResetAll() {
 
 // FUNCTION: COPTER_D 0x0052b3d0
 void PlaneClass::ItterateAll() {
+	int32_t currentPlaneIndex;
+
 // LINE 527:
 	asm( 
 "	      0052b3d0    push ebp"
@@ -448,6 +456,8 @@ void PlaneClass::ItterateAll() {
 
 // FUNCTION: COPTER_D 0x0052b410
 int32_t PlaneClass::FindPlaneToCrash(long mission_id) {
+	int32_t currentPlaneIndex;
+
 // LINE 577:
 	asm( 
 "	      0052b410    push ebp"
@@ -779,6 +789,10 @@ void PlaneClass::Reset() {
 
 // FUNCTION: COPTER_D 0x0052b6d0
 void PlaneClass::PlaneSoundDriver() {
+	int32_t vol_adj;
+	struct Point3d vec;
+	int32_t dist;
+
 // LINE 745:
 	asm( 
 "	      0052b6d0    push ebp"
@@ -1395,6 +1409,14 @@ enum PlaneClass::StoppedReasons PlaneClass::CheckDynamicObjectsAt(const struct P
 
 // FUNCTION: COPTER_D 0x0052bb60
 void PlaneClass::SetCrashWhenReady() {
+	int32_t deltaY;
+	int32_t deltaX;
+	struct _CELL_INFO* cptr;
+	int32_t z;
+	struct _MISSION_PARMS mp;
+	int32_t x;
+	int32_t dist;
+
 // LINE 1178:
 	asm( 
 "	      0052bb60    push ebp"
@@ -1669,6 +1691,9 @@ void PlaneClass::SetCrashWhenReady() {
 
 // FUNCTION: COPTER_D 0x0052bdad
 int32_t PlaneClass::IsPlaneOutOfCameraRange() {
+	int32_t deltaY;
+	int32_t deltaX;
+
 // LINE 1277:
 	asm( 
 "	      0052bdad    push ebp"
@@ -1862,6 +1887,12 @@ void PlaneClass::Stop() {
 
 // FUNCTION: COPTER_D 0x0052beda
 void PlaneClass::MoveForward() {
+	struct _CELL_INFO* lcptr;
+	struct _CELL_INFO* cptr;
+	struct Point2d newpos;
+	struct Point3d newloc;
+	int32_t dist;
+
 // LINE 1383:
 	asm( 
 "	      0052beda    push ebp"
@@ -2185,6 +2216,24 @@ void PlaneClass::MoveForward() {
 
 // FUNCTION: COPTER_D 0x0052c1a3
 int32_t PlaneClass::PlaneCollisionCheck(int32_t dist, struct _CELL_INFO* cptr) {
+	long new_mission_id;
+	long num_debris;
+	int32_t newdist;
+	struct Point3d oloc;
+	long j;
+	struct _MISSION_PARMS mp;
+	struct Point3d loc;
+	struct Point2d celloc;
+	struct Point3d center;
+	struct Point3d vec;
+	int32_t[4][4] refmat;
+	struct _STOBJ_INST* stobj;
+	struct Point3d cloc;
+	struct Point3d sloc;
+	struct VRObjInfo oinfo;
+	struct Point3d* norm;
+	int32_t speed;
+
 // LINE 1475:
 	asm( 
 "	      0052c1a3    push ebp"
@@ -3184,6 +3233,8 @@ int32_t PlaneClass::AmIInANewCell() {
 
 // FUNCTION: COPTER_D 0x0052cacb
 void PlaneClass::UnlinkFromCell(const struct Point2d& point) {
+	struct _CELL_INFO* cellPointer;
+
 // LINE 1827:
 	asm( 
 "	      0052cacb    push ebp"
@@ -3302,6 +3353,8 @@ void PlaneClass::UnlinkFromCell(const struct Point2d& point) {
 
 // FUNCTION: COPTER_D 0x0052cbe1
 void PlaneClass::LinkToCell(const struct Point2d& point) {
+	struct _CELL_INFO* cellPointer;
+
 // LINE 1875:
 	asm( 
 "	      0052cbe1    push ebp"
@@ -3378,6 +3431,9 @@ void PlaneClass::LinkToCell(const struct Point2d& point) {
 
 // FUNCTION: COPTER_D 0x0052cc9d
 void PlaneClass::AdjustCurrentPosition() {
+	struct _CELL_INFO* cellPointer;
+	int32_t alt;
+
 // LINE 1904:
 	asm( 
 "	      0052cc9d    push ebp"
@@ -3490,6 +3546,10 @@ void PlaneClass::AdjustCurrentPosition() {
 
 // FUNCTION: COPTER_D 0x0052cda1
 void PlaneClass::AdjustNextPosition() {
+	struct _CELL_INFO* cellPointer;
+	struct Point3d nextFineLocation;
+	int32_t[4][4] mat;
+
 // LINE 1943:
 	asm( 
 "	      0052cda1    push ebp"
@@ -3630,6 +3690,13 @@ void PlaneClass::AdjustNextPosition() {
 
 // FUNCTION: COPTER_D 0x0052cee5
 void PlaneClass::AdjustNextAltitude() {
+	struct _CELL_INFO* cellPointer;
+	struct Point2d nextcell;
+	int32_t alt;
+	int32_t altdiff;
+	struct Point3d loc;
+	int32_t[4][4] mat;
+
 // LINE 1986:
 	asm( 
 "	      0052cee5    push ebp"
@@ -3818,6 +3885,20 @@ void PlaneClass::AdjustNextAltitude() {
 
 // FUNCTION: COPTER_D 0x0052d08b
 void PlaneClass::BeamToWithinCameraRange() {
+	int32_t foundcell;
+	int32_t stop_now;
+	int32_t curr_dir;
+	int32_t currentFlag;
+	int32_t i;
+	int32_t y;
+	int32_t x;
+	struct Point2d beampoint;
+	struct Point3d vec;
+	int32_t spiral_dist;
+	int32_t curr_dist;
+	int32_t ydir;
+	int32_t xdir;
+
 // LINE 2054:
 	asm( 
 "	      0052d08b    push ebp"
@@ -4333,6 +4414,9 @@ void PlaneClass::UnPlacePlane() {
 
 // FUNCTION: COPTER_D 0x0052d456
 int32_t PlaneClass::InitializeInstance(long mapx, long mapy, int32_t instanceID) {
+	int32_t object;
+	struct VRObjInfo objectInfo;
+
 // LINE 2267:
 	asm( 
 "	      0052d456    push ebp"
@@ -4579,6 +4663,8 @@ int32_t PlaneClass::InitializeInstance(long mapx, long mapy, int32_t instanceID)
 
 // FUNCTION: COPTER_D 0x0052d618
 void PlaneClass::HandleUFOStuff() {
+	struct Point3d vec;
+
 // LINE 2473:
 	asm( 
 "	      0052d618    push ebp"
@@ -5078,6 +5164,11 @@ void PlaneHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DY
 
 // FUNCTION: COPTER_D 0x0052d9a1
 void PlaneClass::TurnOnShields() {
+	struct VRFaceInfo finfo;
+	int32_t count;
+	int32_t face;
+	struct VRObjInfo oinfo;
+
 // LINE 2722:
 	asm( 
 "	      0052d9a1    push ebp"
@@ -5168,6 +5259,11 @@ void PlaneClass::TurnOnShields() {
 
 // FUNCTION: COPTER_D 0x0052da3c
 void PlaneClass::TurnOffShields() {
+	struct VRFaceInfo finfo;
+	int32_t count;
+	int32_t face;
+	struct VRObjInfo oinfo;
+
 // LINE 2744:
 	asm( 
 "	      0052da3c    push ebp"
@@ -5316,6 +5412,10 @@ int32_t S3PlaneMIFFSave(void * __ptr32 miffWriter) {
 
 // FUNCTION: COPTER_D 0x0052db13
 int32_t PlaneClass::MIFFLoad(void * __ptr32 miffReader) {
+	int32_t i;
+	int32_t ret;
+	class PlaneClass* p;
+
 // LINE 2797:
 	asm( 
 "	      0052db13    push ebp"
@@ -5553,6 +5653,9 @@ int32_t PlaneClass::MIFFLoad(void * __ptr32 miffReader) {
 
 // FUNCTION: COPTER_D 0x0052dcf2
 int32_t PlaneClass::MIFFSave(void * __ptr32 miffWriter) {
+	int32_t i;
+	int32_t ret;
+
 // LINE 2856:
 	asm( 
 "	      0052dcf2    push ebp"

@@ -131,6 +131,8 @@ void CriminalEvaderCarClass::~CriminalEvaderCarClass() {
 
 // FUNCTION: COPTER_D 0x00534a73
 class CriminalEvaderCarClass* CriminalEvaderCarClass::CreateInstance(int32_t instanceID) {
+	class CriminalEvaderCarClass* youveWonABrandNewCar;
+
 // LINE 123:
 	asm( 
 "	      00534a73    push ebp"
@@ -216,6 +218,10 @@ class CriminalEvaderCarClass* CriminalEvaderCarClass::CreateInstance(int32_t ins
 
 // FUNCTION: COPTER_D 0x00534b21
 int32_t CriminalEvaderCarClass::StartCriminalMission(short mID, short mType, long x, long y) {
+	struct _MISSION_PARMS mp;
+	int32_t i;
+	struct _GridCoordinates startLoc;
+
 // LINE 156:
 	asm( 
 "	      00534b21    push ebp"
@@ -359,6 +365,8 @@ int32_t CriminalEvaderCarClass::StartCriminalMission(short mID, short mType, lon
 
 // FUNCTION: COPTER_D 0x00534c45
 void CriminalEvaderCarClass::ItterateFSM() {
+	struct _MISSION_PARMS mp;
+
 // LINE 206:
 	asm( 
 "	      00534c45    push ebp"
@@ -1007,6 +1015,9 @@ void CriminalEvaderCarClass::AdjustSpeed() {
 
 // FUNCTION: COPTER_D 0x00535202
 int32_t CriminalEvaderCarClass::NearToBuilding() {
+	struct _GridCoordinates scanLoc;
+	class SpiralScan scan;
+
 // LINE 441:
 	asm( 
 "	      00535202    push ebp"
@@ -1672,6 +1683,8 @@ int32_t CriminalEvaderCarClass::NearToBuilding() {
 
 // FUNCTION: COPTER_D 0x00535709
 void CriminalEvaderCarClass::ShowWhereWeAre() {
+	struct _MISSION_PARMS mp;
+
 // LINE 644:
 	asm( 
 "	      00535709    push ebp"

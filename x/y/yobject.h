@@ -135,6 +135,8 @@ void cYObject::SetAnim(unsigned long name) {
 // Function in module: Yobject.obj
 // FUNCTION: COPTER_D 0x00552190
 class cYObject* cYObject::PutTotedMedVicOn(struct _DYOBJ_INST* thing) {
+	class cYObject* obj;
+
 // LINE 1022:
 	asm( 
 "	      00552190    push ebp"

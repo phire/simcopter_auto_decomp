@@ -403,6 +403,8 @@ void RadioCompassWindow::DestroyImage() {
 
 // FUNCTION: COPTER_D 0x00448682
 int32_t RadioCompassWindow::CreateImage(int32_t bResizeWindowToFitImage) {
+	class basic_string<char> sCompassPath;
+
 // LINE 140:
 	asm( 
 "	      00448682    push ebp"
@@ -621,6 +623,8 @@ int32_t RadioCompassWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 
 // FUNCTION: COPTER_D 0x00448928
 int32_t RadioCompassWindow::ComposeSelf() {
+	int32_t nCurrentCompassPosition;
+
 // LINE 166:
 	asm( 
 "	      00448928    push ebp"
@@ -763,6 +767,9 @@ int32_t RadioCompassWindow::ComposeSelf() {
 
 // FUNCTION: COPTER_D 0x00448a45
 long RadioCompassWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButton) {
+	int32_t nNewRadioStationIndex;
+	long lNewRadioStationVolume;
+
 // LINE 201:
 	asm( 
 "	      00448a45    push ebp"
@@ -998,6 +1005,9 @@ long RadioCompassWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned lon
 
 // FUNCTION: COPTER_D 0x00448cb7
 void RadioCompassWindow::SetNewRadioStation(int32_t nNewRadioStationIndex) {
+	int32_t nRadioStationCount;
+	int32_t nStationXPosition;
+
 // LINE 238:
 	asm( 
 "	      00448cb7    push ebp"
@@ -1236,6 +1246,8 @@ void RadioCompassWindow::SetNewRadioStation(int32_t nNewRadioStationIndex) {
 
 // FUNCTION: COPTER_D 0x00448eac
 void RadioCompassWindow::SetNewRadioStationVolume(long lNewRadioStationVolume) {
+	int32_t nVolumeYPosition;
+
 // LINE 282:
 	asm( 
 "	      00448eac    push ebp"
@@ -1430,6 +1442,9 @@ void RadioCompassWindow::SetNewRadioStationVolume(long lNewRadioStationVolume) {
 
 // FUNCTION: COPTER_D 0x00449066
 void RadioCompassWindow::CheckForRadioChange() {
+	int32_t nNewRadioStationIndex;
+	long lNewRadioStationVolume;
+
 // LINE 313:
 	asm( 
 "	      00449066    push ebp"
@@ -2946,6 +2961,8 @@ void DialWindow::TurnOnSpotlightCommand(int32_t nIndex) {
 
 // FUNCTION: COPTER_D 0x0044a2bc
 int32_t DialWindow::CreateImage(int32_t bResizeWindowToFitImage) {
+	char[260] szFullPath;
+
 // LINE 542:
 	asm( 
 "	      0044a2bc    push ebp"
@@ -3319,6 +3336,10 @@ int32_t DialWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 
 // FUNCTION: COPTER_D 0x0044a784
 void DialWindow::DrawCurrentDamage() {
+	int32_t nSourceImageX;
+	int32_t i;
+	int32_t nDamageInRangeOf0to15;
+
 // LINE 610:
 	asm( 
 "	      0044a784    push ebp"
@@ -3428,6 +3449,8 @@ void DialWindow::DrawCurrentDamage() {
 
 // FUNCTION: COPTER_D 0x0044a863
 long DialWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButton) {
+	int32_t i;
+
 // LINE 637:
 	asm( 
 "	      0044a863    push ebp"
@@ -3605,6 +3628,9 @@ long DialWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long nButton)
 
 // FUNCTION: COPTER_D 0x0044a9ff
 long DialWindow::DoCursorMove(long nCursorX, long nCursorY) {
+	int32_t i;
+	long lNewSpotlightCommand;
+
 // LINE 672:
 	asm( 
 "	      0044a9ff    push ebp"
@@ -3722,6 +3748,11 @@ long DialWindow::DoCursorMove(long nCursorX, long nCursorY) {
 
 // FUNCTION: COPTER_D 0x0044ab1f
 int32_t DialWindow::ComposeSelf() {
+	class MPoint ptSpotLightPositionLocalCoordinates;
+	long lStringLength;
+	class MPoint ptSpotLightBackPositionCoordinates;
+	char[16] szMoneyString;
+
 // LINE 697:
 	asm( 
 "	      0044ab1f    push ebp"
@@ -4723,6 +4754,9 @@ int32_t DialWindow::DoesWindowNeedUpdating() {
 
 // FUNCTION: COPTER_D 0x0044ba5b
 void DialWindow::SetNewDialPositions() {
+	long lNewFuelLight;
+	long lNewAltitude;
+
 // LINE 807:
 	asm( 
 "	      0044ba5b    push ebp"
@@ -5377,6 +5411,8 @@ void PassengerWindow::InitializeCachedSettings() {
 
 // FUNCTION: COPTER_D 0x0044c194
 int32_t PassengerWindow::CreateImage(int32_t bResizeWindowToFitImage) {
+	class basic_string<char> sPassengerPath;
+
 // LINE 950:
 	asm( 
 "	      0044c194    push ebp"
@@ -6133,6 +6169,13 @@ int32_t PassengerWindow::ComposeSelf() {
 
 // FUNCTION: COPTER_D 0x0044c967
 void PassengerWindow::DrawPassengers() {
+	class MRect rectDestination;
+	int32_t i;
+	struct tagHeliPassengerData* tempHeliPassengerData;
+	int32_t nCurrentSeat;
+	class MRect rectSource;
+	int32_t[16] bSeats;
+
 // LINE 1063:
 	asm( 
 "	      0044c967    push ebp"
@@ -6767,6 +6810,10 @@ void PassengerWindow::TogglePosition() {
 
 // FUNCTION: COPTER_D 0x0044cf07
 long PassengerWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButton) {
+	long lPassengerID;
+	class MRect rectButtonPositionUp;
+	class MRect rectButtonPositionDown;
+
 // LINE 1192:
 	asm( 
 "	      0044cf07    push ebp"
@@ -7042,6 +7089,11 @@ long PassengerWindow::DoCursorMove(long nCursorX, long nCursorY) {
 
 // FUNCTION: COPTER_D 0x0044d19b
 int32_t PassengerWindow::DoesPositionHitPassenger(long nCursorX, long nCursorY, long& lPassengerID) {
+	int32_t i;
+	int32_t nCurrentSeat;
+	struct tagHeliPassengerData* tempHeliPassengerData;
+	class MRect rectCurrent;
+
 // LINE 1249:
 	asm( 
 "	      0044d19b    push ebp"
@@ -7463,6 +7515,8 @@ void MapWindow::InitializeCachedSettings() {
 
 // FUNCTION: COPTER_D 0x0044d5e9
 int32_t MapWindow::CreateImage(int32_t bResizeWindowToFitImage) {
+	char[260] szFullPath;
+
 // LINE 1357:
 	asm( 
 "	      0044d5e9    push ebp"
@@ -7655,6 +7709,9 @@ void MapWindow::DestroyImage() {
 
 // FUNCTION: COPTER_D 0x0044d7cb
 int32_t MapWindow::ComposeSelf() {
+	struct MISSION_DATA* md;
+	long lNewMissionID;
+
 // LINE 1400:
 	asm( 
 "	      0044d7cb    push ebp"
@@ -7847,6 +7904,9 @@ int32_t MapWindow::ComposeSelf() {
 
 // FUNCTION: COPTER_D 0x0044d94c
 void MapWindow::DrawButton(int32_t nButton, int32_t nState) {
+	class MPoint ptDestination;
+	class MRect rectSource;
+
 // LINE 1440:
 	asm( 
 "	      0044d94c    push ebp"
@@ -8075,6 +8135,8 @@ void MapWindow::DrawButton(int32_t nButton, int32_t nState) {
 
 // FUNCTION: COPTER_D 0x0044dc27
 long MapWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long __formal) {
+	int32_t i;
+
 // LINE 1486:
 	asm( 
 "	      0044dc27    push ebp"
@@ -8547,6 +8609,8 @@ long MapWindow::DoCursorUp(long nCursorX, long nCursorY, unsigned long __formal)
 
 // FUNCTION: COPTER_D 0x0044e1b7
 int32_t MapWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
+	long lMessageData;
+
 // LINE 1557:
 	asm( 
 "	      0044e1b7    push ebp"
@@ -8601,6 +8665,9 @@ int32_t MapWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, long
 
 // FUNCTION: COPTER_D 0x0044e211
 void MapWindow::CreateAutoMessageSelectionPopupWindow(int32_t nAutoID, int32_t nType, class MPoint& ptPosition) {
+	int32_t StringID;
+	class PopupMenuWindow* tempPopupMenuWindow;
+
 // LINE 1572:
 	asm( 
 "	      0044e211    push ebp"
@@ -8730,6 +8797,8 @@ void MapWindow::CreateAutoMessageSelectionPopupWindow(int32_t nAutoID, int32_t n
 
 // FUNCTION: COPTER_D 0x0044e32d
 int32_t MapWindow::GetStringIDForVehicleName(int32_t nAutoID) {
+	long lCarModel;
+
 // LINE 1592:
 	asm( 
 "	      0044e32d    push ebp"
@@ -9139,6 +9208,8 @@ void EquipmentPanelWindow::InitializeCachedSettings() {
 
 // FUNCTION: COPTER_D 0x0044e77b
 int32_t EquipmentPanelWindow::CreateImage(int32_t bResizeWindowToFitImage) {
+	char[260] szPath;
+
 // LINE 1717:
 	asm( 
 "	      0044e77b    push ebp"
@@ -9548,6 +9619,9 @@ int32_t EquipmentPanelWindow::DoesWindowNeedUpdating() {
 
 // FUNCTION: COPTER_D 0x0044eb6a
 void EquipmentPanelWindow::DrawButton(int32_t nButton, int32_t nState) {
+	class MPoint ptDestination;
+	class MRect rectSource;
+
 // LINE 1796:
 	asm( 
 "	      0044eb6a    push ebp"
@@ -9891,6 +9965,12 @@ void EquipmentPanelWindow::DrawButton(int32_t nButton, int32_t nState) {
 
 // FUNCTION: COPTER_D 0x0044ef07
 void EquipmentPanelWindow::DrawBucketWaterGuage() {
+	const int32_t iGuageEnd;
+	int32_t nXPosition;
+	int32_t i;
+	const int32_t nYPosition;
+	int32_t iLitEnd;
+
 // LINE 1868:
 	asm( 
 "	      0044ef07    push ebp"
@@ -10035,6 +10115,12 @@ void EquipmentPanelWindow::DrawBucketWaterGuage() {
 
 // FUNCTION: COPTER_D 0x0044f040
 void EquipmentPanelWindow::DrawTeargasUsage() {
+	class MPoint ptDestination;
+	class MRect rectSourceDisabled;
+	int32_t i;
+	class MRect rectSourceEnabled;
+	long lTeargasUsed;
+
 // LINE 1893:
 	asm( 
 "	      0044f040    push ebp"
@@ -11104,6 +11190,11 @@ void EquipmentPanelWindow::DoCurrentControlEnd() {
 
 // FUNCTION: COPTER_D 0x0044fb06
 void EquipmentPanelWindow::CreateMegaphoneSelectionPopupWindow() {
+	long nMenuYPosition;
+	int32_t i;
+	long nMenuXPosition;
+	class PopupMenuWindow* tempPopupMenuWindow;
+
 // LINE 2062:
 	asm( 
 "	      0044fb06    push ebp"

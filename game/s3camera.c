@@ -7,6 +7,15 @@
 // Contribution: 1:000f7af0-000f8bb0 Module: 175, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004f8af0
 void S3CameraMove(struct Point3d* P) {
+	struct Point3d CameraDelta;
+	struct _DYOBJ_INST* u_dyobj;
+	int32_t alt;
+	int32_t altdiff;
+	int32_t Velocity;
+	struct Point3d CameraVector;
+	struct Point3d viewerPos;
+	int32_t[4][4] mat;
+
 // LINE 100:
 	asm( 
 "	      004f8af0    push ebp"
@@ -593,6 +602,11 @@ void NormalizeGridPoint(struct Point3d* P) {
 
 // FUNCTION: COPTER_D 0x004f8fe2
 void SetIdealCameraPos() {
+	int32_t AccelAdjust;
+	long temp;
+	int32_t Acceleration;
+	int32_t cameraDistance;
+
 // LINE 306:
 	asm( 
 "	      004f8fe2    push ebp"
@@ -894,6 +908,16 @@ void GetIdealCameraPos(struct Point3d* P) {
 
 // FUNCTION: COPTER_D 0x004f9263
 void CalcCameraAngles(struct Point3d* Vector) {
+	int32_t sinePitch;
+	int32_t cosinePitch;
+	int32_t sineYaw;
+	int32_t sineRoll;
+	int32_t cosineRoll;
+	int32_t LengthXYZ;
+	struct Point3d WorkVector;
+	int32_t cosineYaw;
+	int32_t LengthXZ;
+
 // LINE 423:
 	asm( 
 "	      004f9263    push ebp"
@@ -1267,6 +1291,13 @@ void CalcCameraAngles(struct Point3d* Vector) {
 
 // FUNCTION: COPTER_D 0x004f955f
 void S3AngleRotMat(int32_t[4]* matrix, int32_t Yaw, int32_t Pitch, int32_t Roll) {
+	int32_t sinePitch;
+	int32_t cosinePitch;
+	int32_t sineYaw;
+	int32_t sineRoll;
+	int32_t cosineRoll;
+	int32_t cosineYaw;
+
 // LINE 528:
 	asm( 
 "	      004f955f    push ebp"
@@ -1503,6 +1534,10 @@ void S3AngleRotMat(int32_t[4]* matrix, int32_t Yaw, int32_t Pitch, int32_t Roll)
 
 // FUNCTION: COPTER_D 0x004f9735
 void S3CameraRotate() {
+	int32_t alt;
+	int32_t temp;
+	struct Point3d cameraDelta;
+
 // LINE 564:
 	asm( 
 "	      004f9735    push ebp"
@@ -1686,6 +1721,8 @@ void S3CameraRotate() {
 
 // FUNCTION: COPTER_D 0x004f98dc
 void S3CameraTweakInit() {
+	int32_t *[10] pvals;
+
 // LINE 711:
 	asm( 
 "	      004f98dc    push ebp"
@@ -1955,6 +1992,17 @@ void S3CameraSetChaseInfo(struct _CHASE_INFO* cinfo) {
 
 // FUNCTION: COPTER_D 0x004f9aa5
 int32_t S3CameraGetBldAlt(struct Point3d* loc) {
+	int32_t normy;
+	int32_t normx;
+	struct _CELL_INFO* cptr;
+	int32_t objy;
+	int32_t y;
+	int32_t x;
+	struct _STOBJ_INST* stobj;
+	int32_t maxobjy;
+	int32_t normz;
+	int32_t flags;
+
 // LINE 817:
 	asm( 
 "	      004f9aa5    push ebp"

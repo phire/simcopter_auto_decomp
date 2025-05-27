@@ -7,6 +7,8 @@
 // Contribution: 1:00165a10-001661fc Module: 182, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00566a10
 void GlobalToLocal(struct Point* pt) {
+	struct tagPOINT wpt;
+
 // LINE 8:
 	asm( 
 "	      00566a10    push ebp"
@@ -61,6 +63,8 @@ void GlobalToLocal(struct Point* pt) {
 
 // FUNCTION: COPTER_D 0x00566a59
 void LocalToGlobal(struct Point* pt) {
+	struct tagPOINT wpt;
+
 // LINE 17:
 	asm( 
 "	      00566a59    push ebp"
@@ -146,6 +150,8 @@ long TickCount() {
 
 // FUNCTION: COPTER_D 0x00566aca
 short StringWidth(unsigned char * str) {
+	struct tagSIZE textSize;
+
 // LINE 35:
 	asm( 
 "	      00566aca    push ebp"
@@ -198,6 +204,8 @@ short StringWidth(unsigned char * str) {
 
 // FUNCTION: COPTER_D 0x00566b13
 void PtoCstr(unsigned char * pstr) {
+	short len;
+
 // LINE 44:
 	asm( 
 "	      00566b13    push ebp"
@@ -244,6 +252,8 @@ void PtoCstr(unsigned char * pstr) {
 
 // FUNCTION: COPTER_D 0x00566b52
 void CtoPstr(char * cstr) {
+	short len;
+
 // LINE 52:
 	asm( 
 "	      00566b52    push ebp"
@@ -356,6 +366,11 @@ void OffsetRect(struct Rect* rect, short hoff, short voff) {
 
 // FUNCTION: COPTER_D 0x00566c06
 unsigned short SectRect(struct Rect* rect1, struct Rect* rect2, struct Rect* result) {
+	struct tagRECT lrect2;
+	struct tagRECT lresult;
+	struct tagRECT lrect1;
+	unsigned short sect;
+
 // LINE 74:
 	asm( 
 "	      00566c06    push ebp"
@@ -636,6 +651,10 @@ void GetPort(struct GrafPtr* pPort) {
 
 // FUNCTION: COPTER_D 0x00566dca
 void EraseRect(struct tagRECT* rect) {
+	unsigned long bk;
+	void * __ptr32 tempBrush;
+	struct tagRECT lRect;
+
 // LINE 135:
 	asm( 
 "	      00566dca    push ebp"
@@ -714,6 +733,8 @@ void EraseRect(struct tagRECT* rect) {
 
 // FUNCTION: COPTER_D 0x00566e67
 void EraseRect(struct Rect* r) {
+	struct tagRECT lRect;
+
 // LINE 146:
 	asm( 
 "	      00566e67    push ebp"
@@ -758,6 +779,10 @@ void EraseRect(struct Rect* r) {
 
 // FUNCTION: COPTER_D 0x00566ead
 void FrameRect(struct Rect* rect) {
+	unsigned long bk;
+	void * __ptr32 tempBrush;
+	struct tagRECT lRect;
+
 // LINE 153:
 	asm( 
 "	      00566ead    push ebp"

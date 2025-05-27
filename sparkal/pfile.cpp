@@ -7,6 +7,8 @@
 // Contribution: 1:0009f3a0-0009f9f6 Module: 10, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004a03a0
 int32_t PFile::Open(char * name, unsigned short access, unsigned short __formal, int32_t bCreateIfNotFound) {
+	const uint32_t shareFlags;
+
 // LINE 34:
 	asm( 
 "	      004a03a0    push ebp"
@@ -229,6 +231,8 @@ int32_t PFile::Close() {
 
 // FUNCTION: COPTER_D 0x004a0562
 long PFile::Length() {
+	long lFileLength;
+
 // LINE 91:
 	asm( 
 "	      004a0562    push ebp"
@@ -421,6 +425,9 @@ long PFile::FileCreate(char * name, int32_t nAccessMode) {
 
 // FUNCTION: COPTER_D 0x004a06e6
 long PFile::FileExists(char * name) {
+	char * szFilePathToUse;
+	struct _OFSTRUCT ofStruct;
+
 // LINE 139:
 	asm( 
 "	      004a06e6    push ebp"
@@ -531,6 +538,16 @@ long PFile::SetPath(char * szPath) {
 
 // FUNCTION: COPTER_D 0x004a07b9
 unsigned long PFile::Checksum(char * name) {
+	unsigned char chValue;
+	long lIndex;
+	class PFile tempPFile;
+	const long lBlockSize;
+	long lCurrentValue;
+	long lFileLength;
+	unsigned char * chBuffer;
+	long lCurrentBlockStartPosition;
+	long lUsedBlockSize;
+
 // LINE 172:
 	asm( 
 "	      004a07b9    push ebp"

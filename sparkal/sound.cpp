@@ -110,6 +110,9 @@ void SoundSystem::~SoundSystem() {
 
 // FUNCTION: COPTER_D 0x0042e009
 int32_t SoundSystem::Initialize(void * __ptr32 hWindow) {
+	long hResult;
+	int32_t bReturnValue;
+
 // LINE 119:
 	asm( 
 "	      0042e009    push ebp"
@@ -581,6 +584,8 @@ int32_t SoundSystem::SetVolume(long lNewVolume) {
 
 // FUNCTION: COPTER_D 0x0042e3a1
 void SoundManager::SoundManager() {
+	int32_t i;
+
 // LINE 283:
 	asm( 
 "	      0042e3a1    push ebp"
@@ -652,6 +657,8 @@ void SoundManager::~SoundManager() {
 
 // FUNCTION: COPTER_D 0x0042e419
 void SoundManager::DeleteAllSounds() {
+	int32_t i;
+
 // LINE 295:
 	asm( 
 "	      0042e419    push ebp"
@@ -755,6 +762,8 @@ void SoundManager::AddSound(class Sound* soundToAdd, int32_t nIndex) {
 
 // FUNCTION: COPTER_D 0x0042e4e2
 void SoundManager::AddDigitalSound(long lResID, int32_t nIndex) {
+	class DigitalSound* newDigitalSound;
+
 // LINE 340:
 	asm( 
 "	      0042e4e2    push ebp"
@@ -825,6 +834,8 @@ void SoundManager::AddDigitalSound(long lResID, int32_t nIndex) {
 
 // FUNCTION: COPTER_D 0x0042e578
 void SoundManager::AddDigitalSound(const class basic_string<char>& sNewSoundFile, int32_t nIndex, int32_t nStreamingType) {
+	class DigitalSound* newDigitalSound;
+
 // LINE 347:
 	asm( 
 "	      0042e578    push ebp"
@@ -988,6 +999,8 @@ void SoundManager::StopSound(int32_t nIndex) {
 
 // FUNCTION: COPTER_D 0x0042e6a5
 void SoundManager::StopAllSounds() {
+	int32_t i;
+
 // LINE 392:
 	asm( 
 "	      0042e6a5    push ebp"
@@ -1843,6 +1856,8 @@ unsigned long Sound::GetTotalMemoryUsage() {
 
 // FUNCTION: COPTER_D 0x0042ef87
 void DigitalSound::DigitalSound() {
+	int32_t i;
+
 // LINE 538:
 	asm( 
 "	      0042ef87    push ebp"
@@ -1911,6 +1926,8 @@ void DigitalSound::DigitalSound() {
 
 // FUNCTION: COPTER_D 0x0042f00f
 void DigitalSound::DigitalSound(const class basic_string<char>& sNewSoundFile, int32_t nNewStreamingType) {
+	int32_t i;
+
 // LINE 566:
 	asm( 
 "	      0042f00f    push ebp"
@@ -2614,6 +2631,17 @@ int32_t DigitalSound::LoadFromResource() {
 
 // FUNCTION: COPTER_D 0x0042f682
 int32_t DigitalSound::LoadFromFile() {
+	long hResult;
+	uint32_t cbActualRead;
+	unsigned char * pbBufferData;
+	unsigned long dwBufferLength2;
+	unsigned char * pbBufferData2;
+	int32_t bReturnValue;
+	void * __ptr32 hmmioIn;
+	struct _MMCKINFO ckInRiff;
+	struct _MMCKINFO ckIn;
+	unsigned long dwBufferLength;
+
 // LINE 733:
 	asm( 
 "	      0042f682    push ebp"
@@ -2961,6 +2989,8 @@ int32_t DigitalSound::LoadFromFile() {
 
 // FUNCTION: COPTER_D 0x0042f989
 int32_t DigitalSound::CreatePrimarySoundBuffer() {
+	struct _DSBUFFERDESC dsBufferDescription;
+
 // LINE 839:
 	asm( 
 "	      0042f989    push ebp"
@@ -3018,6 +3048,9 @@ int32_t DigitalSound::CreatePrimarySoundBuffer() {
 
 // FUNCTION: COPTER_D 0x0042f9da
 int32_t DigitalSound::CreateSoundBuffer(struct _DSBUFFERDESC* dsNewBufferDescription) {
+	long hResult;
+	struct _DSBUFFERDESC dsBufferDescription;
+
 // LINE 876:
 	asm( 
 "	      0042f9da    push ebp"
@@ -3197,6 +3230,8 @@ int32_t DigitalSound::CreateSoundBuffer(struct _DSBUFFERDESC* dsNewBufferDescrip
 
 // FUNCTION: COPTER_D 0x0042fb2a
 int32_t DigitalSound::ReleaseSoundBuffer() {
+	int32_t i;
+
 // LINE 938:
 	asm( 
 "	      0042fb2a    push ebp"
@@ -3274,6 +3309,8 @@ int32_t DigitalSound::ReleaseSoundBuffer() {
 
 // FUNCTION: COPTER_D 0x0042fbb5
 int32_t DigitalSound::GetPan(long * lPan) {
+	long hResult;
+
 // LINE 976:
 	asm( 
 "	      0042fbb5    push ebp"
@@ -3339,6 +3376,8 @@ int32_t DigitalSound::GetPan(long * lPan) {
 
 // FUNCTION: COPTER_D 0x0042fc21
 int32_t DigitalSound::SetPan(long lNewPan) {
+	long hResult;
+
 // LINE 1005:
 	asm( 
 "	      0042fc21    push ebp"
@@ -3422,6 +3461,8 @@ int32_t DigitalSound::SetPan(long lNewPan) {
 
 // FUNCTION: COPTER_D 0x0042fcb5
 int32_t DigitalSound::GetFrequency(long * lFrequency) {
+	long hResult;
+
 // LINE 1038:
 	asm( 
 "	      0042fcb5    push ebp"
@@ -3487,6 +3528,8 @@ int32_t DigitalSound::GetFrequency(long * lFrequency) {
 
 // FUNCTION: COPTER_D 0x0042fd21
 int32_t DigitalSound::SetFrequency(long lNewFrequency) {
+	long hResult;
+
 // LINE 1064:
 	asm( 
 "	      0042fd21    push ebp"
@@ -3570,6 +3613,8 @@ int32_t DigitalSound::SetFrequency(long lNewFrequency) {
 
 // FUNCTION: COPTER_D 0x0042fdb2
 int32_t DigitalSound::GetVolume(long * lVolume) {
+	long hResult;
+
 // LINE 1096:
 	asm( 
 "	      0042fdb2    push ebp"
@@ -3645,6 +3690,8 @@ int32_t DigitalSound::GetVolume(long * lVolume) {
 
 // FUNCTION: COPTER_D 0x0042fe2e
 int32_t DigitalSound::SetVolume(long lNewVolume) {
+	long hResult;
+
 // LINE 1124:
 	asm( 
 "	      0042fe2e    push ebp"
@@ -3725,6 +3772,9 @@ int32_t DigitalSound::SetVolume(long lNewVolume) {
 
 // FUNCTION: COPTER_D 0x0042feb1
 int32_t DigitalSound::SetPosition(long lX, long lY, long lZ) {
+	long lNewVolume;
+	long lDistance;
+
 // LINE 1165:
 	asm( 
 "	      0042feb1    push ebp"
@@ -3868,6 +3918,10 @@ long DigitalSound::IsPlaying() {
 
 // FUNCTION: COPTER_D 0x0042ff90
 long DigitalSound::IsPlaying(struct IDirectSoundBuffer** lplpSoundPlaying) {
+	long hResult;
+	int32_t i;
+	unsigned long dwStatus;
+
 // LINE 1226:
 	asm( 
 "	      0042ff90    push ebp"
@@ -3979,6 +4033,10 @@ long DigitalSound::IsPlaying(struct IDirectSoundBuffer** lplpSoundPlaying) {
 
 // FUNCTION: COPTER_D 0x0043005a
 long DigitalSound::Play(long bPlayLooping, int32_t nDuplicateType) {
+	long hResult;
+	unsigned long dwLooped;
+	struct IDirectSoundBuffer* lpSoundBufferToPlay;
+
 // LINE 1268:
 	asm( 
 "	      0043005a    push ebp"
@@ -4303,6 +4361,10 @@ long DigitalSound::Play(long bPlayLooping, int32_t nDuplicateType) {
 
 // FUNCTION: COPTER_D 0x004302f9
 int32_t DigitalSound::GetSoundAliasToPlay(struct IDirectSoundBuffer** lplpSoundBufferToPlay) {
+	long hResult;
+	int32_t i;
+	unsigned long dwStatus;
+
 // LINE 1364:
 	asm( 
 "	      004302f9    push ebp"
@@ -4447,6 +4509,9 @@ int32_t DigitalSound::GetSoundAliasToPlay(struct IDirectSoundBuffer** lplpSoundB
 
 // FUNCTION: COPTER_D 0x0043041b
 long DigitalSound::Stop() {
+	int32_t i;
+	int32_t bWasPlaying;
+
 // LINE 1409:
 	asm( 
 "	      0043041b    push ebp"
@@ -4554,6 +4619,10 @@ long DigitalSound::Stop() {
 
 // FUNCTION: COPTER_D 0x004304ec
 long DigitalSound::ShouldWeStream() {
+	int32_t hFile;
+	struct _OFSTRUCT ofStruct;
+	unsigned long dwFileSize;
+
 // LINE 1446:
 	asm( 
 "	      004304ec    push ebp"
@@ -4701,6 +4770,9 @@ long DigitalSound::ShouldWeStream() {
 
 // FUNCTION: COPTER_D 0x004306ca
 long DigitalSound::InitializeStreamBuffer(long bStopIfCurrentlyPlaying) {
+	long hResult;
+	struct _DSBUFFERDESC dsBufferDescription;
+
 // LINE 1485:
 	asm( 
 "	      004306ca    push ebp"
@@ -5126,6 +5198,15 @@ long DigitalSound::InitializeStreamBuffer(long bStopIfCurrentlyPlaying) {
 
 // FUNCTION: COPTER_D 0x00430a74
 long DigitalSound::PlayStream() {
+	long hResult;
+	unsigned long dwLength2;
+	unsigned char * lpWrite1;
+	unsigned char * lpWrite2;
+	unsigned long dwLength1;
+	uint32_t nActualBytesRead;
+	int32_t bStopIfCurrentlyPlaying;
+	uint32_t nError;
+
 // LINE 1582:
 	asm( 
 "	      00430a74    push ebp"
@@ -5753,6 +5834,8 @@ long DigitalSound::PlayStream() {
 
 // FUNCTION: COPTER_D 0x00430fb6
 long DigitalSound::StopStream() {
+	uint32_t mmResult;
+
 // LINE 1743:
 	asm( 
 "	      00430fb6    push ebp"
@@ -5882,6 +5965,8 @@ long DigitalSound::StopStream() {
 
 // FUNCTION: COPTER_D 0x004310a5
 void StreamingBufferTimerCallback(uint32_t __formal, uint32_t __formal, unsigned long dwUser, unsigned long __formal, unsigned long __formal) {
+	class DigitalSound* digitalSoundObject;
+
 // LINE 1797:
 	asm( 
 "	      004310a5    push ebp"
@@ -5916,6 +6001,16 @@ void StreamingBufferTimerCallback(uint32_t __formal, uint32_t __formal, unsigned
 
 // FUNCTION: COPTER_D 0x004310cb
 void DigitalSound::ProcessStreamingBufferTimerCallback() {
+	unsigned long dwLength2;
+	unsigned char * lpWrite1;
+	unsigned long dwPlay;
+	unsigned char * lpWrite2;
+	unsigned long dwLength1;
+	uint32_t nActualBytesRead;
+	unsigned long dwWrite;
+	int32_t nError;
+	unsigned char * lpTemp;
+
 // LINE 1806:
 	asm( 
 "	      004310cb    push ebp"
@@ -6876,6 +6971,9 @@ void DigitalSound::StopCompletionNotification() {
 
 // FUNCTION: COPTER_D 0x0043188b
 long DigitalSound::EstimateRemainingPlayTime() {
+	unsigned long dwPlay;
+	unsigned long dwWrite;
+
 // LINE 2071:
 	asm( 
 "	      0043188b    push ebp"
@@ -6973,6 +7071,8 @@ long DigitalSound::EstimateRemainingPlayTime() {
 
 // FUNCTION: COPTER_D 0x00431947
 void CompletionEstimationTimerCallback(uint32_t nTimerID, uint32_t __formal, unsigned long dwUser, unsigned long __formal, unsigned long __formal) {
+	class DigitalSound* digitalSoundObject;
+
 // LINE 2106:
 	asm( 
 "	      00431947    push ebp"
@@ -7080,6 +7180,8 @@ void DigitalSound::ProcessCompletionEstimationTimerCallback() {
 
 // FUNCTION: COPTER_D 0x004319e5
 int32_t DigitalSound::StartCompletionNotificationEstimationTimer() {
+	long lRemainingPlayTime;
+
 // LINE 2135:
 	asm( 
 "	      004319e5    push ebp"

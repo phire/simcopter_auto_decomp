@@ -13,6 +13,8 @@
 
 // FUNCTION: COPTER_D 0x0049a4af
 void JoystickManager::JoystickManager() {
+	int32_t i;
+
 // LINE 24:
 	asm( 
 "	      0049a4af    push ebp"
@@ -81,6 +83,11 @@ void JoystickManager::JoystickManager() {
 
 // FUNCTION: COPTER_D 0x0049a527
 int32_t JoystickManager::Initialize() {
+	int32_t nMaxJoysticks;
+	struct joyinfo_tag joyInfo;
+	int32_t i;
+	uint32_t mmResult;
+
 // LINE 50:
 	asm( 
 "	      0049a527    push ebp"
@@ -221,6 +228,8 @@ int32_t JoystickManager::Initialize() {
 
 // FUNCTION: COPTER_D 0x0049a629
 int32_t JoystickManager::IsJoystickPresent(char * szJoystickName) {
+	int32_t i;
+
 // LINE 90:
 	asm( 
 "	      0049a629    push ebp"
@@ -349,6 +358,8 @@ int32_t JoystickManager::GetJoystickName(uint32_t nJoystick, char * szJoystickNa
 
 // FUNCTION: COPTER_D 0x0049a701
 int32_t JoystickManager::GetJoystickIndex(char * szJoystickName, int32_t * nJoystick) {
+	int32_t i;
+
 // LINE 124:
 	asm( 
 "	      0049a701    push ebp"
@@ -460,6 +471,9 @@ int32_t JoystickManager::Normalize(int32_t nPosition) {
 
 // FUNCTION: COPTER_D 0x0049a7bb
 int32_t JoystickManager::GetPositionQualitative(int32_t nJoystick, int32_t nAxis, int32_t bUseCache) {
+	int32_t nOneQuarterOfTheRange;
+	int32_t nValue;
+
 // LINE 186:
 	asm( 
 "	      0049a7bb    push ebp"
@@ -534,6 +548,13 @@ int32_t JoystickManager::GetPositionQualitative(int32_t nJoystick, int32_t nAxis
 
 // FUNCTION: COPTER_D 0x0049a836
 int32_t JoystickManager::GetPositionQuantitative(int32_t nJoystick, int32_t nAxis, int32_t bUseCache) {
+	int32_t nReturnValue;
+	struct joyinfoex_tag joyInfoEx;
+	unsigned long dwFlagToUse;
+	struct joyinfoex_tag* joyInfoExToUse;
+	uint32_t mmResult;
+	unsigned long * dwResultToUse;
+
 // LINE 217:
 	asm( 
 "	      0049a836    push ebp"
@@ -775,6 +796,10 @@ int32_t JoystickManager::GetPositionQuantitative(int32_t nJoystick, int32_t nAxi
 
 // FUNCTION: COPTER_D 0x0049a9dd
 int32_t JoystickManager::GetButtonState(int32_t nJoystick, int32_t nButton, int32_t bUseCache) {
+	struct joyinfoex_tag joyInfoEx;
+	struct joyinfoex_tag* joyInfoExToUse;
+	uint32_t mmResult;
+
 // LINE 297:
 	asm( 
 "	      0049a9dd    push ebp"
@@ -879,6 +904,8 @@ int32_t JoystickManager::GetButtonState(int32_t nJoystick, int32_t nButton, int3
 
 // FUNCTION: COPTER_D 0x0049aa99
 int32_t JoystickManager::GetCompleteState(int32_t nJoystick) {
+	uint32_t mmResult;
+
 // LINE 336:
 	asm( 
 "	      0049aa99    push ebp"
@@ -962,6 +989,10 @@ int32_t JoystickManager::GetCompleteState(int32_t nJoystick) {
 
 // FUNCTION: COPTER_D 0x0049ab3a
 int32_t JoystickManager::GetPointOfView(int32_t nJoystick, int32_t bUseCache) {
+	struct joyinfoex_tag joyInfoEx;
+	struct joyinfoex_tag* joyInfoExToUse;
+	uint32_t mmResult;
+
 // LINE 375:
 	asm( 
 "	      0049ab3a    push ebp"
@@ -1062,6 +1093,8 @@ int32_t JoystickManager::GetPointOfView(int32_t nJoystick, int32_t bUseCache) {
 
 // FUNCTION: COPTER_D 0x0049abe2
 int32_t JoystickManager::Calibrate(int32_t nJoystick) {
+	uint32_t nReturnValue;
+
 // LINE 415:
 	asm( 
 "	      0049abe2    push ebp"
@@ -1106,6 +1139,8 @@ int32_t JoystickManager::Calibrate(int32_t nJoystick) {
 
 // FUNCTION: COPTER_D 0x0049ac20
 int32_t JoystickManager::GetWindowsThreshold(int32_t nJoystick, long * lThreshold) {
+	uint32_t mmResult;
+
 // LINE 448:
 	asm( 
 "	      0049ac20    push ebp"
@@ -1165,6 +1200,8 @@ int32_t JoystickManager::GetWindowsThreshold(int32_t nJoystick, long * lThreshol
 
 // FUNCTION: COPTER_D 0x0049ac7c
 int32_t JoystickManager::SetWindowsThreshold(int32_t nJoystick, long lThreshold) {
+	uint32_t mmResult;
+
 // LINE 472:
 	asm( 
 "	      0049ac7c    push ebp"

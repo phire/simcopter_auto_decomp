@@ -749,6 +749,10 @@ void InventoryWindow::~InventoryWindow() {
 
 // FUNCTION: COPTER_D 0x004a8e67
 int32_t InventoryWindow::Initialize() {
+	int32_t nReturnValue;
+	int32_t i;
+	int32_t nFullStringID;
+
 // LINE 76:
 	asm( 
 "	      004a8e67    push ebp"
@@ -1931,6 +1935,10 @@ int32_t InventoryWindow::ComposeSelf() {
 
 // FUNCTION: COPTER_D 0x004a9e08
 void InventoryWindow::DrawTitleText() {
+	class MRect[3] rectText;
+	int32_t i;
+	class MPoint ptText;
+
 // LINE 174:
 	asm( 
 "	      004a9e08    push ebp"
@@ -2227,6 +2235,13 @@ void InventoryWindow::DrawTitleText() {
 
 // FUNCTION: COPTER_D 0x004aa1d1
 void InventoryWindow::DrawInventory() {
+	long lCurrentHeliType;
+	const long lCheckmarkWidth;
+	const long lCheckmarkHeight;
+	struct tagUserPersonalInfo* currentUserPersonalInfo;
+	class MRect rectDestination;
+	long lCurrentRow;
+
 // LINE 205:
 	asm( 
 "	      004aa1d1    push ebp"
@@ -2692,6 +2707,8 @@ long InventoryWindow::DoCursorMove(long nCursorX, long nCursorY) {
 
 // FUNCTION: COPTER_D 0x004aa55f
 int32_t InventoryWindow::GetRectFromID(long lID, class MRect& rectHotSpot) {
+	class list<HotSpot>::iterator i;
+
 // LINE 302:
 	asm( 
 "	      004aa55f    push ebp"

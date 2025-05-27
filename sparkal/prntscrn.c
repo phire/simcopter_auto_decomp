@@ -7,6 +7,9 @@
 // Contribution: 1:0006a870-0006ac9e Module: 41, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x0046b870
 void S3PrintScreen() {
+	char * chPalette;
+	char[260] fname;
+
 // LINE 52:
 	asm( 
 "	      0046b870    push ebp"
@@ -58,6 +61,13 @@ void S3PrintScreen() {
 
 // FUNCTION: COPTER_D 0x0046b8db
 void S3BufferPrint(char * fname, char * chPalette) {
+	struct _iobuf* hFileOut;
+	int32_t ydim;
+	int32_t pitch;
+	int32_t xdim;
+	int32_t y;
+	char * ptr;
+
 // LINE 68:
 	asm( 
 "	      0046b8db    push ebp"
@@ -303,6 +313,10 @@ void S3BufferPrint(char * fname, char * chPalette) {
 
 // FUNCTION: COPTER_D 0x0046bac3
 int32_t S3WritePCXLine(struct _iobuf* fp, char * p, unsigned short n) {
+	unsigned short j;
+	unsigned short i;
+	unsigned short t;
+
 // LINE 136:
 	asm( 
 "	      0046bac3    push ebp"

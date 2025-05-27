@@ -179,6 +179,10 @@ void CSparkalApp::~CSparkalApp() {
 
 // FUNCTION: COPTER_D 0x004271a3
 int32_t CSparkalApp::DecideRuntimePlatform() {
+	unsigned char WinMinor;
+	unsigned long Version;
+	unsigned char WinMajor;
+
 // LINE 61:
 	asm( 
 "	      004271a3    push ebp"
@@ -283,6 +287,8 @@ int32_t CSparkalApp::DecideRuntimePlatform() {
 
 // FUNCTION: COPTER_D 0x00427257
 class CSparkalWindow* CSparkalApp::NewWindow(unsigned long Width, unsigned long Height, unsigned long Style, const struct SparkalColor* pColors, char * Caption) {
+	class CSparkalWindow* Window;
+
 // LINE 96:
 	asm( 
 "	      00427257    push ebp"
@@ -338,6 +344,8 @@ class CSparkalWindow* CSparkalApp::NewWindow(unsigned long Width, unsigned long 
 
 // FUNCTION: COPTER_D 0x004272be
 class IFlatImage* CSparkalApp::NewImage(char * fileName) {
+	class IFlatImage* pBitmap;
+
 // LINE 116:
 	asm( 
 "	      004272be    push ebp"
@@ -421,6 +429,8 @@ class IFlatImage* CSparkalApp::NewImage(char * fileName) {
 
 // FUNCTION: COPTER_D 0x00427368
 class IFlatImage* CSparkalApp::NewImage(long width, long height, const const struct SparkalColor* pColors) {
+	class IFlatImage* pBitmap;
+
 // LINE 141:
 	asm( 
 "	      00427368    push ebp"

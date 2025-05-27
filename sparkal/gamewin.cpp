@@ -7,6 +7,8 @@
 // Contribution: 1:00065f70-00067019 Module: 43, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00466f70
 void GameWindow::GameWindow(unsigned long Width, unsigned long Height, unsigned long Style, const struct SparkalColor* pColors, char * Caption) {
+	struct tagWNDCLASSA ClassInfo;
+
 // LINE 36:
 	asm( 
 "	      00466f70    push ebp"
@@ -185,6 +187,9 @@ void GameWindow::GameWindow(unsigned long Width, unsigned long Height, unsigned 
 
 // FUNCTION: COPTER_D 0x004670df
 unsigned long GameWindow::CreateSparkalWindow() {
+	unsigned long dwWindowStyle;
+	struct tagRECT rectWindowForAdjust;
+
 // LINE 78:
 	asm( 
 "	      004670df    push ebp"
@@ -624,6 +629,14 @@ unsigned long GameWindow::SwapBuffer() {
 
 // FUNCTION: COPTER_D 0x004673ea
 unsigned long GameWindow::MakePalette(const struct SparkalColor* pColors) {
+	struct GameWindow::MakePalette::__unnamed LogPalette;
+	void * __ptr32 hdc;
+	int32_t StaticCount;
+	uint32_t PaletteUse;
+	int32_t End;
+	int32_t Start;
+	int32_t Counter;
+
 // LINE 197:
 	asm( 
 "	      004673ea    push ebp"
@@ -987,6 +1000,8 @@ void GameWindow::UpdatePalette(long start, long count, struct SparkalColor* pCol
 
 // FUNCTION: COPTER_D 0x004676d0
 void GameWindow::ProcessWindowMove() {
+	struct tagRECT rectWindowTemp;
+
 // LINE 297:
 	asm( 
 "	      004676d0    push ebp"
@@ -1139,6 +1154,9 @@ int32_t GameWindow::PrepareForSwitchToWindowedMode() {
 
 // FUNCTION: COPTER_D 0x004677c9
 int32_t GameWindow::CompleteSwitchToWindowedMode() {
+	struct tagRECT rectWindowTempWindows;
+	unsigned long dwStyle;
+
 // LINE 346:
 	asm( 
 "	      004677c9    push ebp"
@@ -1336,6 +1354,9 @@ int32_t GameWindow::PrepareForSwitchToFullScreenMode() {
 
 // FUNCTION: COPTER_D 0x00467933
 int32_t GameWindow::CompleteSwitchToFullScreenMode() {
+	unsigned long dwStyle;
+	struct tagRECT rectWindowTemp;
+
 // LINE 402:
 	asm( 
 "	      00467933    push ebp"
@@ -1470,6 +1491,11 @@ int32_t GameWindow::CompleteSwitchToFullScreenMode() {
 
 // FUNCTION: COPTER_D 0x00467a48
 void GameWindow::CenterWindow() {
+	unsigned long nWindowWidth;
+	unsigned long nScreenWidth;
+	unsigned long nWindowHeight;
+	unsigned long nScreenHeight;
+
 // LINE 441:
 	asm( 
 "	      00467a48    push ebp"
@@ -1563,6 +1589,11 @@ void GameWindow::CenterWindow() {
 
 // FUNCTION: COPTER_D 0x00467af9
 void GameWindow::PlaceWindowRect(class MRect* rectWindowToPlace) {
+	unsigned long nWindowWidth;
+	unsigned long nScreenWidth;
+	unsigned long nWindowHeight;
+	unsigned long nScreenHeight;
+
 // LINE 469:
 	asm( 
 "	      00467af9    push ebp"
@@ -1654,6 +1685,8 @@ void GameWindow::PlaceWindowRect(class MRect* rectWindowToPlace) {
 
 // FUNCTION: COPTER_D 0x00467b9c
 long GameWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message, uint32_t wParam, long lParam) {
+	struct tagMINMAXINFO* lpMinMaxInfo;
+
 // LINE 493:
 	asm( 
 "	      00467b9c    push ebp"

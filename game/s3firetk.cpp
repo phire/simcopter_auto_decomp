@@ -97,6 +97,10 @@ void FireEngineClass::~FireEngineClass() {
 
 // FUNCTION: COPTER_D 0x0053618b
 class FireEngineClass* FireEngineClass::CreateInstance(int32_t instanceID) {
+	int32_t object;
+	class FireEngineClass* youveWonABrandNewCar;
+	char * objectMemory;
+
 // LINE 110:
 	asm( 
 "	      0053618b    push ebp"
@@ -444,6 +448,9 @@ int32_t FireEngineClass::IsThisAFireStation(long mapX, long mapY) {
 
 // FUNCTION: COPTER_D 0x0053648e
 void FireEngineClass::ItterateFSM() {
+	struct Point3d vec;
+	int32_t dist;
+
 // LINE 249:
 	asm( 
 "	      0053648e    push ebp"
@@ -792,6 +799,9 @@ void FireEngineClass::ItterateFSM() {
 
 // FUNCTION: COPTER_D 0x00536778
 int32_t FireEngineClass::AtScene() {
+	struct Point3d vec;
+	int32_t dist;
+
 // LINE 353:
 	asm( 
 "	      00536778    push ebp"
@@ -958,6 +968,13 @@ int32_t FireEngineClass::AtScene() {
 
 // FUNCTION: COPTER_D 0x005368cd
 int32_t FireEngineClass::ScanForFire(struct _GridCoordinates fireloc) {
+	struct _CELL_INFO* cptr;
+	int32_t fires_found;
+	struct _GridCoordinates dyfireloc;
+	struct _STOBJ_INST* stobj;
+	struct _DYOBJ_INST* dyobj;
+	class SpiralScan spiral;
+
 // LINE 420:
 	asm( 
 "	      005368cd    push ebp"

@@ -7,6 +7,9 @@
 // Contribution: 1:000bb460-000bc660 Module: 2, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004bc460
 void MDate::MDate() {
+	struct tm* now;
+	long clk;
+
 // LINE 75:
 	asm( 
 "	      004bc460    push ebp"
@@ -211,6 +214,8 @@ void MDate::MDate(uint32_t day, uint32_t month, uint32_t year) {
 
 // FUNCTION: COPTER_D 0x004bc5d1
 enum MDate::HowToPrint MDate::SetPrintOption(enum MDate::HowToPrint h) {
+	enum MDate::HowToPrint oldoption;
+
 // LINE 136:
 	asm( 
 "	      004bc5d1    push ebp"
@@ -319,6 +324,8 @@ uint32_t MDate::DayOfWeek(char * nameOfDay) {
 
 // FUNCTION: COPTER_D 0x004bc673
 int32_t FindMatch(char * str, char ** candidates, int32_t icand) {
+	uint32_t len;
+
 // LINE 55:
 	asm( 
 "	      004bc673    push ebp"
@@ -384,6 +391,8 @@ int32_t FindMatch(char * str, char ** candidates, int32_t icand) {
 
 // FUNCTION: COPTER_D 0x004bc6d7
 int32_t MDate::DayWithinMonth(uint32_t month, uint32_t day, uint32_t year) {
+	uint32_t d;
+
 // LINE 181:
 	asm( 
 "	      004bc6d7    push ebp"
@@ -520,6 +529,9 @@ uint32_t MDate::IndexOfMonth(char * nameOfMonth) {
 
 // FUNCTION: COPTER_D 0x004bc7c6
 unsigned long MDate::Jday(uint32_t m, uint32_t d, uint32_t y) {
+	unsigned long ya;
+	unsigned long c;
+
 // LINE 233:
 	asm( 
 "	      004bc7c6    push ebp"
@@ -815,6 +827,10 @@ uint32_t MDate::Day() {
 
 // FUNCTION: COPTER_D 0x004bc9d0
 uint32_t MDate::DayOfMonth() {
+	uint32_t m;
+	uint32_t y;
+	uint32_t d;
+
 // LINE 320:
 	asm( 
 "	      004bc9d0    push ebp"
@@ -853,6 +869,8 @@ uint32_t MDate::DayOfMonth() {
 
 // FUNCTION: COPTER_D 0x004bc9fd
 uint32_t MDate::FirstDayOfMonth(uint32_t month) {
+	uint32_t firstDay;
+
 // LINE 336:
 	asm( 
 "	      004bc9fd    push ebp"
@@ -948,6 +966,9 @@ uint32_t MDate::Hash() {
 
 // FUNCTION: COPTER_D 0x004bcaa0
 void MDate::Mdy(uint32_t& m, uint32_t& D, uint32_t& y) {
+	unsigned long j;
+	unsigned long d;
+
 // LINE 368:
 	asm( 
 "	      004bcaa0    push ebp"
@@ -1212,6 +1233,10 @@ class MDate MDate::MinDate(const class MDate& dt) {
 
 // FUNCTION: COPTER_D 0x004bcca1
 uint32_t MDate::Month() {
+	uint32_t m;
+	uint32_t y;
+	uint32_t d;
+
 // LINE 419:
 	asm( 
 "	      004bcca1    push ebp"
@@ -1286,6 +1311,9 @@ class MDate MDate::Previous(char * dayName) {
 
 // FUNCTION: COPTER_D 0x004bcd02
 class MDate MDate::Previous(uint32_t desiredDayOfWeek) {
+	unsigned long j;
+	uint32_t thisDayOfWeek;
+
 // LINE 448:
 	asm( 
 "	      004bcd02    push ebp"
@@ -1403,6 +1431,10 @@ uint32_t MDate::WeekDay() {
 
 // FUNCTION: COPTER_D 0x004bcdb1
 uint32_t MDate::Year() {
+	uint32_t m;
+	uint32_t y;
+	uint32_t d;
+
 // LINE 484:
 	asm( 
 "	      004bcdb1    push ebp"
@@ -1473,6 +1505,8 @@ uint32_t MDate::YearLastTwoDigits() {
 
 // FUNCTION: COPTER_D 0x004bce07
 char * MDate::PrintString(char * szDate) {
+	class ostrstream strtemp;
+
 // LINE 510:
 	asm( 
 "	      004bce07    push ebp"
@@ -1532,6 +1566,10 @@ char * MDate::PrintString(char * szDate) {
 
 // FUNCTION: COPTER_D 0x004bce73
 void MDate::ParseFrom(class istream& s) {
+	uint32_t m;
+	uint32_t y;
+	uint32_t d;
+
 // LINE 577:
 	asm( 
 "	      004bce73    push ebp"
@@ -1832,6 +1870,8 @@ void MDate::ParseFrom(class istream& s) {
 
 // FUNCTION: COPTER_D 0x004bd175
 void SkipDelim(class istream& strm) {
+	char c;
+
 // LINE 525:
 	asm( 
 "	      004bd175    push ebp"
@@ -1931,6 +1971,9 @@ void SkipDelim(class istream& strm) {
 
 // FUNCTION: COPTER_D 0x004bd27c
 char * ParseMonth(class istream& s) {
+	char c;
+	char * p;
+
 // LINE 547:
 	asm( 
 "	      004bd27c    push ebp"
@@ -2054,6 +2097,9 @@ char * ParseMonth(class istream& s) {
 
 // FUNCTION: COPTER_D 0x004bd39a
 class ostream& operator<<(class ostream& s, const class MDate& d) {
+	class ostrstream out;
+	char[80] buf;
+
 // LINE 617:
 	asm( 
 "	      004bd39a    push ebp"

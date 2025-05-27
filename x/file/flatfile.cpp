@@ -91,6 +91,8 @@ void FlatFile::~FlatFile() {
 
 // FUNCTION: COPTER_D 0x0055c2fa
 class FlatFile* FlatFile::FindByName(unsigned char * name) {
+	class FlatFile* srch;
+
 // LINE 42:
 	asm( 
 "	      0055c2fa    push ebp"
@@ -151,6 +153,8 @@ class FlatFile* FlatFile::FindByName(unsigned char * name) {
 
 // FUNCTION: COPTER_D 0x0055c36a
 long FlatFile::Open(char * name) {
+	unsigned char[256] pstrbuff;
+
 // LINE 52:
 	asm( 
 "	      0055c36a    push ebp"
@@ -200,6 +204,9 @@ long FlatFile::Open(char * name) {
 
 // FUNCTION: COPTER_D 0x0055c3c7
 long FlatFile::Open(unsigned char * name) {
+	class FlatFile* same;
+	long err;
+
 // LINE 60:
 	asm( 
 "	      0055c3c7    push ebp"
@@ -382,6 +389,8 @@ long FlatFile::Open(unsigned char * name) {
 
 // FUNCTION: COPTER_D 0x0055c586
 void FlatFile::OpenFromOtherFile(class FlatFile* other) {
+	unsigned char[256] otherName;
+
 // LINE 110:
 	asm( 
 "	      0055c586    push ebp"
@@ -421,6 +430,8 @@ void FlatFile::OpenFromOtherFile(class FlatFile* other) {
 
 // FUNCTION: COPTER_D 0x0055c5cb
 long FlatFile::Close() {
+	long err;
+
 // LINE 117:
 	asm( 
 "	      0055c5cb    push ebp"
@@ -520,6 +531,8 @@ long FlatFile::Close() {
 
 // FUNCTION: COPTER_D 0x0055c69c
 long FlatFile::ReadBlock(void * __ptr32 buffer, long * blockSize) {
+	long actualSize;
+
 // LINE 158:
 	asm( 
 "	      0055c69c    push ebp"
@@ -775,6 +788,9 @@ unsigned short FlatFile::SameFile(class FlatFile* other) {
 
 // FUNCTION: COPTER_D 0x0055c87a
 long FlatFile::Read4(long * val) {
+	long err;
+	long size;
+
 // LINE 243:
 	asm( 
 "	      0055c87a    push ebp"
@@ -825,6 +841,9 @@ long FlatFile::Read4(long * val) {
 
 // FUNCTION: COPTER_D 0x0055c8c5
 long FlatFile::Read2(short * val) {
+	long err;
+	long size;
+
 // LINE 251:
 	asm( 
 "	      0055c8c5    push ebp"
@@ -875,6 +894,9 @@ long FlatFile::Read2(short * val) {
 
 // FUNCTION: COPTER_D 0x0055c910
 long FlatFile::Read1(char * val) {
+	long err;
+	long size;
+
 // LINE 259:
 	asm( 
 "	      0055c910    push ebp"
@@ -950,6 +972,8 @@ void FlatFile::Link() {
 
 // FUNCTION: COPTER_D 0x0055c96e
 void FlatFile::Unlink() {
+	class FlatFile** srch;
+
 // LINE 270:
 	asm( 
 "	      0055c96e    push ebp"
@@ -1022,6 +1046,8 @@ void FlatFile::Unlink() {
 
 // FUNCTION: COPTER_D 0x0055c9e3
 unsigned short FlatFile::Exclusive() {
+	class FlatFile* srch;
+
 // LINE 284:
 	asm( 
 "	      0055c9e3    push ebp"
@@ -1129,6 +1155,9 @@ long FlatFile::GetFileName(unsigned char * name) {
 
 // FUNCTION: COPTER_D 0x0055ca7f
 short FlatFile::CheckForLeaks() {
+	short total;
+	class FlatFile* list;
+
 // LINE 301:
 	asm( 
 "	      0055ca7f    push ebp"

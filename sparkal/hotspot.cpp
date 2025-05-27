@@ -348,6 +348,8 @@ void HotSpot::HotSpot(const class HotSpot& newHotSpot) {
 
 // FUNCTION: COPTER_D 0x004b948a
 void HotSpot::HotSpot(long lNewID, long lNewType, long lNewCount, long[2]* lCoordinates) {
+	int32_t i;
+
 // LINE 47:
 	asm( 
 "	      004b948a    push ebp"
@@ -685,6 +687,9 @@ void HotSpot::HotSpot(long lNewID, long lNewType, long lNewCount, long[2]* lCoor
 
 // FUNCTION: COPTER_D 0x004b9973
 void HotSpot::HotSpot(struct HotSpotResourceRecord* hotSpotResourceRecord) {
+	int32_t i;
+	long lCount;
+
 // LINE 62:
 	asm( 
 "	      004b9973    push ebp"
@@ -2154,6 +2159,9 @@ int32_t HotSpot::IsPointInHotspot(long lXPosition, long lYPosition) {
 
 // FUNCTION: COPTER_D 0x004badf8
 int32_t HotSpot::PointInCircle(long lXPosition, long lYPosition) {
+	int32_t nDistanceToPosition;
+	int32_t nRadiusOfCircle;
+
 // LINE 154:
 	asm( 
 "	      004badf8    push ebp"
@@ -2264,6 +2272,11 @@ int32_t HotSpot::PointInCircle(long lXPosition, long lYPosition) {
 
 // FUNCTION: COPTER_D 0x004baf2a
 int32_t HotSpot::PointInPolygon(long lXPosition, long lYPosition) {
+	int32_t j;
+	int32_t i;
+	int32_t nVertices;
+	int32_t c;
+
 // LINE 180:
 	asm( 
 "	      004baf2a    push ebp"
@@ -2408,6 +2421,14 @@ int32_t HotSpot::PointInPolygon(long lXPosition, long lYPosition) {
 
 // FUNCTION: COPTER_D 0x004bb0d2
 void HotSpot::GetBoundingRect(class MRect& rectBounds) {
+	int32_t nMaxY;
+	int32_t nMaxX;
+	int32_t nMinY;
+	int32_t i;
+	int32_t nMinX;
+	int32_t nRadiusOfCircle;
+	int32_t nPointCount;
+
 // LINE 207:
 	asm( 
 "	      004bb0d2    push ebp"
@@ -2799,6 +2820,14 @@ void HotSpot::GetBoundingRect(class MRect& rectBounds) {
 
 // FUNCTION: COPTER_D 0x004bb49b
 int32_t LoadListFromResource(class list<HotSpot>& hotSpotList, int32_t nResourceID) {
+	int32_t i;
+	int32_t nHotspotRecordCount;
+	char * chFileImage;
+	struct HotSpotResourceRecord* currentHotspotRecord;
+	int32_t nCurrentRecordStart;
+	struct HotSpotResourceFileHeader* fileImage;
+	class ResourceRCData resourceHangarHotspots;
+
 // LINE 269:
 	asm( 
 "	      004bb49b    push ebp"

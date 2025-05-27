@@ -191,6 +191,13 @@ void SkyImage::SwitchToProperSkyType() {
 
 // FUNCTION: COPTER_D 0x00495575
 int32_t SkyImage::LoadImageA() {
+	char * pDestinationImage;
+	struct VRResource* vrResource;
+	int32_t i;
+	char[260] szFullSkyImagePath;
+	char * pSourceImage;
+	struct VRBmpHdr* bmpHeader;
+
 // LINE 93:
 	asm( 
 "	      00495575    push ebp"
@@ -602,6 +609,15 @@ int32_t SkyImage::LoadImageA() {
 
 // FUNCTION: COPTER_D 0x004958e7
 unsigned long SkyImage::Compose(class CBackBuffer* pDestImage, int32_t nDestinationWidth) {
+	long len2;
+	int32_t pitch;
+	long start_col;
+	long len1;
+	struct SparkalRect rectDestination;
+	int32_t altdiff;
+	struct SparkalRect rectSource;
+	long start_row;
+
 // LINE 213:
 	asm( 
 "	      004958e7    push ebp"

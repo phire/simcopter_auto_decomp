@@ -7,6 +7,10 @@
 // Contribution: 1:000c90c0-000ca2a6 Module: 92, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004ca0c0
 int32_t MTMagnitude(struct Point3d* V) {
+	double k;
+	double j;
+	double i;
+
 // LINE 39:
 	asm( 
 "	      004ca0c0    push ebp"
@@ -73,6 +77,10 @@ int32_t MTMagnitude(struct Point3d* V) {
 
 // FUNCTION: COPTER_D 0x004ca140
 int32_t MTDistance(struct Point3d* p1, struct Point3d* p2) {
+	double k;
+	double j;
+	double i;
+
 // LINE 62:
 	asm( 
 "	      004ca140    push ebp"
@@ -151,6 +159,11 @@ int32_t MTDistance(struct Point3d* p1, struct Point3d* p2) {
 
 // FUNCTION: COPTER_D 0x004ca1e3
 int32_t MTNormalize(struct Point3d* V) {
+	double k;
+	double j;
+	double i;
+	double r;
+
 // LINE 83:
 	asm( 
 "	      004ca1e3    push ebp"
@@ -346,6 +359,10 @@ void MTCreatePlane(struct Plane* plane, struct Point3d* V, struct Point3d* p) {
 
 // FUNCTION: COPTER_D 0x004ca35c
 int32_t MTSideOfPlane(struct Point3d* V, struct Point3d* p, struct Point3d* q) {
+	struct Plane plane;
+	struct Point3d d;
+	int32_t s;
+
 // LINE 142:
 	asm( 
 "	      004ca35c    push ebp"
@@ -431,6 +448,8 @@ int32_t MTSideOfPlane(struct Point3d* V, struct Point3d* p, struct Point3d* q) {
 
 // FUNCTION: COPTER_D 0x004ca3f0
 void MTCreateVelocity(struct Point3d* p1, struct Point3d* p2, struct Point3d* V, int32_t t) {
+	int32_t i;
+
 // LINE 172:
 	asm( 
 "	      004ca3f0    push ebp"
@@ -537,6 +556,8 @@ int32_t MTSameSigns(int32_t s1, int32_t s2) {
 
 // FUNCTION: COPTER_D 0x004ca486
 int32_t MTVectorBounds(struct Point3d* V, int32_t m) {
+	int32_t r;
+
 // LINE 218:
 	asm( 
 "	      004ca486    push ebp"
@@ -625,6 +646,8 @@ int32_t MTVectorBounds(struct Point3d* V, int32_t m) {
 
 // FUNCTION: COPTER_D 0x004ca51c
 void MTApply_Force(struct Point3d* F, struct mv* p, int32_t t) {
+	struct Point3d A;
+
 // LINE 245:
 	asm( 
 "	      004ca51c    push ebp"
@@ -715,6 +738,11 @@ void MTApply_Force(struct Point3d* F, struct mv* p, int32_t t) {
 
 // FUNCTION: COPTER_D 0x004ca5b3
 void MTApply_Friction(int32_t F, struct mv* p, int32_t t) {
+	int32_t j;
+	int32_t v;
+	int32_t f;
+	int32_t a;
+
 // LINE 280:
 	asm( 
 "	      004ca5b3    push ebp"
@@ -853,6 +881,9 @@ void MTApply_Friction(int32_t F, struct mv* p, int32_t t) {
 
 // FUNCTION: COPTER_D 0x004ca6ae
 int32_t MTApply_Force1D(int32_t F, int32_t M, int32_t V, int32_t t, int32_t Vmax) {
+	int32_t nv;
+	int32_t A;
+
 // LINE 323:
 	asm( 
 "	      004ca6ae    push ebp"
@@ -918,6 +949,11 @@ int32_t MTApply_Force1D(int32_t F, int32_t M, int32_t V, int32_t t, int32_t Vmax
 
 // FUNCTION: COPTER_D 0x004ca721
 int32_t MTApply_Friction1D(int32_t F, int32_t M, int32_t V, int32_t t) {
+	int32_t absV;
+	int32_t j;
+	int32_t vf;
+	int32_t A;
+
 // LINE 357:
 	asm( 
 "	      004ca721    push ebp"
@@ -1046,6 +1082,19 @@ int32_t MTAngleBounds(int32_t a) {
 
 // FUNCTION: COPTER_D 0x004ca810
 void MTArbRotMat(int32_t[4]* mat, int32_t Angle, struct Point3d* V) {
+	int32_t VzzCos;
+	int32_t VxzCos;
+	int32_t VxyCos;
+	int32_t OneMinCos;
+	int32_t Cos;
+	int32_t VxxCos;
+	int32_t VyzCos;
+	int32_t VzSin;
+	int32_t VyyCos;
+	int32_t VySin;
+	int32_t Sin;
+	int32_t VxSin;
+
 // LINE 401:
 	asm( 
 "	      004ca810    push ebp"
@@ -1312,6 +1361,8 @@ void MTArbRotMat(int32_t[4]* mat, int32_t Angle, struct Point3d* V) {
 
 // FUNCTION: COPTER_D 0x004caa19
 void MTmat_row_normal(int32_t[4]* mat) {
+	int32_t factor;
+
 // LINE 463:
 	asm( 
 "	      004caa19    push ebp"
@@ -1573,6 +1624,8 @@ void MTmat_row_normal(int32_t[4]* mat) {
 
 // FUNCTION: COPTER_D 0x004cac36
 void MTmat_col_normal(int32_t[4]* mat) {
+	int32_t factor;
+
 // LINE 502:
 	asm( 
 "	      004cac36    push ebp"
@@ -1923,6 +1976,9 @@ void MTXProduct(struct Point3d* v1, struct Point3d* v2, struct Point3d* vr) {
 
 // FUNCTION: COPTER_D 0x004caefb
 void MTCreateDOF4x4(int32_t[4]* mat, struct Point3d* dv) {
+	struct Point3d xv;
+	struct Point3d yv;
+
 // LINE 568:
 	asm( 
 "	      004caefb    push ebp"
@@ -2073,6 +2129,9 @@ void MTCreateDOF4x4(int32_t[4]* mat, struct Point3d* dv) {
 
 // FUNCTION: COPTER_D 0x004caff7
 void MTCreateDOF4x4Y(int32_t[4]* mat, struct Point3d* dv) {
+	struct Point3d xv;
+	struct Point3d zv;
+
 // LINE 628:
 	asm( 
 "	      004caff7    push ebp"
@@ -2378,6 +2437,10 @@ void MTCreateReflection4x4(int32_t[4]* mat, struct Point3d* norm) {
 
 // FUNCTION: COPTER_D 0x004cb23c
 int32_t MTCheapDist2D(struct Point2d* p1, struct Point2d* p2) {
+	int32_t xdiff;
+	int32_t dist;
+	int32_t ydiff;
+
 // LINE 718:
 	asm( 
 "	      004cb23c    push ebp"

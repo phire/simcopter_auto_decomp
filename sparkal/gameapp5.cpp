@@ -93,6 +93,8 @@ void  CGameApp::GetFullRenderingWindowSize(int32_t * nWidth, int32_t * nHeight) 
 
 // FUNCTION: COPTER_D 0x00495be3
 int  CGameApp::S3PreRender() {
+	struct SparkalRect rectFill;
+
 // LINE 92:
 	asm( 
 "	      00495be3    push ebp"
@@ -557,6 +559,13 @@ void  CGameApp::S3PostRender() {
 
 // FUNCTION: COPTER_D 0x00495fc4
 void  CGameApp::DrawCrosshairs(class CBackBuffer* bufferToDrawTo) {
+	char * pBufferStart;
+	int32_t nMidXPosition;
+	int32_t nMidYPosition;
+	int32_t i;
+	int32_t nSurfaceStride;
+	char * pBufferCurrentPosition;
+
 // LINE 223:
 	asm( 
 "	      00495fc4    push ebp"
@@ -699,6 +708,11 @@ void  CGameApp::DrawCrosshairs(class CBackBuffer* bufferToDrawTo) {
 
 // FUNCTION: COPTER_D 0x004960c5
 void  CGameApp::S3ShowInfo() {
+	long nTextBottom;
+	long nTextTop;
+	char[256] szBuffer1;
+	long nTextLeft;
+
 // LINE 265:
 	asm( 
 "	      004960c5    push ebp"

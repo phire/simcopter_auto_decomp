@@ -281,6 +281,11 @@ void MissionLogWindow::~MissionLogWindow() {
 
 // FUNCTION: COPTER_D 0x0046bfe3
 int32_t MissionLogWindow::Initialize() {
+	class ButtonWindow* tempButtonWindow;
+	class basic_string<char> sText;
+	int32_t nFullStringID;
+	struct SparkalColor tempSparkalColor;
+
 // LINE 66:
 	asm( 
 "	      0046bfe3    push ebp"
@@ -1070,6 +1075,8 @@ int32_t MissionLogWindow::ReadPalette(struct SparkalColor* pColorTable) {
 
 // FUNCTION: COPTER_D 0x0046ca4c
 int32_t MissionLogWindow::CreateImage(int32_t __formal) {
+	char[260] szBackgroundBufferPath;
+
 // LINE 126:
 	asm( 
 "	      0046ca4c    push ebp"
@@ -1315,6 +1322,10 @@ int32_t MissionLogWindow::ComposeSelf() {
 
 // FUNCTION: COPTER_D 0x0046cc44
 void MissionLogWindow::DrawBackground() {
+	long y;
+	int32_t i;
+	long x;
+
 // LINE 186:
 	asm( 
 "	      0046cc44    push ebp"
@@ -1376,6 +1387,8 @@ void MissionLogWindow::DrawBackground() {
 
 // FUNCTION: COPTER_D 0x0046ccb5
 int32_t MissionLogWindow::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMessage, void * __ptr32 pMessageData) {
+	long lMyMessage;
+
 // LINE 203:
 	asm( 
 "	      0046ccb5    push ebp"
@@ -1459,6 +1472,9 @@ int32_t MissionLogWindow::DoMessage(class GraphicWindow* gwSource, long lWindowI
 
 // FUNCTION: COPTER_D 0x0046cd45
 void MissionLogWindow::SortByTimeDate() {
+	class list<tagLogBase *>::iterator iterator;
+	class basic_string<char> sCurrentText;
+
 // LINE 224:
 	asm( 
 "	      0046cd45    push ebp"
@@ -1661,6 +1677,10 @@ void MissionLogWindow::SortByTimeDate() {
 
 // FUNCTION: COPTER_D 0x0046cf77
 void MissionLogWindow::SortByType() {
+	unsigned long nCurrentMissionID;
+	class list<tagLogBase *>::iterator iterator;
+	class basic_string<char> sCurrentText;
+
 // LINE 244:
 	asm( 
 "	      0046cf77    push ebp"
@@ -2389,6 +2409,9 @@ int32_t MessageDisplayManager::Initialize() {
 
 // FUNCTION: COPTER_D 0x0046d802
 void MessageDisplayManager::DisplayCurrentMessages(class CBackBuffer* bufferDestination) {
+	int32_t i;
+	class MRect rectCurrentMessage;
+
 // LINE 323:
 	asm( 
 "	      0046d802    push ebp"
@@ -2790,6 +2813,8 @@ void MessageDisplayManager::DisplayCurrentMessages(class CBackBuffer* bufferDest
 
 // FUNCTION: COPTER_D 0x0046dccd
 void MessageDisplayManager::AddNewMessage(char * szNewMessage) {
+	int32_t i;
+
 // LINE 356:
 	asm( 
 "	      0046dccd    push ebp"

@@ -63,6 +63,8 @@ void ICommander::~ICommander() {
 
 // FUNCTION: COPTER_D 0x0049ad7b
 class CSparkalWindow* ICommander::SetWindow(class CSparkalWindow* pWindow) {
+	class CSparkalWindow* ReturnWindow;
+
 // LINE 28:
 	asm( 
 "	      0049ad7b    push ebp"

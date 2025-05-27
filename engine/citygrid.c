@@ -7,6 +7,23 @@
 // Contribution: 1:000d5b40-000d62f3 Module: 141, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x004d6b40
 short VRInitGridObj(long ViewSize) {
+	char * dataptr;
+	long goff;
+	int32_t x_start;
+	short j;
+	short i;
+	int32_t vert_inc;
+	long y;
+	struct MapVert* mapv;
+	int32_t x_val;
+	int32_t z_val;
+	long x;
+	struct GridFaceHdrType* gf;
+	long ul;
+	struct Point3d* v;
+	long * iptr;
+	long plotter;
+
 // LINE 121:
 	asm( 
 "	      004d6b40    push ebp"
@@ -803,6 +820,10 @@ void VRFreeGridObj() {
 
 // FUNCTION: COPTER_D 0x004d71f0
 void InitGridPool() {
+	long goff;
+	long GridPoolSize;
+	int32_t tempSize;
+
 // LINE 370:
 	asm( 
 "	      004d71f0    push ebp"

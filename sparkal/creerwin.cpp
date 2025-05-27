@@ -256,6 +256,13 @@ void CareerWindow::~CareerWindow() {
 
 // FUNCTION: COPTER_D 0x0047e19e
 int32_t CareerWindow::Initialize() {
+	char[256] szFullCityVideoFileName;
+	long lCityLevelString;
+	char[260] szFullCityVideoFilePath;
+	long lCityNameString;
+	class basic_string<char> sText;
+	int32_t nFullStringID;
+
 // LINE 101:
 	asm( 
 "	      0047e19e    push ebp"
@@ -1455,6 +1462,9 @@ int32_t CareerWindow::Initialize() {
 
 // FUNCTION: COPTER_D 0x0047f391
 int32_t CareerWindow::CreateImage(int32_t __formal) {
+	class basic_string<char> sImagePath;
+	class basic_string<char> sImageFile;
+
 // LINE 201:
 	asm( 
 "	      0047f391    push ebp"
@@ -1808,6 +1818,9 @@ void CareerWindow::DestroyImage() {
 
 // FUNCTION: COPTER_D 0x0047f7cf
 int32_t CareerWindow::DrawSelf() {
+	int32_t i;
+	unsigned long nErrorCode;
+
 // LINE 232:
 	asm( 
 "	      0047f7cf    push ebp"
@@ -1905,6 +1918,11 @@ int32_t CareerWindow::DrawSelf() {
 
 // FUNCTION: COPTER_D 0x0047f8ab
 void CareerWindow::DrawCitySelection() {
+	class MPoint[4][3] ptDestinations;
+	int32_t j;
+	int32_t i;
+	class MRect[4][3] rectSources;
+
 // LINE 256:
 	asm( 
 "	      0047f8ab    push ebp"
@@ -2123,6 +2141,8 @@ long CareerWindow::DoKeyDown(long lKey, char chModifiers) {
 
 // FUNCTION: COPTER_D 0x0047fb14
 long CareerWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nButton) {
+	int32_t i;
+
 // LINE 296:
 	asm( 
 "	      0047fb14    push ebp"
@@ -2252,6 +2272,8 @@ long CareerWindow::DoCursorDown(long nCursorX, long nCursorY, unsigned long nBut
 
 // FUNCTION: COPTER_D 0x0047fc47
 long CareerWindow::DoCursorMove(long nCursorX, long nCursorY) {
+	int32_t i;
+
 // LINE 321:
 	asm( 
 "	      0047fc47    push ebp"
@@ -2566,6 +2588,10 @@ long CareerWindow::SetCurrentCitySelection(long lNewCitySelection) {
 
 // FUNCTION: COPTER_D 0x0047ff29
 void CareerWindow::GetCoordinatesForCitySelections(class MPoint[4]* ptDestinations, class MRect[4]* rectSources) {
+	class CareerWindow::CitySelectionFrame lowerLeft;
+	class CareerWindow::CitySelectionFrame upperLeft;
+	class CareerWindow::CitySelectionFrame upperRight;
+
 // LINE 383:
 	asm( 
 "	      0047ff29    push ebp"
@@ -2987,6 +3013,8 @@ void CareerWindow::CitySelectionFrame::CitySelectionFrame(int32_t b_Left, int32_
 
 // FUNCTION: COPTER_D 0x0048049d
 void CareerWindow::CitySelectionFrame::FillDestinationPoints(class MPoint* ptDest) {
+	int32_t nN;
+
 // LINE 426:
 	asm( 
 "	      0048049d    push ebp"
@@ -3037,6 +3065,8 @@ void CareerWindow::CitySelectionFrame::FillDestinationPoints(class MPoint* ptDes
 
 // FUNCTION: COPTER_D 0x004804f7
 void CareerWindow::CitySelectionFrame::FillSourceRects(class MRect* rectSrc) {
+	int32_t nN;
+
 // LINE 434:
 	asm( 
 "	      004804f7    push ebp"

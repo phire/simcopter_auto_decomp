@@ -1,6 +1,8 @@
 // Function in module: Bodydefs.obj
 // FUNCTION: COPTER_D 0x0055e6f0
 void cBBase::SwizzleBBaseHeader(void * __ptr32 val, long size) {
+	short size1;
+
 // LINE 225:
 	asm( 
 "	      0055e6f0    push ebp"
