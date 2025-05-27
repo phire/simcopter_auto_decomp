@@ -353,6 +353,9 @@ void InitBodiesAndAnimations() {
 "	      0055dbd1    mov eax,[ebp-230h]"
 "	      0055dbd7    mov [ebp-21Ch],eax"
 "	      0055dbdd    jmp near ptr 0055DBF1h"
+	);
+_L39430:
+	asm( 
 "	      0055dbe2    mov ecx,[ebp-230h]"
 "	      0055dbe8    add ecx,4"
 "	      0055dbeb    call 0055FCB0h"
@@ -385,6 +388,9 @@ void InitBodiesAndAnimations() {
 "	      0055dc8a    mov eax,[ebp-22Ch]"
 "	      0055dc90    mov [ebp-228h],eax"
 "	      0055dc96    jmp near ptr 0055DCA7h"
+	);
+_L39423:
+	asm( 
 "	      0055dc9b    mov ecx,[ebp-22Ch]"
 "	      0055dca1    call 0055C2BBh"
 "	      0055dca6    ret"
@@ -396,6 +402,9 @@ void InitBodiesAndAnimations() {
 "	      0055dcc0    mov eax,[ebp-22Ch]"
 "	      0055dcc6    mov [ebp-224h],eax"
 "	      0055dccc    jmp near ptr 0055DCDDh"
+	);
+_L39421:
+	asm( 
 "	      0055dcd1    mov ecx,[ebp-22Ch]"
 "	      0055dcd7    call 0055301Bh"
 "	      0055dcdc    ret"
@@ -460,11 +469,17 @@ void InitBodiesAndAnimations() {
 "	      0055dde1    jmp near ptr 0055DE11h"
 "	      0055dde6    mov eax,[ebp-234h]"
 "	      0055ddec    mov ds:[5BE630h],eax"
+	);
+_L39417:
+	asm( 
 "	      0055ddf1    mov eax,[ebp-220h]"
 "	      0055ddf7    push eax"
 "	      0055ddf8    call 0056A740h"
 "	      0055ddfd    add esp,4"
 "	      0055de00    ret"
+	);
+_L39414:
+	asm( 
 "	      0055de01    mov eax,[ebp-218h]"
 "	      0055de07    push eax"
 "	      0055de08    call 0056A740h"
@@ -614,6 +629,9 @@ void InitBodiesAndAnimations() {
 "	      0055e0a1    mov eax,[ebp-24Ch]"
 "	      0055e0a7    mov [ebp-248h],eax"
 "	      0055e0ad    jmp near ptr 0055E0BEh"
+	);
+_L39460:
+	asm( 
 "	      0055e0b2    mov ecx,[ebp-24Ch]"
 "	      0055e0b8    call 0055301Bh"
 "	      0055e0bd    ret"
@@ -678,11 +696,17 @@ void InitBodiesAndAnimations() {
 "	      0055e1c2    jmp near ptr 0055E1F2h"
 "	      0055e1c7    mov eax,[ebp-250h]"
 "	      0055e1cd    mov ds:[5BF6D4h],eax"
+	);
+_L39456:
+	asm( 
 "	      0055e1d2    mov eax,[ebp-244h]"
 "	      0055e1d8    push eax"
 "	      0055e1d9    call 0056A740h"
 "	      0055e1de    add esp,4"
 "	      0055e1e1    ret"
+	);
+_L39453:
+	asm( 
 "	      0055e1e2    mov eax,[ebp-23Ch]"
 "	      0055e1e8    push eax"
 "	      0055e1e9    call 0056A740h"
@@ -751,6 +775,9 @@ void InitBodiesAndAnimations() {
 // LINE 225:
 	asm( 
 "	      0055e281    jmp near ptr 0055E290h"
+	);
+_L39413:
+	asm( 
 "	      0055e286    mov eax,595FA8h"
 "	      0055e28b    jmp near ptr 0056F590h"
 "	      0055e290    mov eax,[ebp-0Ch]"

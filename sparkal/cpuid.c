@@ -67,6 +67,7 @@ unsigned short wincpuidsupport() {
 "	      0047b665    mov dword ptr [ebp-4],0"
 );
 // LINE 83:
+support:
 	asm( 
 "	      0047b66c    mov ax,[ebp-4]"
 "	      0047b670    jmp near ptr 0047B675h"
@@ -158,6 +159,7 @@ unsigned short wincpuid() {
 "	      0047b707    mov word ptr [ebp-4],4"
 );
 // LINE 133:
+end:
 	asm( 
 "	      0047b70d    cmp dword ptr ds:[638ED4h],0"
 "	      0047b714    je near ptr 0047B72Bh"
@@ -314,6 +316,7 @@ unsigned short wincpuidext() {
 "	      0047b7f2    mov [ebp-14h],ax"
 );
 // LINE 203:
+end_cpuidext:
 	asm( 
 "	      0047b7f6    mov ax,[ebp-14h]"
 );
@@ -473,6 +476,7 @@ unsigned long wincpufeatures() {
 "	      0047b8d9    mov [ebp-10h],edx"
 );
 // LINE 293:
+end_cpuff:
 	asm( 
 "	      0047b8dc    mov eax,[ebp-10h]"
 );
@@ -629,10 +633,12 @@ unsigned short check_clone() {
 "	      0047b96e    jmp near ptr 0047B974h"
 );
 // LINE 393:
+no_clone:
 	asm( 
 "	      0047b973    stc"
 );
 // LINE 394:
+clone:
 	asm( 
 "	      0047b974    pushf"
 );
@@ -743,6 +749,7 @@ unsigned short check_8086() {
 "	      0047b9cf    mov word ptr [ebp-4],0FFFFh"
 );
 // LINE 442:
+end_8086:
 	asm( 
 "	      0047b9d5    push cx"
 );
@@ -835,6 +842,7 @@ unsigned short check_80286() {
 "	      0047ba1e    mov word ptr [ebp-4],0FFFFh"
 );
 // LINE 488:
+end_80286:
 	asm( 
 "	      0047ba24    push bx"
 );
@@ -935,6 +943,7 @@ unsigned short check_80386() {
 "	      0047ba6b    mov word ptr [ebp-4],0FFFFh"
 );
 // LINE 537:
+end_80386:
 	asm( 
 "	      0047ba71    push ecx"
 );
@@ -1129,6 +1138,7 @@ unsigned short check_IDProc() {
 "	      0047bb52    mov [ebp-8],ax"
 );
 // LINE 611:
+end_IDProc:
 	asm( 
 "	      0047bb56    mov ax,[ebp-8]"
 );

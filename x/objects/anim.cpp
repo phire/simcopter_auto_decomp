@@ -172,6 +172,9 @@ void cCopterAnim::InstallArrayPointers(unsigned short expectondisk) {
 "	      0056743f    mov eax,[ebp-4Ch]"
 "	      00567442    mov [ebp-28h],eax"
 "	      00567445    jmp near ptr 00567453h"
+	);
+_L31083:
+	asm( 
 "	      0056744a    mov ecx,[ebp-4Ch]"
 "	      0056744d    call 005679EBh"
 "	      00567452    ret"
@@ -195,6 +198,9 @@ void cCopterAnim::InstallArrayPointers(unsigned short expectondisk) {
 "	      005674a0    mov eax,[ebp-58h]"
 "	      005674a3    mov ecx,[ebp-5Ch]"
 "	      005674a6    mov [ecx+28h],eax"
+	);
+_L31071:
+	asm( 
 "	      005674a9    mov eax,[ebp-24h]"
 "	      005674ac    push eax"
 "	      005674ad    call 0056A740h"
@@ -204,6 +210,9 @@ void cCopterAnim::InstallArrayPointers(unsigned short expectondisk) {
 // LINE 47:
 	asm( 
 "	      005674b6    jmp near ptr 005674C5h"
+	);
+_L31070:
+	asm( 
 "	      005674bb    mov eax,5961B0h"
 "	      005674c0    jmp near ptr 0056F590h"
 "	      005674c5    mov eax,[ebp-0Ch]"

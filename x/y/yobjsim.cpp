@@ -11928,6 +11928,7 @@ enum TreeSim::ReturnCode cYObject::TryExpression(struct YObjLang::AttrParam* att
 "	      0055bfa4    mov word ptr [eax],9E58h"
 );
 // LINE 2098:
+tree_error:
 	asm( 
 "	      0055bfa9    mov eax,[ebp-4]"
 "	      0055bfac    jmp near ptr 0055BFE8h"
@@ -12225,6 +12226,7 @@ short cYObject::InterpValue(short ownerField, short dataField, short ** dataRef)
 "	      0055c242    jmp near ptr 0055C25Eh"
 );
 // LINE 2161:
+tree_error:
 	asm( 
 "	      0055c247    xor ax,ax"
 "	      0055c24a    jmp near ptr 0055C25Eh"

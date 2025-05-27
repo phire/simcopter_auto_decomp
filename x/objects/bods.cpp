@@ -1737,6 +1737,9 @@ void  cCopterBody::InstallArrayPointers(unsigned short expectondisk) {
 "	      00561d99    mov eax,[ebp-50h]"
 "	      00561d9c    mov [ebp-2Ch],eax"
 "	      00561d9f    jmp near ptr 00561DADh"
+	);
+_L31451:
+	asm( 
 "	      00561da4    mov ecx,[ebp-50h]"
 "	      00561da7    call 005679EBh"
 "	      00561dac    ret"
@@ -1760,6 +1763,9 @@ void  cCopterBody::InstallArrayPointers(unsigned short expectondisk) {
 "	      00561dfd    mov eax,[ebp-5Ch]"
 "	      00561e00    mov ecx,[ebp-9Ch]"
 "	      00561e06    mov [ecx+28h],eax"
+	);
+_L31439:
+	asm( 
 "	      00561e09    mov eax,[ebp-28h]"
 "	      00561e0c    push eax"
 "	      00561e0d    call 0056A740h"
@@ -1884,6 +1890,9 @@ void  cCopterBody::InstallArrayPointers(unsigned short expectondisk) {
 "	      00561ffd    mov eax,[ebp-8Ch]"
 "	      00562003    mov [ebp-68h],eax"
 "	      00562006    jmp near ptr 00562017h"
+	);
+_L31498:
+	asm( 
 "	      0056200b    mov ecx,[ebp-8Ch]"
 "	      00562011    call 005679EBh"
 "	      00562016    ret"
@@ -1907,6 +1916,9 @@ void  cCopterBody::InstallArrayPointers(unsigned short expectondisk) {
 "	      00562067    mov eax,[ebp-98h]"
 "	      0056206d    mov ecx,[ebp-9Ch]"
 "	      00562073    mov [ecx+2Ch],eax"
+	);
+_L31486:
+	asm( 
 "	      00562076    mov eax,[ebp-64h]"
 "	      00562079    push eax"
 "	      0056207a    call 0056A740h"
@@ -1922,6 +1934,9 @@ void  cCopterBody::InstallArrayPointers(unsigned short expectondisk) {
 // LINE 2297:
 	asm( 
 "	      00562090    jmp near ptr 0056209Fh"
+	);
+_L31438:
+	asm( 
 "	      00562095    mov eax,596170h"
 "	      0056209a    jmp near ptr 0056F590h"
 "	      0056209f    mov eax,[ebp-0Ch]"

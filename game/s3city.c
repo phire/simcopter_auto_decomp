@@ -14917,6 +14917,7 @@ void S3CityDyObjFixup(struct _CELL_INFO** endcptrptr, struct _CELL_INFO*** endca
 "	      00511a54    jmp near ptr 0051173Fh"
 );
 // LINE 4181:
+next_dyobj:
 	asm( 
 "	      00511a59    mov eax,[ebp-0Ch]"
 "	      00511a5c    movsx eax,word ptr [eax+0Ch]"

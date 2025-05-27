@@ -4917,6 +4917,7 @@ void BoatClass::BeamBoatToWithinCameraRange() {
 "	      00529e1d    jmp near ptr 00529EE1h"
 );
 // LINE 2323:
+foundCell:
 	asm( 
 "	      00529e22    mov dword ptr [ebp-34h],2"
 "	      00529e29    jmp near ptr 00529E31h"
@@ -5683,6 +5684,7 @@ int32_t BoatClass::BeamBoatToLocation(long mapx, long mapy) {
 "	      0052a6ef    jmp near ptr 0052A815h"
 );
 // LINE 2504:
+foundCell:
 	asm( 
 "	      0052a6f4    mov dword ptr [ebp-28h],2"
 "	      0052a6fb    jmp near ptr 0052A703h"

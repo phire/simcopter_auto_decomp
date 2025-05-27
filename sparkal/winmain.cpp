@@ -240,6 +240,7 @@ int32_t WinMain(void * __ptr32 hInstance, void * __ptr32 __formal, char * Comman
 "	      0041fa6c    jmp near ptr 0041F9DBh"
 );
 // LINE 89:
+Cleanup:
 	asm( 
 "	      0041fa71    mov eax,ds:[598580h]"
 "	      0041fa76    mov eax,[eax]"

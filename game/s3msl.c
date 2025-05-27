@@ -3725,6 +3725,7 @@ void S3MissileDriver() {
 "	      00520818    jmp near ptr 0051FF27h"
 );
 // LINE 1168:
+debris_unlink_next:
 	asm( 
 "	      0052081d    dec word ptr ds:[5B72D4h]"
 );
@@ -4508,6 +4509,7 @@ void S3MissileDriver() {
 "	      00520f4f    jmp near ptr 005208C6h"
 );
 // LINE 1353:
+teargas_unlink_next:
 	asm( 
 "	      00520f54    dec word ptr ds:[5B72D0h]"
 );
@@ -4957,6 +4959,7 @@ void S3MissileDriver() {
 "	      0052134a    jmp near ptr 00520FC1h"
 );
 // LINE 1463:
+missile_unlink_next:
 	asm( 
 "	      0052134f    dec word ptr ds:[5B72C8h]"
 );
@@ -5377,6 +5380,7 @@ void S3MissileDriver() {
 "	      00521703    jmp near ptr 005213BCh"
 );
 // LINE 1562:
+laser_unlink_next:
 	asm( 
 "	      00521708    dec word ptr ds:[5B72DCh]"
 );
@@ -5978,6 +5982,7 @@ void S3MissileDriver() {
 "	      00521cbc    jmp near ptr 00521775h"
 );
 // LINE 1698:
+bullet_unlink_next:
 	asm( 
 "	      00521cc1    dec word ptr ds:[5B72CCh]"
 );
@@ -6930,6 +6935,7 @@ int32_t S3MissileCollisionCheck(struct _MISSILE_DATA* md, int32_t dist, struct _
 "	      005224e7    jmp near ptr 0052219Fh"
 );
 // LINE 1992:
+skip_dynamic_objs:
 	asm( 
 "	      005224ec    mov eax,[ebp+10h]"
 "	      005224ef    mov eax,[eax+0Ch]"

@@ -1870,6 +1870,7 @@ int32_t VRGetObjAlt(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * flag
 "	      004d3069    mov [ebp-1Ch],eax"
 );
 // LINE 994:
+next_face:
 	asm( 
 "	      004d306c    mov eax,[ebp-8]"
 "	      004d306f    mov eax,[eax]"
@@ -1880,6 +1881,7 @@ int32_t VRGetObjAlt(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * flag
 "	      004d3074    jmp near ptr 004D2BCBh"
 );
 // LINE 1003:
+do_2d_face:
 	asm( 
 "	      004d3079    mov eax,[ebp-8]"
 "	      004d307c    mov eax,[eax+1Ch]"
@@ -2795,6 +2797,7 @@ int32_t VRGetObjAlt2(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * fla
 "	      004d37b1    mov [ebp-1Ch],eax"
 );
 // LINE 1336:
+next_face:
 	asm( 
 "	      004d37b4    mov eax,[ebp-8]"
 "	      004d37b7    mov eax,[eax]"
@@ -2805,6 +2808,7 @@ int32_t VRGetObjAlt2(int32_t obj, int32_t x, int32_t y, int32_t z, int32_t * fla
 "	      004d37bc    jmp near ptr 004D328Ah"
 );
 // LINE 1345:
+do_2d_face:
 	asm( 
 "	      004d37c1    mov eax,[ebp-8]"
 "	      004d37c4    mov eax,[eax+1Ch]"
@@ -3245,6 +3249,7 @@ int32_t VRGetObjZdist(int32_t obj, int32_t x, int32_t y, int32_t dir, int32_t di
 "	      004d3b24    jmp near ptr 004D3B3Eh"
 );
 // LINE 1506:
+next_face:
 	asm( 
 "	      004d3b29    mov eax,[ebp-4]"
 "	      004d3b2c    mov eax,[eax]"
@@ -3520,6 +3525,7 @@ int32_t VRGetObjXdist(int32_t obj, int32_t y, int32_t z, int32_t dir, int32_t di
 "	      004d3d36    jmp near ptr 004D3D50h"
 );
 // LINE 1608:
+next_face:
 	asm( 
 "	      004d3d3b    mov eax,[ebp-4]"
 "	      004d3d3e    mov eax,[eax]"
@@ -3662,6 +3668,7 @@ void VRObjResize2dFace(int32_t obj, int32_t width, int32_t height) {
 "	      004d3e0f    mov [ecx+4],eax"
 );
 // LINE 1670:
+next_face:
 	asm( 
 "	      004d3e12    mov eax,[ebp-8]"
 "	      004d3e15    mov eax,[eax]"
@@ -4418,6 +4425,7 @@ int32_t VRAssignTextureResToGroup(struct VRResource* g, struct VRResource* b) {
 "	      004d430c    add esp,8"
 );
 // LINE 1919:
+next_face:
 	asm( 
 "	      004d430f    mov eax,[ebp-2Ch]"
 "	      004d4312    push eax"

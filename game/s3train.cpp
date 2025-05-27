@@ -10594,6 +10594,7 @@ void TrainClass::BeamToWithinCameraRange() {
 "	      0053385c    jmp near ptr 005339ABh"
 );
 // LINE 3941:
+foundCell:
 	asm( 
 "	      00533861    mov eax,[ebp-54h]"
 "	      00533864    mov dword ptr [eax+0Dh],0"
@@ -11128,6 +11129,7 @@ int32_t TrainClass::BeamToLocation(long mapx, long mapy) {
 "	      00533d1b    jmp near ptr 00533E6Fh"
 );
 // LINE 4106:
+foundCell:
 	asm( 
 "	      00533d20    mov eax,[ebp-48h]"
 "	      00533d23    mov dword ptr [eax+0Dh],0"

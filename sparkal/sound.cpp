@@ -375,6 +375,7 @@ int32_t SoundSystem::Initialize(void * __ptr32 hWindow) {
 "	      0042e22d    jmp near ptr 0042E2A0h"
 );
 // LINE 201:
+ERROR_CLEANUP:
 	asm( 
 "	      0042e232    mov eax,[ebp-20h]"
 "	      0042e235    mov eax,[eax+8]"
@@ -424,6 +425,7 @@ int32_t SoundSystem::Initialize(void * __ptr32 hWindow) {
 "	      0042e29d    mov [ecx+10h],eax"
 );
 // LINE 216:
+END_OF_ROUTINE:
 	asm( 
 "	      0042e2a0    mov eax,[ebp-4]"
 "	      0042e2a3    jmp near ptr 0042E2C6h"
@@ -2963,6 +2965,7 @@ int32_t DigitalSound::LoadFromFile() {
 "	      0042f95d    jmp near ptr 0042F984h"
 );
 // LINE 822:
+ERROR_DONE_ROUTINE:
 	asm( 
 "	      0042f962    mov eax,[ebp-74h]"
 "	      0042f965    mov eax,[eax]"
@@ -3191,6 +3194,7 @@ int32_t DigitalSound::CreateSoundBuffer(struct _DSBUFFERDESC* dsNewBufferDescrip
 "	      0042fae4    jmp near ptr 0042FB23h"
 );
 // LINE 919:
+ERROR_IN_ROUTINE:
 	asm( 
 "	      0042fae9    mov eax,[ebp-24h]"
 "	      0042faec    cmp dword ptr [eax+52h],0"
@@ -6869,6 +6873,7 @@ void DigitalSound::ProcessStreamingBufferTimerCallback() {
 "	      004317e4    sub [ecx+34h],eax"
 );
 // LINE 2030:
+END_OF_FUNCTION:
 	asm( 
 "	      004317e7    mov eax,[ebp-28h]"
 "	      004317ea    mov eax,[eax+72h]"

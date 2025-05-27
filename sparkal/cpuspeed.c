@@ -479,6 +479,7 @@ struct FREQ_INFO cpuspeed(int32_t clocks) {
 "	      00447eb9    mov bx,0FA0h"
 );
 // LINE 344:
+loop1:
 	asm( 
 "	      00447ebd    bsf ecx,eax"
 );

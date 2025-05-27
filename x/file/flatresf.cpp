@@ -288,6 +288,7 @@ void FlatResFile::LoadResMap(void * __ptr32* newMap, short * numTypes, long * da
 "	      00552dda    jmp near ptr 00552E4Ah"
 );
 // LINE 147:
+error:
 	asm( 
 "	      00552ddf    mov eax,[ebp+8]"
 "	      00552de2    cmp dword ptr [eax],0"
@@ -660,9 +661,15 @@ void FlatResFile::~FlatResFile() {
 "	      0055306c    mov dword ptr [ebp-4],0FFFFFFFFh"
 "	      00553073    call 0055307Dh"
 "	      00553078    jmp near ptr 00553090h"
+	);
+_L27084:
+	asm( 
 "	      0055307d    mov ecx,[ebp-10h]"
 "	      00553080    call 0055C2BBh"
 "	      00553085    ret"
+	);
+_L27083:
+	asm( 
 "	      00553086    mov eax,595F30h"
 "	      0055308b    jmp near ptr 0056F590h"
 "	      00553090    mov eax,[ebp-0Ch]"
@@ -1763,9 +1770,15 @@ void FlatResFile::GetString(unsigned char * str, short resID, short index) {
 "	      00553a50    mov dword ptr [ebp-4],0FFFFFFFFh"
 "	      00553a57    call 00553A61h"
 "	      00553a5c    jmp near ptr 00553A74h"
+	);
+_L27094:
+	asm( 
 "	      00553a61    lea ecx,[ebp-1Ch]"
 "	      00553a64    call 00565BBCh"
 "	      00553a69    ret"
+	);
+_L27093:
+	asm( 
 "	      00553a6a    mov eax,595F58h"
 "	      00553a6f    jmp near ptr 0056F590h"
 "	      00553a74    mov eax,[ebp-0Ch]"
@@ -2204,12 +2217,16 @@ long  ResMap::Get(class FlatResFile* fromFile) {
 "	      00553da1    jmp near ptr 00553DBDh"
 );
 // LINE 779:
+_L27102:
 	asm( 
 "	      00553da6    mov eax,[ebp-24h]"
 "	      00553da9    push eax"
 "	      00553daa    call 0056A740h"
 "	      00553daf    add esp,4"
 "	      00553db2    ret"
+	);
+_L27101:
+	asm( 
 "	      00553db3    mov eax,595F80h"
 "	      00553db8    jmp near ptr 0056F590h"
 "	      00553dbd    mov ecx,[ebp-0Ch]"
@@ -2638,6 +2655,7 @@ void  ResMap::LoadEntry(struct ResMap::Entry* entry, class FlatResFile* file, un
 "	      00554144    mov [ebp-8],eax"
 );
 // LINE 876:
+done:
 // Block end:
 	asm( 
 "	      00554147    mov eax,[ebp+8]"

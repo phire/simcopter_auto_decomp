@@ -217,6 +217,7 @@ int32_t WaveOpenFile(char * pszFileName, void * __ptr32* phmmioIn, struct tWAVEF
 "	      0048ed55    jmp near ptr 0048ED77h"
 );
 // LINE 132:
+ERROR_READING_WAVE:
 	asm( 
 "	      0048ed5a    cmp dword ptr [ebp-1Ch],0"
 "	      0048ed5e    je near ptr 0048ED77h"
@@ -233,6 +234,7 @@ int32_t WaveOpenFile(char * pszFileName, void * __ptr32* phmmioIn, struct tWAVEF
 "	      0048ed70    mov dword ptr [ebp-1Ch],0"
 );
 // LINE 138:
+END_OF_ROUTINE:
 	asm( 
 "	      0048ed77    mov eax,[ebp-1Ch]"
 "	      0048ed7a    mov ecx,[ebp+0Ch]"
@@ -314,6 +316,7 @@ int32_t WaveStartDataRead(void * __ptr32* phmmioIn, struct _MMCKINFO* pckIn, str
 "	      0048ee10    mov [ebp-4],eax"
 );
 // LINE 168:
+ERROR_READING_WAVE:
 	asm( 
 "	      0048ee13    mov eax,[ebp-4]"
 "	      0048ee16    jmp near ptr 0048EE20h"
@@ -488,11 +491,13 @@ int32_t WaveReadFile(void * __ptr32 hmmioIn, uint32_t cbRead, unsigned char * pb
 "	      0048ef3b    jmp near ptr 0048EF49h"
 );
 // LINE 235:
+ERROR_CANNOT_READ:
 	asm( 
 "	      0048ef40    mov eax,[ebp+18h]"
 "	      0048ef43    mov dword ptr [eax],0"
 );
 // LINE 238:
+FINISHED_READING:
 	asm( 
 "	      0048ef49    mov eax,[ebp-8]"
 "	      0048ef4c    jmp near ptr 0048EF6Ah"
@@ -700,6 +705,7 @@ int32_t WaveLoadFile(char * pszFileName, uint32_t * cbSize, struct tWAVEFORMATEX
 "	      0048f0b1    jmp near ptr 0048F0D7h"
 );
 // LINE 319:
+ERROR_LOADING:
 	asm( 
 "	      0048f0b6    mov eax,[ebp+14h]"
 "	      0048f0b9    cmp dword ptr [eax],0"
@@ -718,6 +724,7 @@ int32_t WaveLoadFile(char * pszFileName, uint32_t * cbSize, struct tWAVEFORMATEX
 "	      0048f0d1    mov dword ptr [eax],0"
 );
 // LINE 326:
+DONE_LOADING:
 	asm( 
 "	      0048f0d7    cmp dword ptr [ebp-30h],0"
 "	      0048f0db    je near ptr 0048F0F4h"

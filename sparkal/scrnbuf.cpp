@@ -1793,6 +1793,7 @@ int32_t ScreenBuffer::UsePalette(struct SparkalColor* pColors) {
 "	      0049f28c    jmp near ptr 0049F2B5h"
 );
 // LINE 569:
+_L40600:
 	asm( 
 "	      0049f291    mov eax,[ebp-14h]"
 "	      0049f294    mov [ebp-420h],eax"
@@ -1807,6 +1808,8 @@ int32_t ScreenBuffer::UsePalette(struct SparkalColor* pColors) {
 "	      0049f2b4    ret"
 );
 // LINE 571:
+_L37298:
+_L37298:
 	asm( 
 "	      0049f2b5    mov dword ptr [ebp-4],0FFFFFFFFh"
 "	      0049f2bc    mov dword ptr ds:[597268h],0"
@@ -1856,6 +1859,7 @@ int32_t ScreenBuffer::UsePalette(struct SparkalColor* pColors) {
 "	      0049f32b    jmp near ptr 0049F354h"
 );
 // LINE 584:
+_L40602:
 	asm( 
 "	      0049f330    mov eax,[ebp-14h]"
 "	      0049f333    mov [ebp-424h],eax"
@@ -1870,6 +1874,8 @@ int32_t ScreenBuffer::UsePalette(struct SparkalColor* pColors) {
 "	      0049f353    ret"
 );
 // LINE 592:
+_L37305:
+_L37305:
 	asm( 
 "	      0049f354    mov dword ptr [ebp-4],0FFFFFFFFh"
 "	      0049f35b    jmp near ptr 0049F360h"
@@ -1945,6 +1951,7 @@ int32_t ScreenBuffer::UsePalette(struct SparkalColor* pColors) {
 "	      0049f40b    jmp near ptr 0049F41Ah"
 );
 // LINE 611:
+_L40603:
 	asm( 
 "	      0049f410    mov eax,595C58h"
 "	      0049f415    jmp near ptr 0056F590h"

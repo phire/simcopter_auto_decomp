@@ -808,6 +808,7 @@ unsigned short TreeSim::Simulate(long ticks, unsigned short bOnceOnly) {
 "	      0055d19a    jmp near ptr 0055D1BCh"
 );
 // LINE 188:
+tree_error:
 	asm( 
 "	      0055d19f    mov ax,1"
 "	      0055d1a3    jmp near ptr 0055D1BCh"
@@ -978,6 +979,7 @@ char TreeSim::NodeComplete(unsigned short success) {
 "	      0055d2e5    jmp near ptr 0055D2F6h"
 );
 // LINE 231:
+tree_error:
 	asm( 
 "	      0055d2ea    mov al,0FDh"
 "	      0055d2ec    jmp near ptr 0055D2F6h"

@@ -779,6 +779,7 @@ void AppInitThreadStartRoutine(void * __ptr32 pVRAppInitThreadStruct) {
 "	      004bc416    jmp near ptr 004BC42Ah"
 );
 // LINE 171:
+_L48858:
 	asm( 
 "	      004bc41b    mov eax,[ebp-14h]"
 "	      004bc41e    mov dword ptr [eax],0FFFFFFFFh"
@@ -789,6 +790,8 @@ void AppInitThreadStartRoutine(void * __ptr32 pVRAppInitThreadStruct) {
 "	      004bc429    ret"
 );
 // LINE 174:
+_L44245:
+_L44245:
 	asm( 
 "	      004bc42a    mov dword ptr [ebp-4],0FFFFFFFFh"
 "	      004bc431    mov eax,[ebp-14h]"
@@ -797,6 +800,9 @@ void AppInitThreadStartRoutine(void * __ptr32 pVRAppInitThreadStruct) {
 // LINE 178:
 	asm( 
 "	      004bc43b    jmp near ptr 004BC44Ah"
+	);
+_L48859:
+	asm( 
 "	      004bc440    mov eax,595CE0h"
 "	      004bc445    jmp near ptr 0056F590h"
 "	      004bc44a    mov eax,[ebp-0Ch]"

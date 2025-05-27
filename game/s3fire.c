@@ -2023,6 +2023,7 @@ void S3FireDouse(struct _CELL_INFO* cptr, struct Point3d* wloc, int32_t water_ti
 "	      00525560    jmp near ptr 0052561Fh"
 );
 // LINE 777:
+next_obj:
 	asm( 
 "	      00525565    mov eax,[ebp-0Ch]"
 "	      00525568    mov eax,[eax]"
@@ -2033,6 +2034,7 @@ void S3FireDouse(struct _CELL_INFO* cptr, struct Point3d* wloc, int32_t water_ti
 "	      0052556d    jmp near ptr 005252A3h"
 );
 // LINE 786:
+check_dyobjs:
 	asm( 
 "	      00525572    jmp near ptr 0052561Fh"
 );
@@ -3503,6 +3505,7 @@ int32_t S3FireGetAltitude(struct _CELL_INFO* cptr, struct Point3d* loc) {
 "	      00526274    jmp near ptr 0052628Dh"
 );
 // LINE 1008:
+next_obj:
 	asm( 
 "	      00526279    mov eax,[ebp-8]"
 "	      0052627c    mov eax,[eax]"
@@ -4863,6 +4866,7 @@ long S3FireAddToNearest(struct _CELL_INFO* fcptr, struct Point2d* loc) {
 "	      00526cec    jmp near ptr 00526D79h"
 );
 // LINE 1474:
+FoundFire:
 	asm( 
 "	      00526cf1    mov eax,[ebp-30h]"
 "	      00526cf4    mov eax,[eax+0Ch]"
@@ -5161,6 +5165,7 @@ void S3FireDyObjCollisionCheck(struct _FIRE_DATA* fd, long hit_type) {
 "	      00526f6d    add esp,14h"
 );
 // LINE 1590:
+next_dyobj:
 	asm( 
 "	      00526f70    mov eax,[ebp-8]"
 "	      00526f73    movsx eax,word ptr [eax+0Ch]"

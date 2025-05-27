@@ -41,6 +41,9 @@ class cBBase *  cCopterBody::MakeNew(void * __ptr32 h) {
 "	      0055f992    mov eax,[ebp-1Ch]"
 "	      0055f995    mov [ebp-18h],eax"
 "	      0055f998    jmp near ptr 0055F9A6h"
+	);
+_L45526:
+	asm( 
 "	      0055f99d    mov ecx,[ebp-1Ch]"
 "	      0055f9a0    call 0055F2C0h"
 "	      0055f9a5    ret"
@@ -240,12 +243,16 @@ class cBBase *  cCopterBody::MakeNew(void * __ptr32 h) {
 "	      0055fc44    jmp near ptr 0055FC60h"
 );
 // LINE 114:
+_L45522:
 	asm( 
 "	      0055fc49    mov eax,[ebp-14h]"
 "	      0055fc4c    push eax"
 "	      0055fc4d    call 0056A740h"
 "	      0055fc52    add esp,4"
 "	      0055fc55    ret"
+	);
+_L45521:
+	asm( 
 "	      0055fc56    mov eax,5960E0h"
 "	      0055fc5b    jmp near ptr 0056F590h"
 "	      0055fc60    mov ecx,[ebp-0Ch]"

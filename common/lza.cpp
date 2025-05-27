@@ -270,6 +270,7 @@ short LZACompress(class cGZXBitstream* inStream, class cGZXBitstream* outStream,
 "	      004cf273    mov word ptr [ebp-14h],0"
 );
 // LINE 715:
+CompressDone:
 	asm( 
 "	      004cf279    mov eax,[ebp-4]"
 "	      004cf27c    mov [ebp-1Ch],eax"
@@ -2304,6 +2305,7 @@ short LZAExpand(class cGZXBitstream* inStream, class cGZXBitstream* outStream) {
 "	      004d037d    mov [ebp-0Ch],ax"
 );
 // LINE 770:
+ExpandDone:
 	asm( 
 "	      004d0381    mov eax,[ebp-4]"
 "	      004d0384    mov [ebp-14h],eax"

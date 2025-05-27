@@ -1071,6 +1071,7 @@ void  CGameApp::ComposeFrame() {
 "	      00461c5e    jmp near ptr 00461D53h"
 );
 // LINE 345:
+_L64109:
 	asm( 
 "	      00461c63    mov eax,[ebp-248h]"
 "	      00461c69    mov dword ptr [eax+0B4h],2"
@@ -1154,6 +1155,8 @@ void  CGameApp::ComposeFrame() {
 "	      00461d52    ret"
 );
 // LINE 363:
+_L56471:
+_L56471:
 	asm( 
 "	      00461d53    mov dword ptr [ebp-4],0FFFFFFFFh"
 );
@@ -1277,6 +1280,9 @@ void  CGameApp::ComposeFrame() {
 // LINE 391:
 	asm( 
 "	      00461e9c    jmp near ptr 00461EABh"
+	);
+_L64110:
+	asm( 
 "	      00461ea1    mov eax,595C00h"
 "	      00461ea6    jmp near ptr 0056F590h"
 "	      00461eab    mov eax,[ebp-0Ch]"

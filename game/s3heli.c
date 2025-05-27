@@ -10339,6 +10339,7 @@ void S3HeliRopeNextFrame(struct _HELI_DATA* hd, int32_t gralt, struct _CELL_INFO
 "	      004f4fdf    mov [ebp-20h],eax"
 );
 // LINE 3022:
+next_dyobj:
 	asm( 
 "	      004f4fe2    mov eax,[ebp-24h]"
 "	      004f4fe5    movsx eax,word ptr [eax+0Ch]"
@@ -13422,6 +13423,7 @@ void S3HeliTurbulence(struct _HELI_DATA* hd) {
 "	      004f67ca    mov dword ptr [ebp-30h],1"
 );
 // LINE 4369:
+calc_turbulence:
 	asm( 
 "	      004f67d1    call 0056EC50h"
 "	      004f67d6    movsx eax,ax"
@@ -16597,6 +16599,7 @@ int32_t S3HeliDyObjCollisionCheck(struct _HELI_DATA* hd) {
 "	      004f7f2e    mov dword ptr [ebp-4],1"
 );
 // LINE 5190:
+next_dyobj:
 	asm( 
 "	      004f7f35    mov eax,[ebp-8]"
 "	      004f7f38    movsx eax,word ptr [eax+0Ch]"
@@ -16919,6 +16922,7 @@ void S3HeliHitSpiral(long hit_type, struct Point2d* cell, struct _DYOBJ_INST* dy
 "	      004f8153    add esp,14h"
 );
 // LINE 5319:
+next_dyobj:
 	asm( 
 "	      004f8156    mov eax,[ebp-0Ch]"
 "	      004f8159    movsx eax,word ptr [eax+0Ch]"
@@ -17085,6 +17089,7 @@ struct Point2d* S3HeliGetFreePad() {
 "	      004f825b    mov [ebp-10h],eax"
 );
 // LINE 5386:
+contains_a_heli:
 	asm( 
 "	      004f825e    jmp near ptr 004F81D7h"
 );

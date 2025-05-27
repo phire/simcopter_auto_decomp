@@ -4286,6 +4286,7 @@ void PlaneClass::BeamToWithinCameraRange() {
 "	      0052d34d    jmp near ptr 0052D40Ch"
 );
 // LINE 2182:
+foundCell:
 	asm( 
 "	      0052d352    mov dword ptr [ebp-34h],3"
 "	      0052d359    jmp near ptr 0052D361h"

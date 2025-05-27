@@ -767,6 +767,7 @@ void RoadGraph::GetNextGoal(struct Goal* pGoal) {
 "	      0053c444    jmp near ptr 0053C565h"
 );
 // LINE 266:
+IntersectionKludge:
 // Block start:
 	unsigned char yindex;
 	unsigned char x;
@@ -2528,6 +2529,7 @@ int32_t RoadGraph::FindIntersection(struct Goal& goal, unsigned char x, unsigned
 "	      0053d342    jne near ptr 0053D3C7h"
 );
 // LINE 682:
+KlugeFirstStepIsAnIntersection:
 // Block start:
 	int32_t yindex;
 	asm( 

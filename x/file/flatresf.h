@@ -28,9 +28,15 @@ void FlatResFile::FlatResFile() {
 "	      0055e6b8    mov dword ptr [ebp-4],0FFFFFFFFh"
 "	      0055e6bf    mov eax,[ebp-10h]"
 "	      0055e6c2    jmp near ptr 0055E6DAh"
+	);
+_L39766:
+	asm( 
 "	      0055e6c7    mov ecx,[ebp-10h]"
 "	      0055e6ca    call 0055C2BBh"
 "	      0055e6cf    ret"
+	);
+_L39765:
+	asm( 
 "	      0055e6d0    mov eax,596008h"
 "	      0055e6d5    jmp near ptr 0056F590h"
 "	      0055e6da    mov ecx,[ebp-0Ch]"

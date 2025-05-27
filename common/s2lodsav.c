@@ -214,6 +214,7 @@ int32_t S2CityValidate(char * filepath) {
 "	      004c4800    jmp near ptr 004C4722h"
 );
 // LINE 158:
+exit:
 	asm( 
 "	      004c4805    mov eax,[ebp-0Ch]"
 "	      004c4808    push eax"
@@ -1525,6 +1526,7 @@ short S2CityLoad(char * filePath) {
 "	      004c5352    jmp near ptr 004C536Eh"
 );
 // LINE 457:
+badread:
 	asm( 
 "	      004c5357    mov eax,[ebp-118h]"
 "	      004c535d    push eax"
@@ -4245,6 +4247,7 @@ short S2CitySave(char * filePath) {
 "	      004c6ce0    jmp near ptr 004C6CF9h"
 );
 // LINE 1051:
+badwrite:
 	asm( 
 "	      004c6ce5    mov eax,[ebp-4]"
 "	      004c6ce8    push eax"
@@ -5101,6 +5104,7 @@ unsigned short S2CityGameWriteCompressed(struct _iobuf* filNum, long head, char 
 "	      004c730e    jmp near ptr 004C7329h"
 );
 // LINE 1282:
+BadCompWrite:
 	asm( 
 "	      004c7313    mov eax,ds:[63A854h]"
 "	      004c7318    push eax"
@@ -8242,6 +8246,7 @@ short S2CityAlloc() {
 "	      004c91ed    jmp near ptr 004C9209h"
 );
 // LINE 1950:
+alloc_failure:
 	asm( 
 "	      004c91f2    mov eax,ds:[647200h]"
 "	      004c91f7    push eax"

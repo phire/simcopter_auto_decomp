@@ -8025,16 +8025,25 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 // Block end:
 	asm( 
 "	      00549ba6    jmp near ptr 00549BCFh"
+	);
+_L55489:
+	asm( 
 "	      00549bab    mov eax,[ebp-20h]"
 "	      00549bae    push eax"
 "	      00549baf    call 0056A740h"
 "	      00549bb4    add esp,4"
 "	      00549bb7    ret"
+	);
+_L55486:
+	asm( 
 "	      00549bb8    mov eax,[ebp-18h]"
 "	      00549bbb    push eax"
 "	      00549bbc    call 0056A740h"
 "	      00549bc1    add esp,4"
 "	      00549bc4    ret"
+	);
+_L55485:
+	asm( 
 "	      00549bc5    mov eax,595DD0h"
 "	      00549bca    jmp near ptr 0056F590h"
 "	      00549bcf    mov eax,[ebp-0Ch]"
@@ -17799,6 +17808,9 @@ class cAvatar* cAvatar::MakeAvatar() {
 "	      00550965    mov eax,[ebp-34h]"
 "	      00550968    mov [ebp-24h],eax"
 "	      0055096b    jmp near ptr 00550979h"
+	);
+_L56436:
+	asm( 
 "	      00550970    mov ecx,[ebp-34h]"
 "	      00550973    call 005518ADh"
 "	      00550978    ret"
@@ -17821,12 +17833,16 @@ class cAvatar* cAvatar::MakeAvatar() {
 "	      005509a0    jmp near ptr 005509BCh"
 );
 // LINE 2822:
+_L56432:
 	asm( 
 "	      005509a5    mov eax,[ebp-20h]"
 "	      005509a8    push eax"
 "	      005509a9    call 0056A740h"
 "	      005509ae    add esp,4"
 "	      005509b1    ret"
+	);
+_L56431:
+	asm( 
 "	      005509b2    mov eax,595E00h"
 "	      005509b7    jmp near ptr 0056F590h"
 "	      005509bc    mov ecx,[ebp-0Ch]"
@@ -17969,12 +17985,16 @@ short cYObject::MakeNewObject(short type, struct Point3d loc, class Behavior* be
 "	      00550b05    jmp near ptr 00550B21h"
 );
 // LINE 2841:
+_L56449:
 	asm( 
 "	      00550b0a    mov eax,[ebp-18h]"
 "	      00550b0d    push eax"
 "	      00550b0e    call 0056A740h"
 "	      00550b13    add esp,4"
 "	      00550b16    ret"
+	);
+_L56448:
+	asm( 
 "	      00550b17    mov eax,595E30h"
 "	      00550b1c    jmp near ptr 0056F590h"
 "	      00550b21    mov ecx,[ebp-0Ch]"
@@ -18375,13 +18395,22 @@ void cYObject::cYObject(short type, class Behavior* pBehavior, struct Point3d lo
 "	      00550ed9    mov dword ptr [ebp-4],0FFFFFFFFh"
 "	      00550ee0    mov eax,[ebp-14h]"
 "	      00550ee3    jmp near ptr 00550F07h"
+	);
+_L56469:
+	asm( 
 "	      00550ee8    mov ecx,[ebp-14h]"
 "	      00550eeb    add ecx,14h"
 "	      00550eee    call 00560B1Eh"
 "	      00550ef3    ret"
+	);
+_L56468:
+	asm( 
 "	      00550ef4    mov ecx,[ebp-14h]"
 "	      00550ef7    call 0055CC2Ah"
 "	      00550efc    ret"
+	);
+_L56467:
+	asm( 
 "	      00550efd    mov eax,595E58h"
 "	      00550f02    jmp near ptr 0056F590h"
 "	      00550f07    mov ecx,[ebp-0Ch]"
@@ -19348,6 +19377,9 @@ void cYObject::~cYObject() {
 "	      0055197c    mov dword ptr [ebp-4],0FFFFFFFFh"
 "	      00551983    call 005519B5h"
 "	      00551988    jmp near ptr 005519C8h"
+	);
+_L56643:
+	asm( 
 "	      0055198d    cmp dword ptr [ebp-1Ch],0"
 "	      00551991    je near ptr 005519A5h"
 "	      00551997    mov eax,[ebp-1Ch]"
@@ -19358,9 +19390,15 @@ void cYObject::~cYObject() {
 "	      005519ac    mov ecx,[ebp-18h]"
 "	      005519af    call 00560B1Eh"
 "	      005519b4    ret"
+	);
+_L56642:
+	asm( 
 "	      005519b5    mov ecx,[ebp-1Ch]"
 "	      005519b8    call 0055CC2Ah"
 "	      005519bd    ret"
+	);
+_L56641:
+	asm( 
 "	      005519be    mov eax,595E88h"
 "	      005519c3    jmp near ptr 0056F590h"
 "	      005519c8    mov eax,[ebp-0Ch]"

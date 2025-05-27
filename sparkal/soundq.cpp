@@ -2692,6 +2692,7 @@ int32_t SoundQueue::GetMutex(unsigned long lTimeoutValue) {
 "	      0042212a    jmp near ptr 0042212Fh"
 );
 // LINE 435:
+WeDidNotGetIt:
 	asm( 
 "	      0042212f    cmp dword ptr [ebp+8],0"
 "	      00422133    je near ptr 00422232h"

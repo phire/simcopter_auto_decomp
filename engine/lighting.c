@@ -987,6 +987,7 @@ void VRObjSetShading(int32_t obj) {
 "	      004d93ba    mov [ecx+24h],eax"
 );
 // LINE 461:
+next_face:
 	asm( 
 "	      004d93bd    mov eax,[ebp-30h]"
 "	      004d93c0    push eax"
@@ -1222,6 +1223,7 @@ void VRDyObjSetShading(int32_t obj, int32_t[4][4]* tmat) {
 "	      004d9577    mov [ecx+24h],eax"
 );
 // LINE 539:
+next_face:
 	asm( 
 "	      004d957a    mov eax,[ebp-10h]"
 "	      004d957d    mov eax,[eax]"
@@ -1688,6 +1690,7 @@ void VRObjSetGouraudShade(struct ObjectHdr* oh, struct Point3d* vnorms) {
 "	      004d98f0    jmp near ptr 004D978Ah"
 );
 // LINE 681:
+next_face:
 	asm( 
 "	      004d98f5    mov eax,[ebp-14h]"
 "	      004d98f8    mov eax,[eax]"

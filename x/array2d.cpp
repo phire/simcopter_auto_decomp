@@ -2226,10 +2226,14 @@ unsigned short _cArray::Resize(long newxSize, long newySize, char zeropad) {
 "	      00568850    jmp near ptr 00568868h"
 );
 // LINE 490:
+_L27257:
 	asm( 
 "	      00568855    lea ecx,[ebp-64h]"
 "	      00568858    call 005679EBh"
 "	      0056885d    ret"
+	);
+_L27256:
+	asm( 
 "	      0056885e    mov eax,5961E0h"
 "	      00568863    jmp near ptr 0056F590h"
 "	      00568868    mov ecx,[ebp-0Ch]"
@@ -3529,11 +3533,17 @@ void _cArray::LoadAllArrays(class ResFile* pFile, unsigned long rType, short ent
 // LINE 760:
 	asm( 
 "	      005692f3    jmp near ptr 0056930Fh"
+	);
+_L27272:
+	asm( 
 "	      005692f8    mov eax,[ebp-3Ch]"
 "	      005692fb    push eax"
 "	      005692fc    call 0056A740h"
 "	      00569301    add esp,4"
 "	      00569304    ret"
+	);
+_L27271:
+	asm( 
 "	      00569305    mov eax,596208h"
 "	      0056930a    jmp near ptr 0056F590h"
 "	      0056930f    mov eax,[ebp-0Ch]"
