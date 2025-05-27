@@ -10044,6 +10044,7 @@ int32_t AutomobileClass::IsThisAnEmergencyVehicle() {
 
 // FUNCTION: COPTER_D 0x00506f6f
 void AutomobileClass::SetHiwayDirection(unsigned short tileType) {
+	 // Switch table at 0x00507464
 	unsigned short tile;
 	enum DirectionTypes[8] validdirs;
 	int32_t i;
@@ -12575,6 +12576,8 @@ enum AutomobileClass::IntersectionTypes AutomobileClass::PickHiwayDir(struct _Gr
 
 // FUNCTION: COPTER_D 0x00508ad4
 void AutomobileClass::MakeAHiwayTurn(enum AutomobileClass::IntersectionTypes intersectionType) {
+	 // Switch table at 0x00508ca6
+
 // LINE 4236:
 	asm( 
 "	      00508ad4    push ebp"
@@ -14726,6 +14729,7 @@ void S3AutoSoundDriver() {
 
 // FUNCTION: COPTER_D 0x00509cf7
 void AutomobileClass::ChangeAutoColor() {
+	 // Switch table at 0x00509ee1
 	int32_t base;
 	int32_t index;
 	struct VRFaceInfo finfo;

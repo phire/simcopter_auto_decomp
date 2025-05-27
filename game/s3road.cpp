@@ -1599,6 +1599,7 @@ int32_t IsThisAnIntersection(long x, long y) {
 
 // FUNCTION: COPTER_D 0x0053964a
 int32_t DoRoadTilesConnect(unsigned short fromTile, unsigned short toTile, enum DirectionTypes CurDir, enum DirectionTypes TestDir) {
+	 // Switch table at 0x00539a7e
 	enum DirectionTypes fromConnections;
 	enum DirectionTypes toConnections;
 

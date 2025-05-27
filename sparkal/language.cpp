@@ -3549,6 +3549,7 @@ int32_t LanguageManager::IsTypefaceLoaded(char * szFaceName) {
 
 // FUNCTION: COPTER_D 0x0042d083
 int32_t LanguageManager::GetCurrentSystemLocale() {
+	 // Switch table at 0x0042d309
 	unsigned short currentLanguageID;
 	unsigned long currentLCID;
 

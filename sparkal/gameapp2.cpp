@@ -564,6 +564,7 @@ void  CGameApp::SavePreferences() {
 
 // FUNCTION: COPTER_D 0x00461629
 unsigned long  CGameApp::TickGame() {
+	static const long lFramesSinceLastSecond = { /* <data@0x00599294> */ };
 	long lElapsedMilliSeconds;
 
 // LINE 218:
@@ -1287,7 +1288,10 @@ void  CGameApp::ComposeFrame() {
 
 // FUNCTION: COPTER_D 0x00461eb9
 void  CGameApp::ComposePlayFrame() {
+	static const long lThisLoopTickCount = { /* <data@0x0059929c> */ };
 	long lBuildingID;
+	static const long lLastLoopTickCount = { /* <data@0x00599298> */ };
+	static const long lFrameCount = { /* <data@0x005992a0> */ };
 
 // LINE 400:
 	asm( 

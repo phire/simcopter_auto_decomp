@@ -1015,6 +1015,11 @@ void CriminalEvaderCarClass::AdjustSpeed() {
 
 // FUNCTION: COPTER_D 0x00535202
 int32_t CriminalEvaderCarClass::NearToBuilding() {
+	 // Switch table at 0x00535675
+	 // Switch table at 0x0053557c
+	 // Switch table at 0x005354c9
+	 // Switch table at 0x005353dc
+	 // Switch table at 0x005352c5
 	struct _GridCoordinates scanLoc;
 	class SpiralScan scan;
 

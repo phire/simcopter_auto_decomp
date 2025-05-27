@@ -1916,6 +1916,7 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 	int32_t pathFound;
 	struct Goal destGoal2;
 	class EmergencyVehicleClass* availableVehicle;
+	static const class DigitalSound errorMsgSound = { /* <data@0x006351d0> */ };
 	struct _StationHeapStruct stationHeapStruct;
 	struct Goal result;
 	struct _RGIndex startVertex;

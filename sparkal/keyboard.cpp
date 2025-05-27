@@ -425,7 +425,9 @@ char Keyboard::GetCurrentModifierState() {
 
 // FUNCTION: COPTER_D 0x00431f1f
 char Keyboard::ConvertKeyToCharacter(unsigned char chKey, unsigned char chModifiers) {
+	static const char[11] chExtraArray = { /* <data@0x00598360> */ };
 	char chIndex;
+	static const char[10] chNumberArray = { /* <data@0x00598350> */ };
 
 // LINE 165:
 	asm( 

@@ -2831,6 +2831,8 @@ void InventoryWindow::LoadHotSpots() {
 
 // FUNCTION: COPTER_D 0x004aa656
 long InventoryWindow::GetColumnStartPixel(long lColumn) {
+	static const const long[6] lColumnStart = { /* <data@0x00591810> */ };
+
 // LINE 330:
 	asm( 
 "	      004aa656    push ebp"
@@ -2871,6 +2873,8 @@ long InventoryWindow::GetColumnStartPixel(long lColumn) {
 
 // FUNCTION: COPTER_D 0x004aa693
 long InventoryWindow::GetRowStartPixel(long lRow) {
+	static const const long[11] lRowStart = { /* <data@0x00591828> */ };
+
 // LINE 344:
 	asm( 
 "	      004aa693    push ebp"
@@ -2911,6 +2915,9 @@ long InventoryWindow::GetRowStartPixel(long lRow) {
 
 // FUNCTION: COPTER_D 0x004aa6d0
 void InventoryWindow::GetEquipmentTextPosition(long lEquipmentIndex, class MPoint& ptEquipment) {
+	static const const long[5] lXPositions = { /* <data@0x00591858> */ };
+	static const const long[5] lYPositions = { /* <data@0x00591870> */ };
+
 // LINE 359:
 	asm( 
 "	      004aa6d0    push ebp"

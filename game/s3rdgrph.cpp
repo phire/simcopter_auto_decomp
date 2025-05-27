@@ -3196,6 +3196,8 @@ int32_t RoadGraph::IsThisADeadEnd(enum DirIndex2 currentDir, unsigned char x, un
 
 // FUNCTION: COPTER_D 0x0053d9d2
 void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
+	 // Switch table at 0x0053e04e
+	 // Switch table at 0x0053dd66
 	int32_t stepSize;
 	int32_t Offset;
 	struct Edge* pEdge;
@@ -3925,6 +3927,7 @@ void RoadGraph::FindEdges(int32_t x, int32_t y, struct RGVertex* pRGV) {
 
 // FUNCTION: COPTER_D 0x0053e305
 void RoadGraph::FindNumRoadElements(struct RGVertex* pRGV, struct Edge* pEdge, enum DirIndex2 currentDir, unsigned char x, unsigned char y, int32_t fDeadEnd) {
+	 // Switch table at 0x0053e75f
 	int32_t repeatCount;
 	enum DirIndex2 returnStatus;
 	enum DirIndex2 returnDir;
@@ -5123,6 +5126,14 @@ enum DirIndex2 RoadGraph::WhatDirAmIConnectedTo(enum DirIndex2 currentDir, enum 
 
 // FUNCTION: COPTER_D 0x0053eed6
 void RoadGraph::ConnectHiwayRamp(int32_t x, int32_t y, unsigned short RampTile) {
+	 // Switch table at 0x005403b8
+	 // Switch table at 0x00540119
+	 // Switch table at 0x0053fe7b
+	 // Switch table at 0x0053fbde
+	 // Switch table at 0x0053f940
+	 // Switch table at 0x0053f69d
+	 // Switch table at 0x0053f3fb
+	 // Switch table at 0x0053f158
 	unsigned char yindex;
 
 // LINE 1096:

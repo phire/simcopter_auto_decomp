@@ -4762,6 +4762,7 @@ void cYObject::StartForScurkID(enum PersonType persontype, enum MissionType miss
 
 // FUNCTION: COPTER_D 0x00547440
 void cYObject::StartScurkPeople(short cellx, short celly) {
+	 // Switch table at 0x00547907
 	short scurkID;
 
 // LINE 778:
@@ -11623,6 +11624,7 @@ void cYObject::SetSoundChannel(short soundchannel) {
 
 // FUNCTION: COPTER_D 0x0054c1dd
 unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned short playforsure) {
+	 // Switch table at 0x0054c54b
 	int32_t success;
 	short actualSoundChannel;
 	char * soundfile;
@@ -16404,6 +16406,8 @@ void cYObject::SetCellAndLoc(unsigned char x, unsigned char y, int32_t dx, int32
 
 // FUNCTION: COPTER_D 0x0054fe42
 void cYObject::SetMissionType(enum MissionType type) {
+	 // Switch table at 0x0054ff24
+
 // LINE 2570:
 	asm( 
 "	      0054fe42    push ebp"

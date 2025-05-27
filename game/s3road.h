@@ -1,6 +1,8 @@
 // Function in module: S3rdgrph.obj
 // FUNCTION: COPTER_D 0x00541360
 int32_t TimeOfTravelTable(unsigned short t) {
+	 // Switch table at 0x0054150d
+
 // LINE 778:
 	asm( 
 "	      00541360    push ebp"

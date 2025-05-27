@@ -7,6 +7,8 @@
 // Contribution: 1:00117f90-0011d769 Module: 168, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00518f90
 void S3ObjInit() {
+	 // Switch table at 0x00519437
+	 // Switch table at 0x005191e8
 	char[80] msg;
 	int32_t obj;
 	long j;
@@ -12548,6 +12550,22 @@ struct _LZ_INFO* S3ObjGetLandingZone(long tile) {
 
 // FUNCTION: COPTER_D 0x0051da96
 void S3ObjHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _DYOBJ_INST* dyhittee, long mission_id, long xtra_msg) {
+	 // Switch table at 0x0051e624
+	 // Switch table at 0x0051e581
+	 // Switch table at 0x0051e4de
+	 // Switch table at 0x0051e43b
+	 // Switch table at 0x0051e398
+	 // Switch table at 0x0051e2f5
+	 // Switch table at 0x0051e252
+	 // Switch table at 0x0051e1af
+	 // Switch table at 0x0051e10c
+	 // Switch table at 0x0051e069
+	 // Switch table at 0x0051dfc6
+	 // Switch table at 0x0051df23
+	 // Switch table at 0x0051de64
+	 // Switch table at 0x0051ddc1
+	 // Switch table at 0x0051dd1e
+	 // Switch table at 0x0051dc7b
 	long hittee_type;
 
 // LINE 3703:

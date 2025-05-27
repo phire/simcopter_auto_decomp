@@ -3338,6 +3338,7 @@ int32_t DialWindow::CreateImage(int32_t bResizeWindowToFitImage) {
 void DialWindow::DrawCurrentDamage() {
 	int32_t nSourceImageX;
 	int32_t i;
+	static const int32_t[2][6] nDamageArray = { /* <data@0x00598f80> */ };
 	int32_t nDamageInRangeOf0to15;
 
 // LINE 610:
@@ -3750,6 +3751,7 @@ long DialWindow::DoCursorMove(long nCursorX, long nCursorY) {
 int32_t DialWindow::ComposeSelf() {
 	class MPoint ptSpotLightPositionLocalCoordinates;
 	long lStringLength;
+	static const long lFrameCounter = { /* <data@0x00598fb0> */ };
 	class MPoint ptSpotLightBackPositionCoordinates;
 	char[16] szMoneyString;
 
@@ -4755,6 +4757,7 @@ int32_t DialWindow::DoesWindowNeedUpdating() {
 // FUNCTION: COPTER_D 0x0044ba5b
 void DialWindow::SetNewDialPositions() {
 	long lNewFuelLight;
+	static const long lFrameCounter = { /* <data@0x00598fb4> */ };
 	long lNewAltitude;
 
 // LINE 807:
@@ -7710,6 +7713,7 @@ void MapWindow::DestroyImage() {
 // FUNCTION: COPTER_D 0x0044d7cb
 int32_t MapWindow::ComposeSelf() {
 	struct MISSION_DATA* md;
+	static const int32_t lFrameCounter = { /* <data@0x00598fc8> */ };
 	long lNewMissionID;
 
 // LINE 1400:
@@ -9535,6 +9539,8 @@ int32_t EquipmentPanelWindow::DrawSelf() {
 
 // FUNCTION: COPTER_D 0x0044eaa7
 int32_t EquipmentPanelWindow::DoesWindowNeedUpdating() {
+	static const long lFrameCounter = { /* <data@0x00598fdc> */ };
+
 // LINE 1777:
 	asm( 
 "	      0044eaa7    push ebp"

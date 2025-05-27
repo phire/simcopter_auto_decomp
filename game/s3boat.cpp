@@ -1052,6 +1052,8 @@ void BoatClass::ItterateFSM() {
 
 // FUNCTION: COPTER_D 0x00527c7a
 void BoatClass::AdjustSpeed() {
+	static const int32_t speedAdjustor = { /* <data@0x005b73f0> */ };
+
 // LINE 858:
 	asm( 
 "	      00527c7a    push ebp"
@@ -1730,6 +1732,7 @@ int32_t BoatClass::IsBoatOutOfCameraRange() {
 
 // FUNCTION: COPTER_D 0x005281a8
 void BoatClass::SetBoatDirection(unsigned short tileType) {
+	 // Switch table at 0x00528466
 	unsigned short tile;
 	enum DirectionTypes[4] validdirs;
 	int32_t i;

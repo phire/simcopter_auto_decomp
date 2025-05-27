@@ -1972,6 +1972,7 @@ void SkipDelim(class istream& strm) {
 // FUNCTION: COPTER_D 0x004bd27c
 char * ParseMonth(class istream& s) {
 	char c;
+	static const char[12] month = { /* <data@0x006069a8> */ };
 	char * p;
 
 // LINE 547:

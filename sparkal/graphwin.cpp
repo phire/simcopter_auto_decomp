@@ -834,6 +834,7 @@ int32_t GraphicWindowManager::DeleteWindowAndRemoveItsTraces(class GraphicWindow
 
 // FUNCTION: COPTER_D 0x004a1ff2
 int32_t GraphicWindowManager::DeleteAllWindowsInDeletionList() {
+	static const int32_t nReentrancyCount = { /* <data@0x0059a96c> */ };
 	class list<GraphicWindow *>::iterator tempGraphicWindowPtrListIterator;
 
 // LINE 162:

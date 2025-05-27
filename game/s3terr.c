@@ -165,6 +165,7 @@ void S3TerrainInit() {
 
 // FUNCTION: COPTER_D 0x00513e81
 short S3TerrainInitMap() {
+	 // Switch table at 0x00515521
 	short tile;
 	short alt;
 	long y;

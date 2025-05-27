@@ -5081,7 +5081,9 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 // FUNCTION: COPTER_D 0x00479dbb
 void CatalogWindow::DrawCurrentEquipmentSelection() {
 	class MRect rectOutline;
+	static const int32_t nColorDirection = { /* <data@0x00599838> */ };
 	const int32_t nColorArraySize;
+	static const int32_t nColorArrayCurrentIndex = { /* <data@0x00599834> */ };
 	unsigned long[6] lIndexArray;
 
 // LINE 394:

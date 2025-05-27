@@ -2701,6 +2701,8 @@ int32_t TrainClass::FinishedUturn() {
 
 // FUNCTION: COPTER_D 0x0052f41b
 void TrainClass::AdjustSpeed() {
+	static const int32_t speedAdjustor = { /* <data@0x005b7838> */ };
+
 // LINE 1421:
 	asm( 
 "	      0052f41b    push ebp"
@@ -3499,6 +3501,9 @@ int32_t TrainClass::IsTrainOutOfCameraRange() {
 
 // FUNCTION: COPTER_D 0x0052fa85
 void TrainClass::SetTrainDirection(unsigned short tileType) {
+	 // Switch table at 0x00530db4
+	 // Switch table at 0x00530381
+
 // LINE 1722:
 	asm( 
 "	      0052fa85    push ebp"

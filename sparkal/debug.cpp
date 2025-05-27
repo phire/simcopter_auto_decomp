@@ -488,6 +488,8 @@ void CDebugWindow::HandleDebugCommand(char * data) {
 
 // FUNCTION: COPTER_D 0x004228ee
 void CDebugWindow::CDebugWindow() {
+	static const struct class_debugger<CDebugWindow,CDebugWindowhelp_text> help_command = { /* <data@0x005c2900> */ };
+
 // LINE 58:
 	asm( 
 "	      004228ee    push ebp"

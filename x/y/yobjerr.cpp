@@ -7,6 +7,8 @@
 // Contribution: 1:00161500-0016160a Module: 188, 16 byte alignment, code, execute, read, 
 // FUNCTION: COPTER_D 0x00562500
 void cYObject::Error(short errNum) {
+	 // Switch table at 0x005625e6
+
 // LINE 13:
 	asm( 
 "	      00562500    push ebp"

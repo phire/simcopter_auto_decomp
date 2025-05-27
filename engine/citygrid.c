@@ -23,6 +23,7 @@ short VRInitGridObj(long ViewSize) {
 	struct Point3d* v;
 	long * iptr;
 	long plotter;
+	static const int32_t b_FirstTime = { /* <data@0x0059d2d8> */ };
 
 // LINE 121:
 	asm( 
