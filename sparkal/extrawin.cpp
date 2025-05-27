@@ -1439,6 +1439,8 @@ int32_t MessageBoxWindow::Initialize() {
 "	      004514c8    je near ptr 0045157Fh"
 );
 // LINE 141:
+// Block start:
+	class AnimationWindow* tempAnimationWindow;
 	asm( 
 "	      004514ce    push 0A4h"
 "	      004514d3    call 0056A600h"
@@ -1491,6 +1493,7 @@ int32_t MessageBoxWindow::Initialize() {
 "	      0045157a    call 004523DBh"
 );
 // LINE 147:
+// Block end:
 	asm( 
 "	      0045157f    mov eax,[ebp-20F0h]"
 "	      00451585    mov eax,[eax]"

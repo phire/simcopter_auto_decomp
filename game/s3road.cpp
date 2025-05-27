@@ -1024,6 +1024,8 @@ void S3RoadDataInit() {
 "	      00538fd3    jge near ptr 00539256h"
 );
 // LINE 250:
+// Block start:
+	int32_t tType;
 	asm( 
 "	      00538fd9    mov dword ptr [ebp-38h],0"
 "	      00538fe0    jmp near ptr 00538FE8h"
@@ -1248,6 +1250,9 @@ void S3RoadDataInit() {
 // LINE 273:
 	asm( 
 "	      0053924c    jmp near ptr 00538FE5h"
+	);
+// Block end:
+	asm( 
 "	      00539251    jmp near ptr 00538FCCh"
 );
 // LINE 274:

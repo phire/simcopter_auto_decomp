@@ -146,6 +146,8 @@ void * __ptr32 Memory::HAlloc(long size, long state) {
 "	      005547dd    je near ptr 0055483Bh"
 );
 // LINE 172:
+// Block start:
+	unsigned char * p;
 	asm( 
 "	      005547e3    mov eax,[ebp-8]"
 "	      005547e6    push eax"
@@ -189,6 +191,7 @@ void * __ptr32 Memory::HAlloc(long size, long state) {
 "	      00554838    add esp,10h"
 );
 // LINE 183:
+// Block end:
 	asm( 
 "	      0055483b    mov eax,[ebp-8]"
 "	      0055483e    jmp near ptr 00554843h"

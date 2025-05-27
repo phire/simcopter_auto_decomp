@@ -860,6 +860,8 @@ void TrainClass::Itterate() {
 "	      0052e3f1    je near ptr 0052E4E8h"
 );
 // LINE 723:
+// Block start:
+	struct VRview position;
 	asm( 
 "	      0052e3f7    mov eax,[ebp-5Ch]"
 "	      0052e3fa    mov eax,[eax]"
@@ -968,6 +970,7 @@ void TrainClass::Itterate() {
 "	      0052e4e5    add esp,0Ch"
 );
 // LINE 751:
+// Block end:
 	asm( 
 "	      0052e4e8    mov ecx,[ebp-5Ch]"
 "	      0052e4eb    call 0052E534h"
@@ -1342,6 +1345,8 @@ void TrainClass::ItterateFSM() {
 "	      0052e7f4    je near ptr 0052E8C3h"
 );
 // LINE 950:
+// Block start:
+	struct _MISSION_PARMS mp;
 	asm( 
 "	      0052e7fa    mov eax,[ebp-1Ch]"
 "	      0052e7fd    mov eax,[eax+1CDh]"
@@ -1443,6 +1448,7 @@ void TrainClass::ItterateFSM() {
 "	      0052e8be    call 00532518h"
 );
 // LINE 981:
+// Block end:
 	asm( 
 "	      0052e8c3    mov eax,[ebp-1Ch]"
 "	      0052e8c6    mov eax,[eax]"
@@ -6667,6 +6673,8 @@ void TrainClass::UnlinkFromCell(const struct Point2d& point, struct _DYOBJ_INST*
 "	      005312bf    je near ptr 00531331h"
 );
 // LINE 2823:
+// Block start:
+	struct _DYOBJ_INST** dyptrptr;
 	asm( 
 "	      005312c5    mov eax,[ebp-4]"
 "	      005312c8    add eax,10h"
@@ -6720,6 +6728,7 @@ void TrainClass::UnlinkFromCell(const struct Point2d& point, struct _DYOBJ_INST*
 "	      0053132c    jmp near ptr 00531331h"
 );
 // LINE 2843:
+// Block end:
 	asm( 
 "	      00531331    jmp near ptr 00531336h"
 "	      00531336    pop edi"
@@ -9185,6 +9194,8 @@ void TrainClass::AdjustNextPosition() {
 "	      00532c52    je near ptr 0053309Ah"
 );
 // LINE 3481:
+// Block start:
+	enum DirectionTypes connectionType;
 	asm( 
 "	      00532c58    mov eax,[ebp-20h]"
 "	      00532c5b    movsx eax,word ptr [eax+2]"
@@ -9668,6 +9679,7 @@ void TrainClass::AdjustNextPosition() {
 "	      00533097    add esp,8"
 );
 // LINE 3637:
+// Block end:
 	asm( 
 "	      0053309a    jmp near ptr 0053309Fh"
 "	      0053309f    pop edi"
@@ -10429,6 +10441,8 @@ void TrainClass::BeamToWithinCameraRange() {
 "	      00533678    jle near ptr 00533848h"
 );
 // LINE 3911:
+// Block start:
+	unsigned short tile;
 	asm( 
 "	      0053367e    cmp dword ptr [ebp-28h],0"
 "	      00533682    jl near ptr 005336ACh"
@@ -10558,6 +10572,7 @@ void TrainClass::BeamToWithinCameraRange() {
 "	      00533840    add [ebp-2Ch],eax"
 );
 // LINE 3926:
+// Block end:
 	asm( 
 "	      00533843    jmp near ptr 0053366Fh"
 );
@@ -10959,6 +10974,8 @@ int32_t TrainClass::BeamToLocation(long mapx, long mapy) {
 "	      00533b35    jle near ptr 00533D05h"
 );
 // LINE 4075:
+// Block start:
+	unsigned short tile;
 	asm( 
 "	      00533b3b    cmp dword ptr [ebp-1Ch],0"
 "	      00533b3f    jl near ptr 00533B69h"
@@ -11088,6 +11105,7 @@ int32_t TrainClass::BeamToLocation(long mapx, long mapy) {
 "	      00533cfd    add [ebp-20h],eax"
 );
 // LINE 4090:
+// Block end:
 	asm( 
 "	      00533d00    jmp near ptr 00533B2Ch"
 );

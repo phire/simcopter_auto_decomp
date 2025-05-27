@@ -820,6 +820,8 @@ void  CGameApp::ComposeFrame() {
 "	      0046192b    jmp near ptr 00461DD9h"
 );
 // LINE 277:
+// Block start:
+	char[260] szPath;
 	asm( 
 "	      00461930    lea eax,[ebp-118h]"
 "	      00461936    push eax"
@@ -1208,6 +1210,7 @@ void  CGameApp::ComposeFrame() {
 "	      00461dcf    jmp near ptr 00461E25h"
 );
 // LINE 383:
+// Block end:
 	asm( 
 "	      00461dd4    jmp near ptr 00461E25h"
 "	      00461dd9    dec dword ptr [ebp-24Ch]"
@@ -1615,6 +1618,8 @@ void  CGameApp::ComposePlayFrame() {
 "	      00462304    jmp near ptr 004623FBh"
 );
 // LINE 445:
+// Block start:
+	long lEventValue;
 	asm( 
 "	      00462309    mov ecx,[ebp-64h]"
 "	      0046230c    add ecx,0A0h"
@@ -1681,6 +1686,7 @@ void  CGameApp::ComposePlayFrame() {
 "	      004623f6    jmp near ptr 004623FBh"
 );
 // LINE 455:
+// Block end:
 	asm( 
 "	      004623fb    jmp near ptr 0046240Ah"
 );
@@ -2378,6 +2384,9 @@ int  CGameApp::EnterMode(int32_t nMode) {
 "	      00462cb9    jne near ptr 00462FFEh"
 );
 // LINE 549:
+// Block start:
+	static const int32_t bDoneJoystickChangeCheckAlready = { /* <data@0x005992a4> */ };
+	int32_t bCheckForCommandLineCheatCodes;
 	asm( 
 "	      00462cbf    mov dword ptr [ebp-4],0"
 );
@@ -2655,6 +2664,7 @@ int  CGameApp::EnterMode(int32_t nMode) {
 "	      00462ff4    jmp near ptr 00463601h"
 );
 // LINE 609:
+// Block end:
 	asm( 
 "	      00462ff9    jmp near ptr 004635FAh"
 "	      00462ffe    cmp dword ptr [ebp+8],7"
@@ -6280,6 +6290,8 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 "	      004655ab    jne near ptr 004656EFh"
 );
 // LINE 1261:
+// Block start:
+	class basic_string<char> sCheatCodeString;
 	asm( 
 "	      004655b1    push 10h"
 "	      004655b3    call 0056A600h"
@@ -6373,6 +6385,7 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 "	      004656ea    jmp near ptr 00465ED4h"
 );
 // LINE 1266:
+// Block end:
 	asm( 
 "	      004656ef    jmp near ptr 00465ECDh"
 "	      004656f4    cmp dword ptr [ebp+0Ch],7E0h"
@@ -6466,6 +6479,8 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 "	      004657c8    jne near ptr 00465881h"
 );
 // LINE 1282:
+// Block start:
+	long lCurrentCitySelection;
 	asm( 
 "	      004657ce    mov eax,[ebp+8]"
 "	      004657d1    mov eax,[eax+74h]"
@@ -6559,6 +6574,7 @@ int  CGameApp::DoMessage(class GraphicWindow* gwSource, long lWindowID, long lMe
 "	      0046587e    call dword ptr [eax+68h]"
 );
 // LINE 1304:
+// Block end:
 	asm( 
 "	      00465881    mov eax,1"
 "	      00465886    jmp near ptr 00465ED4h"
@@ -7312,6 +7328,8 @@ int  CGameApp::DoMainMenuMessage(class GraphicWindow* gwSource, long lWindowID, 
 "	      00465f49    jne near ptr 00465FBDh"
 );
 // LINE 1475:
+// Block start:
+	char[260] szFilePath;
 	asm( 
 "	      00465f4f    lea eax,[ebp-510h]"
 "	      00465f55    push eax"
@@ -7362,12 +7380,15 @@ int  CGameApp::DoMainMenuMessage(class GraphicWindow* gwSource, long lWindowID, 
 "	      00465fb3    jmp near ptr 004662F3h"
 );
 // LINE 1484:
+// Block end:
 	asm( 
 "	      00465fb8    jmp near ptr 004662E9h"
 "	      00465fbd    cmp dword ptr [ebp+10h],3E9h"
 "	      00465fc4    jne near ptr 004662E9h"
 );
 // LINE 1486:
+// Block start:
+	long lResult;
 	asm( 
 "	      00465fca    mov eax,[ebp+14h]"
 "	      00465fcd    mov eax,[eax]"
@@ -7420,6 +7441,12 @@ int  CGameApp::DoMainMenuMessage(class GraphicWindow* gwSource, long lWindowID, 
 "	      00466049    jne near ptr 00466297h"
 );
 // LINE 1504:
+// Block start:
+	unsigned long nResult;
+	int32_t nFullFilterID;
+	long lFileType;
+	int32_t nFullTitleID;
+	char[260] szFileLoadPath;
 	asm( 
 "	      0046604f    mov al,ds:[599300h]"
 "	      00466054    mov [ebp-618h],al"
@@ -7647,6 +7674,7 @@ int  CGameApp::DoMainMenuMessage(class GraphicWindow* gwSource, long lWindowID, 
 "	      0046628f    call dword ptr [eax+68h]"
 );
 // LINE 1555:
+// Block end:
 	asm( 
 "	      00466292    jmp near ptr 004662DFh"
 "	      00466297    cmp dword ptr [ebp-514h],4"
@@ -7686,6 +7714,7 @@ int  CGameApp::DoMainMenuMessage(class GraphicWindow* gwSource, long lWindowID, 
 "	      004662e4    jmp near ptr 004662F3h"
 );
 // LINE 1564:
+// Block end:
 	asm( 
 "	      004662e9    mov eax,1"
 "	      004662ee    jmp near ptr 004662F3h"
@@ -7763,6 +7792,8 @@ int  CGameApp::DoPlayMenuMessage(class GraphicWindow* gwSource, long lWindowID, 
 "	      0046637a    jne near ptr 0046659Fh"
 );
 // LINE 1585:
+// Block start:
+	long lResult;
 	asm( 
 "	      00466380    mov eax,[ebp+14h]"
 "	      00466383    mov eax,[eax]"
@@ -8030,6 +8061,7 @@ int  CGameApp::DoPlayMenuMessage(class GraphicWindow* gwSource, long lWindowID, 
 "	      00466599    dec dword ptr [eax+0A4h]"
 );
 // LINE 1647:
+// Block end:
 	asm( 
 "	      0046659f    xor eax,eax"
 "	      004665a1    jmp near ptr 004665A6h"

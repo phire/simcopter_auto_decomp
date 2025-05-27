@@ -2445,6 +2445,8 @@ int  CGameApp::DoCheatCode(class basic_string<char>& sCheatCodeString) {
 "	      0043fe4a    jne near ptr 0043FE84h"
 );
 // LINE 398:
+// Block start:
+	struct Point2d* position2d;
 	asm( 
 "	      0043fe50    call 004F81BBh"
 "	      0043fe55    mov [ebp-18h],eax"
@@ -2472,6 +2474,7 @@ int  CGameApp::DoCheatCode(class basic_string<char>& sCheatCodeString) {
 "	      0043fe7d    mov dword ptr [ebp-14h],1"
 );
 // LINE 404:
+// Block end:
 	asm( 
 "	      0043fe84    jmp near ptr 004400E2h"
 "	      0043fe89    jmp near ptr 0043FE8Eh"
@@ -2839,6 +2842,10 @@ int  CGameApp::DoCheatCode(class basic_string<char>& sCheatCodeString) {
 "	      004404ab    je near ptr 0044059Ch"
 );
 // LINE 431:
+// Block start:
+	char[3] szCareerLevel;
+	int32_t nCharsToCopy;
+	int32_t nNewCareerLevel;
 	asm( 
 "	      004404b1    cmp dword ptr ds:[5C2AA0h],2"
 "	      004404b8    jne near ptr 0044059Ch"
@@ -2934,6 +2941,7 @@ int  CGameApp::DoCheatCode(class basic_string<char>& sCheatCodeString) {
 "	      00440599    mov [ebp-0Ch],eax"
 );
 // LINE 449:
+// Block end:
 	asm( 
 "	      0044059c    jmp near ptr 004405A1h"
 "	      004405a1    push 59892Ch"
@@ -3026,6 +3034,11 @@ int  CGameApp::DoCheatCode(class basic_string<char>& sCheatCodeString) {
 "	      0044075b    je near ptr 0044084Dh"
 );
 // LINE 453:
+// Block start:
+	int32_t nNewBucks;
+	int32_t nCharsToCopy;
+	const long lMaxBucks;
+	char[3] szBucks;
 	asm( 
 "	      00440761    mov dword ptr [ebp-2Ch],0C350h"
 );
@@ -3122,11 +3135,15 @@ int  CGameApp::DoCheatCode(class basic_string<char>& sCheatCodeString) {
 "	      0044084a    mov [ebp-0Ch],eax"
 );
 // LINE 482:
+// Block end:
 	asm( 
 "	      0044084d    cmp dword ptr [ebp-0Ch],0"
 "	      00440851    je near ptr 00440B1Ch"
 );
 // LINE 484:
+// Block start:
+	class DigitalSound* tempCheatCodeSound;
+	char[260] szFullPath;
 	asm( 
 "	      00440857    lea eax,[ebp-138h]"
 "	      0044085d    push eax"
@@ -3291,6 +3308,7 @@ int  CGameApp::DoCheatCode(class basic_string<char>& sCheatCodeString) {
 "	      00440b19    call dword ptr [eax+8]"
 );
 // LINE 491:
+// Block end:
 	asm( 
 "	      00440b1c    mov eax,[ebp-1F0h]"
 "	      00440b22    mov eax,[eax]"

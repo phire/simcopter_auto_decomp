@@ -409,6 +409,8 @@ unsigned short TreeSim::Gosub(class Behavior* pTransfer, short * stack, short tr
 "	      0055ce53    jge near ptr 0055CF18h"
 );
 // LINE 86:
+// Block start:
+	struct TreeSim::StackElem* fill;
 	asm( 
 "	      0055ce59    mov eax,[ebp-8]"
 "	      0055ce5c    movsx eax,word ptr [eax+8]"
@@ -501,6 +503,7 @@ unsigned short TreeSim::Gosub(class Behavior* pTransfer, short * stack, short tr
 "	      0055cf13    jmp near ptr 0055CF30h"
 );
 // LINE 104:
+// Block end:
 	asm( 
 "	      0055cf18    push 3E8h"
 "	      0055cf1d    mov eax,[ebp-8]"
@@ -588,6 +591,9 @@ unsigned short TreeSim::Simulate(long ticks, unsigned short bOnceOnly) {
 "	      0055cfa1    jl near ptr 0055D04Fh"
 );
 // LINE 130:
+// Block start:
+	short treeID;
+	short * stackPass;
 	asm( 
 "	      0055cfa7    mov eax,[ebp-20h]"
 "	      0055cfaa    movsx eax,word ptr [eax+8]"
@@ -651,6 +657,7 @@ unsigned short TreeSim::Simulate(long ticks, unsigned short bOnceOnly) {
 "	      0055d044    mov word ptr [ebp-0Ch],1"
 );
 // LINE 142:
+// Block end:
 	asm( 
 "	      0055d04a    jmp near ptr 0055D14Bh"
 );

@@ -145,6 +145,8 @@ void ResourceRCData::ResourceRCData(class ResourceRCData& resData) {
 "	      004478c6    je near ptr 0044790Dh"
 );
 // LINE 60:
+// Block start:
+	uint32_t nAllocationSize;
 	asm( 
 "	      004478cc    mov ecx,[ebp+8]"
 "	      004478cf    call 00447A74h"
@@ -178,6 +180,7 @@ void ResourceRCData::ResourceRCData(class ResourceRCData& resData) {
 "	      00447906    mov dword ptr [eax+0Ch],1"
 );
 // LINE 65:
+// Block end:
 	asm( 
 "	      0044790d    jmp near ptr 00447912h"
 "	      00447912    mov eax,[ebp-8]"
@@ -271,6 +274,8 @@ class ResourceRCData& ResourceRCData::operator=(class ResourceRCData& resData) {
 "	      00447994    je near ptr 004479DBh"
 );
 // LINE 90:
+// Block start:
+	uint32_t nAllocationSize;
 	asm( 
 "	      0044799a    mov ecx,[ebp+8]"
 "	      0044799d    call 00447A74h"
@@ -304,6 +309,7 @@ class ResourceRCData& ResourceRCData::operator=(class ResourceRCData& resData) {
 "	      004479d4    mov dword ptr [eax+0Ch],1"
 );
 // LINE 96:
+// Block end:
 	asm( 
 "	      004479db    mov eax,[ebp-8]"
 "	      004479de    jmp near ptr 004479E3h"

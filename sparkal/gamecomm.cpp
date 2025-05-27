@@ -1495,6 +1495,8 @@ void CGameCommander::ProcessKeyDown(long lKey, struct CommandSystem& commandSyst
 "	      0048be9d    je near ptr 0048BFAAh"
 );
 // LINE 426:
+// Block start:
+	class CharData* currentCharData;
 	asm( 
 "	      0048bea3    mov eax,[ebp+0Ch]"
 "	      0048bea6    mov eax,[eax+0CCh]"
@@ -1616,6 +1618,7 @@ void CGameCommander::ProcessKeyDown(long lKey, struct CommandSystem& commandSyst
 "	      0048bfa0    jmp near ptr 0048BF03h"
 );
 // LINE 447:
+// Block end:
 	asm( 
 "	      0048bfa5    jmp near ptr 0048C058h"
 );
@@ -1735,6 +1738,8 @@ void CGameCommander::ProcessKeyUp(long lKey, struct CommandSystem& commandSystem
 "	      0048c080    je near ptr 0048C18Dh"
 );
 // LINE 488:
+// Block start:
+	class CharData* currentCharData;
 	asm( 
 "	      0048c086    mov eax,[ebp+0Ch]"
 "	      0048c089    mov eax,[eax+0CCh]"
@@ -1856,6 +1861,7 @@ void CGameCommander::ProcessKeyUp(long lKey, struct CommandSystem& commandSystem
 "	      0048c183    jmp near ptr 0048C0E6h"
 );
 // LINE 511:
+// Block end:
 	asm( 
 "	      0048c188    jmp near ptr 0048C207h"
 );
@@ -2319,6 +2325,8 @@ int32_t WriteShortcutPrefsFile(class list<Shortcut>& shortcutList) {
 "	      0048c768    je near ptr 0048C898h"
 );
 // LINE 594:
+// Block start:
+	class list<Shortcut>::iterator tempShortcutListIterator;
 	asm( 
 "	      0048c76e    mov eax,[ebp+8]"
 "	      0048c771    mov eax,[eax]"
@@ -2405,6 +2413,7 @@ int32_t WriteShortcutPrefsFile(class list<Shortcut>& shortcutList) {
 "	      0048c893    jmp near ptr 0048C8B8h"
 );
 // LINE 604:
+// Block end:
 	asm( 
 "	      0048c898    mov dword ptr [ebp-27Ch],0"
 "	      0048c8a2    lea ecx,[ebp-264h]"

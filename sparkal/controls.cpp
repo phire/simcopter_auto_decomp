@@ -15169,6 +15169,9 @@ int32_t ListBoxWindow::RemoveStringAtIndex(long lIndex) {
 "	      004b63d2    jmp near ptr 004B6574h"
 );
 // LINE 2550:
+// Block start:
+	long i;
+	class list<basic_string<char>>::iterator tempStringListIterator;
 	asm( 
 "	      004b63d7    mov dword ptr [ebp-0Ch],0"
 );
@@ -15307,6 +15310,7 @@ int32_t ListBoxWindow::RemoveStringAtIndex(long lIndex) {
 "	      004b656f    jmp near ptr 004B63F9h"
 );
 // LINE 2562:
+// Block end:
 	asm( 
 "	      004b6574    mov eax,1"
 "	      004b6579    jmp near ptr 004B657Eh"
@@ -15470,6 +15474,9 @@ int32_t ListBoxWindow::InsertStringAtIndex(long lIndex, class basic_string<char>
 "	      004b6737    jmp near ptr 004B6A9Eh"
 );
 // LINE 2593:
+// Block start:
+	long i;
+	class list<basic_string<char>>::iterator tempStringListIterator;
 	asm( 
 "	      004b673c    mov dword ptr [ebp-0Ch],0"
 );
@@ -15694,6 +15701,7 @@ int32_t ListBoxWindow::InsertStringAtIndex(long lIndex, class basic_string<char>
 "	      004b6a99    jmp near ptr 004B6761h"
 );
 // LINE 2605:
+// Block end:
 	asm( 
 "	      004b6a9e    mov eax,1"
 "	      004b6aa3    jmp near ptr 004B6AA8h"
@@ -17366,6 +17374,8 @@ int32_t ListBoxWindow::AddScrollBar(int32_t bVertical, int32_t __formal, char * 
 "	      004b794a    jne near ptr 004B7A18h"
 );
 // LINE 2979:
+// Block start:
+	class MRect rectScrollBar;
 	asm( 
 "	      004b7950    jmp near ptr 004B7955h"
 "	      004b7955    jmp near ptr 004B795Ah"
@@ -17449,6 +17459,7 @@ int32_t ListBoxWindow::AddScrollBar(int32_t bVertical, int32_t __formal, char * 
 "	      004b7a12    call dword ptr [eax+154h]"
 );
 // LINE 2991:
+// Block end:
 	asm( 
 "	      004b7a18    mov eax,1"
 "	      004b7a1d    jmp near ptr 004B7A22h"
@@ -17545,6 +17556,8 @@ void ListBoxWindow::SetScrollBarValue() {
 "	      004b7aaf    je near ptr 004B7B57h"
 );
 // LINE 3017:
+// Block start:
+	long lLinesNotVisible;
 	asm( 
 "	      004b7ab5    mov eax,[ebp-8]"
 "	      004b7ab8    mov eax,[eax]"
@@ -17610,6 +17623,7 @@ void ListBoxWindow::SetScrollBarValue() {
 "	      004b7b52    call 004B273Ah"
 );
 // LINE 3025:
+// Block end:
 	asm( 
 "	      004b7b57    jmp near ptr 004B7B5Ch"
 "	      004b7b5c    pop edi"

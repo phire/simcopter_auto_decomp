@@ -367,6 +367,8 @@ class IFlatImage* CSparkalApp::NewImage(char * fileName) {
 "	      004272d8    je near ptr 0042731Eh"
 );
 // LINE 121:
+// Block start:
+	class CBackBuffer* pDDBitmap;
 	asm( 
 "	      004272de    push 134h"
 "	      004272e3    call 0056A600h"
@@ -388,10 +390,13 @@ class IFlatImage* CSparkalApp::NewImage(char * fileName) {
 "	      00427316    mov [ebp-4],eax"
 );
 // LINE 124:
+// Block end:
 	asm( 
 "	      00427319    jmp near ptr 00427359h"
 );
 // LINE 125:
+// Block start:
+	class CBackBuffer* pBBitmap;
 	asm( 
 "	      0042731e    push 134h"
 "	      00427323    call 0056A600h"
@@ -413,6 +418,7 @@ class IFlatImage* CSparkalApp::NewImage(char * fileName) {
 "	      00427356    mov [ebp-4],eax"
 );
 // LINE 132:
+// Block end:
 	asm( 
 "	      00427359    mov eax,[ebp-4]"
 "	      0042735c    jmp near ptr 00427361h"
@@ -452,6 +458,8 @@ class IFlatImage* CSparkalApp::NewImage(long width, long height, const const str
 "	      00427382    je near ptr 0042741Fh"
 );
 // LINE 147:
+// Block start:
+	class CBackBuffer* pDDBitmap;
 	asm( 
 "	      00427388    cmp dword ptr [ebp+10h],0"
 "	      0042738c    je near ptr 004273D4h"
@@ -507,10 +515,13 @@ class IFlatImage* CSparkalApp::NewImage(long width, long height, const const str
 "	      00427417    mov [ebp-4],eax"
 );
 // LINE 153:
+// Block end:
 	asm( 
 "	      0042741a    jmp near ptr 004274B1h"
 );
 // LINE 155:
+// Block start:
+	class CBackBuffer* pBBitmap;
 	asm( 
 "	      0042741f    cmp dword ptr [ebp+10h],0"
 "	      00427423    je near ptr 0042746Bh"
@@ -566,6 +577,7 @@ class IFlatImage* CSparkalApp::NewImage(long width, long height, const const str
 "	      004274ae    mov [ebp-4],eax"
 );
 // LINE 165:
+// Block end:
 	asm( 
 "	      004274b1    mov eax,[ebp-4]"
 "	      004274b4    jmp near ptr 004274B9h"

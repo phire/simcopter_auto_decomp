@@ -821,6 +821,8 @@ void Station::SortVehiclesByDistanceFromDestination(struct _GridCoordinates dest
 "	      0053a383    jge near ptr 0053A494h"
 );
 // LINE 184:
+// Block start:
+	struct Point3d DyObjLoc;
 	asm( 
 "	      0053a389    jmp near ptr 0053A38Eh"
 "	      0053a38e    mov eax,[ebp-10h]"
@@ -962,6 +964,7 @@ void Station::SortVehiclesByDistanceFromDestination(struct _GridCoordinates dest
 "	      0053a48a    call 0053A798h"
 );
 // LINE 217:
+// Block end:
 	asm( 
 "	      0053a48f    jmp near ptr 0053A37Ah"
 );
@@ -1746,6 +1749,8 @@ short Station::GetNearestStation(struct _GridCoordinates gc, struct _GridCoordin
 "	      0053aa7e    je near ptr 0053AAB7h"
 );
 // LINE 390:
+// Block start:
+	struct _StationHeapStruct removedStruct;
 	asm( 
 "	      0053aa84    lea eax,[ebp-8]"
 "	      0053aa87    push eax"
@@ -1769,6 +1774,7 @@ short Station::GetNearestStation(struct _GridCoordinates gc, struct _GridCoordin
 "	      0053aaad    jmp near ptr 0053AAC6h"
 );
 // LINE 394:
+// Block end:
 	asm( 
 "	      0053aab2    jmp near ptr 0053AAC6h"
 );
@@ -1810,6 +1816,8 @@ short Station::GetNextNearest(struct _GridCoordinates* result) {
 "	      0053aae0    je near ptr 0053AB19h"
 );
 // LINE 408:
+// Block start:
+	struct _StationHeapStruct removedStruct;
 	asm( 
 "	      0053aae6    lea eax,[ebp-8]"
 "	      0053aae9    push eax"
@@ -1833,6 +1841,7 @@ short Station::GetNextNearest(struct _GridCoordinates* result) {
 "	      0053ab0f    jmp near ptr 0053AB28h"
 );
 // LINE 412:
+// Block end:
 	asm( 
 "	      0053ab14    jmp near ptr 0053AB28h"
 );
@@ -2532,6 +2541,8 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 "	      0053b410    je near ptr 0053B617h"
 );
 // LINE 532:
+// Block start:
+	struct _StructStation* sS;
 	asm( 
 "	      0053b416    lea eax,[ebp-38h]"
 "	      0053b419    push eax"
@@ -2569,6 +2580,8 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 "	      0053b474    jne near ptr 0053B53Fh"
 );
 // LINE 541:
+// Block start:
+	struct RGVertex* pRGV;
 	asm( 
 "	      0053b47a    lea eax,[ebp-68h]"
 "	      0053b47d    push eax"
@@ -2644,6 +2657,7 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 "	      0053b537    mov [ebp-6Ch],eax"
 );
 // LINE 554:
+// Block end:
 	asm( 
 "	      0053b53a    jmp near ptr 0053B546h"
 );
@@ -2729,6 +2743,7 @@ int32_t Station::DispatchNearestAvailableVehicle(long mapx, long mapy, enum Emer
 "	      0053b60d    jmp near ptr 0053B617h"
 );
 // LINE 570:
+// Block end:
 	asm( 
 "	      0053b612    jmp near ptr 0053B406h"
 );
@@ -3042,6 +3057,8 @@ void Station::Station(unsigned char stationScurkID) {
 "	      0053ba83    jne near ptr 0053BB53h"
 );
 // LINE 618:
+// Block start:
+	int32_t result;
 	asm( 
 "	      0053ba89    mov eax,[ebp-10h]"
 "	      0053ba8c    shl eax,7"
@@ -3136,6 +3153,7 @@ void Station::Station(unsigned char stationScurkID) {
 "	      0053bb50    inc dword ptr [eax+4]"
 );
 // LINE 637:
+// Block end:
 	asm( 
 "	      0053bb53    jmp near ptr 0053BA5Bh"
 );
@@ -3191,6 +3209,9 @@ void Station::Station(unsigned char stationScurkID) {
 "	      0053bbd4    jne near ptr 0053BC77h"
 );
 // LINE 654:
+// Block start:
+	struct _StructStation* pStation;
+	int32_t direction;
 	asm( 
 "	      0053bbda    mov eax,[ebp-0Ch]"
 "	      0053bbdd    inc eax"
@@ -3283,6 +3304,7 @@ void Station::Station(unsigned char stationScurkID) {
 "	      0053bc74    mov [ecx+54h],eax"
 );
 // LINE 680:
+// Block end:
 	asm( 
 "	      0053bc77    jmp near ptr 0053BBACh"
 );

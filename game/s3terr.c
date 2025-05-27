@@ -1374,6 +1374,8 @@ short S3TerrainInitMap() {
 "	      00514c3a    jge near ptr 00514D63h"
 );
 // LINE 434:
+// Block start:
+	unsigned char texid;
 	asm( 
 "	      00514c40    mov eax,[ebp-20h]"
 "	      00514c43    mov ecx,[ebp-1Ch]"
@@ -1465,6 +1467,7 @@ short S3TerrainInitMap() {
 "	      00514d56    mov byte ptr [eax+ecx+66EB10h],10h"
 );
 // LINE 450:
+// Block end:
 	asm( 
 "	      00514d5e    jmp near ptr 00514C33h"
 );
@@ -1489,6 +1492,8 @@ short S3TerrainInitMap() {
 "	      00514d94    jge near ptr 00514EAFh"
 );
 // LINE 460:
+// Block start:
+	unsigned char texid;
 	asm( 
 "	      00514d9a    mov eax,[ebp-20h]"
 "	      00514d9d    mov ecx,[ebp-1Ch]"
@@ -1576,6 +1581,7 @@ short S3TerrainInitMap() {
 "	      00514ea2    mov byte ptr [eax+ecx+66EB10h],20h"
 );
 // LINE 476:
+// Block end:
 	asm( 
 "	      00514eaa    jmp near ptr 00514D8Dh"
 );

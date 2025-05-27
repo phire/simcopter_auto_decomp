@@ -3933,6 +3933,9 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 "	      004f1622    je near ptr 004F1768h"
 );
 // LINE 1386:
+// Block start:
+	struct Point3d loc;
+	int32_t speed;
 	asm( 
 "	      004f1628    mov eax,[ebp+8]"
 "	      004f162b    cmp dword ptr [eax+14Ch],1"
@@ -4055,6 +4058,7 @@ void S3HeliNextFrame(struct _HELI_DATA* hd) {
 "	      004f1765    add esp,20h"
 );
 // LINE 1425:
+// Block end:
 	asm( 
 "	      004f1768    pop edi"
 "	      004f1769    pop esi"
@@ -12588,6 +12592,10 @@ void S3HeliSetSpotlite(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int3
 "	      004f60c7    je near ptr 004F6184h"
 );
 // LINE 4071:
+// Block start:
+	struct VRFaceInfo finfo;
+	int32_t face;
+	struct VRObjInfo oinfo;
 	asm( 
 "	      004f60cd    lea eax,[ebp-0BCh]"
 "	      004f60d3    push eax"
@@ -12660,6 +12668,7 @@ void S3HeliSetSpotlite(struct _HELI_DATA* hd, int32_t maxobjy, int32_t alt, int3
 "	      004f617e    mov [ecx+140h],eax"
 );
 // LINE 4085:
+// Block end:
 	asm( 
 "	      004f6184    mov eax,ds:[5B4CA0h]"
 "	      004f6189    push eax"

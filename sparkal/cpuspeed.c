@@ -445,6 +445,10 @@ struct FREQ_INFO cpuspeed(int32_t clocks) {
 "	      00447e7d    jl near ptr 00447F6Bh"
 );
 // LINE 309:
+// Block start:
+	unsigned long lowest;
+	int32_t i;
+	unsigned long current;
 	asm( 
 "	      00447e83    mov dword ptr [ebp-5Ch],0"
 );
@@ -578,6 +582,7 @@ struct FREQ_INFO cpuspeed(int32_t clocks) {
 "	      00447f63    inc dword ptr [ebp-2Ch]"
 );
 // LINE 394:
+// Block end:
 	asm( 
 "	      00447f66    jmp near ptr 00447F80h"
 );

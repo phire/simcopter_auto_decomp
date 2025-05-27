@@ -4532,6 +4532,12 @@ int32_t DialWindow::ComposeSelf() {
 "	      0044b806    jne near ptr 0044B974h"
 );
 // LINE 757:
+// Block start:
+	const int32_t iGuageEnd;
+	int32_t nXPosition;
+	int32_t i;
+	const int32_t nYPosition;
+	int32_t iLitEnd;
 	asm( 
 "	      0044b80c    mov dword ptr [ebp-34h],14h"
 );
@@ -4664,6 +4670,7 @@ int32_t DialWindow::ComposeSelf() {
 "	      0044b96f    jmp near ptr 0044B929h"
 );
 // LINE 784:
+// Block end:
 	asm( 
 "	      0044b974    jmp near ptr 0044B979h"
 "	      0044b979    jmp near ptr 0044B97Eh"
@@ -5805,6 +5812,8 @@ int32_t PassengerWindow::ComposeSelf() {
 "	      0044c59f    je near ptr 0044C76Bh"
 );
 // LINE 1002:
+// Block start:
+	unsigned long lTimeElapsed;
 	asm( 
 "	      0044c5a5    mov eax,[ebp-5Ch]"
 "	      0044c5a8    mov eax,[eax+88h]"
@@ -5961,6 +5970,7 @@ int32_t PassengerWindow::ComposeSelf() {
 "	      0044c768    call dword ptr [eax+34h]"
 );
 // LINE 1028:
+// Block end:
 	asm( 
 "	      0044c76b    jmp near ptr 0044C770h"
 "	      0044c770    mov eax,[ebp-5Ch]"
@@ -6000,6 +6010,11 @@ int32_t PassengerWindow::ComposeSelf() {
 "	      0044c7bd    je near ptr 0044C958h"
 );
 // LINE 1034:
+// Block start:
+	struct tagHeliPassengerData* tempHeliPassengerData;
+	class MRect rectSource;
+	class MPoint ptGraphicIconPosition;
+	long lPassengerIndex;
 	asm( 
 "	      0044c7c3    jmp near ptr 0044C7C8h"
 "	      0044c7c8    jmp near ptr 0044C7CDh"
@@ -6156,6 +6171,7 @@ int32_t PassengerWindow::ComposeSelf() {
 "	      0044c952    call dword ptr [eax+9Ch]"
 );
 // LINE 1056:
+// Block end:
 	asm( 
 "	      0044c958    mov eax,1"
 "	      0044c95d    jmp near ptr 0044C962h"

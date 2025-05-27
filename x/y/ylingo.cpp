@@ -63,6 +63,8 @@ void YObjLang::SwizzleTreeParam(short id, struct Behavior::NodeParameter* param)
 "	      00560a23    jmp near ptr 00560AB4h"
 );
 // LINE 59:
+// Block start:
+	struct YObjLang::AttrParam* par;
 	asm( 
 "	      00560a28    mov eax,[ebp+0Ch]"
 "	      00560a2b    mov [ebp-4],eax"
@@ -87,6 +89,7 @@ void YObjLang::SwizzleTreeParam(short id, struct Behavior::NodeParameter* param)
 "	      00560a49    jmp near ptr 00560AB4h"
 );
 // LINE 65:
+// Block end:
 	asm( 
 "	      00560a4e    mov eax,[ebp+0Ch]"
 "	      00560a51    push eax"

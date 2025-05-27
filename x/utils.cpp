@@ -416,6 +416,8 @@ void Num2Str(long num, unsigned char * str) {
 "	      00565f6d    je near ptr 00565FB3h"
 );
 // LINE 144:
+// Block start:
+	long digit;
 	asm( 
 "	      00565f73    mov ecx,0Ah"
 "	      00565f78    mov eax,[ebp-4]"
@@ -451,6 +453,7 @@ void Num2Str(long num, unsigned char * str) {
 "	      00565fab    inc dword ptr [ebp-0Ch]"
 );
 // LINE 149:
+// Block end:
 	asm( 
 "	      00565fae    jmp near ptr 00565F69h"
 );
@@ -708,6 +711,8 @@ void Num2HexStr(unsigned long num, unsigned char * str) {
 "	      00566150    je near ptr 005661AAh"
 );
 // LINE 199:
+// Block start:
+	long digit;
 	asm( 
 "	      00566156    mov eax,[ebp+8]"
 "	      00566159    sub edx,edx"
@@ -757,6 +762,7 @@ void Num2HexStr(unsigned long num, unsigned char * str) {
 "	      005661a2    inc dword ptr [ebp-8]"
 );
 // LINE 207:
+// Block end:
 	asm( 
 "	      005661a5    jmp near ptr 0056614Ch"
 );
@@ -852,6 +858,8 @@ unsigned long PStr2Long(unsigned char * name) {
 "	      00566213    jmp near ptr 00566261h"
 );
 // LINE 227:
+// Block start:
+	unsigned long name4;
 	asm( 
 "	      00566218    mov eax,[ebp+8]"
 "	      0056621b    xor ecx,ecx"
@@ -884,6 +892,7 @@ unsigned long PStr2Long(unsigned char * name) {
 "	      0056625c    jmp near ptr 00566261h"
 );
 // LINE 232:
+// Block end:
 	asm( 
 "	      00566261    pop edi"
 "	      00566262    pop esi"

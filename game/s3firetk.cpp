@@ -139,6 +139,8 @@ class FireEngineClass* FireEngineClass::CreateInstance(int32_t instanceID) {
 "	      005361dd    je near ptr 0053634Eh"
 );
 // LINE 127:
+// Block start:
+	struct VRObjInfo oinfo;
 	asm( 
 "	      005361e3    push 123h"
 "	      005361e8    call 004D8821h"
@@ -286,6 +288,7 @@ class FireEngineClass* FireEngineClass::CreateInstance(int32_t instanceID) {
 "	      00536344    jmp near ptr 0053637Ch"
 );
 // LINE 173:
+// Block end:
 	asm( 
 "	      00536349    jmp near ptr 00536375h"
 );

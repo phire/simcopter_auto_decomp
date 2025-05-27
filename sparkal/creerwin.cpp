@@ -312,6 +312,9 @@ int32_t CareerWindow::Initialize() {
 "	      0047e247    je near ptr 0047E89Ch"
 );
 // LINE 115:
+// Block start:
+	class ButtonWindow* tempButtonWindow2;
+	class ButtonWindow* tempButtonWindow1;
 	asm( 
 "	      0047e24d    push 94h"
 "	      0047e252    call 0056A600h"
@@ -706,10 +709,13 @@ int32_t CareerWindow::Initialize() {
 "	      0047e894    call dword ptr [eax+4]"
 );
 // LINE 131:
+// Block end:
 	asm( 
 "	      0047e897    jmp near ptr 0047EB7Dh"
 );
 // LINE 134:
+// Block start:
+	class ButtonWindow* tempButtonWindow1;
 	asm( 
 "	      0047e89c    push 94h"
 "	      0047e8a1    call 0056A600h"
@@ -893,6 +899,7 @@ int32_t CareerWindow::Initialize() {
 "	      0047eb7a    call dword ptr [eax+4]"
 );
 // LINE 143:
+// Block end:
 	asm( 
 "	      0047eb7d    mov eax,[ebp-5320h]"
 "	      0047eb83    mov eax,[eax+0A8h]"

@@ -74,6 +74,8 @@ void Random::seed(unsigned long j) {
 "	      00491023    jae near ptr 00491066h"
 );
 // LINE 38:
+// Block start:
+	uint32_t ii;
 	asm( 
 "	      00491029    mov eax,[ebp-8]"
 "	      0049102c    mov ecx,eax"
@@ -105,6 +107,7 @@ void Random::seed(unsigned long j) {
 "	      0049105e    mov [ebp+8],eax"
 );
 // LINE 42:
+// Block end:
 	asm( 
 "	      00491061    jmp near ptr 0049101Ch"
 );

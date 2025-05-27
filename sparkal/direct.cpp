@@ -1657,6 +1657,10 @@ int32_t DirectoryEntry::CreatePhysicalEntry() {
 "	      00482f91    mov eax,[ebp-98h]"
 "	      00482f97    cmp dword ptr [eax+0Ch],8"
 "	      00482f9b    jne near ptr 00483297h"
+	);
+// Block start:
+	void * __ptr32 hFile;
+	asm( 
 "	      00482fa1    mov eax,[ebp-98h]"
 "	      00482fa7    mov eax,[eax]"
 "	      00482fa9    add eax,8"
@@ -1878,6 +1882,7 @@ int32_t DirectoryEntry::CreatePhysicalEntry() {
 "	      00483292    jmp near ptr 0048329Eh"
 );
 // LINE 177:
+// Block end:
 	asm( 
 "	      00483297    xor eax,eax"
 "	      00483299    jmp near ptr 0048329Eh"
@@ -3136,6 +3141,8 @@ int  Directory::ReadDirectoryEntries() {
 "	      004844f6    je near ptr 0048469Dh"
 );
 // LINE 306:
+// Block start:
+	class basic_string<char> sParentDirectory;
 	asm( 
 "	      004844fc    mov eax,ds:[599B94h]"
 "	      00484501    mov [ebp-358h],eax"
@@ -3241,6 +3248,7 @@ int  Directory::ReadDirectoryEntries() {
 "	      00484698    jmp near ptr 0048469Dh"
 );
 // LINE 316:
+// Block end:
 	asm( 
 "	      0048469d    mov eax,[ebp-370h]"
 "	      004846a3    cmp dword ptr [eax+1Ch],0"
@@ -3264,6 +3272,8 @@ int  Directory::ReadDirectoryEntries() {
 "	      004846fa    je near ptr 004848DFh"
 );
 // LINE 317:
+// Block start:
+	class basic_string<char> sCurrentDirectory;
 	asm( 
 "	      00484700    mov eax,ds:[599B90h]"
 "	      00484705    mov [ebp-360h],eax"
@@ -3376,6 +3386,7 @@ int  Directory::ReadDirectoryEntries() {
 "	      004848da    jmp near ptr 004848DFh"
 );
 // LINE 327:
+// Block end:
 	asm( 
 "	      004848df    mov dword ptr [ebp-1E4h],1"
 "	      004848e9    jmp near ptr 004848EEh"

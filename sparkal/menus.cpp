@@ -2196,6 +2196,8 @@ long UserMenuWindow::DoKeyDown(long lKey, char chModifiers) {
 "	      0049cb36    jne near ptr 0049CB7Fh"
 );
 // LINE 309:
+// Block start:
+	long lValue;
 	asm( 
 "	      0049cb3c    mov eax,[ebp-8]"
 "	      0049cb3f    mov eax,[eax+98h]"
@@ -2226,6 +2228,7 @@ long UserMenuWindow::DoKeyDown(long lKey, char chModifiers) {
 "	      0049cb7a    jmp near ptr 0049CB86h"
 );
 // LINE 313:
+// Block end:
 	asm( 
 "	      0049cb7f    xor eax,eax"
 "	      0049cb81    jmp near ptr 0049CB86h"

@@ -256,6 +256,10 @@ unsigned long CSparkalWindow::SwapBuffer(long Left, long Top, long Right, long B
 "	      004323be    je near ptr 004324C6h"
 );
 // LINE 92:
+// Block start:
+	long Step;
+	long ChunkHeight;
+	long DestTop;
 	asm( 
 "	      004323c4    mov eax,[ebp+14h]"
 "	      004323c7    sub eax,[ebp+0Ch]"
@@ -386,6 +390,7 @@ unsigned long CSparkalWindow::SwapBuffer(long Left, long Top, long Right, long B
 "	      004324c3    call dword ptr [edx+4]"
 );
 // LINE 110:
+// Block end:
 	asm( 
 "	      004324c6    mov eax,[ebp-4]"
 "	      004324c9    jmp near ptr 004324CEh"

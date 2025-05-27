@@ -36,6 +36,8 @@ unsigned long  CGameApp::FinishGame() {
 "	      004bba56    jne near ptr 004BBAADh"
 );
 // LINE 54:
+// Block start:
+	long hResult;
 	asm( 
 "	      004bba5c    mov eax,[ebp-1Ch]"
 "	      004bba5f    mov eax,[eax]"
@@ -72,6 +74,7 @@ unsigned long  CGameApp::FinishGame() {
 "	      004bbaa8    call 0042D420h"
 );
 // LINE 63:
+// Block end:
 	asm( 
 "	      004bbaad    mov eax,[ebp-1Ch]"
 "	      004bbab0    mov eax,[eax+50h]"

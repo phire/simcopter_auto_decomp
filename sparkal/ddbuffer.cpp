@@ -4511,6 +4511,19 @@ unsigned long CBackBuffer::DrawLineUnclipped(long nStartX, long nStartY, long nE
 "	      004709a5    jmp near ptr 00470C09h"
 );
 // LINE 1508:
+// Block start:
+	int32_t dinc2;
+	int32_t yinc2;
+	int32_t dinc1;
+	int32_t yinc1;
+	int32_t deltay;
+	int32_t deltax;
+	int32_t numpixels;
+	int32_t y;
+	int32_t x;
+	int32_t xinc2;
+	int32_t xinc1;
+	int32_t d;
 	asm( 
 "	      004709aa    mov eax,[ebp+10h]"
 "	      004709ad    sub eax,[ebp+8]"
@@ -4873,6 +4886,7 @@ unsigned long CBackBuffer::DrawLineUnclipped(long nStartX, long nStartY, long nE
 "	      00470c04    jmp near ptr 00470B29h"
 );
 // LINE 1612:
+// Block end:
 	asm( 
 "	      00470c09    mov eax,[ebp-5Ch]"
 "	      00470c0c    mov eax,[eax]"
@@ -5271,6 +5285,19 @@ unsigned long CBackBuffer::DrawLineClipped(long nStartX, long nStartY, long nEnd
 "	      004710ce    jmp near ptr 00471543h"
 );
 // LINE 1681:
+// Block start:
+	int32_t dinc2;
+	int32_t yinc2;
+	int32_t dinc1;
+	int32_t yinc1;
+	int32_t deltay;
+	int32_t deltax;
+	int32_t numpixels;
+	int32_t y;
+	int32_t x;
+	int32_t xinc2;
+	int32_t xinc1;
+	int32_t d;
 	asm( 
 "	      004710d3    mov eax,[ebp+10h]"
 "	      004710d6    sub eax,[ebp+8]"
@@ -5498,6 +5525,11 @@ unsigned long CBackBuffer::DrawLineClipped(long nStartX, long nStartY, long nEnd
 "	      0047124a    jmp near ptr 00471543h"
 );
 // LINE 1761:
+// Block start:
+	int32_t minSafeY;
+	int32_t maxSafeX;
+	int32_t maxSafeY;
+	int32_t minSafeX;
 	asm( 
 "	      0047124f    mov eax,[ebp+18h]"
 "	      00471252    dec eax"
@@ -5674,6 +5706,8 @@ unsigned long CBackBuffer::DrawLineClipped(long nStartX, long nStartY, long nEnd
 "	      00471396    je near ptr 00471543h"
 );
 // LINE 1807:
+// Block start:
+	char * bufferEnd;
 	asm( 
 "	      0047139c    cmp dword ptr [ebp-28h],0FFFFFFFFh"
 "	      004713a0    jne near ptr 004713D7h"
@@ -5747,6 +5781,8 @@ unsigned long CBackBuffer::DrawLineClipped(long nStartX, long nStartY, long nEnd
 "	      0047144d    jae near ptr 004714D8h"
 );
 // LINE 1825:
+// Block start:
+	int32_t nPixels;
 	asm( 
 "	      00471453    cmp dword ptr [ebp-28h],0FFFFFFFFh"
 "	      00471457    jne near ptr 0047149Bh"
@@ -5806,6 +5842,7 @@ unsigned long CBackBuffer::DrawLineClipped(long nStartX, long nStartY, long nEnd
 "	      004714d5    add esp,0Ch"
 );
 // LINE 1837:
+// Block end:
 	asm( 
 "	      004714d8    cmp dword ptr [ebp-48h],0FFFFFFFFh"
 "	      004714dc    jne near ptr 004714F7h"
@@ -5876,10 +5913,13 @@ unsigned long CBackBuffer::DrawLineClipped(long nStartX, long nStartY, long nEnd
 "	      0047153b    dec dword ptr [ebp-34h]"
 );
 // LINE 1857:
+// Block end:
 	asm( 
 "	      0047153e    jmp near ptr 00471392h"
 );
 // LINE 1861:
+// Block end:
+// Block end:
 	asm( 
 "	      00471543    jmp near ptr 0047154Fh"
 );

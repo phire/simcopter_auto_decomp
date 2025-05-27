@@ -1040,6 +1040,10 @@ int32_t CDebugWindow::Create(char * windowName) {
 "	      004231f9    jne near ptr 00423359h"
 );
 // LINE 79:
+// Block start:
+	int32_t Width;
+	int32_t Height;
+	int32_t xPos;
 	asm( 
 "	      004231ff    mov dword ptr ds:[5C28D0h],20h"
 );
@@ -1196,6 +1200,7 @@ int32_t CDebugWindow::Create(char * windowName) {
 "	      00423354    jmp near ptr 00423360h"
 );
 // LINE 129:
+// Block end:
 	asm( 
 "	      00423359    xor eax,eax"
 "	      0042335b    jmp near ptr 00423360h"
@@ -2708,6 +2713,12 @@ void CDebugWindow::OnEditChange() {
 "	      00424393    jle near ptr 004248CAh"
 );
 // LINE 308:
+// Block start:
+	struct debug_command** it;
+	class vector<basic_string<char>> command_vector;
+	int32_t num;
+	char[256] comBuf;
+	class basic_string<char> str;
 	asm( 
 "	      00424399    lea eax,[ebp-100h]"
 "	      0042439f    push eax"
@@ -3018,6 +3029,7 @@ void CDebugWindow::OnEditChange() {
 "	      004248c5    jmp near ptr 004248CAh"
 );
 // LINE 325:
+// Block end:
 	asm( 
 "	      004248ca    jmp near ptr 004248CFh"
 "	      004248cf    pop edi"

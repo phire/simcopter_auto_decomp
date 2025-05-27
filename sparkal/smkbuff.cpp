@@ -3304,6 +3304,8 @@ unsigned long SmackerBackBuffer::Compose(class IFlatImage* pDestImage, long Dest
 "	      004993de    je near ptr 00499435h"
 );
 // LINE 1020:
+// Block start:
+	struct SparkalRect rectFill;
 	asm( 
 "	      004993e4    jmp near ptr 004993E9h"
 );
@@ -3346,6 +3348,7 @@ unsigned long SmackerBackBuffer::Compose(class IFlatImage* pDestImage, long Dest
 "	      0049942d    call dword ptr [eax+44h]"
 );
 // LINE 1027:
+// Block end:
 	asm( 
 "	      00499430    jmp near ptr 00499498h"
 );
@@ -3754,6 +3757,8 @@ unsigned long SmackerBackBuffer::StretchCompose(class IFlatImage* pDestImage, lo
 "	      004997b5    je near ptr 004997F6h"
 );
 // LINE 1110:
+// Block start:
+	struct SparkalRect rectFill;
 	asm( 
 "	      004997bb    jmp near ptr 004997C0h"
 );
@@ -3790,6 +3795,7 @@ unsigned long SmackerBackBuffer::StretchCompose(class IFlatImage* pDestImage, lo
 "	      004997ee    call dword ptr [eax+44h]"
 );
 // LINE 1117:
+// Block end:
 	asm( 
 "	      004997f1    jmp near ptr 00499861h"
 );

@@ -1548,6 +1548,10 @@ long S3MissionStart(long x, long y, long type) {
 "	      004fad6f    jmp near ptr 004FB9CFh"
 );
 // LINE 693:
+// Block start:
+	int32_t numtostart;
+	int32_t count;
+	int32_t numstarted;
 	asm( 
 "	      004fad74    push 1000h"
 "	      004fad79    call 004FC323h"
@@ -1720,6 +1724,7 @@ long S3MissionStart(long x, long y, long type) {
 "	      004faf0b    jmp near ptr 004FBACDh"
 );
 // LINE 739:
+// Block end:
 	asm( 
 "	      004faf10    mov dword ptr [ebp-10h],0"
 );
@@ -1860,6 +1865,8 @@ long S3MissionStart(long x, long y, long type) {
 "	      004fb03e    jmp near ptr 004FBACDh"
 );
 // LINE 779:
+// Block start:
+	struct _DYOBJ_INST* boat;
 	asm( 
 "	      004fb043    push 12C0000h"
 "	      004fb048    mov eax,[ebp-18h]"
@@ -1929,6 +1936,7 @@ long S3MissionStart(long x, long y, long type) {
 "	      004fb0db    jmp near ptr 004FBACDh"
 );
 // LINE 796:
+// Block end:
 	asm( 
 "	      004fb0e0    push 12C0000h"
 "	      004fb0e5    mov eax,[ebp-18h]"

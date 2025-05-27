@@ -29,6 +29,10 @@ class cCopterAnim *  cCopterBody::GetPrivateAnim(unsigned long animName) {
 "	      00560c11    movsx ecx,word ptr [ebp-4]"
 "	      00560c15    cmp [eax+10h],ecx"
 "	      00560c18    jle near ptr 00560E6Ah"
+	);
+// Block start:
+	struct AnimLookup* al;
+	asm( 
 "	      00560c1e    mov eax,[ebp-3Ch]"
 "	      00560c21    mov eax,[eax+2Ch]"
 "	      00560c24    mov [ebp-10h],eax"
@@ -77,6 +81,10 @@ class cCopterAnim *  cCopterBody::GetPrivateAnim(unsigned long animName) {
 "	      00560cb7    mov ecx,[ebp+8]"
 "	      00560cba    cmp [eax],ecx"
 "	      00560cbc    jne near ptr 00560E65h"
+	);
+// Block start:
+	class cCopterAnim* privanim;
+	asm( 
 "	      00560cc2    mov eax,[ebp-8]"
 "	      00560cc5    mov eax,[eax+4]"
 "	      00560cc8    mov [ebp-34h],eax"
@@ -186,6 +194,8 @@ class cCopterAnim *  cCopterBody::GetPrivateAnim(unsigned long animName) {
 "	      00560e60    jmp near ptr 00560E71h"
 );
 // LINE 1950:
+// Block end:
+// Block end:
 	asm( 
 "	      00560e65    jmp near ptr 00560C07h"
 );
@@ -239,6 +249,10 @@ void  cCopterBody::ActivateAllPartPointers(unsigned short activated) {
 "	      00560ebf    movsx ecx,word ptr [ebp-4]"
 "	      00560ec3    cmp [eax+10h],ecx"
 "	      00560ec6    jle near ptr 00560FF9h"
+	);
+// Block start:
+	struct cCopterBody::Part* part;
+	asm( 
 "	      00560ecc    mov eax,[ebp-10h]"
 "	      00560ecf    mov eax,[eax+28h]"
 "	      00560ed2    mov [ebp-0Ch],eax"
@@ -350,6 +364,7 @@ void  cCopterBody::ActivateAllPartPointers(unsigned short activated) {
 "	      00560fed    mov dword ptr [eax+0Ch],0"
 );
 // LINE 2080:
+// Block end:
 	asm( 
 "	      00560ff4    jmp near ptr 00560EB5h"
 );
@@ -771,6 +786,8 @@ void  cCopterBody::DrawSwitch(float phiOff, float psiOff, struct cCopterBody::Pa
 "	      00561431    jmp near ptr 00561605h"
 );
 // LINE 2137:
+// Block start:
+	float drawwidth;
 	asm( 
 "	      00561436    mov eax,[ebp+10h]"
 "	      00561439    fld dword ptr [eax+20h]"
@@ -809,6 +826,7 @@ void  cCopterBody::DrawSwitch(float phiOff, float psiOff, struct cCopterBody::Pa
 "	      00561481    jmp near ptr 00561605h"
 );
 // LINE 2142:
+// Block end:
 	asm( 
 "	      00561486    mov eax,[ebp-10h]"
 "	      00561489    push eax"
@@ -824,6 +842,8 @@ void  cCopterBody::DrawSwitch(float phiOff, float psiOff, struct cCopterBody::Pa
 "	      0056149a    jmp near ptr 00561605h"
 );
 // LINE 2149:
+// Block start:
+	enum SPHERE_SHADE_FLAG flag;
 	asm( 
 "	      0056149f    mov eax,[ebp+10h]"
 "	      005614a2    movsx eax,byte ptr [eax]"
@@ -882,6 +902,9 @@ void  cCopterBody::DrawSwitch(float phiOff, float psiOff, struct cCopterBody::Pa
 "	      0056152a    jmp near ptr 00561605h"
 );
 // LINE 2162:
+// Block start:
+	float smallPsi;
+// Block end:
 	asm( 
 "	      0056152f    mov eax,[ebp-48h]"
 "	      00561532    movsx eax,word ptr [eax+30h]"
@@ -935,6 +958,7 @@ void  cCopterBody::DrawSwitch(float phiOff, float psiOff, struct cCopterBody::Pa
 "	      005615a6    jmp near ptr 00561605h"
 );
 // LINE 2173:
+// Block end:
 	asm( 
 "	      005615ab    push 8C085h"
 "	      005615b0    push 5BE858h"
@@ -1109,6 +1133,10 @@ void  cCopterBody::Draw(float xOff, float yOff, class cCopterAnim* privanim, sho
 "	      00561737    movsx eax,word ptr [ebp-0Ch]"
 "	      0056173b    cmp eax,[ebp-14h]"
 "	      0056173e    jge near ptr 00561AB7h"
+	);
+// Block start:
+	short drawProc;
+	asm( 
 "	      00561744    mov eax,[ebp-0A4h]"
 "	      0056174a    mov eax,[eax+28h]"
 "	      0056174d    mov [ebp-0A0h],eax"
@@ -1170,6 +1198,12 @@ void  cCopterBody::Draw(float xOff, float yOff, class cCopterAnim* privanim, sho
 "	      00561816    je near ptr 00561AB2h"
 );
 // LINE 2218:
+// Block start:
+	struct TransformedInfo* transinfo;
+	struct DXZY start;
+	struct DXZY end;
+	struct PrivAnimPartInfo* partinfo;
+	unsigned short parentendtransformed;
 	asm( 
 "	      0056181c    cmp dword ptr [ebp-18h],0"
 "	      00561820    je near ptr 00561835h"
@@ -1269,6 +1303,8 @@ void  cCopterBody::Draw(float xOff, float yOff, class cCopterAnim* privanim, sho
 "	      00561915    je near ptr 0056196Ch"
 );
 // LINE 2227:
+// Block start:
+	struct TransformedInfo* parenttransinfo;
 	asm( 
 "	      0056191b    mov eax,[ebp-18h]"
 "	      0056191e    mov eax,[eax+0Ch]"
@@ -1306,6 +1342,7 @@ void  cCopterBody::Draw(float xOff, float yOff, class cCopterAnim* privanim, sho
 "	      00561968    mov byte ptr [eax+0Ch],1"
 );
 // LINE 2234:
+// Block end:
 	asm( 
 "	      0056196c    test dword ptr [ebp-30h],0FFFFh"
 "	      00561973    jne near ptr 005619C0h"
@@ -1456,6 +1493,8 @@ void  cCopterBody::Draw(float xOff, float yOff, class cCopterAnim* privanim, sho
 "	      00561aaf    inc dword ptr [ebp-1Ch]"
 );
 // LINE 2270:
+// Block end:
+// Block end:
 	asm( 
 "	      00561ab2    jmp near ptr 00561733h"
 );

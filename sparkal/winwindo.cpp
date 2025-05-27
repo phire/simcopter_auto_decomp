@@ -444,6 +444,14 @@ void CSparkalWindow::CSparkalWindow(unsigned long Width, unsigned long Height, u
 "	      004809ef    je near ptr 00480CEFh"
 );
 // LINE 156:
+// Block start:
+	struct CSparkalWindow::__ctor::__unnamed LogPalette;
+	void * __ptr32 hdc;
+	int32_t StaticCount;
+	uint32_t PaletteUse;
+	int32_t End;
+	int32_t Start;
+	int32_t Counter;
 	asm( 
 "	      004809f5    lea eax,[ebp-48h]"
 "	      004809f8    push eax"
@@ -781,6 +789,7 @@ void CSparkalWindow::CSparkalWindow(unsigned long Width, unsigned long Height, u
 "	      00480ce9    call dword ptr ds:[6C384Ch]"
 );
 // LINE 241:
+// Block end:
 	asm( 
 "	      00480cef    jmp near ptr 00480CF4h"
 "	      00480cf4    mov eax,[ebp-474h]"
@@ -936,6 +945,8 @@ unsigned long CSparkalWindow::GetClientSize(long * pWidth, long * pHeight) {
 "	      00480e19    je near ptr 00480E4Bh"
 );
 // LINE 283:
+// Block start:
+	struct tagRECT r;
 	asm( 
 "	      00480e1f    lea eax,[ebp-14h]"
 "	      00480e22    push eax"
@@ -959,6 +970,7 @@ unsigned long CSparkalWindow::GetClientSize(long * pWidth, long * pHeight) {
 "	      00480e44    mov [ecx],eax"
 );
 // LINE 287:
+// Block end:
 	asm( 
 "	      00480e46    jmp near ptr 00480E65h"
 );
@@ -1715,6 +1727,8 @@ int32_t CheckIdentityPalette(void * __ptr32 hdc, void * __ptr32 hPalette, struct
 "	      00481358    je near ptr 004815CDh"
 );
 // LINE 514:
+// Block start:
+	void * __ptr32 MemBitmap;
 	asm( 
 "	      0048135e    push 1"
 "	      00481360    push 100h"
@@ -1729,6 +1743,9 @@ int32_t CheckIdentityPalette(void * __ptr32 hdc, void * __ptr32 hPalette, struct
 "	      0048137c    je near ptr 004815C0h"
 );
 // LINE 516:
+// Block start:
+	struct CheckIdentityPalette::__unnamed Info;
+	void * __ptr32 Mono;
 	asm( 
 "	      00481382    mov eax,[ebp-114h]"
 "	      00481388    push eax"
@@ -1928,12 +1945,14 @@ int32_t CheckIdentityPalette(void * __ptr32 hdc, void * __ptr32 hPalette, struct
 "	      004815ba    call dword ptr ds:[6C358Ch]"
 );
 // LINE 567:
+// Block end:
 	asm( 
 "	      004815c0    mov eax,[ebp-104h]"
 "	      004815c6    push eax"
 "	      004815c7    call dword ptr ds:[6C35B0h]"
 );
 // LINE 570:
+// Block end:
 	asm( 
 "	      004815cd    mov eax,[ebp-108h]"
 "	      004815d3    jmp near ptr 004815D8h"
@@ -2033,6 +2052,9 @@ long CSparkalWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message
 "	      00481656    jmp near ptr 004819EEh"
 );
 // LINE 608:
+// Block start:
+	void * __ptr32 hdc;
+	struct tagPAINTSTRUCT Paint;
 	asm( 
 "	      0048165b    mov eax,[ebp+0Ch]"
 "	      0048165e    cmp [ebp+14h],eax"
@@ -2049,6 +2071,9 @@ long CSparkalWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message
 "	      00481673    je near ptr 004816D4h"
 );
 // LINE 614:
+// Block start:
+	int32_t bRedraw;
+	void * __ptr32 hdc;
 	asm( 
 "	      00481679    mov eax,[ebp+0Ch]"
 "	      0048167c    push eax"
@@ -2099,6 +2124,7 @@ long CSparkalWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message
 "	      004816cf    jmp near ptr 00481ACAh"
 );
 // LINE 623:
+// Block end:
 	asm( 
 "	      004816d4    jmp near ptr 00481AAFh"
 );
@@ -2136,6 +2162,8 @@ long CSparkalWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message
 "	      00481721    je near ptr 0048176Ch"
 );
 // LINE 632:
+// Block start:
+	void * __ptr32 hdc;
 	asm( 
 "	      00481727    mov eax,[ebp+0Ch]"
 "	      0048172a    push eax"
@@ -2174,6 +2202,7 @@ long CSparkalWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message
 "	      00481766    call dword ptr ds:[6C384Ch]"
 );
 // LINE 638:
+// Block end:
 	asm( 
 "	      0048176c    jmp near ptr 00481AAFh"
 );
@@ -2476,6 +2505,7 @@ long CSparkalWindow::MySparkalWindowProc(void * __ptr32 Window, uint32_t Message
 "	      004819e4    jmp near ptr 00481AAFh"
 );
 // LINE 703:
+// Block end:
 	asm( 
 "	      004819e9    jmp near ptr 00481AAFh"
 "	      004819ee    cmp dword ptr [ebp-70h],6"

@@ -144,6 +144,8 @@ class PoliceCarClass* PoliceCarClass::CreateInstance(int32_t instanceID) {
 "	      00536eea    je near ptr 0053704Eh"
 );
 // LINE 135:
+// Block start:
+	struct VRObjInfo oinfo;
 	asm( 
 "	      00536ef0    push 122h"
 "	      00536ef5    call 004D8821h"
@@ -286,6 +288,7 @@ class PoliceCarClass* PoliceCarClass::CreateInstance(int32_t instanceID) {
 "	      00537044    jmp near ptr 0053707Ch"
 );
 // LINE 179:
+// Block end:
 	asm( 
 "	      00537049    jmp near ptr 00537075h"
 );
@@ -1450,6 +1453,9 @@ enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal* pGoal) {
 "	      00537a52    je near ptr 00537DAAh"
 );
 // LINE 552:
+// Block start:
+	struct _RGIndex destVertex;
+	struct _RGIndex startVertex;
 	asm( 
 "	      00537a58    mov eax,[ebp-3Ch]"
 "	      00537a5b    mov ax,[eax+7Ch]"
@@ -1758,6 +1764,7 @@ enum TurnIndex PoliceCarClass::PickTurnDir(struct Goal* pGoal) {
 "	      00537d9e    mov byte ptr [eax+292h],0"
 );
 // LINE 615:
+// Block end:
 	asm( 
 "	      00537da5    jmp near ptr 00537DD2h"
 );

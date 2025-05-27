@@ -811,6 +811,8 @@ void  CGameApp::S3ShowInfo() {
 "	      004961d2    jmp near ptr 00496357h"
 );
 // LINE 305:
+// Block start:
+	struct MISSION_DATA* md;
 	asm( 
 "	      004961d7    mov eax,ds:[662820h]"
 "	      004961dc    sub eax,ds:[59D370h]"
@@ -957,6 +959,7 @@ void  CGameApp::S3ShowInfo() {
 "	      00496354    call dword ptr [edx+4Ch]"
 );
 // LINE 379:
+// Block end:
 	asm( 
 "	      00496357    jmp near ptr 0049635Ch"
 "	      0049635c    mov eax,[ebp-10Ch]"

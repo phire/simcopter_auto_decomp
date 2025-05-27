@@ -350,6 +350,8 @@ int32_t ScreenBuffer::CreateSurfaces() {
 "	      0049e6d8    je near ptr 0049E7EEh"
 );
 // LINE 136:
+// Block start:
+	struct _DDSCAPS ddsBackBufferCaps;
 	asm( 
 "	      0049e6de    push 6Ch"
 "	      0049e6e0    push 0"
@@ -471,6 +473,7 @@ int32_t ScreenBuffer::CreateSurfaces() {
 "	      0049e7e4    jmp near ptr 0049EA65h"
 );
 // LINE 167:
+// Block end:
 	asm( 
 "	      0049e7e9    jmp near ptr 0049EA39h"
 );
@@ -1632,12 +1635,17 @@ int32_t ScreenBuffer::UsePalette(struct SparkalColor* pColors) {
 "	      0049f12b    je near ptr 0049F3CFh"
 );
 // LINE 538:
+// Block start:
+	struct tagPALETTEENTRY[256] palEntries;
+	int32_t i;
 	asm( 
 "	      0049f131    mov eax,[ebp-42Ch]"
 "	      0049f137    cmp dword ptr [eax+14Eh],0"
 "	      0049f13e    jne near ptr 0049F18Eh"
 );
 // LINE 539:
+// Block start:
+	void * __ptr32 hdc;
 	asm( 
 "	      0049f144    push 0"
 "	      0049f146    call dword ptr ds:[6C3850h]"
@@ -1666,6 +1674,7 @@ int32_t ScreenBuffer::UsePalette(struct SparkalColor* pColors) {
 "	      0049f183    call dword ptr ds:[6C384Ch]"
 );
 // LINE 545:
+// Block end:
 	asm( 
 "	      0049f189    jmp near ptr 0049F201h"
 );
@@ -1900,6 +1909,7 @@ int32_t ScreenBuffer::UsePalette(struct SparkalColor* pColors) {
 "	      0049f3c5    call 0042D420h"
 );
 // LINE 601:
+// Block end:
 	asm( 
 "	      0049f3ca    jmp near ptr 0049F406h"
 );

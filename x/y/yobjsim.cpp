@@ -217,6 +217,8 @@ void PersonHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _D
 "	      005551d5    jle near ptr 00555218h"
 );
 // LINE 89:
+// Block start:
+	short currxn;
 	asm( 
 "	      005551db    mov eax,[ebp-4]"
 "	      005551de    mov ax,[eax+10Ch]"
@@ -239,6 +241,7 @@ void PersonHitDispatch(long hitter_type, struct _DYOBJ_INST* dyhitter, struct _D
 "	      00555213    jmp near ptr 00555364h"
 );
 // LINE 94:
+// Block end:
 	asm( 
 "	      00555218    movsx eax,word ptr [ebp-8]"
 "	      0055521c    cmp eax,384h"
@@ -593,6 +596,10 @@ struct _DYOBJ_INST* cYObject::GetDynObj(struct _DYOBJ_INST* donotignore, struct 
 "	      0055553b    movsx eax,word ptr [eax+0Ch]"
 "	      0055553f    test al,8"
 "	      00555541    je near ptr 0055562Fh"
+	);
+// Block start:
+	class cYObject* obj;
+	asm( 
 "	      00555547    mov eax,[ebp-4]"
 "	      0055554a    mov ax,[eax+0Eh]"
 "	      0055554e    mov [ebp-24h],ax"
@@ -662,6 +669,7 @@ struct _DYOBJ_INST* cYObject::GetDynObj(struct _DYOBJ_INST* donotignore, struct 
 "	      0055562a    jmp near ptr 005553D7h"
 );
 // LINE 239:
+// Block end:
 	asm( 
 "	      0055562f    mov eax,[ebp-4]"
 "	      00555632    mov [ebp-8],eax"
@@ -1322,12 +1330,20 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 "	      00555ac2    jne near ptr 00555EC5h"
 );
 // LINE 410:
+// Block start:
+	int32_t dy;
+	int32_t ht;
+	struct TreeSim::StackElem* elem;
 	asm( 
 "	      00555ac8    mov eax,[ebp-0A0h]"
 "	      00555ace    cmp dword ptr [eax+130h],0"
 "	      00555ad5    je near ptr 00555B5Ah"
 );
 // LINE 413:
+// Block start:
+	struct Point3d offset;
+	int32_t groundheight;
+	struct _DYOBJ_INST* master;
 	asm( 
 "	      00555adb    mov eax,[ebp-0A0h]"
 "	      00555ae1    mov eax,[eax+130h]"
@@ -1382,6 +1398,7 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 "	      00555b52    mov [ebp-10h],eax"
 );
 // LINE 423:
+// Block end:
 	asm( 
 "	      00555b55    jmp near ptr 00555B76h"
 );
@@ -1467,6 +1484,8 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 "	      00555c19    je near ptr 00555C4Ch"
 );
 // LINE 436:
+// Block start:
+	struct _STOBJ_INST* st;
 	asm( 
 "	      00555c1f    mov eax,[ebp-0A0h]"
 "	      00555c25    mov eax,[eax+34h]"
@@ -1489,6 +1508,7 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 "	      00555c49    mov [ecx+0Ch],eax"
 );
 // LINE 439:
+// Block end:
 	asm( 
 "	      00555c4c    mov eax,[ebp-4]"
 "	      00555c4f    jmp near ptr 00556469h"
@@ -1560,6 +1580,10 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 "	      00555cfb    je near ptr 00555E3Ch"
 );
 // LINE 452:
+// Block start:
+	int32_t masterrad;
+	int32_t myrad;
+	struct Point3d masterloc;
 	asm( 
 "	      00555d01    mov eax,ds:[5BC634h]"
 "	      00555d06    push eax"
@@ -1637,6 +1661,8 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 "	      00555dce    jne near ptr 00555DFFh"
 );
 // LINE 458:
+// Block start:
+	struct _DYOBJ_INST* master;
 	asm( 
 "	      00555dd4    mov eax,[ebp-0A0h]"
 "	      00555dda    mov eax,[eax+130h]"
@@ -1652,6 +1678,7 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 "	      00555dfc    add esp,10h"
 );
 // LINE 463:
+// Block end:
 	asm( 
 "	      00555dff    mov eax,[ebp-58h]"
 "	      00555e02    push eax"
@@ -1681,11 +1708,15 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 "	      00555e37    jmp near ptr 00556469h"
 );
 // LINE 466:
+// Block end:
 	asm( 
 "	      00555e3c    cmp dword ptr [ebp-1Ch],0"
 "	      00555e40    je near ptr 00555EC5h"
 );
 // LINE 467:
+// Block start:
+	struct _DYOBJ_INST* dontignore;
+	struct _DYOBJ_INST* myspacedyn;
 	asm( 
 "	      00555e46    mov dword ptr [ebp-64h],0"
 );
@@ -1742,6 +1773,8 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 "	      00555ec0    jmp near ptr 00556469h"
 );
 // LINE 502:
+// Block end:
+// Block end:
 	asm( 
 "	      00555ec5    mov eax,[ebp-14h]"
 "	      00555ec8    add eax,20000000h"
@@ -1773,6 +1806,8 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 "	      00555f11    je near ptr 00556446h"
 );
 // LINE 511:
+// Block start:
+	enum cYObject::LocationType newloctype;
 	asm( 
 "	      00555f17    movzx ax,byte ptr [ebp-8]"
 "	      00555f1c    push eax"
@@ -1791,6 +1826,10 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 "	      00555f48    jne near ptr 005563C4h"
 );
 // LINE 516:
+// Block start:
+	short thiscellx;
+	short thiscelly;
+	enum cYObject::LocationType thisloctype;
 	asm( 
 "	      00555f4e    mov eax,[ebp-0A0h]"
 "	      00555f54    mov eax,[eax+3Ch]"
@@ -1885,6 +1924,10 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 "	      00556069    je near ptr 0055638Dh"
 );
 // LINE 530:
+// Block start:
+	unsigned short newneutralandsparse;
+	unsigned short failnonneutral;
+	unsigned short thisneutralforme;
 	asm( 
 "	      0055606f    cmp dword ptr [ebp+0Ch],0"
 "	      00556073    je near ptr 005560C2h"
@@ -2105,6 +2148,7 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 "	      00556383    jmp near ptr 00556469h"
 );
 // LINE 582:
+// Block end:
 	asm( 
 "	      00556388    jmp near ptr 005563C4h"
 "	      0055638d    cmp dword ptr [ebp+0Ch],0"
@@ -2129,6 +2173,7 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 "	      005563c1    mov byte ptr [eax],0FFh"
 );
 // LINE 587:
+// Block end:
 	asm( 
 "	      005563c4    mov eax,[ebp-68h]"
 "	      005563c7    mov ecx,[ebp-0A0h]"
@@ -2165,6 +2210,7 @@ enum cYObject::MoveErrorCode cYObject::TryMove(unsigned short moveOnlyNeutrally,
 "	      00556441    jmp near ptr 00556446h"
 );
 // LINE 591:
+// Block end:
 	asm( 
 "	      00556446    lea eax,[ebp-14h]"
 "	      00556449    mov ecx,[ebp-0A0h]"
@@ -2793,6 +2839,8 @@ void cYObject::GetSurroundingRiotInfo(short todist, short * avgriotval, short * 
 "	      005569f0    jl near ptr 00556BFFh"
 );
 // LINE 702:
+// Block start:
+	struct _DYOBJ_INST* dyobj;
 	asm( 
 "	      005569f6    movsx eax,word ptr [ebp-10h]"
 "	      005569fa    and eax,0FFh"
@@ -2845,6 +2893,13 @@ void cYObject::GetSurroundingRiotInfo(short todist, short * avgriotval, short * 
 "	      00556a74    add eax,24h"
 "	      00556a77    cmp eax,[ebp-30h]"
 "	      00556a7a    je near ptr 00556BDEh"
+	);
+// Block start:
+	class cYObject* obj;
+	short thisriotval;
+	short zloc;
+	short xloc;
+	asm( 
 "	      00556a80    mov eax,[ebp-30h]"
 "	      00556a83    mov ax,[eax+0Eh]"
 "	      00556a87    mov [ebp-4Ch],ax"
@@ -2961,6 +3016,7 @@ void cYObject::GetSurroundingRiotInfo(short todist, short * avgriotval, short * 
 "	      00556bda    inc word ptr [ebp-2Ch]"
 );
 // LINE 720:
+// Block end:
 	asm( 
 "	      00556bde    mov eax,[ebp-30h]"
 "	      00556be1    mov eax,[eax]"
@@ -2979,6 +3035,7 @@ void cYObject::GetSurroundingRiotInfo(short todist, short * avgriotval, short * 
 "	      00556bf7    mov [ecx],ax"
 );
 // LINE 723:
+// Block end:
 	asm( 
 "	      00556bfa    jmp near ptr 005569D5h"
 );
@@ -2995,6 +3052,9 @@ void cYObject::GetSurroundingRiotInfo(short todist, short * avgriotval, short * 
 "	      00556c14    je near ptr 00556C93h"
 );
 // LINE 726:
+// Block start:
+	int32_t overz;
+	int32_t overx;
 	asm( 
 "	      00556c1a    fld qword ptr [ebp-0Ch]"
 "	      00556c1d    mov eax,[ebp-1Ch]"
@@ -3053,6 +3113,7 @@ void cYObject::GetSurroundingRiotInfo(short todist, short * avgriotval, short * 
 "	      00556c8b    mov [ecx],ax"
 );
 // LINE 734:
+// Block end:
 	asm( 
 "	      00556c8e    jmp near ptr 00556CA3h"
 );
@@ -3340,6 +3401,10 @@ class cYObject* cYObject::GetClosest(enum MissionSupertype missionsupertype, enu
 "	      00556ef6    jge near ptr 00557141h"
 );
 // LINE 779:
+// Block start:
+	class cYObject* obj;
+	struct _DYOBJ_INST* dyn;
+	unsigned short dist;
 	asm( 
 "	      00556efc    movsx eax,word ptr [ebp-4]"
 "	      00556f00    cmp eax,7D00h"
@@ -3518,6 +3583,7 @@ class cYObject* cYObject::GetClosest(enum MissionSupertype missionsupertype, enu
 "	      00557139    mov [ebp-10h],eax"
 );
 // LINE 796:
+// Block end:
 	asm( 
 "	      0055713c    jmp near ptr 00556EEBh"
 );
@@ -3660,6 +3726,8 @@ class cYObject* cYObject::GetFirst(short whichtype, short visible) {
 "	      00557221    jge near ptr 00557340h"
 );
 // LINE 824:
+// Block start:
+	class cYObject* obj;
 	asm( 
 "	      00557227    movsx eax,word ptr [ebp-4]"
 "	      0055722b    cmp eax,7D00h"
@@ -3739,6 +3807,7 @@ class cYObject* cYObject::GetFirst(short whichtype, short visible) {
 "	      00557336    jmp near ptr 00557347h"
 );
 // LINE 831:
+// Block end:
 	asm( 
 "	      0055733b    jmp near ptr 00557216h"
 );
@@ -3869,6 +3938,8 @@ class cYObject* cYObject::GetToted() {
 "	      0055741e    jge near ptr 0055751Eh"
 );
 // LINE 852:
+// Block start:
+	class cYObject* obj;
 	asm( 
 "	      00557424    movsx eax,word ptr [ebp-4]"
 "	      00557428    cmp eax,7D00h"
@@ -3938,6 +4009,7 @@ class cYObject* cYObject::GetToted() {
 "	      00557516    mov [ebp-8],eax"
 );
 // LINE 858:
+// Block end:
 	asm( 
 "	      00557519    jmp near ptr 00557413h"
 );
@@ -4037,6 +4109,8 @@ enum TreeSim::ReturnCode cYObject::iPutMyCarInStack(struct TreeSim::StackElem* e
 "	      00557597    je near ptr 005575CDh"
 );
 // LINE 889:
+// Block start:
+	struct _DYOBJ_INST* car;
 	asm( 
 "	      0055759d    mov eax,[ebp-0Ch]"
 "	      005575a0    movsx eax,word ptr [eax+100h]"
@@ -4061,6 +4135,7 @@ enum TreeSim::ReturnCode cYObject::iPutMyCarInStack(struct TreeSim::StackElem* e
 "	      005575c6    mov dword ptr [ebp-4],1"
 );
 // LINE 895:
+// Block end:
 	asm( 
 "	      005575cd    mov eax,[ebp-4]"
 "	      005575d0    jmp near ptr 005575D5h"
@@ -4825,6 +4900,8 @@ enum TreeSim::ReturnCode cYObject::iWalkToAndGrabOntoStackObject(struct TreeSim:
 "	      00557ce9    jmp near ptr 00557F1Dh"
 );
 // LINE 1001:
+// Block start:
+	struct _DYOBJ_INST* goal;
 	asm( 
 "	      00557cee    movsx eax,word ptr [ebp-20h]"
 "	      00557cf2    cmp eax,0FFFFFFFFh"
@@ -5034,6 +5111,7 @@ enum TreeSim::ReturnCode cYObject::iWalkToAndGrabOntoStackObject(struct TreeSim:
 "	      00557f16    mov dword ptr [ebp-4],0"
 );
 // LINE 1027:
+// Block end:
 	asm( 
 "	      00557f1d    lea eax,[ebp-18h]"
 "	      00557f20    push eax"
@@ -5175,6 +5253,9 @@ enum TreeSim::ReturnCode cYObject::iCheckForTrue(struct TreeSim::StackElem* elem
 "	      00557fe4    jmp near ptr 00558260h"
 );
 // LINE 1057:
+// Block start:
+	struct _HELI_DATA* hd;
+	short copterheight;
 	asm( 
 "	      00557fe9    mov eax,ds:[5B4968h]"
 "	      00557fee    mov eax,[eax+0A4h]"
@@ -5221,6 +5302,11 @@ enum TreeSim::ReturnCode cYObject::iCheckForTrue(struct TreeSim::StackElem* elem
 "	      0055804b    jmp near ptr 00558260h"
 );
 // LINE 1067:
+// Block start:
+	struct _DYOBJ_INST* obj;
+	int32_t y;
+	short delta_y;
+// Block end:
 	asm( 
 "	      00558050    mov eax,[ebp-30h]"
 "	      00558053    mov eax,[eax+130h]"
@@ -5283,6 +5369,7 @@ enum TreeSim::ReturnCode cYObject::iCheckForTrue(struct TreeSim::StackElem* elem
 "	      005580d2    jmp near ptr 00558260h"
 );
 // LINE 1078:
+// Block end:
 	asm( 
 "	      005580d7    mov eax,[ebp-30h]"
 "	      005580da    mov eax,[eax+130h]"
@@ -5356,6 +5443,8 @@ enum TreeSim::ReturnCode cYObject::iCheckForTrue(struct TreeSim::StackElem* elem
 "	      005581b7    jne near ptr 0055820Bh"
 );
 // LINE 1090:
+// Block start:
+	short copterheight;
 	asm( 
 "	      005581bd    mov eax,[ebp+8]"
 "	      005581c0    mov eax,[eax+4]"
@@ -5389,6 +5478,7 @@ enum TreeSim::ReturnCode cYObject::iCheckForTrue(struct TreeSim::StackElem* elem
 "	      005581ff    mov dword ptr [ebp-4],0"
 );
 // LINE 1097:
+// Block end:
 	asm( 
 "	      00558206    jmp near ptr 00558212h"
 );
@@ -5615,6 +5705,8 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem* 
 "	      005583ec    jmp near ptr 005586F2h"
 );
 // LINE 1147:
+// Block start:
+	class cYObject* obj;
 	asm( 
 "	      005583f1    push 0"
 "	      005583f3    push 1"
@@ -5661,6 +5753,7 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem* 
 "	      0055844e    jmp near ptr 005586F2h"
 );
 // LINE 1157:
+// Block end:
 	asm( 
 "	      00558453    mov eax,ds:[5B8680h]"
 "	      00558458    add eax,24h"
@@ -5675,6 +5768,8 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem* 
 "	      00558465    jmp near ptr 005586F2h"
 );
 // LINE 1162:
+// Block start:
+	class cYObject* obj;
 	asm( 
 "	      0055846a    push 0"
 "	      0055846c    push 1"
@@ -5721,6 +5816,9 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem* 
 "	      005584c7    jmp near ptr 005586F2h"
 );
 // LINE 1172:
+// Block start:
+	class cYObject* obj;
+// Block end:
 	asm( 
 "	      005584cc    push 0"
 "	      005584ce    push 1"
@@ -5767,6 +5865,7 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem* 
 "	      00558529    jmp near ptr 005586F2h"
 );
 // LINE 1182:
+// Block end:
 	asm( 
 "	      0055852e    mov eax,[ebp-38h]"
 "	      00558531    xor ecx,ecx"
@@ -5911,6 +6010,8 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem* 
 "	      00558645    jmp near ptr 005586F2h"
 );
 // LINE 1215:
+// Block start:
+	class cYObject* obj;
 	asm( 
 "	      0055864a    push 0"
 "	      0055864c    push 1"
@@ -5944,6 +6045,7 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem* 
 "	      0055867c    jmp near ptr 005586F2h"
 );
 // LINE 1224:
+// Block end:
 	asm( 
 "	      00558681    push 8C085h"
 "	      00558686    push 5BD008h"
@@ -5987,6 +6089,8 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem* 
 "	      005586f6    je near ptr 005587B9h"
 );
 // LINE 1227:
+// Block start:
+	short dist;
 	asm( 
 "	      005586fc    cmp dword ptr [ebp-4],0"
 "	      00558700    je near ptr 00558728h"
@@ -6070,6 +6174,7 @@ enum TreeSim::ReturnCode cYObject::iCompareMyLocWith(struct TreeSim::StackElem* 
 "	      005587b2    mov dword ptr [ebp-8],1"
 );
 // LINE 1241:
+// Block end:
 	asm( 
 "	      005587b9    mov eax,[ebp-8]"
 "	      005587bc    jmp near ptr 005587C1h"
@@ -8238,6 +8343,9 @@ enum TreeSim::ReturnCode cYObject::iGetOutOfRoadEtc(struct TreeSim::StackElem* e
 "	      00559e3c    jmp near ptr 00559F0Fh"
 );
 // LINE 1495:
+// Block start:
+	struct cYObject::MoveInfo moveinfo;
+	short speed;
 	asm( 
 "	      00559e41    movsx eax,word ptr [ebp-14h]"
 "	      00559e45    cmp eax,0FFFFFFFFh"
@@ -8321,6 +8429,7 @@ enum TreeSim::ReturnCode cYObject::iGetOutOfRoadEtc(struct TreeSim::StackElem* e
 "	      00559f0a    call 0054E579h"
 );
 // LINE 1526:
+// Block end:
 	asm( 
 "	      00559f0f    mov eax,[ebp-4]"
 "	      00559f12    jmp near ptr 00559F17h"

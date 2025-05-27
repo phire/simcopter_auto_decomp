@@ -2300,6 +2300,9 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 "	      00476fa4    jg near ptr 004786A7h"
 );
 // LINE 184:
+// Block start:
+	class CBackBuffer tempHelicopterBuffer;
+	class CBackBuffer tempTabBuffer;
 	asm( 
 "	      00476faa    mov eax,[ebp-4A58h]"
 "	      00476fb0    cmp dword ptr [eax+40h],0"
@@ -3689,10 +3692,13 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 "	      0047869d    call 0046EC7Ah"
 );
 // LINE 269:
+// Block end:
 	asm( 
 "	      004786a2    jmp near ptr 00479782h"
 );
 // LINE 271:
+// Block start:
+	class CBackBuffer tempTabBuffer;
 	asm( 
 "	      004786a7    mov eax,[ebp-4A58h]"
 "	      004786ad    cmp dword ptr [eax+40h],0"
@@ -4695,6 +4701,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 "	      0047977d    call 0046EC7Ah"
 );
 // LINE 365:
+// Block end:
 	asm( 
 "	      00479782    mov eax,[ebp-4A58h]"
 "	      00479788    mov eax,[eax+14Eh]"
@@ -4705,6 +4712,8 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 "	      0047979c    je near ptr 00479890h"
 );
 // LINE 366:
+// Block start:
+	class CBackBuffer tempStainImage;
 	asm( 
 "	      004797a2    lea eax,[ebp-104h]"
 "	      004797a8    push eax"
@@ -4781,6 +4790,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 "	      0047988b    call 0046EC7Ah"
 );
 // LINE 376:
+// Block end:
 	asm( 
 "	      00479890    mov eax,[ebp-4A58h]"
 "	      00479896    mov eax,[eax+14Eh]"
@@ -4791,6 +4801,8 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 "	      004798aa    je near ptr 0047999Eh"
 );
 // LINE 377:
+// Block start:
+	class CBackBuffer tempPaperClipImage;
 	asm( 
 "	      004798b0    lea eax,[ebp-104h]"
 "	      004798b6    push eax"
@@ -4867,6 +4879,7 @@ void CatalogWindow::SwitchGraphicsForTab(long lNewTab) {
 "	      00479999    call 0046EC7Ah"
 );
 // LINE 387:
+// Block end:
 	asm( 
 "	      0047999e    mov dword ptr [ebp-950h],5"
 "	      004799a8    lea eax,[ebp-17Ch]"

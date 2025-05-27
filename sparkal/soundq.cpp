@@ -1397,6 +1397,8 @@ void SoundQueue::ClearQueue(int32_t bStopCurrentlyPlayingSound) {
 "	      0042154d    je near ptr 004217BFh"
 );
 // LINE 203:
+// Block start:
+	class list<SoundQueueItem *>::iterator iterator;
 	asm( 
 "	      00421553    cmp dword ptr [ebp+8],0"
 "	      00421557    je near ptr 0042159Ah"
@@ -1606,6 +1608,7 @@ void SoundQueue::ClearQueue(int32_t bStopCurrentlyPlayingSound) {
 "	      004217ba    jmp near ptr 004215C4h"
 );
 // LINE 217:
+// Block end:
 	asm( 
 "	      004217bf    mov eax,[ebp-5Ch]"
 "	      004217c2    mov eax,[eax]"

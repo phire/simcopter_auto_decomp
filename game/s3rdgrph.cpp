@@ -89,6 +89,8 @@ void RoadGraph::Init() {
 "	      0053bdbb    jge near ptr 0053BF05h"
 );
 // LINE 98:
+// Block start:
+	int32_t y;
 	asm( 
 "	      0053bdc1    mov dword ptr [ebp-10h],0"
 "	      0053bdc8    jmp near ptr 0053BDD0h"
@@ -181,6 +183,9 @@ void RoadGraph::Init() {
 // LINE 109:
 	asm( 
 "	      0053befb    jmp near ptr 0053BDCDh"
+	);
+// Block end:
+	asm( 
 "	      0053bf00    jmp near ptr 0053BDB1h"
 );
 // LINE 113:
@@ -240,6 +245,8 @@ void RoadGraph::Init() {
 "	      0053bfa6    je near ptr 0053C1DDh"
 );
 // LINE 126:
+// Block start:
+	int32_t i;
 	asm( 
 "	      0053bfac    cmp dword ptr [ebp-4],0"
 "	      0053bfb0    jl near ptr 0053BFDAh"
@@ -439,6 +446,7 @@ void RoadGraph::Init() {
 "	      0053c1da    inc byte ptr [ebp-0Ch]"
 );
 // LINE 147:
+// Block end:
 	asm( 
 "	      0053c1dd    jmp near ptr 0053BF84h"
 );
@@ -474,6 +482,8 @@ void RoadGraph::Init() {
 "	      0053c22d    jle near ptr 0053C286h"
 );
 // LINE 160:
+// Block start:
+	struct RGVertex* pRGV;
 	asm( 
 "	      0053c233    mov eax,[ebp-4]"
 "	      0053c236    mov ecx,[ebp-30h]"
@@ -509,6 +519,7 @@ void RoadGraph::Init() {
 "	      0053c27c    call 0053D9D2h"
 );
 // LINE 162:
+// Block end:
 	asm( 
 "	      0053c281    jmp near ptr 0053C214h"
 );
@@ -539,6 +550,8 @@ void RoadGraph::Init() {
 "	      0053c2c9    jle near ptr 0053C322h"
 );
 // LINE 171:
+// Block start:
+	struct RGVertex* pRGV;
 	asm( 
 "	      0053c2cf    mov eax,[ebp-4]"
 "	      0053c2d2    mov ecx,[ebp-30h]"
@@ -574,6 +587,7 @@ void RoadGraph::Init() {
 "	      0053c318    call 0054048Dh"
 );
 // LINE 173:
+// Block end:
 	asm( 
 "	      0053c31d    jmp near ptr 0053C2B0h"
 );
@@ -753,6 +767,10 @@ void RoadGraph::GetNextGoal(struct Goal* pGoal) {
 "	      0053c444    jmp near ptr 0053C565h"
 );
 // LINE 266:
+// Block start:
+	unsigned char yindex;
+	unsigned char x;
+	struct RGVertex* pRGV;
 	asm( 
 "	      0053c449    mov eax,[ebp+8]"
 "	      0053c44c    mov eax,[eax]"
@@ -876,6 +894,7 @@ void RoadGraph::GetNextGoal(struct Goal* pGoal) {
 "	      0053c55e    mov dword ptr [eax+8],0FFFFFFFFh"
 );
 // LINE 310:
+// Block end:
 	asm( 
 "	      0053c565    mov eax,[ebp+8]"
 "	      0053c568    xor ecx,ecx"
@@ -1109,6 +1128,9 @@ void RoadGraph::PickPlaceOnRoad(struct Goal* pGoal, int32_t x, int32_t y) {
 "	      0053c77b    je near ptr 0053C913h"
 );
 // LINE 366:
+// Block start:
+	int32_t i;
+	struct Road* pRoad;
 	asm( 
 "	      0053c781    mov eax,[ebp+8]"
 "	      0053c784    mov eax,[eax+0Eh]"
@@ -1293,6 +1315,7 @@ void RoadGraph::PickPlaceOnRoad(struct Goal* pGoal, int32_t x, int32_t y) {
 "	      0053c90b    mov [eax+26h],ecx"
 );
 // LINE 399:
+// Block end:
 	asm( 
 "	      0053c90e    jmp near ptr 0053C941h"
 );
@@ -1466,6 +1489,8 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 "	      0053ca60    je near ptr 0053CB39h"
 );
 // LINE 435:
+// Block start:
+	struct RGVertex* pRGV;
 	asm( 
 "	      0053ca66    xor eax,eax"
 "	      0053ca68    mov al,[ebp+0Dh]"
@@ -1572,6 +1597,7 @@ struct Goal RoadGraph::FindIntersections(struct _GridCoordinates startLoc, struc
 "	      0053cb34    jmp near ptr 0053D025h"
 );
 // LINE 453:
+// Block end:
 	asm( 
 "	      0053cb39    mov eax,[ebp-30h]"
 "	      0053cb3c    and eax,0FFFFh"
@@ -2502,6 +2528,8 @@ int32_t RoadGraph::FindIntersection(struct Goal& goal, unsigned char x, unsigned
 "	      0053d342    jne near ptr 0053D3C7h"
 );
 // LINE 682:
+// Block start:
+	int32_t yindex;
 	asm( 
 "	      0053d348    mov eax,[ebp-14h]"
 "	      0053d34b    sub eax,2"
@@ -2566,6 +2594,7 @@ int32_t RoadGraph::FindIntersection(struct Goal& goal, unsigned char x, unsigned
 "	      0053d3c2    jmp near ptr 0053D3ECh"
 );
 // LINE 694:
+// Block end:
 	asm( 
 "	      0053d3c7    cmp dword ptr [ebp-4],0FFFFFFFFh"
 "	      0053d3cb    jne near ptr 0053D3E7h"
@@ -2627,6 +2656,8 @@ void RoadGraph::FindDeadEnds() {
 "	      0053d422    jge near ptr 0053D8CBh"
 );
 // LINE 715:
+// Block start:
+	int32_t yindex;
 	asm( 
 "	      0053d428    mov dword ptr [ebp-14h],0"
 "	      0053d42f    jmp near ptr 0053D437h"
@@ -2639,6 +2670,9 @@ void RoadGraph::FindDeadEnds() {
 "	      0053d449    jle near ptr 0053D8C6h"
 );
 // LINE 717:
+// Block start:
+	unsigned short fromTile;
+	struct RGVertex* pRGV;
 	asm( 
 "	      0053d44f    mov eax,[ebp-4]"
 "	      0053d452    mov ecx,[ebp-30h]"
@@ -3021,10 +3055,12 @@ void RoadGraph::FindDeadEnds() {
 "	      0053d8be    mov [eax+2],cl"
 );
 // LINE 756:
+// Block end:
 	asm( 
 "	      0053d8c1    jmp near ptr 0053D434h"
 );
 // LINE 757:
+// Block end:
 	asm( 
 "	      0053d8c6    jmp near ptr 0053D418h"
 );
@@ -4121,6 +4157,9 @@ void RoadGraph::FindNumRoadElements(struct RGVertex* pRGV, struct Edge* pEdge, e
 "	      0053e443    jne near ptr 0053E4D0h"
 );
 // LINE 940:
+// Block start:
+	unsigned char tempy;
+	unsigned char tempx;
 	asm( 
 "	      0053e449    mov al,[ebp+14h]"
 "	      0053e44c    mov [ebp-14h],al"
@@ -4193,6 +4232,7 @@ void RoadGraph::FindNumRoadElements(struct RGVertex* pRGV, struct Edge* pEdge, e
 "	      0053e4c8    mov [ecx+1],al"
 );
 // LINE 954:
+// Block end:
 	asm( 
 "	      0053e4cb    jmp near ptr 0053E503h"
 "	      0053e4d0    cmp dword ptr [ebp-0Ch],0FFFFFFFFh"

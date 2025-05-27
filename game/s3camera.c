@@ -1553,6 +1553,8 @@ void S3CameraRotate() {
 "	      004f9745    jne near ptr 004F9791h"
 );
 // LINE 608:
+// Block start:
+	struct _DYOBJ_INST* dyobj;
 	asm( 
 "	      004f974b    call 00546500h"
 "	      004f9750    mov [ebp-18h],eax"
@@ -1586,6 +1588,7 @@ void S3CameraRotate() {
 "	      004f9789    add esp,4"
 );
 // LINE 636:
+// Block end:
 	asm( 
 "	      004f978c    jmp near ptr 004F98D7h"
 "	      004f9791    cmp dword ptr ds:[5B4DB8h],2"

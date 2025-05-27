@@ -903,6 +903,13 @@ unsigned short cYObject::SearchForPersonSpot(struct _DYOBJ_INST* master, struct 
 "	      00544c66    jge near ptr 00544F69h"
 );
 // LINE 266:
+// Block start:
+	int32_t masterrad;
+	struct Point3d offset;
+	int32_t myrad;
+	int32_t groundheight;
+	int32_t objheight;
+	struct Point3d masterloc;
 	asm( 
 "	      00544c6c    movsx eax,word ptr [ebp-8]"
 "	      00544c70    movsx ecx,word ptr [ebp-4]"
@@ -1194,6 +1201,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _DYOBJ_INST* master, struct 
 "	      00544f5f    jmp near ptr 00544F71h"
 );
 // LINE 296:
+// Block end:
 	asm( 
 "	      00544f64    jmp near ptr 00544C58h"
 );
@@ -1397,6 +1405,8 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 "	      0054511f    jmp near ptr 00545993h"
 );
 // LINE 328:
+// Block start:
+	short count;
 	asm( 
 "	      00545124    mov word ptr [ebp-1Ch],0"
 "	      0054512a    jmp near ptr 00545133h"
@@ -1677,6 +1687,9 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 "	      0054549d    jmp near ptr 005459BDh"
 );
 // LINE 348:
+// Block start:
+	short count;
+// Block end:
 	asm( 
 "	      005454a2    mov word ptr [ebp-20h],0"
 "	      005454a8    jmp near ptr 005454B1h"
@@ -1887,6 +1900,9 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 "	      00545735    jmp near ptr 005459BDh"
 );
 // LINE 362:
+// Block start:
+	short count;
+// Block end:
 	asm( 
 "	      0054573a    mov word ptr [ebp-24h],0"
 "	      00545740    jmp near ptr 00545749h"
@@ -2075,6 +2091,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 "	      0054596d    jmp near ptr 005459BDh"
 );
 // LINE 376:
+// Block end:
 	asm( 
 "	      00545972    push 8C085h"
 "	      00545977    push 5B892Ch"
@@ -2105,6 +2122,16 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 "	      005459c4    je near ptr 00545CB3h"
 );
 // LINE 380:
+// Block start:
+	struct Point3d pos;
+	short centerscurk;
+	enum cYObject::LocationType cellcenterloctype;
+	enum cYObject::LocationType celloffsetloctype;
+	int32_t centcellx;
+	int32_t offcelly;
+	int32_t offcellx;
+	int32_t centcelly;
+	short offscurk;
 	asm( 
 "	      005459ca    mov eax,[ebp+8]"
 "	      005459cd    movsx eax,word ptr [eax+2]"
@@ -2268,6 +2295,8 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 "	      00545c13    je near ptr 00545C65h"
 );
 // LINE 391:
+// Block start:
+	char[80] str;
 	asm( 
 "	      00545c19    mov eax,[ebp-34h]"
 "	      00545c1c    push eax"
@@ -2298,6 +2327,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 "	      00545c62    add esp,10h"
 );
 // LINE 395:
+// Block end:
 	asm( 
 "	      00545c65    mov eax,[ebp-2Ch]"
 "	      00545c68    push eax"
@@ -2330,6 +2360,7 @@ unsigned short cYObject::SearchForPersonSpot(struct _CELL_INFO* cptr, int32_t * 
 "	      00545cb0    add esp,10h"
 );
 // LINE 400:
+// Block end:
 	asm( 
 "	      00545cb3    mov ax,[ebp-8]"
 "	      00545cb7    jmp near ptr 00545CBCh"
@@ -2543,6 +2574,8 @@ void S3PersonReset() {
 "	      00545ddd    jge near ptr 00545EB1h"
 );
 // LINE 447:
+// Block start:
+	class cYObject* obj;
 	asm( 
 "	      00545de3    movsx eax,word ptr [ebp-4]"
 "	      00545de7    cmp eax,7D00h"
@@ -2597,6 +2630,7 @@ void S3PersonReset() {
 "	      00545ea9    call dword ptr [eax+18h]"
 );
 // LINE 450:
+// Block end:
 	asm( 
 "	      00545eac    jmp near ptr 00545DD2h"
 );
@@ -2960,6 +2994,8 @@ void S3PersonUserAppearNew(struct Point3d* loc, struct Point3d* facingvector) {
 "	      0054630e    je near ptr 00546342h"
 );
 // LINE 479:
+// Block start:
+	struct cYObject::MoveInfo moveinfo;
 	asm( 
 "	      00546314    mov eax,[ebp+0Ch]"
 "	      00546317    mov ecx,ds:[5B8680h]"
@@ -2979,6 +3015,7 @@ void S3PersonUserAppearNew(struct Point3d* loc, struct Point3d* facingvector) {
 "	      0054633d    call 0054DCDEh"
 );
 // LINE 487:
+// Block end:
 	asm( 
 "	      00546342    jmp near ptr 00546347h"
 "	      00546347    pop edi"
@@ -3334,6 +3371,8 @@ void S3DrawPerson(struct VRBlit* blit) {
 "	      005465ba    jmp near ptr 005466BBh"
 );
 // LINE 537:
+// Block start:
+	class cYObject* obj;
 	asm( 
 "	      005465bf    movsx eax,word ptr [ebp-4]"
 "	      005465c3    cmp eax,7D00h"
@@ -3402,6 +3441,7 @@ void S3DrawPerson(struct VRBlit* blit) {
 "	      005466b6    call 00551388h"
 );
 // LINE 543:
+// Block end:
 	asm( 
 "	      005466bb    jmp near ptr 005466C0h"
 "	      005466c0    pop edi"
@@ -4104,6 +4144,8 @@ class cYObject* cYObject::GetOnePersonForScurkID(short cellx, short celly) {
 "	      00546d3d    jge near ptr 00546E64h"
 );
 // LINE 698:
+// Block start:
+	class cYObject* obj;
 	asm( 
 "	      00546d43    movsx eax,word ptr [ebp-4]"
 "	      00546d47    cmp eax,7D00h"
@@ -4189,6 +4231,7 @@ class cYObject* cYObject::GetOnePersonForScurkID(short cellx, short celly) {
 "	      00546e5a    jmp near ptr 00546E6Bh"
 );
 // LINE 704:
+// Block end:
 	asm( 
 "	      00546e5f    jmp near ptr 00546D32h"
 );
@@ -4818,6 +4861,9 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 "	      005474e9    jmp near ptr 005478D0h"
 );
 // LINE 784:
+// Block start:
+	class cYObject* medic;
+	short dist;
 	asm( 
 "	      005474ee    mov eax,[ebp+0Ch]"
 "	      005474f1    push eax"
@@ -4869,6 +4915,7 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 "	      00547552    jmp near ptr 0054792Dh"
 );
 // LINE 792:
+// Block end:
 	asm( 
 "	      00547557    mov eax,[ebp+0Ch]"
 "	      0054755a    push eax"
@@ -4942,6 +4989,9 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 "	      00547600    jmp near ptr 0054792Dh"
 );
 // LINE 808:
+// Block start:
+	short fieldershift;
+	class cYObject* newperson;
 	asm( 
 "	      00547605    mov eax,[ebp+0Ch]"
 "	      00547608    push eax"
@@ -5178,6 +5228,7 @@ void cYObject::StartScurkPeople(short cellx, short celly) {
 "	      005478c6    jmp near ptr 0054792Dh"
 );
 // LINE 831:
+// Block end:
 	asm( 
 "	      005478cb    jmp near ptr 0054792Dh"
 "	      005478d0    sub dword ptr [ebp-20h],0D1h"
@@ -5444,6 +5495,9 @@ void cYObject::BeamRemainingAmbients() {
 "	      00547afa    jge near ptr 00547C61h"
 );
 // LINE 874:
+// Block start:
+	short id;
+	short lastnumawake;
 	asm( 
 "	      00547b00    mov ax,ds:[5B8674h]"
 "	      00547b06    mov [ebp-8],ax"
@@ -5540,6 +5594,7 @@ void cYObject::BeamRemainingAmbients() {
 "	      00547c59    add esp,10h"
 );
 // LINE 884:
+// Block end:
 	asm( 
 "	      00547c5c    jmp near ptr 00547AD1h"
 );
@@ -5848,6 +5903,8 @@ void cYObject::MakePlebes() {
 "	      00547ecc    jge near ptr 0054803Dh"
 );
 // LINE 952:
+// Block start:
+	class cYObject* personobj;
 	asm( 
 "	      00547ed2    mov eax,ds:[636B8Ch]"
 "	      00547ed7    push eax"
@@ -5949,6 +6006,7 @@ void cYObject::MakePlebes() {
 "	      00548035    add esp,10h"
 );
 // LINE 960:
+// Block end:
 	asm( 
 "	      00548038    jmp near ptr 00547EC5h"
 );
@@ -5987,6 +6045,9 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 "	      0054806f    jne near ptr 00549BA6h"
 );
 // LINE 967:
+// Block start:
+	short n;
+	short count;
 	asm( 
 "	      00548075    mov dword ptr ds:[636CE0h],0"
 );
@@ -7961,6 +8022,7 @@ void cYObject::InitObjects(char * globalBehaviorFileName) {
 "	      00549b9c    mov dword ptr ds:[6376A4h],552A70h"
 );
 // LINE 1275:
+// Block end:
 	asm( 
 "	      00549ba6    jmp near ptr 00549BCFh"
 "	      00549bab    mov eax,[ebp-20h]"
@@ -8516,6 +8578,15 @@ unsigned short cYObject::OutOfCameraRange() {
 "	      00549fcd    jmp near ptr 0054A1CEh"
 );
 // LINE 1426:
+// Block start:
+	short deltaY;
+	short deltaX;
+	int32_t xtoview;
+	long debug1;
+	struct Point3d viewvec;
+	int32_t ztoview;
+	unsigned short behindView;
+	long debug2;
 	asm( 
 "	      00549fd2    mov eax,ds:[6BF188h]"
 "	      00549fd7    mov ecx,[ebp-40h]"
@@ -8715,6 +8786,7 @@ unsigned short cYObject::OutOfCameraRange() {
 "	      0054a1c9    jmp near ptr 0054A1CEh"
 );
 // LINE 1459:
+// Block end:
 	asm( 
 "	      0054a1ce    pop edi"
 "	      0054a1cf    pop esi"
@@ -8815,6 +8887,8 @@ void LiberateMissionPeople(long missionid) {
 "	      0054a25e    jge near ptr 0054A350h"
 );
 // LINE 1478:
+// Block start:
+	class cYObject* obj;
 	asm( 
 "	      0054a264    movsx eax,word ptr [ebp-4]"
 "	      0054a268    cmp eax,7D00h"
@@ -8878,6 +8952,7 @@ void LiberateMissionPeople(long missionid) {
 "	      0054a346    call 0054B820h"
 );
 // LINE 1483:
+// Block end:
 	asm( 
 "	      0054a34b    jmp near ptr 0054A253h"
 );
@@ -8933,6 +9008,8 @@ void KillMissionPeople(long missionid) {
 "	      0054a394    jge near ptr 0054A59Ah"
 );
 // LINE 1500:
+// Block start:
+	class cYObject* obj;
 	asm( 
 "	      0054a39a    movsx eax,word ptr [ebp-4]"
 "	      0054a39e    cmp eax,7D00h"
@@ -8991,6 +9068,8 @@ void KillMissionPeople(long missionid) {
 "	      0054a473    jne near ptr 0054A595h"
 );
 // LINE 1503:
+// Block start:
+	unsigned short die;
 	asm( 
 "	      0054a479    mov word ptr [ebp-24h],0"
 );
@@ -9098,6 +9177,8 @@ void KillMissionPeople(long missionid) {
 "	      0054a592    add esp,4"
 );
 // LINE 1529:
+// Block end:
+// Block end:
 	asm( 
 "	      0054a595    jmp near ptr 0054A389h"
 );
@@ -9204,6 +9285,8 @@ unsigned short cYObject::IsSuitableForMission(enum MissionType mission, short ce
 "	      0054a65f    jmp near ptr 0054A797h"
 );
 // LINE 1544:
+// Block start:
+	short scurkID;
 	asm( 
 "	      0054a664    movsx eax,word ptr [ebp+0Ch]"
 "	      0054a668    cmp eax,7Fh"
@@ -9247,6 +9330,8 @@ unsigned short cYObject::IsSuitableForMission(enum MissionType mission, short ce
 "	      0054a704    je near ptr 0054A797h"
 );
 // LINE 1546:
+// Block start:
+	struct _LZ_INFO* li;
 	asm( 
 "	      0054a70a    movsx eax,word ptr [ebp-8]"
 "	      0054a70e    push eax"
@@ -9271,6 +9356,9 @@ unsigned short cYObject::IsSuitableForMission(enum MissionType mission, short ce
 "	      0054a736    jmp near ptr 0054A797h"
 );
 // LINE 1550:
+// Block start:
+	short count;
+	enum cYObject::LocationType loctype;
 	asm( 
 "	      0054a73b    mov eax,[ebp+10h]"
 "	      0054a73e    push eax"
@@ -9312,6 +9400,9 @@ unsigned short cYObject::IsSuitableForMission(enum MissionType mission, short ce
 "	      0054a792    jmp near ptr 0054A759h"
 );
 // LINE 1560:
+// Block end:
+// Block end:
+// Block end:
 	asm( 
 "	      0054a797    mov ax,[ebp-4]"
 "	      0054a79b    jmp near ptr 0054A7A0h"
@@ -9457,6 +9548,11 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054a96e    jmp near ptr 0054B505h"
 );
 // LINE 1583:
+// Block start:
+	int32_t offsetz;
+	int32_t offsetx;
+	unsigned short foundplace;
+	short count;
 	asm( 
 "	      0054a973    cmp dword ptr [ebp+20h],0"
 "	      0054a977    jne near ptr 0054A987h"
@@ -9505,6 +9601,8 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054aa16    jge near ptr 0054AAA5h"
 );
 // LINE 1589:
+// Block start:
+	enum cYObject::LocationType loctype;
 	asm( 
 "	      0054aa1c    mov eax,[ebp+14h]"
 "	      0054aa1f    push eax"
@@ -9556,6 +9654,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054aa9b    jmp near ptr 0054AAA5h"
 );
 // LINE 1595:
+// Block end:
 	asm( 
 "	      0054aaa0    jmp near ptr 0054AA0Bh"
 );
@@ -9565,6 +9664,8 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054aaac    je near ptr 0054AB43h"
 );
 // LINE 1597:
+// Block start:
+	long testID;
 	asm( 
 "	      0054aab2    mov eax,[ebp-14h]"
 "	      0054aab5    push eax"
@@ -9618,6 +9719,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054ab38    mov word ptr [ebp-4],1"
 );
 // LINE 1604:
+// Block end:
 	asm( 
 "	      0054ab3e    jmp near ptr 0054AB49h"
 );
@@ -9630,6 +9732,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054ab49    jmp near ptr 0054B53Bh"
 );
 // LINE 1609:
+// Block end:
 	asm( 
 "	      0054ab4e    mov eax,[ebp+0Ch]"
 "	      0054ab51    push eax"
@@ -9850,6 +9953,10 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054adce    jmp near ptr 0054B53Bh"
 );
 // LINE 1646:
+// Block start:
+	int32_t offsetz;
+	int32_t offsetx;
+	short count;
 	asm( 
 "	      0054add3    cmp dword ptr [ebp+20h],0"
 "	      0054add7    jne near ptr 0054ADE7h"
@@ -9876,6 +9983,8 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054ae1f    jge near ptr 0054B0CAh"
 );
 // LINE 1650:
+// Block start:
+	enum cYObject::LocationType loctype;
 	asm( 
 "	      0054ae25    mov eax,[ebp+14h]"
 "	      0054ae28    push eax"
@@ -9919,6 +10028,11 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054ae98    je near ptr 0054B0A2h"
 );
 // LINE 1656:
+// Block start:
+	unsigned short founddest;
+	struct _MISSION_PARMS mp;
+	short destcellx;
+	short destcelly;
 	asm( 
 "	      0054ae9e    mov word ptr [ebp-34h],0FFFFh"
 );
@@ -9936,6 +10050,8 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054aeb4    jne near ptr 0054AFC6h"
 );
 // LINE 1660:
+// Block start:
+	short cnt;
 	asm( 
 "	      0054aeba    mov eax,[ebp+18h]"
 "	      0054aebd    push eax"
@@ -9963,6 +10079,8 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054aef5    jge near ptr 0054AFC1h"
 );
 // LINE 1663:
+// Block start:
+	enum cYObject::LocationType loctype2;
 	asm( 
 "	      0054aefb    mov eax,[ebp-30h]"
 "	      0054aefe    push eax"
@@ -10053,10 +10171,12 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054afb7    jmp near ptr 0054AFC1h"
 );
 // LINE 1676:
+// Block end:
 	asm( 
 "	      0054afbc    jmp near ptr 0054AEEAh"
 );
 // LINE 1678:
+// Block end:
 	asm( 
 "	      0054afc1    jmp near ptr 0054AFCCh"
 );
@@ -10177,6 +10297,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054b098    jmp near ptr 0054B0CAh"
 );
 // LINE 1727:
+// Block end:
 	asm( 
 "	      0054b09d    jmp near ptr 0054B0C5h"
 );
@@ -10204,6 +10325,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054b0c1    inc word ptr [ebp+14h]"
 );
 // LINE 1733:
+// Block end:
 	asm( 
 "	      0054b0c5    jmp near ptr 0054AE14h"
 );
@@ -10212,6 +10334,10 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054b0ca    jmp near ptr 0054B53Bh"
 );
 // LINE 1737:
+// Block start:
+	int32_t offsetz;
+	int32_t offsetx;
+// Block end:
 	asm( 
 "	      0054b0cf    mov word ptr [ebp-4],0"
 );
@@ -10308,6 +10434,11 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054b1db    jmp near ptr 0054B53Bh"
 );
 // LINE 1750:
+// Block start:
+	int32_t mycelly;
+	int32_t mycellx;
+	struct Point3d pos;
+// Block end:
 	asm( 
 "	      0054b1e0    mov word ptr [ebp-4],0"
 );
@@ -10368,6 +10499,8 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054b286    je near ptr 0054B359h"
 );
 // LINE 1759:
+// Block start:
+	unsigned short setmaster;
 	asm( 
 "	      0054b28c    jmp near ptr 0054B291h"
 "	      0054b291    mov eax,[ebp-0E8h]"
@@ -10436,10 +10569,12 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054b353    mov word ptr [ebp-4],1"
 );
 // LINE 1767:
+// Block end:
 	asm( 
 "	      0054b359    jmp near ptr 0054B53Bh"
 );
 // LINE 1771:
+// Block end:
 	asm( 
 "	      0054b35e    mov word ptr [ebp-4],0"
 );
@@ -10524,6 +10659,9 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054b435    jmp near ptr 0054B4FBh"
 );
 // LINE 1783:
+// Block start:
+	int32_t offsetz;
+	int32_t offsetx;
 	asm( 
 "	      0054b43a    push 1"
 "	      0054b43c    lea eax,[ebp-80h]"
@@ -10590,6 +10728,7 @@ unsigned short cYObject::StartMission(enum PersonType persontype, enum MissionTy
 "	      0054b4f5    mov word ptr [ebp-4],1"
 );
 // LINE 1790:
+// Block end:
 	asm( 
 "	      0054b4fb    jmp near ptr 0054B53Bh"
 );
@@ -10973,6 +11112,9 @@ long cYObject::JoinRiot() {
 "	      0054ba37    je near ptr 0054BC2Fh"
 );
 // LINE 1823:
+// Block start:
+	unsigned short conked;
+	struct _MISSION_PARMS mp;
 	asm( 
 "	      0054ba3d    mov eax,[ebp-4]"
 "	      0054ba40    mov [ebp-18h],eax"
@@ -11112,6 +11254,7 @@ long cYObject::JoinRiot() {
 "	      0054bc2a    jmp near ptr 0054BC2Fh"
 );
 // LINE 1835:
+// Block end:
 	asm( 
 "	      0054bc2f    mov eax,[ebp-4]"
 "	      0054bc32    jmp near ptr 0054BC37h"
@@ -11198,6 +11341,9 @@ void cYObject::PhaseAndBeamSoundChannels() {
 "	      0054bd09    je near ptr 0054BEA4h"
 );
 // LINE 1846:
+// Block start:
+	short xdiff;
+	short ydiff;
 	asm( 
 "	      0054bd0f    mov eax,[ebp-0Ch]"
 "	      0054bd12    movsx eax,word ptr [eax+0D2h]"
@@ -11315,6 +11461,7 @@ void cYObject::PhaseAndBeamSoundChannels() {
 "	      0054bea1    add esp,8"
 );
 // LINE 1856:
+// Block end:
 	asm( 
 "	      0054bea4    jmp near ptr 0054BC4Bh"
 );
@@ -11453,6 +11600,9 @@ short cYObject::DistributeSoundChannels(short rad, short firstsoundchannel) {
 "	      0054c019    jne near ptr 0054C0D4h"
 );
 // LINE 1874:
+// Block start:
+	short xdiff;
+	short ydiff;
 	asm( 
 "	      0054c01f    mov eax,ds:[6BF188h]"
 "	      0054c024    mov ecx,[ebp-0Ch]"
@@ -11516,6 +11666,7 @@ short cYObject::DistributeSoundChannels(short rad, short firstsoundchannel) {
 "	      0054c0cf    jmp near ptr 0054C0D4h"
 );
 // LINE 1881:
+// Block end:
 	asm( 
 "	      0054c0d4    jmp near ptr 0054BF37h"
 );
@@ -11676,6 +11827,9 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 "	      0054c24d    je near ptr 0054C306h"
 );
 // LINE 1905:
+// Block start:
+	short actualchannel;
+	class DigitalSound* theSound;
 	asm( 
 "	      0054c253    mov eax,[ebp-30h]"
 "	      0054c256    movsx eax,word ptr [eax+102h]"
@@ -11731,6 +11885,7 @@ unsigned short cYObject::PlaySoundA(enum cYObject::SoundNum soundnum, unsigned s
 "	      0054c2fc    jmp near ptr 0054C66Ah"
 );
 // LINE 1912:
+// Block end:
 	asm( 
 "	      0054c301    jmp near ptr 0054C30Fh"
 );
@@ -12195,6 +12350,8 @@ void cYObject::SimulateAll() {
 "	      0054c6d3    jne near ptr 0054C826h"
 );
 // LINE 2099:
+// Block start:
+	short count;
 	asm( 
 "	      0054c6d9    mov word ptr [ebp-0Ch],0"
 "	      0054c6df    jmp near ptr 0054C6E8h"
@@ -12204,6 +12361,8 @@ void cYObject::SimulateAll() {
 "	      0054c6ef    jge near ptr 0054C821h"
 );
 // LINE 2100:
+// Block start:
+	class cYObject* obj;
 	asm( 
 "	      0054c6f5    movsx eax,word ptr [ebp-0Ch]"
 "	      0054c6f9    cmp eax,7D00h"
@@ -12288,14 +12447,18 @@ void cYObject::SimulateAll() {
 "	      0054c817    jmp near ptr 0054C81Ch"
 );
 // LINE 2103:
+// Block end:
 	asm( 
 "	      0054c81c    jmp near ptr 0054C6E4h"
 );
 // LINE 2105:
+// Block end:
 	asm( 
 "	      0054c821    jmp near ptr 0054CCB3h"
 );
 // LINE 2106:
+// Block start:
+	short count;
 	asm( 
 "	      0054c826    inc dword ptr ds:[5B8694h]"
 "	      0054c82c    movsx eax,word ptr ds:[5B8644h]"
@@ -12321,6 +12484,8 @@ void cYObject::SimulateAll() {
 "	      0054c87f    jge near ptr 0054CC8Dh"
 );
 // LINE 2109:
+// Block start:
+	class cYObject* obj;
 	asm( 
 "	      0054c885    movsx eax,word ptr [ebp-14h]"
 "	      0054c889    cmp eax,7D00h"
@@ -12570,6 +12735,7 @@ void cYObject::SimulateAll() {
 "	      0054cc83    call 0054DAF3h"
 );
 // LINE 2126:
+// Block end:
 	asm( 
 "	      0054cc88    jmp near ptr 0054C874h"
 );
@@ -12593,6 +12759,7 @@ void cYObject::SimulateAll() {
 "	      0054ccae    call 0054BC3Ch"
 );
 // LINE 2134:
+// Block end:
 	asm( 
 "	      0054ccb3    jmp near ptr 0054CCB8h"
 "	      0054ccb8    pop edi"
@@ -12761,6 +12928,8 @@ class cYObject* cYObject::GetPersonWithMaster(struct _DYOBJ_INST* dyobj) {
 "	      0054cdd4    jge near ptr 0054CEBCh"
 );
 // LINE 2167:
+// Block start:
+	class cYObject* obj;
 	asm( 
 "	      0054cdda    movsx eax,word ptr [ebp-4]"
 "	      0054cdde    cmp eax,7D00h"
@@ -12821,6 +12990,7 @@ class cYObject* cYObject::GetPersonWithMaster(struct _DYOBJ_INST* dyobj) {
 "	      0054ceb2    jmp near ptr 0054CEC3h"
 );
 // LINE 2171:
+// Block end:
 	asm( 
 "	      0054ceb7    jmp near ptr 0054CDC9h"
 );
@@ -13538,6 +13708,10 @@ unsigned short cYObject::GetNeutralLoc(int32_t * cellx, int32_t * celly, int32_t
 "	      0054d819    mov eax,[ebp-4]"
 "	      0054d81c    cmp dword ptr [eax*8+635268h],0"
 "	      0054d824    jne near ptr 0054D8DDh"
+	);
+// Block start:
+	struct Point3d pos;
+	asm( 
 "	      0054d82a    mov eax,[ebp+14h]"
 "	      0054d82d    mov eax,[eax]"
 "	      0054d82f    mov [ebp-58h],eax"
@@ -13608,6 +13782,7 @@ unsigned short cYObject::GetNeutralLoc(int32_t * cellx, int32_t * celly, int32_t
 "	      0054d8d8    jmp near ptr 0054DAECh"
 );
 // LINE 2263:
+// Block end:
 	asm( 
 "	      0054d8dd    mov eax,[ebp-20h]"
 "	      0054d8e0    movsx eax,word ptr [eax+2]"
@@ -14085,6 +14260,8 @@ void cAvatar::Simulate() {
 "	      0054de30    jne near ptr 0054DFC2h"
 );
 // LINE 2310:
+// Block start:
+	struct _DYOBJ_INST* dy;
 	asm( 
 "	      0054de36    cmp dword ptr ds:[5B4DB8h],3"
 "	      0054de3d    jne near ptr 0054DE5Fh"
@@ -14196,6 +14373,7 @@ void cAvatar::Simulate() {
 "	      0054dfbd    jmp near ptr 0054E574h"
 );
 // LINE 2316:
+// Block end:
 	asm( 
 "	      0054dfc2    cmp dword ptr ds:[5B4DB8h],3"
 "	      0054dfc9    je near ptr 0054DFEBh"
@@ -14238,6 +14416,8 @@ void cAvatar::Simulate() {
 "	      0054e02e    jne near ptr 0054E055h"
 );
 // LINE 2324:
+// Block start:
+	class cYObject* person;
 	asm( 
 "	      0054e034    mov ecx,[ebp-60h]"
 "	      0054e037    call 005573F5h"
@@ -14254,6 +14434,7 @@ void cAvatar::Simulate() {
 "	      0054e04c    mov word ptr [eax+0F2h],1"
 );
 // LINE 2330:
+// Block end:
 	asm( 
 "	      0054e055    mov eax,[ebp-60h]"
 "	      0054e058    add eax,3Ch"
@@ -14268,6 +14449,8 @@ void cAvatar::Simulate() {
 "	      0054e06b    je near ptr 0054E237h"
 );
 // LINE 2333:
+// Block start:
+	class cYObject* person;
 	asm( 
 "	      0054e071    mov eax,[ebp-18h]"
 "	      0054e074    mov ds:[5B4968h],eax"
@@ -14284,6 +14467,8 @@ void cAvatar::Simulate() {
 "	      0054e088    je near ptr 0054E121h"
 );
 // LINE 2338:
+// Block start:
+	class cYObject* obj;
 	asm( 
 "	      0054e08e    mov eax,[ebp-24h]"
 "	      0054e091    movsx eax,word ptr [eax+0D8h]"
@@ -14332,6 +14517,7 @@ void cAvatar::Simulate() {
 "	      0054e113    mov word ptr [eax+0F2h],1"
 );
 // LINE 2348:
+// Block end:
 	asm( 
 "	      0054e11c    jmp near ptr 0054E232h"
 );
@@ -14422,12 +14608,15 @@ void cAvatar::Simulate() {
 "	      0054e22d    jmp near ptr 0054E574h"
 );
 // LINE 2362:
+// Block end:
 	asm( 
 "	      0054e232    jmp near ptr 0054E482h"
 "	      0054e237    cmp dword ptr [ebp-4],5"
 "	      0054e23b    jne near ptr 0054E482h"
 );
 // LINE 2363:
+// Block start:
+	class cYObject* person;
 	asm( 
 "	      0054e241    mov eax,[ebp-0Ch]"
 "	      0054e244    push eax"
@@ -14590,6 +14779,7 @@ void cAvatar::Simulate() {
 "	      0054e479    mov word ptr [eax+0F2h],0"
 );
 // LINE 2379:
+// Block end:
 	asm( 
 "	      0054e482    mov eax,[ebp-60h]"
 "	      0054e485    mov eax,[eax+174h]"
@@ -17229,6 +17419,8 @@ void cYObject::DestroyObjects() {
 "	      0055057a    je near ptr 00550691h"
 );
 // LINE 2763:
+// Block start:
+	short cnt;
 	asm( 
 "	      00550580    mov word ptr [ebp-4],0"
 "	      00550586    jmp near ptr 0055058Fh"
@@ -17310,6 +17502,7 @@ void cYObject::DestroyObjects() {
 "	      0055068c    jmp near ptr 00550691h"
 );
 // LINE 2774:
+// Block end:
 	asm( 
 "	      00550691    jmp near ptr 00550696h"
 "	      00550696    pop edi"
@@ -17709,6 +17902,8 @@ short cYObject::MakeNewObject(short type, struct Point3d loc, class Behavior* be
 "	      00550a5e    je near ptr 00550AE5h"
 );
 // LINE 2834:
+// Block start:
+	class cYObject** newObj;
 	asm( 
 "	      00550a64    movsx eax,word ptr [ebp-10h]"
 "	      00550a68    lea eax,[eax*4+636D40h]"
@@ -17755,6 +17950,7 @@ short cYObject::MakeNewObject(short type, struct Point3d loc, class Behavior* be
 "	      00550add    call dword ptr [edx+18h]"
 );
 // LINE 2837:
+// Block end:
 	asm( 
 "	      00550ae0    jmp near ptr 00550B01h"
 );
@@ -19005,6 +19201,8 @@ void BodyDrawDebugInfo(class CBackBuffer* buf) {
 "	      00551832    je near ptr 0055189Ah"
 );
 // LINE 3052:
+// Block start:
+	short count;
 	asm( 
 "	      00551838    mov word ptr [ebp-4],0"
 "	      0055183e    jmp near ptr 00551847h"
@@ -19015,6 +19213,8 @@ void BodyDrawDebugInfo(class CBackBuffer* buf) {
 "	      00551854    jge near ptr 0055189Ah"
 );
 // LINE 3053:
+// Block start:
+	struct BodyDebugInfo bdi;
 	asm( 
 "	      0055185a    movsx eax,word ptr [ebp-4]"
 "	      0055185e    mov ecx,eax"
@@ -19043,10 +19243,12 @@ void BodyDrawDebugInfo(class CBackBuffer* buf) {
 "	      00551892    call dword ptr [eax+4Ch]"
 );
 // LINE 3055:
+// Block end:
 	asm( 
 "	      00551895    jmp near ptr 00551843h"
 );
 // LINE 3057:
+// Block end:
 	asm( 
 "	      0055189a    mov word ptr ds:[5B86A0h],0"
 );

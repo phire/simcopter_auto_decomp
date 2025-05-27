@@ -245,6 +245,9 @@ long FlatFile::Open(unsigned char * name) {
 "	      0055c413    jne near ptr 0055C509h"
 );
 // LINE 73:
+// Block start:
+	char[256] cstrbuff;
+	long test;
 	asm( 
 "	      0055c419    mov dword ptr [ebp-0Ch],1"
 "	      0055c420    jmp near ptr 0055C428h"
@@ -325,6 +328,7 @@ long FlatFile::Open(unsigned char * name) {
 "	      0055c4ff    jmp near ptr 0055C504h"
 );
 // LINE 87:
+// Block end:
 	asm( 
 "	      0055c504    jmp near ptr 0055C533h"
 );

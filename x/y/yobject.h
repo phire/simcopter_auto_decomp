@@ -170,6 +170,8 @@ class cYObject* cYObject::PutTotedMedVicOn(struct _DYOBJ_INST* thing) {
 "	      005521d1    je near ptr 0055235Ch"
 );
 // LINE 1026:
+// Block start:
+	unsigned short yes;
 	asm( 
 "	      005521d7    mov eax,[ebp-4]"
 "	      005521da    movsx eax,word ptr [eax+0D8h]"
@@ -281,6 +283,7 @@ class cYObject* cYObject::PutTotedMedVicOn(struct _DYOBJ_INST* thing) {
 "	      00552352    jmp near ptr 00552363h"
 );
 // LINE 1035:
+// Block end:
 	asm( 
 "	      00552357    jmp near ptr 00552363h"
 );

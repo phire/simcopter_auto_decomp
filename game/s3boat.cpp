@@ -568,6 +568,8 @@ void BoatClass::Itterate() {
 "	      005278a5    je near ptr 00527910h"
 );
 // LINE 581:
+// Block start:
+	struct VRview position;
 	asm( 
 "	      005278ab    mov eax,[ebp-5Ch]"
 "	      005278ae    mov eax,[eax]"
@@ -614,6 +616,7 @@ void BoatClass::Itterate() {
 "	      0052790d    add esp,0Ch"
 );
 // LINE 601:
+// Block end:
 	asm( 
 "	      00527910    jmp near ptr 0052794Ah"
 );
@@ -807,6 +810,8 @@ void BoatClass::ItterateFSM() {
 "	      00527a76    jge near ptr 00527B30h"
 );
 // LINE 707:
+// Block start:
+	struct _CELL_INFO* cptr;
 	asm( 
 "	      00527a7c    mov eax,[ebp-18h]"
 "	      00527a7f    mov eax,[eax+37h]"
@@ -876,6 +881,7 @@ void BoatClass::ItterateFSM() {
 "	      00527b2b    call 00529EE6h"
 );
 // LINE 717:
+// Block end:
 	asm( 
 "	      00527b30    jmp near ptr 00527C75h"
 );
@@ -908,6 +914,8 @@ void BoatClass::ItterateFSM() {
 "	      00527b67    jge near ptr 00527BC6h"
 );
 // LINE 735:
+// Block start:
+	struct Point3d sprayvect;
 	asm( 
 "	      00527b6d    mov eax,[ebp-18h]"
 "	      00527b70    mov eax,[eax+13h]"
@@ -954,6 +962,7 @@ void BoatClass::ItterateFSM() {
 "	      00527bbf    mov dword ptr [eax+0Bh],0E666h"
 );
 // LINE 795:
+// Block end:
 	asm( 
 "	      00527bc6    mov ecx,[ebp-18h]"
 "	      00527bc9    call 00528628h"
@@ -2416,6 +2425,8 @@ void BoatClass::UnlinkFromCell(const struct Point2d& point) {
 "	      005287da    je near ptr 00528850h"
 );
 // LINE 1379:
+// Block start:
+	struct _DYOBJ_INST** dyptrptr;
 	asm( 
 "	      005287e0    mov eax,[ebp-4]"
 "	      005287e3    add eax,10h"
@@ -2470,6 +2481,7 @@ void BoatClass::UnlinkFromCell(const struct Point2d& point) {
 "	      0052884b    jmp near ptr 00528850h"
 );
 // LINE 1399:
+// Block end:
 	asm( 
 "	      00528850    jmp near ptr 00528855h"
 "	      00528855    pop edi"
@@ -4786,6 +4798,8 @@ void BoatClass::BeamBoatToWithinCameraRange() {
 "	      00529cde    jle near ptr 00529E09h"
 );
 // LINE 2293:
+// Block start:
+	unsigned short tile;
 	asm( 
 "	      00529ce4    mov eax,[ebp-2Ch]"
 "	      00529ce7    and eax,0FFh"
@@ -4881,6 +4895,7 @@ void BoatClass::BeamBoatToWithinCameraRange() {
 "	      00529e01    add [ebp-2Ch],eax"
 );
 // LINE 2308:
+// Block end:
 	asm( 
 "	      00529e04    jmp near ptr 00529CD5h"
 );
@@ -5205,6 +5220,8 @@ int32_t BoatClass::BeamBoatToLocation(long mapx, long mapy) {
 "	      0052a034    jle near ptr 0052A6D9h"
 );
 // LINE 2451:
+// Block start:
+	unsigned short tile;
 	asm( 
 "	      0052a03a    mov eax,[ebp-20h]"
 "	      0052a03d    and eax,0FFh"
@@ -5643,6 +5660,7 @@ int32_t BoatClass::BeamBoatToLocation(long mapx, long mapy) {
 "	      0052a6d1    add [ebp-20h],eax"
 );
 // LINE 2489:
+// Block end:
 	asm( 
 "	      0052a6d4    jmp near ptr 0052A02Bh"
 );
@@ -5844,6 +5862,8 @@ int32_t BoatClass::InitializeInstance(long mapx, long mapy, int32_t instanceID) 
 "	      0052a88f    jmp near ptr 0052A971h"
 );
 // LINE 2857:
+// Block start:
+	char * objectMemory;
 	asm( 
 "	      0052a894    mov eax,[ebp-28h]"
 "	      0052a897    push eax"
@@ -5932,6 +5952,7 @@ int32_t BoatClass::InitializeInstance(long mapx, long mapy, int32_t instanceID) 
 "	      0052a96c    jmp near ptr 0052AB1Dh"
 );
 // LINE 2886:
+// Block end:
 	asm( 
 "	      0052a971    mov eax,[ebp+10h]"
 "	      0052a974    mov ecx,[ebp-30h]"

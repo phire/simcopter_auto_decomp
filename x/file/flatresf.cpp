@@ -26,6 +26,13 @@ void FlatResFile::LoadResMap(void * __ptr32* newMap, short * numTypes, long * da
 "	      00552b1f    mov dword ptr [eax],0"
 );
 // LINE 105:
+// Block start:
+	long mapLocLess;
+	long mapLoc;
+	long mapSize;
+	unsigned char[28] miscBytes;
+	long miscSize;
+	long res1Off;
 	asm( 
 "	      00552b25    mov dword ptr [ebp-10h],1Ch"
 );
@@ -271,6 +278,7 @@ void FlatResFile::LoadResMap(void * __ptr32* newMap, short * numTypes, long * da
 "	      00552dca    add esp,4"
 );
 // LINE 143:
+// Block end:
 	asm( 
 "	      00552dcd    mov eax,[ebp-3Ch]"
 "	      00552dd0    mov dword ptr [eax+114h],0"
@@ -897,6 +905,8 @@ void * __ptr32 FlatResFile::GetByID(unsigned long type, short id, void (*)(void 
 "	      005532ca    je near ptr 0055330Bh"
 );
 // LINE 349:
+// Block start:
+	unsigned char * data;
 	asm( 
 "	      005532d0    mov eax,[ebp-4]"
 "	      005532d3    mov eax,[eax+8]"
@@ -927,6 +937,7 @@ void * __ptr32 FlatResFile::GetByID(unsigned long type, short id, void (*)(void 
 "	      00553308    add esp,4"
 );
 // LINE 355:
+// Block end:
 	asm( 
 "	      0055330b    mov eax,[ebp-4]"
 "	      0055330e    mov eax,[eax+8]"
@@ -1030,6 +1041,8 @@ void * __ptr32 FlatResFile::GetByName(unsigned long type, unsigned char * name, 
 "	      005533ff    je near ptr 00553440h"
 );
 // LINE 378:
+// Block start:
+	unsigned char * data;
 	asm( 
 "	      00553405    mov eax,[ebp-4]"
 "	      00553408    mov eax,[eax+8]"
@@ -1060,6 +1073,7 @@ void * __ptr32 FlatResFile::GetByName(unsigned long type, unsigned char * name, 
 "	      0055343d    add esp,4"
 );
 // LINE 384:
+// Block end:
 	asm( 
 "	      00553440    mov eax,[ebp-4]"
 "	      00553443    mov eax,[eax+8]"
@@ -1151,6 +1165,8 @@ void * __ptr32 FlatResFile::GetByIndex(unsigned long type, short index, void (*)
 "	      00553511    je near ptr 00553552h"
 );
 // LINE 405:
+// Block start:
+	unsigned char * data;
 	asm( 
 "	      00553517    mov eax,[ebp-4]"
 "	      0055351a    mov eax,[eax+8]"
@@ -1181,6 +1197,7 @@ void * __ptr32 FlatResFile::GetByIndex(unsigned long type, short index, void (*)
 "	      0055354f    add esp,4"
 );
 // LINE 411:
+// Block end:
 	asm( 
 "	      00553552    mov eax,[ebp-4]"
 "	      00553555    mov eax,[eax+8]"
@@ -1715,6 +1732,8 @@ void FlatResFile::GetString(unsigned char * str, short resID, short index) {
 "	      00553a18    jl near ptr 00553A50h"
 );
 // LINE 601:
+// Block start:
+	unsigned char * foundStr;
 	asm( 
 "	      00553a1e    mov eax,[ebp+10h]"
 "	      00553a21    push eax"
@@ -1739,6 +1758,7 @@ void FlatResFile::GetString(unsigned char * str, short resID, short index) {
 "	      00553a4d    add esp,0Ch"
 );
 // LINE 604:
+// Block end:
 	asm( 
 "	      00553a50    mov dword ptr [ebp-4],0FFFFFFFFh"
 "	      00553a57    call 00553A61h"
@@ -2238,6 +2258,8 @@ void  ResMap::Release() {
 "	      00553e0e    jne near ptr 00553E8Ch"
 );
 // LINE 791:
+// Block start:
+	class ResMap** rmv;
 	asm( 
 "	      00553e14    mov dword ptr [ebp-4],5BBEDCh"
 "	      00553e1b    jmp near ptr 00553E28h"
@@ -2280,6 +2302,7 @@ void  ResMap::Release() {
 "	      00553e87    jmp near ptr 00553E8Ch"
 );
 // LINE 796:
+// Block end:
 	asm( 
 "	      00553e8c    jmp near ptr 00553E91h"
 "	      00553e91    pop edi"
@@ -2508,6 +2531,8 @@ void  ResMap::LoadEntry(struct ResMap::Entry* entry, class FlatResFile* file, un
 "	      00554052    jmp near ptr 005540D3h"
 );
 // LINE 855:
+// Block start:
+	long newState;
 	asm( 
 "	      00554057    mov dword ptr [ebp-14h],0"
 );
@@ -2560,6 +2585,9 @@ void  ResMap::LoadEntry(struct ResMap::Entry* entry, class FlatResFile* file, un
 "	      005540d0    mov [ebp-0Ch],al"
 );
 // LINE 868:
+// Block start:
+	unsigned char * block;
+// Block end:
 	asm( 
 "	      005540d3    mov eax,[ebp+8]"
 "	      005540d6    mov eax,[eax+8]"
@@ -2610,6 +2638,7 @@ void  ResMap::LoadEntry(struct ResMap::Entry* entry, class FlatResFile* file, un
 "	      00554144    mov [ebp-8],eax"
 );
 // LINE 876:
+// Block end:
 	asm( 
 "	      00554147    mov eax,[ebp+8]"
 "	      0055414a    cmp dword ptr [eax+8],0"
@@ -2822,6 +2851,8 @@ unsigned long  ResMap::FindType(struct ResMap::Entry* entry) {
 "	      0055429f    jle near ptr 005542FDh"
 );
 // LINE 921:
+// Block start:
+	struct ResMap::Entry* entryList;
 	asm( 
 "	      005542a5    mov eax,[ebp-10h]"
 "	      005542a8    movsx eax,word ptr [eax+6]"
@@ -2864,6 +2895,7 @@ unsigned long  ResMap::FindType(struct ResMap::Entry* entry) {
 "	      005542f4    dec word ptr [ebp-8]"
 );
 // LINE 929:
+// Block end:
 	asm( 
 "	      005542f8    jmp near ptr 00554299h"
 );
@@ -3022,6 +3054,8 @@ struct ResMap::Entry *  ResMap::FindEntry(unsigned long type, short id) {
 "	      005543d3    jle near ptr 0055442Eh"
 );
 // LINE 961:
+// Block start:
+	struct ResMap::Entry* entryList;
 	asm( 
 "	      005543d9    mov eax,[ebp-8]"
 "	      005543dc    movsx eax,word ptr [eax+6]"
@@ -3067,6 +3101,7 @@ struct ResMap::Entry *  ResMap::FindEntry(unsigned long type, short id) {
 "	      00554429    jmp near ptr 005543F8h"
 );
 // LINE 971:
+// Block end:
 	asm( 
 "	      0055442e    mov eax,[ebp-0Ch]"
 "	      00554431    jmp near ptr 00554436h"
@@ -3146,6 +3181,9 @@ struct ResMap::Entry *  ResMap::FindEntry(unsigned long type, unsigned char * na
 "	      00554496    jle near ptr 00554527h"
 );
 // LINE 989:
+// Block start:
+	struct ResMap::Entry* entryList;
+	unsigned char * namePtr;
 	asm( 
 "	      0055449c    mov eax,[ebp-8]"
 "	      0055449f    movsx eax,word ptr [eax+6]"
@@ -3213,6 +3251,7 @@ struct ResMap::Entry *  ResMap::FindEntry(unsigned long type, unsigned char * na
 "	      00554522    jmp near ptr 005544CAh"
 );
 // LINE 1003:
+// Block end:
 	asm( 
 "	      00554527    mov eax,[ebp-0Ch]"
 "	      0055452a    jmp near ptr 0055452Fh"
@@ -3292,6 +3331,8 @@ struct ResMap::Entry *  ResMap::FindIndEntry(unsigned long type, short index) {
 "	      0055458f    jle near ptr 005545E2h"
 );
 // LINE 1021:
+// Block start:
+	struct ResMap::Entry* entryList;
 	asm( 
 "	      00554595    mov eax,[ebp-8]"
 "	      00554598    movsx eax,word ptr [eax+6]"
@@ -3326,6 +3367,7 @@ struct ResMap::Entry *  ResMap::FindIndEntry(unsigned long type, short index) {
 "	      005545df    mov [ebp-0Ch],eax"
 );
 // LINE 1028:
+// Block end:
 	asm( 
 "	      005545e2    mov eax,[ebp-0Ch]"
 "	      005545e5    jmp near ptr 005545EAh"

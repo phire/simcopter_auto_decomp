@@ -34,6 +34,9 @@ void GUIReportError(unsigned long Error, unsigned char Terminate) {
 "	      0044ff78    je near ptr 00450046h"
 );
 // LINE 27:
+// Block start:
+	char[255] ErrorTitle;
+	char[255] ErrorText;
 	asm( 
 "	      0044ff7e    and dword ptr [ebp+8],7FFFFFFFh"
 );
@@ -115,6 +118,7 @@ void GUIReportError(unsigned long Error, unsigned char Terminate) {
 "	      00450041    call 0056F350h"
 );
 // LINE 45:
+// Block end:
 	asm( 
 "	      00450046    jmp near ptr 0045004Bh"
 "	      0045004b    pop edi"

@@ -1283,6 +1283,8 @@ void AutomobileClass::Itterate() {
 "	      00501f40    je near ptr 0050214Fh"
 );
 // LINE 617:
+// Block start:
+	struct VRview position;
 	asm( 
 "	      00501f46    mov eax,[ebp-64h]"
 "	      00501f49    test byte ptr [eax+9],13h"
@@ -1454,6 +1456,7 @@ void AutomobileClass::Itterate() {
 "	      00502147    add esp,0Ch"
 );
 // LINE 680:
+// Block end:
 	asm( 
 "	      0050214a    jmp near ptr 00502172h"
 "	      0050214f    mov eax,[ebp-64h]"
@@ -1704,6 +1707,8 @@ void AutomobileClass::ItterateFSM() {
 "	      0050231e    je near ptr 0050235Eh"
 );
 // LINE 813:
+// Block start:
+	struct _MISSION_PARMS mp;
 	asm( 
 "	      00502324    mov dword ptr [ebp-24h],0FFFFFFFFh"
 );
@@ -1737,6 +1742,7 @@ void AutomobileClass::ItterateFSM() {
 "	      00502359    call 00504B0Ah"
 );
 // LINE 826:
+// Block end:
 	asm( 
 "	      0050235e    mov eax,[ebp-54h]"
 "	      00502361    cmp dword ptr [eax+9Eh],50000h"
@@ -2182,6 +2188,8 @@ void AutomobileClass::ItterateFSM() {
 "	      0050287b    jne near ptr 00502969h"
 );
 // LINE 955:
+// Block start:
+	struct Point3d loc;
 	asm( 
 "	      00502881    mov eax,[ebp-54h]"
 "	      00502884    mov eax,[eax+24h]"
@@ -2267,6 +2275,7 @@ void AutomobileClass::ItterateFSM() {
 "	      00502966    add esp,0Ch"
 );
 // LINE 963:
+// Block end:
 	asm( 
 "	      00502969    mov eax,[ebp-54h]"
 "	      0050296c    test byte ptr [eax+9],10h"
@@ -2454,6 +2463,8 @@ void AutomobileClass::UnlinkFromCell(const struct _GridCoordinates& point) {
 "	      00502af2    je near ptr 00502B68h"
 );
 // LINE 1059:
+// Block start:
+	struct _DYOBJ_INST** dyptrptr;
 	asm( 
 "	      00502af8    mov eax,[ebp-4]"
 "	      00502afb    add eax,10h"
@@ -2508,6 +2519,7 @@ void AutomobileClass::UnlinkFromCell(const struct _GridCoordinates& point) {
 "	      00502b63    jmp near ptr 00502B68h"
 );
 // LINE 1075:
+// Block end:
 	asm( 
 "	      00502b68    jmp near ptr 00502B6Dh"
 "	      00502b6d    pop edi"
@@ -2562,6 +2574,9 @@ void AutomobileClass::LinkToCell(const struct _GridCoordinates& point) {
 "	      00502bcb    je near ptr 00502C86h"
 );
 // LINE 1091:
+// Block start:
+	int32_t z;
+	int32_t x;
 	asm( 
 "	      00502bd1    mov eax,[ebp-4]"
 "	      00502bd4    mov eax,[eax+10h]"
@@ -2645,6 +2660,7 @@ void AutomobileClass::LinkToCell(const struct _GridCoordinates& point) {
 "	      00502c80    mov [ecx+0C2h],eax"
 );
 // LINE 1109:
+// Block end:
 	asm( 
 "	      00502c86    jmp near ptr 00502C8Bh"
 "	      00502c8b    pop edi"
@@ -3645,6 +3661,10 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 "	      0050379e    jmp near ptr 00503E62h"
 );
 // LINE 1515:
+// Block start:
+	int32_t i;
+	int32_t dirIndex;
+	struct _GridCoordinates nextLoc;
 	asm( 
 "	      005037a3    mov eax,[ebp-108h]"
 "	      005037a9    xor ecx,ecx"
@@ -4198,6 +4218,7 @@ int32_t AutomobileClass::BeamToLocation(const struct _GridCoordinates& cell) {
 "	      00503e5d    jmp near ptr 00503E67h"
 );
 // LINE 1646:
+// Block end:
 	asm( 
 "	      00503e62    jmp near ptr 00503E67h"
 "	      00503e67    pop edi"
@@ -4716,6 +4737,8 @@ void AutomobileClass::PullOverCiviliansInWay() {
 "	      00504209    je near ptr 00504314h"
 );
 // LINE 1822:
+// Block start:
+	class AutomobileClass* pCar;
 	asm( 
 "	      0050420f    mov eax,[ebp-30h]"
 "	      00504212    add eax,0Ch"
@@ -4799,6 +4822,7 @@ void AutomobileClass::PullOverCiviliansInWay() {
 "	      0050430c    mov [ebp-4],eax"
 );
 // LINE 1841:
+// Block end:
 	asm( 
 "	      0050430f    jmp near ptr 00504205h"
 );
@@ -4880,6 +4904,8 @@ int32_t AutomobileClass::InitializeInstance(int32_t instanceID) {
 "	      0050439d    jmp near ptr 00504444h"
 );
 // LINE 1904:
+// Block start:
+	char * objectMemory;
 	asm( 
 "	      005043a2    mov eax,[ebp-28h]"
 "	      005043a5    push eax"
@@ -4939,6 +4965,7 @@ int32_t AutomobileClass::InitializeInstance(int32_t instanceID) {
 "	      00504441    add esp,8"
 );
 // LINE 1916:
+// Block end:
 	asm( 
 "	      00504444    mov eax,[ebp+8]"
 "	      00504447    mov ecx,[ebp-30h]"
@@ -5436,6 +5463,8 @@ int32_t AutomobileClass::CanIPullOver() {
 "	      00504886    je near ptr 005048B1h"
 );
 // LINE 2135:
+// Block start:
+	class AutomobileClass* car;
 	asm( 
 "	      0050488c    mov eax,[ebp-4]"
 "	      0050488f    movsx eax,word ptr [eax+0Eh]"
@@ -5454,6 +5483,7 @@ int32_t AutomobileClass::CanIPullOver() {
 "	      005048ac    jmp near ptr 005048C8h"
 );
 // LINE 2143:
+// Block end:
 	asm( 
 "	      005048b1    mov eax,[ebp-4]"
 "	      005048b4    mov eax,[eax]"
@@ -5892,6 +5922,8 @@ void AutomobileClass::TransitionBetweenGoals() {
 "	      00504c68    jne near ptr 00504D80h"
 );
 // LINE 2252:
+// Block start:
+	unsigned short tile;
 	asm( 
 "	      00504c6e    mov eax,[ebp-28h]"
 "	      00504c71    xor ecx,ecx"
@@ -5976,6 +6008,7 @@ void AutomobileClass::TransitionBetweenGoals() {
 "	      00504d7b    jmp near ptr 0050503Ah"
 );
 // LINE 2264:
+// Block end:
 	asm( 
 "	      00504d80    mov eax,[ebp-28h]"
 "	      00504d83    add eax,7Ch"
@@ -6135,6 +6168,8 @@ void AutomobileClass::TransitionBetweenGoals() {
 "	      00504f34    jne near ptr 00505022h"
 );
 // LINE 2327:
+// Block start:
+	struct Point3d loc;
 	asm( 
 "	      00504f3a    mov eax,[ebp-28h]"
 "	      00504f3d    mov eax,[eax+24h]"
@@ -6220,6 +6255,7 @@ void AutomobileClass::TransitionBetweenGoals() {
 "	      0050501f    add esp,0Ch"
 );
 // LINE 2338:
+// Block end:
 	asm( 
 "	      00505022    mov ecx,[ebp-28h]"
 "	      00505025    call 0050503Fh"
@@ -7500,6 +7536,9 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 "	      00505c57    je near ptr 00505EB8h"
 );
 // LINE 2680:
+// Block start:
+	struct _CELL_INFO* cptr;
+	struct _DYOBJ_INST* currentObject;
 	asm( 
 "	      00505c5d    xor eax,eax"
 "	      00505c5f    mov al,[ebp-20h]"
@@ -7743,6 +7782,7 @@ enum AutomobileClass::StoppedReasons AutomobileClass::CollisionCheck(int32_t dis
 "	      00505eb3    jmp near ptr 00505D78h"
 );
 // LINE 2755:
+// Block end:
 	asm( 
 "	      00505eb8    mov eax,[ebp-14h]"
 "	      00505ebb    mov eax,[eax+10h]"
@@ -10658,6 +10698,9 @@ int32_t AutomobileClass::DoHiwayTilesConnect(unsigned short fromTile, unsigned s
 "	      00507614    je near ptr 00507774h"
 );
 // LINE 3757:
+// Block start:
+	enum DirectionTypes fromConnections;
+	enum DirectionTypes toConnections;
 	asm( 
 "	      0050761a    mov dword ptr [ebp-14h],5B57E8h"
 "	      00507621    mov eax,[ebp-14h]"
@@ -10762,6 +10805,7 @@ int32_t AutomobileClass::DoHiwayTilesConnect(unsigned short fromTile, unsigned s
 "	      0050776f    jmp near ptr 0050777Bh"
 );
 // LINE 3790:
+// Block end:
 	asm( 
 "	      00507774    xor eax,eax"
 "	      00507776    jmp near ptr 0050777Bh"

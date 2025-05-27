@@ -1766,6 +1766,8 @@ int32_t GraphicWindowManager::SendCursorMessageToChildWindow(class GraphicWindow
 "	      004a27a6    je near ptr 004A2924h"
 );
 // LINE 363:
+// Block start:
+	class list<GraphicWindow *>::iterator iterator;
 	asm( 
 "	      004a27ac    mov eax,[ebp+8]"
 "	      004a27af    mov eax,[eax+30h]"
@@ -1892,6 +1894,7 @@ int32_t GraphicWindowManager::SendCursorMessageToChildWindow(class GraphicWindow
 "	      004a291e    jne near ptr 004A27C5h"
 );
 // LINE 377:
+// Block end:
 	asm( 
 "	      004a2924    mov eax,[ebp+8]"
 "	      004a2927    mov eax,[eax]"
@@ -5302,6 +5305,8 @@ void  GraphicWindow::SetChanged(int32_t bChanged, int32_t bRecursive) {
 "	      004a5106    je near ptr 004A51C4h"
 );
 // LINE 790:
+// Block start:
+	class list<GraphicWindow *>::iterator i;
 	asm( 
 "	      004a510c    mov eax,[ebp-2Ch]"
 "	      004a510f    mov eax,[eax+30h]"
@@ -5367,6 +5372,7 @@ void  GraphicWindow::SetChanged(int32_t bChanged, int32_t bRecursive) {
 "	      004a51bf    jmp near ptr 004A5127h"
 );
 // LINE 797:
+// Block end:
 	asm( 
 "	      004a51c4    jmp near ptr 004A51C9h"
 "	      004a51c9    pop edi"

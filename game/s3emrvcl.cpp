@@ -228,6 +228,8 @@ void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal start
 "	      0054169f    jne near ptr 0054186Fh"
 );
 // LINE 271:
+// Block start:
+	struct Edge* pEdge;
 	asm( 
 "	      005416a5    mov eax,[ebp+8]"
 "	      005416a8    mov al,[eax]"
@@ -291,6 +293,8 @@ void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal start
 "	      0054171a    je near ptr 005417ABh"
 );
 // LINE 285:
+// Block start:
+	unsigned char yindex;
 	asm( 
 "	      00541720    mov eax,[ebp+34h]"
 "	      00541723    xor ecx,ecx"
@@ -355,6 +359,7 @@ void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal start
 "	      005417a4    movsw"
 );
 // LINE 297:
+// Block end:
 	asm( 
 "	      005417a6    jmp near ptr 005417C7h"
 );
@@ -378,6 +383,8 @@ void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal start
 "	      005417ce    je near ptr 00541852h"
 );
 // LINE 307:
+// Block start:
+	int32_t yindex;
 	asm( 
 "	      005417d4    mov eax,[ebp+8Ch]"
 "	      005417da    xor ecx,ecx"
@@ -428,6 +435,7 @@ void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal start
 "	      00541846    mov [edx+ecx+191h],al"
 );
 // LINE 317:
+// Block end:
 	asm( 
 "	      0054184d    jmp near ptr 0054186Ah"
 );
@@ -441,6 +449,7 @@ void EmergencyVehicleClass::InitializePlacedVehicleForDispatch(struct Goal start
 "	      00541863    mov [edx+ecx+191h],al"
 );
 // LINE 322:
+// Block end:
 	asm( 
 "	      0054186a    jmp near ptr 00541911h"
 );
@@ -737,6 +746,8 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 "	      00541b41    jne near ptr 00541CB9h"
 );
 // LINE 406:
+// Block start:
+	struct Edge* pEdge;
 	asm( 
 "	      00541b47    mov eax,[ebp-28h]"
 "	      00541b4a    xor ecx,ecx"
@@ -753,6 +764,8 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 "	      00541b64    je near ptr 00541BF5h"
 );
 // LINE 409:
+// Block start:
+	unsigned char yindex;
 	asm( 
 "	      00541b6a    mov eax,[ebp+38h]"
 "	      00541b6d    xor ecx,ecx"
@@ -817,6 +830,7 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 "	      00541bee    movsw"
 );
 // LINE 421:
+// Block end:
 	asm( 
 "	      00541bf0    jmp near ptr 00541C11h"
 );
@@ -840,6 +854,8 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 "	      00541c18    je near ptr 00541C9Ch"
 );
 // LINE 431:
+// Block start:
+	int32_t yindex;
 	asm( 
 "	      00541c1e    mov eax,[ebp+94h]"
 "	      00541c24    xor ecx,ecx"
@@ -890,6 +906,7 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 "	      00541c90    mov [edx+ecx+191h],al"
 );
 // LINE 441:
+// Block end:
 	asm( 
 "	      00541c97    jmp near ptr 00541CB4h"
 );
@@ -903,6 +920,7 @@ void EmergencyVehicleClass::InitializeStationVehicleForDispatch(int32_t sID, str
 "	      00541cad    mov [edx+ecx+191h],al"
 );
 // LINE 446:
+// Block end:
 	asm( 
 "	      00541cb4    jmp near ptr 00541D9Dh"
 );
@@ -1823,6 +1841,8 @@ void EmergencyVehicleClass::UnLinkIconFromCell(struct _GridCoordinates point) {
 "	      005424e9    je near ptr 00542564h"
 );
 // LINE 950:
+// Block start:
+	struct _DYOBJ_INST** dyptrptr;
 	asm( 
 "	      005424ef    mov eax,[ebp-4]"
 "	      005424f2    add eax,10h"
@@ -1877,6 +1897,7 @@ void EmergencyVehicleClass::UnLinkIconFromCell(struct _GridCoordinates point) {
 "	      0054255f    jmp near ptr 00542564h"
 );
 // LINE 965:
+// Block end:
 	asm( 
 "	      00542564    jmp near ptr 00542569h"
 "	      00542569    pop edi"

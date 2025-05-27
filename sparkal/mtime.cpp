@@ -228,6 +228,8 @@ class MTime  MTime::BeginDST(uint32_t year) {
 "	      0043c92e    jbe near ptr 0043C992h"
 );
 // LINE 121:
+// Block start:
+	class MDate endMarch;
 	asm( 
 "	      0043c934    mov eax,[ebp+0Ch]"
 "	      0043c937    push eax"
@@ -264,6 +266,7 @@ class MTime  MTime::BeginDST(uint32_t year) {
 "	      0043c98d    jmp near ptr 0043CA31h"
 );
 // LINE 126:
+// Block end:
 	asm( 
 "	      0043c992    cmp dword ptr [ebp+0Ch],7B6h"
 "	      0043c999    jne near ptr 0043C9C7h"

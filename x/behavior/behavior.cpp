@@ -577,6 +577,8 @@ void Behavior::GetTreeName(short treeID, unsigned char * name) {
 "	      005606ef    add esp,10h"
 );
 // LINE 168:
+// Block start:
+	unsigned char[256] resName;
 	asm( 
 "	      005606f2    lea eax,[ebp-108h]"
 "	      005606f8    push eax"
@@ -601,6 +603,7 @@ void Behavior::GetTreeName(short treeID, unsigned char * name) {
 "	      00560720    add esp,0Ch"
 );
 // LINE 174:
+// Block end:
 	asm( 
 "	      00560723    jmp near ptr 00560728h"
 "	      00560728    pop edi"

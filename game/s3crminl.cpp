@@ -409,6 +409,8 @@ void CriminalEvaderCarClass::ItterateFSM() {
 "	      00534c93    jne near ptr 00534D81h"
 );
 // LINE 222:
+// Block start:
+	struct Point3d loc;
 	asm( 
 "	      00534c99    mov eax,[ebp-64h]"
 "	      00534c9c    mov eax,[eax+24h]"
@@ -494,6 +496,7 @@ void CriminalEvaderCarClass::ItterateFSM() {
 "	      00534d7e    add esp,0Ch"
 );
 // LINE 230:
+// Block end:
 	asm( 
 "	      00534d81    jmp near ptr 00535124h"
 );
@@ -615,6 +618,8 @@ void CriminalEvaderCarClass::ItterateFSM() {
 "	      00534e98    jmp near ptr 00534EE5h"
 );
 // LINE 269:
+// Block start:
+	struct _MISSION_PARMS mp;
 	asm( 
 "	      00534e9d    push 10Dh"
 "	      00534ea2    push 5B7CC0h"
@@ -644,6 +649,7 @@ void CriminalEvaderCarClass::ItterateFSM() {
 "	      00534edb    mov dword ptr [eax+11Ah],4"
 );
 // LINE 277:
+// Block end:
 	asm( 
 "	      00534ee5    jmp near ptr 00535129h"
 );
@@ -785,6 +791,8 @@ void CriminalEvaderCarClass::ItterateFSM() {
 "	      0053501a    jmp near ptr 00535067h"
 );
 // LINE 338:
+// Block start:
+	struct _MISSION_PARMS mp;
 	asm( 
 "	      0053501f    push 152h"
 "	      00535024    push 5B7CECh"
@@ -814,6 +822,7 @@ void CriminalEvaderCarClass::ItterateFSM() {
 "	      0053505d    mov dword ptr [eax+11Ah],4"
 );
 // LINE 346:
+// Block end:
 	asm( 
 "	      00535067    jmp near ptr 00535124h"
 );
@@ -1047,6 +1056,8 @@ int32_t CriminalEvaderCarClass::NearToBuilding() {
 "	      00535225    mov [ebp-14h],ax"
 );
 // LINE 447:
+// Block start:
+	unsigned short tt;
 	asm( 
 "	      00535229    xor eax,eax"
 "	      0053522b    mov al,[ebp-14h]"
@@ -1661,6 +1672,7 @@ int32_t CriminalEvaderCarClass::NearToBuilding() {
 "	      005356db    (bad)"
 );
 // LINE 619:
+// Block end:
 	asm( 
 "	      005356dc    lea eax,[ebp-14h]"
 "	      005356df    push eax"

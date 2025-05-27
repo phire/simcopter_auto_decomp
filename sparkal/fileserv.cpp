@@ -3677,6 +3677,8 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 "	      00494792    jne near ptr 00494E48h"
 );
 // LINE 360:
+// Block start:
+	class basic_string<char> sTemp;
 	asm( 
 "	      00494798    jmp near ptr 0049479Dh"
 "	      0049479d    mov eax,[ebp-0ADCh]"
@@ -4086,6 +4088,7 @@ int32_t FileServices::GetPathForFile(int32_t nType, int32_t nLanguage, char * sz
 "	      00494e3e    jmp near ptr 00494F7Bh"
 );
 // LINE 373:
+// Block end:
 	asm( 
 "	      00494e43    jmp near ptr 00494F7Bh"
 "	      00494e48    cmp dword ptr [ebp+8],9"

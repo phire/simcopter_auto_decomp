@@ -1403,6 +1403,9 @@ void DrawDirectionDisk(struct Rect* rect, float phi, float psi, unsigned short p
 "	      00562fb6    jmp near ptr 005630A1h"
 );
 // LINE 252:
+// Block start:
+	struct Rect myRect;
+	short origwidth;
 	asm( 
 "	      00562fbb    mov eax,[ebp+8]"
 "	      00562fbe    mov ecx,[eax]"
@@ -1515,6 +1518,7 @@ void DrawDirectionDisk(struct Rect* rect, float phi, float psi, unsigned short p
 "	      0056309e    add esp,18h"
 );
 // LINE 264:
+// Block end:
 	asm( 
 "	      005630a1    cmp dword ptr [ebp+18h],1"
 "	      005630a5    sbb eax,eax"
@@ -1786,6 +1790,9 @@ void GetChildIncrement(struct Polar* passedInc, struct Polar* parentPolar, struc
 "	      00563227    je near ptr 005632BDh"
 );
 // LINE 513:
+// Block start:
+	struct Polar resPolar;
+	struct Polar startPolar;
 	asm( 
 "	      0056322d    lea edi,[ebp-40h]"
 "	      00563230    mov esi,[ebp+10h]"
@@ -1859,6 +1866,7 @@ void GetChildIncrement(struct Polar* passedInc, struct Polar* parentPolar, struc
 "	      005632b5    fstp dword ptr [eax+4]"
 );
 // LINE 525:
+// Block end:
 	asm( 
 "	      005632b8    jmp near ptr 005632BDh"
 );
@@ -1868,6 +1876,12 @@ void GetChildIncrement(struct Polar* passedInc, struct Polar* parentPolar, struc
 "	      005632c1    je near ptr 005633E3h"
 );
 // LINE 538:
+// Block start:
+	float angleToPhiMovement;
+	struct Polar partPol;
+	float alpha;
+	float angleToPsiMovement;
+	struct Polar tmpinc;
 	asm( 
 "	      005632c7    lea edi,[ebp-90h]"
 "	      005632cd    mov esi,[ebp+10h]"
@@ -1976,6 +1990,7 @@ void GetChildIncrement(struct Polar* passedInc, struct Polar* parentPolar, struc
 "	      005633db    fstp dword ptr [ebp-8]"
 );
 // LINE 554:
+// Block end:
 	asm( 
 "	      005633de    jmp near ptr 00563407h"
 );
@@ -2213,6 +2228,19 @@ void IncrementPhiPsi(struct Polar* inc, struct Polar* parentPolar, struct Polar*
 "	      005635e3    jmp near ptr 005636ADh"
 );
 // LINE 593:
+// Block start:
+	float y2;
+	struct Polar tmpPolar;
+	float z;
+	float y;
+	float x2;
+	struct Polar resPolar;
+	float x;
+	struct Polar tmpPolar2;
+	float tmprad2;
+	float psiToZero;
+	float tmprad;
+	float z2;
 	asm( 
 "	      005635e8    lea edi,[ebp-68h]"
 "	      005635eb    mov esi,[ebp+10h]"
@@ -2324,6 +2352,7 @@ void IncrementPhiPsi(struct Polar* inc, struct Polar* parentPolar, struct Polar*
 "	      005636aa    mov [eax+4],ecx"
 );
 // LINE 616:
+// Block end:
 	asm( 
 "	      005636ad    mov eax,[ebp+10h]"
 "	      005636b0    fld dword ptr [eax+4]"
@@ -2701,12 +2730,15 @@ void PolarDouble2Incs(float phi, float psi, float tau, short latincs, short lngi
 "	      0056396a    jge near ptr 0056397Ah"
 );
 // LINE 666:
+// Block start:
+	short trouble;
 	asm( 
 "	      00563970    mov eax,[ebp+28h]"
 "	      00563973    mov ax,[eax]"
 "	      00563976    mov [ebp-1Ch],ax"
 );
 // LINE 667:
+// Block end:
 	asm( 
 "	      0056397a    mov eax,[ebp+20h]"
 "	      0056397d    movsx eax,word ptr [eax]"

@@ -4996,6 +4996,9 @@ void ObjCalcVnormsAndShade(struct ObjectHdr* obj) {
 "	      004d4743    jle near ptr 004D48FBh"
 );
 // LINE 2118:
+// Block start:
+	struct Point3d* vn;
+	int32_t no_vert_faces;
 	asm( 
 "	      004d4749    mov dword ptr [ebp-40h],0"
 );
@@ -5043,6 +5046,8 @@ void ObjCalcVnormsAndShade(struct ObjectHdr* obj) {
 "	      004d47aa    jle near ptr 004D482Eh"
 );
 // LINE 2139:
+// Block start:
+	struct Project3d* fn;
 	asm( 
 "	      004d47b0    mov eax,[ebp-3Ch]"
 "	      004d47b3    mov eax,[eax+2Ch]"
@@ -5112,6 +5117,7 @@ void ObjCalcVnormsAndShade(struct ObjectHdr* obj) {
 "	      004d4826    mov [ebp-3Ch],eax"
 );
 // LINE 2162:
+// Block end:
 	asm( 
 "	      004d4829    jmp near ptr 004D479Eh"
 );
@@ -5198,6 +5204,7 @@ void ObjCalcVnormsAndShade(struct ObjectHdr* obj) {
 "	      004d48f3    mov [ecx+8],eax"
 );
 // LINE 2182:
+// Block end:
 	asm( 
 "	      004d48f6    jmp near ptr 004D4737h"
 );

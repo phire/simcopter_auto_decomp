@@ -2274,6 +2274,8 @@ unsigned long  CGameApp::Initialize() {
 "	      004897f4    jne near ptr 00489846h"
 );
 // LINE 411:
+// Block start:
+	char[128] szCommandValue;
 	asm( 
 "	      004897fa    lea eax,[ebp-84h]"
 "	      00489800    push eax"
@@ -2304,6 +2306,7 @@ unsigned long  CGameApp::Initialize() {
 "	      00489841    jmp near ptr 00489C3Eh"
 );
 // LINE 419:
+// Block end:
 	asm( 
 "	      00489846    push 40h"
 "	      00489848    call 0056A600h"

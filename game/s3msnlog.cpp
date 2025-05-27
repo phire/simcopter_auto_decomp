@@ -694,6 +694,11 @@ int32_t LogManager::WriteToMIFF(class MIFF* miffWriter) {
 "	      004ec34e    jne near ptr 004EC407h"
 );
 // LINE 130:
+// Block start:
+	long lStringLength;
+	struct tagLogString* tempLogStringDestination;
+	struct tagLogString* tempLogStringSource;
+	char[276] chStringBuffer;
 	asm( 
 "	      004ec354    jmp near ptr 004EC359h"
 "	      004ec359    mov eax,[ebp-4]"
@@ -761,6 +766,7 @@ int32_t LogManager::WriteToMIFF(class MIFF* miffWriter) {
 "	      004ec3ff    call dword ptr [eax+64h]"
 );
 // LINE 142:
+// Block end:
 	asm( 
 "	      004ec402    jmp near ptr 004EC43Bh"
 );
@@ -986,6 +992,9 @@ int32_t LogManager::ReadCurrentRecordFromMIFF(class MIFF* miffReader) {
 "	      004ec682    jne near ptr 004EC6D8h"
 );
 // LINE 188:
+// Block start:
+	struct tagLogString* tempLogString;
+	char[276] chStringBuffer;
 	asm( 
 "	      004ec688    push 114h"
 "	      004ec68d    lea eax,[ebp-158h]"
@@ -1017,6 +1026,7 @@ int32_t LogManager::ReadCurrentRecordFromMIFF(class MIFF* miffReader) {
 "	      004ec6ce    call 004EC749h"
 );
 // LINE 193:
+// Block end:
 	asm( 
 "	      004ec6d3    jmp near ptr 004EC6FCh"
 );
@@ -1138,6 +1148,9 @@ int32_t LogManager::AddLogEntry(struct tagLogBase* logData, int32_t bShowUserMes
 "	      004ec7ad    jne near ptr 004EC8C2h"
 );
 // LINE 227:
+// Block start:
+	struct tagLogString* newLogString;
+	char * szNewStringPointer;
 	asm( 
 "	      004ec7b3    push 14h"
 "	      004ec7b5    call 0056A600h"
@@ -1244,6 +1257,7 @@ int32_t LogManager::AddLogEntry(struct tagLogBase* logData, int32_t bShowUserMes
 "	      004ec8b8    jmp near ptr 004EC8BDh"
 );
 // LINE 235:
+// Block end:
 	asm( 
 "	      004ec8bd    jmp near ptr 004ECB68h"
 "	      004ec8c2    mov eax,[ebp+8]"
@@ -1254,6 +1268,8 @@ int32_t LogManager::AddLogEntry(struct tagLogBase* logData, int32_t bShowUserMes
 "	      004ec8d4    ja near ptr 004EC995h"
 );
 // LINE 236:
+// Block start:
+	struct tagLogMissionEvent* newLogMissionEvent;
 	asm( 
 "	      004ec8da    push 14h"
 "	      004ec8dc    call 0056A600h"
@@ -1319,6 +1335,7 @@ int32_t LogManager::AddLogEntry(struct tagLogBase* logData, int32_t bShowUserMes
 "	      004ec98b    jmp near ptr 004EC990h"
 );
 // LINE 240:
+// Block end:
 	asm( 
 "	      004ec990    jmp near ptr 004ECB68h"
 "	      004ec995    mov eax,[ebp+8]"
@@ -1326,6 +1343,8 @@ int32_t LogManager::AddLogEntry(struct tagLogBase* logData, int32_t bShowUserMes
 "	      004ec99b    jne near ptr 004ECA77h"
 );
 // LINE 241:
+// Block start:
+	struct tagLogCityEnterExit* newLogCityEnterExit;
 	asm( 
 "	      004ec9a1    push 30h"
 "	      004ec9a3    call 0056A600h"
@@ -1391,10 +1410,13 @@ int32_t LogManager::AddLogEntry(struct tagLogBase* logData, int32_t bShowUserMes
 "	      004eca6d    jmp near ptr 004ECA72h"
 );
 // LINE 245:
+// Block end:
 	asm( 
 "	      004eca72    jmp near ptr 004ECB68h"
 );
 // LINE 246:
+// Block start:
+	struct tagLogBase* newLogBase;
 	asm( 
 "	      004eca77    push 0Ch"
 "	      004eca79    call 0056A600h"
@@ -1460,6 +1482,7 @@ int32_t LogManager::AddLogEntry(struct tagLogBase* logData, int32_t bShowUserMes
 "	      004ecb63    jmp near ptr 004ECB68h"
 );
 // LINE 251:
+// Block end:
 	asm( 
 "	      004ecb68    cmp dword ptr [ebp+0Ch],0"
 "	      004ecb6c    je near ptr 004ECCC0h"
@@ -1468,6 +1491,8 @@ int32_t LogManager::AddLogEntry(struct tagLogBase* logData, int32_t bShowUserMes
 "	      004ecb7c    je near ptr 004ECCC0h"
 );
 // LINE 252:
+// Block start:
+	class basic_string<char> sCurrentText;
 	asm( 
 "	      004ecb82    push 10h"
 "	      004ecb84    call 0056A600h"
@@ -1550,6 +1575,7 @@ int32_t LogManager::AddLogEntry(struct tagLogBase* logData, int32_t bShowUserMes
 "	      004eccbb    jmp near ptr 004ECCC0h"
 );
 // LINE 257:
+// Block end:
 	asm( 
 "	      004eccc0    mov eax,1"
 "	      004eccc5    jmp near ptr 004ECCCAh"
@@ -3023,6 +3049,8 @@ void LogManager::MakeStringFromLogData(struct tagLogBase* logData, class basic_s
 "	      004edef3    jne near ptr 004EDF49h"
 );
 // LINE 381:
+// Block start:
+	const struct tagLogString* lS;
 	asm( 
 "	      004edef9    mov eax,[ebp+8]"
 "	      004edefc    mov [ebp-258h],eax"
@@ -3051,6 +3079,7 @@ void LogManager::MakeStringFromLogData(struct tagLogBase* logData, class basic_s
 "	      004edf3f    jmp near ptr 004EE25Fh"
 );
 // LINE 385:
+// Block end:
 	asm( 
 "	      004edf44    jmp near ptr 004EE22Ch"
 "	      004edf49    mov eax,[ebp+8]"
@@ -3061,6 +3090,8 @@ void LogManager::MakeStringFromLogData(struct tagLogBase* logData, class basic_s
 "	      004edf5b    ja near ptr 004EE03Bh"
 );
 // LINE 386:
+// Block start:
+	const struct tagLogMissionEvent* lME;
 	asm( 
 "	      004edf61    mov eax,[ebp+8]"
 "	      004edf64    mov [ebp-25Ch],eax"
@@ -3131,6 +3162,7 @@ void LogManager::MakeStringFromLogData(struct tagLogBase* logData, class basic_s
 "	      004ee031    jmp near ptr 004EE036h"
 );
 // LINE 391:
+// Block end:
 	asm( 
 "	      004ee036    jmp near ptr 004EE22Ch"
 "	      004ee03b    mov eax,[ebp+8]"
@@ -3138,6 +3170,8 @@ void LogManager::MakeStringFromLogData(struct tagLogBase* logData, class basic_s
 "	      004ee041    jne near ptr 004EE154h"
 );
 // LINE 392:
+// Block start:
+	const struct tagLogCityEnterExit* lCEE;
 	asm( 
 "	      004ee047    mov eax,[ebp+8]"
 "	      004ee04a    mov [ebp-260h],eax"
@@ -3229,6 +3263,7 @@ void LogManager::MakeStringFromLogData(struct tagLogBase* logData, class basic_s
 "	      004ee14c    add esp,0Ch"
 );
 // LINE 400:
+// Block end:
 	asm( 
 "	      004ee14f    jmp near ptr 004EE22Ch"
 );

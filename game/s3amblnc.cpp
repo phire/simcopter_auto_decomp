@@ -139,6 +139,8 @@ class AmbulanceClass* AmbulanceClass::CreateInstance(int32_t instanceID) {
 "	      0053597d    je near ptr 00535AE1h"
 );
 // LINE 123:
+// Block start:
+	struct VRObjInfo oinfo;
 	asm( 
 "	      00535983    push 121h"
 "	      00535988    call 004D8821h"
@@ -281,6 +283,7 @@ class AmbulanceClass* AmbulanceClass::CreateInstance(int32_t instanceID) {
 "	      00535ad7    jmp near ptr 00535B0Fh"
 );
 // LINE 167:
+// Block end:
 	asm( 
 "	      00535adc    jmp near ptr 00535B08h"
 );

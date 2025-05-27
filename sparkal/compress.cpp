@@ -134,6 +134,8 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 "	      004aa980    je near ptr 004AAB75h"
 );
 // LINE 70:
+// Block start:
+	unsigned long ImageByteCount;
 	asm( 
 "	      004aa986    push 4"
 "	      004aa988    lea eax,[ebp-0CCh]"
@@ -180,6 +182,8 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 "	      004aaa2c    je near ptr 004AAB75h"
 );
 // LINE 79:
+// Block start:
+	struct RLEHeader* pCompressedImage;
 	asm( 
 "	      004aaa32    mov dword ptr [ebp-0D0h],0"
 "	      004aaa3c    mov eax,[ebp-10Ch]"
@@ -264,6 +268,8 @@ void CRLECompressedImage::CRLECompressedImage(long ResourceID) {
 "	      004aab70    jmp near ptr 004AAB75h"
 );
 // LINE 91:
+// Block end:
+// Block end:
 	asm( 
 "	      004aab75    jmp near ptr 004AAB7Ah"
 "	      004aab7a    lea ecx,[ebp-0B8h]"
@@ -598,6 +604,16 @@ unsigned long CRLECompressedImage::Compose(class IFlatImage* pDest, long DestLef
 "	      004aae6e    je near ptr 004AB055h"
 );
 // LINE 162:
+// Block start:
+	int32_t Left;
+	unsigned char * pCompressedBits;
+	short LeftClipAmount;
+	int32_t Top;
+	int32_t Right;
+	unsigned char TransparentColor;
+	short Width;
+	short Height;
+	int32_t Bottom;
 	asm( 
 "	      004aae74    mov eax,[ebp-30h]"
 "	      004aae77    mov eax,[eax+4]"
@@ -761,6 +777,8 @@ unsigned long CRLECompressedImage::Compose(class IFlatImage* pDest, long DestLef
 "	      004aafc2    jle near ptr 004AB055h"
 );
 // LINE 204:
+// Block start:
+	unsigned char * pBits;
 	asm( 
 "	      004aafc8    jmp near ptr 004AAFCDh"
 "	      004aafcd    mov eax,[ebp+8]"
@@ -773,6 +791,8 @@ unsigned long CRLECompressedImage::Compose(class IFlatImage* pDest, long DestLef
 "	      004aafda    je near ptr 004AB055h"
 );
 // LINE 207:
+// Block start:
+	long DestStride;
 	asm( 
 "	      004aafe0    mov eax,[ebp+8]"
 "	      004aafe3    mov eax,[eax+14h]"
@@ -834,6 +854,9 @@ unsigned long CRLECompressedImage::Compose(class IFlatImage* pDest, long DestLef
 "	      004ab052    add esp,1Ch"
 );
 // LINE 223:
+// Block end:
+// Block end:
+// Block end:
 	asm( 
 "	      004ab055    xor eax,eax"
 "	      004ab057    jmp near ptr 004AB05Ch"
@@ -913,6 +936,10 @@ void RLEDecompressUnclippedX(unsigned char * pDestBuffer, long DestStride, unsig
 "	      004ab0a0    je near ptr 004AB1EDh"
 );
 // LINE 336:
+// Block start:
+	int32_t counter;
+	unsigned char token;
+	unsigned char data;
 	asm( 
 "	      004ab0a6    mov eax,[ebp+10h]"
 "	      004ab0a9    cmp [ebp-4],eax"
@@ -1118,6 +1145,7 @@ void RLEDecompressUnclippedX(unsigned char * pDestBuffer, long DestStride, unsig
 "	      004ab1e7    (bad)"
 );
 // LINE 398:
+// Block end:
 	asm( 
 "	      004ab1e8    jmp near ptr 004AB09Ah"
 );
@@ -1183,6 +1211,10 @@ void RLEDecompressClippedX(unsigned char * pDestBuffer, long DestStride, unsigne
 "	      004ab22e    je near ptr 004AB51Fh"
 );
 // LINE 421:
+// Block start:
+	int32_t counter;
+	unsigned char token;
+	unsigned char data;
 	asm( 
 "	      004ab234    mov eax,[ebp+10h]"
 "	      004ab237    cmp [ebp-4],eax"
@@ -1626,6 +1658,7 @@ void RLEDecompressClippedX(unsigned char * pDestBuffer, long DestStride, unsigne
 "	      004ab517    mov [ebp+10h],eax"
 );
 // LINE 579:
+// Block end:
 	asm( 
 "	      004ab51a    jmp near ptr 004AB228h"
 );

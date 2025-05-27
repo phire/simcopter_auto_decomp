@@ -624,6 +624,8 @@ void PlaneClass::Itterate() {
 "	      0052b59b    je near ptr 0052B5FEh"
 );
 // LINE 641:
+// Block start:
+	struct VRview position;
 	asm( 
 "	      0052b5a1    mov eax,[ebp-60h]"
 "	      0052b5a4    mov eax,[eax]"
@@ -670,6 +672,7 @@ void PlaneClass::Itterate() {
 "	      0052b5fb    add esp,0Ch"
 );
 // LINE 661:
+// Block end:
 	asm( 
 "	      0052b5fe    mov ecx,[ebp-60h]"
 "	      0052b601    call 0052B6D0h"
@@ -3289,6 +3292,8 @@ void PlaneClass::UnlinkFromCell(const struct Point2d& point) {
 "	      0052cb5f    je near ptr 0052CBD5h"
 );
 // LINE 1836:
+// Block start:
+	struct _DYOBJ_INST** dyptrptr;
 	asm( 
 "	      0052cb65    mov eax,[ebp-4]"
 "	      0052cb68    add eax,10h"
@@ -3343,6 +3348,7 @@ void PlaneClass::UnlinkFromCell(const struct Point2d& point) {
 "	      0052cbd0    jmp near ptr 0052CBD5h"
 );
 // LINE 1856:
+// Block end:
 	asm( 
 "	      0052cbd5    jmp near ptr 0052CBDAh"
 "	      0052cbda    pop edi"

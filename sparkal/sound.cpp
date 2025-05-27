@@ -5523,6 +5523,8 @@ long DigitalSound::PlayStream() {
 "	      00430d49    je near ptr 00430DC0h"
 );
 // LINE 1647:
+// Block start:
+	unsigned char * lpTemp;
 	asm( 
 "	      00430d4f    mov eax,[ebp-18h]"
 "	      00430d52    mov [ebp-24h],eax"
@@ -5581,6 +5583,7 @@ long DigitalSound::PlayStream() {
 "	      00430db5    jb near ptr 00430D55h"
 );
 // LINE 1664:
+// Block end:
 	asm( 
 "	      00430dbb    jmp near ptr 00430E11h"
 );

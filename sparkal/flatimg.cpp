@@ -180,6 +180,9 @@ unsigned long IFlatImage::StretchCompose(class IFlatImage* pDest, long SourceLef
 "	      0048f284    jge near ptr 0048F309h"
 );
 // LINE 66:
+// Block start:
+	long XError;
+	long XCount;
 	asm( 
 "	      0048f28a    mov eax,[ebp-18h]"
 "	      0048f28d    mov [ebp-14h],eax"
@@ -272,6 +275,7 @@ unsigned long IFlatImage::StretchCompose(class IFlatImage* pDest, long SourceLef
 "	      0048f301    inc dword ptr [ebp-10h]"
 );
 // LINE 97:
+// Block end:
 	asm( 
 "	      0048f304    jmp near ptr 0048F27Eh"
 );
@@ -1202,6 +1206,10 @@ void CFlatImage::CFlatImage(class IFlatImage* pImage, long SrcLeft, long SrcTop,
 "	      0048faa2    je near ptr 0048FB8Ah"
 );
 // LINE 296:
+// Block start:
+	unsigned char * pSource;
+	long SrcStride;
+	unsigned char * pBits;
 	asm( 
 "	      0048faa8    jmp near ptr 0048FAADh"
 "	      0048faad    mov eax,[ebp-38h]"
@@ -1232,6 +1240,8 @@ void CFlatImage::CFlatImage(class IFlatImage* pImage, long SrcLeft, long SrcTop,
 "	      0048faea    je near ptr 0048FB3Ch"
 );
 // LINE 303:
+// Block start:
+	int32_t Count;
 	asm( 
 "	      0048faf0    mov eax,[ebp-38h]"
 "	      0048faf3    mov eax,[eax+0Ch]"
@@ -1273,6 +1283,7 @@ void CFlatImage::CFlatImage(class IFlatImage* pImage, long SrcLeft, long SrcTop,
 "	      0048fb32    jmp near ptr 0048FAF9h"
 );
 // LINE 311:
+// Block end:
 	asm( 
 "	      0048fb37    jmp near ptr 0048FB3Ch"
 );
@@ -1300,6 +1311,7 @@ void CFlatImage::CFlatImage(class IFlatImage* pImage, long SrcLeft, long SrcTop,
 "	      0048fb80    jmp near ptr 0048FB85h"
 );
 // LINE 318:
+// Block end:
 	asm( 
 "	      0048fb85    jmp near ptr 0048FBDDh"
 );

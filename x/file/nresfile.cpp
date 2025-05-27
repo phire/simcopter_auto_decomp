@@ -20,6 +20,8 @@ class StdResLoader* NResFile::GetLoader(unsigned long type, void (*)(void * __pt
 "	      00499ef9    mov [ebp-38h],ecx"
 );
 // LINE 13:
+// Block start:
+	class PtrList<StdResLoader>::Iter i;
 	asm( 
 "	      00499efc    mov eax,[ebp-38h]"
 "	      00499eff    add eax,11Ah"
@@ -90,6 +92,7 @@ class StdResLoader* NResFile::GetLoader(unsigned long type, void (*)(void * __pt
 "	      00499fe4    jmp near ptr 00499F34h"
 );
 // LINE 20:
+// Block end:
 	asm( 
 "	      00499fe9    push 10h"
 "	      00499feb    call 0056A600h"

@@ -231,6 +231,9 @@ void cBBase::Destroy() {
 "	      0055f341    je near ptr 0055F3F9h"
 );
 // LINE 60:
+// Block start:
+	unsigned short fileOpened;
+	void * __ptr32 h;
 	asm( 
 "	      0055f347    mov eax,[ebp-34h]"
 "	      0055f34a    mov eax,[eax]"
@@ -304,6 +307,7 @@ void cBBase::Destroy() {
 "	      0055f3f6    call dword ptr [eax+0Ch]"
 );
 // LINE 67:
+// Block end:
 	asm( 
 "	      0055f3f9    mov eax,[ebp-34h]"
 "	      0055f3fc    mov eax,[eax]"

@@ -186,6 +186,8 @@ int32_t ShortestPath::BreadthFirstSearch(struct _RGIndex startVertex, struct _RG
 "	      005437b4    jge near ptr 0054381Ch"
 );
 // LINE 59:
+// Block start:
+	int32_t yindex;
 	asm( 
 "	      005437ba    mov dword ptr [ebp-28h],0"
 "	      005437c1    jmp near ptr 005437C9h"
@@ -197,6 +199,8 @@ int32_t ShortestPath::BreadthFirstSearch(struct _RGIndex startVertex, struct _RG
 "	      005437d7    jle near ptr 00543817h"
 );
 // LINE 61:
+// Block start:
+	struct RGVertex* pRGV;
 	asm( 
 "	      005437dd    mov eax,[ebp-20h]"
 "	      005437e0    mov eax,[eax*4+5C3828h]"
@@ -224,10 +228,12 @@ int32_t ShortestPath::BreadthFirstSearch(struct _RGIndex startVertex, struct _RG
 "	      0054380e    mov byte ptr [eax+2Ch],0FFh"
 );
 // LINE 65:
+// Block end:
 	asm( 
 "	      00543812    jmp near ptr 005437C6h"
 );
 // LINE 66:
+// Block end:
 	asm( 
 "	      00543817    jmp near ptr 005437AAh"
 );
@@ -346,6 +352,8 @@ int32_t ShortestPath::BreadthFirstSearch(struct _RGIndex startVertex, struct _RG
 "	      005438e8    jmp near ptr 005439A7h"
 );
 // LINE 108:
+// Block start:
+	int32_t i;
 	asm( 
 "	      005438ed    mov dword ptr [ebp-30h],0"
 "	      005438f4    jmp near ptr 005438FCh"
@@ -354,6 +362,8 @@ int32_t ShortestPath::BreadthFirstSearch(struct _RGIndex startVertex, struct _RG
 "	      00543900    jge near ptr 005439A7h"
 );
 // LINE 111:
+// Block start:
+	struct Edge* pEdge;
 	asm( 
 "	      00543906    mov eax,[ebp-10h]"
 "	      00543909    mov al,[eax+2]"
@@ -436,10 +446,12 @@ int32_t ShortestPath::BreadthFirstSearch(struct _RGIndex startVertex, struct _RG
 "	      0054399d    call 00543CDDh"
 );
 // LINE 126:
+// Block end:
 	asm( 
 "	      005439a2    jmp near ptr 005438F9h"
 );
 // LINE 129:
+// Block end:
 	asm( 
 "	      005439a7    jmp near ptr 00543847h"
 );
@@ -570,6 +582,8 @@ int32_t ShortestPath::DepthFirstSearch(struct _RGIndex startVertex, struct _RGIn
 "	      00543a7c    jge near ptr 00543AE4h"
 );
 // LINE 165:
+// Block start:
+	int32_t yindex;
 	asm( 
 "	      00543a82    mov dword ptr [ebp-30h],0"
 "	      00543a89    jmp near ptr 00543A91h"
@@ -581,6 +595,8 @@ int32_t ShortestPath::DepthFirstSearch(struct _RGIndex startVertex, struct _RGIn
 "	      00543a9f    jle near ptr 00543ADFh"
 );
 // LINE 167:
+// Block start:
+	struct RGVertex* pRGV;
 	asm( 
 "	      00543aa5    mov eax,[ebp-20h]"
 "	      00543aa8    mov eax,[eax*4+5C3828h]"
@@ -608,10 +624,12 @@ int32_t ShortestPath::DepthFirstSearch(struct _RGIndex startVertex, struct _RGIn
 "	      00543ad6    mov byte ptr [eax+2Ch],0FFh"
 );
 // LINE 171:
+// Block end:
 	asm( 
 "	      00543ada    jmp near ptr 00543A8Eh"
 );
 // LINE 172:
+// Block end:
 	asm( 
 "	      00543adf    jmp near ptr 00543A72h"
 );
@@ -762,6 +780,8 @@ int32_t ShortestPath::DepthFirstSearch(struct _RGIndex startVertex, struct _RGIn
 "	      00543bee    jmp near ptr 00543CC9h"
 );
 // LINE 219:
+// Block start:
+	int32_t i;
 	asm( 
 "	      00543bf3    mov dword ptr [ebp-38h],0"
 "	      00543bfa    jmp near ptr 00543C02h"
@@ -770,6 +790,9 @@ int32_t ShortestPath::DepthFirstSearch(struct _RGIndex startVertex, struct _RGIn
 "	      00543c06    jge near ptr 00543CC9h"
 );
 // LINE 222:
+// Block start:
+	struct RGVertex* pCurrRGV;
+	struct Edge* pEdge;
 	asm( 
 "	      00543c0c    mov eax,[ebp-10h]"
 "	      00543c0f    mov al,[eax+2]"
@@ -872,10 +895,12 @@ int32_t ShortestPath::DepthFirstSearch(struct _RGIndex startVertex, struct _RGIn
 "	      00543cbf    call 00543CDDh"
 );
 // LINE 241:
+// Block end:
 	asm( 
 "	      00543cc4    jmp near ptr 00543BFFh"
 );
 // LINE 244:
+// Block end:
 	asm( 
 "	      00543cc9    jmp near ptr 00543B4Dh"
 );

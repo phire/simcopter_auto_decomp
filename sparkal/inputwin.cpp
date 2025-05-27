@@ -10322,6 +10322,8 @@ enum UserInputWindow::KeyUsageType UserInputWindow::GetKeyUsageType(long lKey, l
 "	      0040921e    jne near ptr 00409342h"
 );
 // LINE 1447:
+// Block start:
+	class list<Shortcut>::iterator iterator;
 	asm( 
 "	      00409224    mov eax,[ebp+8]"
 "	      00409227    push eax"
@@ -10427,6 +10429,7 @@ enum UserInputWindow::KeyUsageType UserInputWindow::GetKeyUsageType(long lKey, l
 "	      00409338    jmp near ptr 0040926Bh"
 );
 // LINE 1463:
+// Block end:
 	asm( 
 "	      0040933d    jmp near ptr 00409486h"
 "	      00409342    cmp dword ptr [ebp+0Ch],1"
@@ -10440,6 +10443,8 @@ enum UserInputWindow::KeyUsageType UserInputWindow::GetKeyUsageType(long lKey, l
 "	      00409369    je near ptr 00409486h"
 );
 // LINE 1464:
+// Block start:
+	class list<Shortcut>::iterator iterator;
 	asm( 
 "	      0040936f    mov ecx,[ebp-4Ch]"
 "	      00409372    call 00409740h"
@@ -10541,6 +10546,7 @@ enum UserInputWindow::KeyUsageType UserInputWindow::GetKeyUsageType(long lKey, l
 "	      00409481    jmp near ptr 00409398h"
 );
 // LINE 1481:
+// Block end:
 	asm( 
 "	      00409486    xor eax,eax"
 "	      00409488    jmp near ptr 0040948Dh"
@@ -11102,6 +11108,8 @@ void UserInputWindow::UpdateDisplay(int32_t bRedrawBackground) {
 "	      004098c1    je near ptr 0040A097h"
 );
 // LINE 1609:
+// Block start:
+	class list<Shortcut>::iterator tempShortcutListIterator;
 	asm( 
 "	      004098c7    push 1"
 "	      004098c9    mov eax,[ebp-17Ch]"
@@ -11593,6 +11601,7 @@ void UserInputWindow::UpdateDisplay(int32_t bRedrawBackground) {
 "	      0040a092    jmp near ptr 00409C87h"
 );
 // LINE 1649:
+// Block end:
 	asm( 
 "	      0040a097    jmp near ptr 0040A339h"
 "	      0040a09c    cmp dword ptr [ebp-64h],1"
@@ -11641,6 +11650,8 @@ void UserInputWindow::UpdateDisplay(int32_t bRedrawBackground) {
 "	      0040a117    je near ptr 0040A339h"
 );
 // LINE 1657:
+// Block start:
+	class list<Shortcut>::iterator tempShortcutListIterator;
 	asm( 
 "	      0040a11d    push 1"
 "	      0040a11f    mov eax,[ebp-17Ch]"
@@ -11821,6 +11832,7 @@ void UserInputWindow::UpdateDisplay(int32_t bRedrawBackground) {
 "	      0040a334    jmp near ptr 0040A1EAh"
 );
 // LINE 1687:
+// Block end:
 	asm( 
 "	      0040a339    jmp near ptr 0040A33Eh"
 "	      0040a33e    pop edi"

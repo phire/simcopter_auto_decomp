@@ -343,6 +343,9 @@ void _cArray::FromDiskCreate(void * __ptr32 hArray, class ResFile* pFile, long e
 "	      00567817    je near ptr 005678F4h"
 );
 // LINE 94:
+// Block start:
+	long xcount;
+	long ycount;
 	asm( 
 "	      0056781d    mov dword ptr [ebp-114h],0"
 "	      00567827    jmp near ptr 00567832h"
@@ -411,6 +414,7 @@ void _cArray::FromDiskCreate(void * __ptr32 hArray, class ResFile* pFile, long e
 "	      005678ef    jmp near ptr 0056782Ch"
 );
 // LINE 105:
+// Block end:
 	asm( 
 "	      005678f4    jmp near ptr 005678F9h"
 "	      005678f9    pop edi"
@@ -591,6 +595,9 @@ void _cArray::~_cArray() {
 "	      00567a32    je near ptr 00567B11h"
 );
 // LINE 169:
+// Block start:
+	long cnt;
+	unsigned short bFound;
 	asm( 
 "	      00567a38    mov word ptr [ebp-4],0"
 );
@@ -660,6 +667,7 @@ void _cArray::~_cArray() {
 "	      00567b0c    jmp near ptr 00567A4Ah"
 );
 // LINE 190:
+// Block end:
 	asm( 
 "	      00567b11    jmp near ptr 00567B16h"
 "	      00567b16    pop edi"
@@ -687,6 +695,8 @@ void _cArray::MakeTable() {
 "	      00567b2b    jne near ptr 00567B9Dh"
 );
 // LINE 196:
+// Block start:
+	long count;
 	asm( 
 "	      00567b31    push 1000h"
 "	      00567b36    call 0056A600h"
@@ -723,6 +733,7 @@ void _cArray::MakeTable() {
 "	      00567b98    jmp near ptr 00567B78h"
 );
 // LINE 202:
+// Block end:
 	asm( 
 "	      00567b9d    jmp near ptr 00567BA2h"
 "	      00567ba2    pop edi"
@@ -813,6 +824,9 @@ void _cArray::CheckIntoTable() {
 "	      00567c0a    je near ptr 00567D08h"
 );
 // LINE 250:
+// Block start:
+	long foundcount;
+	long count;
 	asm( 
 "	      00567c10    mov eax,[ebp-0Ch]"
 "	      00567c13    cmp dword ptr [eax+4Ch],0"
@@ -897,6 +911,7 @@ void _cArray::CheckIntoTable() {
 "	      00567d05    mov [edx+ecx*4],eax"
 );
 // LINE 264:
+// Block end:
 	asm( 
 "	      00567d08    jmp near ptr 00567D0Dh"
 "	      00567d0d    pop edi"
@@ -1325,6 +1340,10 @@ short _cArray::InsertRow(short afterwhich) {
 "	      00568078    je near ptr 00568118h"
 );
 // LINE 371:
+// Block start:
+	unsigned char * movefrom;
+	unsigned char * moveto;
+	short count;
 	asm( 
 "	      0056807e    mov eax,[ebp-1Ch]"
 "	      00568081    mov eax,[eax+14h]"
@@ -1386,6 +1405,7 @@ short _cArray::InsertRow(short afterwhich) {
 "	      00568113    jmp near ptr 0056808Eh"
 );
 // LINE 382:
+// Block end:
 	asm( 
 "	      00568118    mov ax,[ebp-0Ch]"
 "	      0056811c    jmp near ptr 00568121h"
@@ -1473,6 +1493,10 @@ short _cArray::InsertColumn(short afterwhich) {
 "	      005681ad    jle near ptr 00568284h"
 );
 // LINE 397:
+// Block start:
+	unsigned char * movefrom;
+	unsigned char * moveto;
+	short xcount;
 	asm( 
 "	      005681b3    mov word ptr [ebp-10h],0"
 "	      005681b9    jmp near ptr 005681C2h"
@@ -1483,6 +1507,8 @@ short _cArray::InsertColumn(short afterwhich) {
 "	      005681cc    jle near ptr 00568284h"
 );
 // LINE 398:
+// Block start:
+	short ycount;
 	asm( 
 "	      005681d2    mov eax,[ebp-20h]"
 "	      005681d5    mov eax,[eax+10h]"
@@ -1551,10 +1577,12 @@ short _cArray::InsertColumn(short afterwhich) {
 "	      0056827a    jmp near ptr 005681E2h"
 );
 // LINE 404:
+// Block end:
 	asm( 
 "	      0056827f    jmp near ptr 005681BEh"
 );
 // LINE 406:
+// Block end:
 	asm( 
 "	      00568284    mov ax,[ebp-0Ch]"
 "	      00568288    jmp near ptr 0056828Dh"
@@ -1632,6 +1660,8 @@ short _cArray::DeleteRow(short which) {
 "	      00568317    je near ptr 0056838Fh"
 );
 // LINE 419:
+// Block start:
+	short count;
 	asm( 
 "	      0056831d    mov ax,[ebp+8]"
 "	      00568321    mov [ebp-14h],ax"
@@ -1681,6 +1711,7 @@ short _cArray::DeleteRow(short which) {
 "	      0056838a    jmp near ptr 0056832Ah"
 );
 // LINE 426:
+// Block end:
 	asm( 
 "	      0056838f    push 0"
 "	      00568391    mov eax,[ebp-18h]"
@@ -1813,6 +1844,8 @@ short _cArray::DeleteColumn(short which) {
 "	      005684ce    jle near ptr 00568605h"
 );
 // LINE 442:
+// Block start:
+	short ycount;
 	asm( 
 "	      005684d4    mov ax,[ebp+8]"
 "	      005684d8    mov [ebp-18h],ax"
@@ -1884,6 +1917,9 @@ short _cArray::DeleteColumn(short which) {
 "	      00568574    jle near ptr 00568600h"
 );
 // LINE 451:
+// Block start:
+	unsigned char * lastPart;
+	unsigned char * nextToLast;
 	asm( 
 "	      0056857a    jmp near ptr 0056857Fh"
 "	      0056857f    mov eax,[ebp-24h]"
@@ -1933,6 +1969,8 @@ short _cArray::DeleteColumn(short which) {
 "	      005685fd    add esp,10h"
 );
 // LINE 456:
+// Block end:
+// Block end:
 	asm( 
 "	      00568600    jmp near ptr 005684C0h"
 );
@@ -2937,6 +2975,8 @@ class _cArray* _cArray::GetArray(unsigned long tinyname, short numChars) {
 "	      00568e90    je near ptr 00568F14h"
 );
 // LINE 619:
+// Block start:
+	short shiftnum;
 	asm( 
 "	      00568e96    mov eax,4"
 "	      00568e9b    movsx ecx,word ptr [ebp+0Ch]"
@@ -2981,6 +3021,7 @@ class _cArray* _cArray::GetArray(unsigned long tinyname, short numChars) {
 "	      00568f0f    jmp near ptr 00568F20h"
 );
 // LINE 624:
+// Block end:
 	asm( 
 "	      00568f14    jmp near ptr 00568DCAh"
 );
@@ -3116,6 +3157,8 @@ short _cArray::GetNumArraysByType(unsigned long rType) {
 "	      00568fd4    jge near ptr 00569002h"
 );
 // LINE 650:
+// Block start:
+	class _cArray* tmp;
 	asm( 
 "	      00568fda    movsx eax,word ptr [ebp-8]"
 "	      00568fde    mov ecx,ds:[5BF74Ch]"
@@ -3134,6 +3177,7 @@ short _cArray::GetNumArraysByType(unsigned long rType) {
 "	      00568ff9    inc word ptr [ebp-4]"
 );
 // LINE 653:
+// Block end:
 	asm( 
 "	      00568ffd    jmp near ptr 00568FC7h"
 );
@@ -3335,6 +3379,10 @@ void _cArray::LoadAllArrays(class ResFile* pFile, unsigned long rType, short ent
 "	      0056916d    jl near ptr 005692DBh"
 );
 // LINE 724:
+// Block start:
+	unsigned char * dataPtr;
+	void * __ptr32 hArray;
+	class _cArray* tmp;
 	asm( 
 "	      00569173    push 0"
 "	      00569175    mov eax,[ebp-1Ch]"
@@ -3462,6 +3510,7 @@ void _cArray::LoadAllArrays(class ResFile* pFile, unsigned long rType, short ent
 "	      005692d3    add esp,10h"
 );
 // LINE 755:
+// Block end:
 	asm( 
 "	      005692d6    jmp near ptr 0056915Fh"
 );

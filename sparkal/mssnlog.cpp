@@ -2255,6 +2255,8 @@ int32_t MessageDisplayManager::Initialize() {
 "	      0046d625    jle near ptr 0046D7E9h"
 );
 // LINE 311:
+// Block start:
+	uint32_t $S71;
 	asm( 
 "	      0046d62b    mov eax,[ebp-3Ch]"
 "	      0046d62e    cmp dword ptr [eax+10h],0"
@@ -2388,6 +2390,7 @@ int32_t MessageDisplayManager::Initialize() {
 "	      0046d7e2    mov dword ptr [eax+10h],0"
 );
 // LINE 315:
+// Block end:
 	asm( 
 "	      0046d7e9    mov eax,[ebp-3Ch]"
 "	      0046d7ec    mov dword ptr [eax+48h],0"
